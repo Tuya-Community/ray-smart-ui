@@ -10,3 +10,4 @@
 ## v2.6.0（进行中）
 
 - [ ] ActionSheet: 修复样式异常
+- [ ] ActionSheet: 标题支持自定义
