@@ -1,0 +1,18 @@
+{
+  "name": "smart-ui-demo",
+  "type": "panel-app",
+  "ownerType": "tuya-official",
+  "i18n": false,
+  "description": "Smart UI 小程序 Ray 组件浏览库",
+  "miniprogramRoot": "./dist/tuya",
+  "dependencies": {
+    "BaseKit": "3.0.0",
+    "MiniKit": "3.0.1",
+    "DeviceKit": "3.0.2",
+    "BizKit": "3.0.6"
+  },
+  "baseversion": "2.19.0",
+  "projectname": "@ray-js/smart-ui",
+  "devMode": "ray",
+  "compileType": "miniprogram"
+}

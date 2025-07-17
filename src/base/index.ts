@@ -1,0 +1,31 @@
+import {
+  ComponentBase,
+  SmartComponent,
+  SmartEvent,
+  SmartTouchEvent,
+  SmartEventHandler,
+  SmartTouchEventHandler,
+  TouchPositionDetail,
+  SmartBaseExternalClassName,
+  SmartBaseLoadingExternalClassName,
+  WechatOpenType,
+  SmartOpenTypeProps,
+  SmartOpenTypeCamelCaseProps,
+  SmartOpenTypeEvents,
+} from '../@types';
+
+export {
+  ComponentBase,
+  SmartComponent,
+  SmartEvent,
+  SmartTouchEvent,
+  SmartEventHandler,
+  SmartTouchEventHandler,
+  TouchPositionDetail,
+  SmartBaseExternalClassName,
+  SmartBaseLoadingExternalClassName,
+  WechatOpenType,
+  SmartOpenTypeProps,
+  SmartOpenTypeCamelCaseProps,
+  SmartOpenTypeEvents,
+};

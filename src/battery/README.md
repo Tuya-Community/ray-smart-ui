@@ -1,0 +1,54 @@
+---
+category: 通用
+---
+
+# Battery 电池
+
+### 介绍
+
+电池，可自定义颜色
+
+### 引入
+
+```jsx
+import { Battery } from '@ray-js/smart-ui';
+```
+
+## 代码演示
+
+### 基础用法
+
+```jsx
+import React from 'react';
+import { Battery } from '@ray-js/smart-ui';
+
+export default function Demo() {
+  return <Battery size={20} value={100} />;
+}
+```
+
+### 水平方向
+
+```jsx
+import React from 'react';
+import { Battery } from '@ray-js/smart-ui';
+
+export default function Demo() {
+  return <Battery type="horizontal" value={100} />;
+}
+```
+
+## API
+
+### Props
+
+| 参数            | 说明                                             | 类型                       | 默认值     |
+| --------------- | ------------------------------------------------ | -------------------------- | ---------- |
+| type            | 电池方向                                         | `vertical` \| `horizontal` | `vertical` |
+| size            | 尺寸                                             | _number_                   | 10         |
+| value           | 电量值                                           | _number_                   | 70         |
+| highColor       | 电量高的颜色                                     | _string_                   | `#70CF98`  |
+| middleColor     | 电量中的颜色                                     | _string_                   | `#F5A623`  |
+| lowColor        | 电量低的颜色                                     | _string_                   | `#FF4444`  |
+| backgroundColor | 电量背景色                                       | _string_                   | -          |
+| onCalcColor     | 电量颜色计算规则回调函数，返回计算后的颜色值即可 | _() => string_             | -          |

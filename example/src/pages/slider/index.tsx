@@ -1,0 +1,123 @@
+import React from 'react';
+import { Slider } from '@ray-js/smart-ui';
+import { View } from '@ray-js/ray';
+import { DemoBlock } from '@/components';
+import Strings from '../../i18n';
+
+export default function Demo() {
+  const [value, setValue] = React.useState(30);
+  const [value2, setValue2] = React.useState(30);
+  const [value3, setValue3] = React.useState(30);
+  const [value4, setValue4] = React.useState(30);
+  const [value5, setValue5] = React.useState(30);
+  const [value6, setValue6] = React.useState(30);
+  const [value1, onChange1] = React.useState([20, 60]);
+  return (
+    <View>
+      <DemoBlock padding title={Strings.getLang('standardSlider')}>
+        <Slider
+          maxTrackHeight="4px"
+          minTrackHeight="4px"
+          thumbHeight="28px"
+          thumbWidth="28px"
+          value={value}
+          onChange={value => setValue(value)}
+        />
+      </DemoBlock>
+      <DemoBlock padding title={Strings.getLang('intervalSlider')}>
+        <Slider
+          value={value2}
+          onChange={value => setValue2(value)}
+          maxTrackHeight={8}
+          minTrackHeight={8}
+          tickHeight="4px"
+          tickWidth="4px"
+          thumbHeight="18px"
+          thumbWidth="18px"
+          minTrackTickColor="#fff"
+          maxTrackTickColor="#fff"
+          isShowTicks
+          step={10}
+          min={0}
+          max={100}
+        />
+      </DemoBlock>
+      <DemoBlock padding title={Strings.getLang('intervalSlider')}>
+        <Slider
+          isShowTicks
+          step={30}
+          min={0}
+          max={90}
+          maxTrackHeight="40px"
+          maxTrackRadius="16px"
+          minTrackWidth="40px"
+          minTrackHeight="40px"
+          minTrackRadius="16px"
+          tickWidth="4px"
+          tickHeight="12px"
+          tickRadius="4px"
+          hideThumbButton
+          value={value3}
+          onChange={value => setValue3(value)}
+        />
+      </DemoBlock>
+      <DemoBlock padding title={Strings.getLang('dragTheSlider')}>
+        <Slider
+          // parcel
+          // parcelMargin={2}
+          minTrackRadius="13px"
+          minTrackHeight="22px"
+          maxTrackRadius="13px"
+          maxTrackHeight="26px"
+          value={value4}
+          thumbWidth={18}
+          thumbHeight={18}
+          onChange={value => setValue4(value)}
+        />
+      </DemoBlock>
+      <DemoBlock padding title={Strings.getLang('dragTheSlider')}>
+        <Slider
+          minTrackRadius="8px"
+          minTrackHeight="45px"
+          maxTrackRadius="8px"
+          maxTrackHeight="45px"
+          value={value5}
+          onChange={value => setValue5(value)}
+          thumbWidth={15}
+          thumbHeight={50}
+          thumbRadius={2}
+          thumbStyle={{
+            background: '#BBC5D4',
+            border: '2px solid #FFFFFF',
+            boxShadow: '0px 0px 2px 0px rgba(0, 0, 0, 0.5)',
+          }}
+        />
+      </DemoBlock>
+      <DemoBlock padding title={Strings.getLang('dragTheSlider')}>
+        <Slider
+          parcel
+          parcelMargin={2}
+          minTrackRadius="5px"
+          minTrackHeight="22px"
+          maxTrackRadius="5px"
+          maxTrackHeight="26px"
+          value={value6}
+          thumbWidth={3}
+          thumbHeight={16}
+          onChange={value => setValue6(value)}
+        />
+      </DemoBlock>
+      <DemoBlock padding title={Strings.getLang('doubleSlider')}>
+        <Slider.RangeSlider
+          min={0}
+          max={100}
+          barHeight="4px"
+          value={value1}
+          inActiveColor="#D8D9DC"
+          activeColor="#007AFF"
+          onChange={event => onChange1(event.detail)}
+        />
+      </DemoBlock>
+    </View>
+  );
+}

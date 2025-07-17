@@ -1,0 +1,6 @@
+node_modules
+dist/
+!packages/icons/dist
+*.log
+.DS_Store
+typings

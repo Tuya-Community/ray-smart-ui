@@ -1,0 +1,289 @@
+---
+category: 反馈
+---
+
+# ActionSheet 动作面板
+
+### 介绍
+
+底部弹起的模态面板，包含与当前情境相关的多个选项。
+
+### 引入
+
+```jsx
+import { ActionSheet } from '@ray-js/smart-ui';
+```
+
+## 代码演示
+
+### 基础用法
+
+需要传入一个`actions`的数组，数组的每一项是一个对象，对象属性见文档下方表格。
+
+```jsx
+import React from 'react';
+import { ActionSheet, Button } from '@ray-js/smart-ui';
+import { View } from '@ray-js/ray';
+
+export default function Demo() {
+  const [show, setShow] = React.useState(false);
+  const [actions, setActions] = React.useState([
+    { id: 0, name: 'Action', checked: true },
+    { id: 1, name: 'Action', checked: false },
+    { id: 2, name: 'Action', checked: false },
+  ]);
+
+  const onClose = () => setShow(false);
+  const onSelect = evt => {
+    const { id } = evt.detail;
+    const newActions = actions.map(item => {
+      if (item.id === id) return { ...item, checked: true };
+      return { ...item, checked: false };
+    });
+    setActions(newActions);
+  };
+
+  return (
+    <View>
+      <ActionSheet show={show} actions={actions} onClose={onClose} onSelect={onSelect} />
+      <Button onClick={() => setShow(true)}>点击展示</Button>
+    </View>
+  );
+}
+```
+
+### 选项状态
+
+选项可以设置为加载状态或禁用状态。
+
+```jsx
+import React from 'react';
+import { ActionSheet, Button } from '@ray-js/smart-ui';
+import { View } from '@ray-js/ray';
+
+export default function Demo() {
+  const actions = [
+    { name: '着色选项', color: '#ee0a24' },
+    { loading: true },
+    { name: '禁用选项', disabled: true },
+  ];
+  const [show, setShow] = React.useState(false);
+
+  return (
+    <View>
+      <ActionSheet show={show} actions={actions} cancelText="取消" />
+      <Button onClick={() => setShow(true)}>点击展示</Button>
+    </View>
+  );
+}
+```
+
+### 无选中列表
+
+设置`actions[idx].checked`属性为`false`后，可以展示无选中状态的列表。
+
+```jsx
+import React from 'react';
+import { ActionSheet, Button } from '@ray-js/smart-ui';
+import { View } from '@ray-js/ray';
+
+export default function Demo() {
+  const actions = [{ name: 'Action' }, { name: 'Action' }, { name: 'Action' }];
+  const [show, setShow] = React.useState(false);
+
+  return (
+    <View>
+      <ActionSheet show={show} actions={actions} cancelText="取消" />
+      <Button onClick={() => setShow(true)}>点击展示</Button>
+    </View>
+  );
+}
+```
+
+### 展示取消/确认按钮
+
+设置`cancelText`、`confirmText`属性后，会在底部展示取消或确认按钮，点击后关闭当前菜单。
+
+```jsx
+import React from 'react';
+import { ActionSheet, Button } from '@ray-js/smart-ui';
+import { View } from '@ray-js/ray';
+
+export default function Demo() {
+  const [show, setShow] = React.useState(false);
+  const actions = [{ name: 'Action' }, { name: 'Action' }, { name: 'Action' }];
+
+  return (
+    <View>
+      <ActionSheet show={show} actions={actions} cancelText="取消" confirmText="确认" />
+      <Button onClick={() => setShow(true)}>点击展示</Button>
+    </View>
+  );
+}
+```
+
+### 展示描述信息
+
+设置`description`属性后，会在选项上方显示描述信息。
+
+```jsx
+import React from 'react';
+import { ActionSheet, Button } from '@ray-js/smart-ui';
+import { View } from '@ray-js/ray';
+
+export default function Demo() {
+  const [show, setShow] = React.useState(false);
+  const actions = [{ name: 'Action' }, { name: 'Action' }, { name: 'Action' }];
+
+  return (
+    <View>
+      <ActionSheet show={show} actions={actions} description="这是一段描述信息" />
+      <Button onClick={() => setShow(true)}>点击展示</Button>
+    </View>
+  );
+}
+```
+
+### 自定义面板
+
+通过设置`title`属性展示标题栏，同时可以使用插槽自定义菜单内容。
+
+```jsx
+import React from 'react';
+import { ActionSheet, Button } from '@ray-js/smart-ui';
+import { View } from '@ray-js/ray';
+
+export default function Demo() {
+  const [show, setShow] = React.useState(false);
+
+  return (
+    <View>
+      <ActionSheet show={show} title="标题">
+        <View>内容</View>
+      </ActionSheet>
+      <Button onClick={() => setShow(true)}>点击展示</Button>
+    </View>
+  );
+}
+```
+
+## API
+
+### Props
+
+| 参数                | 说明                            | 类型      | 默认值 |
+| ------------------- | ------------------------------- | --------- | ------ |
+| actions             | 菜单选项                        | _Array_   | `[]`   |
+| cancelText          | 取消按钮文字                    | _string_  | -      |
+| closeOnClickAction  | 是否在点击选项后关闭            | _boolean_ | `true` |
+| closeOnClickOverlay | 点击遮罩是否关闭菜单            | _boolean_ | `true` |
+| confirmText         | 确认按钮文字                    | _string_  | -      |
+| description         | 选项上方的描述信息              | _string_  | -      |
+| overlay             | 是否显示遮罩层                  | _boolean_ | -      |
+| round               | 是否显示圆角                    | _boolean_ | `true` |
+| safeAreaInsetBottom | 是否为 iPhoneX 留出底部安全距离 | _boolean_ | `true` |
+| show                | 是否显示动作面板                | _boolean_ | -      |
+| title               | 标题                            | _string_  | -      |
+| zIndex              | z-index 层级                    | _number_  | `100`  |
+
+### Events
+
+| 事件名         | 说明                                     | 参数                         |
+| -------------- | ---------------------------------------- | ---------------------------- |
+| onAfterEnter   | 遮罩进入后触发                           | -                            |
+| onAfterLeave   | 遮罩离开后触发                           | -                            |
+| onBeforeEnter  | 遮罩进入前触发                           | -                            |
+| onBeforeLeave  | 遮罩离开前触发                           | -                            |
+| onCancel       | 取消按钮点击时触发                       | -                            |
+| onClickOverlay | 点击遮罩层时触发                         | -                            |
+| onClose        | 关闭时触发                               | -                            |
+| onConfirm      | 确认按钮点击时触发                       | -                            |
+| onEnter        | 遮罩进入中触发                           | -                            |
+| onLeave        | 遮罩离开中触发                           | -                            |
+| onSelect       | 选中选项时触发，禁用或加载状态下不会触发 | event.detail: 选项对应的对象 |
+
+### actions
+
+`API`中的`actions`为一个对象数组，数组中的每一个对象配置每一列，每一列有以下`key`：
+
+| 键名             | 说明                                                                                                                                                          | 类型      | 默认值       |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------------ |
+| checked          | 是否为选中状态                                                                                                                                                | _boolean_ | -            |
+| className        | 为对应列添加额外的 class 类名                                                                                                                                 | _string_  | -            |
+| color            | 选项文字颜色                                                                                                                                                  | _string_  | -            |
+| disabled         | 是否为禁用状态                                                                                                                                                | _boolean_ | -            |
+| loading          | 是否为加载状态                                                                                                                                                | _boolean_ | -            |
+| name             | 标题                                                                                                                                                          | _string_  | -            |
+| subname          | 二级标题                                                                                                                                                      | _string_  | -            |
+
+### 外部样式类
+
+| 类名        | 说明                |
+| ----------- | ------------------- |
+| customClass | 根节点样式类        |
+| listClass   | `actions`容器样式类 |
+
+## 常见问题
+
+### ActionSheet 子组件使用 Slider 渲染定位异常，是什么情况？
+
+由于 `Slider` 组件在 `ActionSheet` 打开时可能尚未完全渲染，因此我们无法获取其 DOM，从而导致定位出现问题。解决方案是在 `ActionSheet` 的 `onAfterEnter` 事件回调之后再开始渲染 `Slider` 组件。这样，我们可以确保 `Slider` 能够在获取 DOM 时被正常渲染。请参考以下示例：
+
+```tsx
+import React from 'react';
+import { View, Text } from '@ray-js/ray';
+import { useDebounce } from 'ahooks';
+import { ActionSheet, Slider } from '@ray-js/smart-ui';
+import styles from './index.module.less';
+
+function Demo() {
+  const [ready, setReady] = React.useState(false);
+  const [currentNumber, setCurrentNumber] = React.useState(100);
+  const currentNumberForSlider = useDebounce(currentNumber, { wait: 500 });
+  const onActionSheetReady = React.useCallback(() => setReady(true), []);
+  const [showNumber, setShowNumber] = React.useState(false);
+  const onChange = React.useCallback(value => {
+    setCurrentNumber(value);
+  }, []);
+  const toggleActionSheetNumber = React.useCallback(() => setShowNumber(!showNumber), [showNumber]);
+
+  return (
+    <ActionSheet
+      show={showNumber}
+      title="Title"
+      cancelText="Action"
+      confirmText="Action"
+      onClose={toggleActionSheetNumber}
+      onCancel={toggleActionSheetNumber}
+      onConfirm={toggleActionSheetNumber}
+      onAfterEnter={onActionSheetReady}
+    >
+      <View className={styles['content-number']}>
+        <View className={styles['demo-header']}>
+          <Text className={styles['demo-text']}>{`${currentNumber}%`}</Text>
+        </View>
+        <View className={styles['demo-slider']}>
+          {ready && (
+            <Slider
+              minTrackRadius="8px"
+              minTrackHeight="45px"
+              maxTrackRadius="8px"
+              maxTrackHeight="45px"
+              value={currentNumberForSlider}
+              onChange={onChange}
+              thumbWidth={15}
+              thumbHeight={50}
+              thumbRadius={2}
+              thumbStyle={{
+                background: '#BBC5D4',
+                border: '2px solid #FFFFFF',
+                boxShadow: '0px 0px 2px 0px rgba(0, 0, 0, 0.5)',
+              }}
+            />
+          )}
+        </View>
+      </View>
+    </ActionSheet>
+  );
+}
+```

@@ -1,0 +1,41 @@
+@import '@tuya-miniapp/smart-ui/lib/common/index.css';
+
+.demo-block__title {
+  margin: 0;
+  padding: 20px 15px 15px;
+  color: var(--app-B6-N2, rgba(69, 90, 100, 0.6));
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.demo-block__card {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.demo-block--padding {
+  padding: 0 15px;
+}
+
+.demo-block--padding .demo-block__title {
+  padding-left: 0;
+}
+
+.container {
+  width: 100%;
+  padding: 0 32rpx;
+}
+
+.title {
+  font-family: PingFang SC;
+  font-size: 28rpx;
+  font-weight: 400;
+  line-height: 40rpx;
+  padding: 40rpx 0 32rpx;
+  color: var(--app-B1-N4, rgba(0, 0, 0, 0.3));
+  &::before {
+    margin-right: 6px;
+    font-weight: bold;
+    content: "·";
+  }
+}
