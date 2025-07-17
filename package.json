@@ -1,0 +1,84 @@
+{
+  "name": "@ray-js/smart-ui",
+  "version": "2.5.1",
+  "description": "轻量、可靠的智能小程序 UI 组件库",
+  "scripts": {
+    "syncMiniappData": "node ./build/syncMiniappData.js",
+    "dev": "tsc -w -p tsconfig.build.es.json",
+    "build": "rimraf dist && tsc -p tsconfig.build.es.json && tsc -p tsconfig.build.lib.json",
+    "build:tuya": "yarn build && cd ./example && ray build --target=tuya"
+  },
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "typings": "es/index.d.ts",
+  "files": [
+    "es",
+    "lib",
+    "package.json",
+    "README-zh_CN.md",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "@ray-js/smart-ui",
+    "ray",
+    "smart-ui",
+    "weapp"
+  ],
+  "license": "MIT",
+  "lint-staged": {
+    "*.{js,ts,md,json}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS --config commitlint.config.js",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "@ray-js/components-ty-slider": "^0.3.4",
+    "@tuya-miniapp/smart-ui": "^2.5.1",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@commitlint/cli": "^7.2.1",
+    "@commitlint/config-conventional": "^9.0.1",
+    "@ray-js/cli": "^1.5.44",
+    "@ray-js/code-sandbox": "^0.0.5",
+    "@ray-js/panel-sdk": "^1.13.0",
+    "@ray-js/ray": "^1.5.34",
+    "@tuya-miniapp/icons": "^2.1.0",
+    "@types/fs-extra": "^9.0.13",
+    "@types/lodash-es": "^4.17.12",
+    "@types/react": "^17.0.25",
+    "@types/react-dom": "^17.0.9",
+    "@types/wechat-miniprogram": "^3.4.0",
+    "ahooks": "^3.7.11",
+    "clsx": "^1.2.1",
+    "concurrently": "^8.2.2",
+    "core-js": "^3.23.5",
+    "eslint-config-tuya-panel": "^0.4.1",
+    "fast-glob": "^3.2.11",
+    "fs-extra": "^10.0.1",
+    "husky": "^9.0.11",
+    "js-base64": "^3.7.7",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.4.3",
+    "yorkie": "^2.0.0"
+  },
+  "maintainers": [
+    {
+      "name": "tuyafe",
+      "email": "tuyafe@tuya.com"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "src"
+  ],
+  "compilerOptions": {
+    "outDir": "es",
+    "target": "ES6",
+  },
+  "exclude": [
+    "node_modules",
+    "**/*.md"
+  ]
+}

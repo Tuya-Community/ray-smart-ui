@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": false,
+    "outDir": "dist",
+    "target": "ES6",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
+    "lib": [
+      "ES2015",
+      "ES2017",
+      "DOM"
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "@ray-js/smart-ui": ["./src/index.ts"],
+      "@/components": ["./example/src/components"],
+      "@/utils": ["./example/src/utils"],
+    },
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/../@types/dist/index.d.ts",
+      "./typings",
+      "./example"
+    ]
+  },
+  "include": [
+    "src",
+    "example"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.md"
+  ]
+}

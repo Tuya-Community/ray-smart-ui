@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "src"
+  ],
+  "compilerOptions": {
+    "outDir": "lib",
+    "target": "ES5",
+  },
+  "exclude": [
+    "node_modules",
+    "**/*.md"
+  ]
+}

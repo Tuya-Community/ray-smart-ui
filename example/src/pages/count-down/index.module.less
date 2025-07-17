@@ -1,0 +1,45 @@
+:global(.smart-count-down) {
+  margin: 0 16px 10px;
+}
+
+.item {
+  display: inline-block;
+  width: 22px;
+  margin-right: 5px;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  background-color: #1989fa;
+  border-radius: 2px;
+}
+
+.row {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid var(--app-B6-N7, rgba(0, 0, 0, 0.1));
+
+  .btn {
+    flex: 1;
+    background-color: var(--app-B3, #fff);
+    padding: 16px;
+    box-sizing: border-box;
+    flex-direction: column;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--app-B6-N7, rgba(0, 0, 0, 0.1));
+    font-size: 12px;
+    color: var(--app-B6-N2, #666);
+
+    & > view {
+      margin-top: 10px;
+    }
+
+    &:last-child {
+      border: 0 !important;
+    }
+  }
+}
