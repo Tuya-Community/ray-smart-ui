@@ -82,12 +82,12 @@ $ yarn
 
 ## 相关链接
 
-[SmartUI 组件库官网](https://developer.tuya.com/material/smartui?comId=help-getting-started)  
+[SmartUI 组件库官网](https://developer.tuya.com/material/smartui?comId=help-getting-started&lang=zh)  
 [SmartUI GitHub](https://github.com/Tuya-Community/ray-smart-ui)
 [MiniApp SmartUI GitHub](https://github.com/Tuya-Community/miniapp-smart-ui)
 [小程序社区论坛](https://www.tuyaos.com/viewforum.php?f=10)
 [Ray 官网](https://developer.tuya.com/cn/miniapp)  
-[Ray 物料市场](https://developer.tuya.com/material/library_oHEKLjj0/) 
+[Ray 物料市场](https://developer.tuya.com/material/library_oHEKLjj0/?lang=zh) 
 [物料和模板对外源码集](https://github.com/Tuya-Community/tuya-ray-materials) 
 
 
