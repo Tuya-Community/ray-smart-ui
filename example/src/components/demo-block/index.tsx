@@ -2,6 +2,7 @@
 import React from 'react';
 import { View, Text } from '@ray-js/ray';
 import './index.less';
+import Strings from '../../i18n';
 
 interface Props {
   className?: string;
@@ -31,7 +32,9 @@ export const DemoBlock: React.FC<Props> = ({ className = '', title, padding, car
       {!!title && (
         <View className="demo-block__title">
           {title}
-          {isInWeb && <Text className="demo-block-web-tips">(点击聚焦文档)</Text>}
+          {isInWeb && (
+            <Text className="demo-block-web-tips">({Strings.getLang('focusDocument')})</Text>
+          )}
         </View>
       )}
       {card ? <View className="demo-block__card">{children}</View> : children}

@@ -477,6 +477,7 @@ export default {
     tab: 'Tab',
     navBar: 'NavBar',
     sidebar: 'Sidebar',
+    focusDocument: 'Click to focus on the document',
     indexBar: 'IndexBar',
     grid: 'Grid',
     navigate: 'Navigation Component',
@@ -1130,5 +1131,6 @@ export default {
     popUpOnTheRightSide: '右侧弹出',
     vertical: '竖向',
     upsideDown: '上下颠倒',
+    focusDocument: '点击聚焦文档',
   },
 };
