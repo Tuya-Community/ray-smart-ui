@@ -57,6 +57,12 @@ export interface SmartBottomSheetProps {
    * @version 2.5.0
    */
   contentHeight?: number | string;
+  /**
+   * 组件整体最大高度 用于自动撑开高度情况
+   * @version 2.6.0
+   * @default 50%
+   */
+  maxHeight?: number | string;
 }
 
 export interface SmartBottomSheetEvents extends SmartTransitionEvents {
