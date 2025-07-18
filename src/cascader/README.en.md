@@ -19,10 +19,10 @@ import { Cascader } from '@ray-js/smart-ui';
 
 ### Basic Usage
 
-The cascading selection component can be used in conjunction with the Field and Popup components, as shown in the example below:
+The cascading selection component can be used in conjunction with the Field and BottomSheet components, as shown in the example below:
 
 ```jsx
-import { Cascader, Field, Popup } from '@ray-js/smart-ui';
+import { Cascader, Field, BottomSheet } from '@ray-js/smart-ui';
 import React, { useCallback, useState } from 'react';
 
 const options = [
@@ -80,7 +80,7 @@ export default function Demo() {
         placeholder="Please select a region"
         onTap={showArea}
       />
-      <Popup show={visible} round position="bottom">
+      <BottomSheet show={visible} maxHeight="100%">
         {visible && (
           <Cascader
             value={value}
@@ -90,7 +90,7 @@ export default function Demo() {
             onFinish={onFinish}
           />
         )}
-      </Popup>
+      </BottomSheet>
     </>
   );
 }
@@ -101,7 +101,7 @@ export default function Demo() {
 Set the highlight color for the selected state using the `active-color` property.
 
 ```jsx
-import { Cascader, Field, Popup } from '@ray-js/smart-ui';
+import { Cascader, Field, BottomSheet } from '@ray-js/smart-ui';
 import React, { useCallback, useState } from 'react';
 
 const options = [
@@ -159,7 +159,7 @@ export default function Demo() {
         placeholder="Please select a region"
         onTap={showArea}
       />
-      <Popup show={visible} round position="bottom">
+      <BottomSheet show={visible} maxHeight="100%">
         {visible && (
           <Cascader
             activeColor="#ee0a24"
@@ -170,7 +170,7 @@ export default function Demo() {
             onFinish={onFinish}
           />
         )}
-      </Popup>
+      </BottomSheet>
     </>
   );
 }

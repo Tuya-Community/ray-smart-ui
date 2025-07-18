@@ -19,7 +19,7 @@ import { Cascader } from '@ray-js/smart-ui';
 
 ### 基础用法
 
-级联选择组件可以搭配 Field 和 Popup 组件使用，示例如下：
+级联选择组件可以搭配 Field 和 BottomSheet 组件使用，示例如下：
 
 ```jsx
 import { Cascader, Field, Popup } from '@ray-js/smart-ui';
@@ -101,7 +101,7 @@ export default function Demo() {
 通过 `active-color` 属性来设置选中状态的高亮颜色。
 
 ```jsx
-import { Cascader, Field, Popup } from '@ray-js/smart-ui';
+import { Cascader, Field, BottomSheet } from '@ray-js/smart-ui';
 import React, { useCallback, useState } from 'react';
 
 const options = [
@@ -159,7 +159,7 @@ export default function Demo() {
         placeholder="请选择地区"
         onTap={showArea}
       />
-      <Popup show={visible} round position="bottom">
+      <BottomSheet show={visible} maxHeight="100%">
         {visible && (
           <Cascader
             activeColor="#ee0a24"
@@ -170,7 +170,7 @@ export default function Demo() {
             onFinish={onFinish}
           />
         )}
-      </Popup>
+      </BottomSheet>
     </>
   );
 }
@@ -181,7 +181,7 @@ export default function Demo() {
 可以监听 `change` 事件并动态设置 `options`，实现异步加载选项。
 
 ```jsx
-import { Cascader, Field, Popup } from '@ray-js/smart-ui';
+import { Cascader, Field, BottomSheet } from '@ray-js/smart-ui';
 import React, { useCallback, useState } from 'react';
 
 const asyncOptions2 = [
@@ -237,7 +237,7 @@ export default function Demo() {
         placeholder="请选择地区"
         onTap={showArea}
       />
-      <Popup show={visible} round position="bottom">
+      <BottomSheet show={visible} maxHeight="100%">
         {visible && (
           <Cascader
             value={value}
@@ -248,7 +248,7 @@ export default function Demo() {
             onChange={loadDynamicOptions}
           />
         )}
-      </Popup>
+      </BottomSheet>
     </>
   );
 }
