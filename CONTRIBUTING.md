@@ -1,12 +1,14 @@
-> 请先阅读 [《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way)、 和 [《如何有效地报告 Bug》](http://www.chiark.greenend.org.uk/%7Esgtatham/bugs-cn.html)，这将帮助你更好地提交问题和得到反馈。
+# 参与贡献
+
+> 请先阅读[《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way)和[《如何有效地报告 Bug》](http://www.chiark.greenend.org.uk/%7Esgtatham/bugs-cn.html)，这将帮助你更好地提交问题和得到反馈。
 
 ## 🤝 参与共建
 
 ### 1. 环境准备
 
-> 需要安装 [Node.js](https://nodejs.org/en/) 18及以上版本, 建议 `v18.20.4`
+> 需要安装 [Node.js](https://nodejs.org/en/) 18 及以上版本，建议 `v18.20.4`
 
-首先把 SmartUI 仓库 fork 一份到自己的 Github，然后从个人仓库把项目 clone 到本地，项目默认是 `master` 分支。
+首先把 SmartUI 仓库 fork 一份到自己的 GitHub，然后从个人仓库把项目 clone 到本地，项目默认是 `master` 分支。
 
 然后依次在项目根目录运行以下命令：
 
@@ -17,21 +19,21 @@ $ yarn
 $ yarn dev
 ```
 
-运行完上述命令后，使用涂鸦IDE 倒入项目的 example 目录即可
+运行完上述命令后，使用涂鸦 IDE 导入项目的 example 目录即可
 
 ### 2. 发布周期
 
-目前约定 **每周二** 和 **每周四** 作为常规发布日，如有紧急问题需发布请提前至少一天通知在群内告知维护人员报备。
+目前约定**每周二**和**每周四**作为常规发布日，如有紧急问题需发布请提前至少一天通知在群内告知维护人员报备。
 
 ### 3. 分支管理
 
 > 我们长期维护两个分支 `master` 和 `release/2.x`，其中 `master` 分支用来发布正式版本，`release/2.x` 分支用来发布 beta 版本。  
-> `release/1.x` 分支为 1.0 版本的代码 除紧急bug以外，暂时不在维护
+> `release/1.x` 分支为 1.0 版本的代码，除紧急 bug 以外，暂时不在维护
 
 - 如果你要修一个 bug，那么请基于 `hotfix` 分支来做，并提 merge request 到 `release/2.x`，我们会按发布周期从 `release/2.x` 发布一个 patch 版本。
 - 如果你要提一个增加新功能的 merge request，那么请基于 `feature` 分支来做，并提 merge request 到 `release/2.x`，我们会按发布周期从 `release/2.x` 发布一个包含新特性的 minor 版本。
 
-- 如果你要对历史的1.0版本进行迭代修复，请基于 `release/1.x` 分支来做，并提 merge request 到 `release/1.x`分支
+- 如果你要对历史的 1.0 版本进行迭代修复，请基于 `release/1.x` 分支来做，并提 merge request 到 `release/1.x` 分支
 
 ## 🐞 报告 Bug
 

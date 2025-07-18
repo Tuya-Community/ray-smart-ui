@@ -50,7 +50,7 @@ Considering the project's on-demand introduction and overall size issues, the ab
    * Use ESModule import syntax for import
    * **SmartUI version 2.4.0 and above**
 
-2. Simply introduce SmartUIAutoImport in the project file ray.config.ts:
+2. Simply introduce `SmartUIAutoImport` in the project file `ray.config.ts`:
 ```ts
 import { RayConfig } from '@ray-js/types';
 import SmartUIAutoImport from '@ray-js/smart-ui/lib/auto-import';
@@ -64,7 +64,7 @@ module.exports = config;
 
 ```!warning: 注意
 The on-demand import plugin will not parse content inside node_modules, so if you reference or develop SmartUI secondary encapsulation npm packages, you need on-demand import resources internally; otherwise, it will cause a full import of the SmartUI component library!
-You can use ray version 1.8.0-beta.12, which adds the ray doctor command to check the health of project dependencies!
+You can use Ray version 1.8.0-beta.12, which adds the Ray doctor command to check the health of project dependencies!
 ```
 
 ## Preview in Developer Tools
@@ -83,23 +83,20 @@ Open [Tuya MiniApp Tools](https://developer.tuya.com/cn/miniapp/devtools/tools) 
 ## Related Links
 
 [SmartUI Component Library Official Website](https://developer.tuya.com/material/smartui?comId=help-getting-started)  
-[SmartUI github](https://github.com/Tuya-Community/ray-smart-ui)  
-[Miniapp SmartUI github](https://github.com/Tuya-Community/miniapp-smart-ui)  
-[Mini Program Community Forum](https://www.tuyaos.com/viewforum.php?f=10)   
-[Ray Official Website](https://developer.tuya.com/cn/miniapp)  
-[Ray Material Market](https://developer.tuya.com/material/library_oHEKLjj0/)   
-[Materials & Templates Open Source Collection](https://github.com/Tuya-Community/tuya-ray-materials)  
+[SmartUI GitHub](https://github.com/Tuya-Community/ray-smart-ui)  
+[MiniApp SmartUI GitHub](https://github.com/Tuya-Community/miniapp-smart-ui)  
+[MiniApp Community Forum](https://www.tuyaos.com/viewforum.php?f=37)   
+[Ray Official Website](https://developer.tuya.com/en/miniapp)  
+[Ray Material Market](https://developer.tuya.com/material/library_oHEKLjj0/) 
+[Public Source Collection of Materials and Templates](https://github.com/Tuya-Community/tuya-ray-materials) 
 
 ## Changelog
 
+> This project follows the [Angular Style Commit Message Conventions](https://gist.github.com/stephenparish/9941e89d80e2bc58a153). For the update log, please refer to [Release](https://github.com/Tuya-Community/ray-smart-ui/releases) (starting from version 2.5.1)
+
 [Official Website Changelog](https://developer.tuya.com/material/smartui?comId=help-changelog)
 
-This project follows the [Angular Style Commit Message Conventions](https://gist.github.com/stephenparish/9941e89d80e2bc58a153). For the update log, please refer to [Release](https://github.com/Tuya-Community/ray-smart-ui/releases) (starting from version 2.5.1)
-
-## Development Communication
-
-[Official WeChat Group](https://github.com/Tuya-Community/ray-smart-ui/issues/1)
 
 ## License
 
-This project is based on the [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89) license. Feel free to enjoy and participate in open source.
+This project is licensed under the [MIT](https://en.wikipedia.org/wiki/MIT_License) license. Please feel free to enjoy and participate in open-source.

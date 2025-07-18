@@ -16,7 +16,7 @@
 
 ## 使用之前
 
-使用 Smart UI 前，请确保你已经学习过智能小程序官方的 [Ray 开发概述](https://developer.tuya.com/cn/miniapp/develop/ray/guide/overview) 和 [Ray 组件介绍](https://developer.tuya.com/cn/miniapp/develop/ray/framework/component)。
+使用 Smart UI 前，请确保你已经学习过智能小程序官方的 [Ray 开发概述](https://developer.tuya.com/cn/miniapp/develop/ray/guide/overview)和 [Ray 组件介绍](https://developer.tuya.com/cn/miniapp/develop/ray/framework/component)。
 
 ## 安装
 
@@ -44,12 +44,12 @@ export default function Demo() {
 考虑到项目的按需引入以及整体体积问题，上面的引入方式会导致部分组件样式文件残留影响打包产物体积，所以我们推荐使用按需引入插件，其会自动将 `import { Button } from '@ray-js/smart-ui';` 引入方式解析成 `import { Button } from '@ray-js/smart-ui/es/button';`。
 
 1. 环境要求
-   * \>= @ray-js/cli@1.7.4
-   * esbuild 构建模式 (不支持 webpack 模式)
+   * >= @ray-js/cli@1.7.4
+   * esbuild 构建模式（不支持 webpack 模式）
    * 使用 ESModule import 语法的导入
    * **SmartUI 版本 2.4.0 及以上**
 
-2. 在项目文件 ray.config.ts 内引入 SmartUIAutoImport 即可：
+2. 在项目文件 `ray.config.ts` 内引入 `SmartUIAutoImport` 即可：
 ```ts
 import { RayConfig } from '@ray-js/types';
 import SmartUIAutoImport from '@ray-js/smart-ui/lib/auto-import';
@@ -63,7 +63,7 @@ module.exports = config;
 
 ```!warning:注意
 按需引入插件不会解析 node_modules 内的内容，所以如果引用了或者开发 SmartUI 二次封装 npm 包内部需要按需引入资源，否则会导致 SmartUI 组件库全量引入！  
-可以使用 ray 1.8.0-beta.12 版本，新增 ray doctor 命令用于检测项目依赖健康度！
+可以使用 Ray 1.8.0-beta.12 版本，新增 Ray doctor 命令用于检测项目依赖健康度！
 ```
 
 ## 在开发者工具中预览
@@ -77,30 +77,26 @@ $ yarn
 
 ## 基础库版本
 
-@ray-js/smart-ui 从智能小程序基础库 `2.19.0` 版本 `@ray-js/ray@^1.5.1` 及 IDE `0.6.5` 开始提供稳定的支持。
+@ray-js/smart-ui 从智能小程序基础库 `2.19.0` 版本、`@ray-js/ray@^1.5.1` 及 IDE `0.6.5` 开始提供稳定的支持。
 
 
 ## 相关链接
 
 [SmartUI 组件库官网](https://developer.tuya.com/material/smartui?comId=help-getting-started)  
-[SmartUI github](https://github.com/Tuya-Community/ray-smart-ui)  
-[Miniapp SmartUI github](https://github.com/Tuya-Community/miniapp-smart-ui)  
-[小程序社区论坛](https://www.tuyaos.com/viewforum.php?f=10)   
+[SmartUI GitHub](https://github.com/Tuya-Community/ray-smart-ui)
+[MiniApp SmartUI GitHub](https://github.com/Tuya-Community/miniapp-smart-ui)
+[小程序社区论坛](https://www.tuyaos.com/viewforum.php?f=10)
 [Ray 官网](https://developer.tuya.com/cn/miniapp)  
-[Ray 物料市场](https://developer.tuya.com/material/library_oHEKLjj0/)   
-[物料&模版 对外源码集](https://github.com/Tuya-Community/tuya-ray-materials)  
+[Ray 物料市场](https://developer.tuya.com/material/library_oHEKLjj0/) 
+[物料和模板对外源码集](https://github.com/Tuya-Community/tuya-ray-materials) 
 
 
 ## 更新日志
 
+> 本项目遵从 [Angular Style Commit Message Conventions](https://gist.github.com/stephenparish/9941e89d80e2bc58a153)，更新日志请查阅 [Release](https://github.com/Tuya-Community/ray-smart-ui/releases)（从 2.5.1 版本开始） 
+
 [官网更新日志](https://developer.tuya.com/material/smartui?comId=help-changelog)  
 
-本项目遵从 [Angular Style Commit Message Conventions](https://gist.github.com/stephenparish/9941e89d80e2bc58a153)，更新日志请查阅 [Release](https://github.com/Tuya-Community/ray-smart-ui/releases) (从2.5.1版本开始)   
-
-
-## 开发交流
-
-[官方微信交流群](https://github.com/Tuya-Community/ray-smart-ui/issues/1)
 
 ## 开源协议
 
