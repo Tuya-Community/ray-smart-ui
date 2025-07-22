@@ -7,7 +7,7 @@ English | [简体中文](./README-zh_CN.md)
 
 ## Introduction
 
-`@ray-js/smart-ui` is a React component library based on the `Ray` framework and `@tuya-miniapp/smart-ui`, designed to provide lightweight and reliable UI components that meet the mobile design specifications of Smart MiniApp. By combining `Ray's` specification adaptation middleware and built-in complete TS types, we offer a full set of React components suitable for Smart MiniApp, enabling developers to quickly build mobile applications that comply with design specifications.
+`@ray-js/smart-ui` is a React component library based on the `Ray` framework and `@tuya-miniapp/smart-ui`, designed to provide lightweight and reliable UI components that meet the mobile design specifications of Tuya MiniApp. By combining `Ray's` specification adaptation middleware and built-in complete TS types, we offer a full set of React components suitable for Tuya MiniApp, enabling developers to quickly build mobile applications that comply with design specifications.
 
 ## Preview
 
@@ -17,7 +17,7 @@ Scan the QR code below to experience the component library examples.
 
 ## Before Using
 
-Before using Smart UI, make sure you have studied the official Smart MiniApp [Ray Development Overview](https://developer.tuya.com/cn/miniapp/develop/ray/guide/overview) and [Ray Component Introduction](https://developer.tuya.com/cn/miniapp/develop/ray/framework/component).
+Before using Smart UI, make sure you have studied the official Tuya MiniApp [Ray Development Overview](https://developer.tuya.com/cn/miniapp/develop/ray/guide/overview) and [Ray Component Introduction](https://developer.tuya.com/cn/miniapp/develop/ray/framework/component).
 
 ## Installation
 
@@ -78,7 +78,7 @@ Open [Tuya MiniApp Tools](https://developer.tuya.com/cn/miniapp/devtools/tools) 
 
 ## Basic Library Version
 
-@ray-js/smart-ui provides stable support starting from Smart MiniApp basic library version `2.19.0`, `@ray-js/ray@^1.5.1`, and IDE `0.6.5`.
+@ray-js/smart-ui provides stable support starting from Tuya MiniApp basic library version `2.19.0`, `@ray-js/ray@^1.5.1`, and IDE `0.6.5`.
 
 ## Related Links
 
