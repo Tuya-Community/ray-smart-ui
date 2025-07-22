@@ -87,7 +87,7 @@ Open [Tuya MiniApp Tools](https://developer.tuya.com/cn/miniapp/devtools/tools) 
 [MiniApp SmartUI GitHub](https://github.com/Tuya-Community/miniapp-smart-ui)  
 [MiniApp Community Forum](https://www.tuyaos.com/viewforum.php?f=37)   
 [Ray Official Website](https://developer.tuya.com/en/miniapp)  
-[Ray Material Market](https://developer.tuya.com/material/library_oHEKLjj0?lang=en) 
+[Ray Material Market](https://developer.tuya.com/material/library_oHEKLjj0?lang=en)  
 [Public Source Collection of Materials and Templates](https://github.com/Tuya-Community/tuya-ray-materials) 
 
 ## Changelog
