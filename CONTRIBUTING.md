@@ -27,11 +27,11 @@ $ yarn dev
 
 ### 3. 分支管理
 
-> 我们长期维护两个分支 `master` 和 `release/2.x`，其中 `master` 分支用来发布正式版本，`release/2.x` 分支用来发布 beta 版本。  
+> 我们长期维护两个分支 `main` 和 `release/2.x`，其中 `main` 分支用来发布正式版本，`release/2.x` 分支用来发布 beta 版本。  
 > `release/1.x` 分支为 1.0 版本的代码，除紧急 bug 以外，暂时不在维护
 
-- 如果你要修一个 bug，那么请基于 `hotfix` 分支来做，并提 merge request 到 `release/2.x`，我们会按发布周期从 `release/2.x` 发布一个 patch 版本。
-- 如果你要提一个增加新功能的 merge request，那么请基于 `feature` 分支来做，并提 merge request 到 `release/2.x`，我们会按发布周期从 `release/2.x` 发布一个包含新特性的 minor 版本。
+- 如果你要修一个 bug，那么请基于 `release/2.x` 分支创建一个 `fix/*` 的开发分支，并提 merge request 到 `release/2.x`；如果被合并我们会实时发布 `beta` 版本，并会按发布周期合并到 `main` 分支后发布一个 patch 版本。
+- 如果你要提一个增加新功能的 merge request，那么请基于 `release/2.x` 分支创建一个 `feat/*` 的开发分支，并提 merge request 到 `release/2.x`；如果被合并我们会实时发布一个 `beta` 版本，并会按发布周期合并到 `main` 分支后发布一个 minor 版本。
 
 - 如果你要对历史的 1.0 版本进行迭代修复，请基于 `release/1.x` 分支来做，并提 merge request 到 `release/1.x` 分支
 
