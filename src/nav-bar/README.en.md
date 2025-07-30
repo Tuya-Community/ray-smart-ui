@@ -373,4 +373,3 @@ The component offers the following CSS variables for custom styles. For usage, p
 | --nav-bar-home-font-weight | _600_ | Navigation bar home font weight |
 | --nav-bar-home-text-color | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Navigation bar home text color |
 | --nav-bar-right-text-color `v2.5.1`     | _var(--app-B2-N1, rgba(0, 0, 0, 1))_   | Text color on the right side of the navigation bar |
-| --nav-bar-title-max-width `v2.6.0`     | _56%_   | Width of the Navigation Bar Title |

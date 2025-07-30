@@ -373,4 +373,3 @@ export default function Demo() {
 | --nav-bar-home-font-weight    | _600_                                  | 导航栏首页字重 |
 | --nav-bar-home-text-color     | _var(--app-B2-N1, rgba(0, 0, 0, 1))_   | 导航栏首页文字颜色 |
 | --nav-bar-right-text-color `v2.5.1`     | _var(--app-B2-N1, rgba(0, 0, 0, 1))_   | 导航栏右侧文字颜色 |
-| --nav-bar-title-max-width `v2.6.0`     | _56%_   | 导航栏标题的宽度 |
