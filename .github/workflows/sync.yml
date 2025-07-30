@@ -1,6 +1,10 @@
 name: Sync README & ConfigType
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+      - release/*
   
 jobs:
   sync_code:
