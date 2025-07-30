@@ -59,16 +59,17 @@ export type ThemeVars = Record<
 
 const getCSSVarJson = () => {
   return new Promise((resolve, reject) => {
-    fetch(
-      `https://static1.tuyacn.com/static/txp-miniapp-SmartUi/2.x/css-var.json?t=${new Date().getTime()}`
-    ).then(async response => {
-      if (!response.ok) {
-        reject(new Error('Network response was not ok'));
-        return;
-      }
-      const res = await response.json();
-      resolve(res);
-    });
+    try {
+      const CSS_VAR_PATH = path.join(__dirname, './miniapp-smart-ui/docs/css-var.json');
+      const data = fs.readFileSync(CSS_VAR_PATH, 'utf8');
+      const jsonData = JSON.parse(data);
+      console.log('JSON Data:', jsonData);
+      resolve(jsonData);
+      // 执行更多操作
+    } catch (err) {
+      console.error('Error reading or parsing file:', err);
+      reject(err);
+    }
   });
 };
 
@@ -81,3 +82,13 @@ function getSubDirs(dir) {
 }
 
 module.exports = transCSSVarToConfigTypes;
+
+try {
+  const CSS_VAR_PATH = path.join(__dirname, '../build/css-var.json');
+  const data = fs.readFileSync(CSS_VAR_PATH, 'utf8');
+  const jsonData = JSON.parse(data);
+  console.log('JSON Data:', jsonData);
+  // 执行更多操作
+} catch (err) {
+  console.error('Error reading or parsing file:', err);
+}
