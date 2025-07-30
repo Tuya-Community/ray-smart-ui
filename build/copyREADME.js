@@ -38,19 +38,12 @@ const getComponents = () => {
 
 const getComponentDetail = (name, isEn) => {
   return new Promise((resolve, reject) => {
-    fetch(
-      `https://static1.tuyacn.com/static/txp-miniapp-SmartUi/2.x/${name}-${
-        isEn ? 'README.en' : 'README'
-      }.md?t=${new Date().getTime()}`
-    ).then(async response => {
-      if (!response.ok) {
-        console.error(`获取 ${name} 组件 ${isEn ? 'README.en' : 'README'} 文件 发生错误`);
-        reject(new Error('Network response was not ok'));
-        return;
-      }
-      const res = await response.text();
-      resolve(res);
-    });
+    const CSS_VAR_PATH = path.join(
+      __dirname,
+      `../miniapp-smart-ui/packages/${name}/${isEn ? 'README.en' : 'README'}.md`
+    );
+    const data = fs.readFileSync(CSS_VAR_PATH, 'utf8');
+    resolve(data);
   });
 };
 
