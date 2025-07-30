@@ -236,6 +236,12 @@ export interface SmartPickerExternalClassName extends SmartBaseExternalClassName
    * 列样式类
    */
   columnClass?: string;
+
+  /**
+   * @description 分割线样式
+   * @version 2.6.0
+   */
+  hairlineClass?: string;
 }
 
 export type SmartPicker = SmartComponent<
