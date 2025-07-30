@@ -34,7 +34,9 @@ jobs:
         git clone https://github.com/Tuya-Community/miniapp-smart-ui.git
       env:
         GITHUB_TOKEN: ${{ secrets.MINIAPP_TOKEN }}
-    - name: Into miniapp
+    - name: Sync Code
       run: |
-        cd miniapp-smart-ui
-        ls
+        yarn syncMiniappData
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: ${{ github.ref_name }}
