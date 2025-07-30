@@ -402,6 +402,7 @@ type LoadingThemeVars =
   | 'loadingSpinnerAnimationDuration';
 
 type NavBarThemeVars =
+  | 'navBarTitleMaxWidth'
   | 'navBarHeight'
   | 'navBarRoundBorderRadius'
   | 'navBarRoundMinHeight'
