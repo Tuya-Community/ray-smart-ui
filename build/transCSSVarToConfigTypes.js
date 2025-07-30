@@ -60,7 +60,7 @@ export type ThemeVars = Record<
 const getCSSVarJson = () => {
   return new Promise((resolve, reject) => {
     try {
-      const CSS_VAR_PATH = path.join(__dirname, './miniapp-smart-ui/docs/css-var.json');
+      const CSS_VAR_PATH = path.join(__dirname, '../miniapp-smart-ui/docs/css-var.json');
       const data = fs.readFileSync(CSS_VAR_PATH, 'utf8');
       const jsonData = JSON.parse(data);
       console.log('JSON Data:', jsonData);
