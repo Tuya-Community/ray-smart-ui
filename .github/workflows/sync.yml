@@ -1,0 +1,35 @@
+name: Sync README & ConfigType
+
+on: [push]
+  
+jobs:
+  publish_beta:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '22'
+        cache: 'yarn'
+        registry-url: 'https://registry.npmjs.org'
+
+    - name: Configure Git Identity
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+
+    - name: Install Dependencies
+      run: yarn install --frozen-lockfile
+
+    - name: build
+      run: yarn build
+
+    - name: Get miniapp
+      run: |
+        git clone https://github.com/Tuya-Community/miniapp-smart-ui.git
+        cd miniapp-smart-ui
