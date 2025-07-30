@@ -57,7 +57,7 @@ const data = {
     {
       values: new Array(100).fill(1).map((x, i) => i),
       style: { flex: 'none', width: 'auto', minWidth: '61px' },
-      fontStyle: { fontWeight: 'bold' },
+      fontStyle: { fontSize: '16px' },
     },
     {
       values: ['.'],
@@ -128,7 +128,7 @@ export default function Demo() {
         <Picker
           columns={data.column5}
           activeStyle={{
-            color: 'red',
+            color: 'rgb(135, 180, 244)',
           }}
           customClass={styles.picker5}
           onChange={onChangeNum}
