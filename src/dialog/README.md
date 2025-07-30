@@ -370,7 +370,7 @@ export default function Demo() {
 | --dialog-small-screen-width | _90%_ | 小屏幕弹窗宽度 |
 | --dialog-font-size | _16px_ | 对话框字体大小 |
 | --dialog-border-radius | _16px_ | 圆角半径 |
-| --dialog-background-color | _var(--app-B4, #ffffff)_ | 背景颜色 |
+| --dialog-background-color | _var(--smart-ui-dialog-background, rgba(255, 255, 255, 1))_ | 背景颜色 |
 | --dialog-header-font-color | _var(--app-B4-N1, rgba(0, 0, 0, 1))_ | 标题字体颜色 |
 | --dialog-header-font-weight | _400_ | 标题字体粗细 |
 | --dialog-header-line-height | _24px_ | 标题行高 |

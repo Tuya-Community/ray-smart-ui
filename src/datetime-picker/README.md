@@ -373,12 +373,12 @@ export default function Demo() {
 | value | 当前选中值 | _string \| number \| Date_ | - |
 | visibleItemCount | 可见的选项个数 | _number_ | `6` |
 | formatterMap `v2.2.0` | 字符串替换(`type` 可选值为 `year`, `month`, `day`, `hour`, `minute`) | _Record<type, string \| Record<string, string>>_ | - |
-| changeAnimation `v2.2.0` | 组件选择值改变时是否需要动画过度效果 | _boolean_ | `true` |
-| is12HourClock `v2.2.0` | 当设置 `type: 'time'` 时，此属性可开启12小时选择模式 | _boolean_ | `false` |
+| changeAnimation `v2.2.0` | 组件受数据驱动选择值改变时是否需要动画过度效果（不包含手指交互滚动的动画） | _boolean_ | `false` |
+| is12HourClock `v2.6.0` | 当设置 `type: 'time'` 时，此属性可开启12小时选择模式 | _boolean_ | `false` |
 | amText `v2.2.0` | 12小时选择模式时上午的文案 | _string_ | `AM` |
 | pmText `v2.2.0` | 12小时选择模式时下午的文案 | _string_ | `PM` |
 | columnsOrder `v2.2.0` | 设置列的顺序，同`flex order`属性，只是从样式角度修改列的顺序，逻辑还是不变 | _string[]_ | `[]` |
-| animationTime `v2.3.7` | 过渡动画以及选择回调延迟的时间(单位ms) | _number_ | `800` |
+| animationTime `v2.3.7` | 过渡动画以及选择回调延迟的时间(单位ms) | _number_ | `800` `v2.3.7` `300` `v2.6.0` |
 | columnStyles `v2.3.7` | 任意列的样式 | _Record\<string, string>_ | - |
 | fontStyles `v2.3.7` | 任意列的字体样式 | _Record\<string, string>_ | - |
 | activeStyle `v2.3.7` | 选中项的样式 | _string_ | - |
@@ -429,4 +429,10 @@ export default function Demo() {
 
 ### 样式变量
 
-请参考 picker 组件文档说明 - 样式变量
+其他CSS变量请参考 picker 组件文档说明 - 样式变量
+
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](/material/smartui?comId=config-provider)。
+
+| 名称                          | 默认值                                 | 描述 |
+| ----------------------------- | -------------------------------------- | ---- |
+| --hairline-border-image-color `v2.6.0` | _var(--smart-ui-border-image, linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)))_ | 分割线的 border-image 样式 |

@@ -270,7 +270,7 @@ export default function Demo() {
 | adjustPosition | Whether the page is automatically pushed up when the keyboard pops up | _boolean_ | `true` |
 | alwaysEmbed `v1.9.2` | Force the input to stay in the same layer state. The default is that the input will switch to a different layer when focused (only effective on iOS) | _boolean_ | `false` |
 | arrowDirection | Arrow direction, optional values are `left` `up` `down` | _string_ | - |
-| autoFocus | Auto focus, raise the keyboard | _boolean_ | `false` |
+| autoFocus  `@deprecated Mini program not supported` | Auto focus, raise the keyboard | _boolean_ | `false` |
 | autosize | Whether to adapt the content height, only effective for textarea, <br>can pass an object, such as { maxHeight: 100, minHeight: 50 }, <br>unit is `px` | _boolean \| object_ | `false` |
 | border | Whether to show the inner border | _boolean_ | `false` |
 | center | Whether to vertically center the content | _boolean_ | `false` |

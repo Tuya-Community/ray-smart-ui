@@ -219,6 +219,7 @@ export default function Demo() {
 | safeAreaInsetBottomMin `v1.1.0` | Whether to reserve a minimum bottom safe distance for when safeArea is 0, only effective when safeAreaInsetBottom is true | _number_ | `16` |
 | show | Whether to display the action panel | _boolean_ | - |
 | title | Title | _string_ | - |
+| useTitleSlot `v2.6.0` | Whether to enable title slot | _boolean_ | `false` |
 | zIndex | z-index level | _number_ | `100` |
 | nativeDisabled `v2.5.0` | Whether to disable local gestures during the opening of the dialog; it will call `ty.nativeDisabled(true)` when the dialog starts the entrance animation, and call `ty.nativeDisabled(false)` at the end of the closing animation to restore the click ability of components on different layers. Since `ty.nativeDisabled` works globally, pay attention to whether to pass the `native-disabled` attribute and the timing of closing when multiple dialog components are opened simultaneously, to prevent the `native-disabled` attribute from being ineffective. | _boolean_ | `false` |
 
@@ -286,7 +287,7 @@ The component provides the following CSS variables for custom styles. For usage,
 | --action-sheet-description-line-height | _20px_ | Line height of the description text |
 | --action-sheet-item-background | _var(--app-B4, #ffffff)_ | Background color of the list |
 | --action-sheet-item-border-radius | _0_ | Border radius of the list |
-| --action-sheet-item-icon-margin | _16px 16px 0 0_ | Icon margin size of the list |
+| --action-sheet-item-icon-margin | _0px 16px 0 0_ | Icon margin size of the list |
 | --action-sheet-item-icon-color | _var(--app-M1, #3678e3)_ | Icon color of the list |
 | --action-sheet-item-icon-size | _28px_ | Icon size of the list |
 | --action-sheet-item-font-size | _16px_ | Font size of the list text |

@@ -46,6 +46,7 @@ type CommonThemeVars =
   | 'B6N7'
   | 'B6N8'
   | 'B6N9'
+  | 'borderImage'
   | 'black'
   | 'white'
   | 'gray1'
@@ -138,7 +139,44 @@ type CommonThemeVars =
   | 'hairlineBottomWidth'
   | 'hairlineSurroundWidth'
   | 'hairlineTopBottomWidth'
-  | 'hairlineColor';
+  | 'hairlineColor'
+  | 'hairlineBorderImageColor';
+
+type OverlayThemeVars = 'overlay' | 'overlayBackgroundColor';
+
+type DialogThemeVars =
+  | 'dialogBg'
+  | 'dialogWidth'
+  | 'dialogSmallScreenWidth'
+  | 'dialogFontSize'
+  | 'dialogBorderRadius'
+  | 'dialogBackgroundColor'
+  | 'dialogHeaderFontColor'
+  | 'dialogHeaderFontWeight'
+  | 'dialogHeaderLineHeight'
+  | 'dialogHeaderPaddingTop'
+  | 'dialogHeaderPadding'
+  | 'dialogHeaderIsolatedPadding'
+  | 'dialogMessagePadding'
+  | 'dialogMessageFontSize'
+  | 'dialogMessageLineHeight'
+  | 'dialogConfirmColor'
+  | 'dialogCancelColor'
+  | 'dialogConfirmFontWeight'
+  | 'dialogCancelFontWeight'
+  | 'dialogMessageMaxHeight'
+  | 'dialogMessageTextColor'
+  | 'dialogHasTitleMessageFontSize'
+  | 'dialogHasTitleMessageTextColor'
+  | 'dialogHasTitleMessagePaddingTop'
+  | 'dialogHeaderIconSize'
+  | 'dialogInputHeight'
+  | 'dialogInputBackgroundColor'
+  | 'dialogInputMargin'
+  | 'dialogInputPadding'
+  | 'dialogInputBorderRadius'
+  | 'dialogInputFontSize'
+  | 'dialogRoundButtonBorderRadius';
 
 type IconThemeVars = 'iconColor';
 
@@ -316,39 +354,6 @@ type CollapseThemeVars =
 
 type CountDownThemeVars = 'countDownTextColor' | 'countDownFontSize' | 'countDownLineHeight';
 
-type DialogThemeVars =
-  | 'dialogWidth'
-  | 'dialogSmallScreenWidth'
-  | 'dialogFontSize'
-  | 'dialogBorderRadius'
-  | 'dialogBackgroundColor'
-  | 'dialogHeaderFontColor'
-  | 'dialogHeaderFontWeight'
-  | 'dialogHeaderLineHeight'
-  | 'dialogHeaderPaddingTop'
-  | 'dialogHeaderPadding'
-  | 'dialogHeaderIsolatedPadding'
-  | 'dialogMessagePadding'
-  | 'dialogMessageFontSize'
-  | 'dialogMessageLineHeight'
-  | 'dialogConfirmColor'
-  | 'dialogCancelColor'
-  | 'dialogConfirmFontWeight'
-  | 'dialogCancelFontWeight'
-  | 'dialogMessageMaxHeight'
-  | 'dialogMessageTextColor'
-  | 'dialogHasTitleMessageFontSize'
-  | 'dialogHasTitleMessageTextColor'
-  | 'dialogHasTitleMessagePaddingTop'
-  | 'dialogHeaderIconSize'
-  | 'dialogInputHeight'
-  | 'dialogInputBackgroundColor'
-  | 'dialogInputMargin'
-  | 'dialogInputPadding'
-  | 'dialogInputBorderRadius'
-  | 'dialogInputFontSize'
-  | 'dialogRoundButtonBorderRadius';
-
 type FieldThemeVars =
   | 'fieldLabelColor'
   | 'fieldInputTextColor'
@@ -402,6 +407,7 @@ type LoadingThemeVars =
   | 'loadingSpinnerAnimationDuration';
 
 type NavBarThemeVars =
+  | 'navBarTitleMaxWidth'
   | 'navBarHeight'
   | 'navBarRoundBorderRadius'
   | 'navBarRoundMinHeight'
@@ -448,8 +454,6 @@ type NotifyThemeVars =
   | 'notifyDangerBackgroundColor'
   | 'notifyWarningBackgroundColor';
 
-type OverlayThemeVars = 'overlayBackgroundColor';
-
 type PickerThemeVars =
   | 'pickerBackgroundColor'
   | 'pickerPadding'
@@ -465,6 +469,7 @@ type PickerThemeVars =
   | 'pickerOptionUnitTextColor'
   | 'pickerOptionUnitMidSize'
   | 'pickerLoadingIconColor'
+  | 'pickerOptionSelectedFontWeightBold'
   | 'pickerLoadingMaskColor'
   | 'pickerOptionDisabledOpacity'
   | 'pickerOptionSelectedTextColor';
@@ -780,6 +785,8 @@ type PopoverThemeVars = 'popoverBackgroundColor' | 'popoverBoxShadow' | 'popover
  */
 export type ThemeVars = Record<
   | CommonThemeVars
+  | OverlayThemeVars
+  | DialogThemeVars
   | IconThemeVars
   | ActionSheetThemeVars
   | BottomSheetThemeVars
@@ -790,14 +797,12 @@ export type ThemeVars = Record<
   | CircleThemeVars
   | CollapseThemeVars
   | CountDownThemeVars
-  | DialogThemeVars
   | FieldThemeVars
   | ImageThemeVars
   | LoadingThemeVars
   | NavBarThemeVars
   | NoticeBarThemeVars
   | NotifyThemeVars
-  | OverlayThemeVars
   | PickerThemeVars
   | PopupThemeVars
   | ProgressThemeVars

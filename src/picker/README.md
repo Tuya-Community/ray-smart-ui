@@ -255,8 +255,8 @@ export default function Demo() {
 | valueKey | 选项对象中，文字对应的 key | _string_ | `text` |
 | visibleItemCount | 可见的选项个数 | _number_ | `5` |
 | activeStyle `v2.0.0` | 选中状态下的样式 | _string_ | `''` |
-| changeAnimation `v2.2.0` | 组件选择值改变时是否需要动画过度效果 | _boolean_ | `true` |
-| animationTime `v2.3.7` | 过渡动画以及选择回调延迟的时间(单位ms) | _number_ | `800` |
+| changeAnimation `v2.2.0` | 组件受数据驱动选择值改变时是否需要动画过度效果（不包含手指交互滚动的动画） | _boolean_ | `false` |
+| animationTime `v2.3.7` | 过渡动画以及选择回调延迟的时间(单位ms) | _number_ | `800` `v2.3.7` `300` `v2.6.0` |
 
 ### Events
 
@@ -292,6 +292,8 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数�
 | columnClass | 列样式类 |
 | customClass | 根节点样式类 |
 | toolbarClass | 顶部栏样式类 |
+| hairlineClass `v2.6.0` | 分割线的样式类 |
+
 
 ### 方法
 
@@ -332,4 +334,5 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数�
 | --picker-loading-mask-color | _var(--app-B4, #ffffff)_ | 加载遮罩颜色 |
 | --picker-option-disabled-opacity | _0.3_ | 禁用选项不透明度 |
 | --picker-option-selected-text-color | _var(--app-B6-N1, rgba(0, 0, 0, 1))_ | 选中选项文本颜色 |
-| --picker-option-unit-mid-size `v2.4.0` | _0_ | 单位和内容文案的间隔 |
+| --picker-option-unit-mid-size `v2.4.0` | _0_  `v2.4.0` _4px_ `v2.6.0` | 单位和内容文案的间隔 |
+| --picker-option-selected-font-weight-bold `v2.6.0` | _700_ | 选中时文案的字重 |

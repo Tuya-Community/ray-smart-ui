@@ -372,12 +372,12 @@ export default function Demo() {
 | value | Current selected value | _string \| number \| Date_ | - |
 | visibleItemCount | Number of visible options | _number_ | `6` |
 | formatterMap `v2.2.0` | String replacement (`type` possible values are `year`, `month`, `day`, `hour`, `minute`) | _Record<type, string \| Record<string, string>>_ | - |
-| changeAnimation `v2.2.0` | Whether the component needs an animation transition effect when the selected value changes | _boolean_ | `true` |
-| is12HourClock `v2.2.0` | When setting `type: 'time'`, this property can enable the 12-hour selection mode | _boolean_ | `false` |
+| changeAnimation `v2.2.0` | Whether the component requires a transition animation when the value selected by data-driven changes (excluding the animation of finger interactive scrolling). | _boolean_ | `true` |
+| is12HourClock `v2.6.0` | When setting `type: 'time'`, this property can enable the 12-hour selection mode | _boolean_ | `false` |
 | amText `v2.2.0` | Text for AM in 12-hour selection mode | _string_ | `AM` |
 | pmText `v2.2.0` | Text for PM in 12-hour selection mode | _string_ | `PM` |
 | columnsOrder `v2.2.0` | Set the order of columns, same as the `flex order` property, only changing the order from a styling perspective, not the logic | _string[]_ | `[]` |
-| animationTime `v2.3.7` | Transition animation and the delay time for selection callback (Unit: ms) | _number_ | `800` |
+| animationTime `v2.3.7` | Transition animation and the delay time for selection callback (Unit: ms) | _number_ | `800` `v2.3.7` `300` `v2.6.0` |
 | columnStyles `v2.3.7` | Style of any column | _Record\<string, string>_ | - |
 | fontStyles `v2.3.7` | Font style of any column | _Record\<string, string>_ | - |
 | activeStyle `v2.3.7` | Selected Item Style | _string_ | - |
@@ -427,4 +427,10 @@ In the `change` event, you can get the component instance to perform correspondi
 
 ### Style Variables
 
-Please refer to the picker component documentation for style variable descriptions.
+For other CSS variables, please refer to the documentation of the picker component - Style Variables.
+
+The component provides the following CSS variables that can be used to customize styles. For usage, please refer to the [ConfigProvider component](/material/smartui?comId=config-provider).
+
+| Name                          | Default Value                                 | Description |
+| ----------------------------- | -------------------------------------- | ---- |
+| --hairline-border-image-color `v2.6.0` | _var(--smart-ui-border-image, linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)))_ | Border-image style for the dividing line |
