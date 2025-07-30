@@ -63,7 +63,7 @@ const getCSSVarJson = () => {
       const CSS_VAR_PATH = path.join(__dirname, '../miniapp-smart-ui/docs/css-var.json');
       const data = fs.readFileSync(CSS_VAR_PATH, 'utf8');
       const jsonData = JSON.parse(data);
-      console.log('getCSSVarJson JSON Data:', jsonData);
+      // console.log('getCSSVarJson JSON Data:', jsonData);
       resolve(jsonData);
       // 执行更多操作
     } catch (err) {
