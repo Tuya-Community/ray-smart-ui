@@ -33,3 +33,5 @@ jobs:
       run: |
         git clone https://github.com/Tuya-Community/miniapp-smart-ui.git
         cd miniapp-smart-ui
+      env:
+        GITHUB_TOKEN: ${{ secrets.MINIAPP_TOKEN }}
