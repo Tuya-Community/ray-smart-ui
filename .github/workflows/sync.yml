@@ -23,15 +23,9 @@ jobs:
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
 
-    # - name: Install Dependencies
-    #   run: yarn install --frozen-lockfile
-
-    # - name: build
-    #   run: yarn build
-
     - name: Clone miniapp
       run: |
-        git clone https://github.com/Tuya-Community/miniapp-smart-ui.git
+        git clone -b ${{ github.ref_name }} https://github.com/Tuya-Community/miniapp-smart-ui.git
       env:
         GITHUB_TOKEN: ${{ secrets.MINIAPP_TOKEN }}
     - name: Sync Code
@@ -39,4 +33,3 @@ jobs:
         yarn syncMiniappData
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: ${{ github.ref_name }}

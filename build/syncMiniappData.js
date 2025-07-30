@@ -2,17 +2,17 @@
  * @Author: mjh
  * @Date: 2025-03-18 16:12:20
  * @LastEditors: mjh
- * @LastEditTime: 2025-07-30 11:17:54
+ * @LastEditTime: 2025-07-30 11:44:34
  * @Description:
  */
 const transCSSVarToConfigTypes = require('./transCSSVarToConfigTypes');
 const copyREADME = require('./copyREADME');
 const { execSync } = require('child_process');
-const ENV = process.env;
+// const ENV = process.env;
 
 async function main() {
-  console.log(`切换到分支：${ENV.BRANCH}`);
-  execSync(`git fetch && git checkout ${ENV.BRANCH}`);
+  // console.log(`切换到分支：${ENV.BRANCH}`);
+  // execSync(`git fetch && git checkout ${ENV.BRANCH}`);
 
   await Promise.all([
     // 生成config-provider 类型文件
