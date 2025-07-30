@@ -3,7 +3,7 @@ name: Sync README & ConfigType
 on: [push]
   
 jobs:
-  publish_beta:
+  sync_code:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,6 +32,9 @@ jobs:
     - name: Clone miniapp
       run: |
         git clone https://github.com/Tuya-Community/miniapp-smart-ui.git
-        cd miniapp-smart-ui
       env:
         GITHUB_TOKEN: ${{ secrets.MINIAPP_TOKEN }}
+    - name: Into miniapp
+      run: |
+        cd miniapp-smart-ui
+        ls
