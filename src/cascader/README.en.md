@@ -237,7 +237,7 @@ export default function Demo() {
         placeholder="Please select a region"
         onTap={showArea}
       />
-      <Popup show={visible} round position="bottom">
+      <BottomSheet show={visible} maxHeight="100%">
         {visible && (
           <Cascader
             value={value}
@@ -248,7 +248,7 @@ export default function Demo() {
             onChange={loadDynamicOptions}
           />
         )}
-      </Popup>
+      </BottomSheet>
     </>
   );
 }

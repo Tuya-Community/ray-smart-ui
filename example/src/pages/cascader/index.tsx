@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { Cascader, Popup, Field } from '@ray-js/smart-ui';
+import { Cascader, Popup, Field, BottomSheet } from '@ray-js/smart-ui';
 import { DemoBlock } from '@/components';
 import Strings from '../../i18n';
 import styles from './index.module.less';
@@ -214,7 +214,7 @@ export default function Demo() {
           placeholder={Strings.getLang('pleaseSelectARegion')}
           onTap={showArea}
         />
-        <Popup show={baseState.show} round position="bottom">
+        <BottomSheet show={baseState.show} maxHeight="100%">
           {baseState.show && (
             <Cascader
               value={baseState.value}
@@ -224,7 +224,7 @@ export default function Demo() {
               onFinish={onFinish}
             />
           )}
-        </Popup>
+        </BottomSheet>
       </DemoBlock>
 
       <DemoBlock title={Strings.getLang('customColor')} className={styles['cascader-demo']}>
@@ -236,7 +236,7 @@ export default function Demo() {
           placeholder={Strings.getLang('pleaseSelectARegion')}
           onTap={showCustomArea}
         />
-        <Popup show={customColorState.show} round position="bottom">
+        <BottomSheet show={customColorState.show} maxHeight="100%">
           {customColorState.show && (
             <Cascader
               value={customColorState.value}
@@ -247,7 +247,7 @@ export default function Demo() {
               onFinish={onCustomFinish}
             />
           )}
-        </Popup>
+        </BottomSheet>
       </DemoBlock>
 
       <DemoBlock
@@ -262,7 +262,7 @@ export default function Demo() {
           placeholder={Strings.getLang('pleaseSelectARegion')}
           onTap={showAsyncArea}
         />
-        <Popup show={asynceState.show} round position="bottom">
+        <BottomSheet show={asynceState.show} maxHeight="100%">
           {asynceState.show && (
             <Cascader
               value={asynceState.value}
@@ -273,7 +273,7 @@ export default function Demo() {
               onChange={loadDynamicOptions}
             />
           )}
-        </Popup>
+        </BottomSheet>
       </DemoBlock>
     </>
   );
