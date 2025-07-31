@@ -73,29 +73,10 @@ jobs:
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-    # - name: Commit Changes
-    #   run: |
-    #     git add package.json
-    #     git commit -m "chore(release): ${NEXT_VERSION}"
-    #     git push origin HEAD:${{ github.ref }}
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-    - name: Create Branch
+    - name: Commit Changes
       run: |
-        git checkout -b changes
-        git add .
+        git add package.json
         git commit -m "chore(release): ${NEXT_VERSION}"
-        git push origin changes
-
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v5
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}  # 确保 PAT 可以访问仓库
-        branch: changes
-        title: "Automated Pull Request"
-        body: "This pull request was automatically created by GitHub Actions."
-        base: release/2.x  # 确保拉取请求的目标分支正确
-
-    
+        git push origin HEAD:${{ github.ref }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
