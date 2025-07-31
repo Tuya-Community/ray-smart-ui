@@ -55,6 +55,7 @@ export default function Demo() {
       duration: 0,
       forbidClick: true,
       message: text(3),
+      width: 88,
     });
 
     let second = 3;
