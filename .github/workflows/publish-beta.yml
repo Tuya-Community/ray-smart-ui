@@ -90,7 +90,7 @@ jobs:
         git push origin changes
 
     - name: Create Pull Request
-      uses: actions/create-pull-request@v4
+      uses: peter-evans/create-pull-request@v5
       with:
         token: ${{ secrets.GITHUB_TOKEN }}  # 确保 PAT 可以访问仓库
         branch: changes
