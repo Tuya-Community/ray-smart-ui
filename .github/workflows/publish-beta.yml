@@ -81,4 +81,21 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+
+    - name: Create Branch
+      run: |
+        git checkout -b changes
+        git add .
+        git commit -m "Automated update"
+        git push origin changes
+
+    - name: Create Pull Request
+      uses: actions/create-pull-request@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}  # 确保 PAT 可以访问仓库
+        branch: changes
+        title: "Automated Pull Request"
+        body: "This pull request was automatically created by GitHub Actions."
+        base: release/2.x  # 确保拉取请求的目标分支正确
+
     
