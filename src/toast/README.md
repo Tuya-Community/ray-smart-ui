@@ -110,6 +110,7 @@ export default function Demo() {
       forbidClick: true,
       message: '倒计时 3 秒',
       selector: '#custom-selector',
+      width: 88,
     });
 
     let second = 3;
