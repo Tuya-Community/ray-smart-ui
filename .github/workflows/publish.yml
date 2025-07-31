@@ -42,8 +42,8 @@ jobs:
     - name: Commit Changes
       run: |
         git add package.json
-        git commit -m "chore(release): ${TAG_VERSION}"
-        git push origin HEAD:${{ github.ref }}
+        git commit -m "chore(release): npm ${TAG_VERSION}"
+        git push origin HEAD:main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
