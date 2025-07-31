@@ -1,0 +1,28 @@
+.listItem {
+  height: 96rpx;
+  padding: 0 32rpx;
+  line-height: 96rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+  &:nth-child(n + 2)::after {
+    display: block;
+    content: '';
+    height: 1px;
+    background-color: #ebebeb;
+    width: 90%;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.listText {
+  margin-left: 20rpx;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.btnText {
+  white-space: nowrap;
+}
