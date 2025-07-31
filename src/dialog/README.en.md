@@ -369,7 +369,7 @@ The component provides the following CSS variables for custom styles. Please ref
 | --dialog-small-screen-width | _90%_ | Small screen dialog width |
 | --dialog-font-size | _16px_ | Dialog font size |
 | --dialog-border-radius | _16px_ | Border radius |
-| --dialog-background-color | _var(--app-B4, #ffffff)_ | Background color |
+| --dialog-background-color | _var(--smart-ui-dialog-background, rgba(255, 255, 255, 1))_ | Background color |
 | --dialog-header-font-color | _var(--app-B4-N1, rgba(0, 0, 0, 1))_ | Header font color |
 | --dialog-header-font-weight | _400_ | Header font weight |
 | --dialog-header-line-height | _24px_ | Header line height |

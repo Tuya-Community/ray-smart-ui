@@ -376,7 +376,7 @@ export default function Demo() {
 
 | 参数                         | 说明                                                           | 类型               | 默认值    |
 | ---------------------------- | -------------------------------------------------------------- | ------------------ | --------- |
-| active | 当前选中标签的标识符 | _string \| number_ | `0` |
+| active | 当前选中标签的标识符 | _string_ | `0` |
 | animated | 是否开启切换标签内容时的转场动画 | _boolean_ | `false` |
 | border | 是否展示外边框，仅在 `line` 风格下生效 | _boolean_ | `false` |
 | color | 标签主题色，仅在非`card`模式可用 | _string_ | `#ee0a24` |
@@ -403,7 +403,7 @@ export default function Demo() {
 | disabled | 是否禁用标签 | _boolean_ | `false` |
 | dot | 是否显示小红点 | _boolean_ | - |
 | info | 图标右上角提示信息 | _string \| number_ | - |
-| name | 标签名称，作为匹配的标识符 | _string \| number_ | 标签的索引值 |
+| name | 标签名称，作为匹配的标识符 | _string_ | - |
 | title | 标题 | _string_ | - |
 | titleStyle | 自定义标题样式 | _React.CSSProperties_ | - |
 | subtitle `v2.3.5` | 二级标题 | _string_ | - |

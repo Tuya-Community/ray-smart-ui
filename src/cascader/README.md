@@ -80,7 +80,7 @@ export default function Demo() {
         placeholder="请选择地区"
         onTap={showArea}
       />
-      <Popup show={visible} round position="bottom">
+      <BottomSheet show={visible} maxHeight="100%">
         {visible && (
           <Cascader
             value={value}
@@ -90,7 +90,7 @@ export default function Demo() {
             onFinish={onFinish}
           />
         )}
-      </Popup>
+      </BottomSheet>
     </>
   );
 }

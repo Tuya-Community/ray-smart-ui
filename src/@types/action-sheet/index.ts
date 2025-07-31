@@ -1,4 +1,4 @@
-import { SmartComponent, SmartEventHandler } from '../base';
+import { SmartBaseExternalClassName, SmartComponent, SmartEventHandler } from '../base';
 import { SmartTransitionEvents } from '../transition';
 
 export interface SmartAction {
@@ -133,6 +133,12 @@ export interface SmartActionSheetProps {
    * @version v2.5.0
    */
   nativeDisabled?: boolean;
+  /**
+   * @description 是否启用标题 Slot
+   * @default false
+   * @version v2.6.0
+   */
+  useTitleSlot?: boolean;
 }
 
 export interface SmartActionSheetEvents extends SmartTransitionEvents {
@@ -162,4 +168,26 @@ export interface SmartActionSheetEvents extends SmartTransitionEvents {
   onClickOverlay?: SmartEventHandler;
 }
 
-export type SmartActionSheet = SmartComponent<SmartActionSheetProps, SmartActionSheetEvents>;
+export interface SmartActionSheetExternalClassName extends SmartBaseExternalClassName {
+  /**
+   * @description 每一列的样式
+   */
+  listClass?: string;
+}
+
+export interface SmartActionSheetSlots {
+  slot?: {
+    /**
+     * @description 标题插槽 需要设置 useTitleSlot
+     * @version v2.6.0
+     */
+    title?: React.ReactNode;
+  };
+}
+
+export type SmartActionSheet = SmartComponent<
+  SmartActionSheetProps,
+  SmartActionSheetEvents,
+  SmartActionSheetExternalClassName,
+  SmartActionSheetSlots
+>;

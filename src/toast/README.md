@@ -110,6 +110,7 @@ export default function Demo() {
       forbidClick: true,
       message: '倒计时 3 秒',
       selector: '#custom-selector',
+      width: 88,
     });
 
     let second = 3;
@@ -237,6 +238,7 @@ export default function Demo() {
 
 | 名称                          | 默认值                                 | 描述 |
 | ----------------------------- | -------------------------------------- | ---- |
+| --toast-min-width `v2.6.0` | _88px_ | 提示最小宽度 |
 | --toast-max-width | _70%_ | 提示最大宽度 |
 | --toast-font-size | _14px_ | 提示字体大小 |
 | --toast-text-color | _#fff_ | 提示文本颜色 |
@@ -244,7 +246,7 @@ export default function Demo() {
 | --toast-border-radius | _10px_ | 提示圆角半径 |
 | --toast-background-color | _fade(@black, 70%)_ | 提示背景颜色 |
 | --toast-icon-size | _36px_ | 提示图标大小 |
-| --toast-text-min-width | _96px_ | 提示文本最小宽度 |
+| --toast-text-min-width `@deprecated v2.6.0` | _96px_ | 提示文本最小宽度 |
 | --toast-text-padding | _@padding-xs @padding-sm_ | 提示文本内边距 |
 | --toast-default-padding | _16px_ | 提示默认内边距 |
 | --toast-default-width | _88px_ | 提示默认宽度 |
