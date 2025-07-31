@@ -1,11 +1,6 @@
 name: Publish Beta Package
 
-on:
-  pull_request:
-    branches:
-      - 'release/2.x'
-    types:
-      - closed
+on: [push]
 jobs:
   publish_beta:
     runs-on: ubuntu-latest
@@ -67,20 +62,6 @@ jobs:
     - name: Update Package.json with Next Version
       run: |
         npm version "${NEXT_VERSION}" --no-git-tag-version
-
-    - name: Publish Package
-      run: npm publish --access public --tag beta
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-    # - name: Commit Changes
-    #   run: |
-    #     git add package.json
-    #     git commit -m "chore(release): ${NEXT_VERSION}"
-    #     git push origin HEAD:${{ github.ref }}
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 
     - name: Create Branch
       run: |
