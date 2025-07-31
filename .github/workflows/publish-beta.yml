@@ -68,6 +68,11 @@ jobs:
       run: |
         npm version "${NEXT_VERSION}" --no-git-tag-version
 
+    - name: Publish Package
+      run: npm publish --access public --tag beta
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
     - name: Commit Changes
       run: |
         git add package.json
@@ -76,7 +81,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Publish Package
-      run: npm publish --access public --tag beta
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    

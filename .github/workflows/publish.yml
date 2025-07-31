@@ -39,6 +39,14 @@ jobs:
       run: |
         npm version "${TAG_VERSION}" --no-git-tag-version
 
+    - name: Build
+      run: yarn build
+  
+    - name: Publish Package
+      run: npm publish --access public
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
     - name: Commit Changes
       run: |
         git add package.json
@@ -46,11 +54,3 @@ jobs:
         git push origin HEAD:main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Build
-      run: yarn build
-
-    - name: Publish Package
-      run: npm publish --access public
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
