@@ -160,11 +160,11 @@ export default function Demo() {
 ```
 
 
-### 选择时间-12小时模式`v2.3.0`
+### 选择时间-12小时模式`v2.6.0`
 
 当设置`type: 'time'`时，可以开启`is12HourClock`属性实现12小时选择模式；`amText`、`pmText` 可以分别设置上午和下午的文案。  
 `columnsOrder`属性可以设置列的顺序，对应列的order越大，就会越靠后，同css的`flex order` 属性，只是从样式层面改变列的顺序，逻辑还是不变。  
-`fontStyles` 和 `columnStyles` 内的 `12HourClock` `v2.3.8` 可以修改对应12小时时区的样式。
+`fontStyles` 和 `columnStyles` 内的 `12HourClock` `v2.6.0` 可以修改对应12小时时区的样式。
 
 ```jsx
 import React, { useCallback, useState } from 'react';
@@ -188,8 +188,6 @@ export default function Demo() {
       value={currentDate}
       is12HourClock
       columnsOrder={[2, 1, 1]}
-      maxHour={24}
-      minHour={1}
       fontStyles={{
         '12HourClock': {
           fontSize: '14px',
@@ -227,8 +225,6 @@ export default function Demo() {
       type="time" 
       value={currentDate}
       changeAnimation={false}
-      maxHour={24}
-      minHour={1}
       onInput={onTimeInput} 
     />
   );
@@ -332,16 +328,16 @@ export default function Demo() {
       value={new Date(2018, 2, 31).getTime()}
       columnStyles={{
         year: {
-          background: 'rgba(0, 0, 0, 0.4)',
+          background: 'rgba(0, 0, 0, 0.1)',
         },
       }}
       fontStyles={{
         month: {
-          color: 'blue',
+          color: 'rgb(23, 138, 237)',
         },
       }}
       activeStyle={{
-        color: 'red',
+        color: 'rgb(235, 87, 41)',
       }}
       onInput={onDateTimeInput}
     />

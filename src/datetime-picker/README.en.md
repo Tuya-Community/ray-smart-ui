@@ -159,7 +159,7 @@ export default function Demo() {
 }
 ```
 
-### Select Time - 12-hour mode `v2.3.0`
+### Select Time - 12-hour mode `v2.6.0`
 
 When setting `type: 'time'`, you can enable the `is12HourClock` attribute to achieve 12-hour selection mode; `amText` and `pmText` can set the texts for AM and PM respectively.  
 The `columnsOrder` attribute can set the order of the columns, with a higher order placing the column further back, akin to the `flex order` attribute in CSS, but only from a style perspective without changing the logic.
@@ -186,8 +186,6 @@ export default function Demo() {
       value={currentDate}
       is12HourClock
       columnsOrder={[2, 1, 1]}
-      maxHour={24}
-      minHour={1}
       fontStyles={{
         '12HourClock': {
           fontSize: '14px',
@@ -225,8 +223,6 @@ export default function Demo() {
       type="time" 
       value={currentDate}
       changeAnimation={false}
-      maxHour={24}
-      minHour={1}
       onInput={onTimeInput} 
     />
   );
@@ -331,16 +327,16 @@ export default function Demo() {
       value={new Date(2018, 2, 31).getTime()}
       columnStyles={{
         year: {
-          background: 'rgba(0, 0, 0, 0.4)',
+          background: 'rgba(0, 0, 0, 0.1)',
         },
       }}
       fontStyles={{
         month: {
-          color: 'blue',
+          color: 'rgb(23, 138, 237)',
         },
       }}
       activeStyle={{
-        color: 'red',
+        color: 'rgb(235, 87, 41)',
       }}
       onInput={onDateTimeInput}
     />

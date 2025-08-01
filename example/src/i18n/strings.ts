@@ -478,6 +478,7 @@ export default {
     navBar: 'NavBar',
     sidebar: 'Sidebar',
     focusDocument: 'Click to focus on the document',
+    customDoubleSelect: 'Custom Double Select',
     indexBar: 'IndexBar',
     grid: 'Grid',
     navigate: 'Navigation Component',
@@ -1132,5 +1133,6 @@ export default {
     vertical: '竖向',
     upsideDown: '上下颠倒',
     focusDocument: '点击聚焦文档',
+    customDoubleSelect: '自定义双列选择器',
   },
 };

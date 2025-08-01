@@ -200,6 +200,25 @@ export default function Demo() {
 }
 ```
 
+index.module.less
+```css
+.demo-custom-double-select-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.demo-custom-double-select-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex1 {
+  flex: 1;
+}
+```
+
 ## API
 
 ### Props

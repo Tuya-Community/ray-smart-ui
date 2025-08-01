@@ -200,6 +200,94 @@ export default function Demo() {
 }
 ```
 
+### Custom Double Select `v2.6.0`
+
+When `useTitleSlot` is `true`, you can use slots to customize the title content, supporting complex dual-selector scenarios.
+
+
+```jsx
+import React from 'react';
+import { ActionSheet, Button, DateTimePicker, Picker, SmartEventHandler, SmartPickerBaseEventDetail } from '@ray-js/smart-ui';
+import { View } from '@ray-js/ray';
+import styles from './index.module.less';
+
+export default function Demo() {
+  const [show, setShow] = React.useState(false);
+  const [current12Date, setCurrent12Date] = useState('12:00');
+  const [tempColumnIdx, setTempColumnIdx] = useState(3);
+
+  const onCurrent12DateInput: SmartEventHandler<string> = event => {
+    setCurrent12Date(event.detail);
+  };
+
+  const onTempColumnChange: SmartEventHandler<SmartPickerBaseEventDetail> = event => {
+    const { index } = event.detail;
+    setTempColumnIdx(index as number);
+  };
+
+  return (
+    <View>
+      <ActionSheet 
+        show={show} 
+        cancel-text="Cancel"
+        confirm-text="Confirm"
+        slot={{
+          title: (
+            <View className={styles['demo-custom-double-select-header']}>
+              <View>Time</View>
+              <View>Temp</View>
+            </View>
+          ),
+        }}
+        useTitleSlot 
+        onCancel={() => setShow(false)}
+        onClose={() => setShow(false)}
+        onConfirm={() => setShow(false)}
+      >
+        <View className={styles['demo-custom-double-select-content']}>
+          <DateTimePicker
+            className={styles.flex1}
+            type="time"
+            data-type="time"
+            is-12-hour-clock
+            show-toolbar={false}
+            value={current12Date}
+            onInput={onCurrent12DateInput}
+          />
+          <Picker
+            className={styles.flex1}
+            unit="℃"
+            activeIndex={tempColumnIdx}
+            columns={tempColumns}
+            onChange={onTempColumnChange}
+          />
+        </View>
+      </ActionSheet>
+      <Button onClick={() => setShow(true)}>Click to display</Button>
+    </View>
+  );
+}
+```
+
+index.module.less
+```css
+.demo-custom-double-select-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.demo-custom-double-select-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex1 {
+  flex: 1;
+}
+```
+
 ## API
 
 ### Props
