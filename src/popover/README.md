@@ -22,7 +22,7 @@ import { Popover } from '@ray-js/smart-ui';
 
 ```jsx
 import { View } from '@ray-js/ray';
-import { Popover, CellGroup, Cell, Icon, Button } from '@ray-js/smart-ui';
+import { Popover, Icon, Button } from '@ray-js/smart-ui';
 import React from 'react';
 import Sun from '@tuya-miniapp/icons/dist/svg/Sun';
 
@@ -50,21 +50,14 @@ export default function Demo() {
           }}
           slot={{
             overlay: (
-              <CellGroup inset>
-                <Cell
-                  title="Title"
-                  slot={{
-                    icon: <Icon className="cell-icon" name={Sun} size="24px" color="#3678E3" />,
-                  }}
-                />
-                <Cell
-                  title="Title"
-                  border={false}
-                  slot={{
-                    icon: <Icon className="cell-icon" name={Sun} size="24px" color="#3678E3" />,
-                  }}
-                />
-              </CellGroup>
+              <View>
+                {[1, 2, 3].map(n => (
+                  <View className={styles.listItem} key={n}>
+                    <Icon name={Sun} size="24px" color="#3678E3" />
+                    <Text className={styles.listText}>Title</Text>
+                  </View>
+                ))}
+              </View>
             ),
           }}
         >
@@ -86,21 +79,14 @@ export default function Demo() {
           }}
           slot={{
             overlay: (
-              <CellGroup inset>
-                <Cell
-                  title="Title"
-                  slot={{
-                    icon: <Icon className="cell-icon" name={Sun} size="24px" color="#3678E3" />,
-                  }}
-                />
-                <Cell
-                  title="Title"
-                  border={false}
-                  slot={{
-                    icon: <Icon className="cell-icon" name={Sun} size="24px" color="#3678E3" />,
-                  }}
-                />
-              </CellGroup>
+              <View>
+                {[1, 2, 3].map(n => (
+                  <View className={styles.listItem} key={n}>
+                    <Icon name={Sun} size="24px" color="#3678E3" />
+                    <Text className={styles.listText}>Title</Text>
+                  </View>
+                ))}
+              </View>
             ),
           }}
         >
@@ -122,21 +108,14 @@ export default function Demo() {
           }}
           slot={{
             overlay: (
-              <CellGroup inset>
-                <Cell
-                  title="Title"
-                  slot={{
-                    icon: <Icon className="cell-icon" name={Sun} size="24px" color="#3678E3" />,
-                  }}
-                />
-                <Cell
-                  title="Title"
-                  border={false}
-                  slot={{
-                    icon: <Icon className="cell-icon" name={Sun} size="24px" color="#3678E3" />,
-                  }}
-                />
-              </CellGroup>
+              <View>
+                {[1, 2, 3].map(n => (
+                  <View className={styles.listItem} key={n}>
+                    <Icon name={Sun} size="24px" color="#3678E3" />
+                    <Text className={styles.listText}>Title</Text>
+                  </View>
+                ))}
+              </View>
             ),
           }}
         >
@@ -208,6 +187,35 @@ export default function Demo() {
 }
 ```
 
+less 样式如下
+
+```less
+.listItem {
+  height: 96rpx;
+  padding: 0 32rpx;
+  line-height: 96rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+  &:nth-child(n + 2)::after {
+    display: block;
+    content: '';
+    height: 1px;
+    background-color: #ebebeb;
+    width: 90%;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.listText {
+  margin-left: 20rpx;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.9);
+}
+```
+
 ### 受控用法
 
 通过`show`属性控制弹出层是否展示。
@@ -253,31 +261,31 @@ export default function Demo() {
 ## API
 
 ### Props
-| 参数        | 说明                                                                                                                                                           | 类型      | 默认值  |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------- |
-| customStyle | 自定义弹出层样式 | _React.CSSProperties_ | - |
-| duration | 延迟关闭的时间(ms) | number | `3000` |
-| placement | 弹出层的位置，支持值：`top`、`topLeft`、`topRight`、`bottom`、`bottomLeft`、`bottomRight`、`left`、`leftTop`、`leftBottom`、`right`、`rightTop`、`rightBottom` | _string_ | `right` |
-| show | 控制弹出层是否显示，并监听状态变化，值变更时更新 `currentShow` | _boolean_ | `false` |
-| trigger  `v2.5.0` | 控制弹出层触发方式，支持 `tap`、`longpress` | _string_ | `tap` |
+| 参数             | 说明                                                                                                                                                           | 类型                  | 默认值  |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ------- |
+| customStyle      | 自定义弹出层样式                                                                                                                                               | _React.CSSProperties_ | -       |
+| duration         | 延迟关闭的时间(ms)                                                                                                                                             | number                | `3000`  |
+| placement        | 弹出层的位置，支持值：`top`、`topLeft`、`topRight`、`bottom`、`bottomLeft`、`bottomRight`、`left`、`leftTop`、`leftBottom`、`right`、`rightTop`、`rightBottom` | _string_              | `right` |
+| show             | 控制弹出层是否显示，并监听状态变化，值变更时更新 `currentShow`                                                                                                 | _boolean_             | `false` |
+| trigger `v2.5.0` | 控制弹出层触发方式，支持 `tap`、`longpress`                                                                                                                    | _string_              | `tap`   |
 
 ### Events
 
-| 事件名           | 说明            | 参数 |
-| ---------------- | --------------- | ---- |
-| onClose | 关闭时触发 | - |
-| onShowChange | 显示/隐藏时触发 | - |
+| 事件名       | 说明            | 参数 |
+| ------------ | --------------- | ---- |
+| onClose      | 关闭时触发      | -    |
+| onShowChange | 显示/隐藏时触发 | -    |
 
 ### Popover Slot
 
-| 名称 | 说明       |
-| ---- | ---------- |
+| 名称    | 说明     |
+| ------- | -------- |
 | overlay | 弹窗内容 |
 
 ### 外部样式类
 
-| 类名         | 说明         |
-| ------------ | ------------ |
+| 类名        | 说明         |
+| ----------- | ------------ |
 | customClass | 根节点样式类 |
 
 ### 样式变量

@@ -122,6 +122,8 @@ export default function Demo() {
       value={value}
       thumbWidth={18}
       thumbHeight={18}
+      parcel
+      parcelMargin={2}
       onAfterChange={value => setValue(value)}
     />
   );
@@ -284,7 +286,7 @@ export default function Demo() {
 |thumbHeight|Thumb height|string | number|'28px'|
 |thumbRadius|Thumb border radius|string | number|'28px'|
 |thumbColor|Thumb color|Background<0 \| (string & {})>|'#ffffff'|
-|thumbBorderStyle|Thumb border style|BorderStyle|'0px solid #ffffff'|
+|thumbBorderStyle|Slider Border Type|BorderStyle|'none'|
 |thumbBoxShadowStyle|Thumb box shadow|BoxShadow|'0px 0.5px 4px rgba(0, 0, 0, 0.12), 0px 6px 13px rgba(0, 0, 0, 0.12)'|
 |isShowTicks|Whether to display tick marks|boolean|false|
 |tickWidth|Tick width|string|'4px'|
