@@ -49,6 +49,7 @@ jobs:
 
     - name: Commit Changes
       run: |
+        git pull
         git add package.json
         git commit -m "chore(release): npm ${TAG_VERSION}"
         git push origin HEAD:main
