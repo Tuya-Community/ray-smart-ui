@@ -243,8 +243,8 @@ export default function Demo() {
     <View>
       <ActionSheet 
         show={show} 
-        cancel-text="Cancel"
-        confirm-text="Confirm"
+        cancelText="Cancel"
+        confirmText="Confirm"
         slot={{
           title: (
             <View className={styles['demo-custom-double-select-header']}>
@@ -262,9 +262,8 @@ export default function Demo() {
           <DateTimePicker
             className={styles.flex1}
             type="time"
-            data-type="time"
-            is-12-hour-clock
-            show-toolbar={false}
+            is12HourClock
+            showToolbar={false}
             value={current12Date}
             onInput={onCurrent12DateInput}
           />
