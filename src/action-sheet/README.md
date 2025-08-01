@@ -113,7 +113,10 @@ export default function Demo() {
         show={show} 
         actions={actions} 
         cancelText="取消" 
+        confirmText="确认" 
         onCancel={() => setShow(false)}
+        onClose={() => setShow(false)}
+        onConfirm={() => setShow(false)}
       />
       <Button onClick={() => setShow(true)}>点击展示</Button>
     </View>
@@ -143,6 +146,8 @@ export default function Demo() {
         cancelText="取消" 
         confirmText="确认" 
         onCancel={() => setShow(false)}
+        onClose={() => setShow(false)}
+        onConfirm={() => setShow(false)}
       />
       <Button onClick={() => setShow(true)}>点击展示</Button>
     </View>
@@ -170,6 +175,8 @@ export default function Demo() {
         actions={actions} 
         description="这是一段描述信息" 
         onCancel={() => setShow(false)}
+        onClose={() => setShow(false)}
+        onConfirm={() => setShow(false)}
       />
       <Button onClick={() => setShow(true)}>点击展示</Button>
     </View>
@@ -191,8 +198,84 @@ export default function Demo() {
 
   return (
     <View>
-      <ActionSheet show={show} title="标题" onCancel={() => setShow(false)}>
+      <ActionSheet 
+        show={show} 
+        title="标题"
+        onCancel={() => setShow(false)}
+        onClose={() => setShow(false)}
+        onConfirm={() => setShow(false)}
+      >
         <View>内容</View>
+      </ActionSheet>
+      <Button onClick={() => setShow(true)}>点击展示</Button>
+    </View>
+  );
+}
+```
+
+
+### 自定义双列选择器 `v2.6.0`
+
+当 `useTitleSlot` 为 `true` 时，可以使用插槽自定义标题内容，支持复杂的双选择器场景。
+
+
+```jsx
+import React from 'react';
+import { ActionSheet, Button, DateTimePicker, Picker, SmartEventHandler, SmartPickerBaseEventDetail } from '@ray-js/smart-ui';
+import { View } from '@ray-js/ray';
+import styles from './index.module.less';
+
+export default function Demo() {
+  const [show, setShow] = React.useState(false);
+  const [current12Date, setCurrent12Date] = useState('12:00');
+  const [tempColumnIdx, setTempColumnIdx] = useState(3);
+
+  const onCurrent12DateInput: SmartEventHandler<string> = event => {
+    setCurrent12Date(event.detail);
+  };
+
+  const onTempColumnChange: SmartEventHandler<SmartPickerBaseEventDetail> = event => {
+    const { index } = event.detail;
+    setTempColumnIdx(index as number);
+  };
+
+  return (
+    <View>
+      <ActionSheet 
+        show={show} 
+        cancel-text="Cancel"
+        confirm-text="Confirm"
+        slot={{
+          title: (
+            <View className={styles['demo-custom-double-select-header']}>
+              <View>Time</View>
+              <View>Temp</View>
+            </View>
+          ),
+        }}
+        useTitleSlot 
+        onCancel={() => setShow(false)}
+        onClose={() => setShow(false)}
+        onConfirm={() => setShow(false)}
+      >
+        <View className={styles['demo-custom-double-select-content']}>
+          <DateTimePicker
+            className={styles.flex1}
+            type="time"
+            data-type="time"
+            is-12-hour-clock
+            show-toolbar={false}
+            value={current12Date}
+            onInput={onCurrent12DateInput}
+          />
+          <Picker
+            className={styles.flex1}
+            unit="℃"
+            activeIndex={tempColumnIdx}
+            columns={tempColumns}
+            onChange={onTempColumnChange}
+          />
+        </View>
       </ActionSheet>
       <Button onClick={() => setShow(true)}>点击展示</Button>
     </View>
