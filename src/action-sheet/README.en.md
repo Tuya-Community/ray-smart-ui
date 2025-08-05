@@ -200,6 +200,137 @@ export default function Demo() {
 }
 ```
 
+
+### Custom Value
+
+Nested use of the Slider component internally, note that the rendering timing of the Slider component must be after the popup is completely entered, otherwise it will affect its positioning.
+
+```jsx
+import React from 'react';
+import { ActionSheet, Button, Slider } from '@ray-js/smart-ui';
+import { View, Text } from '@ray-js/ray';
+import { useDebounce } from 'ahooks';
+import styles from './index.module.less';
+
+export default function Demo() {
+  const [show, setShow] = React.useState(false);
+  const [ready, setReady] = React.useState(false);
+  const [currentNumber, setCurrentNumber] = React.useState(100);
+  
+  const currentNumberForSlider = useDebounce(currentNumber, { wait: 500 });
+
+  const onChange = React.useCallback(value => {
+    setCurrentNumber(value);
+  }, []);
+
+  return (
+    <View>
+      <ActionSheet 
+        show={show} 
+        title="title"
+        onCancel={() => setShow(false)}
+        onClose={() => setShow(false)}
+        onConfirm={() => setShow(false)}
+        onAfterEnter={() => setReady(true)}
+        onAfterLeave={() => setReady(false)}
+      >
+        <View className={styles['content-number']}>
+          <View className={styles['demo-header']}>
+            <Text className={styles['demo-text']}>{`${currentNumber}%`}</Text>
+          </View>
+          <View className={styles['demo-slider']}>
+            {ready && (
+              <Slider
+                minTrackRadius="8px"
+                minTrackHeight="45px"
+                maxTrackRadius="8px"
+                maxTrackHeight="45px"
+                value={currentNumberForSlider}
+                onChange={onChange}
+                thumbWidth={15}
+                thumbHeight={50}
+                thumbRadius={2}
+                thumbStyle={{
+                  background: '#BBC5D4',
+                  border: '2px solid #FFFFFF',
+                  boxShadow: '0px 0px 2px 0px rgba(0, 0, 0, 0.5)',
+                }}
+              />
+            )}
+          </View>
+        </View>
+      </ActionSheet>
+      <Button onClick={() => setShow(true)}>Click to display</Button>
+    </View>
+  );
+}
+```
+index.module.less
+```css
+.content-number {
+  padding: 10px 39px;
+  background: var(--app-B1, #f6f7fb);
+  text-align: center;
+  color: var(--app-B4-N1, #000);
+}
+
+.demo-header {
+  padding: 10px 39px;
+}
+
+.demo-text {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 46px;
+}
+
+.demo-slider {
+  margin: 23px 0;
+  min-height: 45px;
+}
+```
+
+### Custom Scroll
+
+```jsx
+import React from 'react';
+import { ActionSheet, Button, DateTimePicker } from '@ray-js/smart-ui';
+import { View } from '@ray-js/ray';
+
+export default function Demo() {
+  const [show, setShow] = React.useState(false);
+  const [currentDate, setCurrentDate] = React.useState(new Date(2018, 0, 1));
+
+  const onInput = React.useCallback(event => {
+    const { detail } = event;
+    const date = new Date(detail);
+    setCurrentDate(date);
+  }, []);
+  
+  return (
+    <View>
+      <ActionSheet 
+        show={show} 
+        title="title"
+        onCancel={() => setShow(false)}
+        onClose={() => setShow(false)}
+        onConfirm={() => setShow(false)}
+      >
+        <DateTimePicker
+          showToolbar={false}
+          type="date"
+          minDate={new Date(2018, 0, 1).getTime()}
+          value={currentDate}
+          onInput={onInput}
+        />
+      </ActionSheet>
+      <Button onClick={() => setShow(true)}>Click to show</Button>
+    </View>
+  );
+}
+```
+
+
 ### Custom Double Select `v2.6.0`
 
 When `useTitleSlot` is `true`, you can use slots to customize the title content, supporting complex dual-selector scenarios.

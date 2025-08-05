@@ -1,6 +1,5 @@
 ---
 category: Display
-new: true
 ---
 
 # Empty

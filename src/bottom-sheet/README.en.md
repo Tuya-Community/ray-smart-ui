@@ -1,6 +1,5 @@
 ---
 category: Feedback
-new: true
 ---
 
 # BottomSheet

@@ -57,6 +57,7 @@ export default function Demo() {
   const [show5, setShow5] = React.useState(false);
   const [ready, setReady] = React.useState(false);
   const onActionSheetReady = React.useCallback(() => setReady(true), []);
+  const onActionSheetUnReady = React.useCallback(() => setReady(false), []);
   const onSelect = React.useCallback(
     evt => {
       const { id } = evt.detail;
@@ -201,6 +202,7 @@ export default function Demo() {
           onClose={toggleActionSheetNumber}
           onCancel={toggleActionSheetNumber}
           onConfirm={toggleActionSheetNumber}
+          onAfterLeave={onActionSheetUnReady}
           onAfterEnter={onActionSheetReady}
         >
           <View className={styles['content-number']}>
@@ -231,7 +233,8 @@ export default function Demo() {
         </ActionSheet>
       </DemoBlock>
 
-      <DemoBlock title={`${Strings.getLang('customScroll')} Picker: ${currentDateStr}`} padding>
+      <DemoBlock title={Strings.getLang('customScroll')} padding>
+        <View>{`Picker: ${currentDateStr}`}</View>
         <Button type="primary" onClick={toggleActionSheetPicker}>
           {Strings.getLang('modalMenu')}
         </Button>

@@ -1,6 +1,5 @@
 ---
 category: Data Entry
-new: true
 ---
 
 # Calendar
@@ -365,7 +364,7 @@ The default configuration is `en`. For configuration parameters, please refer to
 | title | Calendar title | _string_ | `Date Selection` |
 | dayClassMap `v2.1.0` | Date cell style | Object | null |
 | type | Selection type: <br>`single` for single date selection, <br>`range` for date range selection, <br>`week` for week selection, <br>`month` for month selection, <br>`year` for year selection | _string_ | `single` |
-| headerIconColor `2.6.0` | Header bar left and right arrow icon color | _string_ | `rgba(0, 0, 0, 0.7)` |
+| headerIconColor `v2.6.0` | Header bar left and right arrow icon color | _string_ | `rgba(0, 0, 0, 0.7)` |
 
 ### Range Props
 
@@ -454,6 +453,6 @@ The component provides the following CSS variables for custom styles. For usage,
 | --calendar-confirm-button-line-height           | _34px_                                         | Confirm button line height            |
 | --calendar-text-color                           | _#000_                                         | Calendar text color                   |
 | --calendar-header-save-color                    | _#1989fa_                                      | Calendar header save button color     |
-| --calendar-header-icon-bg-color  `2.6.0`                | _var(--app-B2-N9, rgba(0, 0, 0, 0.05))_        | Calendar header icon background color |
-| --calendar-header-icon-color   `2.6.0`             | _var(--app-B1-N2, rgba(0, 0, 0, 0.7))_        | Calendar header icon background color                     |
-| --calendar-header-title-weight `2.6.0`               | 600        | Calendar Header Title Font Weight                     |
+| --calendar-header-icon-bg-color  `v2.6.0`                | _var(--app-B2-N9, rgba(0, 0, 0, 0.05))_        | Calendar header icon background color |
+| --calendar-header-icon-color   `v2.6.0`             | _var(--app-B1-N2, rgba(0, 0, 0, 0.7))_        | Calendar header icon background color                     |
+| --calendar-header-title-weight `v2.6.0`               | 600        | Calendar Header Title Font Weight                     |
