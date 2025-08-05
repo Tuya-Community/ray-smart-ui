@@ -44,7 +44,7 @@ export default function Demo() {
 考虑到项目的按需引入以及整体体积问题，上面的引入方式会导致部分组件样式文件残留影响打包产物体积，所以我们推荐使用按需引入插件，其会自动将 `import { Button } from '@ray-js/smart-ui';` 引入方式解析成 `import { Button } from '@ray-js/smart-ui/es/button';`。
 
 1. 环境要求
-   * >= @ray-js/cli@1.7.4
+   * `>= @ray-js/cli@1.7.4`
    * esbuild 构建模式（不支持 webpack 模式）
    * 使用 ESModule import 语法的导入
    * **SmartUI 版本 2.4.0 及以上**

@@ -45,7 +45,7 @@ export default function Demo() {
 Considering the project's on-demand introduction and overall size issues, the above import method will lead to some component style file residuals affecting the package size. Therefore, we recommend using the on-demand import plugin, which will automatically parse `import { Button } from '@ray-js/smart-ui';` into `import { Button } from '@ray-js/smart-ui/es/button';`.
 
 1. Environment Requirements
-   * \>= @ray-js/cli@1.7.4
+   * `>= @ray-js/cli@1.7.4`
    * esbuild build mode (does not support webpack mode)
    * Use ESModule import syntax for import
    * **SmartUI version 2.4.0 and above**
