@@ -1,6 +1,5 @@
 ---
 category: 反馈
-new: true
 ---
 
 # BottomSheet 底部弹窗

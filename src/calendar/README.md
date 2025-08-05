@@ -1,6 +1,5 @@
 ---
 category: 数据录入
-new: true
 ---
 
 # Calendar 日历

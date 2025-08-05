@@ -1,6 +1,5 @@
 ---
 category: 展示
-new: true
 ---
 
 # Empty 空状态

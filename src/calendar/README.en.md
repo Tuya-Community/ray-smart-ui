@@ -1,6 +1,5 @@
 ---
 category: Data Entry
-new: true
 ---
 
 # Calendar

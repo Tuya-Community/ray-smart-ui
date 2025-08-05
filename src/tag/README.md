@@ -1,6 +1,5 @@
 ---
 category: 展示
-new: true
 ---
 
 # Tag 标签

@@ -1,6 +1,5 @@
 ---
 category: Display
-new: true
 assets: NoticeBar
 ---
 
