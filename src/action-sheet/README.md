@@ -535,7 +535,6 @@ index.module.less
 | --action-sheet-cancel-text-color | _var(--app-B4-N3, rgba(0, 0, 0, 0.5))_ | 取消按钮的字体颜色 |
 | --action-sheet-footer-padding-top | _8px_ | 底部内容的顶部内边距 |
 | --action-sheet-footer-padding-color | _var(--app-B4-N9, rgba(0, 0, 0, 0.05))_ | 底部内容的距离列表的间隔色 |
-| --action-sheet-active-icon-color `v2.2.0` | _var(--app-M1, #3678e3)_ | 列表选中图标的颜色 |
 
 ## 常见问题
 
