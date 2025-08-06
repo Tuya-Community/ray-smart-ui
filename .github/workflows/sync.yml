@@ -13,6 +13,8 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.PROTECT_WRITE_TOKEN }}
 
     - name: Setup Node
       uses: actions/setup-node@v3
@@ -37,3 +39,6 @@ jobs:
         yarn syncMiniappData
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PROTECT_WRITE_TOKEN: ${{ secrets.PROTECT_WRITE_TOKEN }}
+        repository: ${{ github.repository }}
+        ref: ${{ github.ref }}

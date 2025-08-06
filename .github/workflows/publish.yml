@@ -11,8 +11,7 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v4
       with:
-        # Pull down the tags associated with the release
-        fetch-depth: 0
+        token: ${{ secrets.PROTECT_WRITE_TOKEN }}
 
     - name: Setup Node
       uses: actions/setup-node@v3
@@ -41,7 +40,7 @@ jobs:
 
     - name: Build
       run: yarn build
-  
+
     - name: Publish Package
       run: npm publish --access public
       env:
@@ -52,6 +51,11 @@ jobs:
         git pull
         git add package.json
         git commit -m "chore(release): npm ${TAG_VERSION}"
-        git push origin HEAD:main
+        git log -1  # 检查最后的commit结果
+
+    - name: Push
+      # 使用个人访问令牌来推送更改以避免保护分支限制
+      run: |
+        git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} HEAD:main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

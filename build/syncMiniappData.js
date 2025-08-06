@@ -2,13 +2,13 @@
  * @Author: mjh
  * @Date: 2025-03-18 16:12:20
  * @LastEditors: mjh
- * @LastEditTime: 2025-07-30 11:44:34
+ * @LastEditTime: 2025-08-06 13:43:49
  * @Description:
  */
 const transCSSVarToConfigTypes = require('./transCSSVarToConfigTypes');
 const copyREADME = require('./copyREADME');
 const { execSync } = require('child_process');
-// const ENV = process.env;
+const ENV = process.env;
 
 async function main() {
   // console.log(`切换到分支：${ENV.BRANCH}`);
@@ -32,7 +32,9 @@ async function main() {
 
   console.log('准备推送代码：');
 
-  execSync(`git add -A && git commit -m 'CI(template): update CSS var and README' && git push`);
+  execSync(
+    `git add -A && git commit -m 'CI(template): update CSS var and README' && git push https://x-access-token:${ENV.PROTECT_WRITE_TOKEN}@github.com/${ENV.repository} HEAD:${ENV.ref}`
+  );
 }
 
 // 主函数
