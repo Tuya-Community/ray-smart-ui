@@ -168,7 +168,7 @@ export default function Demo() {
 | closeOnClickOverlay | 点击遮罩是否关闭菜单 | _boolean_ | `true` |
 | nativeDisabled `v2.5.0` | 开启弹框期间是否禁用本地手势; 会在弹框开始进入动画时调用 `ty.nativeDisabled(true)`, 在弹框关闭动画结束时调用 `ty.nativeDisabled(false)` 恢复异层组件的点击能力；由于`ty.nativeDisabled` 是全局生效的，所以多个弹框组件同时打开时注意是否传 `native-disabled`属性和关闭的时机，防止 `native-disabled` 属性失效 | _boolean_ | `false` |
 | contentHeight `v2.5.0` | 内容区域高度，当设置此值时，组件的 max-height 将会失效 | _number \| string_ | `false` |
-| maxHeight `v2.6.0` | 真个组件的最大高度 | _number \| string_ | - |
+| maxHeight `v2.6.0` | 整个组件的最大高度 | _number \| string_ | - |
 
 
 ### Events
