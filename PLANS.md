@@ -34,3 +34,4 @@
 
 - [ ] stepper 设置最小值时影响删除功能
 - [ ] bottom-sheet 增加 title 插槽
+- [ ] popover 文档 demo 运行能力修复，增加demo
