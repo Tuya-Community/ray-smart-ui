@@ -55,7 +55,7 @@ export default function Demo() {
         <Button type="primary" onClick={toggleBottomSheet4}>
           {Strings.getLang('modalMenu')}
         </Button>
-        <BottomSheet show={show4} title="Title" onClose={toggleBottomSheet4}>
+        <BottomSheet show={show4} title="Title" contentHeight="500px" onClose={toggleBottomSheet4}>
           <ScrollView scroll-y style={{ height: '300px' }}>
             <View style={{ backgroundColor: 'red', height: '100px' }} />
             <View style={{ backgroundColor: 'blue', height: '100px' }} />
