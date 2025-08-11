@@ -182,7 +182,6 @@ export default function Demo() {
 }
 ```
 
-
 ## API
 
 ### Props
