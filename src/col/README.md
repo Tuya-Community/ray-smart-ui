@@ -29,23 +29,53 @@ export default function Demo() {
   return (
     <View>
       <Row>
-        <Col span="8">span: 8</Col>
-        <Col span="8">span: 8</Col>
-        <Col span="8">span: 8</Col>
+        <Col span="8" customClass={styles.dark}>
+          span: 8
+        </Col>
+        <Col span="8" customClass={styles.light}>
+          span: 8
+        </Col>
+        <Col span="8" customClass={styles.dark}>
+          span: 8
+        </Col>
       </Row>
       <Row>
-        <Col span="4">span: 4</Col>
-        <Col span="10" offset="4">
+        <Col span="4" customClass={styles.dark}>
+          span: 4
+        </Col>
+        <Col span="10" offset="4" customClass={styles.light}>
           offset: 4, span: 10
         </Col>
       </Row>
       <Row>
-        <Col offset="12" span="12">
+        <Col offset="12" span="12" customClass={styles.dark}>
           offset: 12, span: 12
         </Col>
       </Row>
     </View>
   );
+}
+```
+
+less 样式：
+
+```less
+.dark,
+.light {
+  color: #fff;
+  font-size: 13px;
+  line-height: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+  background-clip: content-box;
+}
+
+.dark {
+  background-color: #39a9ed;
+}
+
+.light {
+  background-color: #66c6f2;
 }
 ```
 
@@ -60,11 +90,39 @@ import React from 'react';
 export default function Demo() {
   return (
     <Row gutter="20">
-      <Col span="8">span: 8</Col>
-      <Col span="8">span: 8</Col>
-      <Col span="8">span: 8</Col>
+      <Col span="8" customClass={styles.dark}>
+        span: 8
+      </Col>
+      <Col span="8" customClass={styles.light}>
+        span: 8
+      </Col>
+      <Col span="8" customClass={styles.dark}>
+        span: 8
+      </Col>
     </Row>
   );
+}
+```
+
+less 样式：
+
+```less
+.dark,
+.light {
+  color: #fff;
+  font-size: 13px;
+  line-height: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+  background-clip: content-box;
+}
+
+.dark {
+  background-color: #39a9ed;
+}
+
+.light {
+  background-color: #66c6f2;
 }
 ```
 
@@ -74,31 +132,31 @@ export default function Demo() {
 
 | 参数   | 说明                          | 类型               | 默认值 |
 | ------ | ----------------------------- | ------------------ | ------ |
-| gutter | 列元素之间的间距（单位为 px） | _string \| number_ | - |
+| gutter | 列元素之间的间距（单位为 px） | _string \| number_ | -      |
 
 ### Col Props
 
 | 参数   | 说明           | 类型               | 默认值 |
 | ------ | -------------- | ------------------ | ------ |
-| offset | 列元素偏移距离 | _string \| number_ | - |
-| span | 列元素宽度 | _string \| number_ | - |
+| offset | 列元素偏移距离 | _string \| number_ | -      |
+| span   | 列元素宽度     | _string \| number_ | -      |
 
 ### 外部样式类
 
-| 类名         | 说明         |
-| ------------ | ------------ |
+| 类名        | 说明         |
+| ----------- | ------------ |
 | customClass | 根节点样式类 |
 
 ### 样式变量
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](/material/smartui?comId=config-provider)。
 
-| 名称                                          | 默认值                                       | 描述                                       |
-| --------------------------------------------- | -------------------------------------------- | ------------------------------------------ |
-| --collapse-item-transition-duration           | _0.3s_                                       | 折叠项过渡持续时间                         |
-| --collapse-item-content-padding               | _15px_                                       | 折叠项内容内边距                           |
-| --collapse-item-content-font-size             | _13px_                                       | 折叠项内容字体大小                         |
-| --collapse-item-content-line-height           | _1.5_                                        | 折叠项内容行高                             |
-| --collapse-item-content-text-color            | _#969799_                                    | 折叠项内容文本颜色                         |
-| --collapse-item-content-background-color      | _var(--app-B6, #fff)_                        | 折叠项内容背景颜色                         |
-| --collapse-item-title-disabled-color          | _#c8c9cc_                                    | 折叠项标题禁用状态颜色                     |
+| 名称                                     | 默认值                | 描述                   |
+| ---------------------------------------- | --------------------- | ---------------------- |
+| --collapse-item-content-background-color | _var(--app-B6, #fff)_ | 折叠项内容背景颜色     |
+| --collapse-item-content-font-size        | _13px_                | 折叠项内容字体大小     |
+| --collapse-item-content-line-height      | _1.5_                 | 折叠项内容行高         |
+| --collapse-item-content-padding          | _15px_                | 折叠项内容内边距       |
+| --collapse-item-content-text-color       | _#969799_             | 折叠项内容文本颜色     |
+| --collapse-item-title-disabled-color     | _#c8c9cc_             | 折叠项标题禁用状态颜色 |
+| --collapse-item-transition-duration      | _0.3s_                | 折叠项过渡持续时间     |
