@@ -83,7 +83,7 @@ export default function Demo() {
 }
 ```
 
-### Maximum Height Restriction
+### Maximum height limit
 
 The default maximum height of the bottom popup window is not allowed to exceed 50% of the screen, but the maximum height can be customized via `--bottom-sheet-max-height`. In v2.5.0 and later, when the content reaches the maximum height, the component will automatically scroll internally!
 
