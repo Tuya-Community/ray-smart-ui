@@ -10,11 +10,13 @@ export default function Demo() {
   const [show2, setShow2] = React.useState(false);
   const [show3, setShow3] = React.useState(false);
   const [show4, setShow4] = React.useState(false);
+  const [show5, setShow5] = React.useState(false);
 
   const toggleBottomSheet1 = React.useCallback(() => setShow1(!show1), [show1]);
   const toggleBottomSheet2 = React.useCallback(() => setShow2(!show2), [show2]);
   const toggleBottomSheet3 = React.useCallback(() => setShow3(!show3), [show3]);
   const toggleBottomSheet4 = React.useCallback(() => setShow4(!show4), [show4]);
+  const toggleBottomSheet5 = React.useCallback(() => setShow5(!show5), [show5]);
 
   return (
     <>
@@ -62,6 +64,20 @@ export default function Demo() {
             <View style={{ backgroundColor: 'pink', height: '100px' }} />
           </ScrollView>
           <View style={{ backgroundColor: 'white', height: '100px' }} />
+          <View style={{ backgroundColor: 'orange', height: '100px' }} />
+        </BottomSheet>
+      </DemoBlock>
+      <DemoBlock title={Strings.getLang('useTitleSlot')} padding>
+        <Button type="primary" onClick={toggleBottomSheet5}>
+          {Strings.getLang('modalMenu')}
+        </Button>
+        <BottomSheet
+          show={show5}
+          slot={{
+            title: <View>Slot Title</View>,
+          }}
+          onClose={toggleBottomSheet5}
+        >
           <View style={{ backgroundColor: 'orange', height: '100px' }} />
         </BottomSheet>
       </DemoBlock>
