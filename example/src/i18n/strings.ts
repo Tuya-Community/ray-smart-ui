@@ -470,7 +470,7 @@ export default {
     colorops: 'Color Options',
     describe: 'Description Information',
     options: 'Option',
-    customKeyboard: 'CustomKeyboard Numeric Keypad',
+    customKeyboard: 'CustomKeyboard',
     battery: 'Battery',
     business: 'Business Components',
     tabbar: 'Tabbar',
