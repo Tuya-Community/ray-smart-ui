@@ -120,7 +120,7 @@ The `contentHeight` can be used to set the height of the content area. Once `con
 ```jsx
 import React from 'react';
 import { BottomSheet, Button } from '@ray-js/smart-ui';
-import { View } from '@ray-js/ray';
+import { View, ScrollView } from '@ray-js/ray';
 
 export default function Demo() {
   const [show, setShow] = React.useState(false);
@@ -151,6 +151,37 @@ export default function Demo() {
   );
 }
 ```
+
+### Insert title using slot `v2.6.1`
+
+```jsx
+import React from 'react';
+import { BottomSheet, Button } from '@ray-js/smart-ui';
+import { View } from '@ray-js/ray';
+
+export default function Demo() {
+  const [show, setShow] = React.useState(false);
+  const toggleBottomSheet = React.useCallback(() => setShow(!show), [show]);
+
+  return (
+    <View>
+      <Button type="primary" onClick={toggleBottomSheet}>
+        Popup Menu
+      </Button>
+      <BottomSheet 
+        show={show} 
+        slot={{
+          title: <View>Slot Title</View>
+        }}
+        onClose={toggleBottomSheet}
+      >
+        <View style={{ backgroundColor: 'orange', height: '100px' }} />
+      </BottomSheet>
+    </View>
+  );
+}
+```
+
 
 ## API
 

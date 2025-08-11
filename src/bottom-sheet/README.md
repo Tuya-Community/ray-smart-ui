@@ -120,7 +120,7 @@ export default function Demo() {
 ```jsx
 import React from 'react';
 import { BottomSheet, Button } from '@ray-js/smart-ui';
-import { View } from '@ray-js/ray';
+import { View, ScrollView } from '@ray-js/ray';
 
 export default function Demo() {
   const [show, setShow] = React.useState(false);
@@ -145,6 +145,37 @@ export default function Demo() {
           <View style={{ backgroundColor: 'pink', height: '100px' }} />
         </ScrollView>
         <View style={{ backgroundColor: 'white', height: '100px' }} />
+        <View style={{ backgroundColor: 'orange', height: '100px' }} />
+      </BottomSheet>
+    </View>
+  );
+}
+```
+
+
+### 使用插槽插入标题 `v2.6.1`
+
+```jsx
+import React from 'react';
+import { BottomSheet, Button } from '@ray-js/smart-ui';
+import { View } from '@ray-js/ray';
+
+export default function Demo() {
+  const [show, setShow] = React.useState(false);
+  const toggleBottomSheet = React.useCallback(() => setShow(!show), [show]);
+
+  return (
+    <View>
+      <Button type="primary" onClick={toggleBottomSheet}>
+        弹出菜单
+      </Button>
+      <BottomSheet 
+        show={show} 
+        slot={{
+          title: <View>Slot Title</View>
+        }}
+        onClose={toggleBottomSheet}
+      >
         <View style={{ backgroundColor: 'orange', height: '100px' }} />
       </BottomSheet>
     </View>
