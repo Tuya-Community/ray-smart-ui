@@ -31,7 +31,7 @@ export default function Demo() {
   }, []);
 
   return (
-    <NavBar leftText="Home" leftTextType="home" onClickLeftText={onClickLeftText} />
+    <NavBar leftText="HomeHomeHomeHomeHome" leftTextType="home" onClickLeftText={onClickLeftText} />
   );
 }
 ```
