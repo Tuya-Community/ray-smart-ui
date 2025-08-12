@@ -79,6 +79,7 @@ jobs:
         git add .
         git commit -m "chore(release): ${NEXT_VERSION}"
         git log -1  # 检查最后的commit结果
+        git pull
 
     - name: Push
       # 使用个人访问令牌来推送更改以避免保护分支限制
