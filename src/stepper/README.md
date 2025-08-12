@@ -213,7 +213,7 @@ export default function Demo() {
 | --stepper-active-color | _#e8e8e8_ | 按钮点击后颜色 |
 | --stepper-background-color | _var(--app-B6, #fff)_ | 按钮背景色 |
 | --stepper-button-icon-color | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_ | 按钮内部图标颜色 |
-| --stepper-button-disabled-color | _none_ `v2.1.7`  var(--app-B6, #ffffff) `v2.6.1` | 按钮禁用颜色 |
+| --stepper-button-disabled-color | _none_ `v2.1.7`  _var(--app-B6, #ffffff)_ `v2.6.1` | 按钮禁用颜色 |
 | --stepper-button-disabled-icon-color | _var(--app-B6-N7, rgba(0, 0, 0, 0.1))_ | 按钮禁用图标颜色 |
 | --stepper-button-round-theme-color | _#ee0a24_ | 圆角样式按钮颜色 |
 | --stepper-btn-width | _44px_ | 按钮宽度 |

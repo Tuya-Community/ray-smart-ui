@@ -213,7 +213,7 @@ The component provides the following CSS variables, which can be used to customi
 | --stepper-active-color                   | _#e8e8e8_                                     | Button active color              |
 | --stepper-background-color               | _var(--app-B6, #fff)_                         | Button background color          |
 | --stepper-button-icon-color              | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_        | Button icon color                |
-| --stepper-button-disabled-color          | _none_ `v2.1.7`  var(--app-B6, #ffffff) `v2.6.1`    | Button disabled color   |
+| --stepper-button-disabled-color          | _none_ `v2.1.7`  _var(--app-B6, #ffffff)_ `v2.6.1`    | Button disabled color   |
 | --stepper-button-disabled-icon-color     | _var(--app-B6-N7, rgba(0, 0, 0, 0.1))_        | Button disabled icon color       |
 | --stepper-button-round-theme-color       | _#ee0a24_                                     | Round style button color         |
 | --stepper-btn-width                      | _44px_                                        | Button width                     |
