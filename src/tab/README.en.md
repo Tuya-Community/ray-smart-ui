@@ -80,6 +80,25 @@ export default function Demo() {
 }
 ```
 
+### Style
+
+`Tab` supports two style types: `line` and `card`. The default style is `line`, and you can change the style using the `type` attribute.
+
+```jsx
+import React from 'react';
+import { Tabs, Tab } from '@ray-js/smart-ui';
+
+export default function Demo() {
+  return (
+    <Tabs type="card">
+      <Tab title="Label 1">content 1</Tab>
+      <Tab title="Label 2">content 2</Tab>
+      <Tab title="Label 3">content 3</Tab>
+    </Tabs>
+  );
+}
+```
+
 ### Horizontal scroll
 
 When there are more than 5 tags, the tab can be scrolled horizontally.
@@ -127,25 +146,6 @@ export default function Demo() {
       <Tab title="Label 2" disabled>
         content 2
       </Tab>
-      <Tab title="Label 3">content 3</Tab>
-    </Tabs>
-  );
-}
-```
-
-### Style
-
-`Tab` supports two style types: `line` and `card`. The default style is `line`, and you can change the style using the `type` attribute.
-
-```jsx
-import React from 'react';
-import { Tabs, Tab } from '@ray-js/smart-ui';
-
-export default function Demo() {
-  return (
-    <Tabs type="card">
-      <Tab title="Label 1">content 1</Tab>
-      <Tab title="Label 2">content 2</Tab>
       <Tab title="Label 3">content 3</Tab>
     </Tabs>
   );

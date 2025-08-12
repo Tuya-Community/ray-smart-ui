@@ -80,6 +80,26 @@ export default function Demo() {
 }
 ```
 
+
+### 样式风格
+
+`Tab`支持两种样式风格：`line`和`card`，默认为`line`样式，可以通过`type`属性修改样式风格。
+
+```jsx
+import React from 'react';
+import { Tabs, Tab } from '@ray-js/smart-ui';
+
+export default function Demo() {
+  return (
+    <Tabs type="card">
+      <Tab title="标签 1">内容 1</Tab>
+      <Tab title="标签 2">内容 2</Tab>
+      <Tab title="标签 3">内容 3</Tab>
+    </Tabs>
+  );
+}
+```
+
 ### 横向滚动
 
 多于 5 个标签时，Tab 可以横向滚动。
@@ -127,25 +147,6 @@ export default function Demo() {
       <Tab title="标签 2" disabled>
         内容 2
       </Tab>
-      <Tab title="标签 3">内容 3</Tab>
-    </Tabs>
-  );
-}
-```
-
-### 样式风格
-
-`Tab`支持两种样式风格：`line`和`card`，默认为`line`样式，可以通过`type`属性修改样式风格。
-
-```jsx
-import React from 'react';
-import { Tabs, Tab } from '@ray-js/smart-ui';
-
-export default function Demo() {
-  return (
-    <Tabs type="card">
-      <Tab title="标签 1">内容 1</Tab>
-      <Tab title="标签 2">内容 2</Tab>
       <Tab title="标签 3">内容 3</Tab>
     </Tabs>
   );

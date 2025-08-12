@@ -98,6 +98,19 @@ export default function Demo() {
           })}
         </Tabs>
       </DemoBlock>
+      <DemoBlock title={Strings.getLang('style')} padding>
+        <Tabs type="card" tabClass={styles['special-tab']}>
+          {tabs3.map(item => {
+            return (
+              <Tab title={`${Strings.getLang('label')} ${item}`} key={item}>
+                <View className={styles.content}>
+                  {Strings.getLang('content')} {item}
+                </View>
+              </Tab>
+            );
+          })}
+        </Tabs>
+      </DemoBlock>
       <DemoBlock title={Strings.getLang('horizontalScrolling')} padding>
         <Tabs>
           {tabs6.map(item => {
@@ -116,19 +129,6 @@ export default function Demo() {
           {tabs3.map((item, index) => {
             return (
               <Tab title={`${Strings.getLang('label')} ${item}`} key={item} disabled={index === 1}>
-                <View className={styles.content}>
-                  {Strings.getLang('content')} {item}
-                </View>
-              </Tab>
-            );
-          })}
-        </Tabs>
-      </DemoBlock>
-      <DemoBlock title={Strings.getLang('style')} padding>
-        <Tabs type="card" tabClass={styles['special-tab']}>
-          {tabs3.map(item => {
-            return (
-              <Tab title={`${Strings.getLang('label')} ${item}`} key={item}>
                 <View className={styles.content}>
                   {Strings.getLang('content')} {item}
                 </View>

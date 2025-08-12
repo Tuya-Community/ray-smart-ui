@@ -1,5 +1,13 @@
 # 更新日志
 
+## v2.6.0(2025-08-12)
+### Features ✨
+- bottom-sheet: 新增 showClose 属性 和 title 插槽([fef37bf](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/fef37bf51650810a486ca1e0863ffd421d4711f9))
+### Bug Fixes 🐛
+- nav-bar: 修复 leftTextType 为 home 或者 title时，文案超长不省略问题([97f91f5](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/97f91f5869860d4cbf8994e11f5a0cffa8ac987e))
+- picker: 修复单位换行问题([b8075bd](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/b8075bd2b48b369db549554bd80c23e5305e9426))
+- stepper: 修复组件到达max或者min时，禁用样式不生效问题([58ce5af](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/58ce5af24c715c9534026fd07121426973578dce))；修改--stepper-button-disabled-color 默认值为 _var(--app-B6, #ffffff)_ ([e0e55fa](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/e0e55fa18f517fafc603a6b9c3035276d6ccaa16))；修复设置 min 或 decimalLength 导致输入框无法删除问题([7cf1cfe](https://github.com/Tuya-Community/miniapp-smart-ui/pull/16/commits/7cf1cfe9d0e7ac77db1007d902960b83dde45d9e))
+
 ## v2.6.0(2025-07-31)
 ### Features ✨
 - nav-bar: 新增 --nav-bar-title-max-width CSS 变量，调整默认值从 `60%` 为 `calc(100% - 360rpx)`([af0d83a](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/af0d83ac571e70d9d7b5f934287866c9e37e7f6c))
