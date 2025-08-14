@@ -1,3 +1,4 @@
+import React from 'react';
 import { SmartBaseExternalClassName, SmartComponent, SmartEventHandler } from '../base';
 import { SmartTransitionEvents } from '../transition';
 export interface SmartBottomSheetProps {
@@ -63,6 +64,12 @@ export interface SmartBottomSheetProps {
    * @default 50%
    */
   maxHeight?: number | string;
+  /**
+   * @description 组件整体最大高度 用于自动撑开高度情况
+   * @version 2.6.1
+   * @default true
+   */
+  showClose?: boolean;
 }
 
 export interface SmartBottomSheetEvents extends SmartTransitionEvents {
@@ -107,11 +114,26 @@ export interface SmartBottomSheetEvents extends SmartTransitionEvents {
   onClickOverlay?: SmartEventHandler;
 }
 
+interface SmartBottomSheetSlot {
+  /**
+   * 内容
+   */
+  children?: React.ReactNode;
+
+  slot?: {
+    /**
+     * @description 自定义 title 显示内容，需要不设置 title 属性
+     * @version 2.6.1
+     */
+    title: React.ReactNode;
+  };
+}
 /**
  * Since v2.0.0
  */
 export type SmartBottomSheet = SmartComponent<
   SmartBottomSheetProps,
   SmartBottomSheetEvents,
-  SmartBaseExternalClassName
+  SmartBaseExternalClassName,
+  SmartBottomSheetSlot
 >;

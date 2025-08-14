@@ -6,6 +6,7 @@ on:
       - 'release/2.x'
     types:
       - closed
+
 jobs:
   publish_beta:
     runs-on: ubuntu-latest
@@ -13,6 +14,8 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.PROTECT_WRITE_TOKEN }}
 
     - name: Setup Node
       uses: actions/setup-node@v3
@@ -25,7 +28,6 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
 
     - name: Install Dependencies
       run: yarn install --frozen-lockfile
@@ -44,18 +46,17 @@ jobs:
     - name: Get Latest Beta Version
       id: latest_version
       run: |
-        existing_versions=$(npm show $PACKAGE_NAME versions --json | jq -r '.[]' | grep -E "^${PACKAGE_BASE_VERSION}-beta-" )
+        existing_versions=$(npm show $PACKAGE_NAME versions --json | jq -r '.[]' | grep -E "^${PACKAGE_BASE_VERSION}-beta-" || true )
         if [ -z "$existing_versions" ]; then
-          echo "LATEST_VERSION=${PACKAGE_BASE_VERSION}-beta-0" >> $GITHUB_ENV
+          echo "LATEST_VERSION=${PACKAGE_BASE_VERSION}" >> $GITHUB_ENV
         else
           latest_version=$(echo "$existing_versions" | sort -V | tail -n 1)
           echo "LATEST_VERSION=${latest_version}" >> $GITHUB_ENV
         fi
-
     - name: Calculate Next Beta Version
       id: next_version
       run: |
-        if [ "$LATEST_VERSION" = "${PACKAGE_BASE_VERSION}-beta-0" ]; then
+        if [ "$LATEST_VERSION" = "${PACKAGE_BASE_VERSION}" ]; then
           next_version="${PACKAGE_BASE_VERSION}-beta-0"
         else
           beta_number=$(echo "${LATEST_VERSION}" | tr '-' ' ' | awk '{print $NF}')
@@ -75,8 +76,23 @@ jobs:
 
     - name: Commit Changes
       run: |
-        git add package.json
-        git commit -m "chore(release): ${NEXT_VERSION}"
-        git push origin HEAD:${{ github.ref }}
+        git add .
+        git commit -m "chore(release): ${NEXT_VERSION} release by Github Actions"
+        git log -1  # 检查最后的commit结果
+        git pull
+
+    - name: Push
+      # 使用个人访问令牌来推送更改以避免保护分支限制
+      run: |
+        git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} HEAD:${{github.ref}}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Comment on PR
+      uses: peter-evans/create-or-update-comment@v2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        issue-number: ${{ github.event.pull_request.number }}
+        repository: ${{ github.event.pull_request.head.repo.full_name }}
+        body: |
+          The merge has been completed successfully. The current npm version is `${{ env.NEXT_VERSION }}`.

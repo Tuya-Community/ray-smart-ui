@@ -70,6 +70,8 @@ export default function Demo() {
           value={value4}
           thumbWidth={18}
           thumbHeight={18}
+          parcel
+          parcelMargin={2}
           onAfterChange={value => setValue4(value)}
         />
       </DemoBlock>

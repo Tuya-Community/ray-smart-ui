@@ -1,6 +1,5 @@
 ---
 category: 数据录入
-new: true
 ---
 
 # Calendar 日历
@@ -415,7 +414,7 @@ const [maxDate, setMaxDate] = useState(
 | title | 日历标题 | _string_ | `日期选择` |
 | dayClassMap `v2.1.0` | 日期单元格样式 | Object | null |
 | type | 选择类型:<br>`single`表示选择单个日期，<br>`range`表示选择日期区间，<br>`week`表示选择周，<br>`month`表示选择月，<br>`year`表示选择年 | _string_ | `single` |
-| headerIconColor  `2.6.0` | 头部栏左右箭头 icon 颜色 | _string_ | `rgba(0, 0, 0, 0.7)` |
+| headerIconColor  `v2.6.0` | 头部栏左右箭头 icon 颜色 | _string_ | `rgba(0, 0, 0, 0.7)` |
 
 ### Range Props
 
@@ -503,6 +502,6 @@ const [maxDate, setMaxDate] = useState(
 | --calendar-confirm-button-line-height         | _34px_                                         | 确认按钮行高                           |
 | --calendar-text-color                         | _#000_                                         | 日历文字颜色                           |
 | --calendar-header-save-color                  | _#1989fa_                                      | 日历头部保存按钮颜色                   |
-| --calendar-header-icon-bg-color `2.6.0`              | _var(--app-B2-N9, rgba(0, 0, 0, 0.05))_        | 日历头部图标背景色                     |
-| --calendar-header-icon-color `2.6.0`               | _var(--app-B1-N2, rgba(0, 0, 0, 0.7))_        | 日历头部图标背景色                     |
-| --calendar-header-title-weight  `2.6.0`              | 600        | 日历头部标题字重                     |
+| --calendar-header-icon-bg-color `v2.6.0`              | _var(--app-B2-N9, rgba(0, 0, 0, 0.05))_        | 日历头部图标背景色                     |
+| --calendar-header-icon-color `v2.6.0`               | _var(--app-B1-N2, rgba(0, 0, 0, 0.7))_        | 日历头部图标背景色                     |
+| --calendar-header-title-weight  `v2.6.0`              | 600        | 日历头部标题字重                     |

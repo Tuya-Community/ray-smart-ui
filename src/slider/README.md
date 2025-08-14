@@ -122,6 +122,8 @@ export default function Demo() {
       value={value}
       thumbWidth={18}
       thumbHeight={18}
+      parcel
+      parcelMargin={2}
       onAfterChange={value => setValue(value)}
     />
   );
@@ -284,7 +286,7 @@ export default function Demo() {
 |thumbHeight|滑块高度|string | number|'28px'|
 |thumbRadius|滑块圆角|string | number|'28px'|
 |thumbColor|滑块颜色|Background<0 \| (string & {})>|'#ffffff'|
-|thumbBorderStyle|滑块边框样式|BorderStyle|'0px solid #ffffff'|
+|thumbBorderStyle|滑块边框类型|BorderStyle|'none'|
 |thumbBoxShadowStyle|滑块阴影|BoxShadow|'0px 0.5px 4px rgba(0, 0, 0, 0.12), 0px 6px 13px rgba(0, 0, 0, 0.12)'|
 |isShowTicks|是否显示刻度|boolean|false|
 |tickWidth|刻度宽度|string|'4px'|

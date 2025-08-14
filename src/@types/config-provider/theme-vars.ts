@@ -267,6 +267,7 @@ type CalendarThemeVars =
   | 'calendarHeaderBoxShadow'
   | 'calendarHeaderTitleHeight'
   | 'calendarHeaderTitleFontSize'
+  | 'calendarHeaderTitleWeight'
   | 'calendarHeaderTitleFontColor'
   | 'calendarHeaderSubtitleFontSize'
   | 'calendarWeekdaysHeight'
@@ -279,6 +280,7 @@ type CalendarThemeVars =
   | 'calendarCellItemFontSize'
   | 'calendarCellItemWidth'
   | 'calendarCellItemHeight'
+  | 'calendarCellItemMargin'
   | 'calendarCellItemFontColor'
   | 'calendarCellItemBorderRadius'
   | 'calendarDayFontWeight'
@@ -299,7 +301,8 @@ type CalendarThemeVars =
   | 'calendarTextColor'
   | 'calendarPopupHeight'
   | 'calendarHeaderSaveColor'
-  | 'calendarHeaderIconBgColor';
+  | 'calendarHeaderIconBgColor'
+  | 'calendarHeaderIconColor';
 
 type CellThemeVars =
   | 'cellFontSize'
@@ -653,6 +656,7 @@ type TagThemeVars =
   | 'tagPlainBackgroundColor';
 
 type ToastThemeVars =
+  | 'toastMinWidth'
   | 'toastMaxWidth'
   | 'toastFontSize'
   | 'toastTextColor'

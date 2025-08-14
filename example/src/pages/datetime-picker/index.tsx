@@ -182,8 +182,6 @@ export default function Demo() {
           value={currentDate5}
           is12HourClock
           columnsOrder={[2, 1, 1]}
-          maxHour={24}
-          minHour={1}
           fontStyles={{
             '12HourClock': {
               fontSize: '14px',
@@ -198,8 +196,6 @@ export default function Demo() {
           type="time"
           value={currentDate5}
           changeAnimation={false}
-          minHour={1}
-          maxHour={24}
           onInput={onTimeInput}
         />
       </DemoBlock>
@@ -243,16 +239,16 @@ export default function Demo() {
           value={data.currentDate1}
           columnStyles={{
             year: {
-              background: 'rgba(0, 0, 0, 0.4)',
+              background: 'rgba(0, 0, 0, 0.1)',
             },
           }}
           fontStyles={{
             month: {
-              color: 'blue',
+              color: 'rgb(23, 138, 237)',
             },
           }}
           activeStyle={{
-            color: 'red',
+            color: 'rgb(235, 87, 41)',
           }}
           onInput={onDateTimeInput}
         />

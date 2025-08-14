@@ -1,6 +1,5 @@
 ---
 category: Feedback
-new: true
 ---
 
 # BottomSheet
@@ -84,7 +83,7 @@ export default function Demo() {
 }
 ```
 
-### Maximum Height Restriction
+### Maximum height limit
 
 The default maximum height of the bottom popup window is not allowed to exceed 50% of the screen, but the maximum height can be customized via `--bottom-sheet-max-height`. In v2.5.0 and later, when the content reaches the maximum height, the component will automatically scroll internally!
 
@@ -121,7 +120,7 @@ The `contentHeight` can be used to set the height of the content area. Once `con
 ```jsx
 import React from 'react';
 import { BottomSheet, Button } from '@ray-js/smart-ui';
-import { View } from '@ray-js/ray';
+import { View, ScrollView } from '@ray-js/ray';
 
 export default function Demo() {
   const [show, setShow] = React.useState(false);
@@ -153,6 +152,36 @@ export default function Demo() {
 }
 ```
 
+### Insert title using slot `v2.6.1`
+
+```jsx
+import React from 'react';
+import { BottomSheet, Button } from '@ray-js/smart-ui';
+import { View } from '@ray-js/ray';
+
+export default function Demo() {
+  const [show, setShow] = React.useState(false);
+  const toggleBottomSheet = React.useCallback(() => setShow(!show), [show]);
+
+  return (
+    <View>
+      <Button type="primary" onClick={toggleBottomSheet}>
+        Popup Menu
+      </Button>
+      <BottomSheet 
+        show={show} 
+        slot={{
+          title: <View>Slot Title</View>
+        }}
+        onClose={toggleBottomSheet}
+      >
+        <View style={{ backgroundColor: 'orange', height: '100px' }} />
+      </BottomSheet>
+    </View>
+  );
+}
+```
+
 ## API
 
 ### Props
@@ -170,6 +199,8 @@ export default function Demo() {
 | nativeDisabled `v2.5.0` | Whether to disable local gestures during the opening of the dialog; it will call `ty.nativeDisabled(true)` when the dialog starts the entrance animation, and call `ty.nativeDisabled(false)` at the end of the closing animation to restore the click ability of components on different layers. Since `ty.nativeDisabled` works globally, pay attention to whether to pass the `native-disabled` attribute and the timing of closing when multiple dialog components are opened simultaneously, to prevent the `native-disabled` attribute from being ineffective. | _boolean_ | `false` |
 | contentHeight `v2.5.0` | Content area height. When this value is set, the component's max-height will be invalid. | _number \| string_ | `false` |
 | maxHeight `v2.6.0` | The maximum height of the entire component | _number \| string_ | - |
+| showClose `v2.6.1` | Whether to display the close icon | _boolean_ | `true` |
+
 
 ### Events
 
@@ -183,6 +214,14 @@ export default function Demo() {
 | onLeave | Triggered during leaving | - |
 | onAfterLeave | Triggered after leaving | - |
 | onClickOverlay | Triggered when clicking overlay | - |
+
+
+### Slot
+
+| name          | Description           |
+| ------------- | -------------- |
+| - | content |
+| title `v2.6.1` | Title Slot |
 
 
 ### External Style Classes

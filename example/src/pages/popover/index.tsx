@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 
 import { DemoBlock } from '@/components';
-import { View } from '@ray-js/ray';
-import { Button, Cell, CellGroup, Icon, Popover } from '@ray-js/smart-ui';
+import { Text, View } from '@ray-js/ray';
+import { Button, Icon, Popover } from '@ray-js/smart-ui';
 import Sun from '@tuya-miniapp/icons/dist/svg/Sun';
+import styles from './index.module.less';
 
 import Strings from '../../i18n';
 
@@ -29,21 +30,14 @@ export default function Demo() {
             }}
             slot={{
               overlay: (
-                <CellGroup inset>
-                  <Cell
-                    title="Title"
-                    slot={{
-                      icon: <Icon className="cell-icon" name={Sun} size="24px" color="#3678E3" />,
-                    }}
-                  />
-                  <Cell
-                    title="Title"
-                    border={false}
-                    slot={{
-                      icon: <Icon className="cell-icon" name={Sun} size="24px" color="#3678E3" />,
-                    }}
-                  />
-                </CellGroup>
+                <View>
+                  {[1, 2, 3].map(n => (
+                    <View className={styles.listItem} key={n}>
+                      <Icon name={Sun} size="24px" color="#3678E3" />
+                      <Text className={styles.listText}>Title</Text>
+                    </View>
+                  ))}
+                </View>
               ),
             }}
           >
@@ -65,21 +59,14 @@ export default function Demo() {
             }}
             slot={{
               overlay: (
-                <CellGroup inset>
-                  <Cell
-                    title="Title"
-                    slot={{
-                      icon: <Icon className="cell-icon" name={Sun} size="24px" color="#3678E3" />,
-                    }}
-                  />
-                  <Cell
-                    title="Title"
-                    border={false}
-                    slot={{
-                      icon: <Icon className="cell-icon" name={Sun} size="24px" color="#3678E3" />,
-                    }}
-                  />
-                </CellGroup>
+                <View>
+                  {[1, 2, 3].map(n => (
+                    <View className={styles.listItem} key={n}>
+                      <Icon name={Sun} size="24px" color="#3678E3" />
+                      <Text className={styles.listText}>Title</Text>
+                    </View>
+                  ))}
+                </View>
               ),
             }}
           >
@@ -101,21 +88,14 @@ export default function Demo() {
             }}
             slot={{
               overlay: (
-                <CellGroup inset>
-                  <Cell
-                    title="Title"
-                    slot={{
-                      icon: <Icon className="cell-icon" name={Sun} size="24px" color="#3678E3" />,
-                    }}
-                  />
-                  <Cell
-                    title="Title"
-                    border={false}
-                    slot={{
-                      icon: <Icon className="cell-icon" name={Sun} size="24px" color="#3678E3" />,
-                    }}
-                  />
-                </CellGroup>
+                <View>
+                  {[1, 2, 3].map(n => (
+                    <View className={styles.listItem} key={n}>
+                      <Icon name={Sun} size="24px" color="#3678E3" />
+                      <Text className={styles.listText}>Title</Text>
+                    </View>
+                  ))}
+                </View>
               ),
             }}
           >

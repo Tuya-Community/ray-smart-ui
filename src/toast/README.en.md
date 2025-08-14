@@ -238,7 +238,7 @@ The component provides the following CSS variables for custom styling. For usage
 
 | Name                          | Default Value                                 | Description |
 | ----------------------------- | -------------------------------------- | ---- |
-| --toast-min-width | _88px_ | Minimum width prompt |
+| --toast-min-width `v2.6.0` | _88px_ | Minimum width prompt |
 | --toast-max-width | _70%_ | Maximum width of the notification |
 | --toast-font-size | _14px_ | Notification font size |
 | --toast-text-color | _#fff_ | Notification text color |
@@ -246,6 +246,7 @@ The component provides the following CSS variables for custom styling. For usage
 | --toast-border-radius | _10px_ | Notification border radius |
 | --toast-background-color | _fade(@black, 70%)_ | Notification background color |
 | --toast-icon-size | _36px_ | Notification icon size |
+| --toast-text-min-width `@deprecated v2.6.0` | _96px_ | Minimum width of the notification text |
 | --toast-text-padding | _@padding-xs @padding-sm_ | Notification text padding |
 | --toast-default-padding | _16px_ | Default notification padding |
 | --toast-default-width | _88px_ | Default notification width |

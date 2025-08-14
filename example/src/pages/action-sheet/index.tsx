@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text } from '@ray-js/ray';
 import { useDebounce } from 'ahooks';
-import { ActionSheet, Button, DateTimePicker, Slider } from '@ray-js/smart-ui';
+import {
+  ActionSheet,
+  Button,
+  DateTimePicker,
+  Picker,
+  Slider,
+  SmartEventHandler,
+  SmartPickerBaseEventDetail,
+} from '@ray-js/smart-ui';
 import { DemoBlock } from '@/components';
 import styles from './index.module.less';
 import Strings from '../../i18n';
@@ -18,6 +26,7 @@ const action2 = [
   { name: Strings.getLang('disableOps'), disabled: true },
 ];
 
+const tempColumns = ['39', '40', '41', '42', '43', '44', '45'];
 const minDate = new Date(2018, 0, 1).getTime();
 
 export default function Demo() {
@@ -38,6 +47,7 @@ export default function Demo() {
   const [showSelect, setShowSelect] = React.useState(false);
   const [showNumber, setShowNumber] = React.useState(false);
   const [showPicker, setShowPicker] = React.useState(false);
+  const [showCustomTitle, setShowCustomTitle] = React.useState(false);
   const [currentNumber, setCurrentNumber] = React.useState(100);
   const currentNumberForSlider = useDebounce(currentNumber, { wait: 500 });
   const [show1, setShow1] = React.useState(false);
@@ -47,6 +57,7 @@ export default function Demo() {
   const [show5, setShow5] = React.useState(false);
   const [ready, setReady] = React.useState(false);
   const onActionSheetReady = React.useCallback(() => setReady(true), []);
+  const onActionSheetUnReady = React.useCallback(() => setReady(false), []);
   const onSelect = React.useCallback(
     evt => {
       const { id } = evt.detail;
@@ -58,14 +69,23 @@ export default function Demo() {
     },
     [actonSelect]
   );
+
   const toggleActionSheetSelect = React.useCallback(() => setShowSelect(!showSelect), [showSelect]);
   const toggleActionSheetNumber = React.useCallback(() => setShowNumber(!showNumber), [showNumber]);
   const toggleActionSheetPicker = React.useCallback(() => setShowPicker(!showPicker), [showPicker]);
+  const toggleActionSheetCustomTitle = React.useCallback(
+    () => setShowCustomTitle(!showCustomTitle),
+    [showCustomTitle]
+  );
   const toggleActionSheet1 = React.useCallback(() => setShow1(!show1), [show1]);
   const toggleActionSheet2 = React.useCallback(() => setShow2(!show2), [show2]);
   const toggleActionSheet3 = React.useCallback(() => setShow3(!show3), [show3]);
   const toggleActionSheet4 = React.useCallback(() => setShow4(!show4), [show4]);
   const toggleActionSheet5 = React.useCallback(() => setShow5(!show5), [show5]);
+
+  const [current12Date, setCurrent12Date] = useState('12:00');
+  const [tempColumnIdx, setTempColumnIdx] = useState(3);
+
   const onChange = React.useCallback(value => {
     setCurrentNumber(value);
   }, []);
@@ -78,6 +98,15 @@ export default function Demo() {
     setShowPicker(false);
     setCurrentDateStr(currentDate?.toLocaleDateString());
   }, [currentDate]);
+
+  const onCurrent12DateInput: SmartEventHandler<string> = event => {
+    setCurrent12Date(event.detail);
+  };
+
+  const onTempColumnChange: SmartEventHandler<SmartPickerBaseEventDetail> = event => {
+    const { index } = event.detail;
+    setTempColumnIdx(index as number);
+  };
 
   return (
     <>
@@ -173,6 +202,7 @@ export default function Demo() {
           onClose={toggleActionSheetNumber}
           onCancel={toggleActionSheetNumber}
           onConfirm={toggleActionSheetNumber}
+          onAfterLeave={onActionSheetUnReady}
           onAfterEnter={onActionSheetReady}
         >
           <View className={styles['content-number']}>
@@ -203,7 +233,8 @@ export default function Demo() {
         </ActionSheet>
       </DemoBlock>
 
-      <DemoBlock title={`${Strings.getLang('customScroll')} Picker: ${currentDateStr}`} padding>
+      <DemoBlock title={Strings.getLang('customScroll')} padding>
+        <View>{`Picker: ${currentDateStr}`}</View>
         <Button type="primary" onClick={toggleActionSheetPicker}>
           {Strings.getLang('modalMenu')}
         </Button>
@@ -223,6 +254,46 @@ export default function Demo() {
             value={currentDate}
             onInput={onInput}
           />
+        </ActionSheet>
+      </DemoBlock>
+      <DemoBlock title={Strings.getLang('customDoubleSelect')} padding>
+        <Button type="primary" onClick={toggleActionSheetCustomTitle}>
+          {Strings.getLang('modalMenu')}
+        </Button>
+        <ActionSheet
+          show={showCustomTitle}
+          cancelText="Cancel"
+          confirmText="Confirm"
+          slot={{
+            title: (
+              <View className={styles['demo-custom-double-select-header']}>
+                <View>Time</View>
+                <View>Temp</View>
+              </View>
+            ),
+          }}
+          useTitleSlot
+          onClose={toggleActionSheetCustomTitle}
+          onCancel={toggleActionSheetCustomTitle}
+          onConfirm={toggleActionSheetCustomTitle}
+        >
+          <View className={styles['demo-custom-double-select-content']}>
+            <DateTimePicker
+              className={styles.flex1}
+              type="time"
+              is12HourClock
+              showToolbar={false}
+              value={current12Date}
+              onInput={onCurrent12DateInput}
+            />
+            <Picker
+              className={styles.flex1}
+              unit="℃"
+              activeIndex={tempColumnIdx}
+              columns={tempColumns}
+              onChange={onTempColumnChange}
+            />
+          </View>
         </ActionSheet>
       </DemoBlock>
     </>

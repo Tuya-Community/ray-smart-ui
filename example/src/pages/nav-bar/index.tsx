@@ -31,7 +31,11 @@ export default function Demo() {
   return (
     <>
       <DemoBlock title={Strings.getLang('homePage')}>
-        <NavBar leftText="Home" leftTextType="home" onClickLeftText={onClickLeftText} />
+        <NavBar
+          leftText="HomeHomeHomeHomeHome"
+          leftTextType="home"
+          onClickLeftText={onClickLeftText}
+        />
       </DemoBlock>
 
       <DemoBlock title={Strings.getLang('secondPage')}>
