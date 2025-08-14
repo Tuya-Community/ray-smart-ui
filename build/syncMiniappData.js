@@ -2,11 +2,12 @@
  * @Author: mjh
  * @Date: 2025-03-18 16:12:20
  * @LastEditors: mjh
- * @LastEditTime: 2025-08-06 13:43:49
+ * @LastEditTime: 2025-08-14 10:55:15
  * @Description:
  */
 const transCSSVarToConfigTypes = require('./transCSSVarToConfigTypes');
 const copyREADME = require('./copyREADME');
+const updatePackage = require('./updatePackage');
 const { execSync } = require('child_process');
 const ENV = process.env;
 
@@ -19,6 +20,8 @@ async function main() {
     transCSSVarToConfigTypes(),
     // 拷贝miniapp的README文件
     copyREADME(),
+    // 拷贝miniapp的package的version 并更新依赖
+    updatePackage(),
   ]);
   console.log('更新代码完成！');
   const status = execSync('git status -s').toString();
