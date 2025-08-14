@@ -48,7 +48,7 @@ jobs:
 
     - name: Commit Changes
       run: |
-        git pull
+        git pull origin HEAD:main
         git add package.json
         git commit -m "chore(release): npm ${TAG_VERSION} release by Github Actions"
         git log -1  # 检查最后的commit结果
