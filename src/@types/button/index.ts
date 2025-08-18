@@ -163,7 +163,13 @@ export interface SmartButtonEvents {
 
 export interface SmartButtonExternalClassName
   extends SmartBaseExternalClassName,
-    SmartBaseLoadingExternalClassName {}
+    SmartBaseLoadingExternalClassName {
+  /**
+   * @description 按钮按下时的样式
+   * @version 2.6.2 补充类型
+   */
+  hoverClass?: string;
+}
 
 export type SmartButton = SmartComponent<
   SmartButtonProps,
