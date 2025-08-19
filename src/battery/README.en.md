@@ -39,6 +39,19 @@ export default function Demo() {
 }
 ```
 
+### Set Color `v2.6.2`
+
+`color` The attribute can directly set the color of the component and has the highest priority.
+
+```jsx
+import React from 'react';
+import { Battery } from '@ray-js/smart-ui';
+
+export default function Demo() {
+  return <Battery type="horizontal" color="red" value={100} />;
+}
+```
+
 ## API
 
 ### Props

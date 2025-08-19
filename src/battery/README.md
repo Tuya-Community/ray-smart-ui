@@ -39,6 +39,19 @@ export default function Demo() {
 }
 ```
 
+### 设置颜色 `v2.6.2`
+
+`color` 属性可以直接设置组件的颜色，拥有最高优先级
+
+```jsx
+import React from 'react';
+import { Battery } from '@ray-js/smart-ui';
+
+export default function Demo() {
+  return <Battery type="horizontal" color="red" value={100} />;
+}
+```
+
 ## API
 
 ### Props
