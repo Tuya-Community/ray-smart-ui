@@ -49,7 +49,7 @@ export default function Demo() {
 | highColor | 电量高的颜色 | _string_ | `#70CF98` |
 | lowColor | 电量低的颜色 | _string_ | `#FF4444` |
 | middleColor | 电量中的颜色 | _string_ | `#F5A623` |
-| onCalcColor | 电量颜色计算规则回调函数，返回计算后的颜色值即可 | _() => string_ | - |
 | size | 尺寸 | _number_ | 10 |
 | type | 电池方向 | `vertical` \| `horizontal` | `vertical` |
 | value | 电量值 | _number_ | 70 |
+| color `v2.6.2` | 电量的颜色（优先级最高） | _string_ | - |
