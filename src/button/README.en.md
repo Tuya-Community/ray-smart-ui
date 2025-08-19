@@ -298,6 +298,8 @@ export default function Demo() {
 | ------------ | ------------------- |
 | customClass | Root node style |
 | loadingClass | Loading icon style |
+| hoverClass | Style when the button is pressed |
+
 ### Style Variables
 
 The component provides the following CSS variables that can be used for custom styles. For usage, refer to the [ConfigProvider Component](/material/smartui?comId=config-provider).
