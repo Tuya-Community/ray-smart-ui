@@ -81,11 +81,15 @@ const tranToRayStr = str => {
       .split('|')
       .map(item => item.trim());
     let name = partList[1];
+    // 样式变量无需处理
     if (name.startsWith('-')) {
       rayList.push(line);
       return;
     }
-
+    // miniapp 专属api 直接跳过
+    if (name.includes('`@miniapp`')) {
+      return;
+    }
     // 代表此行是大标题下的 第一个 表格标题行 不需要处理
     if (titleFirstTag) {
       rayList.push(line);
@@ -99,7 +103,7 @@ const tranToRayStr = str => {
       name = `on${eventName.slice(0, 1).toUpperCase()}${camelCase(eventName.slice(1))}`;
     }
 
-    // 样式处理
+    // 样式入参处理
     if (name.endsWith('-style') && partList[3] === '_string_') {
       partList[3] = '_React.CSSProperties_';
       if (partList[4] === "''") partList[4] = '-';
