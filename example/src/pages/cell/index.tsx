@@ -27,7 +27,7 @@ export default function Demo() {
       </DemoBlock>
 
       <DemoBlock title={Strings.getLang('cardStyle')}>
-        <CellGroup inset>
+        <CellGroup inset insetBorderRadius={12}>
           <Cell title={Strings.getLang('cell')} value={Strings.getLang('content')} isLink />
           <Cell
             title={Strings.getLang('cell')}
