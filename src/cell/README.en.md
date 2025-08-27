@@ -236,6 +236,7 @@ export default function Demo() {
 | border | Whether to show the border | _boolean_ | `true` |
 | inset | Show as rounded card style | _boolean_ | `false` |
 | title | Group title | _string_ | `-` |
+| insetBorderRadius `v2.6.2` | Corner radius value when in rounded card style | _string \| number_ | `-` |
 
 ### CellGroup External Classes
 

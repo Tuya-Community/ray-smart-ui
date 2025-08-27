@@ -236,6 +236,8 @@ export default function Demo() {
 | border | 是否显示外边框 | _boolean_ | `true` |
 | inset | 是否展示为圆角卡片风格 | _boolean_ | `false` |
 | title | 分组标题 | _string_ | `-` |
+| insetBorderRadius `v2.6.2` | 圆角卡片风格时的圆角值 | _string \| number_ | `-` |
+
 
 ### CellGroup 外部样式类
 
