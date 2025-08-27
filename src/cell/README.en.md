@@ -37,7 +37,7 @@ export default function Demo() {
 
 ### Card Style
 
-By using the `inset` attribute of `CellGroup`, you can transform cells into a rounded card style (supported from version 1.7.2).
+The `inset` `v1.7.2` attribute of `CellGroup` can convert cells into a rounded card style, and `insetBorderRadius` `v2.6.2` can set the value of the rounded corners.
 
 ```jsx
 import { Cell, CellGroup } from '@ray-js/smart-ui';
@@ -45,7 +45,7 @@ import React from 'react';
 
 export default function Demo() {
   return (
-    <CellGroup inset>
+    <CellGroup inset insetBorderRadius={12}>
       <Cell title="Cell" value="Content" isLink />
       <Cell title="Cell" value="Content" label="Description" border={false} isLink />
     </CellGroup>
