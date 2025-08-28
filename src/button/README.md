@@ -296,6 +296,8 @@ export default function Demo() {
 | ------------- | -------------- |
 | customClass | 根节点样式类 |
 | loadingClass | 加载图标样式类 |
+| hoverClass | 按钮按下时的样式 |
+
 
 ### 样式变量
 

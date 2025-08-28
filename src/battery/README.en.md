@@ -39,6 +39,19 @@ export default function Demo() {
 }
 ```
 
+### Set Color `v2.6.2`
+
+`color` The attribute can directly set the color of the component and has the highest priority.
+
+```jsx
+import React from 'react';
+import { Battery } from '@ray-js/smart-ui';
+
+export default function Demo() {
+  return <Battery type="horizontal" color="red" value={100} />;
+}
+```
+
 ## API
 
 ### Props
@@ -49,7 +62,7 @@ export default function Demo() {
 | highColor | Color when battery level is high | _string_ | `#70CF98` |
 | lowColor | Color when battery level is low | _string_ | `#FF4444` |
 | middleColor | Color when battery level is medium | _string_ | `#F5A623` |
-| onCalcColor | Callback function for calculating battery color | _() => string_ | - |
 | size | Size | _number_ | 10 |
 | type | Battery orientation | `vertical` \| `horizontal` | `vertical` |
 | value | Battery level | _number_ | 70 |
+| color `v2.6.2` | Battery color (highest priority) | _string_ | - |

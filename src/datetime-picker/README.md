@@ -353,7 +353,6 @@ export default function Demo() {
 | ------------------- | ------------------------------------------------------------------------------ | -------------------------- | ---------- |
 | cancelButtonText | 取消按钮文字 | _string_ | `取消` |
 | confirmButtonText | 确认按钮文字 | _string_ | `确认` |
-| filter | 选项过滤函数(`type` 可能值为 `year`, `month`, `day`, `hour`, `minute`) | _(type, values) => values_ | - |
 | itemHeight | 选项高度 | _number_ | `44` |
 | loading | 是否显示加载状态 | _boolean_ | `false` |
 | locale | 设置时间单位 | Locale |  |

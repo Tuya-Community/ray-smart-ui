@@ -19,6 +19,13 @@ export interface SmartCellGroupProps {
    * @default true
    */
   border?: boolean;
+
+  /**
+   * @description 圆角卡片风格时的圆角值
+   * @version 2.6.2
+   * @default
+   */
+  insetBorderRadius?: number | string;
 }
 
 export type SmartCellGroupExternalClassName = SmartBaseExternalClassName;

@@ -26,6 +26,11 @@ export default function Demo() {
           <Battery type="horizontal" value={0} />
         </View>
       </DemoBlock>
+      <DemoBlock title={Strings.getLang('setColor')}>
+        <View className={styles.line}>
+          <Battery type="horizontal" color="red" value={100} />
+        </View>
+      </DemoBlock>
     </>
   );
 }

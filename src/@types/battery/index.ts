@@ -23,11 +23,11 @@ export interface SmartBatteryProps {
   value?: number;
 
   /**
-   * 进度条颜色，传入对象格式可以定义渐变色
+   * 电量的颜色
    *
-   * @default '#1989fa'
+   * @version v2.6.2
    */
-  color?: string | Record<string, string>;
+  color?: string;
 
   /**
    * 电量高的颜色
