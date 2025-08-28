@@ -3,7 +3,7 @@
 ## v2.6.2(2025-08-28)
 ### Features ✨
 - battery: 新增 color 属性可以直接修改颜色([ff99655](https://github.com/Tuya-Community/miniapp-smart-ui/pull/28/commits/ff996558becf5ebe24b711904bc1ae9e0faecedc));
-- cell: 新增 inset-border-radius 属性([09c60be](https://github.com/Tuya-Community/miniapp-smart-ui/pull/29/commits/09c60bef61e8f353bcab90728c2ca509aaf0b94f))
+- cell: 新增 insetBorderRadius 属性([09c60be](https://github.com/Tuya-Community/miniapp-smart-ui/pull/29/commits/09c60bef61e8f353bcab90728c2ca509aaf0b94f))
 
 ### Bug Fixes 🐛
 - picker: 修复单位对齐问题([fc12155](https://github.com/Tuya-Community/miniapp-smart-ui/pull/28/commits/fc12155f3883d0147cb328c2123442f147fef330));
