@@ -1,5 +1,5 @@
 import { View, Image, router, Text } from '@ray-js/ray';
-import { Cell } from '@ray-js/smart-ui';
+import { Cell, CellGroup } from '@ray-js/smart-ui';
 import Strings from 'example/src/i18n';
 import { routeConfig } from '@/constant/routeConfig';
 import styles from './index.module.less';
@@ -19,17 +19,20 @@ export function Home() {
         return (
           <View key={c.groupName} className={styles.list}>
             <View className={styles.title}>{Strings.getLang(c.groupName)}</View>
-            {c.list.map((d, idx) => {
-              return (
-                <Cell
-                  // eslint-disable-next-line react/no-array-index-key
-                  key={idx}
-                  title={Strings.getLang(d.title)}
-                  isLink
-                  onClick={() => router.push(d.path)}
-                />
-              );
-            })}
+            <CellGroup>
+              {c.list.map((d, idx) => {
+                return (
+                  <Cell
+                    // eslint-disable-next-line react/no-array-index-key
+                    key={idx}
+                    title={Strings.getLang(d.title)}
+                    isLink
+                    border={c.list.length !== idx + 1}
+                    onClick={() => router.push(d.path)}
+                  />
+                );
+              })}
+            </CellGroup>
           </View>
         );
       })}
