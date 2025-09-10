@@ -296,6 +296,7 @@ export default function Demo() {
 | nativeDisabled `v2.3.8` | 开启弹框期间是否禁用本地手势 | _boolean_ | `false` |
 | autoClose `v2.6.3` | 是否自动点击回调后关闭 | _boolean_ | `true` |
 
+
 ### Props
 
 通过组件调用 Dialog 时，支持以下 Props:
@@ -332,6 +333,7 @@ export default function Demo() {
 | beforeClose | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(action, value?: string) => boolean \| Promise\<boolean\>_ | - |
 | transition | 动画名称，可选值为`fade` | _string_ | `scale` |
 | autoClose `v2.6.3` | 是否自动点击回调后关闭 | _boolean_ | `false` |
+
 
 ### Events
 
