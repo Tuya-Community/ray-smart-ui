@@ -294,6 +294,7 @@ When calling Dialog via a function, the following options are supported:
 | context | The selection range of the selector, you can pass in the `this` of a custom component as context | _object_ | Current page |
 | transition | Animation name, options are `fade` `none` | _string_ | `scale` |
 | nativeDisabled `v2.3.8` | Whether to disable local gestures during the pop-up period | _boolean_ | `false` |
+| autoClose `v2.6.3` | Automatically close after callback | _boolean_ | `true` |
 
 ### Props
 
@@ -330,6 +331,7 @@ The following Props are supported when calling Dialog via component invocation:
 | useTitleSlot | Whether to use a custom slot for the title | _boolean_ | `false` |
 | beforeClose | Callback function before closing, returning `false` can prevent closing, supports returning Promise | _(action, value?: string) => boolean \| Promise\<boolean\>_ | - |
 | transition | Animation name, options are `fade` | _string_ | `scale` |
+| autoClose `v2.6.3` | Automatically close after callback | _boolean_ | `false` |
 
 ### Events
 

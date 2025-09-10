@@ -202,6 +202,13 @@ export interface SmartDialogProps extends SmartOpenTypeProps {
    */
   nativeDisabled?: boolean;
 
+  /**
+   * @description 回调自动关闭弹框
+   * @default false
+   * @version 2.6.3
+   */
+  autoClose?: boolean;
+
   // /**
   //  * 确认按钮的微信开放能力，具体支持可参考 微信官方文档
   //  */
