@@ -32,6 +32,6 @@
 
 ## v2.6.1（开发中）
 
-- [ ] stepper 设置最小值时影响删除功能
-- [ ] bottom-sheet 增加 title 插槽
-- [ ] popover 文档 demo 运行能力修复，增加demo
+- [x] stepper 设置最小值时影响删除功能
+- [x] bottom-sheet 增加 title 插槽
+- [x] popover 文档 demo 运行能力修复，增加demo
