@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, Text, View } from '@ray-js/ray';
-import { Cell, Dialog, DialogInstance } from '@ray-js/smart-ui';
+import { Cell, Dialog, DialogInstance, SmartEventHandler } from '@ray-js/smart-ui';
 import { DemoBlock } from '@/components';
 import styles from './index.module.less';
 import Strings from '../../i18n';
@@ -113,7 +113,12 @@ export default function Demo() {
     });
   };
 
-  const onClose = () => setShow(false);
+  const onClose: SmartEventHandler = event => {
+    const { detail } = event;
+    if (detail === 'confirm') {
+      setShow(false);
+    }
+  };
 
   return (
     <>

@@ -201,13 +201,18 @@ If you need to embed components or other custom content within the popup, you ca
 
 ```jsx
 import React from 'react';
-import { Dialog, Button, Image } from '@ray-js/smart-ui';
+import { Dialog, Button, Image, SmartEventHandler } from '@ray-js/smart-ui';
 import { View } from '@ray-js/ray';
 
 export default function Demo() {
   const [show, setShow] = React.useState(true);
 
-  const onClose = () => setShow(false);
+    const onClose: SmartEventHandler = event => {
+    const { detail } = event;
+    if (detail === 'confirm') {
+      setShow(false);
+    }
+  };
 
   return (
     <>
