@@ -2,7 +2,15 @@ import { SmartDialogProps } from './index';
 
 type SmartDialogCommonProps = Pick<
   SmartDialogProps,
-  'title' | 'width' | 'message' | 'theme' | 'overlay' | 'transition' | 'icon'
+  | 'title'
+  | 'width'
+  | 'message'
+  | 'theme'
+  | 'overlay'
+  | 'transition'
+  | 'icon'
+  | 'iconColor'
+  | 'iconSize'
 >;
 
 // eslint-disable-next-line @typescript-eslint/ban-types

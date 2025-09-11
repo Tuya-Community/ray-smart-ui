@@ -18,9 +18,20 @@ export interface SmartDialogProps extends SmartOpenTypeProps {
   title?: string;
 
   /**
-   * 是否显示警告图标
+   * 是否显示警告图标 或 图标name属性
+   * @version 2.6.3 版本支持 string
    */
-  icon?: boolean;
+  icon?: boolean | string;
+  /**
+   * 图标颜色
+   * @version 2.6.3
+   */
+  iconColor?: string;
+  /**
+   * 图标大小
+   * @version 2.6.3
+   */
+  iconSize?: string;
   /**
    * 输入框的值
    */

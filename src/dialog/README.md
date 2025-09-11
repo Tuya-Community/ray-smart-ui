@@ -195,6 +195,37 @@ export default function Demo() {
 }
 ```
 
+
+### 自定义图标 `v2.6.3`
+
+icon 属性支持传入 svg string，底层用的是 SmartUI 的 Icon 组件，icon 属性就是传入name属性到 Icon 组件上
+
+
+```jsx
+import React from 'react';
+import { DialogInstance, Dialog, Button } from '@ray-js/smart-ui';
+import AlarmIcon from '@tuya-miniapp/icons/dist/svg/Alarm';
+
+export default function Demo() {
+  const open = () => {
+    DialogInstance.confirm({
+      title: 'Title',
+      icon: AlarmIcon,
+      iconColor: '#1989fa',
+      iconSize: '36px',
+      message: 'body',
+      cancelButtonText: 'Sub Action',
+    });
+  }
+  return (
+    <>
+      <Dialog id="smart-dialog" />
+      <Button onClick={open}>点击展示</Button>
+    </>
+  )
+}
+```
+
 ### 组件调用
 
 如果需要在弹窗内嵌入组件或其他自定义内容，可以使用组件调用的方式。
