@@ -2,6 +2,7 @@ import React from 'react';
 import { Image, Text, View } from '@ray-js/ray';
 import { Cell, Dialog, DialogInstance, SmartEventHandler } from '@ray-js/smart-ui';
 import { DemoBlock } from '@/components';
+import AlarmIcon from '@tuya-miniapp/icons/dist/svg/Alarm';
 import styles from './index.module.less';
 import Strings from '../../i18n';
 
@@ -13,7 +14,6 @@ export default function Demo() {
 
   const onClickThemeAlert = () => {
     DialogInstance.alert({
-      context: this,
       title: 'Title',
       theme: 'round-button',
       message,
@@ -22,7 +22,6 @@ export default function Demo() {
 
   const onClickThemeAlert2 = () => {
     DialogInstance.alert({
-      context: this,
       theme: 'round-button',
       message,
     });
@@ -30,7 +29,6 @@ export default function Demo() {
 
   const onClickAlert = () => {
     DialogInstance.alert({
-      context: this,
       title: 'Title',
       message,
     });
@@ -38,14 +36,12 @@ export default function Demo() {
 
   const onClickAlert2 = () => {
     DialogInstance.alert({
-      context: this,
       message: 'Title',
     });
   };
 
   const onClickConfirm = () => {
     DialogInstance.confirm({
-      context: this,
       title: 'Title',
       icon: false,
       message,
@@ -55,7 +51,6 @@ export default function Demo() {
 
   const onClickConfirmIcon = () => {
     DialogInstance.confirm({
-      context: this,
       title: 'Title',
       icon: true,
       message,
@@ -76,7 +71,6 @@ export default function Demo() {
         }, 1000);
       });
     DialogInstance.input({
-      context: this,
       title: 'Title',
       value: '',
       cancelButtonText: 'Sub Action',
@@ -105,7 +99,6 @@ export default function Demo() {
       });
 
     DialogInstance.confirm({
-      context: this,
       title: 'Title',
       icon: false,
       message,
@@ -113,6 +106,16 @@ export default function Demo() {
     });
   };
 
+  const showCustomIconDialog = () => {
+    DialogInstance.confirm({
+      title: 'Title',
+      icon: AlarmIcon,
+      iconColor: '#1989fa',
+      iconSize: '36px',
+      message,
+      cancelButtonText: 'Sub Action',
+    });
+  };
   const onClose: SmartEventHandler = event => {
     const { detail } = event;
     if (detail === 'confirm') {
@@ -141,6 +144,10 @@ export default function Demo() {
       <DemoBlock card title={Strings.getLang('asynchronousClose')} padding>
         <Cell title={Strings.getLang('asynchronousClose')} onClick={onClickAsyncClose} />
         <Cell title={Strings.getLang('inputConfirmationPopup')} onClick={onClickInput} />
+      </DemoBlock>
+
+      <DemoBlock card title={Strings.getLang('customIcon')} padding>
+        <Cell title={Strings.getLang('imageHintPopup')} onClick={showCustomIconDialog} />
       </DemoBlock>
 
       <DemoBlock card title={Strings.getLang('componentInvocation')} padding>

@@ -195,6 +195,35 @@ export default function Demo() {
 }
 ```
 
+### Custom Icon `v2.6.3`
+
+The icon property supports passing in an SVG string, using SmartUI's Icon component underneath. The icon property simply passes the name attribute to the Icon component.
+
+```jsx
+import React from 'react';
+import { DialogInstance, Dialog, Button } from '@ray-js/smart-ui';
+import AlarmIcon from '@tuya-miniapp/icons/dist/svg/Alarm';
+
+export default function Demo() {
+  const open = () => {
+    DialogInstance.confirm({
+      title: 'Title',
+      icon: AlarmIcon,
+      iconColor: '#1989fa',
+      iconSize: '36px',
+      message: 'body',
+      cancelButtonText: 'Sub Action',
+    });
+  }
+  return (
+    <>
+      <Dialog id="smart-dialog" />
+      <Button onClick={open}>Click to display</Button>
+    </>
+  )
+}
+```
+
 ### Component Call
 
 If you need to embed components or other custom content within the popup, you can use the component call method.
