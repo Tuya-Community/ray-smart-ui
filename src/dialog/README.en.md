@@ -304,7 +304,9 @@ When calling Dialog via a function, the following options are supported:
 
 | Parameter     | Description  | Type   | Default Value |
 | ------------ | --------- | -------------- | --------- |
-| icon | Whether to display a warning icon | _boolean_ | `false` |
+| icon | Whether to display the warning icon or the name value of the icon | _boolean \| string`v2.6.3`_ | `false` |
+| iconColor `v2.6.3` | icon color | _string_ | `#F04C4C` |
+| iconSize `v2.6.3` | icon size | _string_ | - |
 | maxlength | Maximum input length, unlimited when set to -1 | _number_ | `20` |
 | message | Text content, supports line breaks using `\n` | _string_ | - |
 | messageAlign | Message alignment, options are `left` `right` | _string_ | `center` |
@@ -337,7 +339,9 @@ The following Props are supported when calling Dialog via component invocation:
 | Parameter              | Description  | Type   | Default Value |
 | ----------------- | --------- | ------------ | --------- |
 | confirmButtonId | Identifier for the confirm button, used as the id value for the underlying native button component | _string_ | - |
-| icon | Whether to display a warning icon | _boolean_ | `false` |
+| icon | Whether to display the warning icon or the name value of the icon | _boolean \| string`v2.6.3`_ | `false` |
+| iconColor `v2.6.3` | icon color | _string_ | `#F04C4C` |
+| iconSize `v2.6.3` | icon size | _string_ | - |
 | maxlength | Maximum input length, unlimited when set to -1 | _number_ | `20` |
 | message | Text content, supports line breaks using `\n` | _string_ | - |
 | messageAlign | Message alignment, options are `left` `right` | _string_ | `center` |
