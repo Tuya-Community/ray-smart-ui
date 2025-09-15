@@ -1,5 +1,16 @@
 # 更新日志
 
+## v2.6.3(2025-09-16)
+### Features ✨
+- dialog: 新增 autoClose 属性，修复组件自动关闭问题([36ba91e](https://github.com/Tuya-Community/miniapp-smart-ui/pull/37/commits/36ba91ee495b632aae9ede192364a65d8d999a75));icon 支持自定义图标，新增 iconColor 和 iconSize属性([11328c5](https://github.com/Tuya-Community/miniapp-smart-ui/pull/37/commits/11328c50d0001f7ca40429c21c27ec796d02455d));
+
+### Bug Fixes 🐛
+- action-sheet: 修复 subname 无法撑开盒子高度问题([4df8c64](https://github.com/Tuya-Community/miniapp-smart-ui/pull/37/commits/4df8c64a0412a2c64bd706b72dd6f4f66e46e2d5));
+- icon: 修复 click 事件丢失event 参数问题([bad5231](https://github.com/Tuya-Community/miniapp-smart-ui/pull/37/commits/bad523192b1e3d02d37f267ec2c7c080115cfdd8));
+- field: 修复 textarea 模式 autosize 设置最大高度滚动问题([40fe4bc](https://github.com/Tuya-Community/miniapp-smart-ui/pull/37/commits/40fe4bc1727523fa427c904c4e29d5ff7da032fb));
+- cell: 修复 cell-group 下 最后一个cell的分割线未隐藏问题([bea6309](https://github.com/Tuya-Community/miniapp-smart-ui/pull/37/commits/bea6309bdcec3d5495c91f9ed1cc325319523320));
+
+
 ## v2.6.2(2025-08-28)
 ### Features ✨
 - battery: 新增 color 属性可以直接修改颜色([ff99655](https://github.com/Tuya-Community/miniapp-smart-ui/pull/28/commits/ff996558becf5ebe24b711904bc1ae9e0faecedc));
