@@ -481,6 +481,7 @@ index.module.less
 | --------- | ----------------------------- | --------- | ------ |
 | className | 为对应列添加额外的 class 类名 | _string_ | - |
 | color | 选项文字颜色 | _string_ | - |
+| checked | 是否为选中状态，显示选中图标 | _boolean_ | - |
 | disabled | 是否为禁用状态 | _boolean_ | - |
 | loading | 是否为加载状态 | _boolean_ | - |
 | name | 标题 | _string_ | - |

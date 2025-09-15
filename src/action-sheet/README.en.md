@@ -466,6 +466,7 @@ index.module.less
 | ----------- | ----------------------------- | --------- | ------- |
 | className | Adds an extra class name to the corresponding column | _string_ | - |
 | color | Text color of the option | _string_ | - |
+| checked | Whether it's in selected state, shows selected icon | _boolean_ | - |
 | disabled | Whether it's in disabled state | _boolean_ | - |
 | loading | Whether it's in loading state | _boolean_ | - |
 | name | Title | _string_ | - |
