@@ -29,7 +29,7 @@ export default function Demo() {
   return (
     <CellGroup>
       <Cell title="Cell" value="Content" isLink />
-      <Cell title="Cell" value="Content" label="Description" border={false} isLink />
+      <Cell title="Cell" value="Content" label="Description" isLink />
     </CellGroup>
   );
 }
@@ -47,7 +47,7 @@ export default function Demo() {
   return (
     <CellGroup inset insetBorderRadius={12}>
       <Cell title="Cell" value="Content" isLink />
-      <Cell title="Cell" value="Content" label="Description" border={false} isLink />
+      <Cell title="Cell" value="Content" label="Description" isLink />
     </CellGroup>
   );
 }
@@ -137,10 +137,10 @@ export default function Demo() {
   return (
     <>
       <CellGroup title="Group 1">
-        <Cell title="Cell" isLink border={false} />
+        <Cell title="Cell" isLink />
       </CellGroup>
       <CellGroup title="Group 2">
-        <Cell title="Cell" isLink border={false} />
+        <Cell title="Cell" isLink />
       </CellGroup>
     </>
   );
@@ -158,7 +158,7 @@ import Checkmark from '@tuya-miniapp/icons/dist/svg/Checkmark';
 
 export default function Demo() {
   return (
-    <>
+    <CellGroup>
       <Cell title="Title">
         <Switch checked size="24px" />
       </Cell>
@@ -175,7 +175,7 @@ export default function Demo() {
         title="Title"
         label="Bedroom"
         isLink
-        border={false}
+       
         slot={{
           icon: (
             <Icon
@@ -186,7 +186,7 @@ export default function Demo() {
           ),
         }}
       />
-    </>
+    </CellGroup>
   );
 }
 ```
@@ -203,7 +203,7 @@ import { View } from '@ray-js/ray';
 
 export default function Demo() {
   return (
-    <>
+    <CellGroup>
       <Cell
         value="Content"
         icon={ASunmaxfill}
@@ -219,10 +219,10 @@ export default function Demo() {
       />
       <Cell
         title="Cell"
-        border={false}
+       
         slot={{ rightIcon: <Icon name={ASunmaxfill} /> }}
       />
-    </>
+    </CellGroup>
   );
 }
 ```
