@@ -31,6 +31,11 @@ export default function Demo() {
     { id: 0, name: 'Action', checked: true },
     { id: 1, name: 'Action', checked: false },
     { id: 2, name: 'Action', checked: false },
+    { id: 3, name: 'Action', checked: false },
+    { id: 4, name: 'Action', checked: false },
+    { id: 5, name: 'Action', checked: false },
+    { id: 6, name: 'Action', checked: false },
+    { id: 7, name: 'Action', checked: false },
   ]);
 
   const onCancel = () => setShow(false);
@@ -71,7 +76,7 @@ import { ActionSheet, Button } from '@ray-js/smart-ui';
 import { View } from '@ray-js/ray';
 
 export default function Demo() {
-  const actions = [{ name: 'Action' }, { name: 'Action' }, { name: 'Action' }];
+  const actions = [{ name: 'Action' }, { name: 'Action' }, { name: 'Action', subname: '描述信息' }];
   const [show, setShow] = React.useState(false);
 
   return (
@@ -481,6 +486,7 @@ index.module.less
 | --------- | ----------------------------- | --------- | ------ |
 | className | 为对应列添加额外的 class 类名 | _string_ | - |
 | color | 选项文字颜色 | _string_ | - |
+| checked | 是否为选中状态，显示选中图标 | _boolean_ | - |
 | disabled | 是否为禁用状态 | _boolean_ | - |
 | loading | 是否为加载状态 | _boolean_ | - |
 | name | 标题 | _string_ | - |

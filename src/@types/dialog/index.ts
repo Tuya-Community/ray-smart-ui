@@ -18,9 +18,20 @@ export interface SmartDialogProps extends SmartOpenTypeProps {
   title?: string;
 
   /**
-   * 是否显示警告图标
+   * 是否显示警告图标 或 图标name属性
+   * @version 2.6.3 版本支持 string
    */
-  icon?: boolean;
+  icon?: boolean | string;
+  /**
+   * 图标颜色
+   * @version 2.6.3
+   */
+  iconColor?: string;
+  /**
+   * 图标大小
+   * @version 2.6.3
+   */
+  iconSize?: string;
   /**
    * 输入框的值
    */
@@ -201,6 +212,13 @@ export interface SmartDialogProps extends SmartOpenTypeProps {
    * @version 2.3.8
    */
   nativeDisabled?: boolean;
+
+  /**
+   * @description 回调自动关闭弹框
+   * @default false
+   * @version 2.6.3
+   */
+  autoClose?: boolean;
 
   // /**
   //  * 确认按钮的微信开放能力，具体支持可参考 微信官方文档

@@ -2851,10 +2851,10 @@
   resolved "https://registry.npmjs.org/@tuya-miniapp/icons/-/icons-2.1.7.tgz#0e3df6f4dd441222a3548c8c6cf957d004b3789b"
   integrity sha512-XlphVShwI6v1W7ZFAucrsut+iILIM3S2AxqywjDNUMx1/l1yzgCCZoHFWeMOqWox2HmPQfjbT6Nn20BO6/I0CA==
 
-"@tuya-miniapp/smart-ui@^2.6.2":
-  version "2.6.2"
-  resolved "https://registry.npmjs.org/@tuya-miniapp/smart-ui/-/smart-ui-2.6.2.tgz#1beef79673dc6bbefeeebd4b24346d3c18e331a0"
-  integrity sha512-kZpAmUuXBl3BOzXM4/yMc0s6pdkEpVKCc81eFBIfc9hKgjkG9rSCZ1/bdLZB2ORf3fJ1m/5pihR1+kJhUzSaYg==
+"@tuya-miniapp/smart-ui@^2.6.3":
+  version "2.6.3"
+  resolved "https://registry.npmjs.org/@tuya-miniapp/smart-ui/-/smart-ui-2.6.3.tgz#a8e50cba4737c54d3905fe1048b2c0c3e243e7a2"
+  integrity sha512-5oiD934Efy9UHqlAniEu7OiUbHtpf+AqJLGM15hNQ3UQHm01Fn6ZLU1NOg8SAjM+ygkXK9doDjcvRkcdEubpeA==
   dependencies:
     "@ray-js/components-ty-slider" "^0.3.4"
     "@tuya-miniapp/icons" "^2.1.7"

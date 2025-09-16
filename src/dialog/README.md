@@ -195,19 +195,55 @@ export default function Demo() {
 }
 ```
 
+
+### 自定义图标 `v2.6.3`
+
+icon 属性支持传入 svg string，底层用的是 SmartUI 的 Icon 组件，icon 属性就是传入name属性到 Icon 组件上
+
+
+```jsx
+import React from 'react';
+import { DialogInstance, Dialog, Button } from '@ray-js/smart-ui';
+import AlarmIcon from '@tuya-miniapp/icons/dist/svg/Alarm';
+
+export default function Demo() {
+  const open = () => {
+    DialogInstance.confirm({
+      title: 'Title',
+      icon: AlarmIcon,
+      iconColor: '#1989fa',
+      iconSize: '36px',
+      message: 'body',
+      cancelButtonText: 'Sub Action',
+    });
+  }
+  return (
+    <>
+      <Dialog id="smart-dialog" />
+      <Button onClick={open}>点击展示</Button>
+    </>
+  )
+}
+```
+
 ### 组件调用
 
 如果需要在弹窗内嵌入组件或其他自定义内容，可以使用组件调用的方式。
 
 ```jsx
 import React from 'react';
-import { Dialog, Button, Image } from '@ray-js/smart-ui';
+import { Dialog, Button, Image, SmartEventHandler } from '@ray-js/smart-ui';
 import { View } from '@ray-js/ray';
 
 export default function Demo() {
   const [show, setShow] = React.useState(true);
 
-  const onClose = () => setShow(false);
+  const onClose: SmartEventHandler = event => {
+    const { detail } = event;
+    if (detail === 'confirm') {
+      setShow(false);
+    }
+  };
 
   return (
     <>
@@ -266,11 +302,17 @@ export default function Demo() {
 
 ### Options
 
+icon: AlarmIcon,
+  iconColor: '#1989fa',
+  iconSize: '36px',
+
 通过函数调用 Dialog 时，支持传入以下选项：
 
 | 参数         | 说明  | 类型   | 默认值    |
 | ------------ | --------- | -------------- | --------- |
-| icon | 是否显示警告图标 | _boolean_ | `false` |
+| icon | 是否显示警告图标，或者icon的name值 | _boolean \| string`v2.6.3`_ | `false` |
+| iconColor `v2.6.3` | icon的颜色 | _string_ | `#F04C4C` |
+| iconSize `v2.6.3` | icon的大小 | _string_ | - |
 | maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | _number_ | `20` |
 | message | 文本内容，支持通过`\n`换行 | _string_ | - |
 | messageAlign | 内容对齐方式，可选值为`left` `right` | _string_ | `center` |
@@ -294,6 +336,7 @@ export default function Demo() {
 | context | 选择器的选择范围，可以传入自定义组件的 this 作为上下文 | _object_ | 当前页面 |
 | transition | 动画名称，可选值为`fade` `none` | _string_ | `scale` |
 | nativeDisabled `v2.3.8` | 开启弹框期间是否禁用本地手势 | _boolean_ | `false` |
+| autoClose `v2.6.3` | 是否自动点击回调后关闭 | _boolean_ | `true` |
 
 
 ### Props
@@ -303,7 +346,9 @@ export default function Demo() {
 | 参数              | 说明  | 类型   | 默认值    |
 | ----------------- | --------- | ------------ | --------- |
 | confirmButtonId | 确认按钮的标识符，作为底层原生 button 组件的 id 值 | _string_ | - |
-| icon | 是否显示警告图标 | _boolean_ | `false` |
+| icon | 是否显示警告图标，或者icon的name值 | _boolean \| string`v2.6.3`_ | `false` |
+| iconColor `v2.6.3` | icon的颜色 | _string_ | `#F04C4C` |
+| iconSize `v2.6.3` | icon的大小 | _string_ | - |
 | maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | _number_ | `20` |
 | message | 文本内容，支持通过`\n`换行 | _string_ | - |
 | messageAlign | 内容对齐方式，可选值为`left` `right` | _string_ | `center` |
@@ -331,6 +376,7 @@ export default function Demo() {
 | useTitleSlot | 是否使用自定义标题的插槽 | _boolean_ | `false` |
 | beforeClose | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(action, value?: string) => boolean \| Promise\<boolean\>_ | - |
 | transition | 动画名称，可选值为`fade` | _string_ | `scale` |
+| autoClose `v2.6.3` | 是否自动点击回调后关闭 | _boolean_ | `false` |
 
 
 ### Events

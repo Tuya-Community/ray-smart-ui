@@ -195,19 +195,53 @@ export default function Demo() {
 }
 ```
 
+### Custom Icon `v2.6.3`
+
+The icon property supports passing in an SVG string, using SmartUI's Icon component underneath. The icon property simply passes the name attribute to the Icon component.
+
+```jsx
+import React from 'react';
+import { DialogInstance, Dialog, Button } from '@ray-js/smart-ui';
+import AlarmIcon from '@tuya-miniapp/icons/dist/svg/Alarm';
+
+export default function Demo() {
+  const open = () => {
+    DialogInstance.confirm({
+      title: 'Title',
+      icon: AlarmIcon,
+      iconColor: '#1989fa',
+      iconSize: '36px',
+      message: 'body',
+      cancelButtonText: 'Sub Action',
+    });
+  }
+  return (
+    <>
+      <Dialog id="smart-dialog" />
+      <Button onClick={open}>Click to display</Button>
+    </>
+  )
+}
+```
+
 ### Component Call
 
 If you need to embed components or other custom content within the popup, you can use the component call method.
 
 ```jsx
 import React from 'react';
-import { Dialog, Button, Image } from '@ray-js/smart-ui';
+import { Dialog, Button, Image, SmartEventHandler } from '@ray-js/smart-ui';
 import { View } from '@ray-js/ray';
 
 export default function Demo() {
   const [show, setShow] = React.useState(true);
 
-  const onClose = () => setShow(false);
+    const onClose: SmartEventHandler = event => {
+    const { detail } = event;
+    if (detail === 'confirm') {
+      setShow(false);
+    }
+  };
 
   return (
     <>
@@ -270,7 +304,9 @@ When calling Dialog via a function, the following options are supported:
 
 | Parameter     | Description  | Type   | Default Value |
 | ------------ | --------- | -------------- | --------- |
-| icon | Whether to display a warning icon | _boolean_ | `false` |
+| icon | Whether to display the warning icon or the name value of the icon | _boolean \| string`v2.6.3`_ | `false` |
+| iconColor `v2.6.3` | icon color | _string_ | `#F04C4C` |
+| iconSize `v2.6.3` | icon size | _string_ | - |
 | maxlength | Maximum input length, unlimited when set to -1 | _number_ | `20` |
 | message | Text content, supports line breaks using `\n` | _string_ | - |
 | messageAlign | Message alignment, options are `left` `right` | _string_ | `center` |
@@ -294,6 +330,7 @@ When calling Dialog via a function, the following options are supported:
 | context | The selection range of the selector, you can pass in the `this` of a custom component as context | _object_ | Current page |
 | transition | Animation name, options are `fade` `none` | _string_ | `scale` |
 | nativeDisabled `v2.3.8` | Whether to disable local gestures during the pop-up period | _boolean_ | `false` |
+| autoClose `v2.6.3` | Whether to automatically close after callback click | _boolean_ | `true` |
 
 ### Props
 
@@ -302,7 +339,9 @@ The following Props are supported when calling Dialog via component invocation:
 | Parameter              | Description  | Type   | Default Value |
 | ----------------- | --------- | ------------ | --------- |
 | confirmButtonId | Identifier for the confirm button, used as the id value for the underlying native button component | _string_ | - |
-| icon | Whether to display a warning icon | _boolean_ | `false` |
+| icon | Whether to display the warning icon or the name value of the icon | _boolean \| string`v2.6.3`_ | `false` |
+| iconColor `v2.6.3` | icon color | _string_ | `#F04C4C` |
+| iconSize `v2.6.3` | icon size | _string_ | - |
 | maxlength | Maximum input length, unlimited when set to -1 | _number_ | `20` |
 | message | Text content, supports line breaks using `\n` | _string_ | - |
 | messageAlign | Message alignment, options are `left` `right` | _string_ | `center` |
@@ -330,6 +369,7 @@ The following Props are supported when calling Dialog via component invocation:
 | useTitleSlot | Whether to use a custom slot for the title | _boolean_ | `false` |
 | beforeClose | Callback function before closing, returning `false` can prevent closing, supports returning Promise | _(action, value?: string) => boolean \| Promise\<boolean\>_ | - |
 | transition | Animation name, options are `fade` | _string_ | `scale` |
+| autoClose `v2.6.3` | Whether to automatically close after callback click | _boolean_ | `false` |
 
 ### Events
 

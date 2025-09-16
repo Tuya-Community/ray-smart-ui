@@ -31,6 +31,11 @@ export default function Demo() {
     { id: 0, name: 'Action', checked: true },
     { id: 1, name: 'Action', checked: false },
     { id: 2, name: 'Action', checked: false },
+    { id: 3, name: 'Action', checked: false },
+    { id: 4, name: 'Action', checked: false },
+    { id: 5, name: 'Action', checked: false },
+    { id: 6, name: 'Action', checked: false },
+    { id: 7, name: 'Action', checked: false },
   ]);
 
   const onCancel = () => setShow(false);
@@ -71,7 +76,7 @@ import { ActionSheet, Button } from '@ray-js/smart-ui';
 import { View } from '@ray-js/ray';
 
 export default function Demo() {
-  const actions = [{ name: 'Action' }, { name: 'Action' }, { name: 'Action' }];
+  const actions = [{ name: 'Action' }, { name: 'Action' }, { name: 'Action', subname: 'Description Information' }];
   const [show, setShow] = React.useState(false);
 
   return (
@@ -466,6 +471,7 @@ index.module.less
 | ----------- | ----------------------------- | --------- | ------- |
 | className | Adds an extra class name to the corresponding column | _string_ | - |
 | color | Text color of the option | _string_ | - |
+| checked | Whether it's in selected state, shows selected icon | _boolean_ | - |
 | disabled | Whether it's in disabled state | _boolean_ | - |
 | loading | Whether it's in loading state | _boolean_ | - |
 | name | Title | _string_ | - |

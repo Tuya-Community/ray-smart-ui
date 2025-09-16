@@ -27,7 +27,7 @@ import { View } from '@ray-js/ray';
 import { Cell, IndexBar, IndexAnchor } from '@ray-js/smart-ui';
 
 export default function Demo() {
-  const indexList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  const indexList = Array.from({ length: 26 }, (_, i) => String.fromCharCode('A'.charCodeAt(0) + i));
 
   return (
     <IndexBar>

@@ -29,7 +29,7 @@ export default function Demo() {
   return (
     <CellGroup>
       <Cell title="单元格" value="内容" isLink />
-      <Cell title="单元格" value="内容" label="描述信息" border={false} isLink />
+      <Cell title="单元格" value="内容" label="描述信息" isLink />
     </CellGroup>
   );
 }
@@ -47,7 +47,7 @@ export default function Demo() {
   return (
     <CellGroup inset insetBorderRadius={12}>
       <Cell title="单元格" value="内容" isLink />
-      <Cell title="单元格" value="内容" label="描述信息" border={false} isLink />
+      <Cell title="单元格" value="内容" label="描述信息" isLink />
     </CellGroup>
   );
 }
@@ -137,10 +137,10 @@ export default function Demo() {
   return (
     <>
       <CellGroup title="分组 1">
-        <Cell title="单元格" isLink border={false} />
+        <Cell title="单元格" isLink />
       </CellGroup>
       <CellGroup title="分组 2">
-        <Cell title="单元格" isLink border={false} />
+        <Cell title="单元格" isLink />
       </CellGroup>
     </>
   );
@@ -158,7 +158,7 @@ import Checkmark from '@tuya-miniapp/icons/dist/svg/Checkmark';
 
 export default function Demo() {
   return (
-    <>
+    <CellGroup>
       <Cell title="Title">
         <Switch checked size="24px" />
       </Cell>
@@ -175,7 +175,6 @@ export default function Demo() {
         title="Title"
         label="Bedroom"
         isLink
-        border={false}
         slot={{
           icon: (
             <Icon
@@ -186,7 +185,7 @@ export default function Demo() {
           ),
         }}
       />
-    </>
+    </CellGroup>
   );
 }
 ```
@@ -203,7 +202,7 @@ import { View } from '@ray-js/ray';
 
 export default function Demo() {
   return (
-    <>
+    <CellGroup>
       <Cell
         value="内容"
         icon={ASunmaxfill}
@@ -219,10 +218,9 @@ export default function Demo() {
       />
       <Cell
         title="单元格"
-        border={false}
         slot={{ rightIcon: <Icon name={ASunmaxfill} /> }}
       />
-    </>
+    </CellGroup>
   );
 }
 ```
