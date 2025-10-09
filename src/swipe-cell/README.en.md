@@ -174,43 +174,44 @@ export default function Demo() {
 
 ### Props
 
-| Parameter   | Description                                  | Type              | Default |
-| ----------- | -------------------------------------------- | ----------------- | ------- |
+| Parameter    | Description                                | Type               | Default  |
+| ------------ | ------------------------------------------ | ------------------ | -------- |
 | asyncClose | Whether to close asynchronously | _boolean_ | `false` |
-| disabled | Whether to disable sliding | _boolean_ | `false` |
-| leftWidth | Width of the left sliding area | _number_ | `0` |
-| name | Identifier, can be retrieved from close event | _string \| number_ | - |
-| rightWidth | Width of the right sliding area | _number_ | `0` |
+| disabled | Whether to disable swiping | _boolean_ | `false` |
+| leftWidth | Width of the left swipe area | _number_ | `0` |
+| name | Identifier, which can be retrieved in the close event's parameters | _string \| number_ | - |
+| rightWidth | Width of the right swipe area | _number_ | `0` |
 
 ### Slot
 
 | Name  | Description           |
 | ----- | --------------------- |
 | -     | Custom display content |
-| left | Left sliding content |
-| right | Right sliding content |
+| left | Left swipe content |
+| right | Right swipe content |
 
 ### Events
 
-| Event Name  | Description   | Parameter                                                  |
-| ----------- | ------------- | ---------------------------------------------------------- |
-| onClick | Triggered on click | Click position on close (`left` `right` `cell` `outside`) |
-| onClose | Triggered on close | { position: 'left' \| 'right', instance, name: string } |
+| Event Name                     | Description   | Parameters                                                  |
+| ------------------------------ | -------------- | ---------------------------------------------------------- |
+| onClick | Triggered on click | Click position during close (`left`, `right`, `cell`, `outside`) |
+| onTabClose `v2.7.0` | Triggered on close | Position during close (`left`, `right`) |
+| onClose | Triggered on asynchronous close | { position: 'left' \| 'right', instance, name: string } |
 | onOpen | Triggered on open | { position: 'left' \| 'right', name: string } |
 
-### Close Parameter
+### close Parameters
 
-| Parameter  | Type     | Description                                   |
-| ---------- | -------- | --------------------------------------------  |
+| Parameter  | Type     | Description                                      |
+| ---------- | -------- | ------------------------------------------------ |
 | instance | _object_ | SwipeCell instance |
 | name | Identifier | _string_ |
-| position | _string_ | Click position on close (`left` `right` `cell` `outside`) |
+| position | _string_ | Click position during close (`left`, `right`, `cell`, `outside`) |
 
 ### Methods
 
-You can access the SwipeCell instance via selectComponent and call instance methods.
+You can obtain the SwipeCell instance through selectComponent and call its methods.
 
-| Method Name | Parameters                  | Return | Description           |
-| ----------- | --------------------------- | ------ | --------------------- |
-| close | - | - | Collapse the cell sidebar |
-| open | position: `left \| right` | - | Open the cell sidebar |
+| Method Name | Parameters                  | Return Value | Description            |
+| ----------- | --------------------------- | ------------ | ---------------------- |
+| close | - | - | Collapse the sidebar of the cell |
+| open | position: `left \| right` | - | Open the sidebar of the cell |
