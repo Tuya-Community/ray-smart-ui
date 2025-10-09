@@ -195,7 +195,8 @@ export default function Demo() {
 | 事件名     | 说明       | 参数                                                      |
 | ---------- | ---------- | --------------------------------------------------------- |
 | onClick | 点击时触发 | 关闭时的点击位置 (`left` `right` `cell` `outside`) |
-| onClose | 关闭时触发 | { position: 'left' \| 'right' , instance , name: string } |
+| onTabClose `v2.7.0` | 关闭时触发 | 关闭的位置 (`left` `right`) |
+| onClose | 点击异步关闭时触发 | { position: 'left' \| 'right' , instance , name: string } |
 | onOpen | 打开时触发 | { position: 'left' \| 'right' , name: string } |
 
 ### close 参数
