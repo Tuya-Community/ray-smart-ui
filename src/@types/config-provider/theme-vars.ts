@@ -83,6 +83,7 @@ type CommonThemeVars =
   | 'fontSizeSm'
   | 'fontSizeMd'
   | 'fontSizeLg'
+  | 'fontTitleLg'
   | 'fontWeightBold'
   | 'fontWeightBolder'
   | 'lineHeightXs'
@@ -410,15 +411,13 @@ type LoadingThemeVars =
   | 'loadingSpinnerAnimationDuration';
 
 type NavBarThemeVars =
-  | 'navBarTitleMaxWidth'
+  | 'navBarHomeMaxWidth'
   | 'navBarHeight'
   | 'navBarRoundBorderRadius'
   | 'navBarRoundMinHeight'
   | 'navBarBackgroundColor'
   | 'navBarArrowColor'
-  | 'navBarIconSize'
   | 'navBarIconColor'
-  | 'navBarIconMargin'
   | 'navBarTextColor'
   | 'navBarTextFontSize'
   | 'navBarTitleFontSize'
@@ -427,7 +426,13 @@ type NavBarThemeVars =
   | 'navBarRightTextColor'
   | 'navBarHomeFontSize'
   | 'navBarHomeFontWeight'
-  | 'navBarHomeTextColor';
+  | 'navBarHomeTextColor'
+  | 'navBarTextFontWeight'
+  | 'navBarSideWidth'
+  | 'navBarTextPadding'
+  | 'navBarIconPadding'
+  | 'navBarTitleMargin'
+  | 'navBarLeftTitlePadding';
 
 type NoticeBarThemeVars =
   | 'noticeBarHeight'
