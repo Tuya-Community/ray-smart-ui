@@ -18,9 +18,11 @@ import { SwipeCell } from '@ray-js/smart-ui';
 
 ### Basic Usage
 
+`onTabClose` `v2.7.0` The property is a callback event triggered when the sidebar is closed.
+
 ```jsx
 import React, { useCallback } from 'react';
-import { SwipeCell, CellGroup, Cell } from '@ray-js/smart-ui';
+import { SwipeCell, CellGroup, Cell, SmartEventHandler, SmartSwipeCellPosition } from '@ray-js/smart-ui';
 import { View } from '@ray-js/ray';
 
 const style = {
@@ -35,6 +37,10 @@ const style = {
 };
 
 export default function Demo() {
+  const onHandleTabClose: SmartEventHandler<SmartSwipeCellPosition> = event => {
+    console.log(event.detail, '--position');
+  };
+
   return (
     <SwipeCell
       rightWidth={65}
@@ -43,6 +49,7 @@ export default function Demo() {
         left: <View style={style}>Select</View>,
         right: <View style={style}>Delete</View>,
       }}
+      onTabClose={onHandleTabClose}
     >
       <CellGroup>
         <Cell title="Cell" value="Content" />

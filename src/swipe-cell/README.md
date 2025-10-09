@@ -17,10 +17,12 @@ import { SwipeCell } from '@ray-js/smart-ui';
 ## 代码演示
 
 ### 基础用法
+`onTabClose` `v2.7.0` 属性是侧边栏关闭时触发的回调事件
+
 
 ```jsx
 import React, { useCallback } from 'react';
-import { SwipeCell, CellGroup, Cell } from '@ray-js/smart-ui';
+import { SwipeCell, CellGroup, Cell, SmartEventHandler, SmartSwipeCellPosition } from '@ray-js/smart-ui';
 import { View } from '@ray-js/ray';
 
 const style = {
@@ -35,7 +37,11 @@ const style = {
 };
 
 export default function Demo() {
-  return (
+
+  const onHandleTabClose: SmartEventHandler<SmartSwipeCellPosition> = event => {
+    console.log(event.detail, '--position');
+  };
+  return ( 
     <SwipeCell
       rightWidth={65}
       leftWidth={65}
@@ -43,6 +49,7 @@ export default function Demo() {
         left: <View style={style}>选择</View>,
         right: <View style={style}>删除</View>,
       }}
+      onTabClose={onHandleTabClose}
     >
       <CellGroup>
         <Cell title="单元格" value="内容" />
