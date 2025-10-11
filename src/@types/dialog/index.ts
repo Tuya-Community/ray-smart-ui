@@ -189,7 +189,12 @@ export interface SmartDialogProps extends SmartOpenTypeProps {
    * @default false
    */
   useTitleSlot?: boolean;
-
+  /**
+   * 是否使用自定义确认按钮的插槽
+   *
+   * @default false
+   */
+  useConfirmButtonSlot?: boolean;
   /**
    * 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 `Promise`
    */
