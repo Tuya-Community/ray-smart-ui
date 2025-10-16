@@ -164,7 +164,7 @@ export default function Demo() {
 | radius | Corner size, default unit is `px` | _string \| number_ | `0` |
 | round | Whether to display as circular | _boolean_ | `false` |
 | showError | Whether to show image load failure prompt | _boolean_ | `true` |
-| showLoading | Whether to show image loading prompt | _boolean_ | `true` |
+| showLoading | Whether to show image loading prompt | _boolean_ | `true` `v2.0.0` `false` `v2.7.0` |
 | showMenuByLongpress | Whether to enable long press image to display recognition mini-program code menu | _boolean_ | `false` |
 | src | Image link | _string_ | - |
 | useErrorSlot | Whether to use error slot | _boolean_ | `false` |

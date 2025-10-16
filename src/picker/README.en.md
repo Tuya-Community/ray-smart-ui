@@ -304,10 +304,13 @@ export default function Demo() {
 | toolbarPosition | Top bar position, optional value is `bottom` | _string_ | `top` |
 | unit | Default unit for single-column picker,<br>refer to Columns configuration for multi-column picker | _number_ | '' |
 | valueKey | Key corresponding to text in option object | _string_ | `text` |
-| visibleItemCount | Number of visible options | _number_ | `5` |
+| visibleItemCount | Number of visible options | _3 \| 5 \| 7 \| 9_ | `5` |
 | activeStyle `v2.0.0` | Style in selected state | _string_ | `''` |
 | changeAnimation `v2.2.0` | Whether the component requires a transition animation when the value selected by data-driven changes (excluding the animation of finger interactive scrolling). | _boolean_ | `false` |
 | animationTime `v2.3.7` | Transition animation and the delay time for selection callback (Unit: ms) | _number_ | `800` `v2.3.7` `300` `v2.6.0` |
+| loop `v2.7.0` | Loop List | _boolean_ | `false` |
+| fontStyle `v2.7.0` | Font style has lower priority than within columns | _string_ | - |
+| fullHeight `v2.7.0` | Does the height directly equal `visibleItemCount * itemHeight`, the component will default to reduce the outer visible height by `* 0.9`. | _boolean_ | `false` |
 
 ### Events
 
