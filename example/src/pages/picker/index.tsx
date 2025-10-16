@@ -58,6 +58,7 @@ const data = {
       values: new Array(100).fill(1).map((x, i) => i),
       style: { flex: 'none', width: 'auto', minWidth: '61px' },
       fontStyle: { fontSize: '16px' },
+      activeIndex: 0,
     },
     {
       values: ['.'],
@@ -68,6 +69,7 @@ const data = {
       values: new Array(20).fill(1).map((x, i) => i),
       style: { flex: 'none', width: 'auto', minWidth: '61px' },
       unit: 'Kg',
+      activeIndex: 1,
     },
   ],
   column6: [
@@ -84,6 +86,11 @@ const data = {
         Strings.getLang('huzhou'),
       ],
       order: 1,
+    },
+  ],
+  column7: [
+    {
+      values: new Array(100).fill(1).map((x, i) => i),
     },
   ],
 };
@@ -122,7 +129,7 @@ export default function Demo() {
   return (
     <>
       <DemoBlock title={Strings.getLang('basicUsage')}>
-        <Picker columns={data.column1} onChange={onChange} />
+        <Picker changeAnimation columns={data.column1} activeIndex={3} onChange={onChange} />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('multiColumnUsage')}>
         <Picker
@@ -149,16 +156,22 @@ export default function Demo() {
         />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('multiColumnLinkage')}>
-        <Picker columns={data.column4} onChange={onChange2} />
+        <Picker columns={data.column4} onChange={onChange} />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('disableOptions')}>
-        <Picker columns={data.column2} />
+        <Picker columns={data.column2} onChange={onChange2} />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('loadingState')}>
         <Picker loading columns={data.column4} />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('setTheOrderOfColumnStyles')}>
         <Picker columns={data.column6} />
+      </DemoBlock>
+      <DemoBlock title={Strings.getLang('loop')}>
+        <Picker loop columns={data.column7} onChange={onChange} />
+      </DemoBlock>
+      <DemoBlock title={Strings.getLang('more3d')}>
+        <Picker loop fullHeight columns={data.column7} onChange={onChange} />
       </DemoBlock>
     </>
   );

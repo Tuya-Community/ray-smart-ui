@@ -18,6 +18,8 @@ import { Picker } from '@ray-js/smart-ui';
 
 ### Basic Usage
 
+In single column mode, the `active-index` attribute can control the selected item of the picker; `change-animation` can enable the transition animation effect for the selected value change of the picker.
+
 ```javascript
 import { Picker } from '@ray-js/smart-ui';
 import { showToast } from '@ray-js/ray';
@@ -32,13 +34,13 @@ export default function Demo() {
     });
   }, []);
 
-  return <Picker columns={['Hangzhou', 'Ningbo', 'Wenzhou', 'Jiaxing', 'Huzhou']} onChange={onChange} />;
+  return <Picker activeIndex={3} changeAnimation columns={['Hangzhou', 'Ningbo', 'Wenzhou', 'Jiaxing', 'Huzhou']} onChange={onChange} />;
 }
 ```
 
 ### Multi-Column Usage
 
-`disabled` `v2.3.5` attribute can disable this column; `style` attribute can set the style of this column; `fontStyle` `v2.3.5` attribute can set the font style of this column.
+`disabled` `v2.3.5` attribute can disable this column; `style` attribute can set the style of this column; `fontStyle` `v2.3.5` attribute can set the font style of this column; `activeIndex` can set the selected item of the column.
 
 ```javascript
 import { Picker } from '@ray-js/smart-ui';
@@ -50,6 +52,7 @@ const columns = [
     values: new Array(100).fill(1).map((x, i) => i),
     style: { flex: 'none', width: 'auto', minWidth: '61px' },
     fontStyle: { fontSize: '16px' },
+    activeIndex: 0,
   },
   {
     values: ['.'],
@@ -60,6 +63,7 @@ const columns = [
     values: new Array(20).fill(1).map((x, i) => i),
     style: { flex: 'none', width: 'auto', minWidth: '61px' },
     unit: 'Kg',
+    activeIndex: 1,
   },
 ],
 
@@ -231,6 +235,40 @@ const columns = [
 ];
 export default function Demo() {
   return <Picker columns={columns} />;
+}
+```
+
+### Loop List `2.7.0`
+
+`loop` can enable loop rendering of lists, which will be connected end-to-end and loop infinitely
+
+```javascript
+import { Picker } from '@ray-js/smart-ui';
+import React from 'react';
+const columns = [
+  {
+    values: new Array(100).fill(1).map((x, i) => i),
+  },
+];
+export default function Demo() {
+  return <Picker loop columns={columns} />;
+}
+```
+
+### More 3D `2.7.0`
+
+`fullHeight` property allows for more space to display and see more 3D-flipped items; of course, you can also override the component's height style to customize the visible space you need.
+
+```javascript
+import { Picker } from '@ray-js/smart-ui';
+import React from 'react';
+const columns = [
+  {
+    values: new Array(100).fill(1).map((x, i) => i),
+  },
+];
+export default function Demo() {
+  return <Picker fullHeight loop columns={columns} />;
 }
 ```
 

@@ -19,6 +19,8 @@ import { Picker } from '@ray-js/smart-ui';
 
 ### 基础用法
 
+单列时 `active-index` 属性可以控制picker的选中项; `change-animation` 可以开启picker的选中值变化过度动画效果。
+
 ```javascript
 import { Picker } from '@ray-js/smart-ui';
 import { showToast } from '@ray-js/ray';
@@ -33,13 +35,13 @@ export default function Demo() {
     });
   }, []);
 
-  return <Picker columns={['杭州', '宁波', '温州', '嘉兴', '湖州']} onChange={onChange} />;
+  return <Picker activeIndex={3} changeAnimation columns={['杭州', '宁波', '温州', '嘉兴', '湖州']} onChange={onChange} />;
 }
 ```
 
 ### 多列用法
 
-`disabled` `v2.3.5` 属性可以禁用此列；`style` 属性可以设置此列的样式；`fontStyle` `v2.3.5` 属性可以设置此列的字体样式。
+`disabled` `v2.3.5` 属性可以禁用此列；`style` 属性可以设置此列的样式；`fontStyle` `v2.3.5` 属性可以设置此列的字体样式; `activeIndex` 可以设置列的选中项。
 
 ```javascript
 import { Picker } from '@ray-js/smart-ui';
@@ -51,6 +53,7 @@ const columns = [
     values: new Array(100).fill(1).map((x, i) => i),
     style: { flex: 'none', width: 'auto', minWidth: '61px' },
     fontStyle: { fontSize: '16px' },
+    activeIndex: 0,
   },
   {
     values: ['.'],
@@ -61,6 +64,7 @@ const columns = [
     values: new Array(20).fill(1).map((x, i) => i),
     style: { flex: 'none', width: 'auto', minWidth: '61px' },
     unit: 'Kg',
+    activeIndex: 1,
   },
 ],
 
@@ -232,6 +236,40 @@ const columns = [
 ];
 export default function Demo() {
   return <Picker columns={columns} />;
+}
+```
+
+### 循环列表 `2.7.0`
+
+`loop` 属性可以开启列表的循环渲染，列表会首尾相连，无限循环
+
+```javascript
+import { Picker } from '@ray-js/smart-ui';
+import React from 'react';
+const columns = [
+  {
+    values: new Array(100).fill(1).map((x, i) => i),
+  },
+];
+export default function Demo() {
+  return <Picker loop columns={columns} />;
+}
+```
+
+### 更多3D `2.7.0`
+
+`fullHeight` 属性可以展示更多的空间，看到更多3D翻转的项；当然你也可以覆盖组件的高度样式，来自定义需要可视的空间
+
+```javascript
+import { Picker } from '@ray-js/smart-ui';
+import React from 'react';
+const columns = [
+  {
+    values: new Array(100).fill(1).map((x, i) => i),
+  },
+];
+export default function Demo() {
+  return <Picker fullHeight loop columns={columns} />;
 }
 ```
 
