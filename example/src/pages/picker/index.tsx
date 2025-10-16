@@ -114,8 +114,11 @@ const cities = [
 
 export default function Demo() {
   const [column4, setColumn4] = useState(data.column4);
+  const [column5, setColumn5] = useState<any[]>(data.column5);
+  const [activeIndex, setActiveIndex] = useState(3);
   const onChange = useCallback(event => {
     const { value, index } = event.detail;
+    setActiveIndex(index);
     showToast({
       icon: 'none',
       title: `Value: ${value}, Index：${index}`,
@@ -140,13 +143,20 @@ export default function Demo() {
     ]);
   }, []);
 
-  const onChangeNum = useCallback(event => {
+  const onChangeNum = event => {
     const { value, index } = event.detail;
+    const newColumn5 = column5.map((item, index) => {
+      return {
+        ...item,
+        activeIndex: item.values.findIndex(curr => curr === value[index]),
+      };
+    });
+    setColumn5(newColumn5);
     showToast({
       icon: 'none',
       title: `Value: ${value.join('')}, Index：${index}`,
     });
-  }, []);
+  };
 
   const onChange2 = useCallback(event => {
     const { picker, value } = event.detail;
@@ -165,11 +175,16 @@ export default function Demo() {
   return (
     <>
       <DemoBlock title={Strings.getLang('basicUsage')}>
-        <Picker changeAnimation columns={data.column1} activeIndex={3} onChange={onChange} />
+        <Picker
+          changeAnimation
+          columns={data.column1}
+          activeIndex={activeIndex}
+          onChange={onChange}
+        />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('multiColumnUsage')}>
         <Picker
-          columns={data.column5}
+          columns={column5}
           activeStyle={{
             color: 'rgb(135, 180, 244)',
           }}

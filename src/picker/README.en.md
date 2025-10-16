@@ -26,15 +26,17 @@ import { showToast } from '@ray-js/ray';
 import React, { useCallback } from 'react';
 
 export default function Demo() {
+  const [activeIndex, setActiveIndex] = useState(3);
   const onChange = useCallback(event => {
     const { value, index } = event.detail;
+    setActiveIndex(index);
     showToast({
       icon: 'none',
       title: `Value: ${value}, Index：${index}`,
     });
   }, []);
 
-  return <Picker activeIndex={3} changeAnimation columns={['Hangzhou', 'Ningbo', 'Wenzhou', 'Jiaxing', 'Huzhou']} onChange={onChange} />;
+  return <Picker activeIndex={activeIndex} changeAnimation columns={['Hangzhou', 'Ningbo', 'Wenzhou', 'Jiaxing', 'Huzhou']} onChange={onChange} />;
 }
 ```
 
