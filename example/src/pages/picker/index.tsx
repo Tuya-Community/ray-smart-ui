@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Picker } from '@ray-js/smart-ui';
 import { showToast } from '@ray-js/ray';
 import { DemoBlock } from '@/components';
@@ -49,7 +49,7 @@ const data = {
         Strings.getLang('huzhou'),
       ],
       className: 'column2',
-      defaultIndex: 2,
+      activeIndex: 2,
       unit: Strings.getLang('city'),
     },
   ],
@@ -95,13 +95,49 @@ const data = {
   ],
 };
 
+const cities = [
+  [
+    Strings.getLang('hangzhou'),
+    Strings.getLang('ningbo'),
+    Strings.getLang('wenzhou'),
+    Strings.getLang('jiaxing'),
+    Strings.getLang('huzhou'),
+  ],
+  [
+    Strings.getLang('fuzhouCity'),
+    Strings.getLang('xiamenCity'),
+    Strings.getLang('putianCity'),
+    Strings.getLang('sanmingCity'),
+    Strings.getLang('quanzhouCity'),
+  ],
+];
+
 export default function Demo() {
+  const [column4, setColumn4] = useState(data.column4);
   const onChange = useCallback(event => {
     const { value, index } = event.detail;
     showToast({
       icon: 'none',
       title: `Value: ${value}, Index：${index}`,
     });
+  }, []);
+
+  const onChangeLink = useCallback(event => {
+    const { value, index } = event.detail;
+    const provinceIndex = column4[0].values.findIndex(item => item === value[0]);
+    const cityList = cities[provinceIndex];
+    const cityIndex = index ? cityList.findIndex(item => item === value[1]) : 0;
+    setColumn4([
+      {
+        ...column4[0],
+        activeIndex: provinceIndex,
+      },
+      {
+        ...column4[1],
+        activeIndex: cityIndex,
+        values: cityList,
+      },
+    ]);
   }, []);
 
   const onChangeNum = useCallback(event => {
@@ -156,7 +192,7 @@ export default function Demo() {
         />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('multiColumnLinkage')}>
-        <Picker columns={data.column4} onChange={onChange} />
+        <Picker columns={column4} onChange={onChangeLink} />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('disableOptions')}>
         <Picker columns={data.column2} onChange={onChange2} />

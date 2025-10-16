@@ -150,29 +150,41 @@ export default function Demo() {
 import { Picker } from '@ray-js/smart-ui';
 import React, { useCallback } from 'react';
 
-const columns = [
-  {
-    values: ['Zhejiang', 'Fujian'],
-    className: 'column1',
-    unit: 'Province',
-  },
-  {
-    values: ['Hangzhou', 'Ningbo', 'Wenzhou', 'Jiaxing', 'Huzhou'],
-    className: 'column2',
-    defaultIndex: 2,
-    unit: 'City',
-  },
+const citys = [
+  ['Hangzhou', 'Ningbo', 'Wenzhou', 'Jiaxing', 'Huzhou'],
+  ['Fuzhou', 'Xiamen', 'Putian', 'Sanming', 'Quanzhou'],
 ];
 
-const citys = {
-  Zhejiang: ['Hangzhou', 'Ningbo', 'Wenzhou', 'Jiaxing', 'Huzhou'],
-  Fujian: ['Fuzhou', 'Xiamen', 'Putian', 'Sanming', 'Quanzhou'],
-};
-
 export default function Demo() {
+  const [column, setColumn] = useState([
+    {
+      values: ['Zhejiang', 'Fujian'],
+      className: 'column1',
+      unit: 'Province',
+    },
+    {
+      values: ['Hangzhou', 'Ningbo', 'Wenzhou', 'Jiaxing', 'Huzhou'],
+      className: 'column2',
+      defaultIndex: 2,
+      unit: 'City',
+    },
+  ]);
   const onChange = useCallback(event => {
-    const { picker, value } = event.detail;
-    picker.setColumnValues(1, citys[value[0]]);
+    const { value, index } = event.detail;
+    const provinceIndex = column[0].values.findIndex(item => item === value[0]);
+    const cityList = cities[provinceIndex];
+    const cityIndex = index ? cityList.findIndex(item => item === value[1]) : 0;
+    setColumn([
+      {
+        ...column[0],
+        activeIndex: provinceIndex,
+      },
+      {
+        ...column[1],
+        activeIndex: cityIndex,
+        values: cityList,
+      },
+    ]);
   }, []);
 
   return <Picker columns={columns} onChange={onChange} />;
