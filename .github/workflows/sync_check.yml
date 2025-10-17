@@ -3,7 +3,6 @@ name: Sync README & ConfigType Check
 on: 
   pull_request:
     branches:
-      - main
       - release/*
   
 jobs:
