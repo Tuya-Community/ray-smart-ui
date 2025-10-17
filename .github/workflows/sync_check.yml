@@ -63,6 +63,6 @@ jobs:
         yarn syncMiniappData
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PROTECT_WRITE_TOKEN: ${{ secrets.PROTECT_WRITE_TOKEN }}
+        PROTECT_WRITE_TOKEN: ${{ github.token }}
         repository: ${{ github.repository }}
         ref: ${{ github.event.pull_request.head.ref }}
