@@ -36,7 +36,9 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.MINIAPP_TOKEN }}
     - name: Pull latest changes
       run: |
-        git pull https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} ${{ github.event.pull_request.head.ref }}
+        git fetch origin
+        git checkout ${{ github.event.pull_request.head.ref }}
+        git pull origin ${{ github.event.pull_request.head.ref }}
       continue-on-error: true
 
     - name: Sync Code
