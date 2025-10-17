@@ -471,7 +471,7 @@ The component provides the following CSS variables for custom styles. For usage,
 
 ### Methods
 
-You can get the Tabs instance through selectComponent and call instance methods.
+You can get the Tabs instance through [selectComponent](/material/smartui?comId=faq) and call instance methods.
 
 | Method Name | Parameter | Return Value | Description                                                        |
 | ----------- | --------- | ------------ | ------------------------------------------------------------------ |

@@ -209,7 +209,7 @@ export default function Demo() {
 
 ### Methods
 
-You can obtain the SwipeCell instance through selectComponent and call its methods.
+You can obtain the SwipeCell instance through [selectComponent](/material/smartui?comId=faq) and call its methods.
 
 | Method Name | Parameters                  | Return Value | Description            |
 | ----------- | --------------------------- | ------------ | ---------------------- |
