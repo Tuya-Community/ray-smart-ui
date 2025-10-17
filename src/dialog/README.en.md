@@ -332,6 +332,8 @@ When calling Dialog via a function, the following options are supported:
 | transition | Animation name, options are `fade` `none` | _string_ | `scale` |
 | nativeDisabled `v2.3.8` | Whether to disable local gestures during the pop-up period | _boolean_ | `false` |
 | autoClose `v2.6.3` | Whether to automatically close after callback click | _boolean_ | `true` |
+| emptyDisabled `v2.7.0` | Input box mode, cannot submit when value is empty | _boolean_ | `false` |
+
 
 ### Props
 
@@ -371,6 +373,7 @@ The following Props are supported when calling Dialog via component invocation:
 | beforeClose | Callback function before closing, returning `false` can prevent closing, supports returning Promise | _(action, value?: string) => boolean \| Promise\<boolean\>_ | - |
 | transition | Animation name, options are `fade` | _string_ | `scale` |
 | autoClose `v2.6.3` | Whether to automatically close after callback click | _boolean_ | `false` |
+| emptyDisabled `v2.7.0` | Input box mode, cannot submit when value is empty | _boolean_ | `false` |
 
 ### Events
 
