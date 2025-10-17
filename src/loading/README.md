@@ -113,3 +113,4 @@ export default function Demo() {
 | --loading-text-line-height | _20px_ | 文本行高 |
 | --loading-spinner-color | _#1989FA_ | 加载器颜色 |
 | --loading-spinner-size | _30px_ | 加载器大小 |
+| --loading-spinner-animation-duration | _0.8s_ | 加载动画持续时间 |
