@@ -1,4 +1,4 @@
-name: Sync README & ConfigType
+name: Sync README & ConfigType Check
 
 on: 
   pull_request:
