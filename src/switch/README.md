@@ -275,6 +275,8 @@ export default function Demo() {
 | name | 在表单内提交时的标识符 | _string_ | - |
 | size | 开关尺寸 | _string_ | `30px` |
 | stopClickPropagation `v1.0.2` | 是否阻止冒泡 | _boolean_ | `false` |
+| activeText `v2.7.0` | 打开时的文案 | _string_ | - |
+| inactiveText `v2.7.0` | 关闭时的文案 | _string_ | - |
 
 ### Events
 
@@ -308,3 +310,6 @@ export default function Demo() {
 | --switch-border `@deprecated v2.5.0` | _0.08em solid rgba(0, 0, 0, 0.1)_ | 开关边框 |
 | --switch-node-on-background-color `v2.4.0` | _var(--switch-node-background-color, #fff)_ | 开启时圆球的背景色 |
 | --switch-padding `v2.5.0` | _0.08em_ | 内部边距 |
+| --switch-label-font-size | `12px` | 文字大小 |
+| --switch-label-active-color | `var(--app-B3, #ffffff)` | 开时文字颜色 |
+| --switch-label-inactive-color | `var(--app-B3, #ffffff)` | 关时文字颜色 |

@@ -522,6 +522,7 @@ type RateThemeVars =
 
 type SwitchThemeVars =
   | 'switchWidth'
+  | 'switchLabelWidth'
   | 'switchHeight'
   | 'switchNodeSize'
   | 'switchNodeZIndex'
@@ -531,6 +532,9 @@ type SwitchThemeVars =
   | 'switchBackgroundColor'
   | 'switchOnBackgroundColor'
   | 'switchTransitionDuration'
+  | 'switchLabelFontSize'
+  | 'switchLabelActiveColor'
+  | 'switchLabelInactiveColor'
   | 'switchDisabledOpacity'
   | 'switchPadding'
   | 'switchBorder';
