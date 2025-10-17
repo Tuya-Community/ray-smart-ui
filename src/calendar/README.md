@@ -436,7 +436,7 @@ const [maxDate, setMaxDate] = useState(
 | closeOnClickOverlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
 | position | 弹出位置，可选值为 `top` `right` `left` | _string_ | `bottom` |
 | round | 是否显示圆角弹窗 | _boolean_ | `true` |
-| safeAreaInsetBottom | 是否开启底部安全区适配 | _boolean_ | `true` |
+| safeAreaInsetBottom | 是否开启底部安全区适配，v2.7.0 开始默认关闭 | _boolean_ | `false` |
 | show | 是否显示日历弹窗 | _boolean_ | `false` |
 
 ### Events
