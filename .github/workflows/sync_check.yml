@@ -34,6 +34,11 @@ jobs:
         git clone -b release/2.x https://github.com/Tuya-Community/miniapp-smart-ui.git
       env:
         GITHUB_TOKEN: ${{ secrets.MINIAPP_TOKEN }}
+    - name: Pull latest changes
+      run: |
+        git pull https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} ${{ github.event.pull_request.head.ref }}
+      continue-on-error: true
+
     - name: Sync Code
       run: |
         yarn syncMiniappData
