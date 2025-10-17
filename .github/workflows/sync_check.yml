@@ -41,4 +41,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PROTECT_WRITE_TOKEN: ${{ secrets.PROTECT_WRITE_TOKEN }}
         repository: ${{ github.repository }}
-        ref: ${{ github.ref_name }}
+        ref: ${{ github.event.pull_request.head.ref }}
