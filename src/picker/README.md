@@ -19,27 +19,31 @@ import { Picker } from '@ray-js/smart-ui';
 
 ### 基础用法
 
+单列时 `active-index` 属性可以控制picker的选中项; `change-animation` 可以开启picker的选中值变化过度动画效果。
+
 ```javascript
 import { Picker } from '@ray-js/smart-ui';
 import { showToast } from '@ray-js/ray';
 import React, { useCallback } from 'react';
 
 export default function Demo() {
+  const [activeIndex, setActiveIndex] = useState(3);
   const onChange = useCallback(event => {
     const { value, index } = event.detail;
+    setActiveIndex(index);
     showToast({
       icon: 'none',
       title: `Value: ${value}, Index：${index}`,
     });
   }, []);
 
-  return <Picker columns={['杭州', '宁波', '温州', '嘉兴', '湖州']} onChange={onChange} />;
+  return <Picker activeIndex={activeIndex} changeAnimation columns={['杭州', '宁波', '温州', '嘉兴', '湖州']} onChange={onChange} />;
 }
 ```
 
 ### 多列用法
 
-`disabled` `v2.3.5` 属性可以禁用此列；`style` 属性可以设置此列的样式；`fontStyle` `v2.3.5` 属性可以设置此列的字体样式。
+`disabled` `v2.3.5` 属性可以禁用此列；`style` 属性可以设置此列的样式；`fontStyle` `v2.3.5` 属性可以设置此列的字体样式; `activeIndex` 可以设置列的选中项。
 
 ```javascript
 import { Picker } from '@ray-js/smart-ui';
@@ -51,6 +55,7 @@ const columns = [
     values: new Array(100).fill(1).map((x, i) => i),
     style: { flex: 'none', width: 'auto', minWidth: '61px' },
     fontStyle: { fontSize: '16px' },
+    activeIndex: 0,
   },
   {
     values: ['.'],
@@ -61,6 +66,7 @@ const columns = [
     values: new Array(20).fill(1).map((x, i) => i),
     style: { flex: 'none', width: 'auto', minWidth: '61px' },
     unit: 'Kg',
+    activeIndex: 1,
   },
 ],
 
@@ -147,29 +153,41 @@ export default function Demo() {
 import { Picker } from '@ray-js/smart-ui';
 import React, { useCallback } from 'react';
 
-const columns = [
-  {
-    values: ['浙江', '福建'],
-    className: 'column1',
-    unit: '省',
-  },
-  {
-    values: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
-    className: 'column2',
-    defaultIndex: 2,
-    unit: '市',
-  },
+const citys = [
+  ['杭州', '宁波', '温州', '嘉兴', '湖州'],
+  ['福州', '厦门', '莆田', '三明', '泉州'],
 ];
 
-const citys = {
-  浙江: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
-  福建: ['福州', '厦门', '莆田', '三明', '泉州'],
-};
-
 export default function Demo() {
+  const [column, setColumn] = useState([
+    {
+      values: ['浙江', '福建'],
+      className: 'column1',
+      unit: '省',
+    },
+    {
+      values: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
+      className: 'column2',
+      defaultIndex: 2,
+      unit: '市',
+    },
+  ]);
   const onChange = useCallback(event => {
-    const { picker, value } = event.detail;
-    picker.setColumnValues(1, citys[value[0]]);
+    const { value, index } = event.detail;
+    const provinceIndex = column[0].values.findIndex(item => item === value[0]);
+    const cityList = cities[provinceIndex];
+    const cityIndex = index ? cityList.findIndex(item => item === value[1]) : 0;
+    setColumn([
+      {
+        ...column[0],
+        activeIndex: provinceIndex,
+      },
+      {
+        ...column[1],
+        activeIndex: cityIndex,
+        values: cityList,
+      },
+    ]);
   }, []);
 
   return <Picker columns={columns} onChange={onChange} />;
@@ -235,6 +253,40 @@ export default function Demo() {
 }
 ```
 
+### 循环列表 `2.7.0`
+
+`loop` 属性可以开启列表的循环渲染，列表会首尾相连，无限循环
+
+```javascript
+import { Picker } from '@ray-js/smart-ui';
+import React from 'react';
+const columns = [
+  {
+    values: new Array(100).fill(1).map((x, i) => i),
+  },
+];
+export default function Demo() {
+  return <Picker loop columns={columns} />;
+}
+```
+
+### 更多3D `2.7.0`
+
+`fullHeight` 属性可以展示更多的空间，看到更多3D翻转的项；当然你也可以覆盖组件的高度样式，来自定义需要可视的空间
+
+```javascript
+import { Picker } from '@ray-js/smart-ui';
+import React from 'react';
+const columns = [
+  {
+    values: new Array(100).fill(1).map((x, i) => i),
+  },
+];
+export default function Demo() {
+  return <Picker fullHeight loop columns={columns} />;
+}
+```
+
 ## API
 
 ### Props
@@ -253,10 +305,14 @@ export default function Demo() {
 | toolbarPosition | 顶部栏位置，可选值为`bottom` | _string_ | `top` |
 | unit | 单列选择器的默认的单位，<br>多列选择器请参考下方的 Columns 配置 | _number_ | '' |
 | valueKey | 选项对象中，文字对应的 key | _string_ | `text` |
-| visibleItemCount | 可见的选项个数 | _number_ | `5` |
+| visibleItemCount | 可见的选项个数 | _3 \| 5 \| 7 \| 9_ | `5` |
 | activeStyle `v2.0.0` | 选中状态下的样式 | _string_ | `''` |
 | changeAnimation `v2.2.0` | 组件受数据驱动选择值改变时是否需要动画过度效果（不包含手指交互滚动的动画） | _boolean_ | `false` |
 | animationTime `v2.3.7` | 过渡动画以及选择回调延迟的时间(单位ms) | _number_ | `800` `v2.3.7` `300` `v2.6.0` |
+| loop `v2.7.0` | 循环列表 | _boolean_ | `false` |
+| fontStyle `v2.7.0` | 字体样式，优先级低于 columns 内的 | _string_ | - |
+| fullHeight `v2.7.0` | 是否高度直接等于 `visibleItemCount * itemHeight`, 组件默认会再 `* 0.9` 缩小最外层可视的高度 | _boolean_ | `false` |
+
 
 ### Events
 

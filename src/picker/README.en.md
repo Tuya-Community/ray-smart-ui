@@ -18,27 +18,31 @@ import { Picker } from '@ray-js/smart-ui';
 
 ### Basic Usage
 
+In single column mode, the `active-index` attribute can control the selected item of the picker; `change-animation` can enable the transition animation effect for the selected value change of the picker.
+
 ```javascript
 import { Picker } from '@ray-js/smart-ui';
 import { showToast } from '@ray-js/ray';
 import React, { useCallback } from 'react';
 
 export default function Demo() {
+  const [activeIndex, setActiveIndex] = useState(3);
   const onChange = useCallback(event => {
     const { value, index } = event.detail;
+    setActiveIndex(index);
     showToast({
       icon: 'none',
       title: `Value: ${value}, Index：${index}`,
     });
   }, []);
 
-  return <Picker columns={['Hangzhou', 'Ningbo', 'Wenzhou', 'Jiaxing', 'Huzhou']} onChange={onChange} />;
+  return <Picker activeIndex={activeIndex} changeAnimation columns={['Hangzhou', 'Ningbo', 'Wenzhou', 'Jiaxing', 'Huzhou']} onChange={onChange} />;
 }
 ```
 
 ### Multi-Column Usage
 
-`disabled` `v2.3.5` attribute can disable this column; `style` attribute can set the style of this column; `fontStyle` `v2.3.5` attribute can set the font style of this column.
+`disabled` `v2.3.5` attribute can disable this column; `style` attribute can set the style of this column; `fontStyle` `v2.3.5` attribute can set the font style of this column; `activeIndex` can set the selected item of the column.
 
 ```javascript
 import { Picker } from '@ray-js/smart-ui';
@@ -50,6 +54,7 @@ const columns = [
     values: new Array(100).fill(1).map((x, i) => i),
     style: { flex: 'none', width: 'auto', minWidth: '61px' },
     fontStyle: { fontSize: '16px' },
+    activeIndex: 0,
   },
   {
     values: ['.'],
@@ -60,6 +65,7 @@ const columns = [
     values: new Array(20).fill(1).map((x, i) => i),
     style: { flex: 'none', width: 'auto', minWidth: '61px' },
     unit: 'Kg',
+    activeIndex: 1,
   },
 ],
 
@@ -146,29 +152,41 @@ export default function Demo() {
 import { Picker } from '@ray-js/smart-ui';
 import React, { useCallback } from 'react';
 
-const columns = [
-  {
-    values: ['Zhejiang', 'Fujian'],
-    className: 'column1',
-    unit: 'Province',
-  },
-  {
-    values: ['Hangzhou', 'Ningbo', 'Wenzhou', 'Jiaxing', 'Huzhou'],
-    className: 'column2',
-    defaultIndex: 2,
-    unit: 'City',
-  },
+const citys = [
+  ['Hangzhou', 'Ningbo', 'Wenzhou', 'Jiaxing', 'Huzhou'],
+  ['Fuzhou', 'Xiamen', 'Putian', 'Sanming', 'Quanzhou'],
 ];
 
-const citys = {
-  Zhejiang: ['Hangzhou', 'Ningbo', 'Wenzhou', 'Jiaxing', 'Huzhou'],
-  Fujian: ['Fuzhou', 'Xiamen', 'Putian', 'Sanming', 'Quanzhou'],
-};
-
 export default function Demo() {
+  const [column, setColumn] = useState([
+    {
+      values: ['Zhejiang', 'Fujian'],
+      className: 'column1',
+      unit: 'Province',
+    },
+    {
+      values: ['Hangzhou', 'Ningbo', 'Wenzhou', 'Jiaxing', 'Huzhou'],
+      className: 'column2',
+      defaultIndex: 2,
+      unit: 'City',
+    },
+  ]);
   const onChange = useCallback(event => {
-    const { picker, value } = event.detail;
-    picker.setColumnValues(1, citys[value[0]]);
+    const { value, index } = event.detail;
+    const provinceIndex = column[0].values.findIndex(item => item === value[0]);
+    const cityList = cities[provinceIndex];
+    const cityIndex = index ? cityList.findIndex(item => item === value[1]) : 0;
+    setColumn([
+      {
+        ...column[0],
+        activeIndex: provinceIndex,
+      },
+      {
+        ...column[1],
+        activeIndex: cityIndex,
+        values: cityList,
+      },
+    ]);
   }, []);
 
   return <Picker columns={columns} onChange={onChange} />;
@@ -234,6 +252,40 @@ export default function Demo() {
 }
 ```
 
+### Loop List `2.7.0`
+
+`loop` can enable loop rendering of lists, which will be connected end-to-end and loop infinitely
+
+```javascript
+import { Picker } from '@ray-js/smart-ui';
+import React from 'react';
+const columns = [
+  {
+    values: new Array(100).fill(1).map((x, i) => i),
+  },
+];
+export default function Demo() {
+  return <Picker loop columns={columns} />;
+}
+```
+
+### More 3D `2.7.0`
+
+`fullHeight` property allows for more space to display and see more 3D-flipped items; of course, you can also override the component's height style to customize the visible space you need.
+
+```javascript
+import { Picker } from '@ray-js/smart-ui';
+import React from 'react';
+const columns = [
+  {
+    values: new Array(100).fill(1).map((x, i) => i),
+  },
+];
+export default function Demo() {
+  return <Picker fullHeight loop columns={columns} />;
+}
+```
+
 ## API
 
 ### Props
@@ -252,10 +304,13 @@ export default function Demo() {
 | toolbarPosition | Top bar position, optional value is `bottom` | _string_ | `top` |
 | unit | Default unit for single-column picker,<br>refer to Columns configuration for multi-column picker | _number_ | '' |
 | valueKey | Key corresponding to text in option object | _string_ | `text` |
-| visibleItemCount | Number of visible options | _number_ | `5` |
+| visibleItemCount | Number of visible options | _3 \| 5 \| 7 \| 9_ | `5` |
 | activeStyle `v2.0.0` | Style in selected state | _string_ | `''` |
 | changeAnimation `v2.2.0` | Whether the component requires a transition animation when the value selected by data-driven changes (excluding the animation of finger interactive scrolling). | _boolean_ | `false` |
 | animationTime `v2.3.7` | Transition animation and the delay time for selection callback (Unit: ms) | _number_ | `800` `v2.3.7` `300` `v2.6.0` |
+| loop `v2.7.0` | Loop List | _boolean_ | `false` |
+| fontStyle `v2.7.0` | Font style has lower priority than within columns | _string_ | - |
+| fullHeight `v2.7.0` | Does the height directly equal `visibleItemCount * itemHeight`, the component will default to reduce the outer visible height by `* 0.9`. | _boolean_ | `false` |
 
 ### Events
 
