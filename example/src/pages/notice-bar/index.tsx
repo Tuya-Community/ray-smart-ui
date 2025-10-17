@@ -13,16 +13,23 @@ export default function Demo() {
         <NoticeBar
           wrapable
           type="info"
-          left-icon={Warning}
-          customStyle="margin-bottom: 10px;"
+          leftIcon={Warning}
+          customStyle={{
+            marginBottom: '10px',
+          }}
+          onBtnClick={() => {
+            console.log('onBtnClick');
+          }}
           text={Strings.getLang('noticeBarTip1')}
           btnText={Strings.getLang('familySettings')}
         />
         <NoticeBar
           wrapable
           type="warning"
-          left-icon={Warning}
-          customStyle="margin-bottom: 10px;"
+          leftIcon={Warning}
+          customStyle={{
+            marginBottom: '10px',
+          }}
           text={Strings.getLang('noticeBarTip1')}
           btnText={Strings.getLang('familySettings')}
         />
@@ -30,7 +37,9 @@ export default function Demo() {
           wrapable
           type="error"
           leftIcon={Warning}
-          customStyle="margin-bottom: 10px;"
+          customStyle={{
+            marginBottom: '10px',
+          }}
           text={Strings.getLang('noticeBarTip1')}
           btnText={Strings.getLang('familySettings')}
         />
@@ -49,7 +58,9 @@ export default function Demo() {
       <DemoBlock padding title={Strings.getLang('overflowScroll')}>
         <NoticeBar
           speed={100}
-          customStyle="margin-bottom: 10px;"
+          customStyle={{
+            marginBottom: '10px',
+          }}
           text={Strings.getLang('noticeBarTip1')}
         />
         <NoticeBar scrollable={false} text={Strings.getLang('noticeBarTip1')} />
