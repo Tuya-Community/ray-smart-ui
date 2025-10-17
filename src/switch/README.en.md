@@ -44,6 +44,45 @@ export default function Demo() {
 }
 ```
 
+### Switch Label `v2.7.0`
+
+```jsx
+import { Switch } from '@ray-js/smart-ui';
+import React from 'react';
+
+export default function Demo() {
+  const [value, onChange] = React.useState(true);
+
+  return (
+    <>
+      <Switch
+        checked={value}
+        activeText="ON"
+        inactiveText="OFF"
+        onChange={event => {
+          onChange(event.detail);
+        }}
+      />
+      <ConfigProvider
+        themeVars={{
+          switchLabelFontSize: '10px',
+        }}
+      >
+        <Switch
+          checked={value}
+          activeText="show"
+          inactiveText="hide"
+          onChange={event => {
+            onChange(event.detail);
+          }}
+        />
+      </ConfigProvider>
+    </>
+  );
+}
+```
+
+
 ### Disabled
 
 ```jsx

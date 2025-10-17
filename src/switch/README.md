@@ -44,6 +44,45 @@ export default function Demo() {
 }
 ```
 
+### 开关文案 `v2.7.0`
+
+```jsx
+import { Switch } from '@ray-js/smart-ui';
+import React from 'react';
+
+export default function Demo() {
+  const [value, onChange] = React.useState(true);
+
+  return (
+    <>
+      <Switch
+        checked={value}
+        activeText="开"
+        inactiveText="关"
+        onChange={event => {
+          onChange(event.detail);
+        }}
+      />
+      <ConfigProvider
+        themeVars={{
+          switchLabelFontSize: '10px',
+        }}
+      >
+        <Switch
+          checked={value}
+          activeText="展示"
+          inactiveText="隐藏"
+          onChange={event => {
+            onChange(event.detail);
+          }}
+        />
+      </ConfigProvider>
+    </>
+  );
+}
+```
+
+
 ### 禁用
 
 ```jsx
