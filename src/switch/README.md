@@ -310,6 +310,7 @@ export default function Demo() {
 | --switch-border `@deprecated v2.5.0` | _0.08em solid rgba(0, 0, 0, 0.1)_ | 开关边框 |
 | --switch-node-on-background-color `v2.4.0` | _var(--switch-node-background-color, #fff)_ | 开启时圆球的背景色 |
 | --switch-padding `v2.5.0` | _0.08em_ | 内部边距 |
-| --switch-label-font-size `v2.7.0` | `12px` | 文字大小 |
-| --switch-label-active-color `v2.7.0` | `var(--app-B3, #ffffff)` | 开时文字颜色 |
-| --switch-label-inactive-color `v2.7.0` | `var(--app-B3, #ffffff)` | 关时文字颜色 |
+| --switch-label-width `v2.7.0` | _2em_ | 文本开关时的默认宽度 |
+| --switch-label-font-size `v2.7.0` | _12px_ | 文字大小 |
+| --switch-label-active-color `v2.7.0` | _var(--app-B3, #ffffff)_ | 开时文字颜色 |
+| --switch-label-inactive-color `v2.7.0` | _var(--app-B3, #ffffff)_ | 关时文字颜色 |

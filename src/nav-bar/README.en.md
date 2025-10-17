@@ -321,7 +321,7 @@ The component provides the following CSS variables for custom styles. For usage 
 | --nav-bar-home-font-weight     | _600_    | Nav bar home font weight |
 | --nav-bar-home-text-color      | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Nav bar home text color |
 | --nav-bar-right-text-color `v2.5.1` | _var(--app-B2-N1, rgba(0, 0, 0, 1))_ | Nav bar right text color |
-| --nav-bar-title-max-width `v2.6.0` `@deprecated v2.7.0` | _56%_ | Width of the nav bar title |
+| --nav-bar-title-max-width `v2.6.0` | _56%_ `v2.6.0` _calc(100% - 98px - 16px)_   | 导航栏标题的宽度 `v2.7.0` | Width of the nav bar title |
 | --nav-bar-side-width `v2.7.0` | _98px_     | Side width |
 | --nav-bar-text-padding `v2.7.0` | _20px_    | Text padding on both sides |
 | --nav-bar-icon-padding `v2.7.0` | _16px_    | Icon padding on both sides |

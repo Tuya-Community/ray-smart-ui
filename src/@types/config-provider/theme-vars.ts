@@ -412,6 +412,7 @@ type LoadingThemeVars =
 
 type NavBarThemeVars =
   | 'navBarHomeMaxWidth'
+  | 'navBarTitleMaxWidth'
   | 'navBarHeight'
   | 'navBarRoundBorderRadius'
   | 'navBarRoundMinHeight'
