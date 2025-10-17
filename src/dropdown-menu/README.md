@@ -271,7 +271,7 @@ export default function Demo() {
 
 ### DropdownItem 方法
 
-通过 selectComponent(id) 可访问。
+通过 [selectComponent](/material/smartui?comId=faq) 可访问。
 
 | 方法名 | 说明                                                          | 参数           | 返回值 |
 | ------ | ------------------------------------------------------------- | -------------- | ------ |

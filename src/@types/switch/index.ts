@@ -75,6 +75,18 @@ export interface SmartSwitchProps {
    * @version 1.0.4
    */
   stopClickPropagation?: boolean;
+
+  /**
+   * 打开时的文字
+   * @version 2.7.0
+   */
+  activeText?: string;
+
+  /**
+   * 关闭时的文字
+   * @version 2.7.0
+   */
+  inactiveText?: string;
 }
 
 /**

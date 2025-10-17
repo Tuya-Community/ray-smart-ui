@@ -73,6 +73,7 @@ export default function Demo() {
     DialogInstance.input({
       title: 'Title',
       value: '',
+      emptyDisabled: true,
       cancelButtonText: 'Sub Action',
       beforeClose,
     })

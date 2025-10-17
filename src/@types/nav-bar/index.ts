@@ -55,11 +55,43 @@ export interface SmartNavBarProps {
   rightText?: string;
 
   /**
+   * 右侧文案颜色
+   *
+   * @version v2.7.0
+   * @default ''
+   */
+  rightTextColor?: string;
+
+  /**
    * 是否显示左侧箭头
    *
    * @default false
    */
   leftArrow?: boolean;
+
+  /**
+   * 右侧 Icon
+   *
+   * @version v2.7.0
+   * @default ''
+   */
+  rightIcon?: string;
+
+  /**
+   * 右侧 Icon 大小，默认为 32
+   *
+   * @version v2.7.0
+   * @default 32
+   */
+  rightIconSize?: string | number;
+
+  /**
+   * 右侧 Icon 颜色
+   *
+   * @version v2.7.0
+   * @default ''
+   */
+  rightIconColor?: string;
 
   /**
    * 是否固定在顶部
@@ -100,6 +132,12 @@ export interface SmartNavBarProps {
    * @default true
    */
   safeAreaInsetTop?: boolean;
+
+  /**
+   * @description 背景色
+   * @version v2.7.0
+   */
+  background?: string;
 }
 
 export interface SmartNavBarEvents {
@@ -133,6 +171,20 @@ export interface SmartNavBarEvents {
    * @version v2.0.0
    */
   onClickLeftText?: SmartEventHandler;
+
+  /**
+   * 点击右侧文本时触发
+   *
+   * @version v2.7.0
+   */
+  onClickRightText?: SmartEventHandler;
+
+  /**
+   * 点击右侧 icon 时触发
+   *
+   * @version v2.7.0
+   */
+  onClickRightIcon?: SmartEventHandler;
 }
 
 export interface SmartNavBarExternalClassName extends SmartBaseExternalClassName {

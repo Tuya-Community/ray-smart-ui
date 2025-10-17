@@ -271,7 +271,7 @@ export default function Demo() {
 
 ### DropdownItem Methods
 
-Accessible via selectComponent(id).
+Accessible via [selectComponent](/material/smartui?comId=faq)
 
 | Method Name | Description                           | Parameters     | Return Value |
 | ----------- | ------------------------------------- | -------------- | ------------ |

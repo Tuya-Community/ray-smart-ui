@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Picker } from '@ray-js/smart-ui';
 import { showToast } from '@ray-js/ray';
 import { DemoBlock } from '@/components';
@@ -49,7 +49,7 @@ const data = {
         Strings.getLang('huzhou'),
       ],
       className: 'column2',
-      defaultIndex: 2,
+      activeIndex: 2,
       unit: Strings.getLang('city'),
     },
   ],
@@ -58,6 +58,7 @@ const data = {
       values: new Array(100).fill(1).map((x, i) => i),
       style: { flex: 'none', width: 'auto', minWidth: '61px' },
       fontStyle: { fontSize: '16px' },
+      activeIndex: 0,
     },
     {
       values: ['.'],
@@ -68,6 +69,7 @@ const data = {
       values: new Array(20).fill(1).map((x, i) => i),
       style: { flex: 'none', width: 'auto', minWidth: '61px' },
       unit: 'Kg',
+      activeIndex: 1,
     },
   ],
   column6: [
@@ -86,24 +88,75 @@ const data = {
       order: 1,
     },
   ],
+  column7: [
+    {
+      values: new Array(100).fill(1).map((x, i) => i),
+    },
+  ],
 };
 
+const cities = [
+  [
+    Strings.getLang('hangzhou'),
+    Strings.getLang('ningbo'),
+    Strings.getLang('wenzhou'),
+    Strings.getLang('jiaxing'),
+    Strings.getLang('huzhou'),
+  ],
+  [
+    Strings.getLang('fuzhouCity'),
+    Strings.getLang('xiamenCity'),
+    Strings.getLang('putianCity'),
+    Strings.getLang('sanmingCity'),
+    Strings.getLang('quanzhouCity'),
+  ],
+];
+
 export default function Demo() {
+  const [column4, setColumn4] = useState(data.column4);
+  const [column5, setColumn5] = useState<any[]>(data.column5);
+  const [activeIndex, setActiveIndex] = useState(3);
   const onChange = useCallback(event => {
     const { value, index } = event.detail;
+    setActiveIndex(index);
     showToast({
       icon: 'none',
       title: `Value: ${value}, Index：${index}`,
     });
   }, []);
 
-  const onChangeNum = useCallback(event => {
+  const onChangeLink = useCallback(event => {
     const { value, index } = event.detail;
+    const provinceIndex = column4[0].values.findIndex(item => item === value[0]);
+    const cityList = cities[provinceIndex];
+    const cityIndex = index ? cityList.findIndex(item => item === value[1]) : 0;
+    setColumn4([
+      {
+        ...column4[0],
+        activeIndex: provinceIndex,
+      },
+      {
+        ...column4[1],
+        activeIndex: cityIndex,
+        values: cityList,
+      },
+    ]);
+  }, []);
+
+  const onChangeNum = event => {
+    const { value, index } = event.detail;
+    const newColumn5 = column5.map((item, index) => {
+      return {
+        ...item,
+        activeIndex: item.values.findIndex(curr => curr === value[index]),
+      };
+    });
+    setColumn5(newColumn5);
     showToast({
       icon: 'none',
       title: `Value: ${value.join('')}, Index：${index}`,
     });
-  }, []);
+  };
 
   const onChange2 = useCallback(event => {
     const { picker, value } = event.detail;
@@ -122,11 +175,16 @@ export default function Demo() {
   return (
     <>
       <DemoBlock title={Strings.getLang('basicUsage')}>
-        <Picker columns={data.column1} onChange={onChange} />
+        <Picker
+          changeAnimation
+          columns={data.column1}
+          activeIndex={activeIndex}
+          onChange={onChange}
+        />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('multiColumnUsage')}>
         <Picker
-          columns={data.column5}
+          columns={column5}
           activeStyle={{
             color: 'rgb(135, 180, 244)',
           }}
@@ -149,16 +207,22 @@ export default function Demo() {
         />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('multiColumnLinkage')}>
-        <Picker columns={data.column4} onChange={onChange2} />
+        <Picker columns={column4} onChange={onChangeLink} />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('disableOptions')}>
-        <Picker columns={data.column2} />
+        <Picker columns={data.column2} onChange={onChange2} />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('loadingState')}>
         <Picker loading columns={data.column4} />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('setTheOrderOfColumnStyles')}>
         <Picker columns={data.column6} />
+      </DemoBlock>
+      <DemoBlock title={Strings.getLang('loop')}>
+        <Picker loop columns={data.column7} onChange={onChange} />
+      </DemoBlock>
+      <DemoBlock title={Strings.getLang('more3d')}>
+        <Picker loop fullHeight columns={data.column7} onChange={onChange} />
       </DemoBlock>
     </>
   );

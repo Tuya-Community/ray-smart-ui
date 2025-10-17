@@ -110,6 +110,6 @@ The component provides the following CSS variables that can be used for custom s
 | --loading-text-color                   | _#969799_                                | Text color                     |
 | --loading-text-font-size               | _14px_                                   | Text font size                 |
 | --loading-text-line-height             | _20px_                                   | Text line height               |
-| --loading-spinner-color                | _#c8c9cc_                                | Spinner color                  |
+| --loading-spinner-color                | _#1989FA_                                | Spinner color                  |
 | --loading-spinner-size                 | _30px_                                   | Spinner size                   |
 | --loading-spinner-animation-duration   | _0.8s_                                   | Animation duration             |

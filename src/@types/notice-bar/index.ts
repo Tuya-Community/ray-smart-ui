@@ -166,8 +166,9 @@ export interface SmartNoticeBarEvents {
 
   /**
    * 点击文末按钮文本时的触发
+   * @version 2.7.0
    */
-  btnClick?: SmartTouchEventHandler;
+  onBtnClick?: SmartTouchEventHandler;
 
   /**
    * 关闭通知栏时触发

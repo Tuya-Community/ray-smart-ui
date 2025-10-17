@@ -182,7 +182,7 @@ export default function Demo() {
 
 ### Methods
 
-You can get the CountDown instance through `selectComponent` and call instance methods.
+You can get the CountDown instance through [selectComponent](/material/smartui?comId=faq) and call instance methods.
 
 | Method Name | Parameter | Return Value | Description                                          |
 | ----------- | --------- | ------------ | ---------------------------------------------------- |

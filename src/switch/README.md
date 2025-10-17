@@ -44,6 +44,45 @@ export default function Demo() {
 }
 ```
 
+### 开关文案 `v2.7.0`
+
+```jsx
+import { Switch } from '@ray-js/smart-ui';
+import React from 'react';
+
+export default function Demo() {
+  const [value, onChange] = React.useState(true);
+
+  return (
+    <>
+      <Switch
+        checked={value}
+        activeText="开"
+        inactiveText="关"
+        onChange={event => {
+          onChange(event.detail);
+        }}
+      />
+      <ConfigProvider
+        themeVars={{
+          switchLabelFontSize: '10px',
+        }}
+      >
+        <Switch
+          checked={value}
+          activeText="展示"
+          inactiveText="隐藏"
+          onChange={event => {
+            onChange(event.detail);
+          }}
+        />
+      </ConfigProvider>
+    </>
+  );
+}
+```
+
+
 ### 禁用
 
 ```jsx
@@ -236,6 +275,8 @@ export default function Demo() {
 | name | 在表单内提交时的标识符 | _string_ | - |
 | size | 开关尺寸 | _string_ | `30px` |
 | stopClickPropagation `v1.0.2` | 是否阻止冒泡 | _boolean_ | `false` |
+| activeText `v2.7.0` | 打开时的文案 | _string_ | - |
+| inactiveText `v2.7.0` | 关闭时的文案 | _string_ | - |
 
 ### Events
 
@@ -269,3 +310,7 @@ export default function Demo() {
 | --switch-border `@deprecated v2.5.0` | _0.08em solid rgba(0, 0, 0, 0.1)_ | 开关边框 |
 | --switch-node-on-background-color `v2.4.0` | _var(--switch-node-background-color, #fff)_ | 开启时圆球的背景色 |
 | --switch-padding `v2.5.0` | _0.08em_ | 内部边距 |
+| --switch-label-width `v2.7.0` | _2em_ | 文本开关时的默认宽度 |
+| --switch-label-font-size `v2.7.0` | _12px_ | 文字大小 |
+| --switch-label-active-color `v2.7.0` | _var(--app-B3, #ffffff)_ | 开时文字颜色 |
+| --switch-label-inactive-color `v2.7.0` | _var(--app-B3, #ffffff)_ | 关时文字颜色 |

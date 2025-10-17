@@ -17,10 +17,12 @@ import { SwipeCell } from '@ray-js/smart-ui';
 ## 代码演示
 
 ### 基础用法
+`onTabClose` `v2.7.0` 属性是侧边栏关闭时触发的回调事件
+
 
 ```jsx
 import React, { useCallback } from 'react';
-import { SwipeCell, CellGroup, Cell } from '@ray-js/smart-ui';
+import { SwipeCell, CellGroup, Cell, SmartEventHandler, SmartSwipeCellPosition } from '@ray-js/smart-ui';
 import { View } from '@ray-js/ray';
 
 const style = {
@@ -35,7 +37,11 @@ const style = {
 };
 
 export default function Demo() {
-  return (
+
+  const onHandleTabClose: SmartEventHandler<SmartSwipeCellPosition> = event => {
+    console.log(event.detail, '--position');
+  };
+  return ( 
     <SwipeCell
       rightWidth={65}
       leftWidth={65}
@@ -43,6 +49,7 @@ export default function Demo() {
         left: <View style={style}>选择</View>,
         right: <View style={style}>删除</View>,
       }}
+      onTabClose={onHandleTabClose}
     >
       <CellGroup>
         <Cell title="单元格" value="内容" />
@@ -188,7 +195,8 @@ export default function Demo() {
 | 事件名     | 说明       | 参数                                                      |
 | ---------- | ---------- | --------------------------------------------------------- |
 | onClick | 点击时触发 | 关闭时的点击位置 (`left` `right` `cell` `outside`) |
-| onClose | 关闭时触发 | { position: 'left' \| 'right' , instance , name: string } |
+| onTabClose `v2.7.0` | 关闭时触发 | 关闭的位置 (`left` `right`) |
+| onClose | 点击异步关闭时触发 | { position: 'left' \| 'right' , instance , name: string } |
 | onOpen | 打开时触发 | { position: 'left' \| 'right' , name: string } |
 
 ### close 参数
@@ -201,7 +209,7 @@ export default function Demo() {
 
 ### 方法
 
-通过 selectComponent 可以获取到 SwipeCell 实例并调用实例方法
+通过 [selectComponent](/material/smartui?comId=faq) 可以获取到 SwipeCell 实例并调用实例方法
 
 | 方法名 | 参数                      | 返回值 | 介绍             |
 | ------ | ------------------------- | ------ | ---------------- |

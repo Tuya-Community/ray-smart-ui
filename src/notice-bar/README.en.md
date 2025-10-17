@@ -231,7 +231,7 @@ export default function Demo() {
 | ----------- | ----------------- | ---------------- |
 | onClick | Triggered when the notice bar is clicked | _event: Event_ |
 | onClose | Triggered when the notice bar is closed | _event: Event_ |
-| onBtnClick | Triggered when the button text is clicked | _event: Event_ |
+| onBtnClick `v2.7.0` | Triggered when the button text is clicked | _event: Event_ |
 
 
 ### Slot

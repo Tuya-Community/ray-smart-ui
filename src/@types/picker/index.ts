@@ -167,6 +167,18 @@ export interface SmartPickerProps {
    * @default 800 (ms)
    */
   animationTime?: number;
+  /**
+   * @description 循环滚动
+   * @version 2.7.0
+   * @default false
+   */
+  loop?: boolean;
+  /**
+   * @description 是否高度直接等于 `visibleItemCount * itemHeight`, 组件默认会再 `* 0.9` 缩小最外层可视的高度
+   * @version 2.7.0
+   * @default false
+   */
+  fullHeight?: boolean;
 }
 
 export interface SmartPickerBaseEventDetail {
