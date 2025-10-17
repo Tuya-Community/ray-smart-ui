@@ -111,6 +111,6 @@ export default function Demo() {
 | --loading-text-color | _#969799_ | 文本颜色 |
 | --loading-text-font-size | _14px_ | 文本字体大小 |
 | --loading-text-line-height | _20px_ | 文本行高 |
-| --loading-spinner-color | _#c8c9cc_ | 加载器颜色 |
+| --loading-spinner-color | _#1989FA_ | 加载器颜色 |
 | --loading-spinner-size | _30px_ | 加载器大小 |
 | --loading-spinner-animation-duration | _0.8s_ | 加载动画持续时间 |

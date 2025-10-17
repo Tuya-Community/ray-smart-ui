@@ -1,7 +1,7 @@
 name: Sync README & ConfigType
 
-on:
-  push:
+on: 
+  pull_request:
     branches:
       - main
       - release/*
@@ -41,7 +41,7 @@ jobs:
     - name: Clone miniapp
       run: |
         echo "Attempting to clone miniapp-smart-ui repository..."
-        if git clone -b ${{ github.ref_name }} https://github.com/Tuya-Community/miniapp-smart-ui.git; then
+        if git clone -b release/2.x https://github.com/Tuya-Community/miniapp-smart-ui.git; then
           echo "✅ Successfully cloned miniapp-smart-ui repository"
         else
           echo "❌ Failed to clone miniapp-smart-ui repository"
@@ -51,11 +51,18 @@ jobs:
         fi
       env:
         GITHUB_TOKEN: ${{ secrets.MINIAPP_TOKEN }}
+    - name: Pull latest changes
+      run: |
+        git fetch origin
+        git checkout ${{ github.event.pull_request.head.ref }}
+        git pull origin ${{ github.event.pull_request.head.ref }}
+      continue-on-error: true
+
     - name: Sync Code
       run: |
         yarn syncMiniappData
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PROTECT_WRITE_TOKEN: ${{ secrets.PROTECT_WRITE_TOKEN }}
+        PROTECT_WRITE_TOKEN: ${{ github.token }}
         repository: ${{ github.repository }}
-        ref: ${{ github.ref }}
+        ref: ${{ github.event.pull_request.head.ref }}
