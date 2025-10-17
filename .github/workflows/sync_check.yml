@@ -29,9 +29,26 @@ jobs:
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
 
+    - name: Check MINIAPP_TOKEN Permission
+      run: |
+        if [ -z "${{ secrets.MINIAPP_TOKEN }}" ]; then
+          echo "❌ MINIAPP_TOKEN is not available. This workflow requires access to clone miniapp-smart-ui repository."
+          echo "Please ensure the repository has the MINIAPP_TOKEN secret configured with appropriate permissions."
+          exit 1
+        fi
+        echo "✅ MINIAPP_TOKEN is available"
+
     - name: Clone miniapp
       run: |
-        git clone -b release/2.x https://github.com/Tuya-Community/miniapp-smart-ui.git
+        echo "Attempting to clone miniapp-smart-ui repository..."
+        if git clone -b release/2.x https://github.com/Tuya-Community/miniapp-smart-ui.git; then
+          echo "✅ Successfully cloned miniapp-smart-ui repository"
+        else
+          echo "❌ Failed to clone miniapp-smart-ui repository"
+          echo "This may be due to insufficient permissions or network issues."
+          echo "Please check if the MINIAPP_TOKEN has the necessary permissions to access the repository."
+          exit 1
+        fi
       env:
         GITHUB_TOKEN: ${{ secrets.MINIAPP_TOKEN }}
     - name: Pull latest changes
