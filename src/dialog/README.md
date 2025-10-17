@@ -79,7 +79,7 @@ export default function Demo() {
 
 ### 输入框
 
-用于输入文案信息，此时输入框默认最大输入长度`maxLength`为`20`.
+用于输入文案信息，此时默认最大输入限制`maxLength`是`20`;`emptyDisabled` `v2.7.0` 属性可以限制输入框内为空时无法提交。
 
 ```jsx
 import React from 'react';
@@ -102,6 +102,7 @@ export default function Demo() {
       title: 'Title',
       value: '',
       beforeClose,
+      emptyDisabled: true,
       cancelButtonText: 'Sub Action',
     })
       .then(() => {

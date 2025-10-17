@@ -79,7 +79,7 @@ export default function Demo() {
 
 ### Input Box
 
-Used for entering text information, with a default maximum input length `maxLength` of `20`.
+Used to input copy information, the default maximum input limit `maxLength` is `20`; the `emptyDisabled` `v2.7.0` attribute can restrict the submission when the input field is empty.
 
 ```jsx
 import React from 'react';
@@ -102,6 +102,7 @@ export default function Demo() {
       title: 'Title',
       value: '',
       beforeClose,
+      emptyDisabled: true,
       cancelButtonText: 'Sub Action',
     })
       .then(() => {
