@@ -310,6 +310,6 @@ The component provides the following CSS variables for custom styling. See [Conf
 | --switch-border `@deprecated v2.5.0`             | _0.08em solid rgba(0, 0, 0, 0.1)_     | Switch border |
 | --switch-node-on-background-color `v2.4.0` | _var(--switch-node-background-color, #fff)_ | Background color of the sphere when turned on |
 | --switch-padding `v2.5.0` | _0.08em_ | Internal padding |
-| --switch-label-font-size | `12px` | Font Size |
-| --switch-label-active-color | `var(--app-B3, #ffffff)` | Text color on open |
-| --switch-label-inactive-color | `var(--app-B3, #ffffff)` | Text color when turned off |
+| --switch-label-font-size `v2.7.0` | `12px` | Font Size |
+| --switch-label-active-color `v2.7.0` | `var(--app-B3, #ffffff)` | Text color on open |
+| --switch-label-inactive-color `v2.7.0` | `var(--app-B3, #ffffff)` | Text color when turned off |
