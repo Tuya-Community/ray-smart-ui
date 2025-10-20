@@ -6,7 +6,7 @@
 
 - picker: 重构picker实现原理，增加3D视觉效果，新增 loop 循环滚动 和 fullHeight 属性，优化性能([pull/48](https://github.com/Tuya-Community/miniapp-smart-ui/pull/48))
 - datetime-picker: 新增循环滚动能力([pull/48](https://github.com/Tuya-Community/miniapp-smart-ui/pull/48))
-- nav-bar: 样式优化，新增 rightTextColor、rightIconColor、rightIconSize、leftIconColor、background、rightIconClass、leftTextClass属性；新增 clickRightIcon、clickRightText事件；新增和修改 --nav-bar-side-width、--nav-bar-text-padding、--nav-bar-icon-padding、--nav-bar-title-margin、--nav-bar-home-max-width、--nav-bar-left-title-padding、--nav-bar-title-max-width CSS 变量；删除--nav-bar-icon-size、--nav-bar-icon-margin CSS 变量([pull/38](https://github.com/Tuya-Community/miniapp-smart-ui/pull/38))
+- nav-bar: 样式优化，新增 rightTextColor、rightIconColor、rightIconSize、leftIconColor、background、rightIconClass、leftTextClass属性；新增 clickRightIcon、clickRightText事件；新增和修改 --nav-bar-side-width、--nav-bar-text-padding、--nav-bar-icon-padding、--nav-bar-title-margin、--nav-bar-home-max-width、--nav-bar-left-title-padding、--nav-bar-title-max-width CSS 变量；删除--nav-bar-icon-size、--nav-bar-icon-margin CSS 变量；修改border属性默认为 false([pull/38](https://github.com/Tuya-Community/miniapp-smart-ui/pull/38))
 - swipe-cell: 新增 tabClose 事件 ([03483f1](https://github.com/Tuya-Community/miniapp-smart-ui/pull/50/commits/03483f198d6503f4f4b760891bc4e598773e337f))
 - switch: 新增 activeText、inactiveText 属性；新增--switch-label-font-size、--switch-label-active-color、--switch-label-inactive-color、switch-label-width CSS 变量([pull/47](https://github.com/Tuya-Community/miniapp-smart-ui/pull/47))
 - dialog: 新增 emptyDisabled 属性，input 模式下 输入内容为空时禁用提交([9dbb29c](https://github.com/Tuya-Community/miniapp-smart-ui/pull/50/commits/9dbb29ca129202bac7622264a1d7f684d5da89ba))
