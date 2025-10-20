@@ -110,7 +110,7 @@ export interface SmartNavBarProps {
   /**
    * 是否显示下边框
    *
-   * @default true
+   * @default false
    */
   border?: boolean;
 
