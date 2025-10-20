@@ -90,6 +90,24 @@ export default function Demo() {
 }
 ```
 
+
+### Loop List `2.7.0`
+
+`loop` can enable loop rendering of lists, which will be connected end-to-end and loop infinitely
+
+```javascript
+import { Picker } from '@ray-js/smart-ui';
+import React from 'react';
+const columns = [
+  {
+    values: new Array(100).fill(1).map((x, i) => i),
+  },
+];
+export default function Demo() {
+  return <Picker loop columns={columns} />;
+}
+```
+
 ### Default Selected Item
 
 For a single-column picker, you can directly use the `defaultIndex` property to set the index of the initial selected item.
@@ -249,23 +267,6 @@ const columns = [
 ];
 export default function Demo() {
   return <Picker columns={columns} />;
-}
-```
-
-### Loop List `2.7.0`
-
-`loop` can enable loop rendering of lists, which will be connected end-to-end and loop infinitely
-
-```javascript
-import { Picker } from '@ray-js/smart-ui';
-import React from 'react';
-const columns = [
-  {
-    values: new Array(100).fill(1).map((x, i) => i),
-  },
-];
-export default function Demo() {
-  return <Picker loop columns={columns} />;
 }
 ```
 
