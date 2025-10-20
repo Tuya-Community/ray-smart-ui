@@ -91,6 +91,24 @@ export default function Demo() {
 }
 ```
 
+
+### 循环列表 `2.7.0`
+
+`loop` 属性可以开启列表的循环渲染，列表会首尾相连，无限循环
+
+```javascript
+import { Picker } from '@ray-js/smart-ui';
+import React from 'react';
+const columns = [
+  {
+    values: new Array(100).fill(1).map((x, i) => i),
+  },
+];
+export default function Demo() {
+  return <Picker loop columns={columns} />;
+}
+```
+
 ### 默认选中项
 
 单列选择器可以直接通过`defaultIndex`属性设置初始选中项的索引值。
@@ -253,22 +271,6 @@ export default function Demo() {
 }
 ```
 
-### 循环列表 `2.7.0`
-
-`loop` 属性可以开启列表的循环渲染，列表会首尾相连，无限循环
-
-```javascript
-import { Picker } from '@ray-js/smart-ui';
-import React from 'react';
-const columns = [
-  {
-    values: new Array(100).fill(1).map((x, i) => i),
-  },
-];
-export default function Demo() {
-  return <Picker loop columns={columns} />;
-}
-```
 
 ### 更多3D `2.7.0`
 

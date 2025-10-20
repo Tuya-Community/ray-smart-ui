@@ -194,6 +194,9 @@ export default function Demo() {
           onAnimationStart={onAnimationStart}
         />
       </DemoBlock>
+      <DemoBlock title={Strings.getLang('loop')}>
+        <Picker loop columns={data.column7} onChange={onChange} />
+      </DemoBlock>
       <DemoBlock title={Strings.getLang('defaultSelection')}>
         <Picker defaultIndex={2} columns={data.column1} onChange={onChange} />
       </DemoBlock>
@@ -217,9 +220,6 @@ export default function Demo() {
       </DemoBlock>
       <DemoBlock title={Strings.getLang('setTheOrderOfColumnStyles')}>
         <Picker columns={data.column6} />
-      </DemoBlock>
-      <DemoBlock title={Strings.getLang('loop')}>
-        <Picker loop columns={data.column7} onChange={onChange} />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('more3d')}>
         <Picker loop fullHeight columns={data.column7} onChange={onChange} />
