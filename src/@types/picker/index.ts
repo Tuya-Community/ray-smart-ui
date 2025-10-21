@@ -57,6 +57,13 @@ export interface SmartPickerMultipleColumn {
    */
   disabled?: boolean;
 
+  /**
+   * @description 循环滚动
+   * @version 2.7.0
+   * @default false
+   */
+  loop?: boolean;
+
   [key: string]: unknown;
 }
 
