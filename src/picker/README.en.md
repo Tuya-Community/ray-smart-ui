@@ -339,6 +339,7 @@ When passing in multi-column data, `columns` is an array of objects. Each object
 | values | Array of options corresponding to the column |
 | order `v2.2.0` | Set the order of columns, similar to `flex order` property, only changing the order from a style perspective; logic remains unchanged | _number_ | - |
 | disabled `v2.3.5` | Disable this column | _boolean_ | `false` |
+| loop `v2.7.0` | Loop List | _boolean_ | `false` |
 
 ### External Style Classes
 
