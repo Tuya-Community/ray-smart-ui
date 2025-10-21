@@ -231,7 +231,7 @@ export default function Demo() {
 | ---------- | ---------------- | -------------- |
 | onClick | 点击通知栏时触发 | _event: Event_ |
 | onClose | 关闭通知栏时触发 | _event: Event_ |
-| onBtnClick | 按钮文案点击时触发 | _event: Event_ |
+| onBtnClick `v2.7.0` | 按钮文案点击时触发 | _event: Event_ |
 
 
 ### Slot

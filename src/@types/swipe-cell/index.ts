@@ -72,6 +72,11 @@ export interface SmartSwipeCellEvents {
   onClick?: SmartEventHandler<SmartSwipeCellClickPosition>;
 
   /**
+   * 侧边栏关闭时触发
+   */
+  onTabClose?: SmartEventHandler<SmartSwipeCellPosition>;
+
+  /**
    * 关闭时触发
    */
   onClose?: SmartEventHandler<SmartSwipeCellCloseEventDetail>;

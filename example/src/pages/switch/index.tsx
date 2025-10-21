@@ -1,5 +1,5 @@
 import React from 'react';
-import { CellGroup, Switch, Cell, DialogInstance, Dialog } from '@ray-js/smart-ui';
+import { CellGroup, Switch, Cell, DialogInstance, Dialog, ConfigProvider } from '@ray-js/smart-ui';
 import { View } from '@ray-js/ray';
 import { DemoBlock } from '@/components';
 import Strings from '../../i18n';
@@ -35,6 +35,56 @@ export default function Demo() {
             }}
           />
         </View>
+      </DemoBlock>
+      <DemoBlock padding title={Strings.getLang('switchLabel')}>
+        <Switch
+          checked={value}
+          activeText={Strings.getLang('switchLabel_on')}
+          inactiveText={Strings.getLang('switchLabel_off')}
+          onChange={event => {
+            onChange(event.detail);
+          }}
+        />
+        <View style={{ marginLeft: 24, display: 'inline' }}>
+          <Switch
+            checked={!value}
+            activeText={Strings.getLang('switchLabel_on')}
+            inactiveText={Strings.getLang('switchLabel_off')}
+            onChange={event => {
+              onChange(event.detail);
+            }}
+          />
+        </View>
+        <ConfigProvider
+          themeVars={{
+            switchLabelFontSize: '10px',
+          }}
+        >
+          <View
+            style={{
+              marginTop: 32,
+            }}
+          >
+            <Switch
+              checked={value}
+              activeText={Strings.getLang('show')}
+              inactiveText={Strings.getLang('hide')}
+              onChange={event => {
+                onChange(event.detail);
+              }}
+            />
+            <View style={{ marginLeft: 24, display: 'inline' }}>
+              <Switch
+                checked={!value}
+                activeText={Strings.getLang('show')}
+                inactiveText={Strings.getLang('hide')}
+                onChange={event => {
+                  onChange(event.detail);
+                }}
+              />
+            </View>
+          </View>
+        </ConfigProvider>
       </DemoBlock>
       <DemoBlock padding title={Strings.getLang('disable')}>
         <Switch checked={value} disabled />

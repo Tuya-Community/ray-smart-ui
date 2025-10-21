@@ -83,6 +83,7 @@ type CommonThemeVars =
   | 'fontSizeSm'
   | 'fontSizeMd'
   | 'fontSizeLg'
+  | 'fontTitleLg'
   | 'fontWeightBold'
   | 'fontWeightBolder'
   | 'lineHeightXs'
@@ -410,15 +411,14 @@ type LoadingThemeVars =
   | 'loadingSpinnerAnimationDuration';
 
 type NavBarThemeVars =
+  | 'navBarHomeMaxWidth'
   | 'navBarTitleMaxWidth'
   | 'navBarHeight'
   | 'navBarRoundBorderRadius'
   | 'navBarRoundMinHeight'
   | 'navBarBackgroundColor'
   | 'navBarArrowColor'
-  | 'navBarIconSize'
   | 'navBarIconColor'
-  | 'navBarIconMargin'
   | 'navBarTextColor'
   | 'navBarTextFontSize'
   | 'navBarTitleFontSize'
@@ -427,7 +427,13 @@ type NavBarThemeVars =
   | 'navBarRightTextColor'
   | 'navBarHomeFontSize'
   | 'navBarHomeFontWeight'
-  | 'navBarHomeTextColor';
+  | 'navBarHomeTextColor'
+  | 'navBarTextFontWeight'
+  | 'navBarSideWidth'
+  | 'navBarTextPadding'
+  | 'navBarIconPadding'
+  | 'navBarTitleMargin'
+  | 'navBarLeftTitlePadding';
 
 type NoticeBarThemeVars =
   | 'noticeBarHeight'
@@ -517,6 +523,7 @@ type RateThemeVars =
 
 type SwitchThemeVars =
   | 'switchWidth'
+  | 'switchLabelWidth'
   | 'switchHeight'
   | 'switchNodeSize'
   | 'switchNodeZIndex'
@@ -526,6 +533,9 @@ type SwitchThemeVars =
   | 'switchBackgroundColor'
   | 'switchOnBackgroundColor'
   | 'switchTransitionDuration'
+  | 'switchLabelFontSize'
+  | 'switchLabelActiveColor'
+  | 'switchLabelInactiveColor'
   | 'switchDisabledOpacity'
   | 'switchPadding'
   | 'switchBorder';

@@ -7,6 +7,8 @@ import {
   DialogInstance,
   Toast,
   ToastInstance,
+  SmartSwipeCellPosition,
+  SmartEventHandler,
 } from '@ray-js/smart-ui';
 import { View } from '@ray-js/ray';
 import { DemoBlock } from '@/components';
@@ -54,6 +56,11 @@ export default function Demo() {
       default:
     }
   }, []);
+
+  const onHandleTabClose: SmartEventHandler<SmartSwipeCellPosition> = event => {
+    console.log(event.detail, '--position');
+  };
+
   const handleClick = useCallback(() => {
     // showToast({
     //   icon: 'none',
@@ -73,6 +80,7 @@ export default function Demo() {
           }}
           onOpen={handleOpen}
           onClick={handleClick}
+          onTabClose={onHandleTabClose}
         >
           <CellGroup>
             <Cell title={Strings.getLang('cell')} value={Strings.getLang('content')} />
