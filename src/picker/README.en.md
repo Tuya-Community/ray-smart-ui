@@ -1,5 +1,6 @@
 ---
 category: Feedback
+assets: LoopPicker
 ---
 
 # Picker
