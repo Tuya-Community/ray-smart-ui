@@ -311,7 +311,7 @@ icon: AlarmIcon,
 
 | 参数         | 说明  | 类型   | 默认值    |
 | ------------ | --------- | -------------- | --------- |
-| icon | 是否显示警告图标，或者icon的name值 | _boolean \| string`v2.6.3`_ | `false` |
+| icon | 是否显示警告图标，或者icon的name值 | _boolean_ `v2.6.3` _boolean \| string_ `v2.6.3` | `false` |
 | iconColor `v2.6.3` | icon的颜色 | _string_ | `#F04C4C` |
 | iconSize `v2.6.3` | icon的大小 | _string_ | - |
 | maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | _number_ | `20` |
@@ -347,7 +347,7 @@ icon: AlarmIcon,
 | 参数              | 说明  | 类型   | 默认值    |
 | ----------------- | --------- | ------------ | --------- |
 | confirmButtonId | 确认按钮的标识符，作为底层原生 button 组件的 id 值 | _string_ | - |
-| icon | 是否显示警告图标，或者icon的name值 | _boolean \| string`v2.6.3`_ | `false` |
+| icon | 是否显示警告图标，或者icon的name值 | _boolean_ `v2.0.0` _boolean \| string_ `v2.6.3` | `false` |
 | iconColor `v2.6.3` | icon的颜色 | _string_ | `#F04C4C` |
 | iconSize `v2.6.3` | icon的大小 | _string_ | - |
 | maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | _number_ | `20` |
@@ -422,7 +422,7 @@ icon: AlarmIcon,
 | --dialog-header-font-color | _var(--app-B4-N1, rgba(0, 0, 0, 1))_ | 标题字体颜色 |
 | --dialog-header-font-weight | _400_ | 标题字体粗细 |
 | --dialog-header-line-height | _24px_ | 标题行高 |
-| --dialog-header-padding `2.3.5` | _0_ | 头部标题内边距 |
+| --dialog-header-padding `v2.3.5` | _0_ | 头部标题内边距 |
 | --dialog-header-padding-top | _24px_ | 头部标题顶部内边距 |
 | --dialog-header-isolated-padding | _@padding-lg 0_ | 标题内边距 |
 | --dialog-message-padding | _24px_ | 消息内边距 |
