@@ -139,7 +139,7 @@ export interface SmartDialogInputOptions extends SmartDialogOptions {
    * 输入内容为空时禁用提交
    * @version 2.7.0
    */
-  emptyDisabled: boolean;
+  emptyDisabled?: boolean;
   /**
    * 输入框的类型
    */
