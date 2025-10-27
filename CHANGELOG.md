@@ -1,5 +1,19 @@
 # 更新日志
 
+## v2.7.1(2025-10-28)
+
+### Bug Fixes 🐛
+
+- field: 修复开启 extraEventParams 事件增强模式后， inputDetail 内的 callback 修改输入框的值无效问题([7fcb0c1](https://github.com/Tuya-Community/miniapp-smart-ui/pull/71/commits/7fcb0c18038f27aa2006e5a9102652eb817046ac))
+- tabbar: 修复 border 属性 配置不生效问题([a8d90a5](https://github.com/Tuya-Community/miniapp-smart-ui/pull/59/commits/a8d90a56832a8254ccfb3763352489a300a3abbb))
+- tab: 修复切换时底部滑动条动画和文字变色动画不一致问题([4becc32](https://github.com/Tuya-Community/miniapp-smart-ui/pull/60/commits/4becc32e4ecb2032b794301229097fce45e95205))
+- dialog: 修改 roundButton 模式按钮样式，修复此模式存在取消按钮时的样式问题，修改 CSS 变量 --dialog--round-button-border-radius 的值 ([pull/69](https://github.com/Tuya-Community/miniapp-smart-ui/pull/69))
+- picker: 修复 loop 模式 滚动值切换时，修改列表后滚动报错问题；修复active状态实时更新问题([pull/65](https://github.com/Tuya-Community/miniapp-smart-ui/pull/65))
+- circle: 修复组件内部左右多余空隙问题([fbae95e](https://github.com/Tuya-Community/miniapp-smart-ui/pull/70/commits/fbae95ebbc80836cbacd9a0da7a84ec909498cab))
+- nav-bar: 修复 onClickRight 事件不生效问题([d0e1f9f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/62/commits/d0e1f9f9b1a7028517a334299b03a07fe5cf206f))
+- popup: 调整组建默认 safeAreaInsetBottom 为 false([c3c79f2](https://github.com/Tuya-Community/miniapp-smart-ui/pull/61/commits/c3c79f2f0efef6595649b426fb5221cb6df83da9))；修复 --popup-background-color 无法设置渐变色问题([37a938a](https://github.com/Tuya-Community/miniapp-smart-ui/pull/68/commits/37a938a0780fe64d24a4e8c20810b1e1434e4ee6))
+
+
 ## v2.7.0(2025-10-21)
 
 ### Features ✨
