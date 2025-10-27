@@ -289,7 +289,7 @@ export default function Demo() {
 | errorMessageAlign | 底部错误提示文案对齐方式，可选值为 `center` `right` | _string_ | `''` |
 | extraEventParams `v1.10.12` | 开启事件增强模式，会在 input 和 change 事件额外提供 `cursor` 和 `keyCode` 参数，计划在下一个大版本作为默认行为 | _boolean_ | `false` |
 | fixed | 如果 type 为 `textarea` 且在一个 `position:fixed` 的区域，需要显示指定属性 fixed 为 true | _boolean_ | `false` |
-| focus | 获取焦点 | _boolean_ | `false` |
+| focus `@deprecated 小程序不支持` | 获取焦点 | _boolean_ | `false` |
 | holdKeyboard | focus 时，点击页面的时候不收起键盘 | _boolean_ | `false` |
 | inputAlign | 输入框内容对齐方式，可选值为 `center` `right` | _string_ | - |
 | isLink | 是否展示右侧箭头并开启点击反馈 | _boolean_ | `false` |

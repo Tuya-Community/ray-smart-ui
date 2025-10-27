@@ -289,7 +289,7 @@ export default function Demo() {
 | errorMessageAlign | Bottom error message text alignment, optional values are `center` `right` | _string_ | `''` |
 | extraEventParams `v1.10.12` | Enable event enhanced mode, will provide additional `cursor` and `keyCode` parameters in input and change events, planned to be the default behavior in the next major version | _boolean_ | `false` |
 | fixed | If the type is `textarea` and in a `position: fixed` area, you need to explicitly specify the attribute fixed as true | _boolean_ | `false` |
-| focus | Get focus | _boolean_ | `false` |
+| focus   `@deprecated Mini program not supported` | Get focus | _boolean_ | `false` |
 | holdKeyboard | Do not hide the keyboard when clicking the page while focused | _boolean_ | `false` |
 | inputAlign | Input text alignment, optional values are `center` `right` | _string_ | - |
 | isLink | Whether to display the right arrow and enable click feedback | _boolean_ | `false` |

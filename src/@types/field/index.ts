@@ -315,6 +315,11 @@ export interface SmartFieldProps {
    * @default false
    */
   interError?: boolean;
+  /**
+   * 开启事件增强模式，会在 input 和 change 事件额外提供 callback 函数，用于在事件中调用
+   * @default false
+   */
+  extraEventParams?: boolean;
 }
 
 /**

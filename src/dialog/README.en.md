@@ -435,4 +435,4 @@ The component provides the following CSS variables for custom styles. Please ref
 | --dialog-input-padding | _0 10px_ | Input padding |
 | --dialog-input-border-radius | _10px_ | Input border radius |
 | --dialog-input-font-size | _14px_ | Input font size |
-| --dialog--round-button-border-radius `v2.3.5` | _20px_ | When setting `theme: 'round-button'` button with rounded corners |
+| --dialog--round-button-border-radius `v2.3.5` | _20px_ `v2.3.5` _301px_ `v2.7.1` | When setting `theme: 'round-button'` button with rounded corners |
