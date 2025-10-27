@@ -54,6 +54,38 @@ export default function Demo() {
 }
 ```
 
+
+### Modify Input Content `v2.7.1`
+
+`extraEventParams` enables event enhancement mode, which provides an additional `callback` method in the `onInput` and `onChange` events. You can forcibly modify the content of the input box by passing the value to be changed into the `callback` method.
+
+```jsx
+import { Field, CellGroup } from '@ray-js/smart-ui';
+import React from 'react';
+
+export default function Demo() {
+  const [value, setValue] = React.useState('')
+  const onChange = (event) => {
+    console.log(event, '--event');
+    const { value } = event.detail;
+    const showValue = `test${value.slice(-1)[0]}`;
+    event.detail.callback({ value: showValue });
+    setValue(showValue);
+  }
+  return (
+    <CellGroup>
+      <Field 
+        value={value}
+        label="title"
+        placeholder="Please enter"
+        onChange={onChange}
+      />
+    </CellGroup>
+  );
+}
+```
+
+
 ### Custom Type
 
 Define different types of input boxes according to the `type` property; enabling the `cardMode` opens the card input mode.

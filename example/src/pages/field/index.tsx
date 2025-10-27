@@ -7,11 +7,19 @@ import Strings from '../../i18n';
 import styles from './index.module.less';
 
 export default function Demo() {
-  const [value] = React.useState('');
+  const [value, setValue] = React.useState('');
   const [value2] = React.useState('12345');
   const [num] = React.useState(2000);
   const [password] = React.useState('');
   const [message] = React.useState('');
+
+  const onChange = (event: any) => {
+    console.log(event, '--event');
+    const { value } = event.detail;
+    const showValue = `test${value.slice(-1)[0]}`;
+    event.detail.callback({ value: showValue });
+    setValue(showValue);
+  };
 
   return (
     <>
@@ -23,6 +31,18 @@ export default function Demo() {
             placeholder={Strings.getLang('pleaseEnter')}
           />
           <Field value={value} hiddenLabel placeholder={Strings.getLang('pleaseEnter')} />
+        </CellGroup>
+      </DemoBlock>
+
+      <DemoBlock title={Strings.getLang('modifyInputContent')}>
+        <CellGroup>
+          <Field
+            value={value}
+            extraEventParams
+            label={Strings.getLang('title')}
+            placeholder={Strings.getLang('pleaseEnter')}
+            onChange={onChange}
+          />
         </CellGroup>
       </DemoBlock>
 
