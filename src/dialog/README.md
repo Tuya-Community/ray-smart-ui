@@ -440,4 +440,4 @@ icon: AlarmIcon,
 | --dialog-input-padding | _0 10px_ | 输入框内边距 |
 | --dialog-input-border-radius | _10px_ | 输入框圆角半径 |
 | --dialog-input-font-size | _14px_ | 输入框字体大小 |
-| --dialog--round-button-border-radius `v2.3.5` | _20px_ | 当设置`theme: 'round-button'`的按钮圆角 |
+| --dialog--round-button-border-radius `v2.3.5` | _20px_ `v2.3.5` _301px_ `v2.7.1`  | 当设置`theme: 'round-button'`的按钮圆角 |
