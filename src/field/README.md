@@ -54,6 +54,37 @@ export default function Demo() {
 }
 ```
 
+### 修改输入框内容 `v2.7.1`
+
+`extraEventParams` 开启事件增强模式，会在 `onInput` 和 `onChange` 事件额外提供 `callback` 方法，将需要修改的值传入 `callback` 方法内就可以强行修改输入框的内容
+
+```jsx
+import { Field, CellGroup } from '@ray-js/smart-ui';
+import React from 'react';
+
+export default function Demo() {
+  const [value, setValue] = React.useState('')
+  const onChange = (event) => {
+    console.log(event, '--event');
+    const { value } = event.detail;
+    const showValue = `test${value.slice(-1)[0]}`;
+    event.detail.callback({ value: showValue });
+    setValue(showValue);
+  }
+  return (
+    <CellGroup>
+      <Field 
+        value={value}
+        label="标题"
+        placeholder="请输入"
+        onChange={onChange}
+      />
+    </CellGroup>
+  );
+}
+```
+
+
 ### 自定义类型
 
 根据`type`属性定义不同类型的输入框；`cardMode` 开启此模式可以开启卡片输入模式。
