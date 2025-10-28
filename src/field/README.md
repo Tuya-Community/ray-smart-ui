@@ -54,6 +54,37 @@ export default function Demo() {
 }
 ```
 
+### 修改输入框内容 `v2.7.1`
+
+`extraEventParams` 开启事件增强模式，会在 `onInput` 和 `onChange` 事件额外提供 `callback` 方法，将需要修改的值传入 `callback` 方法内就可以强行修改输入框的内容
+
+```jsx
+import { Field, CellGroup } from '@ray-js/smart-ui';
+import React from 'react';
+
+export default function Demo() {
+  const [value, setValue] = React.useState('')
+  const onChange = (event) => {
+    console.log(event, '--event');
+    const { value } = event.detail;
+    const showValue = `test${value.slice(-1)[0]}`;
+    event.detail.callback({ value: showValue });
+    setValue(showValue);
+  }
+  return (
+    <CellGroup>
+      <Field 
+        value={value}
+        label="标题"
+        placeholder="请输入"
+        onChange={onChange}
+      />
+    </CellGroup>
+  );
+}
+```
+
+
 ### 自定义类型
 
 根据`type`属性定义不同类型的输入框；`cardMode` 开启此模式可以开启卡片输入模式。
@@ -289,7 +320,7 @@ export default function Demo() {
 | errorMessageAlign | 底部错误提示文案对齐方式，可选值为 `center` `right` | _string_ | `''` |
 | extraEventParams `v1.10.12` | 开启事件增强模式，会在 input 和 change 事件额外提供 `cursor` 和 `keyCode` 参数，计划在下一个大版本作为默认行为 | _boolean_ | `false` |
 | fixed | 如果 type 为 `textarea` 且在一个 `position:fixed` 的区域，需要显示指定属性 fixed 为 true | _boolean_ | `false` |
-| focus | 获取焦点 | _boolean_ | `false` |
+| focus `@deprecated 小程序不支持` | 获取焦点 | _boolean_ | `false` |
 | holdKeyboard | focus 时，点击页面的时候不收起键盘 | _boolean_ | `false` |
 | inputAlign | 输入框内容对齐方式，可选值为 `center` `right` | _string_ | - |
 | isLink | 是否展示右侧箭头并开启点击反馈 | _boolean_ | `false` |

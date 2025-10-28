@@ -453,7 +453,7 @@ export default function Demo() {
 | --tabs-background-color | _var(--app-B3, #fff)_ | 背景色    |
 | --tabs-default-color | _var(--app-M4)_ | 默认文字颜色    |
 | --tabs-line-height | _32px_ | 默认文字字高    |
-| --tabs-sub-line-height `2.3.5` | _64px_ | 默认二级文字字高    |
+| --tabs-sub-line-height `v2.3.5` | _64px_ | 默认二级文字字高    |
 | --tabs-bottom-bar-height  | _3px_ | 底部滑块高度    |
 | --tabs-bottom-bar-color | _var(--tabs-default-color)_ | 底部滑块背景色    |
 | --tabs-card-text-color | _var(--app-B6-N3)_ | card模式文字颜色    |

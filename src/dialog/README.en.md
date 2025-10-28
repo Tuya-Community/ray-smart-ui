@@ -143,6 +143,8 @@ export default function Demo() {
     DialogInstance.alert({
       message: 'Popup content',
       theme: 'round-button',
+      showCancelButton: true,
+      cancelButtonText: 'cancel'
     }).then(() => {
       // on close
     });
@@ -305,7 +307,7 @@ When calling Dialog via a function, the following options are supported:
 
 | Parameter     | Description  | Type   | Default Value |
 | ------------ | --------- | -------------- | --------- |
-| icon | Whether to display the warning icon or the name value of the icon | _boolean \| string`v2.6.3`_ | `false` |
+| icon | Whether to display the warning icon or the name value of the icon | _boolean_ `v2.0.0` _boolean \| string_ `v2.6.3` | `false` |
 | iconColor `v2.6.3` | icon color | _string_ | `#F04C4C` |
 | iconSize `v2.6.3` | icon size | _string_ | - |
 | maxlength | Maximum input length, unlimited when set to -1 | _number_ | `20` |
@@ -342,8 +344,8 @@ The following Props are supported when calling Dialog via component invocation:
 | Parameter              | Description  | Type   | Default Value |
 | ----------------- | --------- | ------------ | --------- |
 | confirmButtonId | Identifier for the confirm button, used as the id value for the underlying native button component | _string_ | - |
-| icon | Whether to display the warning icon or the name value of the icon | _boolean \| string`v2.6.3`_ | `false` |
-| iconColor `v2.6.3` | icon color | _string_ | `#F04C4C` |
+| icon | Whether to display the warning icon or the name value of the icon | _boolean_  `v2.6.3` _boolean \| string_  `v2.6.3` | `false` |
+| iconColor `v2.0.0` | icon color | _string_ | `#F04C4C` |
 | iconSize `v2.6.3` | icon size | _string_ | - |
 | maxlength | Maximum input length, unlimited when set to -1 | _number_ | `20` |
 | message | Text content, supports line breaks using `\n` | _string_ | - |
@@ -417,7 +419,7 @@ The component provides the following CSS variables for custom styles. Please ref
 | --dialog-header-font-color | _var(--app-B4-N1, rgba(0, 0, 0, 1))_ | Header font color |
 | --dialog-header-font-weight | _400_ | Header font weight |
 | --dialog-header-line-height | _24px_ | Header line height |
-| --dialog-header-padding `2.3.5` | _0_ | Header Title Padding |
+| --dialog-header-padding `v2.3.5` | _0_ | Header Title Padding |
 | --dialog-header-padding-top | _24px_ | Header Title Top padding |
 | --dialog-header-isolated-padding | _@padding-lg 0_ | Header padding |
 | --dialog-message-padding | _24px_ | Message padding |
@@ -435,4 +437,4 @@ The component provides the following CSS variables for custom styles. Please ref
 | --dialog-input-padding | _0 10px_ | Input padding |
 | --dialog-input-border-radius | _10px_ | Input border radius |
 | --dialog-input-font-size | _14px_ | Input font size |
-| --dialog--round-button-border-radius `v2.3.5` | _20px_ | When setting `theme: 'round-button'` button with rounded corners |
+| --dialog--round-button-border-radius `v2.3.5` | _20px_ `v2.3.5` _301px_ `v2.7.1` | When setting `theme: 'round-button'` button with rounded corners |

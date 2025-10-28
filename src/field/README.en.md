@@ -54,6 +54,38 @@ export default function Demo() {
 }
 ```
 
+
+### Modify Input Content `v2.7.1`
+
+`extraEventParams` enables event enhancement mode, which provides an additional `callback` method in the `onInput` and `onChange` events. You can forcibly modify the content of the input box by passing the value to be changed into the `callback` method.
+
+```jsx
+import { Field, CellGroup } from '@ray-js/smart-ui';
+import React from 'react';
+
+export default function Demo() {
+  const [value, setValue] = React.useState('')
+  const onChange = (event) => {
+    console.log(event, '--event');
+    const { value } = event.detail;
+    const showValue = `test${value.slice(-1)[0]}`;
+    event.detail.callback({ value: showValue });
+    setValue(showValue);
+  }
+  return (
+    <CellGroup>
+      <Field 
+        value={value}
+        label="title"
+        placeholder="Please enter"
+        onChange={onChange}
+      />
+    </CellGroup>
+  );
+}
+```
+
+
 ### Custom Type
 
 Define different types of input boxes according to the `type` property; enabling the `cardMode` opens the card input mode.
@@ -289,7 +321,7 @@ export default function Demo() {
 | errorMessageAlign | Bottom error message text alignment, optional values are `center` `right` | _string_ | `''` |
 | extraEventParams `v1.10.12` | Enable event enhanced mode, will provide additional `cursor` and `keyCode` parameters in input and change events, planned to be the default behavior in the next major version | _boolean_ | `false` |
 | fixed | If the type is `textarea` and in a `position: fixed` area, you need to explicitly specify the attribute fixed as true | _boolean_ | `false` |
-| focus | Get focus | _boolean_ | `false` |
+| focus   `@deprecated Mini program not supported` | Get focus | _boolean_ | `false` |
 | holdKeyboard | Do not hide the keyboard when clicking the page while focused | _boolean_ | `false` |
 | inputAlign | Input text alignment, optional values are `center` `right` | _string_ | - |
 | isLink | Whether to display the right arrow and enable click feedback | _boolean_ | `false` |

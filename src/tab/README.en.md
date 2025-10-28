@@ -453,7 +453,7 @@ The component provides the following CSS variables for custom styles. For usage,
 | --tabs-background-color | _var(--app-B3, #fff)_ | Background color    |
 | --tabs-default-color | _var(--app-M4)_ | Default text color    |
 | --tabs-line-height | _32px_ | Default text line height    |
-| --tabs-sub-line-height `2.3.5` | _64px_ | Default sub text line height    |
+| --tabs-sub-line-height `v2.3.5` | _64px_ | Default sub text line height    |
 | --tabs-bottom-bar-height  | _3px_ | Bottom slider height    |
 | --tabs-bottom-bar-color | _var(--tabs-default-color)_ | Bottom slider background color    |
 | --tabs-card-text-color | _var(--app-B6-N3)_ | Card mode text color    |
