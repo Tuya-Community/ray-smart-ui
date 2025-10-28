@@ -143,6 +143,8 @@ export default function Demo() {
     DialogInstance.alert({
       message: '弹窗内容',
       theme: 'round-button',
+      showCancelButton: true,
+      cancelButtonText: '取消'
     }).then(() => {
       // on close
     });

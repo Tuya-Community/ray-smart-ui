@@ -143,6 +143,8 @@ export default function Demo() {
     DialogInstance.alert({
       message: 'Popup content',
       theme: 'round-button',
+      showCancelButton: true,
+      cancelButtonText: 'cancel'
     }).then(() => {
       // on close
     });

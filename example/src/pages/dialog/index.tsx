@@ -23,6 +23,8 @@ export default function Demo() {
   const onClickThemeAlert2 = () => {
     DialogInstance.alert({
       theme: 'round-button',
+      showCancelButton: true,
+      cancelButtonText: Strings.getLang('cancel'),
       message,
     });
   };
