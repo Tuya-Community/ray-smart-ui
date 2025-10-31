@@ -45,7 +45,7 @@ export default function Demo() {
           }}
         />
       </DemoBlock>
-      <DemoBlock padding title={Strings.getLang('svgPath')}>
+      <DemoBlock padding title={Strings.getLang('changeImgColor')}>
         <Image
           src="https://images.tuyacn.com/rms-static/e6c9e630-00b4-11f0-9ab9-bf07ac3388bc-1741943741459.png?tyName=a.png"
           width="100px"
