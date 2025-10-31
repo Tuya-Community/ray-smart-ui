@@ -153,6 +153,11 @@ export default function Demo() {
             },
             day: `{{day}}${Strings.getLang('day')}`,
           }}
+          fontStyles={{
+            day: {
+              fontFamily: 'Manrope',
+            },
+          }}
         />
       </DemoBlock>
 
