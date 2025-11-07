@@ -294,7 +294,7 @@ export default function Demo() {
 
 | 名称                       | 默认值                              | 描述         |
 | -------------------------- | ----------------------------------- | ------------ |
-| --popover-background-color | #fff    | 弹出层背景色（包含三角形颜色） |
+| --popover-background-color | #fff                                | 弹出层背景色 |
 | --popover-border-radius    | 12px                                | 弹出层圆角   |
 | --popover-box-shadow       | 0px 6px 12px 0px rgba(0, 0, 0, 0.1) | 弹出层阴影   |
 | --popover-padding          | 12px                                | 弹出层内边距 |
