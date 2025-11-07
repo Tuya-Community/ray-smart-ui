@@ -226,7 +226,12 @@ type BottomSheetThemeVars =
   | 'bottomSheetHeaderColor'
   | 'bottomSheetHeaderFontSize'
   | 'bottomSheetHeaderFontWeight'
-  | 'bottomSheetFontColor';
+  | 'bottomSheetFontColor'
+  | 'bottomSheetDraggerPadding'
+  | 'bottomSheetDraggerNodeWidth'
+  | 'bottomSheetDraggerNodeHeight'
+  | 'bottomSheetDraggerNodeBorderRadius'
+  | 'bottomSheetDraggerNodeBackground';
 
 type ButtonThemeVars =
   | 'buttonMiniHeight'
