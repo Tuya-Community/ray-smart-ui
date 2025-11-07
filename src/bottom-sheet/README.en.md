@@ -197,9 +197,14 @@ export default function Demo() {
 | overlay | Whether to display the overlay | _boolean_ | `true` |
 | closeOnClickOverlay | Whether clicking the overlay closes the menu | _boolean_ | `true` |
 | nativeDisabled `v2.5.0` | Whether to disable local gestures during the opening of the dialog; it will call `ty.nativeDisabled(true)` when the dialog starts the entrance animation, and call `ty.nativeDisabled(false)` at the end of the closing animation to restore the click ability of components on different layers. Since `ty.nativeDisabled` works globally, pay attention to whether to pass the `native-disabled` attribute and the timing of closing when multiple dialog components are opened simultaneously, to prevent the `native-disabled` attribute from being ineffective. | _boolean_ | `false` |
-| contentHeight `v2.5.0` | Content area height. When this value is set, the component's max-height will be invalid. | _number \| string_ | `false` |
+| contentHeight `v2.5.0` | Content area height. When this value is set, the component's max-height will be invalid. This value is ignored when draggable is set. | _number \| string_ | `false` |
 | maxHeight `v2.6.0` | The maximum height of the entire component | _number \| string_ | - |
-| showClose `v2.6.1` | Whether to display the close icon | _boolean_ | `true` |
+| showClose `v2.6.1` | Whether to display the close icon. This value is ignored when draggable is set. | _boolean_ | `true` |
+| draggable `v2.7.2` | Whether dragging to adjust panel height is supported | _boolean_ | `false` |
+| minDragHeight `v2.7.2` | Minimum allowed height when dragging | _number_ | `windowHeight * 0.8` |
+| maxDragHeight `v2.7.2` | Maximum allowed height when dragging | _number_ | `windowHeight * 0.5` |
+| midDragHeight `v2.7.2` | Middle state height when dragging | _number_ | `windowHeight * 0.1` |
+| closeDragHeight `v2.7.2` | Threshold height for closing on drag; if the height goes below this while dragging, the sheet will automatically close | _number_ | `windowHeight * 0.4` |
 
 
 ### Events
@@ -214,6 +219,7 @@ export default function Demo() {
 | onLeave | Triggered during leaving | - |
 | onAfterLeave | Triggered after leaving | - |
 | onClickOverlay | Triggered when clicking overlay | - |
+| onDragPosition `v2.7.2` | Triggered when dragging ends, returns the current panel position | _event.detail_: `'max'` \| `'mid'` \| `'min'` |
 
 
 ### Slot
@@ -247,6 +253,11 @@ The component offers the following CSS variables for custom styles. For usage, p
 | --bottom-sheet-header-font-weight  | _600_    | Font weight of the bottom sheet header text    |
 | --bottom-sheet-font-color  | _var(--app-B4-N1, rgba(0, 0, 0, 1))_    | Text color of the bottom sheet    |
 | --bottom-sheet-header-padding `v2.5.0`  | _0 16px_    | Padding of the bottom popup header    |
+| --bottom-sheet-dragger-padding `v2.7.2` | _8px 0_ | Padding of the drag handle area |
+| --bottom-sheet-dragger-node-width `v2.7.2` | _30px_ | Width of the drag handle |
+| --bottom-sheet-dragger-node-height `v2.7.2` | _4px_ | Height of the drag handle |
+| --bottom-sheet-dragger-node-border-radius `v2.7.2` | _2px_ | Border radius of the drag handle |
+| --bottom-sheet-dragger-node-background `v2.7.2` | _rgba(0, 0, 0, 0.3)_ | Background color of the drag handle |
 
 ## FAQ
 
