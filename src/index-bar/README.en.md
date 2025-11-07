@@ -21,8 +21,8 @@ The component listens for the scroll event of the entire page to create a dynami
 index.config.ts:
 
 export default {
-  navigationBarTitleText: 'HomeHomeHomeHomeHome',
-  disableScroll: true,
+  navigationBarTitleText: 'Home',
+  disableScroll: false,
 };
 ```
 

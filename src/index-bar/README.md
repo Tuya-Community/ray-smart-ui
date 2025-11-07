@@ -21,8 +21,8 @@ import { IndexBar } from '@ray-js/smart-ui';
 index.config.ts:
 
 export default {
-  navigationBarTitleText: 'HomeHomeHomeHomeHome',
-  disableScroll: true,
+  navigationBarTitleText: 'Home',
+  disableScroll: false,
 };
 ```
 
