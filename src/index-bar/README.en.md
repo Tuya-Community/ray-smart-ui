@@ -15,6 +15,17 @@ Index classification display and quick location for lists.
 import { IndexBar } from '@ray-js/smart-ui';
 ```
 
+```warning:⚠️Note
+The component listens for the scroll event of the entire page to create a dynamic fixed header element, so the page rendering this component must be configured to allow scrolling.
+
+index.config.ts:
+
+export default {
+  navigationBarTitleText: 'HomeHomeHomeHomeHome',
+  disableScroll: true,
+};
+```
+
 ## Code demonstration
 
 ### Basic Usage
