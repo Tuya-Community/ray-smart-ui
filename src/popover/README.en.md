@@ -294,7 +294,7 @@ The component provides the following CSS variables for custom styling. For usage
 
 | Name                       | Default Value                          | Description  |
 | -------------------------- | -------------------------------------- | ------------ |
-| --popover-background-color | #fff                                   | Popup background color |
-| --popover-border-radius    | 12px                                   | Popup border radius    |
+| --popover-background-color | #fff     | Popup background color (including triangle color) |
+| --popover-border-radius    | 12px      | Popup border radius    |
 | --popover-box-shadow       | 0px 6px 12px 0px rgba(0, 0, 0, 0.1)    | Popup box shadow       |
-| --popover-padding          | 12px                                   | Popup padding          |
+| --popover-padding          | 12px   | Popup padding          |
