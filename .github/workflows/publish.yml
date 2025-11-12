@@ -45,6 +45,27 @@ jobs:
       run: npm publish --access public
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        
+    - name: send to WeChat
+      env:
+        RELEASE_BODY: ${{ github.event.release.body }}
+        RELEASE_TAG: ${{ github.event.release.tag_name }}
+      run: |
+        # 如果包含 "## English"，则删除该行及其后面的所有内容
+        RELEASE_BODY=$(echo "$RELEASE_BODY" | sed '/^## English/,$d' | sed -z 's/[[:space:]]*$//')
+        # 获取当前日期
+        RELEASE_DATE=$(date +%Y-%m-%d)
+        # 使用 printf 构建包含换行的内容，确保有两个换行
+        CONTENT="## $RELEASE_TAG($RELEASE_DATE)\n$RELEASE_BODY"
+        PAYLOAD=$(jq -n --arg content "$CONTENT" '{
+            "msgtype": "markdown",
+            "markdown": {
+                "content": $content
+            }
+        }')
+        curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=39de41a1-3fbf-4a03-96c8-23da3503318f' \
+        -H 'Content-Type: application/json' \
+        -d "$PAYLOAD"
 
     - name: Commit Changes
       run: |
