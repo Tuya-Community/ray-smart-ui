@@ -1,3 +1,10 @@
+/*
+ * @Author: mjh
+ * @Date: 2025-11-07 16:04:40
+ * @LastEditors: mjh
+ * @LastEditTime: 2025-11-13 14:28:51
+ * @Description:
+ */
 import React from 'react';
 import { Image, Loading } from '@ray-js/smart-ui';
 import { Text, View } from '@ray-js/ray';
@@ -29,6 +36,7 @@ export default function Demo() {
           width="100px"
           height="100px"
           useLoadingSlot
+          showLoading
           slot={{
             loading: <Loading type="spinner" size="20" vertical />,
           }}
