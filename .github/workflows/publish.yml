@@ -63,7 +63,7 @@ jobs:
                 "content": $content
             }
         }')
-        curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=39de41a1-3fbf-4a03-96c8-23da3503318f' \
+        curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=0d21f5b3-e1bf-48b6-b7cb-8d10278c7115' \
         -H 'Content-Type: application/json' \
         -d "$PAYLOAD"
 
