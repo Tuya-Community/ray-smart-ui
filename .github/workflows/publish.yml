@@ -55,8 +55,9 @@ jobs:
         RELEASE_BODY=$(echo "$RELEASE_BODY" | sed '/^## English/,$d' | sed -z 's/[[:space:]]*$//')
         # 获取当前日期
         RELEASE_DATE=$(date +%Y-%m-%d)
-        # 使用 printf 构建包含换行的内容，确保有两个换行
-        CONTENT="## $RELEASE_TAG($RELEASE_DATE)\n$RELEASE_BODY"
+        # 使用 $'\n' 确保换行符被正确解释
+        NEWLINE=$'\n'
+        CONTENT="## $RELEASE_TAG($RELEASE_DATE)  ${NEWLINE}  ${NEWLINE}  $RELEASE_BODY"
         PAYLOAD=$(jq -n --arg content "$CONTENT" '{
             "msgtype": "markdown",
             "markdown": {
