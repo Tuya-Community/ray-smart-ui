@@ -58,11 +58,11 @@ export default function Demo() {
       <DemoBlock title={Strings.getLang('loadingStatus')} padding>
         <Button
           loading
-          type="info"
+          type="warning"
           loading-text={Strings.getLang('inloading')}
           className="demo-margin-right"
         />
-        <Button loading type="info" className="demo-margin-right" />
+        <Button loading type="warning" className="demo-margin-right" />
         <Button loading type="primary" className="demo-margin-right" />
         <Button loading type="primary" loadingType="spinner" />
       </DemoBlock>

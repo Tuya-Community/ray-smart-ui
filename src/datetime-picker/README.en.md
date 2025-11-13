@@ -89,6 +89,11 @@ export default function Demo() {
         },
         day: '{{day}} day'
       }}
+      fontStyles={{
+        day: {
+          fontFamily: 'Manrope',
+        },
+      }}
       onInput={onDateInput}
     />
   );

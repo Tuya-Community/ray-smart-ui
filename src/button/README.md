@@ -118,9 +118,10 @@ import { View } from '@ray-js/ray';
 export default function Demo() {
   return (
     <View>
+      <Button loading type="warning" loadingText="加载中..." />
+      <Button loading type="warning" />
       <Button loading type="primary" />
       <Button loading type="primary" loadingType="spinner" />
-      <Button loading type="info" loadingText="加载中..." />
     </View>
   );
 }

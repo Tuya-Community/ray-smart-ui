@@ -322,7 +322,7 @@ export default function Demo() {
 | --nav-bar-right-text-color `v2.5.1`  | _var(--app-B2-N1, rgba(0, 0, 0, 1))_  | 导航栏右侧文字颜色 |
 | --nav-bar-title-max-width `v2.6.0`    | _56%_ `v2.6.0` _calc(100% - 98px - 16px)_ `v2.7.0`   | 导航栏标题的宽度 |
 | --nav-bar-side-width `v2.7.0`    | _98px_   | 两边宽度 |
-| --nav-bar-text-padding `v2.7.0`    | _20px_   | 两边文字内边距 |
+| --nav-bar-text-padding `v2.7.0`    | _16px_   | 两边文字内边距 |
 | --nav-bar-icon-padding `v2.7.0`    | _16px_   | 两边图标内边距 |
 | --nav-bar-title-margin `v2.7.0`    | _16px_   | 标题外边距 |
 | --nav-bar-home-max-width `v2.7.0`    | _calc(100% - 98px - 16px)_   | 小程序首页时左侧标题最大宽度 |

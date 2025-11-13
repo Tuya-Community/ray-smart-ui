@@ -15,6 +15,17 @@ assets: BrandList
 import { IndexBar } from '@ray-js/smart-ui';
 ```
 
+```warning:⚠️注意
+组件是监听整个page 滚动事件来做动态的 fixed 标题元素，所以渲染此组件的页面必须配置 页面可滚动。
+
+index.config.ts:
+
+export default {
+  navigationBarTitleText: 'Home',
+  disableScroll: false,
+};
+```
+
 ## 代码演示
 
 ### 基础用法

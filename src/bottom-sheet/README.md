@@ -198,11 +198,14 @@ export default function Demo() {
 | overlay | 是否显示遮罩层 | _boolean_ | `true` |
 | closeOnClickOverlay | 点击遮罩是否关闭菜单 | _boolean_ | `true` |
 | nativeDisabled `v2.5.0` | 开启弹框期间是否禁用本地手势; 会在弹框开始进入动画时调用 `ty.nativeDisabled(true)`, 在弹框关闭动画结束时调用 `ty.nativeDisabled(false)` 恢复异层组件的点击能力；由于`ty.nativeDisabled` 是全局生效的，所以多个弹框组件同时打开时注意是否传 `native-disabled`属性和关闭的时机，防止 `native-disabled` 属性失效 | _boolean_ | `false` |
-| contentHeight `v2.5.0` | 内容区域高度，当设置此值时，组件的 max-height 将会失效 | _number \| string_ | `false` |
+| contentHeight `v2.5.0` | 内容区域高度，当设置此值时，组件的 max-height 将会失效。当设置 draggable 时此值无效。 | _number \| string_ | `false` |
 | maxHeight `v2.6.0` | 整个组件的最大高度 | _number \| string_ | - |
-| showClose `v2.6.1` | 是否展示关闭图标 | _boolean_ | `true` |
-
-
+| showClose `v2.6.1` | 是否展示关闭图标。当设置 draggable 时此值无效。 | _boolean_ | `true` |
+| draggable `v2.7.2` | 是否支持拖拽，可用于实现拖拽调整面板高度 | _boolean_ | `false` |
+| minDragHeight `v2.7.2` | 拖拽时允许的最小高度 | _number_ | `windowHeight * 0.8` |
+| maxDragHeight `v2.7.2` | 拖拽时允许的最大高度 | _number_ | `windowHeight * 0.5` |
+| midDragHeight `v2.7.2` | 拖拽时中间态高度 | _number_ | `windowHeight * 0.1` |
+| closeDragHeight `v2.7.2` | 拖拽关闭时的临界高度，低于该高度将自动关闭 | _number_ | `windowHeight * 0.4` |
 
 ### Events
 
@@ -216,6 +219,7 @@ export default function Demo() {
 | onLeave | 遮罩离开中触发 | - |
 | onAfterLeave | 遮罩离开后触发 | - |
 | onClickOverlay | 点击遮罩层时触发 | - |
+| onDragPosition `v2.7.2` | 拖拽结束时触发，返回当前面板位置 | _event.detail_: `'max'` \| `'mid'` \| `'min'` |
 
 ### Slot
 
@@ -247,6 +251,11 @@ export default function Demo() {
 | --bottom-sheet-header-font-weight  | _600_    | 底部弹窗的头部字重    |
 | --bottom-sheet-font-color  | _var(--app-B4-N1, rgba(0, 0, 0, 1))_    | 底部弹窗的文字颜色    |
 | --bottom-sheet-header-padding `v2.5.0`  | _0 16px_    | 底部弹窗头部的内边距    |
+| --bottom-sheet-dragger-padding `v2.7.2` | _8px 0_ | 拖拽手柄区域的内边距 |
+| --bottom-sheet-dragger-node-width `v2.7.2` | _30px_ | 拖拽手柄的宽度 |
+| --bottom-sheet-dragger-node-height `v2.7.2` | _4px_ | 拖拽手柄的高度 |
+| --bottom-sheet-dragger-node-border-radius `v2.7.2` | _2px_ | 拖拽手柄的圆角 |
+| --bottom-sheet-dragger-node-background `v2.7.2` | _rgba(0, 0, 0, 0.3)_ | 拖拽手柄的背景色 |
 
 ## 常见问题
 

@@ -1,5 +1,28 @@
 # 更新日志
 
+## v2.7.2(2025-11-13)
+
+### Features  ✨
+
+- stepper: 接入 `manrope` 数字字体，App 7.0.5 版本开始支持([a9ac2ab](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/a9ac2ab42943c837cda5dba3ddff02d56b00f025))
+- count-down: 接入 `manrope` 数字字体，App 7.0.5 版本开始支持([a9ac2ab](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/a9ac2ab42943c837cda5dba3ddff02d56b00f025))
+- picker: 接入 `manrope` 数字字体，App 7.0.5 版本开始支持([a9ac2ab](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/a9ac2ab42943c837cda5dba3ddff02d56b00f025))
+- datetime-picker: 接入 `manrope` 数字字体，App 7.0.5 版本开始支持([a9ac2ab](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/a9ac2ab42943c837cda5dba3ddff02d56b00f025))
+- calendar: 接入 `manrope` 数字字体，App 7.0.5 版本开始支持([pull/79](https://github.com/Tuya-Community/miniapp-smart-ui/pull/79))
+- custom-keyboard: 接入 `manrope` 数字字体，App 7.0.5 版本开始支持([e8f763d](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/e8f763d526f635d702a87586535f8b4a854100b1))
+- bottom-sheet: 支持拖拽能力, 新增 draggable、minDragHeight、maxDragHeight、midDragHeight、closeDragHeight属性，新增 onDragPosition 事件([pull/78](https://github.com/Tuya-Community/miniapp-smart-ui/pull/78))
+- nav-bar: 修改 --nav-bar-text-padding 默认值 为 16px([352954e](https://github.com/Tuya-Community/miniapp-smart-ui/commit/352954e16f05b0660369bfc860b7f895dc5f1774))
+
+### Bug Fixes  🐛
+
+- icon: 兼容鸿蒙图标显示([bc7310a](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/bc7310a99c1bfa4dc5e90a7dad5fb338b0aff465))
+- circle: 修复在 flex 布局下初始化宽度 100% 问题([8083de9](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/8083de941d12b9e3158c170841079e76cbf3ecf3))
+- stepper: 修复自动换行问题、无法输入小数问题、步长格式化不计入 min 问题，新增判断字符串逻辑([4054898](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/405489889906c8424b76daceaf392c59cd24bf01))
+- loading: 修复鸿蒙兼容问题([894d59d](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/894d59d53f4ba1f5061febdcc61944da0d8e3f1a))
+- picker: 修复单列时 onChange 事件返回格式问题问题([9800e64](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/9800e649576136eb102cc61c5192e6a6ffd57ea3))
+- slider: 修复min不为0时，拖动问题([f85fae8](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/f85fae880c278ca89126e0555eca15497b7abf66))
+
+
 ## v2.7.1(2025-10-28)
 
 ### Bug Fixes 🐛

@@ -98,6 +98,7 @@ export default function Demo() {
     <Image 
       width="100px"
       height="100px"
+      showLoading
       useLoadingSlot 
       slot={{
         loading: <Loading type="spinner" size="20" vertical />

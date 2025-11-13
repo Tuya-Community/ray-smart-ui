@@ -118,9 +118,10 @@ import { View } from '@ray-js/ray';
 export default function Demo() {
   return (
     <View>
+      <Button loading type="warning" loadingText="Loading..." />
+      <Button loading type="warning" />
       <Button loading type="primary" />
       <Button loading type="primary" loadingType="spinner" />
-      <Button loading type="info" loadingText="Loading..." />
     </View>
   );
 }

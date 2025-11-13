@@ -2,7 +2,7 @@ English | [简体中文](./README-zh_CN.md)
 
 # @ray-js/smart-ui
 
-[![npm](https://img.shields.io/npm/v/@ray-js/smart-ui)![down](https://img.shields.io/npm/dt/@ray-js/smart-ui)![ray-js](https://img.shields.io/badge/maintained%20with-Ray-cc00ff.svg)](https://lerna.js.org/)![lodash](https://img.shields.io/badge/-lodash-f16728?style=flat-square&logo=lodash&labelColor=ffffff&color=f16728)![TS](https://img.shields.io/badge/TS-TypeScript-1C6FBB)
+![npm](https://img.shields.io/npm/v/@ray-js/smart-ui)![down](https://img.shields.io/npm/dt/@ray-js/smart-ui)![ray-js](https://img.shields.io/badge/maintained%20with-Ray-cc00ff.svg)![lodash](https://img.shields.io/badge/-lodash-f16728?style=flat-square&logo=lodash&labelColor=ffffff&color=f16728)![TS](https://img.shields.io/badge/TS-TypeScript-1C6FBB)
 
 
 ## Introduction
