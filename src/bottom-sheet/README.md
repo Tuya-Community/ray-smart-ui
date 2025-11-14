@@ -183,6 +183,174 @@ export default function Demo() {
 }
 ```
 
+### 可拖拽 `v2.7.2`
+
+通过设置 `draggable` 属性，可以让底部弹窗支持拖拽调整高度。
+
+```jsx
+import React, { useEffect, useState } from 'react';
+import { BottomSheet, Button } from '@ray-js/smart-ui';
+import { View, getSystemInfoSync } from '@ray-js/ray';
+
+export default function Demo() {
+  const [show, setShow] = React.useState(false);
+  const [closeDragHeight, setCloseDragHeight] = useState(0);
+
+  useEffect(() => {
+    const systemInfo = getSystemInfoSync();
+    setCloseDragHeight(systemInfo.windowHeight * 0.4);
+  }, []);
+
+  const toggleBottomSheet = React.useCallback(() => setShow(!show), [show]);
+
+  return (
+    <View>
+      <Button type="primary" onClick={toggleBottomSheet}>
+        弹出菜单
+      </Button>
+      <BottomSheet
+        show={show}
+        draggable
+        closeDragHeight={closeDragHeight}
+        midDragHeight={300}
+        onClose={toggleBottomSheet}
+      >
+        <View style={{ backgroundColor: 'red', height: '300px' }} />
+      </BottomSheet>
+    </View>
+  );
+}
+```
+
+### 设置拖拽范围 `v2.7.2`
+
+通过设置 `minDragHeight`、`maxDragHeight`、`midDragHeight` 和 `closeDragHeight` 来控制拖拽的范围。
+
+```jsx
+import React from 'react';
+import { BottomSheet, Button } from '@ray-js/smart-ui';
+import { View } from '@ray-js/ray';
+
+export default function Demo() {
+  const [show, setShow] = React.useState(false);
+  const toggleBottomSheet = React.useCallback(() => setShow(!show), [show]);
+
+  return (
+    <View>
+      <Button type="primary" onClick={toggleBottomSheet}>
+        弹出菜单
+      </Button>
+      <BottomSheet
+        show={show}
+        draggable
+        midDragHeight={300}
+        minDragHeight={300}
+        maxDragHeight={300}
+        closeDragHeight={300}
+        onClose={toggleBottomSheet}
+      >
+        <View style={{ backgroundColor: 'red', height: '300px' }} />
+      </BottomSheet>
+    </View>
+  );
+}
+```
+
+### 带标题的拖拽 `v2.7.2`
+
+拖拽功能可以与标题一起使用。
+
+```jsx
+import React from 'react';
+import { BottomSheet, Button } from '@ray-js/smart-ui';
+import { View } from '@ray-js/ray';
+
+export default function Demo() {
+  const [show, setShow] = React.useState(false);
+  const toggleBottomSheet = React.useCallback(() => setShow(!show), [show]);
+
+  return (
+    <View>
+      <Button type="primary" onClick={toggleBottomSheet}>
+        弹出菜单
+      </Button>
+      <BottomSheet
+        title="带标题的拖拽"
+        show={show}
+        draggable
+        midDragHeight={300}
+        minDragHeight={300}
+        maxDragHeight={300}
+        closeDragHeight={300}
+        onClose={toggleBottomSheet}
+      >
+        <View style={{ backgroundColor: 'red', height: '300px' }} />
+      </BottomSheet>
+    </View>
+  );
+}
+```
+
+### 监听拖拽位置 `v2.7.2`
+
+通过 `onDragPosition` 事件可以监听拖拽结束时的面板位置。
+
+```jsx
+import React, { useState } from 'react';
+import { BottomSheet, Button } from '@ray-js/smart-ui';
+import { View, Text } from '@ray-js/ray';
+
+export default function Demo() {
+  const [show, setShow] = React.useState(false);
+  const [dragPosition, setDragPosition] = useState<'max' | 'mid' | 'min' | ''>('');
+  const toggleBottomSheet = React.useCallback(() => setShow(!show), [show]);
+
+  const onDragPosition = React.useCallback((e: any) => {
+    const position = e.detail; // 'max' | 'mid' | 'min'
+    setDragPosition(position);
+  }, []);
+
+  const getDragPositionText = () => {
+    const positionMap = {
+      max: '最大',
+      mid: '中间',
+      min: '最小',
+    };
+    return positionMap[dragPosition as keyof typeof positionMap] || dragPosition;
+  };
+
+  return (
+    <View>
+      <Button type="primary" onClick={toggleBottomSheet}>
+        弹出菜单
+      </Button>
+      <BottomSheet
+        show={show}
+        draggable
+        midDragHeight={300}
+        minDragHeight={100}
+        maxDragHeight={600}
+        onDragPosition={onDragPosition}
+        onClose={toggleBottomSheet}
+      >
+        {dragPosition && (
+          <View
+            style={{
+              marginTop: '16px',
+              padding: '12px',
+              backgroundColor: '#f0f0f0',
+              borderRadius: '4px',
+            }}
+          >
+            <Text>当前面板位置: {getDragPositionText()}</Text>
+          </View>
+        )}
+      </BottomSheet>
+    </View>
+  );
+}
+```
+
 ## API
 
 ### Props
