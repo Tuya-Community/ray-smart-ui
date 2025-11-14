@@ -70,6 +70,36 @@ export interface SmartBottomSheetProps {
    * @default true
    */
   showClose?: boolean;
+  /**
+   * 是否支持拖拽，可用于实现拖拽调整面板高度
+   * @version 2.7.2
+   * @default false
+   */
+  draggable?: boolean;
+  /**
+   * 拖拽时允许的最小高度
+   * @version 2.7.2
+   * @default windowHeight * 0.8
+   */
+  minDragHeight?: number;
+  /**
+   * 拖拽时允许的最大高度
+   * @version 2.7.2
+   * @default windowHeight * 0.5
+   */
+  maxDragHeight?: number;
+  /**
+   * 拖拽时中间态高度
+   * @version 2.7.2
+   * @default windowHeight * 0.1
+   */
+  midDragHeight?: number;
+  /**
+   * 拖拽关闭时的临界高度，低于该高度将自动关闭
+   * @version 2.7.2
+   * @default windowHeight * 0.4
+   */
+  closeDragHeight?: number;
 }
 
 export interface SmartBottomSheetEvents extends SmartTransitionEvents {
@@ -112,6 +142,11 @@ export interface SmartBottomSheetEvents extends SmartTransitionEvents {
    * 点击遮罩层时触发
    */
   onClickOverlay?: SmartEventHandler;
+  /**
+   * 拖拽结束时触发，返回当前面板位置
+   * @version 2.7.2
+   */
+  onDragPosition?: (e: { detail: 'max' | 'mid' | 'min' }) => void;
 }
 
 interface SmartBottomSheetSlot {
