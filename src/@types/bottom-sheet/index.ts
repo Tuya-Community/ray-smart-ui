@@ -146,7 +146,7 @@ export interface SmartBottomSheetEvents extends SmartTransitionEvents {
    * 拖拽结束时触发，返回当前面板位置
    * @version 2.7.2
    */
-  onDragPosition?: (e: { detail: 'max' | 'mid' | 'min' }) => void;
+  onDragPosition?: SmartEventHandler<'max' | 'mid' | 'min'>;
 }
 
 interface SmartBottomSheetSlot {
