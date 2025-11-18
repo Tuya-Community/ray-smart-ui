@@ -25,15 +25,15 @@ export default function Demo() {
   }, []);
 
   const onClickRight = React.useCallback(event => {
-    ty.showToast({ title: Strings.getLang('clickToRight'), icon: 'none' });
+    showToast({ title: Strings.getLang('clickToRight'), icon: 'none' });
   }, []);
 
   const onClickRightText = React.useCallback(event => {
-    ty.showToast({ title: Strings.getLang('clickToRightText'), icon: 'none' });
+    showToast({ title: Strings.getLang('clickToRightText'), icon: 'none' });
   }, []);
 
   const onClickRightIcon = React.useCallback(event => {
-    ty.showToast({ title: Strings.getLang('clickToRightIcon'), icon: 'none' });
+    showToast({ title: Strings.getLang('clickToRightIcon'), icon: 'none' });
   }, []);
 
   return (
