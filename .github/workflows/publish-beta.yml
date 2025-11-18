@@ -67,7 +67,12 @@ jobs:
 
     - name: Update Package.json with Next Version
       run: |
-        npm version "${NEXT_VERSION}" --no-git-tag-version
+        CURRENT_VERSION=$(node -p "require('./package.json').version")
+        if [ "$CURRENT_VERSION" != "${NEXT_VERSION}" ]; then
+          npm version "${NEXT_VERSION}" --no-git-tag-version
+        else
+          echo "Package version is already ${NEXT_VERSION}, skipping version update"
+        fi
 
     - name: Publish Package
       run: npm publish --access public --tag beta
