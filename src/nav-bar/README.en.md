@@ -302,55 +302,56 @@ export default function Demo() {
 
 ### Props
 
-| Parameter             | Description                               | Type                            | Default Value                                     |
-| --------------------- | ----------------------------------------- | ------------------------------- | ------------------------------------------------- |
-| border                | Whether to display the bottom border     | _boolean_                       | `true` `v2.0.0` `false` `v2.7.0`                 |
-| customStyle           | Custom styles for the root node          | _React.CSSProperties_           | -                                                 |
-| fixed                 | Whether fixed at the top                 | _boolean_                       | `false`                                          |
-| leftArrow             | Whether to show left arrow                | _boolean_                       | `false`                                          |
-| leftText              | Text on the left side                    | _string_                        | `''`                                             |
-| leftTextType `v2.0.0`| Style type for the left text, options are `home`, `title`, `back` | _string_ | `back`                                           |
-| leftIcon `v2.0.0`    | Left icon                                | _string_                        | `''`                                             |
-| leftIconSize `v2.0.0`| Size of the left icon, default is 32    | _string \| number_              | `32`                                             |
-| round `v2.1.0`       | Whether to display corners                | _boolean_                       | `false`                                          |
-| placeholder           | Whether to enable placeholder when fixed at the top | _boolean_ | `false`                               |
-| rightText             | Text on the right side                   | _string_                        | `''`                                             |
-| safeAreaInsetTop      | Whether to leave a safe top distance (status bar height) | _boolean_ | `true`                             |
-| title                 | Title                                    | _string_                        | `''`                                             |
-| zIndex                | Element z-index                          | _number_                        | `1`                                              |
-| rightTextColor `v2.7.0` | Color of the right text                | _string_                        | -                                                 |
-| rightIcon `v2.7.0`   | Right icon                               | _string_                        | -                                                 |
-| rightIconColor `v2.7.0` | Right icon color                        | _string_                        | -                                                 |
-| rightIconSize `v2.7.0` | Right icon size                         | _number_                        | `32px`                                           |
-| leftIconColor `v2.7.0` | Left icon color                         | _string_                        | -                                                 |
-| background `v2.7.0`  | Overall background color                  | _string_                        | -                                                 |
+| Parameter                | Description                               | Type      | Default Value  |
+| ------------------- | ---------------------------------- | --------- | ------- |
+| border | Whether to show the bottom border | _boolean_ | `true` `v2.0.0` `false` `v2.7.0` |
+| customStyle | Custom style for the root node | _React.CSSProperties_ | - |
+| fixed | Whether to fix at the top | _boolean_ | `false` |
+| leftArrow | Whether to show the left arrow | _boolean_ | `false` |
+| leftText | Left text | _string_ | `''` |
+| leftTextType `v2.0.0` | The style type of the left text, can be `home`, `title`, `back` | _string_ | `back` |
+| leftIcon `v2.0.0` | Left icon | _string_ | `''` |
+| leftIconSize `v2.0.0` | Left icon size, default is 32 | _string \| number_ | `32` |
+| round `v2.1.0` | Whether to show rounded corners | _boolean_ | `false` |
+| placeholder | Whether to enable placeholder when fixed at the top | _boolean_ | `false` |
+| rightText | Right text | _string_ | `''` |
+| safeAreaInsetTop | Whether to leave the top safe inset (status bar height) | _boolean_ | `true` |
+| title | Title | _string_ | `''` |
+| zIndex | Element z-index | _number_ | `1` |
+| rightTextColor `v2.7.0` | Color of the right text | _string_ | - |
+| rightIcon `v2.7.0` | Right icon | _string_ | - |
+| rightIconColor `v2.7.0` | Color of the right icon | _string_ | - |
+| rightIconSize `v2.7.0` | Size of the right icon | _number_ | `32px` |
+| leftIconColor `v2.7.0` | Color of the left icon | _string_ | - |
+| background `v2.7.0` | Overall background color | _string_ | - |
+| sideWidth `v2.7.3` | Width of the side control bar, provides three built-in values: `min`, `mid`, `max`; also can pass specific width values | _string\/number\/`min`\/`mid`\/`max`_ | `mid` |
 
 ### Slot
 
-| Name   | Description               |
-| ------ | ------------------------- |
-| left   | Custom content for the left area |
-| right  | Custom content for the right area |
-| title  | Custom title             |
+| Name  | Description               |
+| ----- | ------------------ |
+| left | Custom left area content |
+| right | Custom right area content |
+| title | Custom title |
 
 ### Events
 
-| Event Name           | Description                            | Parameters |
-| -------------------- | -------------------------------------- | ---------- |
-| onClickLeft          | Triggered when the left back icon is clicked | -      |
-| onClickRight         | Triggered when the right button is clicked | -       |
-| onClickTitle `v2.0.0` | Triggered when the central title is clicked | -      |
-| onClickLeftIcon `v2.0.0` | Triggered when the left icon is clicked | -      |
-| onClickLeftText `v2.0.0` | Triggered when the left text is clicked | -      |
-| onClickRightIcon `v2.7.0` | Triggered when the right icon is clicked | -      |
-| onClickRightText `v2.7.0` | Triggered when the right text is clicked | -      |
+| Event Name           | Description               | Parameters |
+| ---------------- | ------------------ | ---- |
+| onClickLeft | Triggered when clicking the left return icon | - |
+| onClickRight | Triggered when clicking the right button | - |
+| onClickTitle `v2.0.0` | Triggered when clicking the central title | - |
+| onClickLeftIcon `v2.0.0` | Triggered when clicking the left icon | - |
+| onClickLeftText `v2.0.0` | Triggered when clicking the left text | - |
+| onClickRightIcon `v2.7.0` | Triggered when clicking the right icon | - |
+| onClickRightText `v2.7.0` | Triggered when clicking the right text | - |
 
 ### External Style Classes
 
 | Class Name         | Description         |
-| ------------------ | ------------------- |
-| customClass        | Root node style class |
-| titleClass         | Title style class   |
+| ------------ | ------------ |
+| customClass | Root node style class |
+| titleClass | Title style class |
 | leftIconClass `v2.0.0` | Left icon style class |
 | rightTextClass `v2.1.0` | Right text style class |
 | rightIconClass `v2.7.0` | Right icon style class |
@@ -358,31 +359,34 @@ export default function Demo() {
 
 ### Style Variables
 
-The component provides the following CSS variables for custom styling. Please refer to the usage method in the [ConfigProvider component](/material/smartui?comId=config-provider).
+The component provides the following CSS variables for custom styling. Please refer to the [ConfigProvider component](/material/smartui?comId=config-provider) for usage.
 
-| Name                                   | Default Value                                         | Description                |
-| -------------------------------------- | ---------------------------------------------------- | -------------------------- |
-| --nav-bar-height                       | _var(--app-device-navbar-height, 46px)_             | Navigation bar height      |
-| --nav-bar-round-min-height `v2.1.0`   | _56px_                                              | Minimum height when rounded corners are present |
-| --nav-bar-round-border-radius `v2.1.0`| _16px 16px 0px 0px_                               | Whether to display rounded corners for the navbar |
-| --nav-bar-background-color             | _var(--app-B2, #ffffff)_                            | Navigation bar background color |
-| --nav-bar-arrow-color                  | _var(--app-B2-N1, rgba(0, 0, 0, 1))_              | Navigation bar arrow color  |
-| --nav-bar-icon-size `@deprecated v2.7.0` | _32px_                                             | Navigation bar icon size   |
-| --nav-bar-icon-color                   | _var(--app-B2-N1, rgba(0, 0, 0, 1))_              | Navigation bar icon color  |
-| --nav-bar-icon-margin `@deprecated v2.7.0` | _0_                                               | Navigation bar icon margin  |
-| --nav-bar-text-font-size `v2.1.0`     | _16px_                                              | Navigation bar text size   |
-| --nav-bar-text-color                   | _var(--app-B2-N2, rgba(0, 0, 0, 1))_              | Navigation bar text color  |
-| --nav-bar-title-font-size              | _17px_                                              | Navigation bar title text size |
-| --nav-bar-title-font-weight            | _600_                                              | Navigation bar title weight |
-| --nav-bar-title-text-color             | _var(--app-B2-N1, rgba(0, 0, 0, 1))_              | Navigation bar title text color |
-| --nav-bar-home-font-size               | _22px_                                              | Navigation bar home text size |
-| --nav-bar-home-font-weight             | _600_                                              | Navigation bar home weight  |
-| --nav-bar-home-text-color              | _var(--app-B2-N1, rgba(0, 0, 0, 1))_              | Navigation bar home text color |
-| --nav-bar-right-text-color `v2.5.1`   | _var(--app-B2-N1, rgba(0, 0, 0, 1))_              | Navigation bar right text color |
-| --nav-bar-title-max-width `v2.6.0`    | _56%_ `v2.6.0` _calc(100% - 98px - 16px)_ `v2.7.0` | Width of the navigation bar title |
-| --nav-bar-side-width `v2.7.0`         | _98px_                                              | Width of both sides        |
-| --nav-bar-text-padding `v2.7.0`       | _16px_                                              | Text padding on both sides |
-| --nav-bar-icon-padding `v2.7.0`       | _16px_                                              | Icon padding on both sides |
-| --nav-bar-title-margin `v2.7.0`       | _16px_                                              | Margin for the title       |
-| --nav-bar-home-max-width `v2.7.0`     | _calc(100% - 98px - 16px)_                         | Maximum width of left title when on the homepage |
-| --nav-bar-left-title-padding `v2.7.0` | _8px_                                              | Left padding in left title mode |
+| Name                          | Default Value                                 | Description |
+| ----------------------------- | -------------------------------------- | ---- |
+| --nav-bar-height    | _var(--app-device-navbar-height, 46px)_     | Nav Bar Height |
+| --nav-bar-round-min-height `v2.1.0`    | _56px_        | Minimum height when rounded corners exist on the nav bar |
+| --nav-bar-round-border-radius `v2.1.0`   | _16px 16px 0px 0px_     | Whether to show rounded corners on the nav bar |
+| --nav-bar-background-color    | _var(--app-B2, #ffffff)_               | Nav Bar Background Color |
+| --nav-bar-arrow-color         | _var(--app-B2-N1, rgba(0, 0, 0, 1))_   | Nav Bar Arrow Color |
+| --nav-bar-icon-size `@deprecated v2.7.0`   | _32px_     | Nav Bar Icon Size |
+| --nav-bar-icon-color          | _var(--app-B2-N1, rgba(0, 0, 0, 1))_   | Nav Bar Icon Color |
+| --nav-bar-icon-margin `@deprecated v2.7.0`    | _0_      | Nav Bar Icon Margin |
+| --nav-bar-text-font-size `v2.1.0`         | _16px_ `v2.1.0` _17px_ `v2.7.3`  | Nav Bar Text Size |
+| --nav-bar-text-font-weight `v2.7.0`         | _600_ `v2.7.0` _normal_ `v2.7.3`   | Sidebar text font weight |
+| --nav-bar-text-color          | _var(--app-B2-N2, rgba(0, 0, 0, 1))_   | Nav Bar Text Color |
+| --nav-bar-title-font-size     | _17px_                  | Nav Bar Title Text Size |
+| --nav-bar-title-font-weight   | _600_                                  | Nav Bar Title Font Weight |
+| --nav-bar-title-text-color    | _var(--app-B2-N1, rgba(0, 0, 0, 1))_   | Nav Bar Title Text Color |
+| --nav-bar-home-font-size      | _22px_                                 | Nav Bar Home Text Size |
+| --nav-bar-home-font-weight    | _600_                                  | Nav Bar Home Font Weight |
+| --nav-bar-home-text-color     | _var(--app-B2-N1, rgba(0, 0, 0, 1))_   | Nav Bar Home Text Color |
+| --nav-bar-right-text-color `v2.5.1`  | _var(--app-B2-N1, rgba(0, 0, 0, 1))_  | Nav Bar Right Text Color |
+| --nav-bar-title-max-width `v2.6.0`    | _56%_ `v2.6.0` _calc(100% - 98px - 16px)_ `v2.7.0`   | Nav Bar Title Width |
+| --nav-bar-side-width `v2.7.0`    | _98px_ `v2.7.0` _80px_ `v2.7.3`   | Width of both sides |
+| --nav-bar-text-padding `v2.7.0`    | _20px_ `v2.7.0` _16px_ `v2.7.3`   | Text padding on both sides |
+| --nav-bar-icon-padding `v2.7.0`    | _16px_   | Icon padding on both sides |
+| --nav-bar-title-margin `v2.7.0`    | _16px_   | Title margin |
+| --nav-bar-home-max-width `v2.7.0`    | _calc(100% - 98px - 16px)_   | Maximum width of the left title on the home page of the mini program |
+| --nav-bar-left-title-padding `v2.7.0`    | _8px_   | Left padding when in left title mode |
+| --nav-bar-side-width-min `v2.7.3`    | _40px_   | Sidebar min width |
+| --nav-bar-side-width-max `v2.7.3`    | _105px_   | Max width when sidebar is open |

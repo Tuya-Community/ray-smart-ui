@@ -438,7 +438,9 @@ type NavBarThemeVars =
   | 'navBarTextPadding'
   | 'navBarIconPadding'
   | 'navBarTitleMargin'
-  | 'navBarLeftTitlePadding';
+  | 'navBarLeftTitlePadding'
+  | 'navBarSideWidthMin'
+  | 'navBarSideWidthMax';
 
 type NoticeBarThemeVars =
   | 'noticeBarHeight'

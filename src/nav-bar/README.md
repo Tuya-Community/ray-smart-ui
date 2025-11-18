@@ -325,6 +325,7 @@ export default function Demo() {
 | rightIconSize `v2.7.0` | 右侧图标大小 | _number_ | `32px` |
 | leftIconColor `v2.7.0` | 左侧图标颜色 | _string_ | - |
 | background `v2.7.0` | 整体背景色 | _string_ | - |
+| sideWidth `v2.7.3` | 两边控制栏的宽度, 提供 `min`、`mid`、`max`三档内置值；也可以传具体宽度值 | _string\/number\/`min`\/`mid`\/`max`_ | `mid` |
 
 ### Slot
 
@@ -371,7 +372,8 @@ export default function Demo() {
 | --nav-bar-icon-size `@deprecated v2.7.0`   | _32px_     | 导航栏图标大小 |
 | --nav-bar-icon-color          | _var(--app-B2-N1, rgba(0, 0, 0, 1))_   | 导航栏图标颜色 |
 | --nav-bar-icon-margin `@deprecated v2.7.0`    | _0_      | 导航栏图标外边距 |
-| --nav-bar-text-font-size `v2.1.0`         | _16px_   | 导航栏文字大小 |
+| --nav-bar-text-font-size `v2.1.0`         | _16px_ `v2.1.0` _17px_ `v2.7.3`   | 导航栏侧边文字大小 |
+| --nav-bar-text-font-weight `v2.7.0`         | _600_ `v2.7.0` _normal_ `v2.7.3`   | 导航栏侧边文字字体字重 |
 | --nav-bar-text-color          | _var(--app-B2-N2, rgba(0, 0, 0, 1))_   | 导航栏文字颜色 |
 | --nav-bar-title-font-size     | _17px_                  | 导航栏标题文字大小 |
 | --nav-bar-title-font-weight   | _600_                                  | 导航栏标题字重 |
@@ -381,9 +383,10 @@ export default function Demo() {
 | --nav-bar-home-text-color     | _var(--app-B2-N1, rgba(0, 0, 0, 1))_   | 导航栏首页文字颜色 |
 | --nav-bar-right-text-color `v2.5.1`  | _var(--app-B2-N1, rgba(0, 0, 0, 1))_  | 导航栏右侧文字颜色 |
 | --nav-bar-title-max-width `v2.6.0`    | _56%_ `v2.6.0` _calc(100% - 98px - 16px)_ `v2.7.0`   | 导航栏标题的宽度 |
-| --nav-bar-side-width `v2.7.0`    | _98px_   | 两边宽度 |
-| --nav-bar-text-padding `v2.7.0`    | _16px_   | 两边文字内边距 |
+| --nav-bar-side-width `v2.7.0`    | _98px_ `v2.7.0` _80px_ `v2.7.3`  | 两边默认宽度 |
+| --nav-bar-text-padding `v2.7.0`    | _20px_ `v2.7.0` _16px_ `v2.7.3`    | 两边文字内边距 |
 | --nav-bar-icon-padding `v2.7.0`    | _16px_   | 两边图标内边距 |
 | --nav-bar-title-margin `v2.7.0`    | _16px_   | 标题外边距 |
 | --nav-bar-home-max-width `v2.7.0`    | _calc(100% - 98px - 16px)_   | 小程序首页时左侧标题最大宽度 |
-| --nav-bar-left-title-padding `v2.7.0`    | _8px_   | 左侧标题模式时的左内边距 |
+| --nav-bar-side-width-min `v2.7.3`    | _40px_   | 侧边min时宽度 |
+| --nav-bar-side-width-max `v2.7.3`    | _105px_   | 侧边max时宽度 |
