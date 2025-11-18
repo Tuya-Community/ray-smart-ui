@@ -138,6 +138,11 @@ export interface SmartNavBarProps {
    * @version v2.7.0
    */
   background?: string;
+  /**
+   * @description 侧边栏宽度
+   * @version v2.7.3
+   */
+  sideWidth?: string | number | 'min' | 'max' | 'mid';
 }
 
 export interface SmartNavBarEvents {
