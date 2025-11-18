@@ -82,8 +82,12 @@ jobs:
     - name: Commit Changes
       run: |
         git add .
-        git commit -m "chore(release): ${NEXT_VERSION} release by Github Actions"
-        git log -1  # 检查最后的commit结果
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "chore(release): ${NEXT_VERSION} release by Github Actions"
+          git log -1  # 检查最后的commit结果
+        fi
         git config pull.rebase false
         git pull
 
