@@ -32,9 +32,14 @@ export default function Demo() {
 
   return (
     <>
-      <NavBar leftText="HomeHomeHomeHomeHome" leftTextType="home" onClickLeftText={onClickLeftText} />
+      <NavBar 
+        leftText="Home" 
+        leftTextType="home"
+        onClickLeftText={onClickLeftText} 
+      />
       <NavBar
         background="#E4EDFF"
+        customClass="demo-nav-bar"
         leftText="HomeHomeHomeHomeHome"
         leftTextType="home"
         onClickLeftText={onClickLeftText}
@@ -44,14 +49,54 @@ export default function Demo() {
 }
 ```
 
-### 二级页面
+### 二级页面-单图标
 
-二级页面的文本样式居中，左侧显示返回箭头，点击中央文本或左侧箭头时触发事件。
+当中间标题内容比较长，且两侧内容较少时可以设置 `v2.7.3` `sideWidth` 为 `min`。
 
 ```jsx
 import { showToast } from '@ray-js/ray';
 import { NavBar } from '@ray-js/smart-ui';
 import React from 'react';
+import iconMore from '@tuya-miniapp/icons/dist/svg/More';
+
+export default function Demo() {
+  const onClickLeft = React.useCallback(event => {
+    showToast({ title: "点击返回", icon: 'none' });
+  }, []);
+
+  const onClickTitle = React.useCallback(event => {
+    showToast({ title: "点击中央文本", icon: 'none' });
+  }, []);
+
+  const onClickRight = React.useCallback(event => {
+    showToast({ title: "点击右侧", icon: 'none' });
+  }, []);
+
+  return (
+    <NavBar
+      title="ScheduleScheduleScheduleSchedule"
+      leftArrow
+      rightIcon={iconMore}
+      sideWidth="min"
+      rightIconSize="24px"
+      onClickRight={onClickRight}
+      onClickLeft={onClickLeft}
+      onClickTitle={onClickTitle}
+    />
+  );
+}
+```
+
+### 二级页面-常见场景
+
+展示二级页面的常见使用场景，包括使用插槽自定义右侧内容、左右文本按钮等。
+
+```jsx
+import { showToast } from '@ray-js/ray';
+import { Icon, NavBar } from '@ray-js/smart-ui';
+import React from 'react';
+import iconMore from '@tuya-miniapp/icons/dist/svg/More';
+import iconHouse from '@tuya-miniapp/icons/dist/svg/House';
 
 export default function Demo() {
   const onClickLeft = React.useCallback(event => {
@@ -77,127 +122,142 @@ export default function Demo() {
   return (
     <>
       <NavBar
-        title="Home"
+        title="ScheduleScheduleScheduleSchedule"
         leftArrow
-        onClickLeft={onClickLeft}
+        rightIcon={iconMore}
+        rightIconSize="24px"
         onClickRight={onClickRight}
-        onClickTitle={onClickTitle}
-      />
-      <NavBar
-        title="Home"
-        rightText="删除"
-        rightTextColor="#F04C4C"
-        leftArrow
         onClickLeft={onClickLeft}
-        onClickRightText={onClickRightText}
         onClickTitle={onClickTitle}
-      />
-      <NavBar
-        title="Home"
-        rightText="删除"
-        rightTextColor="#F04C4C"
-        leftText="取消"
-        onClickLeftText={onClickLeftText}
-        onClickRightText={onClickRightText}
-        onClickTitle={onClickTitle}
-      />
-    </>
-  );
-}
-```
-
-### 右侧图标
-
-右侧可以显示图标，支持自定义图标样式和使用插槽。
-
-```jsx
-import { showToast } from '@ray-js/ray';
-import { Icon, NavBar } from '@ray-js/smart-ui';
-import React from 'react';
-import iconMore from '@tuya-miniapp/icons/dist/svg/More';
-import iconHouse from '@tuya-miniapp/icons/dist/svg/House';
-
-export default function Demo() {
-  const onClickRightIcon = React.useCallback(event => {
-    showToast({ title: "点击右侧图标", icon: 'none' });
-  }, []);
-
-  return (
-    <>
-      <NavBar
-        title="设置"
-        leftArrow
-        rightIcon={iconMore}
-        rightIconSize="32px"
-        rightIconColor="var(--app-B2-N1, rgba(0, 0, 0, 1))"
-        onClickRightIcon={onClickRightIcon}
-      />
-      <NavBar
-        title="设置"
-        leftArrow
-        rightIcon={iconMore}
-        rightIconSize="32px"
-        rightIconColor="var(--app-B2-N1, rgba(0, 0, 0, 1))"
         slot={{
-          right: (
-            <Icon
-              size="32px"
-              customStyle={{ marginRight: '16px' }}
-              name={iconHouse}
-              color="var(--app-B2-N1, rgba(0, 0, 0, 1))"
-            />
-          ),
+          right: <Icon size="24px" customStyle={{ marginRight: '16px' }} name={iconHouse} />,
         }}
-        onClickRightIcon={onClickRightIcon}
+      />
+      <NavBar
+        title="ScheduleScheduleScheduleSchedule"
+        rightText="Confirm"
+        leftText="Cancel"
+        customClass="demo-nav-bar"
+        rightTextColor="#F04C4C"
+        onClickRightText={onClickRightText}
+        onClickLeftText={onClickLeftText}
+        onClickTitle={onClickTitle}
+      />
+      <NavBar
+        title="ScheduleScheduleScheduleSchedule"
+        leftArrow
+        rightText="Confirm"
+        customClass="demo-nav-bar"
+        rightTextColor="#F04C4C"
+        onClickRightText={onClickRightText}
+        onClickLeft={onClickLeft}
+        onClickTitle={onClickTitle}
       />
     </>
   );
 }
 ```
 
-### 自定义图标
+### 二级页面-短标题
 
-可自定义图标的样式，进行更丰富的展示。
+当两侧操作内容较多时可以设置 `v2.7.3` `sideWidth` 为 `max`，减小中间标题区域的大小。
 
 ```jsx
 import { showToast } from '@ray-js/ray';
 import { NavBar } from '@ray-js/smart-ui';
 import React from 'react';
-import iconHouse from '@tuya-miniapp/icons/dist/svg/House';
 
 export default function Demo() {
   const onClickLeft = React.useCallback(event => {
     showToast({ title: "点击返回", icon: 'none' });
   }, []);
 
-  const onClickLeftIcon = React.useCallback(event => {
-    showToast({ title: "点击左侧图标", icon: 'none' });
+  const onClickTitle = React.useCallback(event => {
+    showToast({ title: "点击中央文本", icon: 'none' });
+  }, []);
+
+  const onClickRightText = React.useCallback(event => {
+    showToast({ title: "点击右侧文本", icon: 'none' });
+  }, []);
+
+  const onClickLeftText = React.useCallback(event => {
+    showToast({ title: "点击左侧文本", icon: 'none' });
+  }, []);
+
+  return (
+    <>
+      <NavBar
+        title="ScheduleSchedule"
+        leftArrow
+        sideWidth="max"
+        onClickLeft={onClickLeft}
+        onClickTitle={onClickTitle}
+      />
+      <NavBar
+        title="ScheduleSchedule"
+        leftText="Abbrechen"
+        rightText="Speichern"
+        customClass="demo-nav-bar"
+        rightTextColor="#F04C4C"
+        sideWidth="max"
+        onClickLeftText={onClickLeftText}
+        onClickTitle={onClickTitle}
+        onClickRightText={onClickRightText}
+      />
+      <NavBar
+        title="ScheduleSchedule"
+        leftArrow
+        rightText="Speichern"
+        rightTextColor="#F04C4C"
+        sideWidth="max"
+        customClass="demo-nav-bar"
+        onClickLeft={onClickLeft}
+        onClickTitle={onClickTitle}
+        onClickRightText={onClickRightText}
+      />
+    </>
+  );
+}
+```
+
+### 自定义宽度
+
+`sideWidth` 也支持传如 `100`、`'100px'`、`'100rpx'` 去自定义两边的宽度。
+
+```jsx
+import { showToast } from '@ray-js/ray';
+import { NavBar } from '@ray-js/smart-ui';
+import React from 'react';
+import iconMore from '@tuya-miniapp/icons/dist/svg/More';
+
+export default function Demo() {
+  const onClickLeft = React.useCallback(event => {
+    showToast({ title: "点击返回", icon: 'none' });
   }, []);
 
   const onClickTitle = React.useCallback(event => {
     showToast({ title: "点击中央文本", icon: 'none' });
   }, []);
 
+  const onClickRight = React.useCallback(event => {
+    showToast({ title: "点击右侧", icon: 'none' });
+  }, []);
+
   return (
     <NavBar
-      title="Home"
+      title="ScheduleScheduleScheduleSchedule"
       leftArrow
-      leftIcon={iconHouse}
-      leftIconSize="32px"
-      leftIconClass="nav-bar-icon-home"
+      sideWidth="100px"
+      rightIcon={iconMore}
+      rightIconSize="24px"
+      onClickRight={onClickRight}
       onClickLeft={onClickLeft}
-      onClickLeftIcon={onClickLeftIcon}
       onClickTitle={onClickTitle}
     />
   );
 }
 ```
 
-```css
-.nav-bar-icon-home {
-  margin-left: 16px;
-}
-```
 
 ### 左标题
 
