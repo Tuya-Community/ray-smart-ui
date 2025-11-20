@@ -231,14 +231,6 @@ export {
   SmartStepperFocusEventDetail,
 } from './stepper';
 export {
-  SmartSteps,
-  SmartStepsEvents,
-  SmartStepsExternalClassName,
-  SmartStepsProps,
-  SmartStepsOption,
-  SmartStepsClickStepEvent,
-} from './steps';
-export {
   SmartSticky,
   SmartStickyEvents,
   SmartStickyProps,

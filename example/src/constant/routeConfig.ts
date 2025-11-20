@@ -183,10 +183,6 @@ export const routeConfig = [
         path: '/tag',
         title: 'tag2',
       },
-      // {
-      //   path: '/steps',
-      //   title: 'Steps 步骤条',
-      // },
       {
         path: '/sticky',
         title: 'sticky',
@@ -242,22 +238,6 @@ export const routeConfig = [
         path: '/custom-keyboard',
         title: 'customKeyboard',
       },
-      /* {
-        path: '/area',
-        title: 'Area 省市区选择',
-      },
-      {
-        path: '/card',
-        title: 'Card 商品卡片',
-      },
-      {
-        path: '/submit-bar',
-        title: 'SubmitBar 提交订单栏',
-      },
-      {
-        path: '/goods-action',
-        title: 'GoodsAction 商品导航',
-      }, */
     ],
   },
 ];
