@@ -25,25 +25,21 @@ export default function Demo() {
   }, []);
 
   const onClickRight = React.useCallback(event => {
-    ty.showToast({ title: Strings.getLang('clickToRight'), icon: 'none' });
+    showToast({ title: Strings.getLang('clickToRight'), icon: 'none' });
   }, []);
 
   const onClickRightText = React.useCallback(event => {
-    ty.showToast({ title: Strings.getLang('clickToRightText'), icon: 'none' });
+    showToast({ title: Strings.getLang('clickToRightText'), icon: 'none' });
   }, []);
 
   const onClickRightIcon = React.useCallback(event => {
-    ty.showToast({ title: Strings.getLang('clickToRightIcon'), icon: 'none' });
+    showToast({ title: Strings.getLang('clickToRightIcon'), icon: 'none' });
   }, []);
 
   return (
     <>
       <DemoBlock title={Strings.getLang('homePage')}>
-        <NavBar
-          leftText="HomeHomeHomeHomeHome"
-          leftTextType="home"
-          onClickLeftText={onClickLeftText}
-        />
+        <NavBar leftText="Home" leftTextType="home" onClickLeftText={onClickLeftText} />
         <NavBar
           background="#E4EDFF"
           customClass="demo-nav-bar"
@@ -53,75 +49,95 @@ export default function Demo() {
         />
       </DemoBlock>
 
-      <DemoBlock title={Strings.getLang('secondPage')}>
+      <DemoBlock title={Strings.getLang('secondPageSingleIcon')}>
         <NavBar
-          title="Home"
+          title="ScheduleScheduleScheduleSchedule"
           leftArrow
-          onClickLeft={onClickLeft}
+          rightIcon={iconMore}
+          sideWidth="min"
+          rightIconSize="24px"
           onClickRight={onClickRight}
-          onClickTitle={onClickTitle}
-        />
-        <NavBar
-          title="Home"
-          customClass="demo-nav-bar"
-          rightText={Strings.getLang('delete')}
-          rightTextColor="#F04C4C"
-          leftArrow
           onClickLeft={onClickLeft}
-          onClickRightText={onClickRightText}
-          onClickTitle={onClickTitle}
-        />
-        <NavBar
-          title="Home"
-          customClass="demo-nav-bar"
-          rightText={Strings.getLang('delete')}
-          rightTextColor="#F04C4C"
-          leftText={Strings.getLang('cancel')}
-          onClickLeftText={onClickLeftText}
-          onClickRightText={onClickRightText}
           onClickTitle={onClickTitle}
         />
       </DemoBlock>
 
-      <DemoBlock title={Strings.getLang('rightIcon')}>
+      <DemoBlock title={Strings.getLang('secondPageCommonCases')}>
         <NavBar
-          title={Strings.getLang('setting')}
+          title="ScheduleScheduleScheduleSchedule"
           leftArrow
           rightIcon={iconMore}
-          rightIconSize="32px"
-          rightIconColor="var(--app-B2-N1, rgba(0, 0, 0, 1))"
-          onClickRightIcon={onClickRightIcon}
-        />
-        <NavBar
-          title={Strings.getLang('setting')}
-          leftArrow
-          customClass="demo-nav-bar"
-          rightIcon={iconMore}
-          rightIconSize="32px"
-          rightIconColor="var(--app-B2-N1, rgba(0, 0, 0, 1))"
+          rightIconSize="24px"
+          onClickRight={onClickRight}
+          onClickLeft={onClickLeft}
+          onClickTitle={onClickTitle}
           slot={{
-            right: (
-              <Icon
-                size="32px"
-                customStyle={{ marginRight: '16px' }}
-                name={iconHouse}
-                color="var(--app-B2-N1, rgba(0, 0, 0, 1))"
-              />
-            ),
+            right: <Icon size="24px" customStyle={{ marginRight: '16px' }} name={iconHouse} />,
           }}
-          onClickRightIcon={onClickRightIcon}
+        />
+        <NavBar
+          title="ScheduleScheduleScheduleSchedule"
+          rightText="Confirm"
+          leftText="Cancel"
+          customClass="demo-nav-bar"
+          rightTextColor="#F04C4C"
+          onClickRightText={onClickRightText}
+          onClickLeftText={onClickLeftText}
+          onClickTitle={onClickTitle}
+        />
+        <NavBar
+          title="ScheduleScheduleScheduleSchedule"
+          leftArrow
+          rightText="Confirm"
+          customClass="demo-nav-bar"
+          rightTextColor="#F04C4C"
+          onClickRightText={onClickRightText}
+          onClickLeft={onClickLeft}
+          onClickTitle={onClickTitle}
         />
       </DemoBlock>
 
-      <DemoBlock title={Strings.getLang('customIcon')}>
+      <DemoBlock title={Strings.getLang('secondPageShortTitle')}>
         <NavBar
-          title="Home"
+          title="ScheduleSchedule"
           leftArrow
-          leftIcon={iconHouse}
-          leftIconSize="32px"
-          leftIconClass="nav-bar-icon-home"
+          sideWidth="max"
           onClickLeft={onClickLeft}
-          onClickLeftIcon={onClickLeftIcon}
+          onClickTitle={onClickTitle}
+        />
+        <NavBar
+          title="ScheduleSchedule"
+          leftText="Abbrechen"
+          rightText="Speichern"
+          customClass="demo-nav-bar"
+          rightTextColor="#F04C4C"
+          sideWidth="max"
+          onClickLeftText={onClickLeftText}
+          onClickTitle={onClickTitle}
+          onClickRightText={onClickRightText}
+        />
+        <NavBar
+          title="ScheduleSchedule"
+          leftArrow
+          rightText="Speichern"
+          rightTextColor="#F04C4C"
+          sideWidth="max"
+          customClass="demo-nav-bar"
+          onClickLeft={onClickLeft}
+          onClickTitle={onClickTitle}
+          onClickRightText={onClickRightText}
+        />
+      </DemoBlock>
+
+      <DemoBlock title={Strings.getLang('customWidth')}>
+        <NavBar
+          title="ScheduleScheduleScheduleSchedule"
+          leftArrow
+          sideWidth="100px"
+          rightIcon={iconMore}
+          rightIconSize="24px"
+          onClickRight={onClickRight}
+          onClickLeft={onClickLeft}
           onClickTitle={onClickTitle}
         />
       </DemoBlock>
