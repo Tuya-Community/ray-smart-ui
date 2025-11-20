@@ -48,7 +48,6 @@ export const thing = {
     'pages/notice-bar/index',
     'pages/skeleton/index',
     'pages/tag/index',
-    'pages/steps/index',
     'pages/sticky/index',
     'pages/tree-select/index',
     'pages/grid/index',

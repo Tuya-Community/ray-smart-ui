@@ -282,15 +282,6 @@ export {
   Stepper,
 } from './stepper';
 export {
-  SmartSteps,
-  SmartStepsEvents,
-  SmartStepsExternalClassName,
-  SmartStepsProps,
-  SmartStepsOption,
-  SmartStepsClickStepEvent,
-  Steps,
-} from './steps';
-export {
   SmartSticky,
   SmartStickyEvents,
   SmartStickyProps,

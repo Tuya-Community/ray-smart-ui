@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const whiteComponents = ['progress', 'slider'];
+const whiteComponents = ['progress', 'slider', 'steps'];
 
 const copyREADME = async () => {
   const components = await getComponents();

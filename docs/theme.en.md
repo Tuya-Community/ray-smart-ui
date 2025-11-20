@@ -622,9 +622,6 @@ Component variable attribute
 @step-circle-color: @gray-6;
 @step-horizontal-title-font-size: @font-size-sm;
 
-// Steps
-@steps-background-color: @B3;
-
 // Stepper
 @stepper-background-border-radius: @border-radius-lg;
 @stepper-padding: 2px;
