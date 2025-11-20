@@ -134,6 +134,7 @@ type CommonThemeVars =
   | 'stepCircleSize'
   | 'stepCircleColor'
   | 'stepHorizontalTitleFontSize'
+  | 'stepsBackgroundColor'
   | 'hairlineTopWidth'
   | 'hairlineLeftWidth'
   | 'hairlineRightWidth'
@@ -797,11 +798,7 @@ type CustomKeyboardThemeVars =
   | 'customKeyboardPopupTextColor'
   | 'customKeyboardPopupHoverColor';
 
-type PopoverThemeVars =
-  | 'popoverBackgroundColor'
-  | 'popoverBoxShadow'
-  | 'popoverPadding'
-  | 'popoverBorderRadius';
+type PopoverThemeVars = 'popoverBackgroundColor' | 'popoverBoxShadow' | 'popoverPadding' | 'popoverBorderRadius';
 
 /**
  * 主题变量
