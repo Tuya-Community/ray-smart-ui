@@ -134,6 +134,7 @@ type CommonThemeVars =
   | 'stepCircleSize'
   | 'stepCircleColor'
   | 'stepHorizontalTitleFontSize'
+  | 'stepsBackgroundColor'
   | 'hairlineTopWidth'
   | 'hairlineLeftWidth'
   | 'hairlineRightWidth'
@@ -615,8 +616,6 @@ type StepperThemeVars =
   | 'stepperBorderRadius'
   | 'stepperButtonIconFontSize';
 
-type StepsThemeVars = 'stepsBackgroundColor';
-
 type TabbarThemeVars =
   | 'tabbarHeight'
   | 'tabbarBackgroundColor'
@@ -834,7 +833,6 @@ export type ThemeVars = Record<
   | SidebarThemeVars
   | SliderThemeVars
   | StepperThemeVars
-  | StepsThemeVars
   | TabbarThemeVars
   | TabThemeVars
   | TagThemeVars

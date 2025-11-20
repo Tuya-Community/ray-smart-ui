@@ -1,5 +1,14 @@
 # 更新日志
 
+## v2.7.3 (2025-11-20)
+
+### Features  ✨
+
+- nav-bar: 对其全新UI标准，新增 sideWidth 属性；新增--nav-bar-side-width-min、--nav-bar-side-width-max CSS 变量，调整 --nav-bar-side-width、--nav-bar-text-font-size、--nav-bar-text-font-weight CSS 变量默认值([pull/96](https://github.com/Tuya-Community/miniapp-smart-ui/pull/96))
+
+### Bug Fixes  🐛
+- stepper: 修复小数情况输入框输入实时更新问题([e9cf7a9](https://github.com/Tuya-Community/miniapp-smart-ui/pull/97/commits/e9cf7a9edb6ea2fc93e3a38be54bdb03fd4e0294))
+
 ## v2.7.2(2025-11-13)
 
 ### Features  ✨
