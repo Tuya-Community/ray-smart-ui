@@ -615,8 +615,6 @@ type StepperThemeVars =
   | 'stepperBorderRadius'
   | 'stepperButtonIconFontSize';
 
-type StepsThemeVars = 'stepsBackgroundColor';
-
 type TabbarThemeVars =
   | 'tabbarHeight'
   | 'tabbarBackgroundColor'
@@ -799,7 +797,11 @@ type CustomKeyboardThemeVars =
   | 'customKeyboardPopupTextColor'
   | 'customKeyboardPopupHoverColor';
 
-type PopoverThemeVars = 'popoverBackgroundColor' | 'popoverBoxShadow' | 'popoverPadding' | 'popoverBorderRadius';
+type PopoverThemeVars =
+  | 'popoverBackgroundColor'
+  | 'popoverBoxShadow'
+  | 'popoverPadding'
+  | 'popoverBorderRadius';
 
 /**
  * 主题变量
@@ -834,7 +836,6 @@ export type ThemeVars = Record<
   | SidebarThemeVars
   | SliderThemeVars
   | StepperThemeVars
-  | StepsThemeVars
   | TabbarThemeVars
   | TabThemeVars
   | TagThemeVars

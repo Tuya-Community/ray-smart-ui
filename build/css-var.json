@@ -2465,41 +2465,6 @@
     "value": "var(--app-B6-N7, rgba(0, 0, 0, 0.1))",
     "decs": ""
   },
-  "step-finish-line-color": {
-    "name": "@step-finish-line-color",
-    "value": "#07c160",
-    "decs": ""
-  },
-  "step-finish-text-color": {
-    "name": "@step-finish-text-color",
-    "value": "#323233",
-    "decs": ""
-  },
-  "step-icon-size": {
-    "name": "@step-icon-size",
-    "value": "12px",
-    "decs": ""
-  },
-  "step-circle-size": {
-    "name": "@step-circle-size",
-    "value": "5px",
-    "decs": ""
-  },
-  "step-circle-color": {
-    "name": "@step-circle-color",
-    "value": "#969799",
-    "decs": ""
-  },
-  "step-horizontal-title-font-size": {
-    "name": "@step-horizontal-title-font-size",
-    "value": "12px",
-    "decs": ""
-  },
-  "steps-background-color": {
-    "name": "@steps-background-color",
-    "value": "var(--app-B3, #ffffff)",
-    "decs": ""
-  },
   "stepper-background-border-radius": {
     "name": "@stepper-background-border-radius",
     "value": "10px",
