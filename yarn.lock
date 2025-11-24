@@ -2862,7 +2862,7 @@
 
 "@tuya-miniapp/smart-ui@2.7.4-beta-0":
   version "2.7.4-beta-0"
-  resolved "https://registry.npmjs.org/@tuya-miniapp/smart-ui/-/smart-ui-2.7.4-beta-0.tgz#63ff17a0fa37d9b93a6f14c7f058262accd56119"
+  resolved "https://registry.yarnpkg.com/@tuya-miniapp/smart-ui/-/smart-ui-2.7.4-beta-0.tgz#63ff17a0fa37d9b93a6f14c7f058262accd56119"
   integrity sha512-fqWyj1WQlRXX023PB7aNvHuNZdayPz+c0dTcG/ThvEF5pLQQIWG5vKuuWr8W1/WOfXmEZyKshSyzCxKMUEeD3g==
   dependencies:
     "@ray-js/components-ty-slider" "^0.3.7"
