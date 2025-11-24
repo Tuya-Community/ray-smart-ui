@@ -104,3 +104,4 @@ export default function Demo() {
 | 参数       | 说明           | 类型     | 默认值 |
 | ---------- | -------------- | -------- | ------ |
 | themeVars | 自定义主题变量 | _object_ | - |
+| theme   `v2.7.4` | 主题模式 | _'light'\/'dark'_ | - |

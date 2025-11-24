@@ -101,6 +101,7 @@ export default function Demo() {
 
 ### Props
 
-| Parameter  | Description    | Type     | Default |
-| ---------- | -------------- | -------- | ------- |
+| Parameter   | Description         | Type          | Default Value |
+| ----------- | ------------------- | ------------- | ------------- |
 | themeVars | Custom theme variables | _object_ | - |
+| theme `v2.7.4` | Theme mode | _'light'\/'dark'_ | - |
