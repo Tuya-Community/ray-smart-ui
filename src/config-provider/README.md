@@ -97,6 +97,49 @@ export default function Demo() {
 }
 ```
 
+
+### 主题切换 `v2.7.4`
+
+`ConfigProvider` 组件支持通过 `theme` 属性来切换明暗主题，可选值为 `light` 和 `dark`。
+
+```jsx
+import { ConfigProvider, Cell, CellGroup } from '@ray-js/smart-ui';
+import React, { useState } from 'react';
+import { View, Text } from '@ray-js/ray';
+import { Button } from '@ray-js/smart-ui';
+
+export default function Demo() {
+  const [currentTheme, setCurrentTheme] = useState<'light' | 'dark'>('light');
+
+  return (
+    <>
+      <View
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          marginBottom: '24px',
+          alignItems: 'center',
+        }}
+      >
+        <Button type="primary" onClick={() => setCurrentTheme('light')}>
+          浅色主题
+        </Button>
+        <Text>当前主题: {currentTheme}</Text>
+        <Button type="primary" onClick={() => setCurrentTheme('dark')}>
+          深色主题
+        </Button>
+      </View>
+      <ConfigProvider theme={currentTheme}>
+        <CellGroup>
+          <Cell title="标题" value="内容" />
+          <Cell title="标题" value="内容" label="详细介绍" isLink />
+        </CellGroup>
+      </ConfigProvider>
+    </>
+  );
+}
+```
+
 ## API
 
 ### Props
