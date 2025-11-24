@@ -97,6 +97,48 @@ export default function Demo() {
 }
 ```
 
+### Theme Switch  `v2.7.4`
+
+You can switch the theme mode of components through the `theme` prop, supporting `light` and `dark` modes.
+
+```jsx
+import { ConfigProvider, Cell, CellGroup } from '@ray-js/smart-ui';
+import React, { useState } from 'react';
+import { View, Text } from '@ray-js/ray';
+import { Button } from '@ray-js/smart-ui';
+
+export default function Demo() {
+  const [currentTheme, setCurrentTheme] = useState<'light' | 'dark'>('light');
+
+  return (
+    <>
+      <View
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          marginBottom: '24px',
+          alignItems: 'center',
+        }}
+      >
+        <Button type="primary" onClick={() => setCurrentTheme('light')}>
+          Light Theme
+        </Button>
+        <Text>Current Theme: {currentTheme}</Text>
+        <Button type="primary" onClick={() => setCurrentTheme('dark')}>
+          Dark Theme
+        </Button>
+      </View>
+      <ConfigProvider theme={currentTheme}>
+        <CellGroup>
+          <Cell title="Title" value="Content" />
+          <Cell title="Title" value="Content" label="Description Information" isLink />
+        </CellGroup>
+      </ConfigProvider>
+    </>
+  );
+}
+```
+
 ## API
 
 ### Props
@@ -104,3 +146,4 @@ export default function Demo() {
 | Parameter  | Description    | Type     | Default |
 | ---------- | -------------- | -------- | ------- |
 | themeVars | Custom theme variables | _object_ | - |
+| theme  `v2.7.4` | Theme mode | _'light' \| 'dark'_ | - |
