@@ -84,11 +84,12 @@ export default function Demo() {
 
 | 参数               | 说明                          | 类型               | 默认值     |
 | ------------------ | ----------------------------- | ------------------ | ---------- |
-| color | 颜色 | _string_ | `#c9c9c9` |
+| color | 整体颜色 | _string_ | `var(--loading-text-color, #1989FA)` |
 | size | 加载图标大小，默认单位为 `px` | _string \| number_ | `30px` |
 | textSize `v1.0.0` | 文字大小，默认单位为为 `px` | _string \| number_ | `14px` |
 | type | 类型，可选值为 `spinner` | _string_ | `circular` |
 | vertical `v1.0.0` | 是否垂直排列图标和文字内容 | _boolean_ | `false` |
+| iconColor `v2.7.4` | 单独控制icon的颜色 | _string_ | `var(--loading-spinner-color, #1989FA)` |
 
 ### Slots
 

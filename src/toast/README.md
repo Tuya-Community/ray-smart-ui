@@ -218,6 +218,8 @@ export default function Demo() {
 | loadingType | 加载图标类型, 可选值为 `spinner` | _string_ | `circular` |
 | mask | 是否显示遮罩层 | _boolean_ | `false` |
 | message | 内容 | _string_ | `''` |
+| textColor `v2.7.4` | 文字颜色 | _string_ | - |
+| iconColor `v2.7.4` | 图标颜色 | _string_ | `white` |
 | onClose | 关闭时的回调函数 | _Function_ | - |
 | position | 位置，可选值为 `top` `middle` `bottom` | _string_ | `middle` |
 | selector | 自定义选择器 | _string_ | `#smart-toast` |
