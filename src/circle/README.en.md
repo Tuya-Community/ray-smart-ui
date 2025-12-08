@@ -40,7 +40,7 @@ export default function Demo() {
 
 ### Notch Round Corner
 
-The `mode` property indicates the type, `angle` and `angle2` are semi-circle types.
+The `mode` property indicates the type, `angle` and `angle2` are semi-circle types. The `angleOffset` property can set the angle offset.
 
 ```tsx
 import React from 'react';
@@ -51,6 +51,7 @@ export default function Demo() {
     <>
       <Circle percent={50} mode="angle" />
       <Circle percent={50} mode="angle2" />
+      <Circle percent={50} mode="angle" angleOffset={30} />
     </>
   );
 }
@@ -106,20 +107,21 @@ export default function Demo() {
 
 ### props
 
-| Property Name              | Description | Type          | Default Value              |
-| -------------------------- | ----------- | ------------- | -------------------------- |
-| children | Children | ReactNode | undefined |
-| className | Class Name | string | undefined |
-| customStyle `v2.3.3` | Style | CSSProperties | undefined |
-| fillColor | Fill Color | string | '#007AFF' |
-| maskColor | Mask Color | string | '#ffffff' |
-| mode `v2.3.0` | Style Mode | string | `basic`, `angle`, `angle2` |
-| percent | Percentage | number | 0 |
-| round `v2.3.0` | Mask Color | string | `true` |
-| size | Size | string | '100px' |
-| style `@deprecated v2.1.7` | Style | CSSProperties | undefined |
-| trackColor | Track Color | string | '#d3d3d3' |
-| trackWidth | Track Width | number | 10 |
+| Property Name              | Description  | Type          | Default Value              |
+| -------------------------- | ------------ | ------------- | -------------------------- |
+| angleOffset                | Angle Offset | number        | -1                         |
+| children                   | Children     | ReactNode     | undefined                  |
+| className                  | Class Name   | string        | undefined                  |
+| customStyle `v2.3.3`       | Style        | CSSProperties | undefined                  |
+| fillColor                  | Fill Color   | string        | '#007AFF'                  |
+| maskColor                  | Mask Color   | string        | 'transparent'              |
+| mode `v2.3.0`              | Style Mode   | string        | `basic`, `angle`, `angle2` |
+| percent                    | Percentage   | number        | 0                          |
+| round `v2.3.0`             | Mask Color   | string        | `true`                     |
+| size                       | Size         | string        | '100px'                    |
+| style `@deprecated v2.1.7` | Style        | CSSProperties | undefined                  |
+| trackColor                 | Track Color  | string        | '#d3d3d3'                  |
+| trackWidth                 | Track Width  | number        | 10                         |
 
 ### Style Variables
 
