@@ -106,13 +106,14 @@ export default function Demo() {
 
 ### props
 
-| Property Name              | Description | Type          | Default Value              |
-| -------------------------- | ----------- | ------------- | -------------------------- |
+| Property Name              | Description  | Type          | Default Value              |
+| -------------------------- | ------------ | ------------- | -------------------------- |
+| angleOffset  `v2.7.4` | Angle Offset | number | -1 |
 | children | Children | ReactNode | undefined |
 | className | Class Name | string | undefined |
 | customStyle `v2.3.3` | Style | CSSProperties | undefined |
 | fillColor | Fill Color | string | '#007AFF' |
-| maskColor | Mask Color | string | '#ffffff' |
+| maskColor | Mask Color | string | 'transparent' |
 | mode `v2.3.0` | Style Mode | string | `basic`, `angle`, `angle2` |
 | percent | Percentage | number | 0 |
 | round `v2.3.0` | Mask Color | string | `true` |
