@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
-import { Col, Icon, Tab, Tabs } from '@ray-js/smart-ui';
-import { View } from '@ray-js/ray';
+import { Col, Icon, Tab, Tabs, Toast, ToastInstance } from '@ray-js/smart-ui';
+import { View, setClipboardData } from '@ray-js/ray';
 import * as icons from '@tuya-miniapp/icons';
 import iconsConfig from '@tuya-miniapp/icons/dist/config';
 import { DemoBlock } from '@/components';
@@ -15,6 +15,7 @@ function kebabCase(name: string) {
 
 const iconsArr = iconsConfig.map(name => ({
   name: kebabCase(name),
+  originalName: name,
   value: icons[name],
 }));
 
@@ -27,12 +28,42 @@ export default function Demo() {
     setActive(event.detail.index);
   }, []);
 
+  const handleCopy = React.useCallback((data: string) => {
+    setClipboardData({
+      data,
+      success: () => {
+        ToastInstance.success({
+          selector: '#smart-toast-icon',
+          message: Strings.getLang('successfulCopy'),
+        });
+      },
+      fail: () => {
+        ToastInstance.fail({
+          selector: '#smart-toast-icon',
+          message: Strings.getLang('copyFailed'),
+        });
+      },
+    });
+  }, []);
+
+  const handleIconClick = React.useCallback((iconName: string) => {
+    const importStatement = `import ${iconName}Icon from '@tuya-miniapp/icons/dist/svg/${iconName}';`;
+    handleCopy(importStatement);
+  }, []);
+
   return (
     <Tabs active={active} color="#1989fa" onChange={onSwitch}>
-      <Tab title={Strings.getLang('svgIcon')} customClass={styles['demo-tab-pane']}>
+      <Tab title={Strings.getLang('svgIcon')} customClass={styles.demoTabPane}>
         <DemoBlock title={Strings.getLang('basicUsage')}>
           <Col customClass={styles.col} span="6">
             <Icon name={icons.Warning} size="36px" customClass={styles.icon} />
+          </Col>
+          <Col customClass={styles.col} span="6">
+            <Icon
+              name="https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png"
+              size="36px"
+              customClass={styles.icon}
+            />
           </Col>
         </DemoBlock>
         <DemoBlock title={Strings.getLang('promptMessage')}>
@@ -68,18 +99,22 @@ export default function Demo() {
           </Col>
         </DemoBlock>
       </Tab>
-      <Tab title={Strings.getLang('allIcons')} customClass={styles['demo-tab-pane']}>
+      <Tab title={Strings.getLang('allIcons')} customClass={styles.demoTabPane}>
+        <View className={styles.copyTip}>{Strings.getLang('clickToCopy')}</View>
         <DemoBlock title={Strings.getLang('basicUsage')}>
           {iconsArr.map((icon, index) => {
             return (
-              <Col key={index} customClass={styles.col} span="6">
-                <Icon name={icon.value} size="36px" customClass={styles.icon} />
-                <View className={styles.text}>{icon.name}</View>
-              </Col>
+              <View key={index} onClick={() => handleIconClick(icon.originalName)}>
+                <Col customClass={styles.col} span="6">
+                  <Icon name={icon.value} size="36px" customClass={styles.icon} />
+                  <View className={styles.text}>{icon.name}</View>
+                </Col>
+              </View>
             );
           })}
         </DemoBlock>
       </Tab>
+      <Toast id="smart-toast-icon" />
     </Tabs>
   );
 }

@@ -9,13 +9,22 @@ interface Props {
   title?: string;
   padding?: boolean;
   card?: boolean;
+  onClick?: () => void;
 }
 
-export const DemoBlock: React.FC<Props> = ({ className = '', title, padding, card, children }) => {
+export const DemoBlock: React.FC<Props> = ({
+  className = '',
+  title,
+  padding,
+  card,
+  children,
+  onClick,
+}) => {
   // @ts-ignore
   const { callTxpApi } = ty;
   const isInWeb = typeof callTxpApi === 'function';
   const clickBlock = () => {
+    onClick?.();
     if (!isInWeb) return;
     callTxpApi({
       __from: 'web://hashchange',
