@@ -12,6 +12,7 @@
 - 此项目为用 Ray 开发， 语法类似React，语言选用 Typescript、less；项目其实就是 @tuya-miniapp/smart-ui 仓库的类型仓库，将原来用小程序语法写的 @tuya-miniapp/smart-ui 组件库加上ts类型，包装成React组件
 
 总体项目目录:
+- build 相关打包和同步代码文件位置
 - src 目录下为所有组件的代码；其中@types 文件夹下的是每个组件暴露的类型；
 - example 为组件库的 demo 目录，其src下的 pages 每个子目录就是每个组件的demo，语法同React；
 
