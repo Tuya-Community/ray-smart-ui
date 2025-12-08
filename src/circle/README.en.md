@@ -109,19 +109,19 @@ export default function Demo() {
 
 | Property Name              | Description  | Type          | Default Value              |
 | -------------------------- | ------------ | ------------- | -------------------------- |
-| angleOffset `v2.7.4`        | Angle Offset | number        | -1                         |
-| children                    | Children     | ReactNode     | undefined                  |
-| className                   | Class Name   | string        | undefined                  |
-| customStyle `v2.3.3`        | Style        | CSSProperties | undefined                  |
-| fillColor                   | Fill Color   | string        | '#007AFF'                  |
-| maskColor                   | Mask Color   | string        | 'transparent'              |
-| mode `v2.3.0`               | Style Mode   | string        | `basic`, `angle`, `angle2` |
-| percent                     | Percentage   | number        | 0                          |
-| round `v2.3.0`              | Mask Color   | string        | `true`                     |
-| size                        | Size         | string        | '100px'                    |
-| style `@deprecated v2.1.7`  | Style        | CSSProperties | undefined                  |
-| trackColor                  | Track Color  | string        | '#d3d3d3'                  |
-| trackWidth                  | Track Width  | number        | 10                         |
+| angleOffset  `v2.7.4` | Angle Offset | number | -1 |
+| children | Children | ReactNode | undefined |
+| className | Class Name | string | undefined |
+| customStyle `v2.3.3` | Style | CSSProperties | undefined |
+| fillColor | Fill Color | string | '#007AFF' |
+| maskColor | Mask Color | string | 'transparent' |
+| mode `v2.3.0` | Style Mode | string | `basic`, `angle`, `angle2` |
+| percent | Percentage | number | 0 |
+| round `v2.3.0` | Mask Color | string | `true` |
+| size | Size | string | '100px' |
+| style `@deprecated v2.1.7` | Style | CSSProperties | undefined |
+| trackColor | Track Color | string | '#d3d3d3' |
+| trackWidth | Track Width | number | 10 |
 
 ### Style Variables
 
