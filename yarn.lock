@@ -2850,11 +2850,6 @@
   resolved "https://registry.npmmirror.com/@tsconfig/node16/-/node16-1.0.4.tgz#0b92dcc0cc1c81f6f306a381f28e31b1a56536e9"
   integrity sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==
 
-"@tuya-miniapp/icons@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.npmmirror.com/@tuya-miniapp/icons/-/icons-2.1.0.tgz#06ac21def0b1667eeff6e4e126da839dae41e0fe"
-  integrity sha512-t8Z5Du53DYTVPLwGxDZQVtdIrw1N8RYYQQDFOt1BNiyLYQ7/U7etkeAeultfl5Gw9G38JGvJvzb30zdVKSCLZg==
-
 "@tuya-miniapp/icons@^2.3.0":
   version "2.3.0"
   resolved "https://registry.npmjs.org/@tuya-miniapp/icons/-/icons-2.3.0.tgz#e2f5a7df056b3de406451c1939ac8da7afc53392"

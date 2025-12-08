@@ -53,7 +53,7 @@
     "@ray-js/code-sandbox": "^0.0.5",
     "@ray-js/panel-sdk": "^1.13.0",
     "@ray-js/ray": "^1.5.34",
-    "@tuya-miniapp/icons": "^2.1.0",
+    "@tuya-miniapp/icons": "^2.3.0",
     "@types/fs-extra": "^9.0.13",
     "@types/lodash-es": "^4.17.12",
     "@types/react": "^17.0.25",
