@@ -8,6 +8,7 @@
 const transCSSVarToConfigTypes = require('./transCSSVarToConfigTypes');
 const copyREADME = require('./copyREADME');
 const updatePackage = require('./updatePackage');
+const copyPLANS = require('./copyPLANS');
 const { execSync } = require('child_process');
 const ENV = process.env;
 
@@ -22,6 +23,8 @@ async function main() {
     copyREADME(),
     // 拷贝miniapp的package的version 并更新依赖
     updatePackage(),
+    // 同步miniapp的PLANS.md文件
+    copyPLANS(),
   ]);
   console.log('更新代码完成！');
   const status = execSync('git status -s').toString();
