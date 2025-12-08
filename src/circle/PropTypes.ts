@@ -89,6 +89,7 @@ export interface SmartCircleProps {
   /**
    * 角度偏移量
    * @default -1
+   * @version 2.7.4
    */
   angleOffset?: number;
 }
