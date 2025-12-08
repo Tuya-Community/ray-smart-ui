@@ -13,10 +13,12 @@ export default function Demo() {
         <View
           style={{
             display: 'flex',
+            justifyContent: 'space-between',
           }}
         >
           <Circle percent={50} mode="angle" />
           <Circle percent={50} mode="angle2" />
+          <Circle percent={50} mode="angle2" angleOffset={30} />
         </View>
       </DemoBlock>
       <DemoBlock padding title={Strings.getLang('doNotUseRoundedCorners')}>

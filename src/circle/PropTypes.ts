@@ -78,7 +78,7 @@ export interface SmartCircleProps {
   trackWidth?: number;
   /**
    * 遮罩颜色
-   * @default #ffffff
+   * @default transparent
    */
   maskColor?: string;
   /**
@@ -86,6 +86,12 @@ export interface SmartCircleProps {
    * @default #d3d3d3
    */
   trackColor?: string;
+  /**
+   * 角度偏移量
+   * @default -1
+   * @version 2.7.4
+   */
+  angleOffset?: number;
 }
 
 export type SmartCircle = SmartComponent<SmartCircleProps>;

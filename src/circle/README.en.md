@@ -40,7 +40,7 @@ export default function Demo() {
 
 ### Notch Round Corner
 
-The `mode` property indicates the type, `angle` and `angle2` are semi-circle types.
+The `mode` property indicates the type, `angle` and `angle2` are semi-circle types. The `angleOffset` `v2.7.4` property can set the angle offset.
 
 ```tsx
 import React from 'react';
@@ -51,6 +51,7 @@ export default function Demo() {
     <>
       <Circle percent={50} mode="angle" />
       <Circle percent={50} mode="angle2" />
+      <Circle percent={50} mode="angle" angleOffset={30} />
     </>
   );
 }
