@@ -17,18 +17,20 @@ export default function Demo() {
       </DemoBlock>
       <DemoBlock title={Strings.getLang('customColor')} padding>
         <View style={{ display: 'flex', flexDirection: 'row' }}>
-          <Loading color="#1989fa" />
+          <Loading color="red" />
           <View style={{ width: '20px' }} />
-
-          <Loading type="spinner" color="#1989fa" />
+          <Loading type="spinner" color="green" />
         </View>
       </DemoBlock>
       <DemoBlock title={Strings.getLang('loadingCopy')} padding>
-        <Loading size="24px">{Strings.getLang('loading')}</Loading>
+        <Loading size="24px">{Strings.getLang('inloading')}</Loading>
+        <Loading color="var(--app-B1-N1)" iconColor="#1989FA" size="24px">
+          {Strings.getLang('inloading')}
+        </Loading>
       </DemoBlock>
-      <DemoBlock title="垂直排列" padding>
+      <DemoBlock title={Strings.getLang('verticalArrangement')} padding>
         <Loading size="24px" vertical>
-          {Strings.getLang('loading')}
+          {Strings.getLang('inloading')}
         </Loading>
       </DemoBlock>
     </>

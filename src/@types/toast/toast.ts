@@ -82,6 +82,16 @@ export interface SmartToastOptions {
    * @version v2.5.0
    */
   nativeDisabled?: boolean;
+  /**
+   * 文字颜色
+   * @version 2.7.4
+   */
+  textColor?: string;
+  /**
+   * 图标颜色
+   * @version 2.7.4
+   */
+  iconColor?: string;
 }
 
 export declare interface ToastInstance extends SmartToast {

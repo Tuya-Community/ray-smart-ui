@@ -21,6 +21,7 @@ import { Toast, ToastInstance } from '@ray-js/smart-ui';
 ```
 
 ### 文字提示
+
 使用 `ToastInstance` 方法必须要在页面上挂载一个 `<Toast id="smart-toast" />` 节点才可以动态生成提示弹框。
 
 ```jsx
@@ -189,6 +190,39 @@ export default function Demo() {
       <Button onClick={showBottomToast}>底部</Button>
       <Button onClick={showTopToast}>顶部</Button>
       <Toast id="smart-toast" />
+    </>
+  )
+}
+```
+
+### 自定义颜色 `v2.7.4`
+
+通过 `textColor` 属性可以自定义文字颜色，通过 `iconColor` 属性可以自定义图标颜色。
+
+```jsx
+import { Toast, ToastInstance, Button } from '@ray-js/smart-ui';
+import React from 'react';
+
+export default function Demo() {
+  const openText = () => {
+    ToastInstance({
+      message: '我是提示文案，建议不超过十五字~'
+      textColor: '#1989FA',
+    });
+  }
+
+  const openSuccess = () => {
+    ToastInstance.success({
+      message: '成功文案',
+      textColor: '#1989FA',
+      iconColor: '#1989FA',
+    });
+  }
+  return (
+    <>
+      <Toast id="smart-toast" />
+      <Button onClick={openText}>文案</Button>
+      <Button onClick={openSuccess}>成功</Button>
     </>
   )
 }

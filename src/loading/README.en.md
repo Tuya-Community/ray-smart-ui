@@ -43,8 +43,8 @@ import React from 'react';
 export default function Demo() {
   return (
     <View>
-      <Loading color="#1989fa" />
-      <Loading type="spinner" color="#1989fa" />
+      <Loading color="red" />
+      <Loading type="spinner" color="green" />
     </View>
   );
 }
@@ -58,12 +58,15 @@ import React from 'react';
 
 export default function Demo() {
   return (
-    <Loading size="24px">loading...</Loading>
+    <>
+      <Loading size="24px">loading...</Loading>
+      <Loading color="var(--app-B1-N1)" iconColor="#1989FA" size="24px">loading...</Loading>
+    </>
   );
 }
 ```
 
-### Vertical arrangement
+### Vertical Arrangement
 
 ```jsx
 import { Loading } from '@ray-js/smart-ui';
