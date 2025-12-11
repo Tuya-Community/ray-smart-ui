@@ -2857,7 +2857,11 @@
 
 "@tuya-miniapp/smart-ui@^2.8.0":
   version "2.8.0"
+<<<<<<< HEAD
   resolved "https://registry.npmjs.org/@tuya-miniapp/smart-ui/-/smart-ui-2.8.0.tgz#bb74c6f1b12d389177229b8b0fb7414f745e7264"
+=======
+  resolved "https://registry.yarnpkg.com/@tuya-miniapp/smart-ui/-/smart-ui-2.8.0.tgz#bb74c6f1b12d389177229b8b0fb7414f745e7264"
+>>>>>>> e2bcc297588c4712b636e671b5c02daceec4d10b
   integrity sha512-73aU81aAxMGwCs6NzMwIzGcIFVaVFaqN68LGU/kwifU0+XrypcjyhAFTv1dhVKIUfdry6psUrdABOA7AjTvuDQ==
   dependencies:
     "@ray-js/components-ty-slider" "^0.3.7"

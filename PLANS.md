@@ -7,3 +7,6 @@
 - [x] picker: 修复 loop 模式部分列无法拖动选中的问题 测试版本 2.8.0-beta-0
 - [x] datetime-picker: 修复部分情况下 1月 无法拖动选中的问题 测试版本 2.8.0-beta-0
 - [x] circle: 修复外部盒子被挤压导致圆环部分被隐藏情况 测试版本 2.8.0-beta-0
+- [x] 增加icon组件文档复制代码能力
+- [x] 修复cascader、popover、notice-bar、switch组件黑白主题对齐UI设计稿
+- [x] slider 组件官网关联物料增加 CircleProgress

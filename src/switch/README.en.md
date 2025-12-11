@@ -312,5 +312,5 @@ The component provides the following CSS variables for custom styling. See [Conf
 | --switch-padding `v2.5.0` | _0.08em_ | Internal padding |
 | --switch-label-width `v2.7.0` | _2em_ | Default width when the text switch is on |
 | --switch-label-font-size `v2.7.0` | _12px_ | Font Size |
-| --switch-label-active-color `v2.7.0` | _var(--app-B3, #ffffff)_ | Text color on open |
-| --switch-label-inactive-color `v2.7.0` | _var(--app-B3, #ffffff)_ | Text color when turned off |
+| --switch-label-active-color `v2.7.0` | _var(--app-B3, #ffffff)_ `v2.7.0` _#FFFFFF_ `v2.8.0` | Text color on open |
+| --switch-label-inactive-color `v2.7.0` | _var(--app-B3, #ffffff)_ `v2.7.0` _#FFFFFF_ `v2.8.0` | Text color when turned off |

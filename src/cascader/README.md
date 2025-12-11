@@ -322,3 +322,4 @@ export default function Demo() {
 | --cascader-unselected-tab-color       | _#969799_                                | 级联选择器未选中标签颜色                 |
 | --cascader-tab-inactive-color         | _var(--app-B6-N5, rgba(0, 0, 0, 0.3))_   | 级联选择器标签未激活颜色                 |
 | --cascader-text-color                 | _var(--app-B6-N5, rgba(0, 0, 0, 0.3))_   | 级联选择器文本颜色                       |
+| --cascader-active-background-color `v2.8.0` | _var(--app-B1, #f6f7fb)_   | 级联选择器列点击时背景色   |

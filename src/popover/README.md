@@ -298,3 +298,4 @@ export default function Demo() {
 | --popover-border-radius    | 12px                                | 弹出层圆角   |
 | --popover-box-shadow       | 0px 6px 12px 0px rgba(0, 0, 0, 0.1) | 弹出层阴影   |
 | --popover-padding          | 12px                                | 弹出层内边距 |
+| --popover-overlay-color `v2.8.0` | var(--app-B1-N1, rgba(0, 0, 0, 1)) | 遮照插槽文字颜色 |
