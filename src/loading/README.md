@@ -92,7 +92,7 @@ export default function Demo() {
 | textSize `v1.0.0` | 文字大小，默认单位为为 `px` | _string \| number_ | `14px` |
 | type | 类型，可选值为 `spinner` | _string_ | `circular` |
 | vertical `v1.0.0` | 是否垂直排列图标和文字内容 | _boolean_ | `false` |
-| iconColor `v2.7.4` | 单独控制icon的颜色 | _string_ | `var(--loading-spinner-color, #1989FA)` |
+| iconColor `v2.8.0` | 单独控制icon的颜色 | _string_ | `var(--loading-spinner-color, #1989FA)` |
 
 ### Slots
 

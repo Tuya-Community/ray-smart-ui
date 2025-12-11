@@ -92,7 +92,7 @@ export default function Demo() {
 | textSize `v1.0.0` | Text size, default unit is `px` | _string \| number_ | `14px` |
 | type | Type, optional value is `spinner` | _string_ | `circular` |
 | vertical `v1.0.0` | Whether to vertically align icons and text | _boolean_ | `false` |
-| iconColor `v2.7.4` | Independently control the color of the icon | _string_ | `var(--loading-spinner-color, #1989FA)` |
+| iconColor `v2.8.0` | Independently control the color of the icon | _string_ | `var(--loading-spinner-color, #1989FA)` |
 
 ### Slots
 

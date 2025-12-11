@@ -146,4 +146,4 @@ export default function Demo() {
 | Parameter   | Description         | Type          | Default Value |
 | ----------- | ------------------- | ------------- | ------------- |
 | themeVars | Custom theme variables | _object_ | - |
-| theme `v2.7.4` | Theme mode | _'light'\/'dark'_ | - |
+| theme `v2.8.0` | Theme mode | _'light'\/'dark'_ | - |

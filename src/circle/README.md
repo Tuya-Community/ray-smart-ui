@@ -109,7 +109,7 @@ export default function Demo() {
 
 | 属性名                     | 描述     | 类型          | 默认值                     |
 | -------------------------- | -------- | ------------- | -------------------------- |
-| angleOffset   `v2.7.4` | 角度偏移 | number | -1 |
+| angleOffset   `v2.8.0` | 角度偏移 | number | -1 |
 | children | 子元素 | ReactNode | undefined |
 | className | 类名 | string | undefined |
 | customStyle `v2.3.3` | 样式 | CSSProperties | undefined |

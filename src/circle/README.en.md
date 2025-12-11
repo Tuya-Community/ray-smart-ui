@@ -109,7 +109,7 @@ export default function Demo() {
 
 | Property Name              | Description  | Type          | Default Value              |
 | -------------------------- | ------------ | ------------- | -------------------------- |
-| angleOffset  `v2.7.4` | Angle Offset | number | -1 |
+| angleOffset  `v2.8.0` | Angle Offset | number | -1 |
 | children | Children | ReactNode | undefined |
 | className | Class Name | string | undefined |
 | customStyle `v2.3.3` | Style | CSSProperties | undefined |

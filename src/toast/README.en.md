@@ -252,8 +252,8 @@ export default function Demo() {
 | loadingType | Type of loading icon, optional value is `spinner` | _string_ | `circular` |
 | mask | Whether to show the mask layer | _boolean_ | `false` |
 | message | Content | _string_ | `''` |
-| textColor `v2.7.4` | Text color | _string_ | - |
-| iconColor `v2.7.4` | Icon color | _string_ | `white` |
+| textColor `v2.8.0` | Text color | _string_ | - |
+| iconColor `v2.8.0` | Icon color | _string_ | `white` |
 | onClose | Callback function on close | _Function_ | - |
 | position | Position, optional values are `top` `middle` `bottom` | _string_ | `middle` |
 | selector | Custom selector | _string_ | `#smart-toast` |
