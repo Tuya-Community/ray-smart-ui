@@ -10,3 +10,8 @@
 - [x] 增加icon组件文档复制代码能力
 - [x] 修复cascader、popover、notice-bar、switch组件黑白主题对齐UI设计稿
 - [x] slider 组件官网关联物料增加 CircleProgress
+
+# v2.8.1
+发布计划（发布正式时间：2025.12.23 周二）
+- [ ] 组件search、field、tab、tabbar、stepper、switch、toast、slider、index-bar、calendar、custom-keyboard 接入震动反馈API
+- [ ] 修复 Dialog 组件未关闭，销毁页面后无法再次打开问题
