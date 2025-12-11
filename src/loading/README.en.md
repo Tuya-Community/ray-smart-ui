@@ -43,8 +43,8 @@ import React from 'react';
 export default function Demo() {
   return (
     <View>
-      <Loading color="#1989fa" />
-      <Loading type="spinner" color="#1989fa" />
+      <Loading color="red" />
+      <Loading type="spinner" color="green" />
     </View>
   );
 }
@@ -58,12 +58,15 @@ import React from 'react';
 
 export default function Demo() {
   return (
-    <Loading size="24px">loading...</Loading>
+    <>
+      <Loading size="24px">loading...</Loading>
+      <Loading color="var(--app-B1-N1)" iconColor="#1989FA" size="24px">loading...</Loading>
+    </>
   );
 }
 ```
 
-### Vertical arrangement
+### Vertical Arrangement
 
 ```jsx
 import { Loading } from '@ray-js/smart-ui';
@@ -84,11 +87,12 @@ export default function Demo() {
 
 | Parameter         | Description                   | Type               | Default    |
 | ----------------- | ----------------------------- | ------------------ | ---------- |
-| color | Color | _string_ | `#c9c9c9` |
+| color | Overall Color | _string_ | `var(--loading-text-color, #1989FA)` |
 | size | Size of the loading icon, default unit is `px` | _string \| number_ | `30px` |
 | textSize `v1.0.0` | Text size, default unit is `px` | _string \| number_ | `14px` |
 | type | Type, optional value is `spinner` | _string_ | `circular` |
 | vertical `v1.0.0` | Whether to vertically align icons and text | _boolean_ | `false` |
+| iconColor `v2.8.0` | Independently control the color of the icon | _string_ | `var(--loading-spinner-color, #1989FA)` |
 
 ### Slots
 

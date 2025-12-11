@@ -134,7 +134,7 @@ export default function Demo() {
           maxTrackRadius="8px"
           minTrackWidth="48px"
           minTrackHeight="114px"
-          maxTrackColor="rgba(0, 0, 0, 0.08)"
+          maxTrackColor="var(--app-B4-N7,rgba(0,0,0,.1))"
           minTrackColor="#1989FA"
           onAfterChange={setValue}
           thumbStyle={{

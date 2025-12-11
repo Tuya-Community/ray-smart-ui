@@ -83,6 +83,20 @@ export default function Demo() {
       position: 'top',
     });
   };
+
+  const showColorToast = () => {
+    ToastInstance({
+      message: Strings.getLang('promptContent'),
+      textColor: '#1989FA',
+    });
+  };
+  const showSuccessColorToast = () => {
+    ToastInstance.success({
+      message: Strings.getLang('successfulCopywriting'),
+      textColor: '#1989FA',
+      iconColor: '#1989FA',
+    });
+  };
   return (
     <>
       <DemoBlock card title={Strings.getLang('textPrompt')} padding>
@@ -103,10 +117,10 @@ export default function Demo() {
       </DemoBlock>
       <DemoBlock title={Strings.getLang('successFailurePrompt')} padding>
         <Button onClick={showSuccessToast} type="info" className="demo-margin-right">
-          {Strings.getLang('loadingPrompt')}
+          {Strings.getLang('success')}
         </Button>
         <Button onClick={showFailToast} type="danger">
-          {Strings.getLang('loadingPrompt')}
+          {Strings.getLang('failure')}
         </Button>
       </DemoBlock>
       <DemoBlock title={Strings.getLang('warningPrompt')} padding>
@@ -130,6 +144,14 @@ export default function Demo() {
         </Button>
         <Button onClick={showTopToast} type="primary">
           {Strings.getLang('top')}
+        </Button>
+      </DemoBlock>
+      <DemoBlock title={Strings.getLang('customColor')} padding>
+        <Button onClick={showColorToast} className="demo-margin-right" type="primary">
+          {Strings.getLang('textPrompt')}
+        </Button>
+        <Button onClick={showSuccessColorToast} type="primary">
+          {Strings.getLang('success')}
         </Button>
       </DemoBlock>
       <Toast id="smart-toast" />

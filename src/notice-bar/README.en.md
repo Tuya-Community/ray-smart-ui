@@ -259,7 +259,7 @@ The component provides the following CSS variables for custom styles. Please ref
 | --notice-bar-icon-size           | _16px_                                 | Icon size |
 | --notice-bar-line-height         | _14px_                                 | Inner font line height |
 | --notice-bar-padding             | _0 var(--smart-padding-md)_            | Outer box margin in single-line mode |
-| --notice-bar-text-color          | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_ | Inner font color |
+| --notice-bar-text-color          | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_ `v2.0.0` _rgba(0, 0, 0, 0.5)_ `v2.8.0` | Inner font color |
 | --notice-bar-wrapable-padding    | _var(--padding-xs) var(--padding-md)_  | Outer box margin in multi-line mode |
 | --notice-bar-background-color    | _#E7F3FE_              | Background color of info type |
 | --notice-bar-background-warning-color | _#FFF5E5_           | Background color of warning type |

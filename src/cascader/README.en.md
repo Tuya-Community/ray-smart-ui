@@ -322,3 +322,4 @@ The component provides the following CSS variables that can be used for custom s
 | --cascader-unselected-tab-color       | _#969799_                                 | Cascader unselected tab color            |
 | --cascader-tab-inactive-color         | _var(--app-B6-N5, rgba(0, 0, 0, 0.3))_    | Cascader tab inactive color              |
 | --cascader-text-color                 | _var(--app-B6-N5, rgba(0, 0, 0, 0.3))_    | Cascader text color                      |
+| --cascader-active-background-color `v2.8.0` | _var(--app-B1, #f6f7fb)_   | Background color when clicking on the cascading selector column   |

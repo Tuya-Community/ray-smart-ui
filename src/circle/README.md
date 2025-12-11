@@ -40,7 +40,7 @@ export default function Demo() {
 
 ### 缺口圆角
 
-`mode`属性表示类型，angle、angle2 为半圆类型。
+`mode`属性表示类型，angle、angle2 为半圆类型。`angleOffset` `v2.8.0` 属性可以设置角度偏移量。
 
 ```tsx
 import React from 'react';
@@ -51,6 +51,7 @@ export default function Demo() {
     <>
       <Circle percent={50} mode="angle" />
       <Circle percent={50} mode="angle2" />
+      <Circle percent={50} mode="angle" angleOffset={30} />
     </>
   );
 }
@@ -108,11 +109,12 @@ export default function Demo() {
 
 | 属性名                     | 描述     | 类型          | 默认值                     |
 | -------------------------- | -------- | ------------- | -------------------------- |
+| angleOffset   `v2.8.0` | 角度偏移 | number | -1 |
 | children | 子元素 | ReactNode | undefined |
 | className | 类名 | string | undefined |
 | customStyle `v2.3.3` | 样式 | CSSProperties | undefined |
 | fillColor | 填充颜色 | string | '#007AFF' |
-| maskColor | 遮罩颜色 | string | '#ffffff' |
+| maskColor | 遮罩颜色 | string | 'transparent' |
 | mode `v2.3.0` | 样式风格 | string | `basic`、`angle`、`angle2` |
 | percent | 百分比 | number | 0 |
 | round `v2.3.0` | 遮罩颜色 | string | `true` |

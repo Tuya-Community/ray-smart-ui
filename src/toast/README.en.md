@@ -194,6 +194,40 @@ export default function Demo() {
 }
 ```
 
+
+### Custom Color `v2.8.0`
+
+You can customize the text color using the `textColor` property and customize the icon color using the `iconColor` property.
+
+```jsx
+import { Toast, ToastInstance, Button } from '@ray-js/smart-ui';
+import React from 'react';
+
+export default function Demo() {
+  const openText = () => {
+    ToastInstance({
+      message: 'This is a notification, recommended not to exceed fifteen characters~'
+      textColor: '#1989FA',
+    });
+  }
+
+  const openSuccess = () => {
+    ToastInstance.success({
+      message: 'Success message',
+      textColor: '#1989FA',
+      iconColor: '#1989FA',
+    });
+  }
+  return (
+    <>
+      <Toast id="smart-toast" />
+      <Button onClick={openText}>Text</Button>
+      <Button onClick={openSuccess}>Success</Button>
+    </>
+  )
+}
+```
+
 ## API
 
 ### Methods
@@ -218,6 +252,8 @@ export default function Demo() {
 | loadingType | Type of loading icon, optional value is `spinner` | _string_ | `circular` |
 | mask | Whether to show the mask layer | _boolean_ | `false` |
 | message | Content | _string_ | `''` |
+| textColor `v2.8.0` | Text color | _string_ | - |
+| iconColor `v2.8.0` | Icon color | _string_ | `white` |
 | onClose | Callback function on close | _Function_ | - |
 | position | Position, optional values are `top` `middle` `bottom` | _string_ | `middle` |
 | selector | Custom selector | _string_ | `#smart-toast` |

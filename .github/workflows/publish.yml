@@ -64,7 +64,7 @@ jobs:
                 "content": $content
             }
         }')
-        curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=0d21f5b3-e1bf-48b6-b7cb-8d10278c7115' \
+        curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${{ secrets.WECHAT_TOKEN }}' \
         -H 'Content-Type: application/json' \
         -d "$PAYLOAD"
 

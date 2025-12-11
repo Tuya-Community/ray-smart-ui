@@ -1,6 +1,6 @@
 ---
 category: 数据录入
-assets: LampTouchSlider,LampColorSlider,LampSaturationSlider,LampTempSlider,LampBrightSlider,LampStyleSlider,LampVerticalTouchSlider,LampVerticalPercentSlider,HighPerfText
+assets: LampTouchSlider,LampColorSlider,LampSaturationSlider,LampTempSlider,LampBrightSlider,LampStyleSlider,LampVerticalTouchSlider,LampVerticalPercentSlider,HighPerfText,CircleProgress
 ---
 
 # Slider 滑动条

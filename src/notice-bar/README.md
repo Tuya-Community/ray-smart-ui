@@ -259,7 +259,7 @@ export default function Demo() {
 | --notice-bar-icon-size        | _16px_                                 | icon大小    |
 | --notice-bar-line-height      | _14px_                                 | 内部字体行高大小    |
 | --notice-bar-padding          | _0 var(--smart-padding-md)_            | 单行模式外部盒子边距    |
-| --notice-bar-text-color       | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_ | 内部字体颜色    |
+| --notice-bar-text-color       | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_ `v2.0.0` _rgba(0, 0, 0, 0.5)_ `v2.8.0` | 内部字体颜色    |
 | --notice-bar-wrapable-padding | _var(--padding-xs) var(--padding-md)_  | 多行模式外部盒子边距    |
 | --notice-bar-background-color | _#E7F3FE_        | info类型背景色    |
 | --notice-bar-background-warning-color | _#FFF5E5_    | warning类型背景色    |

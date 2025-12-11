@@ -1,5 +1,25 @@
 # 更新日志
 
+## v2.8.0 (2025-12-11)
+
+### Features ✨
+
+- config-provider：新增theme属性 一键切换主题([pull/100](https://github.com/Tuya-Community/miniapp-smart-ui/pull/100))
+- toast: 新增 textColor、iconColor属性([pull/105](https://github.com/Tuya-Community/miniapp-smart-ui/pull/105))
+- loading: 新增iconColor属性([pull/104](https://github.com/Tuya-Community/miniapp-smart-ui/pull/104))
+- circle: 新增 angleOffset 属性，用于设置半圆类型（`angle`、`angle2`）的起始角度偏移；修改 maskColor 默认值从 `#ffffff` 为 `transparent`([pull/106](https://github.com/Tuya-Community/miniapp-smart-ui/pull/106))
+- cascader: 新增 --cascader-active-background-color CSS 变量([43922ab](https://github.com/Tuya-Community/miniapp-smart-ui/commit/43922abceaedf1af448147e189517598151dd0a9))
+- popover: 新增 --popover-overlay-color CSS 变量([43922ab](https://github.com/Tuya-Community/miniapp-smart-ui/commit/43922abceaedf1af448147e189517598151dd0a9))
+
+### Bug Fixes  🐛
+
+- loading: 修复 color 属性效果([pull/104](https://github.com/Tuya-Community/miniapp-smart-ui/pull/104))
+- picker: 修复 loop 模式部分列无法拖动选中的问题([pull/113](https://github.com/Tuya-Community/miniapp-smart-ui/pull/113))
+- datetime-picker: 修复部分情况下 1月 无法拖动选中的问题([pull/113](https://github.com/Tuya-Community/miniapp-smart-ui/pull/113))
+- circle: 修复外部盒子被挤压导致圆环部分被隐藏情况([pull/115](https://github.com/Tuya-Community/miniapp-smart-ui/pull/115))
+- notice-bar: 修改 --notice-bar-text-color CSS 变量默认值为 rgba(0, 0, 0, 0.5) ([43922ab](https://github.com/Tuya-Community/miniapp-smart-ui/commit/43922abceaedf1af448147e189517598151dd0a9))
+- switch: 修改 --switch-label-active-color、--switch-label-inactive-color CSS 变量默认值为 #FFFFFF ([43922ab](https://github.com/Tuya-Community/miniapp-smart-ui/commit/43922abceaedf1af448147e189517598151dd0a9))
+
 ## v2.7.3 (2025-11-20)
 
 ### Features  ✨
@@ -21,6 +41,7 @@
 - custom-keyboard: 接入 `manrope` 数字字体，App 7.0.5 版本开始支持([e8f763d](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/e8f763d526f635d702a87586535f8b4a854100b1))
 - bottom-sheet: 支持拖拽能力, 新增 draggable、minDragHeight、maxDragHeight、midDragHeight、closeDragHeight属性，新增 onDragPosition 事件([pull/78](https://github.com/Tuya-Community/miniapp-smart-ui/pull/78))
 - nav-bar: 修改 --nav-bar-text-padding 默认值 为 16px([352954e](https://github.com/Tuya-Community/miniapp-smart-ui/commit/352954e16f05b0660369bfc860b7f895dc5f1774))
+- icon: 新增静音图标、更新更多图标([1ba2ebf](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/1ba2ebfc12e6af675940c01f2e229eed05cec4ff))
 
 ### Bug Fixes  🐛
 
@@ -70,6 +91,7 @@
 - calender: 默认底部安全距离关闭([4c91851](https://github.com/Tuya-Community/miniapp-smart-ui/pull/54/commits/4c91851fe674bcb64a19c830a3f1539da8700dd1))
 - picker: 修复在 flex 布局下默认没有宽度的问题([f3f4772](https://github.com/Tuya-Community/miniapp-smart-ui/pull/55/commits/f3f47729fd4c1af0eb617cf56d957c2b389f2d4e));修复单位距离不受 fontStyle 属性控制问题([4eb02fc](https://github.com/Tuya-Community/miniapp-smart-ui/pull/55/commits/4eb02fca12cb6feab62e8fdfd7d82d27bc52159c))
 - datetime-picker: 修复在 flex 布局下默认没有宽度的问题([f3f4772](https://github.com/Tuya-Community/miniapp-smart-ui/pull/55/commits/f3f47729fd4c1af0eb617cf56d957c2b389f2d4e))
+- icon: 更新 right、left、down、up 图标,对齐 UI 标准([e1bd07e](https://github.com/Tuya-Community/miniapp-smart-ui/commit/e1bd07ebb2bd411fe82e714b11e603ed68271c9a))
 
 
 ## v2.6.3(2025-09-16)

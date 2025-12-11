@@ -22,7 +22,7 @@ import { Icon } from '@ray-js/smart-ui';
 The `name` attribute of `Icon` supports passing in an icon name or an image URL.
 
 ```jsx
-import warningIcon from '@tuya-miniapp/icons/dist/svg/Warning';
+import WarningIcon from '@tuya-miniapp/icons/dist/svg/Warning';
 import { View } from '@ray-js/ray';
 import { Icon } from '@ray-js/smart-ui';
 import React from 'react';
@@ -30,7 +30,7 @@ import React from 'react';
 export default function Demo() {
   return (
     <View>
-      <Icon name={warningIcon} />
+      <Icon name={WarningIcon} />
       <Icon name="https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png" />
     </View>
   );
@@ -42,7 +42,7 @@ export default function Demo() {
 After setting the `dot` attribute, a small red dot will be displayed at the top right corner of the icon. After setting the `info` attribute, the corresponding badge will be displayed at the top right corner of the icon.
 
 ```jsx
-import warningIcon from '@tuya-miniapp/icons/dist/svg/Warning';
+import WarningIcon from '@tuya-miniapp/icons/dist/svg/Warning';
 import { View } from '@ray-js/ray';
 import { Icon } from '@ray-js/smart-ui';
 import React from 'react';
@@ -50,9 +50,9 @@ import React from 'react';
 export default function Demo() {
   return (
     <View style={{padding: 48}}>
-      <Icon name={warningIcon} dot />
-      <Icon name={warningIcon} info="9" />
-      <Icon name={warningIcon} info="99+" />
+      <Icon name={WarningIcon} dot />
+      <Icon name={WarningIcon} info="9" />
+      <Icon name={WarningIcon} info="99+" />
     </View>
   );
 }
@@ -63,13 +63,17 @@ export default function Demo() {
 Set the `color` attribute to control the icon color.
 
 ```jsx
-import warningIcon from '@tuya-miniapp/icons/dist/svg/Warning';
+import AlarmIcon from '@tuya-miniapp/icons/dist/svg/Alarm';
+import WarningIcon from '@tuya-miniapp/icons/dist/svg/Warning';
 import { Icon } from '@ray-js/smart-ui';
 import React from 'react';
 
 export default function Demo() {
   return (
-    <Icon name={warningIcon} color="red" />
+    <>
+      <Icon name={AlarmIcon} size="36px" color="#1989fa" />
+      <Icon name={WarningIcon} size="36px" color="#07c160" />
+    </>
   );
 }
 ```
@@ -79,13 +83,33 @@ export default function Demo() {
 Set the `size` attribute to control the icon size.
 
 ```jsx
-import warningIcon from '@tuya-miniapp/icons/dist/svg/Warning';
+import WarningIcon from '@tuya-miniapp/icons/dist/svg/Warning';
 import { Icon } from '@ray-js/smart-ui';
 import React from 'react';
 
 export default function Demo() {
   return (
-    <Icon name={warningIcon} size="50px" />
+    <>
+      <Icon name={WarningIcon} size="36"/>
+      <Icon name={WarningIcon} size="48"/>
+    </>
+  );
+}
+```
+
+
+### Svg Path `v2.3.3`
+
+Components now also support rendering via passing in a path.
+
+```jsx
+import { Icon } from '@ray-js/smart-ui';
+import React from 'react';
+
+export default function Demo() {
+  const svgPath = 'M192 448C192 624.736 335.264 768 512 768s320-143.264 320-320a319.872 319.872 0 0 0-160-277.184V160a64 64 0 0 0-64-64h-192a64 64 0 0 0-64 64v10.816A319.872 319.872 0 0 0 192 448z m224-384h192a32 32 0 0 0 0-64h-192a32 32 0 0 0 0 64z';
+  return (
+    <Icon name={svgPath} size="42" color="#1989fa" />
   );
 }
 ```
@@ -113,22 +137,6 @@ If you need to use more icons based on the existing Icon, you can import the cor
 ```jsx
 // Specify the class name as my-icon through class-prefix.
 <Icon class-prefix="my-icon" name="extra" />
-```
-
-### Svg Path `v2.3.3`
-
-Components now also support rendering via passing in a path.
-
-```jsx
-import { Icon } from '@ray-js/smart-ui';
-import React from 'react';
-
-export default function Demo() {
-  const svgPath = 'M192 448C192 624.736 335.264 768 512 768s320-143.264 320-320a319.872 319.872 0 0 0-160-277.184V160a64 64 0 0 0-64-64h-192a64 64 0 0 0-64 64v10.816A319.872 319.872 0 0 0 192 448z m224-384h192a32 32 0 0 0 0-64h-192a32 32 0 0 0 0 64z';
-  return (
-    <Icon name={svgPath} size="36" color="#1989fa" />
-  );
-}
 ```
 
 ## API

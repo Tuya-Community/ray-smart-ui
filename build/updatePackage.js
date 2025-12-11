@@ -1,10 +1,3 @@
-/*
- * @Author: mjh
- * @Date: 2025-08-14 10:42:36
- * @LastEditors: mjh
- * @LastEditTime: 2025-08-14 11:01:28
- * @Description:
- */
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');

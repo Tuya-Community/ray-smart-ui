@@ -35,8 +35,19 @@ export interface SmartLoadingProps {
    * @default false
    */
   vertical?: boolean;
+  /**
+   * @description 图标颜色
+   * @version 2.8.0
+   */
+  iconColor?: string;
 }
 
 export type SmartLoadingExternalClassName = SmartBaseExternalClassName;
 
-export type SmartLoading = SmartComponent<SmartLoadingProps, {}, SmartLoadingExternalClassName>;
+export interface SmartLoadingSlots {}
+
+export type SmartLoading = SmartComponent<
+  SmartLoadingProps,
+  SmartLoadingSlots,
+  SmartLoadingExternalClassName
+>;

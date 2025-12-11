@@ -21,6 +21,7 @@ import { Toast, ToastInstance } from '@ray-js/smart-ui';
 ```
 
 ### 文字提示
+
 使用 `ToastInstance` 方法必须要在页面上挂载一个 `<Toast id="smart-toast" />` 节点才可以动态生成提示弹框。
 
 ```jsx
@@ -194,6 +195,39 @@ export default function Demo() {
 }
 ```
 
+### 自定义颜色 `v2.8.0`
+
+通过 `textColor` 属性可以自定义文字颜色，通过 `iconColor` 属性可以自定义图标颜色。
+
+```jsx
+import { Toast, ToastInstance, Button } from '@ray-js/smart-ui';
+import React from 'react';
+
+export default function Demo() {
+  const openText = () => {
+    ToastInstance({
+      message: '我是提示文案，建议不超过十五字~'
+      textColor: '#1989FA',
+    });
+  }
+
+  const openSuccess = () => {
+    ToastInstance.success({
+      message: '成功文案',
+      textColor: '#1989FA',
+      iconColor: '#1989FA',
+    });
+  }
+  return (
+    <>
+      <Toast id="smart-toast" />
+      <Button onClick={openText}>文案</Button>
+      <Button onClick={openSuccess}>成功</Button>
+    </>
+  )
+}
+```
+
 ## API
 
 ### 方法
@@ -218,6 +252,8 @@ export default function Demo() {
 | loadingType | 加载图标类型, 可选值为 `spinner` | _string_ | `circular` |
 | mask | 是否显示遮罩层 | _boolean_ | `false` |
 | message | 内容 | _string_ | `''` |
+| textColor `v2.8.0` | 文字颜色 | _string_ | - |
+| iconColor `v2.8.0` | 图标颜色 | _string_ | `white` |
 | onClose | 关闭时的回调函数 | _Function_ | - |
 | position | 位置，可选值为 `top` `middle` `bottom` | _string_ | `middle` |
 | selector | 自定义选择器 | _string_ | `#smart-toast` |
