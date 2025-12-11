@@ -8,7 +8,7 @@ export interface SmartConfigProviderProps {
   themeVars?: Partial<ThemeVars>;
   /**
    * 主题模式
-   * @version 2.7.4
+   * @version 2.8.0
    */
   theme?: 'light' | 'dark';
 }

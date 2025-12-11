@@ -84,12 +84,12 @@ export interface SmartToastOptions {
   nativeDisabled?: boolean;
   /**
    * 文字颜色
-   * @version 2.7.4
+   * @version 2.8.0
    */
   textColor?: string;
   /**
    * 图标颜色
-   * @version 2.7.4
+   * @version 2.8.0
    */
   iconColor?: string;
 }

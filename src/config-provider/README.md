@@ -98,7 +98,7 @@ export default function Demo() {
 ```
 
 
-### 主题切换 `v2.7.4`
+### 主题切换 `v2.8.0`
 
 `ConfigProvider` 组件支持通过 `theme` 属性来切换明暗主题，可选值为 `light` 和 `dark`。
 

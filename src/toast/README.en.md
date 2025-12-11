@@ -195,7 +195,7 @@ export default function Demo() {
 ```
 
 
-### Custom Color `v2.7.4`
+### Custom Color `v2.8.0`
 
 You can customize the text color using the `textColor` property and customize the icon color using the `iconColor` property.
 

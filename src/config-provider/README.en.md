@@ -97,7 +97,7 @@ export default function Demo() {
 }
 ```
 
-### Theme Switch  `v2.7.4`
+### Theme Switch  `v2.8.0`
 
 You can switch the theme mode of components through the `theme` prop, supporting `light` and `dark` modes.
 

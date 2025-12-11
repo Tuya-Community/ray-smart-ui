@@ -195,7 +195,7 @@ export default function Demo() {
 }
 ```
 
-### 自定义颜色 `v2.7.4`
+### 自定义颜色 `v2.8.0`
 
 通过 `textColor` 属性可以自定义文字颜色，通过 `iconColor` 属性可以自定义图标颜色。
 

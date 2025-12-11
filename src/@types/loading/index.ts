@@ -37,7 +37,7 @@ export interface SmartLoadingProps {
   vertical?: boolean;
   /**
    * @description 图标颜色
-   * @version 2.7.4
+   * @version 2.8.0
    */
   iconColor?: string;
 }

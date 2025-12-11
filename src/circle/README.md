@@ -40,7 +40,7 @@ export default function Demo() {
 
 ### 缺口圆角
 
-`mode`属性表示类型，angle、angle2 为半圆类型。`angleOffset` `v2.7.4` 属性可以设置角度偏移量。
+`mode`属性表示类型，angle、angle2 为半圆类型。`angleOffset` `v2.8.0` 属性可以设置角度偏移量。
 
 ```tsx
 import React from 'react';
