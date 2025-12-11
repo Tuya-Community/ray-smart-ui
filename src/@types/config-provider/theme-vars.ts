@@ -780,6 +780,7 @@ type CascaderThemeVars =
   | 'cascaderSelectedIconSize'
   | 'cascaderTabsHeight'
   | 'cascaderActiveColor'
+  | 'cascaderActiveBackgroundColor'
   | 'cascaderOptionsHeight'
   | 'cascaderOptionDisabledColor'
   | 'cascaderTabColor'
@@ -798,7 +799,12 @@ type CustomKeyboardThemeVars =
   | 'customKeyboardPopupTextColor'
   | 'customKeyboardPopupHoverColor';
 
-type PopoverThemeVars = 'popoverBackgroundColor' | 'popoverBoxShadow' | 'popoverPadding' | 'popoverBorderRadius';
+type PopoverThemeVars =
+  | 'popoverBackgroundColor'
+  | 'popoverBoxShadow'
+  | 'popoverPadding'
+  | 'popoverBorderRadius'
+  | 'popoverOverlayColor';
 
 /**
  * 主题变量
