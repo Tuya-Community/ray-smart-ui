@@ -1,18 +1,24 @@
 # 更新日志
 
-## v2.8.0 (2025-12-09)
+## v2.8.0 (2025-12-11)
 
 ### Features ✨
 
 - config-provider：新增theme属性 一键切换主题([pull/100](https://github.com/Tuya-Community/miniapp-smart-ui/pull/100))
-- toast: 新增 textColor、iconColor 属性([pull/105](https://github.com/Tuya-Community/miniapp-smart-ui/pull/105))
-- loading: 新增 iconColor 属性([pull/104](https://github.com/Tuya-Community/miniapp-smart-ui/pull/104))
-- circle: 新增 `angleOffset` 属性，用于设置半圆类型（`angle`、`angle2`）的起始角度偏移；修改 `maskColor` 默认值从 `#ffffff` 为 `transparent`([pull/106](https://github.com/Tuya-Community/miniapp-smart-ui/pull/106))
+- toast: 新增 textColor、iconColor属性([pull/105](https://github.com/Tuya-Community/miniapp-smart-ui/pull/105))
+- loading: 新增iconColor属性([pull/104](https://github.com/Tuya-Community/miniapp-smart-ui/pull/104))
+- circle: 新增 angleOffset 属性，用于设置半圆类型（`angle`、`angle2`）的起始角度偏移；修改 maskColor 默认值从 `#ffffff` 为 `transparent`([pull/106](https://github.com/Tuya-Community/miniapp-smart-ui/pull/106))
+- cascader: 新增 --cascader-active-background-color CSS 变量([43922ab](https://github.com/Tuya-Community/miniapp-smart-ui/commit/43922abceaedf1af448147e189517598151dd0a9))
+- popover: 新增 --popover-overlay-color CSS 变量([43922ab](https://github.com/Tuya-Community/miniapp-smart-ui/commit/43922abceaedf1af448147e189517598151dd0a9))
 
 ### Bug Fixes  🐛
 
 - loading: 修复 color 属性效果([pull/104](https://github.com/Tuya-Community/miniapp-smart-ui/pull/104))
-
+- picker: 修复 loop 模式部分列无法拖动选中的问题([pull/113](https://github.com/Tuya-Community/miniapp-smart-ui/pull/113))
+- datetime-picker: 修复部分情况下 1月 无法拖动选中的问题([pull/113](https://github.com/Tuya-Community/miniapp-smart-ui/pull/113))
+- circle: 修复外部盒子被挤压导致圆环部分被隐藏情况([pull/115](https://github.com/Tuya-Community/miniapp-smart-ui/pull/115))
+- notice-bar: 修改 --notice-bar-text-color CSS 变量默认值为 rgba(0, 0, 0, 0.5) ([43922ab](https://github.com/Tuya-Community/miniapp-smart-ui/commit/43922abceaedf1af448147e189517598151dd0a9))
+- switch: 修改 --switch-label-active-color、--switch-label-inactive-color CSS 变量默认值为 #FFFFFF ([43922ab](https://github.com/Tuya-Community/miniapp-smart-ui/commit/43922abceaedf1af448147e189517598151dd0a9))
 
 ## v2.7.3 (2025-11-20)
 

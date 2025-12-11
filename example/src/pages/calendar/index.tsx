@@ -212,7 +212,7 @@ export default function Demo() {
             className={styles.controls_item}
             onClick={() => setType('single')}
             style={{
-              color: type === 'single' ? '#3678e3' : '#000',
+              color: type === 'single' ? '#3678e3' : '',
             }}
           >
             {Strings.getLang('day')}
@@ -221,7 +221,7 @@ export default function Demo() {
             className={styles.controls_item}
             onClick={() => setType('month')}
             style={{
-              color: type === 'month' ? '#3678e3' : '#000',
+              color: type === 'month' ? '#3678e3' : '',
             }}
           >
             {Strings.getLang('month')}
@@ -230,7 +230,7 @@ export default function Demo() {
             className={styles.controls_item}
             onClick={() => setType('year')}
             style={{
-              color: type === 'year' ? '#3678e3' : '#000',
+              color: type === 'year' ? '#3678e3' : '',
             }}
           >
             {Strings.getLang('year')}
