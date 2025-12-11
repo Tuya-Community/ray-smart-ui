@@ -298,3 +298,4 @@ The component provides the following CSS variables for custom styling. For usage
 | --popover-border-radius    | 12px                                   | Popup border radius    |
 | --popover-box-shadow       | 0px 6px 12px 0px rgba(0, 0, 0, 0.1)    | Popup box shadow       |
 | --popover-padding          | 12px                                   | Popup padding          |
+| --popover-overlay-color `v2.8.0` | var(--app-B1-N1, rgba(0, 0, 0, 1)) | Text color for the overlay slot |
