@@ -1,10 +1,3 @@
-/*
- * @Author: mjh
- * @Date: 2025-03-18 16:12:20
- * @LastEditors: mjh
- * @LastEditTime: 2025-08-14 10:55:15
- * @Description:
- */
 const transCSSVarToConfigTypes = require('./transCSSVarToConfigTypes');
 const copyREADME = require('./copyREADME');
 const updatePackage = require('./updatePackage');
