@@ -100,6 +100,12 @@ export interface SmartBottomSheetProps {
    * @default windowHeight * 0.4
    */
   closeDragHeight?: number;
+  /**
+   * 是否锁定背景滚动
+   * @version 2.8.1
+   * @default true
+   */
+  lockScroll?: boolean;
 }
 
 export interface SmartBottomSheetEvents extends SmartTransitionEvents {
