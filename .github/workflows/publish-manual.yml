@@ -1,0 +1,120 @@
+name: Manual Publish Release
+
+on:
+  push:
+    branches:
+      - test/ci
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'NPM version to publish (e.g., 2.8.2)'
+        required: true
+        type: string
+  workflow_call:
+    inputs:
+      version:
+        description: 'NPM version to publish (e.g., 2.8.2)'
+        required: true
+        type: string
+
+jobs:
+  publish_manual:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.PROTECT_WRITE_TOKEN }}
+
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '22'
+        cache: 'yarn'
+        registry-url: 'https://registry.npmjs.org'
+
+    - name: Configure Git Identity
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+
+    - name: Check MINIAPP_TOKEN Permission
+      run: |
+        if [ -z "${{ secrets.MINIAPP_TOKEN }}" ]; then
+          echo "❌ MINIAPP_TOKEN is not available. This workflow requires access to clone miniapp-smart-ui repository."
+          echo "Please ensure the repository has the MINIAPP_TOKEN secret configured with appropriate permissions."
+          exit 1
+        fi
+        echo "✅ MINIAPP_TOKEN is available"
+
+    - name: Clone miniapp
+      run: |
+        echo "Attempting to clone miniapp-smart-ui repository..."
+        if git clone -b ${{ github.ref_name }} https://github.com/Tuya-Community/miniapp-smart-ui.git; then
+          echo "✅ Successfully cloned miniapp-smart-ui repository"
+        else
+          echo "❌ Failed to clone miniapp-smart-ui repository"
+          echo "This may be due to insufficient permissions or network issues."
+          echo "Please check if the MINIAPP_TOKEN has the necessary permissions to access the repository."
+          exit 1
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.MINIAPP_TOKEN }}
+
+    - name: Sync Code
+      run: |
+        yarn syncMiniappData
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PROTECT_WRITE_TOKEN: ${{ secrets.PROTECT_WRITE_TOKEN }}
+        repository: ${{ github.repository }}
+        ref: ${{ github.ref }}
+        workflow_dispatch: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call' }}
+
+    - name: Install Dependencies
+      run: yarn install --frozen-lockfile
+
+    - name: Get Version
+      id: get_version
+      run: |
+        if [ -n "${{ inputs.version }}" ]; then
+          VERSION="${{ inputs.version }}"
+        else
+          VERSION=$(node -p "require('./package.json').version")
+        fi
+        echo "VERSION=${VERSION}" >> $GITHUB_OUTPUT
+        echo "📦 Version to publish: ${VERSION}"
+
+    - name: Update Package.json with Version
+      run: |
+        npm version "${{ steps.get_version.outputs.VERSION }}" --no-git-tag-version
+
+    - name: Build
+      run: yarn build
+
+    - name: Publish Package
+      run: npm publish --access public
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+    - name: Commit Changes
+      run: |
+        git add .
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "chore(release): npm ${{ steps.get_version.outputs.VERSION }} release by Github Actions"
+          git log -1  # 检查最后的commit结果
+        fi
+        git config pull.rebase false
+        git pull
+
+    - name: Push
+      # 使用个人访问令牌来推送更改以避免保护分支限制
+      run: |
+        git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
