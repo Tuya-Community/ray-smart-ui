@@ -1,6 +1,9 @@
 name: Manual Publish Release
 
 on:
+  push:
+    branches:
+      - test/ci
   workflow_dispatch:
     inputs:
       version:
@@ -72,9 +75,20 @@ jobs:
     - name: Install Dependencies
       run: yarn install --frozen-lockfile
 
+    - name: Get Version
+      id: get_version
+      run: |
+        if [ -n "${{ inputs.version }}" ]; then
+          VERSION="${{ inputs.version }}"
+        else
+          VERSION=$(node -p "require('./package.json').version")
+        fi
+        echo "VERSION=${VERSION}" >> $GITHUB_OUTPUT
+        echo "📦 Version to publish: ${VERSION}"
+
     - name: Update Package.json with Version
       run: |
-        npm version "${{ inputs.version }}" --no-git-tag-version
+        npm version "${{ steps.get_version.outputs.VERSION }}" --no-git-tag-version
 
     - name: Build
       run: yarn build
@@ -90,7 +104,7 @@ jobs:
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
-          git commit -m "chore(release): npm ${{ inputs.version }} release by Github Actions"
+          git commit -m "chore(release): npm ${{ steps.get_version.outputs.VERSION }} release by Github Actions"
           git log -1  # 检查最后的commit结果
         fi
         git config pull.rebase false
