@@ -325,7 +325,7 @@ export default function Demo() {
 | rightIconSize `v2.7.0` | 右侧图标大小 | _number_ | `32px` |
 | leftIconColor `v2.7.0` | 左侧图标颜色 | _string_ | - |
 | background `v2.7.0` | 整体背景色 | _string_ | - |
-| sideWidth `v2.7.3` | 两边控制栏的宽度, 提供 `min`、`mid`、`max`三档内置值；也可以传具体宽度值 | _string\/number\/`min`\/`mid`\/`max`_ | `mid` |
+| sideWidth `v2.7.3` | 两边控制栏的宽度, 提供 `min`、`mid`、`max`三档内置值；也可以传具体宽度值 | _string\/number\/`min`\/`mid`\/`max`_ | `mid` `v2.7.3` `max` `v2.8.1` |
 
 ### Slot
 
