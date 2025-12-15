@@ -2423,15 +2423,6 @@
     clsx "^1.2.1"
     js-base64 "^3.7.7"
 
-"@ray-js/components-ty-slider@^0.3.4":
-  version "0.3.4"
-  resolved "https://registry.npmjs.org/@ray-js/components-ty-slider/-/components-ty-slider-0.3.4.tgz#0824c8dd3cf0b421431840ef8861e9f607de15db"
-  integrity sha512-qdpJiA1t5R/nCzasQhY0S/USuO35Z3utseuIALS8H32tovdGB/CccbXbCv5aFAu9LfSYuKHLcSI9iJUzy13zhQ==
-  dependencies:
-    clsx "^1.2.1"
-    lodash "^4.17.21"
-    to-style "^1.3.3"
-
 "@ray-js/components-ty-slider@^0.3.8-beta-3":
   version "0.3.8-beta-3"
   resolved "https://registry.yarnpkg.com/@ray-js/components-ty-slider/-/components-ty-slider-0.3.8-beta-3.tgz#0fc90d6d12d4ab1a0e5050ae64f587deb1d47df6"

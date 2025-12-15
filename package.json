@@ -41,7 +41,7 @@
     }
   },
   "dependencies": {
-    "@ray-js/components-ty-slider": "^0.3.4",
+    "@ray-js/components-ty-slider": "^0.3.8-beta-3",
     "@tuya-miniapp/smart-ui": "2.8.1-beta-5",
     "lodash-es": "^4.17.21"
   },
