@@ -71,6 +71,7 @@ jobs:
         PROTECT_WRITE_TOKEN: ${{ secrets.PROTECT_WRITE_TOKEN }}
         repository: ${{ github.repository }}
         ref: ${{ github.ref }}
+        workflow_dispatch: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call' }}
 
     - name: Install Dependencies
       run: yarn install --frozen-lockfile
