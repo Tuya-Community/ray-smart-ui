@@ -13,9 +13,9 @@
 
 # v2.8.1
 发布计划（发布正式时间：2025.12.23 周二）
-- [x] 组件search、field、tab、tabbar、stepper、switch、toast、slider、index-bar、calendar、custom-keyboard 接入震动反馈API 测试版本 2.8.1-beta-3
 - [x] 修复 dialog 组件未关闭，销毁页面后无法再次打开问题 测试版本 2.8.1-beta-0
 - [x] bottom-sheet 组件支持 lockScroll 属性 测试版本 2.8.1-beta-1
-- [ ] nav-bar sideWidth 默认值从 mid 调整为 max
-- [ ] 整理版本更新变更要点，官网透出
 - [x] 简化 config-provider 主题文件体积 测试版本 2.8.1-beta-3
+- [x] 组件search、field、tab、tabbar、stepper、switch、toast、slider、index-bar、calendar、custom-keyboard 接入震动反馈API 测试版本 2.8.1-beta-3
+- [x] nav-bar sideWidth 默认值从 mid 调整为 max 测试版本 2.8.1-beta-11
+- [ ] 整理版本更新 Block Change 要点，官网透出
