@@ -126,6 +126,7 @@ export default function Demo() {
         leftArrow
         rightIcon={iconMore}
         rightIconSize="24px"
+        sideWidth="mid"
         onClickRight={onClickRight}
         onClickLeft={onClickLeft}
         onClickTitle={onClickTitle}
@@ -137,6 +138,7 @@ export default function Demo() {
         title="ScheduleScheduleScheduleSchedule"
         rightText="Confirm"
         leftText="Cancel"
+        sideWidth="mid"
         customClass="demo-nav-bar"
         rightTextColor="#F04C4C"
         onClickRightText={onClickRightText}
@@ -147,6 +149,7 @@ export default function Demo() {
         title="ScheduleScheduleScheduleSchedule"
         leftArrow
         rightText="Confirm"
+        sideWidth="mid"
         customClass="demo-nav-bar"
         rightTextColor="#F04C4C"
         onClickRightText={onClickRightText}

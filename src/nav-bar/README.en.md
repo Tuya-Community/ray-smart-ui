@@ -126,6 +126,7 @@ export default function Demo() {
         leftArrow
         rightIcon={iconMore}
         rightIconSize="24px"
+        sideWidth="mid"
         onClickRight={onClickRight}
         onClickLeft={onClickLeft}
         onClickTitle={onClickTitle}
@@ -138,6 +139,7 @@ export default function Demo() {
         rightText="Confirm"
         leftText="Cancel"
         customClass="demo-nav-bar"
+        sideWidth="mid"
         rightTextColor="#F04C4C"
         onClickRightText={onClickRightText}
         onClickLeftText={onClickLeftText}
@@ -148,6 +150,7 @@ export default function Demo() {
         leftArrow
         rightText="Confirm"
         customClass="demo-nav-bar"
+        sideWidth="mid"
         rightTextColor="#F04C4C"
         onClickRightText={onClickRightText}
         onClickLeft={onClickLeft}
