@@ -496,7 +496,7 @@ const [maxDate, setMaxDate] = useState(
 | --calendar-info-font-size                     | _10px_                                         | 日历信息字体大小                       |
 | --calendar-info-line-height                   | _14px_                                         | 日历信息行高                           |
 | --calendar-selected-day-background-color      | _#3678e3_                                      | 选中日期背景颜色                       |
-| --calendar-day-disabled-color                 | _#c8c9cc_                                      | 禁用日期颜色                           |
+| --calendar-day-disabled-color   `@deprecated v2.8.1`              | _#c8c9cc_                                      | 禁用日期颜色                           |
 | --calendar-confirm-button-height              | _36px_                                         | 确认按钮高度                           |
 | --calendar-confirm-button-margin              | _7px 0_                                        | 确认按钮边距                           |
 | --calendar-confirm-button-line-height         | _34px_                                         | 确认按钮行高                           |

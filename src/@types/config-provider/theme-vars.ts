@@ -301,7 +301,6 @@ type CalendarThemeVars =
   | 'calendarInfoFontSize'
   | 'calendarInfoLineHeight'
   | 'calendarSelectedDayBackgroundColor'
-  | 'calendarDayDisabledColor'
   | 'calendarConfirmButtonHeight'
   | 'calendarConfirmButtonMargin'
   | 'calendarConfirmButtonLineHeight'
