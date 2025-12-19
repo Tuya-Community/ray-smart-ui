@@ -355,41 +355,41 @@ export default function Demo() {
 
 ### Props
 
-| 参数                       | 说明                                                                                                                                                                                                                                                                                                          | 类型               | 默认值                                  |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | --------------------------------------- |
-| closeDragHeight `v2.7.2` | 拖拽关闭时的临界高度，低于该高度将自动关闭 | _number_ | `windowHeight * 0.4` |
-| closeOnClickOverlay | 点击遮罩是否关闭菜单 | _boolean_ | `true` |
-| contentHeight `v2.5.0` | 内容区域高度，当设置此值时，组件的 max-height 将会失效。当设置 draggable 时此值无效。 | _number \| string_ | `false` |
-| draggable `v2.7.2` | 是否支持拖拽，可用于实现拖拽调整面板高度 | _boolean_ | `false` |
-| iconColor | 标题中关闭按钮的颜色 | _string_ | `--app-B4-N3` \|\| `rgba(0, 0, 0, 0.5)` |
-| iconSize | 标题中关闭按钮的大小 | _string \| number_ | `24` |
-| lockMaxDrag  `v2.8.1` | 是否锁定最大拖拽高度，设置为 `true` 时，拖拽过程中面板高度不会超过 `max-drag-height` | _boolean_ | `false` |
-| lockScroll `v2.8.1` | 是否锁定背景滚动 | _boolean_ | `true` |
-| maxDragHeight `v2.7.2` | 拖拽时允许的最大高度 | _number_ | `windowHeight * 0.5` |
-| maxHeight `v2.6.0` | 整个组件的最大高度 | _number \| string_ | - |
-| midDragHeight `v2.7.2` | 拖拽时中间态高度 | _number_ | `windowHeight * 0.1` |
-| minDragHeight `v2.7.2` | 拖拽时允许的最小高度 | _number_ | `windowHeight * 0.8` |
-| nativeDisabled `v2.5.0` | 开启弹框期间是否禁用本地手势; 会在弹框开始进入动画时调用 `ty.nativeDisabled(true)`, 在弹框关闭动画结束时调用 `ty.nativeDisabled(false)` 恢复异层组件的点击能力；由于`ty.nativeDisabled` 是全局生效的，所以多个弹框组件同时打开时注意是否传 `native-disabled`属性和关闭的时机，防止 `native-disabled` 属性失效 | _boolean_ | `false` |
-| overlay | 是否显示遮罩层 | _boolean_ | `true` |
-| round | 是否显示圆角 | _boolean_ | `true` |
-| show | 是否显示底部弹窗 | _boolean_ | `false` |
-| showClose `v2.6.1` | 是否展示关闭图标。当设置 draggable 时此值无效。 | _boolean_ | `true` |
-| title | 标题 | _string_ | - |
-| zIndex | z-index 层级 | _number_ | `100` |
+| 参数                     | 说明                                                                                                                                                                                                                                                                                                          | 类型               | 默认值                                  |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | --------------------------------------- |
+| closeDragHeight `v2.7.2` | 拖拽关闭时的临界高度，低于该高度将自动关闭                                                                                                                                                                                                                                                                    | _number_           | `windowHeight * 0.4`                    |
+| closeOnClickOverlay      | 点击遮罩是否关闭菜单                                                                                                                                                                                                                                                                                          | _boolean_          | `true`                                  |
+| contentHeight `v2.5.0`   | 内容区域高度，当设置此值时，组件的 max-height 将会失效。当设置 draggable 时此值无效。                                                                                                                                                                                                                         | _number \| string_ | `false`                                 |
+| draggable `v2.7.2`       | 是否支持拖拽，可用于实现拖拽调整面板高度                                                                                                                                                                                                                                                                      | _boolean_          | `false`                                 |
+| iconColor                | 标题中关闭按钮的颜色                                                                                                                                                                                                                                                                                          | _string_           | `--app-B4-N3` \|\| `rgba(0, 0, 0, 0.5)` |
+| iconSize                 | 标题中关闭按钮的大小                                                                                                                                                                                                                                                                                          | _string \| number_ | `24`                                    |
+| lockMaxDrag `v2.8.1`     | 是否锁定最大拖拽高度，设置为 `true` 时，拖拽过程中面板高度不会超过 `max-drag-height`                                                                                                                                                                                                                          | _boolean_          | `false`                                 |
+| lockScroll `v2.8.1`      | 是否锁定背景滚动                                                                                                                                                                                                                                                                                              | _boolean_          | `true`                                  |
+| maxDragHeight `v2.7.2`   | 拖拽时允许的最大高度                                                                                                                                                                                                                                                                                          | _number_           | `windowHeight * 0.5`                    |
+| maxHeight `v2.6.0`       | 整个组件的最大高度                                                                                                                                                                                                                                                                                            | _number \| string_ | -                                       |
+| midDragHeight `v2.7.2`   | 拖拽时中间态高度                                                                                                                                                                                                                                                                                              | _number_           | `windowHeight * 0.1`                    |
+| minDragHeight `v2.7.2`   | 拖拽时允许的最小高度                                                                                                                                                                                                                                                                                          | _number_           | `windowHeight * 0.8`                    |
+| nativeDisabled `v2.5.0`  | 开启弹框期间是否禁用本地手势; 会在弹框开始进入动画时调用 `ty.nativeDisabled(true)`, 在弹框关闭动画结束时调用 `ty.nativeDisabled(false)` 恢复异层组件的点击能力；由于`ty.nativeDisabled` 是全局生效的，所以多个弹框组件同时打开时注意是否传 `native-disabled`属性和关闭的时机，防止 `native-disabled` 属性失效 | _boolean_          | `false`                                 |
+| overlay                  | 是否显示遮罩层                                                                                                                                                                                                                                                                                                | _boolean_          | `true`                                  |
+| round                    | 是否显示圆角                                                                                                                                                                                                                                                                                                  | _boolean_          | `true`                                  |
+| show                     | 是否显示底部弹窗                                                                                                                                                                                                                                                                                              | _boolean_          | `false`                                 |
+| showClose `v2.6.1`       | 是否展示关闭图标。当设置 draggable 时此值无效。                                                                                                                                                                                                                                                               | _boolean_          | `true`                                  |
+| title                    | 标题                                                                                                                                                                                                                                                                                                          | _string_           | -                                       |
+| zIndex                   | z-index 层级                                                                                                                                                                                                                                                                                                  | _number_           | `100`                                   |
 
 ### Events
 
-| 事件名                      | 说明                             | 参数                                          |
-| --------------------------- | -------------------------------- | --------------------------------------------- |
-| onAfterEnter | 遮罩进入后触发 | - |
-| onAfterLeave | 遮罩离开后触发 | - |
-| onBeforeEnter | 遮罩进入前触发 | - |
-| onBeforeLeave | 遮罩离开前触发 | - |
-| onClickOverlay | 点击遮罩层时触发 | - |
-| onClose | 点击关闭按钮时触发 | - |
+| 事件名                  | 说明                             | 参数                                          |
+| ----------------------- | -------------------------------- | --------------------------------------------- |
+| onAfterEnter            | 遮罩进入后触发                   | -                                             |
+| onAfterLeave            | 遮罩离开后触发                   | -                                             |
+| onBeforeEnter           | 遮罩进入前触发                   | -                                             |
+| onBeforeLeave           | 遮罩离开前触发                   | -                                             |
+| onClickOverlay          | 点击遮罩层时触发                 | -                                             |
+| onClose                 | 点击关闭按钮时触发               | -                                             |
 | onDragPosition `v2.7.2` | 拖拽结束时触发，返回当前面板位置 | _event.detail_: `'max'` \| `'mid'` \| `'min'` |
-| onEnter | 遮罩进入中触发 | - |
-| onLeave | 遮罩离开中触发 | - |
+| onEnter                 | 遮罩进入中触发                   | -                                             |
+| onLeave                 | 遮罩离开中触发                   | -                                             |
 
 ### Slot
 
@@ -400,8 +400,8 @@ export default function Demo() {
 
 ### 外部样式类
 
-| 类名         | 说明         |
-| ------------ | ------------ |
+| 类名        | 说明         |
+| ----------- | ------------ |
 | customClass | 根节点样式类 |
 
 ### 样式变量
