@@ -11,11 +11,13 @@
 - [x] 修复cascader、popover、notice-bar、switch组件黑白主题对齐UI设计稿
 - [x] slider 组件官网关联物料增加 CircleProgress
 
-# v2.8.1
+# v2.9.0
 发布计划（发布正式时间：2025.12.23 周二）
 - [x] 修复 dialog 组件未关闭，销毁页面后无法再次打开问题 测试版本 2.8.1-beta-0
 - [x] bottom-sheet 组件支持 lockScroll 属性 测试版本 2.8.1-beta-1
 - [x] 简化 config-provider 主题文件体积 测试版本 2.8.1-beta-3
 - [x] 组件search、field、tab、tabbar、stepper、switch、toast、slider、index-bar、calendar、custom-keyboard 接入震动反馈API 测试版本 2.8.1-beta-3
 - [x] nav-bar sideWidth 默认值从 mid 调整为 max 测试版本 2.8.1-beta-11
+- [x] calendar组件 删除 --calendar-day-disabled-color，采用 opacity 实现禁用样式，修复深色模式禁用样式问题 测试版本 2.8.1-beta-13
 - [ ] 整理版本更新 Block Change 要点，官网透出
+
