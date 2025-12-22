@@ -15,7 +15,7 @@
 发布计划（发布正式时间：2025.12.23 周二）
 - [x] 修复 dialog 组件未关闭，销毁页面后无法再次打开问题 测试版本 2.8.1-beta-0
 - [x] bottom-sheet 组件支持 lockScroll 属性 禁止遮罩滚动 测试版本 2.8.1-beta-1
-- [x] bottom-sheet 组件支持 lockMaxDrag 属性 禁止最大距离拖动 测试版本 2.8.1-beta-15
+- [x] bottom-sheet 组件支持 lockMaxDrag 属性 禁止最大距离拖动 测试版本 2.8.1-beta-16
 - [x] 简化 config-provider 主题文件体积 测试版本 2.8.1-beta-3
 - [x] 组件search、field、tab、tabbar、stepper、switch、toast、slider、index-bar、calendar、custom-keyboard 接入震动反馈API 测试版本 2.8.1-beta-3
 - [x] nav-bar sideWidth 默认值从 mid 调整为 max 测试版本 2.8.1-beta-11
