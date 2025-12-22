@@ -106,6 +106,12 @@ export interface SmartBottomSheetProps {
    * @default true
    */
   lockScroll?: boolean;
+  /**
+   * 是否锁定最大拖拽高度，设置为 `true` 时，拖拽过程中面板高度不会超过 `max-drag-height`
+   * @version 2.8.1
+   * @default false
+   */
+  lockMaxDrag?: boolean;
 }
 
 export interface SmartBottomSheetEvents extends SmartTransitionEvents {

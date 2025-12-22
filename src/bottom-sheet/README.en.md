@@ -350,6 +350,41 @@ export default function Demo() {
 }
 ```
 
+### Lock Maximum Drag Height `v2.8.1`
+
+By setting the `lockMaxDrag` property to `true`, you can lock the maximum drag height. During dragging, the panel height will not exceed `maxDragHeight`.
+
+```jsx
+import React from 'react';
+import { BottomSheet, Button } from '@ray-js/smart-ui';
+import { View } from '@ray-js/ray';
+
+export default function Demo() {
+  const [show, setShow] = React.useState(false);
+  const toggleBottomSheet = React.useCallback(() => setShow(!show), [show]);
+
+  return (
+    <View>
+      <Button type="primary" onClick={toggleBottomSheet}>
+        Pop-up Menu
+      </Button>
+      <BottomSheet
+        show={show}
+        draggable
+        lockMaxDrag
+        midDragHeight={300}
+        minDragHeight={100}
+        maxDragHeight={500}
+        closeDragHeight={200}
+        onClose={toggleBottomSheet}
+      >
+        <View style={{ backgroundColor: 'red', height: '300px' }} />
+      </BottomSheet>
+    </View>
+  );
+}
+```
+
 ## API
 
 ### Props

@@ -351,6 +351,41 @@ export default function Demo() {
 }
 ```
 
+### 锁定最大拖拽高度 `v2.8.1`
+
+通过设置 `lockMaxDrag` 属性为 `true`，可以锁定最大拖拽高度，拖拽过程中面板高度不会超过 `maxDragHeight`。
+
+```jsx
+import React from 'react';
+import { BottomSheet, Button } from '@ray-js/smart-ui';
+import { View } from '@ray-js/ray';
+
+export default function Demo() {
+  const [show, setShow] = React.useState(false);
+  const toggleBottomSheet = React.useCallback(() => setShow(!show), [show]);
+
+  return (
+    <View>
+      <Button type="primary" onClick={toggleBottomSheet}>
+        弹出菜单
+      </Button>
+      <BottomSheet
+        show={show}
+        draggable
+        lockMaxDrag
+        midDragHeight={300}
+        minDragHeight={100}
+        maxDragHeight={500}
+        closeDragHeight={200}
+        onClose={toggleBottomSheet}
+      >
+        <View style={{ backgroundColor: 'red', height: '300px' }} />
+      </BottomSheet>
+    </View>
+  );
+}
+```
+
 ## API
 
 ### Props

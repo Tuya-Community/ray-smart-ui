@@ -607,6 +607,7 @@ export default {
     dragPositionMid: 'Middle',
     dragPositionMin: 'Minimum',
     currentPanelPosition: 'Current Panel Position',
+    lockMaxDrag: 'Lock Maximum Drag Height',
   },
   zh: {
     doNotUseRoundedCorners: '不使用圆角',
@@ -1210,5 +1211,6 @@ export default {
     dragPositionMid: '中间',
     dragPositionMin: '最小',
     currentPanelPosition: '当前面板位置',
+    lockMaxDrag: '锁定最大拖拽高度',
   },
 };
