@@ -10,3 +10,17 @@
 - [x] 增加icon组件文档复制代码能力
 - [x] 修复cascader、popover、notice-bar、switch组件黑白主题对齐UI设计稿
 - [x] slider 组件官网关联物料增加 CircleProgress
+
+# v2.9.0
+发布计划（发布正式时间：2025.12.23 周二）
+- [x] 修复 dialog 组件未关闭，销毁页面后无法再次打开问题 测试版本 2.8.1-beta-0
+- [x] bottom-sheet 组件支持 lockScroll 属性 禁止遮罩滚动 测试版本 2.8.1-beta-1
+- [x] bottom-sheet 组件支持 lockMaxDrag 属性 禁止最大距离拖动 测试版本 2.8.1-beta-16
+- [x] 简化 config-provider 主题文件体积 测试版本 2.8.1-beta-3
+- [x] 组件search、field、tab、tabbar、stepper、switch、toast、slider、index-bar、calendar、custom-keyboard 接入震动反馈API 测试版本 2.8.1-beta-3
+- [x] nav-bar sideWidth 默认值从 mid 调整为 max 测试版本 2.8.1-beta-11
+- [x] calendar组件 删除 --calendar-day-disabled-color，采用 opacity 实现禁用样式，修复深色模式禁用样式问题 测试版本 2.8.1-beta-13
+- [x] 整理版本升级注意事项，官网透出 [跳转链接](https://developer.tuya.com/material/smartui?comId=help-changelog&tab=block)
+- [x] circle 删除多余样式，防止导致圆环缺角 测试版本 2.8.1-beta-16
+- [x] 修复picker loop模式部分列无法拖动选中的问题 测试版本 2.8.1-beta-16
+

@@ -491,10 +491,6 @@ index.module.less
 | loading | 是否为加载状态 | _boolean_ | - |
 | name | 标题 | _string_ | - |
 | subname | 二级标题 | _string_ | - |
-| sendMessageImg | 会话内消息卡片图片，openType="contact"时有效 | _string_ | 截图 |
-| sendMessagePath | 会话内消息卡片点击跳转小程序路径，openType="contact"时有效 | _string_ | 当前分享路径 |
-| sendMessageTitle | 会话内消息卡片标题，openType="contact"时有效 | _string_ | 当前标题 |
-| showMessageCard | 是否显示会话内消息卡片，设置此参数为 true，用户进入客服会话会在右下角显示"可能要发送的小程序"提示，用户点击后可以快速发送小程序消息，openType="contact"时有效 | _string_ | `false` |
 
 ### 外部样式类
 

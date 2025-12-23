@@ -1,5 +1,31 @@
 # 更新日志
 
+## v2.9.0 (2025-12-23)
+
+### Features ✨
+- bottom-sheet: 新增 lockScroll 属性禁止遮罩滚动([7eeec64](https://github.com/Tuya-Community/miniapp-smart-ui/pull/131/commits/7eeec64c305d0edfd413a3c34db4e3583a03b19c))；新增 lockMaxDrag 属性 禁止最大距离拖动([pull/128](https://github.com/Tuya-Community/miniapp-smart-ui/pull/128), [pull/129](https://github.com/Tuya-Community/miniapp-smart-ui/pull/129))
+- search: IOS 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- field: IOS 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- tab: IOS 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- tabbar: IOS 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- stepper: IOS 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- switch: IOS 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- toast: IOS 接入震动反馈([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- slider: IOS 接入震动反馈([7fb416f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/124/commits/7fb416fd10fc267920509b45e27ad9c10841f003))
+- index-bar: IOS 接入震动反馈([pull/110](https://github.com/Tuya-Community/miniapp-smart-ui/pull/110))
+- calendar: IOS 接入震动反馈([pull/109](https://github.com/Tuya-Community/miniapp-smart-ui/pull/109))
+- custom-keyboard: IOS 接入震动反馈([pull/111](https://github.com/Tuya-Community/miniapp-smart-ui/pull/111))
+
+### Bug Fixes  🐛
+
+- dialog: 修复组件未关闭，销毁页面后无法再次打开问题([b4f7472](https://github.com/Tuya-Community/miniapp-smart-ui/pull/131/commits/b4f74729ff5964597be13aa0b3e1f70a59d91b48))
+- config-provider: 缩小主题文件体积([3d55091](https://github.com/Tuya-Community/miniapp-smart-ui/pull/131/commits/3d5509187dd3830449127b68718bdd95243c13cd))
+- circle: 删除多余样式，防止导致圆环缺角([c4ae523](https://github.com/Tuya-Community/miniapp-smart-ui/pull/114/commits/c4ae5231522e85d09301bc24801066c6857b60b7))
+- picker: 修复 loop 模式部分列无法拖动选中的问题([bed9b37](https://github.com/Tuya-Community/miniapp-smart-ui/pull/113/commits/bed9b37f9fc5a885c031de24c6c5c6f526d72fd9))
+- nav-bar: 对齐涂鸦 UI 标准，sideWidth 默认值从 mid 调整为 max([64281c8](https://github.com/Tuya-Community/miniapp-smart-ui/pull/125/commits/64281c830cde83b908320085014f394058b257c1))
+- calendar: 对齐涂鸦 UI 标准，删除 --calendar-day-disabled-color，采用 opacity 实现禁用样式，修复深色模式禁用样式问题([pull/126](https://github.com/Tuya-Community/miniapp-smart-ui/pull/126))
+- slider: 修复 parcel 类型时按钮边框间距问题，修复 onChange 回调中 min max 不准确问题，修复按钮隐藏时初始状态异常问题([7fb416f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/124/commits/7fb416fd10fc267920509b45e27ad9c10841f003))
+
 ## v2.8.0 (2025-12-11)
 
 ### Features ✨
@@ -88,7 +114,7 @@
 - tab: 修复 color 属性 在 card 模式下的问题([pull/42](https://github.com/Tuya-Community/miniapp-smart-ui/pull/42))
 - notice-bar: 修复 onBtnClick 事件点击问题([4250d39](https://github.com/Tuya-Community/miniapp-smart-ui/pull/50/commits/4250d39ec89198f115803acaaf82266553bc9f9c))
 - popup: 默认底部安全距离关闭([3da77ee](https://github.com/Tuya-Community/miniapp-smart-ui/pull/54/commits/3da77eecbc51b014fd06b4871d054ddda9d2a1c7))
-- calender: 默认底部安全距离关闭([4c91851](https://github.com/Tuya-Community/miniapp-smart-ui/pull/54/commits/4c91851fe674bcb64a19c830a3f1539da8700dd1))
+- calendar: 默认底部安全距离关闭([4c91851](https://github.com/Tuya-Community/miniapp-smart-ui/pull/54/commits/4c91851fe674bcb64a19c830a3f1539da8700dd1))
 - picker: 修复在 flex 布局下默认没有宽度的问题([f3f4772](https://github.com/Tuya-Community/miniapp-smart-ui/pull/55/commits/f3f47729fd4c1af0eb617cf56d957c2b389f2d4e));修复单位距离不受 fontStyle 属性控制问题([4eb02fc](https://github.com/Tuya-Community/miniapp-smart-ui/pull/55/commits/4eb02fca12cb6feab62e8fdfd7d82d27bc52159c))
 - datetime-picker: 修复在 flex 布局下默认没有宽度的问题([f3f4772](https://github.com/Tuya-Community/miniapp-smart-ui/pull/55/commits/f3f47729fd4c1af0eb617cf56d957c2b389f2d4e))
 - icon: 更新 right、left、down、up 图标,对齐 UI 标准([e1bd07e](https://github.com/Tuya-Community/miniapp-smart-ui/commit/e1bd07ebb2bd411fe82e714b11e603ed68271c9a))
@@ -113,7 +139,7 @@
 
 ### Bug Fixes 🐛
 - picker: 修复单位对齐问题([fc12155](https://github.com/Tuya-Community/miniapp-smart-ui/pull/28/commits/fc12155f3883d0147cb328c2123442f147fef330));
-- calender: 修复 CSS 变量 --calendar-day-height、--calendar-selected-day-size不生效问题([a08cebe](https://github.com/Tuya-Community/miniapp-smart-ui/pull/31/commits/a08cebe8ff8a62c8d544214cfbd5c05b3cce8347), [bfebfa3](https://github.com/Tuya-Community/miniapp-smart-ui/pull/31/commits/bfebfa3a26ec28e9a4a485f9ea1fd73189ed0624))
+- calendar: 修复 CSS 变量 --calendar-day-height、--calendar-selected-day-size不生效问题([a08cebe](https://github.com/Tuya-Community/miniapp-smart-ui/pull/31/commits/a08cebe8ff8a62c8d544214cfbd5c05b3cce8347), [bfebfa3](https://github.com/Tuya-Community/miniapp-smart-ui/pull/31/commits/bfebfa3a26ec28e9a4a485f9ea1fd73189ed0624))
 - button: 修复 hoverClass 参数类型缺失问题([2789e24](https://github.com/Tuya-Community/ray-smart-ui/pull/18/commits/2789e2494985a10aeb6a440eba07306c07f54ee9))
 - 修改 @tuya-miniapp/icons 资源引入方式([d4921f1](https://github.com/Tuya-Community/miniapp-smart-ui/pull/28/commits/d4921f1763211cb631bcd11a51f8ac0296691b77))
 

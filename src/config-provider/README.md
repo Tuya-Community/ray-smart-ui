@@ -7,7 +7,7 @@ category: 通用
 ## 介绍
 
 用于配置 Smart UI 组件的主题样式。
-
+* [ConfigProvider 组件最佳实践](https://github.com/Tuya-Community/miniapp-smart-ui/wiki/ConfigProvider-%E7%BB%84%E4%BB%B6%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5)
 
 ### 引入
 

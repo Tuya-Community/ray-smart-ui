@@ -476,11 +476,6 @@ index.module.less
 | loading | Whether it's in loading state | _boolean_ | - |
 | name | Title | _string_ | - |
 | subname | Subtitle | _string_ | - |
-| sendMessageImg | Message card image in session, effective when openType="contact" | _string_ | Screenshot |
-| sendMessagePath | Path to navigate to the mini-program when clicking on the message card in session, effective when openType="contact" | _string_ | Current sharing path |
-| sendMessageTitle | Title of the message card in session, effective when openType="contact" | _string_ | Current title |
-| showMessageCard | Whether to display the message card in session. When this parameter is set to true, the user will see "Possible mini-program to send" in the lower right corner when entering the customer service session, which allows for quick mini-program message sending upon clicking. Effective when openType="contact" | _string_ | `false` |
-
 
 ### External Style Classes
 

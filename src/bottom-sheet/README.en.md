@@ -350,82 +350,120 @@ export default function Demo() {
 }
 ```
 
+### Lock Maximum Drag Height `v2.9.0`
+
+By setting the `lockMaxDrag` property to `true`, you can lock the maximum drag height. During dragging, the panel height will not exceed `maxDragHeight`.
+
+```jsx
+import React from 'react';
+import { BottomSheet, Button } from '@ray-js/smart-ui';
+import { View } from '@ray-js/ray';
+
+export default function Demo() {
+  const [show, setShow] = React.useState(false);
+  const toggleBottomSheet = React.useCallback(() => setShow(!show), [show]);
+
+  return (
+    <View>
+      <Button type="primary" onClick={toggleBottomSheet}>
+        Pop-up Menu
+      </Button>
+      <BottomSheet
+        show={show}
+        draggable
+        lockMaxDrag
+        midDragHeight={300}
+        minDragHeight={100}
+        maxDragHeight={500}
+        closeDragHeight={200}
+        onClose={toggleBottomSheet}
+      >
+        <View style={{ backgroundColor: 'red', height: '300px' }} />
+      </BottomSheet>
+    </View>
+  );
+}
+```
+
 ## API
 
 ### Props
 
-| Parameter | Description | Type | Default |
-| --- | --- | --- | --- |
-| show | Whether to display the bottom sheet | _boolean_ | `false` |
-| title | Title | _string_ | - |
-| iconSize | Size of the close button in the title | _string \| number_ | `24` |
-| iconColor | Color of the close button in the title | _string_ | `--app-B4-N3` \|\| `rgba(0, 0, 0, 0.5)` |
-| round | Whether to display rounded corners | _boolean_ | `true` |
-| zIndex | z-index level | _number_ | `100` |
-| overlay | Whether to display the overlay | _boolean_ | `true` |
-| closeOnClickOverlay | Whether clicking the overlay closes the menu | _boolean_ | `true` |
-| nativeDisabled `v2.5.0` | Whether to disable local gestures during the opening of the dialog; it will call `ty.nativeDisabled(true)` when the dialog starts the entrance animation, and call `ty.nativeDisabled(false)` at the end of the closing animation to restore the click ability of components on different layers. Since `ty.nativeDisabled` works globally, pay attention to whether to pass the `native-disabled` attribute and the timing of closing when multiple dialog components are opened simultaneously, to prevent the `native-disabled` attribute from being ineffective. | _boolean_ | `false` |
-| contentHeight `v2.5.0` | Content area height. When this value is set, the component's max-height will be invalid. This value is ignored when draggable is set. | _number \| string_ | `false` |
-| maxHeight `v2.6.0` | The maximum height of the entire component | _number \| string_ | - |
-| showClose `v2.6.1` | Whether to display the close icon. This value is ignored when draggable is set. | _boolean_ | `true` |
-| draggable `v2.7.2` | Whether dragging to adjust panel height is supported | _boolean_ | `false` |
-| minDragHeight `v2.7.2` | Minimum allowed height when dragging | _number_ | `windowHeight * 0.8` |
-| maxDragHeight `v2.7.2` | Maximum allowed height when dragging | _number_ | `windowHeight * 0.5` |
-| midDragHeight `v2.7.2` | Middle state height when dragging | _number_ | `windowHeight * 0.1` |
+| Parameter                  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Type               | Default                                 |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | --------------------------------------- |
 | closeDragHeight `v2.7.2` | Threshold height for closing on drag; if the height goes below this while dragging, the sheet will automatically close | _number_ | `windowHeight * 0.4` |
+| closeOnClickOverlay | Whether clicking the overlay closes the menu | _boolean_ | `true` |
+| contentHeight `v2.5.0` | Content area height. When this value is set, the component's max-height will be invalid. This value is ignored when draggable is set. | _number \| string_ | `false` |
+| draggable `v2.7.2` | Whether dragging to adjust panel height is supported | _boolean_ | `false` |
+| iconColor | Color of the close button in the title | _string_ | `--app-B4-N3` \|\| `rgba(0, 0, 0, 0.5)` |
+| iconSize | Size of the close button in the title | _string \| number_ | `24` |
+| lockMaxDrag  `v2.9.0` | Whether to lock the maximum drag height. When set to `true`, the panel height will not exceed `max-drag-height` during dragging | _boolean_ | `false` |
+| lockScroll `v2.9.0` | Whether to lock background scrolling | _boolean_ | `true` |
+| maxDragHeight `v2.7.2` | Maximum allowed height when dragging | _number_ | `windowHeight * 0.5` |
+| maxHeight `v2.6.0` | The maximum height of the entire component | _number \| string_ | - |
+| midDragHeight `v2.7.2` | Middle state height when dragging | _number_ | `windowHeight * 0.1` |
+| minDragHeight `v2.7.2` | Minimum allowed height when dragging | _number_ | `windowHeight * 0.8` |
+| nativeDisabled `v2.5.0` | Whether to disable local gestures during the opening of the dialog; it will call `ty.nativeDisabled(true)` when the dialog starts the entrance animation, and call `ty.nativeDisabled(false)` at the end of the closing animation to restore the click ability of components on different layers. Since `ty.nativeDisabled` works globally, pay attention to whether to pass the `native-disabled` attribute and the timing of closing when multiple dialog components are opened simultaneously, to prevent the `native-disabled` attribute from being ineffective. | _boolean_ | `false` |
+| overlay | Whether to display the overlay | _boolean_ | `true` |
+| round | Whether to display rounded corners | _boolean_ | `true` |
+| show | Whether to display the bottom sheet | _boolean_ | `false` |
+| showClose `v2.6.1` | Whether to display the close icon. This value is ignored when draggable is set. | _boolean_ | `true` |
+| title | Title | _string_ | - |
+| zIndex | z-index level | _number_ | `100` |
 
 
 ### Events
 
-| Event Name         | Description                 | Parameters |
-| ------------------ | --------------------------- | ---------- |
-| onClose | Triggered when closing popup | - |
-| onBeforeEnter | Triggered before entering | - |
-| onEnter | Triggered during entering | - |
+| Event Name                  | Description                                                      | Parameters                                    |
+| --------------------------- | ---------------------------------------------------------------- | --------------------------------------------- |
 | onAfterEnter | Triggered after entering | - |
-| onBeforeLeave | Triggered before leaving | - |
-| onLeave | Triggered during leaving | - |
 | onAfterLeave | Triggered after leaving | - |
+| onBeforeEnter | Triggered before entering | - |
+| onBeforeLeave | Triggered before leaving | - |
 | onClickOverlay | Triggered when clicking overlay | - |
+| onClose | Triggered when closing popup | - |
 | onDragPosition `v2.7.2` | Triggered when dragging ends, returns the current panel position | _event.detail_: `'max'` \| `'mid'` \| `'min'` |
+| onEnter | Triggered during entering | - |
+| onLeave | Triggered during leaving | - |
 
 
 ### Slot
 
-| name          | Description           |
-| ------------- | -------------- |
-| - | content |
+| name           | Description |
+| -------------- | ----------- |
+| -              | content     |
 | title `v2.6.1` | Title Slot |
 
 
 ### External Style Classes
 
-| Class Name    | Description   |
-| ------------- | ------------- |
+| Class Name   | Description           |
+| ------------ | --------------------- |
 | customClass | Root node style class |
 
 ### Style Variables
 
 The component offers the following CSS variables for custom styles. For usage, please refer to the [ConfigProvider component](/material/smartui?comId=config-provider).
 
-| Name                          | Default Value                            | Description |
-| ----------------------------- | ---------------------------------------- | ----------- |
-| --bottom-sheet-width        | _100%_                           | Width of the bottom sheet    |
-| --bottom-sheet-min-height        | _auto_                         | Minimum height of the bottom sheet    |
-| --bottom-sheet-max-height  | _50%_    | Maximum height of the bottom sheet    |
-| --bottom-sheet-padding  | _0 16px_    | Inner padding of the bottom popup content area    |
-| --bottom-sheet-icon-margin  | _16px 16px 0 0_    | Margin of the close icon in the bottom sheet    |
-| --bottom-sheet-header-height  | _56px_    | Height of the bottom sheet header    |
-| --bottom-sheet-header-color  | _var(--app-B4-N1, rgba(0, 0, 0, 1))_  | Text color of the bottom sheet header   |
-| --bottom-sheet-header-font-size  | _17px_    | Font size of the bottom sheet header text    |
-| --bottom-sheet-header-font-weight  | _600_    | Font weight of the bottom sheet header text    |
-| --bottom-sheet-font-color  | _var(--app-B4-N1, rgba(0, 0, 0, 1))_    | Text color of the bottom sheet    |
-| --bottom-sheet-header-padding `v2.5.0`  | _0 16px_    | Padding of the bottom popup header    |
-| --bottom-sheet-dragger-padding `v2.7.2` | _8px 0_ | Padding of the drag handle area |
-| --bottom-sheet-dragger-node-width `v2.7.2` | _30px_ | Width of the drag handle |
-| --bottom-sheet-dragger-node-height `v2.7.2` | _4px_ | Height of the drag handle |
-| --bottom-sheet-dragger-node-border-radius `v2.7.2` | _2px_ | Border radius of the drag handle |
-| --bottom-sheet-dragger-node-background `v2.7.2` | _rgba(0, 0, 0, 0.3)_ | Background color of the drag handle |
+| Name                                               | Default Value                        | Description                                    |
+| -------------------------------------------------- | ------------------------------------ | ---------------------------------------------- |
+| --bottom-sheet-dragger-node-background `v2.7.2`    | _rgba(0, 0, 0, 0.3)_                 | Background color of the drag handle            |
+| --bottom-sheet-dragger-node-border-radius `v2.7.2` | _2px_                                | Border radius of the drag handle               |
+| --bottom-sheet-dragger-node-height `v2.7.2`        | _4px_                                | Height of the drag handle                      |
+| --bottom-sheet-dragger-node-width `v2.7.2`         | _30px_                               | Width of the drag handle                       |
+| --bottom-sheet-dragger-padding `v2.7.2`            | _8px 0_                              | Padding of the drag handle area                |
+| --bottom-sheet-font-color                          | _var(--app-B4-N1, rgba(0, 0, 0, 1))_ | Text color of the bottom sheet                 |
+| --bottom-sheet-header-color                        | _var(--app-B4-N1, rgba(0, 0, 0, 1))_ | Text color of the bottom sheet header          |
+| --bottom-sheet-header-font-size                    | _17px_                               | Font size of the bottom sheet header text      |
+| --bottom-sheet-header-font-weight                  | _600_                                | Font weight of the bottom sheet header text    |
+| --bottom-sheet-header-height                       | _56px_                               | Height of the bottom sheet header              |
+| --bottom-sheet-header-padding `v2.5.0`             | _0 16px_                             | Padding of the bottom popup header             |
+| --bottom-sheet-icon-margin                         | _16px 16px 0 0_                      | Margin of the close icon in the bottom sheet   |
+| --bottom-sheet-max-height                          | _50%_                                | Maximum height of the bottom sheet             |
+| --bottom-sheet-min-height                          | _auto_                               | Minimum height of the bottom sheet             |
+| --bottom-sheet-padding                             | _0 16px_                             | Inner padding of the bottom popup content area |
+| --bottom-sheet-width                               | _100%_                               | Width of the bottom sheet                      |
+| --popup-background-color    | _var(--app-B4, #ffffff)_       | Popup Background Color         |
 
 ## FAQ
 
