@@ -21,4 +21,6 @@
 - [x] nav-bar sideWidth 默认值从 mid 调整为 max 测试版本 2.8.1-beta-11
 - [x] calendar组件 删除 --calendar-day-disabled-color，采用 opacity 实现禁用样式，修复深色模式禁用样式问题 测试版本 2.8.1-beta-13
 - [x] 整理版本升级注意事项，官网透出 [跳转链接](https://developer.tuya.com/material/smartui?comId=help-changelog&tab=block)
+- [x] circle 删除多余样式，防止导致圆环缺角 测试版本 2.8.1-beta-16
+- [x] 修复picker loop模式部分列无法拖动选中的问题 测试版本 2.8.1-beta-16
 

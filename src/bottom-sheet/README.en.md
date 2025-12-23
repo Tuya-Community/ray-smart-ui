@@ -397,8 +397,8 @@ export default function Demo() {
 | draggable `v2.7.2` | Whether dragging to adjust panel height is supported | _boolean_ | `false` |
 | iconColor | Color of the close button in the title | _string_ | `--app-B4-N3` \|\| `rgba(0, 0, 0, 0.5)` |
 | iconSize | Size of the close button in the title | _string \| number_ | `24` |
-| lockMaxDrag  `v2.8.1` | Whether to lock the maximum drag height. When set to `true`, the panel height will not exceed `max-drag-height` during dragging | _boolean_ | `false` |
-| lockScroll `v2.8.1` | Whether to lock background scrolling | _boolean_ | `true` |
+| lockMaxDrag  `v2.9.0` | Whether to lock the maximum drag height. When set to `true`, the panel height will not exceed `max-drag-height` during dragging | _boolean_ | `false` |
+| lockScroll `v2.9.0` | Whether to lock background scrolling | _boolean_ | `true` |
 | maxDragHeight `v2.7.2` | Maximum allowed height when dragging | _number_ | `windowHeight * 0.5` |
 | maxHeight `v2.6.0` | The maximum height of the entire component | _number \| string_ | - |
 | midDragHeight `v2.7.2` | Middle state height when dragging | _number_ | `windowHeight * 0.1` |
@@ -463,6 +463,7 @@ The component offers the following CSS variables for custom styles. For usage, p
 | --bottom-sheet-min-height                          | _auto_                               | Minimum height of the bottom sheet             |
 | --bottom-sheet-padding                             | _0 16px_                             | Inner padding of the bottom popup content area |
 | --bottom-sheet-width                               | _100%_                               | Width of the bottom sheet                      |
+| --popup-background-color    | _var(--app-B4, #ffffff)_       | Popup Background Color         |
 
 ## FAQ
 

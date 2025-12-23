@@ -447,7 +447,7 @@ The component provides the following CSS variables for custom styles. For usage,
 | --calendar-info-font-size                       | _10px_                                         | Calendar info font size               |
 | --calendar-info-line-height                     | _14px_                                         | Calendar info line height             |
 | --calendar-selected-day-background-color        | _#3678e3_                                      | Selected day background color         |
-| --calendar-day-disabled-color   `@deprecated v2.8.1`                | _#c8c9cc_                                      | Disabled day color                    |
+| --calendar-day-disabled-color   `@deprecated v2.9.0`                | _#c8c9cc_                                      | Disabled day color                    |
 | --calendar-confirm-button-height                | _36px_                                         | Confirm button height                 |
 | --calendar-confirm-button-margin                | _7px 0_                                        | Confirm button margin                 |
 | --calendar-confirm-button-line-height           | _34px_                                         | Confirm button line height            |

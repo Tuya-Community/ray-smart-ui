@@ -398,8 +398,8 @@ export default function Demo() {
 | draggable `v2.7.2` | 是否支持拖拽，可用于实现拖拽调整面板高度 | _boolean_ | `false` |
 | iconColor | 标题中关闭按钮的颜色 | _string_ | `--app-B4-N3` \|\| `rgba(0, 0, 0, 0.5)` |
 | iconSize | 标题中关闭按钮的大小 | _string \| number_ | `24` |
-| lockMaxDrag `v2.8.1` | 是否锁定最大拖拽高度，设置为 `true` 时，拖拽过程中面板高度不会超过 `max-drag-height` | _boolean_ | `false` |
-| lockScroll `v2.8.1` | 是否锁定背景滚动 | _boolean_ | `true` |
+| lockMaxDrag `v2.9.0` | 是否锁定最大拖拽高度，设置为 `true` 时，拖拽过程中面板高度不会超过 `max-drag-height` | _boolean_ | `false` |
+| lockScroll `v2.9.0` | 是否锁定背景滚动 | _boolean_ | `true` |
 | maxDragHeight `v2.7.2` | 拖拽时允许的最大高度 | _number_ | `windowHeight * 0.5` |
 | maxHeight `v2.6.0` | 整个组件的最大高度 | _number \| string_ | - |
 | midDragHeight `v2.7.2` | 拖拽时中间态高度 | _number_ | `windowHeight * 0.1` |
@@ -461,6 +461,7 @@ export default function Demo() {
 | --bottom-sheet-min-height                          | _auto_                               | 底部弹窗的最小高度         |
 | --bottom-sheet-padding                             | _0 16px_                             | 底部弹窗内容区域的内边距   |
 | --bottom-sheet-width                               | _100%_                               | 底部弹窗的宽度             |
+| --popup-background-color      | _var(--app-B4, #ffffff)_       | 弹框背景色         |
 
 ## 常见问题
 
