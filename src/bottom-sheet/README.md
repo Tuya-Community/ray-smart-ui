@@ -351,7 +351,7 @@ export default function Demo() {
 }
 ```
 
-### 锁定最大拖拽高度 `v2.8.1`
+### 锁定最大拖拽高度 `v2.9.0`
 
 通过设置 `lockMaxDrag` 属性为 `true`，可以锁定最大拖拽高度，拖拽过程中面板高度不会超过 `maxDragHeight`。
 

@@ -102,13 +102,13 @@ export interface SmartBottomSheetProps {
   closeDragHeight?: number;
   /**
    * 是否锁定背景滚动
-   * @version 2.8.1
+   * @version 2.9.0
    * @default true
    */
   lockScroll?: boolean;
   /**
    * 是否锁定最大拖拽高度，设置为 `true` 时，拖拽过程中面板高度不会超过 `max-drag-height`
-   * @version 2.8.1
+   * @version 2.9.0
    * @default false
    */
   lockMaxDrag?: boolean;

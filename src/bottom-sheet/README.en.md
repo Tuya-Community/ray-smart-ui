@@ -350,7 +350,7 @@ export default function Demo() {
 }
 ```
 
-### Lock Maximum Drag Height `v2.8.1`
+### Lock Maximum Drag Height `v2.9.0`
 
 By setting the `lockMaxDrag` property to `true`, you can lock the maximum drag height. During dragging, the panel height will not exceed `maxDragHeight`.
 

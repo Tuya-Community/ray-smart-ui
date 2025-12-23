@@ -3440,15 +3440,6 @@
     clsx "^1.2.1"
     js-base64 "^3.7.7"
 
-"@ray-js/components-ty-slider@^0.3.4":
-  version "0.3.4"
-  resolved "https://registry.npmjs.org/@ray-js/components-ty-slider/-/components-ty-slider-0.3.4.tgz#0824c8dd3cf0b421431840ef8861e9f607de15db"
-  integrity sha512-qdpJiA1t5R/nCzasQhY0S/USuO35Z3utseuIALS8H32tovdGB/CccbXbCv5aFAu9LfSYuKHLcSI9iJUzy13zhQ==
-  dependencies:
-    clsx "^1.2.1"
-    lodash "^4.17.21"
-    to-style "^1.3.3"
-
 "@ray-js/components-ty-slider@^0.3.8":
   version "0.3.8"
   resolved "https://registry.yarnpkg.com/@ray-js/components-ty-slider/-/components-ty-slider-0.3.8.tgz#ff3caf6b503f8361f5f019fed1150b28903ebf42"
@@ -3887,10 +3878,10 @@
   resolved "https://registry.npmjs.org/@tuya-miniapp/icons/-/icons-2.3.0.tgz#e2f5a7df056b3de406451c1939ac8da7afc53392"
   integrity sha512-mplKNn6++goSlk5g2QHrtF/jXPf2cZIHbTVO8WWblfUBaUaYV7VRpLI24J9qMxJMufE6Wey/DnCAoDQABiA4YQ==
 
-"@tuya-miniapp/smart-ui@2.9.0-beta-0":
-  version "2.9.0-beta-0"
-  resolved "https://registry.yarnpkg.com/@tuya-miniapp/smart-ui/-/smart-ui-2.9.0-beta-0.tgz#8607a28dd2cd3d68b3aca03b5b41bfe5f8162489"
-  integrity sha512-4yM14ObHD0k8oMEDuc/0LPFNuZ366jQ2NU/7rIzEH7xT9Pt4k8zTCV3ttfd9HXxDzREEcD86C7+Z2e4XdD3hhQ==
+"@tuya-miniapp/smart-ui@^2.9.0":
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/@tuya-miniapp/smart-ui/-/smart-ui-2.9.0.tgz#aef786f4b19cad898d5a56c51d5c6f58018b394d"
+  integrity sha512-JFYHY6nieVczaLGX2LQUz+lib4FJC8TyuFakSYvS57OXTeqF1YUnwsTFoWIfvxN9wlPrHfscZkiISYVpwz/GEA==
   dependencies:
     "@ray-js/components-ty-slider" "^0.3.8"
     "@tuya-miniapp/icons" "^2.3.0"
