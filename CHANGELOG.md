@@ -332,12 +332,14 @@
 
 ## v2.1.10 (2025-1-13)
 ### Bug Fixes 🐛
- - 修复 config-provider ts类型缺失问题
- - 修复 notice-bar 背景色有透明度问题，修改的CSS变量：--notice-bar-info-color、--notice-bar-warning-color、--notice-bar-error-color;
+
+ - config-provider: 修复 TS 类型缺失问题
+ - notice-bar: 修复背景色有透明度问题，修改的CSS变量：--notice-bar-info-color、--notice-bar-warning-color、--notice-bar-error-color;
 
 ## v2.1.8 (2024-01-06)
 ### Bug Fixes 🐛
- - 修复toast、dialog api方式调用时获取context错误导致无法获取组件实例问题
+- toast: 修复 API 方式调用时获取context错误导致无法获取组件实例问题
+- dialog: 修复 API 方式调用时获取context错误导致无法获取组件实例问题
 
 ## v2.1.7 (2024-12-27)
 ### Bug Fixes 🐛
@@ -384,7 +386,7 @@
 
 ### Bug Fixes 🐛
 - 修复 DropDown 组件 向上展开时展开框的位置问题
-- 修复 Tab 组件card模式时滑块样式问题，多层嵌套切换控制台错误提示问题
+- tab: 修复组件card模式时滑块样式问题，多层嵌套切换控制台错误提示问题
 
 ### Features ✨
 - hairline: 增加 hairline 类样式变量 --hairline-top-width,--hairline-left-width,--hairline-right-width,--hairline-bottom-width,--hairline-surround-width,--hairline-top-bottom-width,--hairline-color
