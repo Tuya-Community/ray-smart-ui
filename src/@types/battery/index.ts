@@ -63,6 +63,22 @@ export interface SmartBatteryProps {
    * @default null
    */
   onCalcColor?: () => string;
+
+  /**
+   * 是否处于充电状态
+   *
+   * @version v2.8.1
+   * @default false
+   */
+  inCharging?: boolean;
+
+  /**
+   * 是否显示电量文本
+   *
+   * @version v2.8.1
+   * @default false
+   */
+  showText?: boolean;
 }
 
 export type SmartBattery = SmartComponent<SmartBatteryProps>;
