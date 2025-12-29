@@ -31,7 +31,11 @@ const unwrapUtc = (dt: number | Date, targetOffset: number) => {
 };
 
 export const Calendar: React.FC<SmartCalendar> = props => {
-  const utcOffset = props.utcOffset ?? -480;
+  if (props.utcOffset === undefined) {
+    return <SmartCalendar {...props} />;
+  }
+
+  const utcOffset = props.utcOffset;
 
   let defaultDate = props.defaultDate;
   let maxDate = props.maxDate;
