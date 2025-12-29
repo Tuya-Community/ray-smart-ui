@@ -805,6 +805,18 @@ type PopoverThemeVars =
   | 'popoverBorderRadius'
   | 'popoverOverlayColor';
 
+type BatteryThemeVars =
+  | 'batteryBodyBaseBackground'
+  | 'batteryTextColor'
+  | 'batterySlashBorderColor'
+  | 'batteryBodyHighBackground'
+  | 'batteryBodyMiddleBackground'
+  | 'batteryBodyLowBackground'
+  | 'batteryBodyChargingBackground'
+  | 'batteryTextFontSize'
+  | 'batteryTextFontWeight'
+  | 'batteryTextPadding';
+
 /**
  * 主题变量
  */
@@ -852,6 +864,7 @@ export type ThemeVars = Record<
   | SkeletonThemeVars
   | CascaderThemeVars
   | CustomKeyboardThemeVars
-  | PopoverThemeVars,
+  | PopoverThemeVars
+  | BatteryThemeVars,
   string
 >;
