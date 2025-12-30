@@ -396,12 +396,15 @@ const [maxDate, setMaxDate] = useState(
 
 ### Props
 
-| 参数                    | 说明                                                                | 类型                               | 默认值              |
-| ----------------------- | ------------------------------------------------------------------- | ---------------------------------- | ------------------- |
+| 参数                       | 说明                                                                                                                                                             | 类型                               | 默认值               |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- | -------------------- |
 | color | 主题色，对底部按钮和选中日期生效 | _string_ | `#ee0a24` |
 | confirmText | 确认按钮的文字 | _string_ | `确定` |
+| dayClassMap `v2.1.0` | 日期单元格样式 | Object | null |
 | defaultDate `v1.10.21` | 默认选中的日期，`type`为`range`时为数组，传入 `null` 表示默认不选择 | _timestamp \| timestamp[] \| null_ | 今天 |
+| firstDayOfSelectWeek `v2.9.1` | 设置周选择时的起始日，用于控制点击日期时选择的周范围。`first-day-of-week` 用于控制日历显示的周起始日，而 `first-day-of-select-week` 专门用于控制周选择的范围计算 | _0~6_ | `1` |
 | firstDayOfWeek | 设置周起始日 | _0~6_ | `0` |
+| headerIconColor `v2.6.0` | 头部栏左右箭头 icon 颜色 | _string_ | `rgba(0, 0, 0, 0.7)` |
 | locale | 多语言包 | _Object_ | [默认配置](#locale) |
 | maxDate | 可选择的最大日期 | _timestamp_ | 当前日期的六个月后 |
 | minDate | 可选择的最小日期 | _timestamp_ | 当前日期 |
@@ -412,27 +415,25 @@ const [maxDate, setMaxDate] = useState(
 | showSubtitle | 是否展示日历副标题（年月） | _boolean_ | `true` |
 | showTitle | 是否展示日历标题 | _boolean_ | `true` |
 | title | 日历标题 | _string_ | `日期选择` |
-| dayClassMap `v2.1.0` | 日期单元格样式 | Object | null |
 | type | 选择类型:<br>`single`表示选择单个日期，<br>`range`表示选择日期区间，<br>`week`表示选择周，<br>`month`表示选择月，<br>`year`表示选择年 | _string_ | `single` |
-| headerIconColor  `v2.6.0` | 头部栏左右箭头 icon 颜色 | _string_ | `rgba(0, 0, 0, 0.7)` |
 
 ### Range Props
 
 当 Calendar 的 `type` 为 `range` 时，支持以下 props:
 
-| 参数               | 说明                                          | 类型               | 默认值                   |
-| ------------------ | --------------------------------------------- | ------------------ | ------------------------ |
+| 参数                       | 说明                                         | 类型               | 默认值                      |
+| -------------------------- | -------------------------------------------- | ------------------ | --------------------------- |
+| allowSameDay `v2.3.9` | 是否允许日期范围的起止时间为同一天 | _boolean_ | `false` |
 | maxRange `v2.3.9` | 日期区间最多可选天数，默认无限制 | _number \| string_ | - |
 | rangePrompt `v2.3.9` | 范围选择超过最多可选天数时的提示文案 | _string \| null_ | `Days selected over x days` |
 | showRangePrompt `v2.3.9` | 范围选择超过最多可选天数时，是否展示提示文案 | _boolean_ | `true` |
-| allowSameDay `v2.3.9` | 是否允许日期范围的起止时间为同一天 | _boolean_ | `false` |
 
 ### Poppable Props
 
 当 Calendar 的 `poppable` 为 `true` 时，支持以下 props:
 
-| 参数                   | 说明                                    | 类型      | 默认值   |
-| ---------------------- | --------------------------------------- | --------- | -------- |
+| 参数                   | 说明                                        | 类型      | 默认值   |
+| ---------------------- | ------------------------------------------- | --------- | -------- |
 | closeOnClickOverlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
 | position | 弹出位置，可选值为 `top` `right` `left` | _string_ | `bottom` |
 | round | 是否显示圆角弹窗 | _boolean_ | `true` |
@@ -464,44 +465,44 @@ const [maxDate, setMaxDate] = useState(
 ### 样式变量
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](/material/smartui?comId=config-provider)。
-| 名称                                          | 默认值                                         | 描述                                   |
-| --------------------------------------------- | ---------------------------------------------- | -------------------------------------- |
-| --calendar-background-color                   | _var(--app-B6, #fff)_                          | 日历背景色                             |
-| --calendar-popup-height `v2.5.0`                       | _848rpx_                                          | 日历弹窗高度                           |
-| --calendar-header-box-shadow                  | _0 2px 10px rgba(125, 126, 128, 0.16)_          | 日历头部盒子阴影                       |
-| --calendar-header-title-height                | _44px_                                         | 日历头部标题高度                       |
-| --calendar-header-title-font-size             | _16px_                                         | 日历头部标题字体大小                   |
-| --calendar-header-title-font-color            | _var(--app-B4-N1, rgba(0, 0, 0, 1))_           | 日历头部标题字体颜色                   |
-| --calendar-header-subtitle-font-size          | _16px_                                         | 日历头部副标题字体大小                 |
-| --calendar-weekdays-height                    | _30px_                                         | 星期栏高度                             |
-| --calendar-weekdays-font-size                 | _12px_                                         | 星期字体大小                           |
-| --calendar-weekdays-font-color                | _var(--app-B4-N1, rgba(0, 0, 0, 1))_           | 星期字体颜色                           |
-| --calendar-month-title-font-size              | _14px_                                         | 月份标题字体大小                       |
-| --calendar-month-mark-color                   | _fade(@gray-4, 60%)_                           | 月份标记颜色                           |
-| --calendar-month-mark-font-size               | _160px_                                        | 月份标记字体大小                       |
-| --calendar-day-height                         | _100rpx_                                       | 日期单元格高度                         |
-| --calendar-cell-item-font-size                | _15px_                                         | 日期字体大小                           |
-| --calendar-cell-item-width                    | _104rpx_                                       | 日历单元格项宽度                        |
-| --calendar-cell-item-height                   | _104rpx_                                       | 日历单元格项高度                        |
-| --calendar-cell-item-font-color               | _var(--app-B4-N1, rgba(0, 0, 0, 1))_           | 日历单元格项字体颜色                   |
-| --calendar-cell-item-border-radius            | _104rpx_                                       | 日历单元格项圆角半径                   |
-| --calendar-day-font-weight                    | _500_                                          | 日期字体字重                           |
-| --calendar-day-select-border-radius           | _34rpx_                                        | 选中的单元格边框圆角                   |
-| --calendar-range-edge-color                   | _#fff_                                         | 日期范围边缘颜色                       |
-| --calendar-range-edge-background-color        | _#3678e3_                                      | 日期范围边缘背景色                     |
-| --calendar-range-middle-color                 | _#fff_                                         | 日期范围中间颜色                       |
-| --calendar-range-middle-background-opacity    | _0.1_                                          | 日期范围中间背景透明度                 |
-| --calendar-selected-day-size                  | _34px_                                         | 选中日期大小                           |
-| --calendar-selected-day-color                 | _#fff_                                         | 选中日期文字颜色                       |
-| --calendar-info-font-size                     | _10px_                                         | 日历信息字体大小                       |
-| --calendar-info-line-height                   | _14px_                                         | 日历信息行高                           |
-| --calendar-selected-day-background-color      | _#3678e3_                                      | 选中日期背景颜色                       |
-| --calendar-day-disabled-color   `@deprecated v2.9.0`              | _#c8c9cc_                                      | 禁用日期颜色                           |
-| --calendar-confirm-button-height              | _36px_                                         | 确认按钮高度                           |
-| --calendar-confirm-button-margin              | _7px 0_                                        | 确认按钮边距                           |
-| --calendar-confirm-button-line-height         | _34px_                                         | 确认按钮行高                           |
-| --calendar-text-color                         | _#000_                                         | 日历文字颜色                           |
-| --calendar-header-save-color                  | _#1989fa_                                      | 日历头部保存按钮颜色                   |
-| --calendar-header-icon-bg-color `v2.6.0`              | _var(--app-B2-N9, rgba(0, 0, 0, 0.05))_        | 日历头部图标背景色                     |
-| --calendar-header-icon-color `v2.6.0`               | _var(--app-B1-N2, rgba(0, 0, 0, 0.7))_        | 日历头部图标背景色                     |
-| --calendar-header-title-weight  `v2.6.0`              | 600        | 日历头部标题字重                     |
+| 名称                                               | 默认值                                  | 描述                   |
+| -------------------------------------------------- | --------------------------------------- | ---------------------- |
+| --calendar-background-color                        | _var(--app-B6, #fff)_                   | 日历背景色             |
+| --calendar-cell-item-border-radius                 | _104rpx_                                | 日历单元格项圆角半径   |
+| --calendar-cell-item-font-color                    | _var(--app-B4-N1, rgba(0, 0, 0, 1))_    | 日历单元格项字体颜色   |
+| --calendar-cell-item-font-size                     | _15px_                                  | 日期字体大小           |
+| --calendar-cell-item-height                        | _104rpx_                                | 日历单元格项高度       |
+| --calendar-cell-item-width                         | _104rpx_                                | 日历单元格项宽度       |
+| --calendar-confirm-button-height                   | _36px_                                  | 确认按钮高度           |
+| --calendar-confirm-button-line-height              | _34px_                                  | 确认按钮行高           |
+| --calendar-confirm-button-margin                   | _7px 0_                                 | 确认按钮边距           |
+| --calendar-day-disabled-color `@deprecated v2.9.0` | _#c8c9cc_                               | 禁用日期颜色           |
+| --calendar-day-font-weight                         | _500_                                   | 日期字体字重           |
+| --calendar-day-height                              | _100rpx_                                | 日期单元格高度         |
+| --calendar-day-select-border-radius                | _34rpx_                                 | 选中的单元格边框圆角   |
+| --calendar-header-box-shadow                       | _0 2px 10px rgba(125, 126, 128, 0.16)_  | 日历头部盒子阴影       |
+| --calendar-header-icon-bg-color `v2.6.0`           | _var(--app-B2-N9, rgba(0, 0, 0, 0.05))_ | 日历头部图标背景色     |
+| --calendar-header-icon-color `v2.6.0`              | _var(--app-B1-N2, rgba(0, 0, 0, 0.7))_  | 日历头部图标背景色     |
+| --calendar-header-save-color                       | _#1989fa_                               | 日历头部保存按钮颜色   |
+| --calendar-header-subtitle-font-size               | _16px_                                  | 日历头部副标题字体大小 |
+| --calendar-header-title-font-color                 | _var(--app-B4-N1, rgba(0, 0, 0, 1))_    | 日历头部标题字体颜色   |
+| --calendar-header-title-font-size                  | _16px_                                  | 日历头部标题字体大小   |
+| --calendar-header-title-height                     | _44px_                                  | 日历头部标题高度       |
+| --calendar-header-title-weight `v2.6.0`            | 600                                     | 日历头部标题字重       |
+| --calendar-info-font-size                          | _10px_                                  | 日历信息字体大小       |
+| --calendar-info-line-height                        | _14px_                                  | 日历信息行高           |
+| --calendar-month-mark-color                        | _fade(@gray-4, 60%)_                    | 月份标记颜色           |
+| --calendar-month-mark-font-size                    | _160px_                                 | 月份标记字体大小       |
+| --calendar-month-title-font-size                   | _14px_                                  | 月份标题字体大小       |
+| --calendar-popup-height `v2.5.0`                   | _848rpx_                                | 日历弹窗高度           |
+| --calendar-range-edge-background-color             | _#3678e3_                               | 日期范围边缘背景色     |
+| --calendar-range-edge-color                        | _#fff_                                  | 日期范围边缘颜色       |
+| --calendar-range-middle-background-opacity         | _0.1_                                   | 日期范围中间背景透明度 |
+| --calendar-range-middle-color                      | _#fff_                                  | 日期范围中间颜色       |
+| --calendar-selected-day-background-color           | _#3678e3_                               | 选中日期背景颜色       |
+| --calendar-selected-day-color                      | _#fff_                                  | 选中日期文字颜色       |
+| --calendar-selected-day-size                       | _34px_                                  | 选中日期大小           |
+| --calendar-text-color                              | _#000_                                  | 日历文字颜色           |
+| --calendar-weekdays-font-color                     | _var(--app-B4-N1, rgba(0, 0, 0, 1))_    | 星期字体颜色           |
+| --calendar-weekdays-font-size                      | _12px_                                  | 星期字体大小           |
+| --calendar-weekdays-height                         | _30px_                                  | 星期栏高度             |
