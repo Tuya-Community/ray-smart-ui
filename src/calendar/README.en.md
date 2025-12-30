@@ -117,6 +117,8 @@ Define CSS classes in the `app.less` file:
 
 By setting `type` to `week`, you can select a weekly time range. The `select` event returns a date array, including the start and end dates.
 
+You can set the starting day of week selection through the `firstDayOfSelectWeek` `v2.9.1` property, which controls the week range when clicking on a date. `firstDayOfWeek` is used to control the starting day of the week displayed in the calendar, while `firstDayOfSelectWeek` is specifically used to control the week range calculation for week selection.
+
 ```jsx
 import React, { useState } from 'react';
 import { Calendar } from '@ray-js/smart-ui';
@@ -150,6 +152,7 @@ export default function Demo() {
       minDate={minWeekDayDate}
       maxDate={maxWeekDayDate}
       defaultDate={curWeekDayDate}
+      firstDayOfSelectWeek={1}
       onSelect={e => {
         setCurWeekDayDate(e.detail as any);
       }}
@@ -346,63 +349,63 @@ The default configuration is `en`. For configuration parameters, please refer to
 
 ### Props
 
-| Parameter                  | Description                                                                                                                                                                                                                                                                                                  | Type                               | Default Value                    |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------- | -------------------------------- |
-| color | Theme color, takes effect on the bottom button and selected date | _string_ | `#ee0a24` |
-| confirmText | Text of the confirmation button | _string_ | `Confirm` |
-| dayClassMap `v2.1.0` | Date cell style | Object | null |
-| defaultDate `v1.10.21` | Default selected date, when `type` is `range`, it is an array; passing `null` means no default selection | _timestamp \| timestamp[] \| null_ | Today |
-| firstDayOfSelectWeek `v2.9.1` | Set the starting day of week selection, which controls the week range when clicking on a date. `first-day-of-week` is used to control the starting day of the week displayed in the calendar, while `first-day-of-select-week` is specifically used to control the week range calculation for week selection | _0~6_ | `1` |
-| firstDayOfWeek | Set the starting day of the week | _0~6_ | `0` |
-| headerIconColor `v2.6.0` | Header bar left and right arrow icon color | _string_ | `rgba(0, 0, 0, 0.7)` |
-| locale | Locale package | _Object_ | [Default Configuration](#locale) |
-| maxDate | Maximum selectable date | _timestamp_ | Six months from current date |
-| minDate | Minimum selectable date | _timestamp_ | Current date |
-| poppable | Show the calendar as a popup | _boolean_ | `true` |
-| readonly `v1.9.1` | Readonly state, dates cannot be selected in readonly state | _boolean_ | `false` |
-| rowHeight | Date row height | _number \| string_ | `64` |
-| showConfirm | Show the confirmation button | _boolean_ | `true` |
-| showSubtitle | Show calendar subtitle (year and month) | _boolean_ | `true` |
-| showTitle | Show calendar title | _boolean_ | `true` |
-| title | Calendar title | _string_ | `Date Selection` |
-| type | Selection type: <br>`single` for single date selection, <br>`range` for date range selection, <br>`week` for week selection, <br>`month` for month selection, <br>`year` for year selection | _string_ | `single` |
+| Parameter                     | Description                                                                                                                                                                                                                                                                                                  | Type                               | Default Value                    |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------- | -------------------------------- |
+| color                         | Theme color, takes effect on the bottom button and selected date                                                                                                                                                                                                                                             | _string_                           | `#ee0a24`                        |
+| confirmText                   | Text of the confirmation button                                                                                                                                                                                                                                                                              | _string_                           | `Confirm`                        |
+| dayClassMap `v2.1.0`          | Date cell style                                                                                                                                                                                                                                                                                              | Object                             | null                             |
+| defaultDate `v1.10.21`        | Default selected date, when `type` is `range`, it is an array; passing `null` means no default selection                                                                                                                                                                                                     | _timestamp \| timestamp[] \| null_ | Today                            |
+| firstDayOfSelectWeek `v2.9.1` | Set the starting day of week selection, which controls the week range when clicking on a date. `first-day-of-week` is used to control the starting day of the week displayed in the calendar, while `first-day-of-select-week` is specifically used to control the week range calculation for week selection | _0~6_                              | `1`                              |
+| firstDayOfWeek                | Set the starting day of the week                                                                                                                                                                                                                                                                             | _0~6_                              | `0`                              |
+| headerIconColor `v2.6.0`      | Header bar left and right arrow icon color                                                                                                                                                                                                                                                                   | _string_                           | `rgba(0, 0, 0, 0.7)`             |
+| locale                        | Locale package                                                                                                                                                                                                                                                                                               | _Object_                           | [Default Configuration](#locale) |
+| maxDate                       | Maximum selectable date                                                                                                                                                                                                                                                                                      | _timestamp_                        | Six months from current date     |
+| minDate                       | Minimum selectable date                                                                                                                                                                                                                                                                                      | _timestamp_                        | Current date                     |
+| poppable                      | Show the calendar as a popup                                                                                                                                                                                                                                                                                 | _boolean_                          | `true`                           |
+| readonly `v1.9.1`             | Readonly state, dates cannot be selected in readonly state                                                                                                                                                                                                                                                   | _boolean_                          | `false`                          |
+| rowHeight                     | Date row height                                                                                                                                                                                                                                                                                              | _number \| string_                 | `64`                             |
+| showConfirm                   | Show the confirmation button                                                                                                                                                                                                                                                                                 | _boolean_                          | `true`                           |
+| showSubtitle                  | Show calendar subtitle (year and month)                                                                                                                                                                                                                                                                      | _boolean_                          | `true`                           |
+| showTitle                     | Show calendar title                                                                                                                                                                                                                                                                                          | _boolean_                          | `true`                           |
+| title                         | Calendar title                                                                                                                                                                                                                                                                                               | _string_                           | `Date Selection`                 |
+| type                          | Selection type: <br>`single` for single date selection, <br>`range` for date range selection, <br>`week` for week selection, <br>`month` for month selection, <br>`year` for year selection                                                                                                                  | _string_                           | `single`                         |
 
 ### Range Props
 
 When the type of Calendar is set to `range`, the following props are supported:
 
-| Parameter                  | Description                                                                                               | Type               | Default Value               |
-| -------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------ | --------------------------- |
-| allowSameDay `v2.3.9` | Whether to allow the start and end time of the date range to be the same day | _boolean_ | `false` |
-| maxRange `v2.3.9` | The maximum number of days selectable in the date range. By default, there is no limit. | _number \| string_ | - |
-| rangePrompt `v2.3.9` | The prompt text when the range selection exceeds the maximum number of selectable days | _string \| null_ | `Days selected over x days` |
-| showRangePrompt `v2.3.9` | Whether to display the prompt text when the range selection exceeds the maximum number of selectable days | _boolean_ | `true` |
+| Parameter                | Description                                                                                               | Type               | Default Value               |
+| ------------------------ | --------------------------------------------------------------------------------------------------------- | ------------------ | --------------------------- |
+| allowSameDay `v2.3.9`    | Whether to allow the start and end time of the date range to be the same day                              | _boolean_          | `false`                     |
+| maxRange `v2.3.9`        | The maximum number of days selectable in the date range. By default, there is no limit.                   | _number \| string_ | -                           |
+| rangePrompt `v2.3.9`     | The prompt text when the range selection exceeds the maximum number of selectable days                    | _string \| null_   | `Days selected over x days` |
+| showRangePrompt `v2.3.9` | Whether to display the prompt text when the range selection exceeds the maximum number of selectable days | _boolean_          | `true`                      |
 
 ### Poppable Props
 
 When the `poppable` of Calendar is `true`, the following props are supported:
 
-| Parameter              | Description                                                            | Type      | Default Value |
-| ---------------------- | ---------------------------------------------------------------------- | --------- | ------------- |
-| closeOnClickOverlay | Close when clicking the overlay | _boolean_ | `true` |
-| position | Popup position, optional values are `top`, `right`, `left` | _string_ | `bottom` |
-| round | Show rounded popup | _boolean_ | `true` |
-| safeAreaInsetBottom | Whether to reserve bottom safe area, v2.7.0 starts to close by default | _boolean_ | `false` |
-| show | Show the calendar popup | _boolean_ | `false` |
+| Parameter           | Description                                                            | Type      | Default Value |
+| ------------------- | ---------------------------------------------------------------------- | --------- | ------------- |
+| closeOnClickOverlay | Close when clicking the overlay                                        | _boolean_ | `true`        |
+| position            | Popup position, optional values are `top`, `right`, `left`             | _string_  | `bottom`      |
+| round               | Show rounded popup                                                     | _boolean_ | `true`        |
+| safeAreaInsetBottom | Whether to reserve bottom safe area, v2.7.0 starts to close by default | _boolean_ | `false`       |
+| show                | Show the calendar popup                                                | _boolean_ | `false`       |
 
 ### Events
 
-| Event Name                   | Description                                                                                                                 | Callback Parameter             |
-| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
-| onClickSubtitle `v1.8.1` | Triggered when the calendar subtitle is clicked | _WechatMiniprogram.TouchEvent_ |
-| onClose | Triggered when the popup layer is closed | - |
-| onClosed | Triggered after the popup layer is closed and the animation ends | - |
-| onConfirm | Triggered after date selection is completed; if `show-confirm` is `true`, it is triggered after clicking the confirm button | _value: Date \| Date[]_ |
-| onOpen | Triggered when the popup layer is opened | - |
-| onOpened | Triggered after the popup layer is opened and the animation ends | - |
-| onOverRange | Triggered when the range selection exceeds the maximum selectable days | - |
-| onSelect | Triggered when any date is clicked | _value: Date \| Date[]_ |
-| onUnselect | Triggered when clicking a selected date if the `type` of Calendar is `multiple` | _value: Date_ |
+| Event Name               | Description                                                                                                                 | Callback Parameter             |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| onClickSubtitle `v1.8.1` | Triggered when the calendar subtitle is clicked                                                                             | _WechatMiniprogram.TouchEvent_ |
+| onClose                  | Triggered when the popup layer is closed                                                                                    | -                              |
+| onClosed                 | Triggered after the popup layer is closed and the animation ends                                                            | -                              |
+| onConfirm                | Triggered after date selection is completed; if `show-confirm` is `true`, it is triggered after clicking the confirm button | _value: Date \| Date[]_        |
+| onOpen                   | Triggered when the popup layer is opened                                                                                    | -                              |
+| onOpened                 | Triggered after the popup layer is opened and the animation ends                                                            | -                              |
+| onOverRange              | Triggered when the range selection exceeds the maximum selectable days                                                      | -                              |
+| onSelect                 | Triggered when any date is clicked                                                                                          | _value: Date \| Date[]_        |
+| onUnselect               | Triggered when clicking a selected date if the `type` of Calendar is `multiple`                                             | _value: Date_                  |
 
 ### Methods
 
@@ -410,7 +413,7 @@ You can get the Calendar instance via [selectComponent](/material/smartui?comId=
 
 | Method Name | Description                                  | Parameter | Return Value |
 | ----------- | -------------------------------------------- | --------- | ------------ |
-| reset | Reset the selected date to the default value | - | - |
+| reset       | Reset the selected date to the default value | -         | -            |
 
 ### Style Variables
 
