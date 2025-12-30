@@ -1,5 +1,13 @@
 # 更新日志
 
+## v2.9.1 (2025-12-30)
+
+### Features ✨
+- calendar: 新增 first-day-of-select-week 属性，支持设置每周起始日期([pull/136](https://github.com/Tuya-Community/miniapp-smart-ui/pull/136))
+
+### Bug Fixes  🐛
+- calendar: 修复海外部分地区选择日期跳变问题([pull/63](https://github.com/Tuya-Community/ray-smart-ui/pull/63))
+
 ## v2.9.0 (2025-12-23)
 
 ### Features ✨
