@@ -399,63 +399,63 @@ const [maxDate, setMaxDate] = useState(
 
 ### Props
 
-| 参数                          | 说明                                                                                                                                                             | 类型                               | 默认值               |
-| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- | -------------------- |
-| color                         | 主题色，对底部按钮和选中日期生效                                                                                                                                 | _string_                           | `#ee0a24`            |
-| confirmText                   | 确认按钮的文字                                                                                                                                                   | _string_                           | `确定`               |
-| dayClassMap `v2.1.0`          | 日期单元格样式                                                                                                                                                   | Object                             | null                 |
-| defaultDate `v1.10.21`        | 默认选中的日期，`type`为`range`时为数组，传入 `null` 表示默认不选择                                                                                              | _timestamp \| timestamp[] \| null_ | 今天                 |
-| firstDayOfSelectWeek `v2.9.1` | 设置周选择时的起始日，用于控制点击日期时选择的周范围。`first-day-of-week` 用于控制日历显示的周起始日，而 `first-day-of-select-week` 专门用于控制周选择的范围计算 | _0~6_                              | `1`                  |
-| firstDayOfWeek                | 设置周起始日                                                                                                                                                     | _0~6_                              | `0`                  |
-| headerIconColor `v2.6.0`      | 头部栏左右箭头 icon 颜色                                                                                                                                         | _string_                           | `rgba(0, 0, 0, 0.7)` |
-| locale                        | 多语言包                                                                                                                                                         | _Object_                           | [默认配置](#locale)  |
-| maxDate                       | 可选择的最大日期                                                                                                                                                 | _timestamp_                        | 当前日期的六个月后   |
-| minDate                       | 可选择的最小日期                                                                                                                                                 | _timestamp_                        | 当前日期             |
-| poppable                      | 是否以弹层的形式展示日历                                                                                                                                         | _boolean_                          | `true`               |
-| readonly `v1.9.1`             | 是否为只读状态，只读状态下不能选择日期                                                                                                                           | _boolean_                          | `false`              |
-| rowHeight                     | 日期行高                                                                                                                                                         | _number \| string_                 | `64`                 |
-| showConfirm                   | 是否展示确认按钮                                                                                                                                                 | _boolean_                          | `true`               |
-| showSubtitle                  | 是否展示日历副标题（年月）                                                                                                                                       | _boolean_                          | `true`               |
-| showTitle                     | 是否展示日历标题                                                                                                                                                 | _boolean_                          | `true`               |
-| title                         | 日历标题                                                                                                                                                         | _string_                           | `日期选择`           |
-| type                          | 选择类型:<br>`single`表示选择单个日期，<br>`range`表示选择日期区间，<br>`week`表示选择周，<br>`month`表示选择月，<br>`year`表示选择年                            | _string_                           | `single`             |
+| 参数                       | 说明                                                                                                                                                             | 类型                               | 默认值               |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- | -------------------- |
+| color | 主题色，对底部按钮和选中日期生效 | _string_ | `#ee0a24` |
+| confirmText | 确认按钮的文字 | _string_ | `确定` |
+| dayClassMap `v2.1.0` | 日期单元格样式 | Object | null |
+| defaultDate `v1.10.21` | 默认选中的日期，`type`为`range`时为数组，传入 `null` 表示默认不选择 | _timestamp \| timestamp[] \| null_ | 今天 |
+| firstDayOfSelectWeek `v2.9.1` | 设置周选择时的起始日，用于控制点击日期时选择的周范围。`first-day-of-week` 用于控制日历显示的周起始日，而 `first-day-of-select-week` 专门用于控制周选择的范围计算 | _0~6_ | `1` |
+| firstDayOfWeek | 设置周起始日 | _0~6_ | `0` |
+| headerIconColor `v2.6.0` | 头部栏左右箭头 icon 颜色 | _string_ | `rgba(0, 0, 0, 0.7)` |
+| locale | 多语言包 | _Object_ | [默认配置](#locale) |
+| maxDate | 可选择的最大日期 | _timestamp_ | 当前日期的六个月后 |
+| minDate | 可选择的最小日期 | _timestamp_ | 当前日期 |
+| poppable | 是否以弹层的形式展示日历 | _boolean_ | `true` |
+| readonly `v1.9.1` | 是否为只读状态，只读状态下不能选择日期 | _boolean_ | `false` |
+| rowHeight | 日期行高 | _number \| string_ | `64` |
+| showConfirm | 是否展示确认按钮 | _boolean_ | `true` |
+| showSubtitle | 是否展示日历副标题（年月） | _boolean_ | `true` |
+| showTitle | 是否展示日历标题 | _boolean_ | `true` |
+| title | 日历标题 | _string_ | `日期选择` |
+| type | 选择类型:<br>`single`表示选择单个日期，<br>`range`表示选择日期区间，<br>`week`表示选择周，<br>`month`表示选择月，<br>`year`表示选择年 | _string_ | `single` |
 
 ### Range Props
 
 当 Calendar 的 `type` 为 `range` 时，支持以下 props:
 
-| 参数                     | 说明                                         | 类型               | 默认值                      |
-| ------------------------ | -------------------------------------------- | ------------------ | --------------------------- |
-| allowSameDay `v2.3.9`    | 是否允许日期范围的起止时间为同一天           | _boolean_          | `false`                     |
-| maxRange `v2.3.9`        | 日期区间最多可选天数，默认无限制             | _number \| string_ | -                           |
-| rangePrompt `v2.3.9`     | 范围选择超过最多可选天数时的提示文案         | _string \| null_   | `Days selected over x days` |
-| showRangePrompt `v2.3.9` | 范围选择超过最多可选天数时，是否展示提示文案 | _boolean_          | `true`                      |
+| 参数                       | 说明                                         | 类型               | 默认值                      |
+| -------------------------- | -------------------------------------------- | ------------------ | --------------------------- |
+| allowSameDay `v2.3.9` | 是否允许日期范围的起止时间为同一天 | _boolean_ | `false` |
+| maxRange `v2.3.9` | 日期区间最多可选天数，默认无限制 | _number \| string_ | - |
+| rangePrompt `v2.3.9` | 范围选择超过最多可选天数时的提示文案 | _string \| null_ | `Days selected over x days` |
+| showRangePrompt `v2.3.9` | 范围选择超过最多可选天数时，是否展示提示文案 | _boolean_ | `true` |
 
 ### Poppable Props
 
 当 Calendar 的 `poppable` 为 `true` 时，支持以下 props:
 
-| 参数                | 说明                                        | 类型      | 默认值   |
-| ------------------- | ------------------------------------------- | --------- | -------- |
-| closeOnClickOverlay | 是否在点击遮罩层后关闭                      | _boolean_ | `true`   |
-| position            | 弹出位置，可选值为 `top` `right` `left`     | _string_  | `bottom` |
-| round               | 是否显示圆角弹窗                            | _boolean_ | `true`   |
-| safeAreaInsetBottom | 是否开启底部安全区适配，v2.7.0 开始默认关闭 | _boolean_ | `false`  |
-| show                | 是否显示日历弹窗                            | _boolean_ | `false`  |
+| 参数                   | 说明                                        | 类型      | 默认值   |
+| ---------------------- | ------------------------------------------- | --------- | -------- |
+| closeOnClickOverlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
+| position | 弹出位置，可选值为 `top` `right` `left` | _string_ | `bottom` |
+| round | 是否显示圆角弹窗 | _boolean_ | `true` |
+| safeAreaInsetBottom | 是否开启底部安全区适配，v2.7.0 开始默认关闭 | _boolean_ | `false` |
+| show | 是否显示日历弹窗 | _boolean_ | `false` |
 
 ### Events
 
-| 事件名                   | 说明                                                               | 回调参数                       |
-| ------------------------ | ------------------------------------------------------------------ | ------------------------------ |
-| onClickSubtitle `v1.8.1` | 点击日历副标题时触发                                               | _WechatMiniprogram.TouchEvent_ |
-| onClose                  | 关闭弹出层时触发                                                   | -                              |
-| onClosed                 | 关闭弹出层且动画结束后触发                                         | -                              |
-| onConfirm                | 日期选择完成后触发，若`show-confirm`为`true`，则点击确认按钮后触发 | _value: Date \| Date[]_        |
-| onOpen                   | 打开弹出层时触发                                                   | -                              |
-| onOpened                 | 打开弹出层且动画结束后触发                                         | -                              |
-| onOverRange              | 范围选择超过最多可选天数时触发                                     | -                              |
-| onSelect                 | 点击任意日期时触发                                                 | _value: Date \| Date[]_        |
-| onUnselect               | 当 Calendar 的 `type` 为 `multiple` 时,点击已选中的日期时触发      | _value: Date_                  |
+| 事件名                       | 说明                                                               | 回调参数                       |
+| ---------------------------- | ------------------------------------------------------------------ | ------------------------------ |
+| onClickSubtitle `v1.8.1` | 点击日历副标题时触发 | _WechatMiniprogram.TouchEvent_ |
+| onClose | 关闭弹出层时触发 | - |
+| onClosed | 关闭弹出层且动画结束后触发 | - |
+| onConfirm | 日期选择完成后触发，若`show-confirm`为`true`，则点击确认按钮后触发 | _value: Date \| Date[]_ |
+| onOpen | 打开弹出层时触发 | - |
+| onOpened | 打开弹出层且动画结束后触发 | - |
+| onOverRange | 范围选择超过最多可选天数时触发 | - |
+| onSelect | 点击任意日期时触发 | _value: Date \| Date[]_ |
+| onUnselect | 当 Calendar 的 `type` 为 `multiple` 时,点击已选中的日期时触发 | _value: Date_ |
 
 ### 方法
 
@@ -463,7 +463,7 @@ const [maxDate, setMaxDate] = useState(
 
 | 方法名 | 说明                   | 参数 | 返回值 |
 | ------ | ---------------------- | ---- | ------ |
-| reset  | 重置选中的日期到默认值 | -    | -      |
+| reset | 重置选中的日期到默认值 | - | - |
 
 ### 样式变量
 
