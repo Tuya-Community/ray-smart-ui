@@ -116,6 +116,8 @@ export default function Demo() {
 
 设置`type`为`week`后可以选择一个周的时间范围，此时`select`事件返回的 date 为数组结构，数组包含开始和结束选中的日期。
 
+通过 `firstDayOfSelectWeek` `v2.9.1` 属性可以设置周选择的起始日，用于控制点击日期时选择的周范围。`firstDayOfWeek` 用于控制日历显示的周起始日，而 `firstDayOfSelectWeek` 专门用于控制周选择的范围计算。
+
 ```jsx
 import React, { useState } from 'react';
 import { Calendar } from '@ray-js/smart-ui';
@@ -149,6 +151,7 @@ export default function Demo() {
       minDate={minWeekDayDate}
       maxDate={maxWeekDayDate}
       defaultDate={curWeekDayDate}
+      firstDayOfSelectWeek={1}
       onSelect={e => {
         setCurWeekDayDate(e.detail as any);
       }}

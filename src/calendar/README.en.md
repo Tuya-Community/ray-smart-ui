@@ -117,6 +117,8 @@ Define CSS classes in the `app.less` file:
 
 By setting `type` to `week`, you can select a weekly time range. The `select` event returns a date array, including the start and end dates.
 
+You can set the starting day of week selection through the `firstDayOfSelectWeek` `v2.9.1` property, which controls the week range when clicking on a date. `firstDayOfWeek` is used to control the starting day of the week displayed in the calendar, while `firstDayOfSelectWeek` is specifically used to control the week range calculation for week selection.
+
 ```jsx
 import React, { useState } from 'react';
 import { Calendar } from '@ray-js/smart-ui';
@@ -150,6 +152,7 @@ export default function Demo() {
       minDate={minWeekDayDate}
       maxDate={maxWeekDayDate}
       defaultDate={curWeekDayDate}
+      firstDayOfSelectWeek={1}
       onSelect={e => {
         setCurWeekDayDate(e.detail as any);
       }}
