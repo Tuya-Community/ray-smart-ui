@@ -156,6 +156,12 @@ export interface SmartDialogInputOptions extends SmartDialogOptions {
    * 输入框的最大输入长度
    */
   maxlength?: number;
+
+  /**
+   * 输入框输入时回调
+   * @version 2.10.0
+   */
+  onInput?: (value: string) => void;
 }
 
 export interface SmartDialogInstance {
