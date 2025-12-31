@@ -106,7 +106,8 @@ export default function Demo() {
       cancelButtonText: 'Sub Action',
     })
       .then(() => {
-        // on confirm
+        console.log('=== onConfirm', res);
+        const inputValue = res?.data?.inputValue;
       })
       .catch(() => {
         // on cancel
@@ -381,7 +382,6 @@ icon: AlarmIcon,
 | transition | 动画名称，可选值为`fade` | _string_ | `scale` |
 | autoClose `v2.6.3` | 是否自动点击回调后关闭 | _boolean_ | `false` |
 | emptyDisabled `v2.7.0` | 输入框模式，value 为空时 无法提交 | _boolean_ | `false` |
-
 
 ### Events
 

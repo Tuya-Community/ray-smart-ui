@@ -106,7 +106,8 @@ export default function Demo() {
       cancelButtonText: 'Sub Action',
     })
       .then(() => {
-        // on confirm
+        console.log('=== onConfirm', res);
+        const inputValue = res?.data?.inputValue;
       })
       .catch(() => {
         // on cancel
