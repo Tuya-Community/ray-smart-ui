@@ -1,5 +1,10 @@
 # 更新日志
 
+## v2.9.2 (2025-12-31)
+
+### Bug Fixes  🐛
+- 修复 nativeDisabled 属性安卓失效问题([66adfce](https://github.com/Tuya-Community/miniapp-smart-ui/commit/66adfceebeb9d235c0299e4b5718dec6488e73e7))
+
 ## v2.9.1 (2025-12-30)
 
 ### Features ✨
