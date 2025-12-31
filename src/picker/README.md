@@ -44,7 +44,7 @@ export default function Demo() {
 
 ### 多列用法
 
-`disabled` `v2.3.5` 属性可以禁用此列；`style` 属性可以设置此列的样式；`fontStyle` `v2.3.5` 属性可以设置此列的字体样式; `activeIndex` 可以设置列的选中项。
+`disabled` `v2.3.5` 属性可以禁用此列；`style` 属性可以设置此列的样式；`fontStyle` `v2.3.5` 属性可以设置此列的字体样式; `activeIndex` 可以设置列的选中项;`unitGap` `v2.10.0` 属性可以设置单位和列表的距离。
 
 ```javascript
 import { Picker } from '@ray-js/smart-ui';
@@ -67,6 +67,7 @@ const columns = [
     values: new Array(20).fill(1).map((x, i) => i),
     style: { flex: 'none', width: 'auto', minWidth: '61px' },
     unit: 'Kg',
+    unitGap: '10rpx',
     activeIndex: 1,
   },
 ],
@@ -250,7 +251,7 @@ export default function Demo() {
 }
 ```
 
-### 设置列的样式顺序`v2.2.0`
+### 设置列的样式顺序 `v2.2.0`
 
 通过设置列的 `order` 属性可以设置列的顺序，对应列的order越大，就会越靠后，同css的`flex order` 属性，只是从样式层面改变列的顺序，逻辑还是不变。  
 

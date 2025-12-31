@@ -43,7 +43,7 @@ export default function Demo() {
 
 ### Multi-Column Usage
 
-`disabled` `v2.3.5` attribute can disable this column; `style` attribute can set the style of this column; `fontStyle` `v2.3.5` attribute can set the font style of this column; `activeIndex` can set the selected item of the column.
+`disabled` `v2.3.5` attribute can disable this column; `style` attribute can set the style of this column; `fontStyle` `v2.3.5` attribute can set the font style of this column; `activeIndex` can set the selected item of the column;`unitGap` `v2.10.0` property can set the distance between the unit and the list.
 
 ```javascript
 import { Picker } from '@ray-js/smart-ui';
@@ -66,6 +66,7 @@ const columns = [
     values: new Array(20).fill(1).map((x, i) => i),
     style: { flex: 'none', width: 'auto', minWidth: '61px' },
     unit: 'Kg',
+    unitGap: '10rpx',
     activeIndex: 1,
   },
 ],
