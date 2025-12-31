@@ -69,6 +69,7 @@ const data = {
       values: new Array(20).fill(1).map((x, i) => i),
       style: { flex: 'none', width: 'auto', minWidth: '61px' },
       unit: 'Kg',
+      unitGap: '10rpx',
       activeIndex: 1,
     },
   ],
