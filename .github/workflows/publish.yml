@@ -36,7 +36,12 @@ jobs:
     
     - name: Update Package.json with Release Version
       run: |
-        npm version "${TAG_VERSION}" --no-git-tag-version
+        CURRENT_VERSION=$(node -p "require('./package.json').version")
+        if [ "$CURRENT_VERSION" != "${TAG_VERSION}" ]; then
+          npm version "${TAG_VERSION}" --no-git-tag-version
+        else
+          echo "Version already matches tag version ${TAG_VERSION}, skipping version update"
+        fi
 
     - name: Build
       run: yarn build
@@ -46,27 +51,27 @@ jobs:
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         
-    - name: send to WeChat
-      env:
-        RELEASE_BODY: ${{ github.event.release.body }}
-        RELEASE_TAG: ${{ github.event.release.tag_name }}
-      run: |
-        # 如果包含 "## English"，则删除该行及其后面的所有内容
-        RELEASE_BODY=$(echo "$RELEASE_BODY" | sed '/^## English/,$d' | sed -z 's/[[:space:]]*$//')
-        # 获取当前日期
-        RELEASE_DATE=$(date +%Y-%m-%d)
-        # 使用 $'\n' 确保换行符被正确解释
-        NEWLINE=$'\n'
-        CONTENT="## $RELEASE_TAG($RELEASE_DATE)  ${NEWLINE}  ${NEWLINE}  $RELEASE_BODY"
-        PAYLOAD=$(jq -n --arg content "$CONTENT" '{
-            "msgtype": "markdown",
-            "markdown": {
-                "content": $content
-            }
-        }')
-        curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${{ secrets.WECHAT_TOKEN }}' \
-        -H 'Content-Type: application/json' \
-        -d "$PAYLOAD"
+    # - name: send to WeChat
+    #   env:
+    #     RELEASE_BODY: ${{ github.event.release.body }}
+    #     RELEASE_TAG: ${{ github.event.release.tag_name }}
+    #   run: |
+    #     # 如果包含 "## English"，则删除该行及其后面的所有内容
+    #     RELEASE_BODY=$(echo "$RELEASE_BODY" | sed '/^## English/,$d' | sed -z 's/[[:space:]]*$//')
+    #     # 获取当前日期
+    #     RELEASE_DATE=$(date +%Y-%m-%d)
+    #     # 使用 $'\n' 确保换行符被正确解释
+    #     NEWLINE=$'\n'
+    #     CONTENT="## $RELEASE_TAG($RELEASE_DATE)  ${NEWLINE}  ${NEWLINE}  $RELEASE_BODY"
+    #     PAYLOAD=$(jq -n --arg content "$CONTENT" '{
+    #         "msgtype": "markdown",
+    #         "markdown": {
+    #             "content": $content
+    #         }
+    #     }')
+    #     curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${{ secrets.WECHAT_TOKEN }}' \
+    #     -H 'Content-Type: application/json' \
+    #     -d "$PAYLOAD"
 
     - name: Commit Changes
       run: |
