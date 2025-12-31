@@ -325,6 +325,7 @@ icon: AlarmIcon,
 | theme | 样式风格，可选值为`round-button` | _string_ | `default` |
 | title | 标题 | _string_ | - |
 | value | 输入框的初始值 | _string_ | - |
+| onInput `v2.10.0` | 输入回调 | _(value: string) => void_ | - |
 | width | 弹窗宽度，默认单位为`px` | _string \| number_ | `320px` |
 | zIndex | z-index 层级 | _number_ | `100` |
 | customStyle | 自定义样式 | _string_ | '' |
@@ -382,6 +383,7 @@ icon: AlarmIcon,
 | transition | 动画名称，可选值为`fade` | _string_ | `scale` |
 | autoClose `v2.6.3` | 是否自动点击回调后关闭 | _boolean_ | `false` |
 | emptyDisabled `v2.7.0` | 输入框模式，value 为空时 无法提交 | _boolean_ | `false` |
+
 
 ### Events
 
