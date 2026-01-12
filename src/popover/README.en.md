@@ -261,20 +261,21 @@ export default function Demo() {
 ## API
 
 ### Props
-| Parameter        | Description                                                                                                                                                                       | Type                  | Default |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ------- |
-| customStyle      | Custom popup style                                                                                                                                                                | _React.CSSProperties_ | -       |
-| duration         | Delay time for closing (ms)                                                                                                                                                       | number                | `3000`  |
-| placement        | Position of the popup, supported values: `top`, `topLeft`, `topRight`, `bottom`, `bottomLeft`, `bottomRight`, `left`, `leftTop`, `leftBottom`, `right`, `rightTop`, `rightBottom` | _string_              | `right` |
-| show             | Controls whether the popup is displayed and listens for state changes, updating `currentShow` when the value changes                                                              | _boolean_             | `false` |
-| trigger `v2.5.0` | Control the trigger method of the popup layer, support `tap`、`longpress`                                                                                                         | _string_              | `tap`   |
+| Parameter        | Description                                                                                                                                                                       | Type      | Default |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------- |
+| customStyle | Custom popup style | _React.CSSProperties_ | - |
+| duration | Delay time for closing (ms) | number | `3000` |
+| isControl  `v2.10.0` | Whether to enable controlled mode. When enabled, clicking will not trigger the `show-change` event, and the `show` state is completely controlled externally | _boolean_ | `false` |
+| placement | Position of the popup, supported values: `top`, `topLeft`, `topRight`, `bottom`, `bottomLeft`, `bottomRight`, `left`, `leftTop`, `leftBottom`, `right`, `rightTop`, `rightBottom` | _string_ | `right` |
+| show | Controls whether the popup is displayed and listens for state changes, updating `currentShow` when the value changes | _boolean_ | `false` |
+| trigger `v2.5.0` | Control the trigger method of the popup layer, support `tap`、`longpress` | _string_ | `tap` |
 
 ### Events
 
-| Event Name   | Description            | Parameters |
-| ------------ | ---------------------- | ---------- |
-| onClose      | Triggered on close     | -          |
-| onShowChange | Triggered on show/hide | -          |
+| Event Name       | Description            | Parameters |
+| ---------------- | ---------------------- | ---------- |
+| onClose | Triggered on close | - |
+| onShowChange | Triggered on show/hide | - |
 
 ### Popover Slot
 
@@ -284,8 +285,8 @@ export default function Demo() {
 
 ### External Styles
 
-| Class Name  | Description           |
-| ----------- | --------------------- |
+| Class Name   | Description           |
+| ------------ | --------------------- |
 | customClass | Root node style class |
 
 ### Style Variables
