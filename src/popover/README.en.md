@@ -288,42 +288,41 @@ export default function Demo() {
 ## API
 
 ### Props
-| Parameter           | Description                                                                                                                                                                       | Type                  | Default |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ------- |
-| customStyle         | Custom popup style                                                                                                                                                                | _React.CSSProperties_ | -       |
-| duration            | Delay time for closing (ms)                                                                                                                                                       | number                | `3000`  |
-| isControl `v2.10.0` | Whether to enable controlled mode. When enabled, clicking will not trigger the `show-change` event, and the `show` state is completely controlled externally                      | _boolean_             | `false` |
-| placement           | Position of the popup, supported values: `top`, `topLeft`, `topRight`, `bottom`, `bottomLeft`, `bottomRight`, `left`, `leftTop`, `leftBottom`, `right`, `rightTop`, `rightBottom` | _string_              | `right` |
-| show                | Controls whether the popup is displayed and listens for state changes, updating `currentShow` when the value changes                                                              | _boolean_             | `false` |
-| trigger `v2.5.0`    | Control the trigger method of the popup layer, support `tap`、`longpress`                                                                                                         | _string_              | `tap`   |
+| Parameter        | Description                                                                                                                                                           | Type      | Default  |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | -------- |
+| customStyle | Custom popup style | _React.CSSProperties_ | - |
+| duration | Delay time for closing (ms) | number | `3000` |
+| placement | Position of the popup, supported values: `top`, `topLeft`, `topRight`, `bottom`, `bottomLeft`, `bottomRight`, `left`, `leftTop`, `leftBottom`, `right`, `rightTop`, `rightBottom` | _string_ | `right` |
+| show | Controls whether the popup is displayed and listens for state changes, updating `currentShow` when the value changes | _boolean_ | `false` |
+| trigger `v2.5.0` | Control the trigger method of the popup layer, support `tap`、`longpress` | _string_ | `tap` |
 
 ### Events
 
-| Event Name   | Description            | Parameters |
-| ------------ | ---------------------- | ---------- |
-| onClose      | Triggered on close     | -          |
-| onShowChange | Triggered on show/hide | -          |
+| Event Name       | Description             | Parameters |
+| ---------------- | ----------------------- | ---------- |
+| onClose | Triggered on close | - |
+| onShowChange | Triggered on show/hide | - |
 
 ### Popover Slot
 
-| Name    | Description   |
-| ------- | ------------- |
+| Name    | Description       |
+| ------------ | ------------ |
 | overlay | Popup content |
 
 ### External Styles
 
-| Class Name  | Description           |
-| ----------- | --------------------- |
+| Class Name      | Description        |
+| --------------- | ------------------ |
 | customClass | Root node style class |
 
 ### Style Variables
 
 The component provides the following CSS variables for custom styling. For usage, see [ConfigProvider Component](/material/smartui?comId=config-provider).
 
-| Name                             | Default Value                       | Description                     |
-| -------------------------------- | ----------------------------------- | ------------------------------- |
-| --popover-background-color       | #fff                                | Popup background color          |
-| --popover-border-radius          | 12px                                | Popup border radius             |
-| --popover-box-shadow             | 0px 6px 12px 0px rgba(0, 0, 0, 0.1) | Popup box shadow                |
-| --popover-overlay-color `v2.8.0` | var(--app-B1-N1, rgba(0, 0, 0, 1))  | Text color for the overlay slot |
-| --popover-padding                | 12px                                | Popup padding                   |
+| Name                       | Default Value                          | Description  |
+| -------------------------- | -------------------------------------- | ------------ |
+| --popover-background-color | #fff                                   | Popup background color |
+| --popover-border-radius    | 12px                                   | Popup border radius    |
+| --popover-box-shadow       | 0px 6px 12px 0px rgba(0, 0, 0, 0.1)    | Popup box shadow       |
+| --popover-padding          | 12px                                   | Popup padding          |
+| --popover-overlay-color `v2.8.0` | var(--app-B1-N1, rgba(0, 0, 0, 1)) | Text color for the overlay slot |
