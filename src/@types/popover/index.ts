@@ -38,6 +38,12 @@ export interface SmartPopoverProps {
    * @default 'tap'
    */
   trigger?: 'tap' | 'longpress';
+  /**
+   * 是否开启受控模式，开启后点击不会触发 `show-change` 事件，`show` 状态完全由外部控制
+   *
+   * @default false
+   */
+  isControl?: boolean;
 }
 
 export interface SmartPopoverSlot {
