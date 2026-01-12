@@ -10,7 +10,6 @@ import Strings from '../../i18n';
 
 export default function Demo() {
   const [show, setShow] = useState(false);
-  const [controlledShow, setControlledShow] = useState(false);
   return (
     <>
       <DemoBlock title={Strings.getLang('basicUsage')}>
@@ -161,27 +160,6 @@ export default function Demo() {
             }}
           >
             <Button>{Strings.getLang('popUpInTheMiddle')}</Button>
-          </Popover>
-        </View>
-      </DemoBlock>
-      <DemoBlock title={Strings.getLang('controlledMode')}>
-        <View
-          style={{
-            paddingLeft: '30vw',
-            paddingTop: '10vh',
-          }}
-        >
-          <Popover
-            show={controlledShow}
-            isControl={true}
-            placement="top"
-            slot={{
-              overlay: <View>{Strings.getLang('controlledModeTip')}</View>,
-            }}
-          >
-            <Button onClick={() => setControlledShow(!controlledShow)}>
-              {Strings.getLang('controlledMode')}
-            </Button>
           </Popover>
         </View>
       </DemoBlock>
