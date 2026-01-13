@@ -1,0 +1,41 @@
+name: Send WeChat Notification (Manual)
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Release Tag (e.g., v2.9.2)'
+        required: true
+        type: string
+      release_body:
+        description: 'Release Content (支持 Markdown，如果包含 "## English" 会自动删除该行及之后的内容)'
+        required: true
+        type: string
+
+jobs:
+  send_wechat:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Send to WeChat
+      env:
+        RELEASE_TAG: ${{ inputs.release_tag }}
+        RELEASE_BODY: ${{ inputs.release_body }}
+      run: |
+        # 如果包含 "## English"，则删除该行及其后面的所有内容
+        RELEASE_BODY=$(echo "$RELEASE_BODY" | sed '/^## English/,$d' | sed -z 's/[[:space:]]*$//')
+        # 获取当前日期
+        RELEASE_DATE=$(date +%Y-%m-%d)
+        # 使用 $'\n' 确保换行符被正确解释
+        NEWLINE=$'\n'
+        CONTENT="## $RELEASE_TAG($RELEASE_DATE)  ${NEWLINE}  ${NEWLINE}  $RELEASE_BODY"
+        PAYLOAD=$(jq -n --arg content "$CONTENT" '{
+            "msgtype": "markdown",
+            "markdown": {
+                "content": $content
+            }
+        }')
+        curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${{ secrets.WECHAT_TOKEN }}' \
+        -H 'Content-Type: application/json' \
+        -d "$PAYLOAD"
+        echo "✅ WeChat notification sent successfully"
