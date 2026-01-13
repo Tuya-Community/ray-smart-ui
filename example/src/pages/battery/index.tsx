@@ -10,11 +10,11 @@ export default function Demo() {
     <>
       <DemoBlock title={Strings.getLang('basicUsage')}>
         <View className={styles.line}>
-          <Battery size={20} value={100} />
-          <Battery />
-          <Battery value={10} />
-          <Battery value={3} />
+          <Battery value={80} />
+          <Battery value={50} />
+          <Battery value={20} />
           <Battery value={0} />
+          <Battery inCharging value={80} />
         </View>
       </DemoBlock>
       <DemoBlock title={Strings.getLang('horizontal')}>
@@ -26,9 +26,32 @@ export default function Demo() {
           <Battery type="horizontal" value={0} />
         </View>
       </DemoBlock>
-      <DemoBlock title={Strings.getLang('setColor')}>
+      <DemoBlock title={Strings.getLang('withPercent')}>
         <View className={styles.line}>
-          <Battery type="horizontal" color="red" value={100} />
+          <Battery showText value={80} />
+          <Battery showText value={50} />
+          <Battery showText value={20} />
+          <Battery showText value={0} />
+          <Battery showText inCharging value={80} />
+        </View>
+      </DemoBlock>
+      <DemoBlock title={`${Strings.getLang('horizontal')}(${Strings.getLang('withPercent')})`}>
+        <View className={styles.line}>
+          <Battery showText type="horizontal" value={100} />
+          <Battery showText type="horizontal" />
+          <Battery showText type="horizontal" value={10} />
+          <Battery showText type="horizontal" value={3} />
+          <Battery showText type="horizontal" value={0} />
+        </View>
+      </DemoBlock>
+      <DemoBlock title={Strings.getLang('customSize')}>
+        <View className={`${styles.line} w-180`}>
+          <Battery type="horizontal" size={28} value={100} />
+          <Battery showText type="horizontal" size={28} value={100} />
+        </View>
+        <View className={`${styles.line} w-180`}>
+          <Battery size={28} value={100} />
+          <Battery showText size={28} value={100} />
         </View>
       </DemoBlock>
     </>

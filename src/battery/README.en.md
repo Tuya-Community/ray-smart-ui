@@ -19,36 +19,106 @@ import { Battery } from '@ray-js/smart-ui';
 
 ### Basic Usage
 
+`inCharging` `v2.10.0` 可以让电池显示充电中
+
 ```jsx
 import React from 'react';
+import { View } from '@ray-js/ray';
 import { Battery } from '@ray-js/smart-ui';
 
 export default function Demo() {
-  return <Battery size={20} value={100} />;
+  return (
+    <View>
+      <Battery value={80} />
+      <Battery value={50} />
+      <Battery value={20} />
+      <Battery value={0} />
+      <Battery inCharging value={80} />
+    </View>
+  );
 }
 ```
 
-### Horizontal
+### level
 
 ```jsx
 import React from 'react';
+import { View } from '@ray-js/ray';
 import { Battery } from '@ray-js/smart-ui';
 
 export default function Demo() {
-  return <Battery type="horizontal" value={100} />;
+  return (
+    <View>
+      <Battery type="horizontal" value={100} />
+      <Battery type="horizontal" />
+      <Battery type="horizontal" value={10} />
+      <Battery type="horizontal" value={3} />
+      <Battery type="horizontal" value={0} />
+    </View>
+  );
 }
 ```
 
-### Set Color `v2.6.2`
+### Show Percentage `v2.10.0`
 
-`color` The attribute can directly set the color of the component and has the highest priority.
+`showText` 可以显示电池的百分比文案
 
 ```jsx
 import React from 'react';
+import { View } from '@ray-js/ray';
 import { Battery } from '@ray-js/smart-ui';
 
 export default function Demo() {
-  return <Battery type="horizontal" color="red" value={100} />;
+  return (
+    <View>
+      <Battery showText value={80} />
+      <Battery showText value={50} />
+      <Battery showText value={20} />
+      <Battery showText value={0} />
+      <Battery showText inCharging value={80} />
+    </View>
+  );
+}
+```
+
+### level(Show Percentage) `v2.10.0`
+
+`showText` 可以显示电池的百分比文案
+
+```jsx
+import React from 'react';
+import { View } from '@ray-js/ray';
+import { Battery } from '@ray-js/smart-ui';
+
+export default function Demo() {
+  return (
+    <View>
+      <Battery showText type="horizontal" value={100} />
+      <Battery showText type="horizontal" />
+      <Battery showText type="horizontal" value={10} />
+      <Battery showText type="horizontal" value={3} />
+      <Battery showText type="horizontal" value={0} />
+    </View>
+  );
+}
+```
+
+### Custom Size
+
+```jsx
+import React from 'react';
+import { View } from '@ray-js/ray';
+import { Battery } from '@ray-js/smart-ui';
+
+export default function Demo() {
+  return (
+    <View>
+      <Battery type="horizontal" size={28} value={100} />
+      <Battery showText type="horizontal" size={28} value={100} />
+      <Battery size={28} value={100} />
+      <Battery showText size={28} value={100} />
+    </View>
+  );
 }
 ```
 

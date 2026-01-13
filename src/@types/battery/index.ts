@@ -58,6 +58,22 @@ export interface SmartBatteryProps {
   backgroundColor?: string;
 
   /**
+   * 是否处于充电状态
+   *
+   * @default false
+   * @version 2.10.0
+   */
+  inCharging?: boolean;
+
+  /**
+   * 是否显示电量文本
+   *
+   * @default false
+   * @version 2.10.0
+   */
+  showText?: boolean;
+
+  /**
    * 电量颜色计算规则回调函数，返回计算后的颜色值即可
    *
    * @default null
