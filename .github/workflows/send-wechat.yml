@@ -1,16 +1,39 @@
 name: Send WeChat Notification (Manual)
 
 on:
+  push:
+    branches:
+      - main
+      - release/*
   workflow_dispatch:
     inputs:
       release_tag:
-        description: 'Release Tag (e.g., v2.9.2)'
+        description: 'Release Tag (e.g., v2.10.0)'
         required: true
         type: string
+        default: 'v2.10.0'
       release_body:
         description: 'Release Content (支持 Markdown，如果包含 "## English" 会自动删除该行及之后的内容)'
-        required: true
+        required: false
         type: string
+        default: |
+          ### Features ✨
+          - dialog: 新增 onInput 回调事件；修复调用 input 方式，value 为 undefined 无法显示输入框问题([pull/143](https://github.com/Tuya-Community/miniapp-smart-ui/pull/143))
+          - picker: 新增 unitGap 属性，用于设置单位和选择列之间的间隔([pull/144](https://github.com/Tuya-Community/miniapp-smart-ui/pull/144))
+          - battery: 对齐全新 UED 设计，重构样式布局，size默认值修改为24([pull/134](https://github.com/Tuya-Community/miniapp-smart-ui/pull/134), [pull/147](https://github.com/Tuya-Community/miniapp-smart-ui/pull/147))
+
+          ### Bug Fixes  🐛
+          - dialog: 修复 emptyDisabled 默认值为 false，并且修改提交按钮禁用逻辑([5c88532](https://github.com/Tuya-Community/miniapp-smart-ui/pull/146/commits/5c885324f3f9e3c691f4d840e8fc4120a2088301))
+
+          ## English
+
+          ### Features ✨
+          - dialog: Added onInput callback event; fixed the issue where calling input method with value as undefined prevents the input box from displaying ([pull/143](https://github.com/Tuya-Community/miniapp-smart-ui/pull/143))
+          - picker: Added unitGap property to set the gap between the unit and selection columns ([pull/144](https://github.com/Tuya-Community/miniapp-smart-ui/pull/144))
+          - battery: Aligned with the new UED design, restructured style layout, and changed the default value of size to 24 ([pull/134](https://github.com/Tuya-Community/miniapp-smart-ui/pull/134), [pull/147](https://github.com/Tuya-Community/miniapp-smart-ui/pull/147))
+
+          ### Bug Fixes 🐛
+          - dialog: Fixed the default value of emptyDisabled to false and modified the logic for disabling the submit button ([5c88532](https://github.com/Tuya-Community/miniapp-smart-ui/pull/146/commits/5c885324f3f9e3c691f4d840e8fc4120a2088301))
 
 jobs:
   send_wechat:
@@ -19,9 +42,35 @@ jobs:
     steps:
     - name: Send to WeChat
       env:
-        RELEASE_TAG: ${{ inputs.release_tag }}
-        RELEASE_BODY: ${{ inputs.release_body }}
+        RELEASE_TAG: ${{ inputs.release_tag || 'v2.10.0' }}
+        RELEASE_BODY_INPUT: ${{ inputs.release_body }}
       run: |
+        # 设置默认发布内容（当 push 触发或未提供输入时使用）
+        if [ -z "$RELEASE_BODY_INPUT" ] || [ "$RELEASE_BODY_INPUT" = "null" ]; then
+          RELEASE_BODY=$(cat <<'EOF'
+        ### Features ✨
+        - dialog: 新增 onInput 回调事件；修复调用 input 方式，value 为 undefined 无法显示输入框问题([pull/143](https://github.com/Tuya-Community/miniapp-smart-ui/pull/143))
+        - picker: 新增 unitGap 属性，用于设置单位和选择列之间的间隔([pull/144](https://github.com/Tuya-Community/miniapp-smart-ui/pull/144))
+        - battery: 对齐全新 UED 设计，重构样式布局，size默认值修改为24([pull/134](https://github.com/Tuya-Community/miniapp-smart-ui/pull/134), [pull/147](https://github.com/Tuya-Community/miniapp-smart-ui/pull/147))
+
+        ### Bug Fixes  🐛
+        - dialog: 修复 emptyDisabled 默认值为 false，并且修改提交按钮禁用逻辑([5c88532](https://github.com/Tuya-Community/miniapp-smart-ui/pull/146/commits/5c885324f3f9e3c691f4d840e8fc4120a2088301))
+
+        ## English
+
+        ### Features ✨
+        - dialog: Added onInput callback event; fixed the issue where calling input method with value as undefined prevents the input box from displaying ([pull/143](https://github.com/Tuya-Community/miniapp-smart-ui/pull/143))
+        - picker: Added unitGap property to set the gap between the unit and selection columns ([pull/144](https://github.com/Tuya-Community/miniapp-smart-ui/pull/144))
+        - battery: Aligned with the new UED design, restructured style layout, and changed the default value of size to 24 ([pull/134](https://github.com/Tuya-Community/miniapp-smart-ui/pull/134), [pull/147](https://github.com/Tuya-Community/miniapp-smart-ui/pull/147))
+
+        ### Bug Fixes 🐛
+        - dialog: Fixed the default value of emptyDisabled to false and modified the logic for disabling the submit button ([5c88532](https://github.com/Tuya-Community/miniapp-smart-ui/pull/146/commits/5c885324f3f9e3c691f4d840e8fc4120a2088301))
+        EOF
+        )
+        else
+          RELEASE_BODY="$RELEASE_BODY_INPUT"
+        fi
+        
         # 如果包含 "## English"，则删除该行及其后面的所有内容
         RELEASE_BODY=$(echo "$RELEASE_BODY" | sed '/^## English/,$d' | sed -z 's/[[:space:]]*$//')
         # 获取当前日期
