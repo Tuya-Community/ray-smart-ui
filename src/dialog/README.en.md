@@ -106,7 +106,8 @@ export default function Demo() {
       cancelButtonText: 'Sub Action',
     })
       .then(() => {
-        // on confirm
+        console.log('=== onConfirm', res);
+        const inputValue = res?.data?.inputValue;
       })
       .catch(() => {
         // on cancel
@@ -318,6 +319,7 @@ When calling Dialog via a function, the following options are supported:
 | theme | Style theme, options are `round-button` | _string_ | `default` |
 | title | Title | _string_ | - |
 | value | Initial value of the input box | _string_ | - |
+| onInput `v2.10.0` | Input Box Callback | _(value: string) => void_ | - |
 | width | Dialog box width, default unit is `px` | _string \| number_ | `320px` |
 | zIndex | z-index level | _number_ | `100` |
 | customStyle | Custom style | _string_ | '' |

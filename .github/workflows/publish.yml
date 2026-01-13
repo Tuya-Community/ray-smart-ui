@@ -1,17 +1,27 @@
 name: Publish Stable Release
 
 on:
-  release:
-    types: [published]
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+
 jobs:
   publish_release:
     runs-on: ubuntu-latest
+    # 只在 PR 被合并且来源分支是 release/2.x 时执行
+    if: |
+      github.event.pull_request.merged == true &&
+      startsWith(github.event.pull_request.head.ref, 'release/2.')
 
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
       with:
         token: ${{ secrets.PROTECT_WRITE_TOKEN }}
+        ref: main
+        fetch-depth: 0
 
     - name: Setup Node
       uses: actions/setup-node@v3
@@ -28,11 +38,28 @@ jobs:
     - name: Install Dependencies
       run: yarn install --frozen-lockfile
 
-    - name: Extract Version from Tag
+    - name: Extract Version from PR Title
       id: extract_version
       run: |
-        VERSION=$(echo "${{ github.event.release.tag_name }}" | sed 's/^v//')
+        PR_TITLE="${{ github.event.pull_request.title }}"
+        # 从 PR 标题中提取版本号，支持格式：v2.9.2 或 2.9.2
+        VERSION=$(echo "$PR_TITLE" | grep -oE '[vV]?[0-9]+\.[0-9]+\.[0-9]+' | head -1 | sed 's/^[vV]//')
+        if [ -z "$VERSION" ]; then
+          echo "❌ Error: Could not extract version from PR title: $PR_TITLE"
+          echo "Please ensure PR title contains a version number (e.g., 'v2.9.2' or '2.9.2')"
+          exit 1
+        fi
+        echo "✅ Extracted version: $VERSION"
         echo "TAG_VERSION=${VERSION}" >> $GITHUB_ENV
+        echo "PR_TITLE=${PR_TITLE}" >> $GITHUB_ENV
+        # 获取 PR 描述，如果没有则使用默认值
+        PR_BODY="${{ github.event.pull_request.body }}"
+        if [ -z "$PR_BODY" ] || [ "$PR_BODY" = "null" ]; then
+          PR_BODY="Release ${VERSION}"
+        fi
+        echo "PR_BODY<<EOF" >> $GITHUB_ENV
+        echo "$PR_BODY" >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
     
     - name: Update Package.json with Release Version
       run: |
@@ -46,43 +73,111 @@ jobs:
     - name: Build
       run: yarn build
 
+    - name: Create Git Tag
+      env:
+        PR_TITLE: ${{ env.PR_TITLE }}
+      run: |
+        # 确保在 main 分支上
+        git checkout main
+        git config pull.rebase false
+        git pull origin main
+        TAG_NAME="v${TAG_VERSION}"
+        # 检查 tag 是否已存在
+        if git rev-parse "$TAG_NAME" >/dev/null 2>&1; then
+          echo "⚠️  Tag $TAG_NAME already exists, skipping tag creation"
+        else
+          git tag -a "$TAG_NAME" -m "$PR_TITLE"
+          git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} "$TAG_NAME"
+          echo "✅ Created and pushed tag: $TAG_NAME"
+        fi
+
+    - name: Create GitHub Release
+      uses: actions/github-script@v7
+      env:
+        TAG_VERSION: ${{ env.TAG_VERSION }}
+        PR_TITLE: ${{ env.PR_TITLE }}
+        PR_BODY: ${{ env.PR_BODY }}
+      with:
+        github-token: ${{ secrets.PROTECT_WRITE_TOKEN }}
+        script: |
+          const tagName = `v${process.env.TAG_VERSION}`;
+          const releaseTitle = process.env.PR_TITLE;
+          const releaseBody = process.env.PR_BODY;
+          
+          // 检查 Release 是否已存在
+          try {
+            const existingRelease = await github.rest.repos.getReleaseByTag({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag: tagName,
+            });
+            console.log(`⚠️  Release ${tagName} already exists, skipping creation`);
+            return;
+          } catch (error) {
+            if (error.status !== 404) {
+              throw error;
+            }
+          }
+          
+          // 创建 Release
+          const release = await github.rest.repos.createRelease({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            tag_name: tagName,
+            name: releaseTitle,
+            body: releaseBody,
+            draft: false,
+            prerelease: false,
+          });
+          
+          console.log(`✅ Created release: ${release.data.html_url}`); 
+        
+    - name: send to WeChat
+      env:
+        RELEASE_BODY: ${{ github.event.release.body }}
+        RELEASE_TAG: ${{ github.event.release.tag_name }}
+      run: |
+        # 如果包含 "## English"，则删除该行及其后面的所有内容
+        RELEASE_BODY=$(echo "$RELEASE_BODY" | sed '/^## English/,$d' | sed -z 's/[[:space:]]*$//')
+        # 获取当前日期
+        RELEASE_DATE=$(date +%Y-%m-%d)
+        # 使用 $'\n' 确保换行符被正确解释
+        NEWLINE=$'\n'
+        CONTENT="## $RELEASE_TAG($RELEASE_DATE)  ${NEWLINE}  ${NEWLINE}  $RELEASE_BODY"
+        PAYLOAD=$(jq -n --arg content "$CONTENT" '{
+            "msgtype": "markdown",
+            "markdown": {
+                "content": $content
+            }
+        }')
+        curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${{ secrets.WECHAT_TOKEN }}' \
+        -H 'Content-Type: application/json' \
+        -d "$PAYLOAD"
+
+    - name: Commit Changes
+      run: |
+        # 确保在 main 分支上
+        git checkout main
+        git config pull.rebase false
+        git pull origin main
+        
+        # 添加并提交更改
+        git add package.json
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "chore(release): npm ${TAG_VERSION} release by Github Actions"
+          git log -1  # 检查最后的commit结果
+        fi
+
+    - name: Push to Main
+      # 使用个人访问令牌来推送更改以避免保护分支限制
+      run: |
+        git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     - name: Publish Package
       run: npm publish --access public
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        
-    # - name: send to WeChat
-    #   env:
-    #     RELEASE_BODY: ${{ github.event.release.body }}
-    #     RELEASE_TAG: ${{ github.event.release.tag_name }}
-    #   run: |
-    #     # 如果包含 "## English"，则删除该行及其后面的所有内容
-    #     RELEASE_BODY=$(echo "$RELEASE_BODY" | sed '/^## English/,$d' | sed -z 's/[[:space:]]*$//')
-    #     # 获取当前日期
-    #     RELEASE_DATE=$(date +%Y-%m-%d)
-    #     # 使用 $'\n' 确保换行符被正确解释
-    #     NEWLINE=$'\n'
-    #     CONTENT="## $RELEASE_TAG($RELEASE_DATE)  ${NEWLINE}  ${NEWLINE}  $RELEASE_BODY"
-    #     PAYLOAD=$(jq -n --arg content "$CONTENT" '{
-    #         "msgtype": "markdown",
-    #         "markdown": {
-    #             "content": $content
-    #         }
-    #     }')
-    #     curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${{ secrets.WECHAT_TOKEN }}' \
-    #     -H 'Content-Type: application/json' \
-    #     -d "$PAYLOAD"
-
-    - name: Commit Changes
-      run: |
-        git pull origin HEAD:main
-        git add package.json
-        git commit -m "chore(release): npm ${TAG_VERSION} release by Github Actions"
-        git log -1  # 检查最后的commit结果
-
-    - name: Push
-      # 使用个人访问令牌来推送更改以避免保护分支限制
-      run: |
-        git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} HEAD:main
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

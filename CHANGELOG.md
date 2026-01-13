@@ -1,5 +1,15 @@
 # 更新日志
 
+## v2.10.0 (2026-1-13)
+
+### Features ✨
+- dialog: 新增 onInput 回调事件；修复调用 input 方式，value 为 undefined 无法显示输入框问题([pull/143](https://github.com/Tuya-Community/miniapp-smart-ui/pull/143))
+- picker: 新增 unitGap 属性，用于设置单位和选择列之间的间隔([pull/144](https://github.com/Tuya-Community/miniapp-smart-ui/pull/144))
+- battery: 对齐全新 UED 设计，重构样式布局，size默认值修改为24([pull/134](https://github.com/Tuya-Community/miniapp-smart-ui/pull/134), [pull/147](https://github.com/Tuya-Community/miniapp-smart-ui/pull/147))
+
+### Bug Fixes  🐛
+- dialog: 修复 emptyDisabled 默认值为 false，并且修改提交按钮禁用逻辑([5c88532](https://github.com/Tuya-Community/miniapp-smart-ui/pull/146/commits/5c885324f3f9e3c691f4d840e8fc4120a2088301))
+
 ## v2.9.2 (2025-12-31)
 
 ### Bug Fixes  🐛
