@@ -1,10 +1,6 @@
 name: Send WeChat Notification (Manual)
 
 on:
-  push:
-    branches:
-      - main
-      - release/*
   workflow_dispatch:
     inputs:
       release_tag:
