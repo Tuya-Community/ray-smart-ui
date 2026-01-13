@@ -127,9 +127,9 @@ export default function Demo() {
 | highColor | 电量高的颜色 | _string_ | `var(--app-B1-N1, rgba(0, 0, 0, 0.9))` |
 | middleColor | 电量中的颜色 | _string_ | `#ffcb00` |
 | lowColor | 电量低的颜色 | _string_ | `#ee652e` |
-| inCharging `v2.10.0` | 是否处于充电状态，开启后会显示充电图标并使用充电颜色 | _boolean_ | `false` |
-| chargingColor `v2.10.0` | 充电状态下的颜色 | _string_ | `#2fc755` |
-| showText `v2.10.0` | 是否显示电量百分比文本，会在电池旁边显示当前电量值 | _boolean_ | `false` |
+| inCharging `v2.10.0` | 是否处于充电状态 | _boolean_ | `false` |
+| chargingColor `v2.10.0` | 充电颜色 | _string_ | `#2fc755` |
+| showText `v2.10.0` | 是否显示电量文本 | _boolean_ | `false` |
 | size | 尺寸 | _number_ | 10 `v2.0.0` 24 `2.10.0` |
 | type | 电池方向 | `vertical` \| `horizontal` | `vertical` |
 | value | 电量值 | _number_ | 70 |

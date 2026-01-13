@@ -29,9 +29,9 @@
 - [x] dialog input 支持 onInput 回调；增加then返回实例内取 input 值Demo;修复调用 input 方式，value为undefined 无法显示输入框问题；测试版本 2.9.3-beta-0
 - [x] picker 新增单位和选择列之间的间隔的设置参数 unitGap；测试版本 2.9.3-beta-1
 - [x] 修复dialog emptyDisabled 默认值为false，并且修改提交按钮禁用逻辑 测试版本 2.9.3-beta-2
-- [ ] popover: 修复 show为false时，trigger设置为 longpress 时还是会点击触发问题
-- [ ] 电池组件对齐全新 UED 设计
-- [ ] toast 对齐 UI 标准 修改背景色 
+- [x] 电池组件对齐全新 UED 设计 测试版本 2.10.0-beta-0
+- [ ] popover: 修复 show为false时，trigger设置为 longpress 时还是会点击触发问题；新增受控模式（待定）
+- [ ] toast 对齐 UI 标准 修改背景色 （待定）
 - [ ] 修复 index-bar 滚动切换时右侧 索引栏闪烁问题（待定）
 - [ ] tab 组新增等间距排布功能适配全新 UI 设计（待定）
 
