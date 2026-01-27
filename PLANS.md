@@ -43,7 +43,7 @@
 
 - [x] 修复 index-bar 手指触摸滚动右侧索引栏时闪烁问题 测试版本 2.10.1-beta-0
 - [x] 新增 index-bar 右侧索引栏样式自定义能力新增 sidebarFontSize、sidebarLineHeight 属性 测试版本 2.10.1-beta-1
-- [ ] 补充 dome 中没有当“TabbarItem Props”中的链接跳转类型（linkType）设置为"switchTab"时，链接地址（url）应如何填写，以实现页面内的标签页切换的说明
+- [x] 补充文档中 `switchTab` 相关属性说明
 - [ ] 新增 index-bar 右侧索引栏手指拖动后放大提示功能（待定）
 - [ ] popover: 修复 show 为 false 时，trigger 设置为 longpress 时还是会点击触发问题；新增受控模式（待定）
 - [ ] toast 对齐 UI 标准 修改背景色，增加受控动画关闭能力（待定）
