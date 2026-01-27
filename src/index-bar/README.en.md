@@ -87,8 +87,8 @@ export default function Demo() {
 
 ### IndexBar Props
 
-| Parameter         | Description                | Type                   | Default   | 
-| ----------------- | -------------------------- | ---------------------- | --------- |
+| Parameter           | Description                               | Type                   | Default   |
+| ------------------- | ----------------------------------------- | ---------------------- | --------- |
 | highlightColor | Index character highlight color | _string_ | `#07c160` |
 | indexList | List of index characters | _string[] \| number[]_ | `A-Z` |
 | sticky | Whether to enable anchor auto-sticky | _boolean_ | `true` |
@@ -98,29 +98,28 @@ export default function Demo() {
 
 ### IndexAnchor Props
 
-| Parameter | Description             | Type               | Default |
-| --------- | ----------------------- | ------------------ | ------- | 
+| Parameter | Description                        | Type               | Default |
+| --------- | ---------------------------------- | ------------------ | ------- |
 | index | Index character | _string \| number_ | - |
 | useSlot | Whether to use custom content slot | _boolean_ | `false` |
 
 ### IndexBar Events
 
-| Event Name | Description          | Callback Parameters |
-| ---------- | -------------------- | ------------------- |
+| Event Name | Description                        | Callback Parameters    |
+| ---------- | ---------------------------------- | ---------------------- |
 | select | Fires when a character is selected | index: Index character |
 
 ### IndexAnchor Slots
 
-| Name | Description                        |
-| ---- | ---------------------------------- |
+| Name | Description                                                  |
+| ---- | ------------------------------------------------------------ |
 | -    | Anchor position display content, defaults to index character |
-
 
 ### Style Variables
 
 The component provides the following CSS variables that can be used for custom styles. For usage, refer to the [ConfigProvider Component](/material/smartui?comId=config-provider).
 
-| Name                          | Default Value                           | Description       |
-| ----------------------------- | ---------------------------------------- | ----------------- |
-| --index-bar-index-font-size   | _10px_                                   | Index font size   |
-| --index-bar-index-line-height | _14px_                                   | Index line height |
+| Name                          | Default Value | Description       |
+| ----------------------------- | ------------- | ----------------- |
+| --index-bar-index-font-size   | _10px_        | Index font size   |
+| --index-bar-index-line-height | _14px_        | Index line height |
