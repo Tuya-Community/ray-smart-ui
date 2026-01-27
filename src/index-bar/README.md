@@ -38,10 +38,12 @@ import { View } from '@ray-js/ray';
 import { Cell, IndexBar, IndexAnchor } from '@ray-js/smart-ui';
 
 export default function Demo() {
-  const indexList = Array.from({ length: 26 }, (_, i) => String.fromCharCode('A'.charCodeAt(0) + i))
+  const indexList = Array.from({ length: 26 }, (_, i) =>
+    String.fromCharCode('A'.charCodeAt(0) + i)
+  );
 
   return (
-    <IndexBar>
+    <IndexBar scrollable>
       {indexList.map((item, index) => (
         <View key={`${index + 1}`}>
           <IndexAnchor index={item} />
@@ -61,7 +63,7 @@ export default function Demo() {
 
 ```jsx
 import { Cell, IndexBar, IndexAnchor } from '@ray-js/smart-ui';
-import { View } from '@ray-js/ray'
+import { View } from '@ray-js/ray';
 import React from 'react';
 
 export default function Demo() {
@@ -83,25 +85,56 @@ export default function Demo() {
 }
 ```
 
+### 自定义侧边栏样式 `v2.10.1`
+
+`sidebarFontSize` 和 `sidebarLineHeight` 属性可以设置侧边栏的字体样式
+
+```jsx
+import React from 'react';
+import { View } from '@ray-js/ray';
+import { Cell, IndexBar, IndexAnchor } from '@ray-js/smart-ui';
+
+export default function Demo() {
+  const indexList = Array.from({ length: 26 }, (_, i) =>
+    String.fromCharCode('A'.charCodeAt(0) + i)
+  );
+
+  return (
+    <IndexBar sidebarFontSize="16px" sidebarLineHeight="20px">
+      {indexList.map((item, index) => (
+        <View key={`${index + 1}`}>
+          <IndexAnchor index={item} />
+          <Cell title="文本" />
+          <Cell title="文本" />
+          <Cell title="文本" />
+        </View>
+      ))}
+    </IndexBar>
+  );
+}
+```
+
 ## API
 
 ### IndexBar Props
 
-| 参数                | 说明                       | 类型                   | 默认值    |
-| ------------------- | -------------------------- | ---------------------- | --------- |
-| highlightColor | 索引字符高亮颜色 | _string_ | `#07c160` |
-| indexList | 索引字符列表 | _string[] \| number[]_ | `A-Z` |
-| sticky | 是否开启锚点自动吸顶 | _boolean_ | `true` |
-| stickyOffsetTop | 锚点自动吸顶时与顶部的距离 | _number_ | `0` |
-| zIndex | z-index 层级 | _number_ | `1` |
-| scrollable `v2.1.7` | SideBar 是否可滚动定位 | _boolean_ | `false` |
+| 参数                        | 说明                       | 类型                   | 默认值    |
+| --------------------------- | -------------------------- | ---------------------- | --------- |
+| highlightColor              | 索引字符高亮颜色           | _string_               | `#07c160` |
+| indexList                   | 索引字符列表               | _string[] \| number[]_ | `A-Z`     |
+| sticky                      | 是否开启锚点自动吸顶       | _boolean_              | `true`    |
+| stickyOffsetTop             | 锚点自动吸顶时与顶部的距离 | _number_               | `0`       |
+| zIndex                      | z-index 层级               | _number_               | `1`       |
+| scrollable `v2.1.7`         | SideBar 是否可滚动定位     | _boolean_              | `false`   |
+| sidebarFontSize `v2.10.1`   | SideBar 字体大小           | _string_               | -         |
+| sidebarLineHeight `v2.10.1` | SideBar 字体行高           | _string_               | -         |
 
 ### IndexAnchor Props
 
-| 参数     | 说明                     | 类型               | 默认值  |
-| -------- | ------------------------ | ------------------ | ------- |
-| index | 索引字符 | _string \| number_ | - |
-| useSlot | 是否使用自定义内容的插槽 | _boolean_ | `false` |
+| 参数    | 说明                     | 类型               | 默认值  |
+| ------- | ------------------------ | ------------------ | ------- |
+| index   | 索引字符                 | _string \| number_ | -       |
+| useSlot | 是否使用自定义内容的插槽 | _boolean_          | `false` |
 
 ### IndexBar Events
 
@@ -123,3 +156,9 @@ export default function Demo() {
 | ----------------------------- | ------ | ------------ |
 | --index-bar-index-font-size   | _10px_ | 索引字体大小 |
 | --index-bar-index-line-height | _14px_ | 索引行高     |
+
+## 常见问题
+
+### 嵌套在滚动元素中 IndexAnchor 失效？
+
+由于 `<IndexBar />` 内部使用 ty.pageScrollTo 滚动到指定位置，因此只支持页面级滚动，无法在滚动元素中嵌套使用，例如：`view` 使用 `overflow: scroll;` 或者 `scroll-view`，具体可查看[微信小程序文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/scroll/ty.pageScrollTo.html)。

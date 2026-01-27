@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { View } from '@ray-js/ray';
 import { Cell, IndexBar, IndexAnchor, Tabs, Tab } from '@ray-js/smart-ui';
 import Strings from '../../i18n';
@@ -23,7 +23,7 @@ export default function Demo() {
       <Tabs active={activeTab} onChange={onChange}>
         <Tab title={Strings.getLang('basicUsage')}>
           {activeTab === 0 && (
-            <IndexBar>
+            <IndexBar scrollable>
               {indexList.map((item, index) => (
                 <View key={`${index + 1}`}>
                   <IndexAnchor index={item} />
@@ -37,7 +37,7 @@ export default function Demo() {
         </Tab>
         <Tab title={Strings.getLang('customIndexList')}>
           {activeTab === 1 && (
-            <IndexBar indexList={customIndexList}>
+            <IndexBar indexList={customIndexList} sidebarFontSize="16px" sidebarLineHeight="20px">
               {customIndexList.map((item, index) => (
                 <View key={`${index + 1}`}>
                   <IndexAnchor index={item} useSlot>
