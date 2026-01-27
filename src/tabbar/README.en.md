@@ -121,7 +121,7 @@ import Airplane from '@tuya-miniapp/icons/dist/svg/Airplane';
 
 import React, { useState } from 'react';
 import { Tabbar, TabbarItem } from '@ray-js/smart-ui';
-import { Image } from '@ray-js/ray'
+import { Image } from '@ray-js/ray';
 
 export default function Demo() {
   const [active, setActive] = useState(0);
@@ -295,10 +295,9 @@ export default function Demo() {
 
 Please refer to the [Smart Mini Program Official Documentation](https://developer.tuya.com/cn/miniapp/develop/miniapp/framework/app/app-json#tabbar)
 
-
 ### Upside Down `v2.5.1`
 
-`upsideDown` attribute can turn the label and text upside down  
+`upsideDown` attribute can turn the label and text upside down
 
 ```jsx
 import Tornado from '@tuya-miniapp/icons/dist/svg/Tornado';
@@ -329,70 +328,70 @@ export default function Demo() {
 
 ### Tabbar Props
 
-| Parameter               | Description                                        | Type      | Default Value    |
-| ---------------------- | -------------------------------------------------- | --------- | ---------------- |
-| active | Index of currently selected tab | _number_ | - |
-| activeColor | Color of the selected tab | _string_ | `--tabbar-item-active-color` \| `--app-M1` \| `#3678e3` |
-| border | Whether to display an outer border | _boolean_ | `true` |
-| fixed | Whether to fix at the bottom | _boolean_ | `true` |
-| inactiveColor | Color of the non-selected tab | _string_ | `#7d7e80` |
-| placeholder | Whether to generate a height-equal placeholder at tab position when fixed at bottom | _boolean_ | `false` |
-| safeAreaInsetBottom | Whether to reserve bottom safe area for iPhoneX | _boolean_ | `true` |
-| zIndex | Element z-index | _number_ | `1` |
-| upsideDown `v2.5.1` | Top-bottom inversion | _boolean_ | `false` |
+| Parameter           | Description                                                                         | Type      | Default Value                                           |
+| ------------------- | ----------------------------------------------------------------------------------- | --------- | ------------------------------------------------------- |
+| active              | Index of currently selected tab                                                     | _number_  | -                                                       |
+| activeColor         | Color of the selected tab                                                           | _string_  | `--tabbar-item-active-color` \| `--app-M1` \| `#3678e3` |
+| border              | Whether to display an outer border                                                  | _boolean_ | `true`                                                  |
+| fixed               | Whether to fix at the bottom                                                        | _boolean_ | `true`                                                  |
+| inactiveColor       | Color of the non-selected tab                                                       | _string_  | `#7d7e80`                                               |
+| placeholder         | Whether to generate a height-equal placeholder at tab position when fixed at bottom | _boolean_ | `false`                                                 |
+| safeAreaInsetBottom | Whether to reserve bottom safe area for iPhoneX                                     | _boolean_ | `true`                                                  |
+| zIndex              | Element z-index                                                                     | _number_  | `1`                                                     |
+| upsideDown `v2.5.1` | Top-bottom inversion                                                                | _boolean_ | `false`                                                 |
 
 ### Tabbar Slot
 
-| Name        | Description           |
-| ----------- | ---------------------- |
-| -           | Default slot, insert sub-tabs |
-| left `v2.2.0` | Slot on the left side of the tab |
+| Name           | Description                       |
+| -------------- | --------------------------------- |
+| -              | Default slot, insert sub-tabs     |
+| left `v2.2.0`  | Slot on the left side of the tab  |
 | right `v2.2.0` | Slot on the right side of the tab |
 
 ### Tabbar Event
 
-| Event Name    | Description          | Parameters                                    |
-| ------------- | -------------------- | --------------------------------------------- |
-| onChange | Triggered on tab switch | event.detail: The name or index of the currently selected tab |
+| Event Name | Description             | Parameters                                                    |
+| ---------- | ----------------------- | ------------------------------------------------------------- |
+| onChange   | Triggered on tab switch | event.detail: The name or index of the currently selected tab |
 
 ### TabbarItem Props
 
-| Parameter             | Description                                      | Type               | Default Value     |
-| --------------------- | ------------------------------------------------ | ------------------ | ------------------ |
-| dot | Whether to show a dot | _boolean_ | - |
-| icon | Icon SVG value or image link, optional values see [Icon component](/material/smartui?comId=icon) | _string_ | - |
-| iconPrefix | Icon class name prefix, same as Icon component's [class-prefix attribute](/material/smartui?comId=icon#Props) | _string_ | `smart-icon` |
-| info | Icon upper right corner information | _string \| number_ | - |
-| linkType `v1.10.13` | Type of link jump, optional values are `redirectTo`, `switchTab`, `reLaunch` | _string_ | `redirectTo` |
-| name | Tab name as an identifier | _string \| number_ | Current tab index |
-| url `v1.10.13` | The address of the link to jump to, must start with `/` | _string_ | - |
-| disabled `v2.3.5` | Whether to disable | _boolean_ | - |
+| Parameter           | Description                                                                                                                                                  | Type               | Default Value     |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------ | ----------------- |
+| dot                 | Whether to show a dot                                                                                                                                        | _boolean_          | -                 |
+| icon                | Icon SVG value or image link, optional values see [Icon component](/material/smartui?comId=icon)                                                             | _string_           | -                 |
+| iconPrefix          | Icon class name prefix, same as Icon component's [class-prefix attribute](/material/smartui?comId=icon#Props)                                                | _string_           | `smart-icon`      |
+| info                | Icon upper right corner information                                                                                                                          | _string \| number_ | -                 |
+| linkType `v1.10.13` | Type of link jump, optional values are `redirectTo`, [`switchTab`](https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.switchTab.html), `reLaunch` | _string_           | `redirectTo`      |
+| name                | Tab name as an identifier                                                                                                                                    | _string \| number_ | Current tab index |
+| url `v1.10.13`      | The address of the link to jump to, must start with `/`                                                                                                      | _string_           | -                 |
+| disabled `v2.3.5`   | Whether to disable                                                                                                                                           | _boolean_          | -                 |
 
 ### TabbarItem Slot
 
-| Name        | Description           |
-| ----------- | ---------------------- |
-| icon | Icon when not selected |
-| iconActive | Icon when selected |
+| Name       | Description            |
+| ---------- | ---------------------- |
+| icon       | Icon when not selected |
+| iconActive | Icon when selected     |
 
 ### TabbarItem Event
 
-| Name        | Description           |
-| ----------- | ---------------------- |
+| Name  | Description                                                      |
+| ----- | ---------------------------------------------------------------- |
 | click | Click event, there will be a callback even when setting disabled |
 
 ### Style Variables
 
 The component provides the following CSS variables for customizing the style. For usage, refer to the [ConfigProvider component](/material/smartui?comId=config-provider).
 
-| Name                        | Default Value                          | Description         |
-| --------------------------- | -------------------------------------- | ------------------- |
-| --tabbar-height             | _55px_                                 | Tab bar height      |
+| Name                        | Default Value                          | Description              |
+| --------------------------- | -------------------------------------- | ------------------------ |
+| --tabbar-height             | _55px_                                 | Tab bar height           |
 | --tabbar-background-color   | _var(--app-B5, #f6f7fb)_               | Tab bar background color |
-| --tabbar-border-color       | _var(--app-B6-N7, rgba(0, 0, 0, 0.1))_ | Tab bar border color |
-| --tabbar-item-font-size     | _12px_                                 | Tab item font size  |
-| --tabbar-item-text-color    | _var(--app-B6-N5, rgba(0, 0, 0, 0.3))_ | Tab item text color |
-| --tabbar-item-active-color  | _var(--app-M1, #3678e3)_               | Active state item color |
-| --tabbar-item-line-height   | _1_                                    | Tab item line height |
-| --tabbar-item-icon-size     | _22px_                                 | Tab item icon size  |
-| --tabbar-item-margin-bottom | _4px_                                  | Tab item bottom margin |
+| --tabbar-border-color       | _var(--app-B6-N7, rgba(0, 0, 0, 0.1))_ | Tab bar border color     |
+| --tabbar-item-font-size     | _12px_                                 | Tab item font size       |
+| --tabbar-item-text-color    | _var(--app-B6-N5, rgba(0, 0, 0, 0.3))_ | Tab item text color      |
+| --tabbar-item-active-color  | _var(--app-M1, #3678e3)_               | Active state item color  |
+| --tabbar-item-line-height   | _1_                                    | Tab item line height     |
+| --tabbar-item-icon-size     | _22px_                                 | Tab item icon size       |
+| --tabbar-item-margin-bottom | _4px_                                  | Tab item bottom margin   |
