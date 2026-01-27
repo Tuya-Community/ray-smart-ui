@@ -38,10 +38,12 @@ import { View } from '@ray-js/ray';
 import { Cell, IndexBar, IndexAnchor } from '@ray-js/smart-ui';
 
 export default function Demo() {
-  const indexList = Array.from({ length: 26 }, (_, i) => String.fromCharCode('A'.charCodeAt(0) + i));
+  const indexList = Array.from({ length: 26 }, (_, i) =>
+    String.fromCharCode('A'.charCodeAt(0) + i)
+  );
 
   return (
-    <IndexBar>
+    <IndexBar scrollable>
       {indexList.map((item, index) => (
         <View key={`${index + 1}`}>
           <IndexAnchor index={item} />
@@ -61,7 +63,7 @@ You can customize the list of index characters to display via the `indexList` at
 
 ```jsx
 import { Cell, IndexBar, IndexAnchor } from '@ray-js/smart-ui';
-import { View } from '@ray-js/ray'
+import { View } from '@ray-js/ray';
 import React from 'react';
 
 export default function Demo() {
@@ -73,6 +75,35 @@ export default function Demo() {
           <IndexAnchor index={item} useSlot>
             title {item}
           </IndexAnchor>
+          <Cell title="text" />
+          <Cell title="text" />
+          <Cell title="text" />
+        </View>
+      ))}
+    </IndexBar>
+  );
+}
+```
+
+### Custom sidebar style `v2.10.1`
+
+The `sidebarFontSize` and `sidebarLineHeight` properties can set the font style of the sidebar
+
+```jsx
+import React from 'react';
+import { View } from '@ray-js/ray';
+import { Cell, IndexBar, IndexAnchor } from '@ray-js/smart-ui';
+
+export default function Demo() {
+  const indexList = Array.from({ length: 26 }, (_, i) =>
+    String.fromCharCode('A'.charCodeAt(0) + i)
+  );
+
+  return (
+    <IndexBar sidebarFontSize="16px" sidebarLineHeight="20px">
+      {indexList.map((item, index) => (
+        <View key={`${index + 1}`}>
+          <IndexAnchor index={item} />
           <Cell title="text" />
           <Cell title="text" />
           <Cell title="text" />
@@ -95,6 +126,8 @@ export default function Demo() {
 | stickyOffsetTop | Distance from top when anchor auto-sticky | _number_ | `0` |
 | zIndex | z-index level | _number_ | `1` |
 | scrollable `v2.1.7` | Whether the SideBar can scroll | _boolean_ | `false` |
+| sidebarFontSize `v2.10.1` | SideBar font size | _string_ | - |
+| sidebarLineHeight `v2.10.1` | SideBar line height | _string_ | - |
 
 ### IndexAnchor Props
 
@@ -123,3 +156,9 @@ The component provides the following CSS variables that can be used for custom s
 | ----------------------------- | ------------- | ----------------- |
 | --index-bar-index-font-size   | _10px_        | Index font size   |
 | --index-bar-index-line-height | _14px_        | Index line height |
+
+## FAQ
+
+### IndexAnchor fails when nested in a scrollable element?
+
+Since `<IndexBar />` internally uses ty.pageScrollTo to scroll to a specified position, it only supports page-level scrolling and cannot be nested in scrollable elements, such as: `view` with `overflow: scroll;` or `scroll-view`. For details, see [WeChat Mini Program Documentation](https://developers.weixin.qq.com/miniprogram/dev/api/ui/scroll/ty.pageScrollTo.html).
