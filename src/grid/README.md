@@ -224,14 +224,14 @@ export default function Demo() {
 
 ### GridItem Props
 
-| 参数                 | 说明                                                       | 类型               | 默认值       |
-| -------------------- | ---------------------------------------------------------- | ------------------ | ------------ |
+| 参数                 | 说明                                                                                                                                       | 类型               | 默认值       |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------ | ------------ |
 | badge | 图标右上角徽标的内容 | _string \| number_ | - |
 | dot | 是否显示图标右上角小红点 | _boolean_ | `false` |
-| icon | 图标svg值或图片链接，可选值见 [Icon 组件](/material/smartui?comId=icon) | _string_ | - |
+| icon | 图标 svg 值或图片链接，可选值见 [Icon 组件](/material/smartui?comId=icon) | _string_ | - |
 | iconColor | 图标颜色 | _string_ | - |
 | iconPrefix `v1.7.0` | 第三方图标前缀 | _string_ | `smart-icon` |
-| linkType | 链接跳转类型，可选值为 `redirectTo` `switchTab` `reLaunch` | _string_ | `navigateTo` |
+| linkType | 链接跳转类型，可选值为 `redirectTo` [`switchTab`](https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.switchTab.html) `reLaunch` | _string_ | `navigateTo` |
 | text | 文字 | _string_ | - |
 | url | 点击后跳转的链接地址 | _string_ | - |
 
@@ -262,11 +262,11 @@ export default function Demo() {
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](/material/smartui?comId=config-provider)。
 
-| 名称                          | 默认值                                 | 描述 |
-| ----------------------------- | -------------------------------------- | ---- |
-| --grid-item-content-padding | _@padding-md @padding-xs_ | 内容内边距 |
-| --grid-item-content-background-color | _var(--app-B3, #ffffff)_ | 背景颜色 |
-| --grid-item-content-active-color | _#f2f3f5_ | 激活时颜色 |
-| --grid-item-icon-size | _26px_ | 图标大小 |
-| --grid-item-text-color | _var(--app-B6-N2, rgba(0, 0, 0, 0.7))_ | 文本颜色 |
-| --grid-item-text-font-size | _12px_ | 文本字体大小 |
+| 名称                                 | 默认值                                 | 描述         |
+| ------------------------------------ | -------------------------------------- | ------------ |
+| --grid-item-content-padding          | _@padding-md @padding-xs_              | 内容内边距   |
+| --grid-item-content-background-color | _var(--app-B3, #ffffff)_               | 背景颜色     |
+| --grid-item-content-active-color     | _#f2f3f5_                              | 激活时颜色   |
+| --grid-item-icon-size                | _26px_                                 | 图标大小     |
+| --grid-item-text-color               | _var(--app-B6-N2, rgba(0, 0, 0, 0.7))_ | 文本颜色     |
+| --grid-item-text-font-size           | _12px_                                 | 文本字体大小 |

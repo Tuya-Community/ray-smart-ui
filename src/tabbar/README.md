@@ -328,8 +328,8 @@ export default function Demo() {
 
 ### Tabbar Props
 
-| 参数                   | 说明                                               | 类型      | 默认值    |
-| ---------------------- | -------------------------------------------------- | --------- | --------- |
+| 参数                   | 说明                                               | 类型      | 默认值                                                  |
+| ---------------------- | -------------------------------------------------- | --------- | ------------------------------------------------------- |
 | active | 当前选中标签的索引 | _number_ | - |
 | activeColor | 选中标签的颜色 | _string_ | `--tabbar-item-active-color` \| `--app-M1` \| `#3678e3` |
 | border | 是否展示外边框 | _boolean_ | `true` |
@@ -342,11 +342,11 @@ export default function Demo() {
 
 ### Tabbar Slot
 
-| 名称        | 说明           |
-| ----------- | -------------- |
-| -        | 默认插槽，插入子tab页 |
-| left `v2.2.0` | tab左侧的插槽 |
-| right `v2.2.0` | tab右侧的插槽 |
+| 名称           | 说明                    |
+| -------------- | ----------------------- |
+| -              | 默认插槽，插入子 tab 页 |
+| left `v2.2.0` | tab 左侧的插槽 |
+| right `v2.2.0` | tab 右侧的插槽 |
 
 ### Tabbar Event
 
@@ -356,13 +356,13 @@ export default function Demo() {
 
 ### TabbarItem Props
 
-| 参数                 | 说明                                                           | 类型               | 默认值           |
-| -------------------- | -------------------------------------------------------------- | ------------------ | ---------------- |
+| 参数                 | 说明                                                                                                                                         | 类型               | 默认值           |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ---------------- |
 | dot | 是否显示小红点 | _boolean_ | - |
-| icon | 图标svg值或图片链接，可选值见 [Icon 组件](/material/smartui?comId=icon) | _string_ | - |
+| icon | 图标 svg 值或图片链接，可选值见 [Icon 组件](/material/smartui?comId=icon) | _string_ | - |
 | iconPrefix | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](/material/smartui?comId=icon#Props) | _string_ | `smart-icon` |
 | info | 图标右上角提示信息 | _string \| number_ | - |
-| linkType `v1.10.13` | 链接跳转类型，可选值为 `redirectTo`、`switchTab`、`reLaunch` | _string_ | `redirectTo` |
+| linkType `v1.10.13` | 链接跳转类型，可选值为 `redirectTo`、[`switchTab`](https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.switchTab.html)、`reLaunch` | _string_ | `redirectTo` |
 | name | 标签名称，作为匹配的标识符 | _string \| number_ | 当前标签的索引值 |
 | url `v1.10.13` | 点击后跳转的链接地址, 需要以 `/` 开头 | _string_ | - |
 | disabled `v2.3.5` | 是否禁用 | _boolean_ | - |
@@ -376,22 +376,22 @@ export default function Demo() {
 
 ### TabbarItem Event
 
-| 名称        | 说明           |
-| ----------- | -------------- |
-| click | 点击事件，设置disabled时也会有回调 |
+| 名称  | 说明                                 |
+| ----- | ------------------------------------ |
+| click | 点击事件，设置 disabled 时也会有回调 |
 
 ### 样式变量
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](/material/smartui?comId=config-provider)。
 
-| 名称                          | 默认值                                 | 描述 |
-| ----------------------------- | -------------------------------------- | ---- |
-| --tabbar-height               | _55px_                                 | 标签栏高度              |
-| --tabbar-background-color     | _var(--app-B5, #f6f7fb)_               | 标签栏背景颜色          |
-| --tabbar-border-color         | _var(--app-B6-N7, rgba(0, 0, 0, 0.1))_ | 标签栏边框颜色          |
-| --tabbar-item-font-size       | _12px_                                 | 标签项字体大小          |
-| --tabbar-item-text-color      | _var(--app-B6-N5, rgba(0, 0, 0, 0.3))_ | 标签项文本颜色          |
-| --tabbar-item-active-color    | _var(--app-M1, #3678e3)_               | 活动状态项目颜色        |
-| --tabbar-item-line-height     | _1_                                    | 标签项行高              |
-| --tabbar-item-icon-size       | _22px_                                 | 标签项图标大小          |
-| --tabbar-item-margin-bottom   | _4px_                                  | 标签项下边距            |
+| 名称                        | 默认值                                 | 描述             |
+| --------------------------- | -------------------------------------- | ---------------- |
+| --tabbar-height             | _55px_                                 | 标签栏高度       |
+| --tabbar-background-color   | _var(--app-B5, #f6f7fb)_               | 标签栏背景颜色   |
+| --tabbar-border-color       | _var(--app-B6-N7, rgba(0, 0, 0, 0.1))_ | 标签栏边框颜色   |
+| --tabbar-item-font-size     | _12px_                                 | 标签项字体大小   |
+| --tabbar-item-text-color    | _var(--app-B6-N5, rgba(0, 0, 0, 0.3))_ | 标签项文本颜色   |
+| --tabbar-item-active-color  | _var(--app-M1, #3678e3)_               | 活动状态项目颜色 |
+| --tabbar-item-line-height   | _1_                                    | 标签项行高       |
+| --tabbar-item-icon-size     | _22px_                                 | 标签项图标大小   |
+| --tabbar-item-margin-bottom | _4px_                                  | 标签项下边距     |
