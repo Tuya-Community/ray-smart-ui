@@ -118,29 +118,29 @@ export default function Demo() {
 
 ### IndexBar Props
 
-| Parameter                   | Description                               | Type                   | Default   |
-| --------------------------- | ----------------------------------------- | ---------------------- | --------- |
-| highlightColor              | Index character highlight color           | _string_               | `#07c160` |
-| indexList                   | List of index characters                  | _string[] \| number[]_ | `A-Z`     |
-| sticky                      | Whether to enable anchor auto-sticky      | _boolean_              | `true`    |
-| stickyOffsetTop             | Distance from top when anchor auto-sticky | _number_               | `0`       |
-| zIndex                      | z-index level                             | _number_               | `1`       |
-| scrollable `v2.1.7`         | Whether the SideBar can scroll            | _boolean_              | `false`   |
-| sidebarFontSize `v2.10.1`   | SideBar font size                         | _string_               | -         |
-| sidebarLineHeight `v2.10.1` | SideBar line height                       | _string_               | -         |
+| Parameter           | Description                               | Type                   | Default   |
+| ------------------- | ----------------------------------------- | ---------------------- | --------- |
+| highlightColor | Index character highlight color | _string_ | `#07c160` |
+| indexList | List of index characters | _string[] \| number[]_ | `A-Z` |
+| sticky | Whether to enable anchor auto-sticky | _boolean_ | `true` |
+| stickyOffsetTop | Distance from top when anchor auto-sticky | _number_ | `0` |
+| zIndex | z-index level | _number_ | `1` |
+| scrollable `v2.1.7` | Whether the SideBar can scroll | _boolean_ | `false` |
+| sidebarFontSize `v2.10.1` | SideBar font size | _string_ | - |
+| sidebarLineHeight `v2.10.1` | SideBar line height | _string_ | - |
 
 ### IndexAnchor Props
 
 | Parameter | Description                        | Type               | Default |
 | --------- | ---------------------------------- | ------------------ | ------- |
-| index     | Index character                    | _string \| number_ | -       |
-| useSlot   | Whether to use custom content slot | _boolean_          | `false` |
+| index | Index character | _string \| number_ | - |
+| useSlot | Whether to use custom content slot | _boolean_ | `false` |
 
 ### IndexBar Events
 
 | Event Name | Description                        | Callback Parameters    |
 | ---------- | ---------------------------------- | ---------------------- |
-| select     | Fires when a character is selected | index: Index character |
+| select | Fires when a character is selected | index: Index character |
 
 ### IndexAnchor Slots
 
