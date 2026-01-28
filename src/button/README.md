@@ -266,7 +266,6 @@ export default function Demo() {
 | loading | 是否显示为加载状态 | _boolean_ | `false` |
 | loadingSize | 加载图标大小 | _string_ | `20px` |
 | loadingText | 加载状态提示文字 | _string_ | - |
-| myTextColor `v2.10.1` | 按钮文字颜色 | _string_ | - |
 | textStyle | 按钮文字样式 | _React.CSSProperties_ | - |
 | loadingType | 加载状态图标类型，可选值为 `spinner` | _string_ | `circular` |
 | plain | 是否为朴素按钮 | _boolean_ | `false` |
