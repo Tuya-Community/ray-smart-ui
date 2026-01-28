@@ -109,6 +109,13 @@ jobs:
           if [ -z "$BASE_SHA" ] || [ -z "$SOURCE_SHA" ]; then
             echo "⚠️ 缺少 base_sha 或 source_sha，跳过拉取 diff（后续 Cursor 步骤将不执行）"
             echo "diff_exists=false" >> $GITHUB_OUTPUT
+            echo "SKIP_REASON: missing_base_or_source_sha" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          if [ "$BASE_SHA" = "$SOURCE_SHA" ]; then
+            echo "⚠️ base_sha 与 source_sha 相同，Compare API 会返回空 diff（miniapp 侧需在 Push 前保存 merge/base SHA）"
+            echo "diff_exists=false" >> $GITHUB_OUTPUT
+            echo "SKIP_REASON: base_equals_source" >> $GITHUB_OUTPUT
             exit 0
           fi
           if [ -n "$BRANCH" ] && [ "$BRANCH" = "fix/"* ]; then
