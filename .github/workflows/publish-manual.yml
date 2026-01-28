@@ -10,11 +10,19 @@ on:
         description: 'NPM version to publish (e.g., 2.8.2)'
         required: true
         type: string
+      mr_id:
+        description: 'Merge request (PR) ID from miniapp-smart-ui to fetch diff info'
+        required: false
+        type: string
   workflow_call:
     inputs:
       version:
         description: 'NPM version to publish (e.g., 2.8.2)'
         required: true
+        type: string
+      mr_id:
+        description: 'Merge request (PR) ID from miniapp-smart-ui to fetch diff info'
+        required: false
         type: string
 
 jobs:
@@ -48,6 +56,59 @@ jobs:
             exit 1
           fi
           echo "✅ MINIAPP_TOKEN is available"
+
+      - name: Get MR diff from miniapp-smart-ui
+        if: inputs.mr_id != ''
+        id: mr_diff
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.MINIAPP_TOKEN }}
+          script: |
+            const mrId = '${{ inputs.mr_id }}';
+            const owner = 'Tuya-Community';
+            const repo = 'miniapp-smart-ui';
+            try {
+              // 获取 PR 基本信息
+              const { data: pr } = await github.rest.pulls.get({
+                owner,
+                repo,
+                pull_number: parseInt(mrId, 10),
+              });
+              core.summary
+                .addHeading('MR 信息 (miniapp-smart-ui)')
+                .addRaw(`PR #${mrId}: ${pr.title}`)
+                .addRaw(`状态: ${pr.state}, 分支: ${pr.head.ref} -> ${pr.base.ref}`)
+                .write();
+              // 获取 PR 变更文件列表（含 patch）
+              const { data: files } = await github.rest.pulls.listFiles({
+                owner,
+                repo,
+                pull_number: parseInt(mrId, 10),
+              });
+              const fileList = files.map(f => `${f.status}: ${f.filename}`).join('\n');
+              core.setOutput('files_changed', fileList);
+              core.setOutput('files_count', String(files.length));
+              // 获取完整 diff（raw）
+              const { data: diff } = await github.request({
+                method: 'GET',
+                url: `https://api.github.com/repos/${owner}/${repo}/pulls/${mrId}`,
+                headers: { 'Accept': 'application/vnd.github.v3.diff' },
+              });
+              const diffStr = typeof diff === 'string' ? diff : String(diff);
+              const fs = require('fs');
+              const workspace = process.env.GITHUB_WORKSPACE;
+              const diffDir = `${workspace}/mr-diff`;
+              fs.mkdirSync(diffDir, { recursive: true });
+              fs.writeFileSync(`${diffDir}/pr.diff`, diffStr, 'utf8');
+              core.setOutput('diff_path', `${diffDir}/pr.diff`);
+              console.log(`✅ 已获取 PR #${mrId} 的 diff，共 ${files.length} 个文件变更`);
+              console.log('\n--- 变更文件列表 ---\n' + fileList);
+              console.log('\n--- PR Diff (miniapp-smart-ui) ---\n' + diffStr);
+            } catch (err) {
+              core.setFailed(`获取 miniapp-smart-ui PR #${mrId} 失败: ${err.message}`);
+            }
+        env:
+          MINIAPP_TOKEN: ${{ secrets.MINIAPP_TOKEN }}
 
       - name: Clone miniapp
         run: |
