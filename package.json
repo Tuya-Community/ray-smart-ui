@@ -1,6 +1,6 @@
 {
   "name": "@ray-js/smart-ui",
-  "version": "2.10.1-beta-2",
+  "version": "2.10.1-beta-3",
   "description": "轻量、可靠的智能小程序 UI 组件库",
   "scripts": {
     "syncMiniappData": "node ./build/syncMiniappData.js",
