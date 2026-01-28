@@ -5,14 +5,14 @@ import { withReactProps } from '../common/withReactProps';
 
 const PopupComp = withReactProps(PopupMini as React.ElementType);
 export default function Popup({ children, show, ...rest }) {
-  const [init, setInit] = useState(show);
+  const [isShowed, setIsShowed] = useState(show);
   useEffect(() => {
     if (!show) return;
-    setInit(show);
+    setIsShowed(show);
   }, [show]);
   return (
     <PopupComp show={show} {...rest}>
-      {init && children}
+      {isShowed && children}
     </PopupComp>
   );
 }
