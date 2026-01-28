@@ -10,30 +10,6 @@ on:
         description: 'NPM version to publish (e.g., 2.8.2)'
         required: true
         type: string
-      branch:
-        description: 'Source branch name from miniapp-smart-ui'
-        required: false
-        type: string
-      components:
-        description: 'JSON array of changed components'
-        required: false
-        type: string
-      source_sha:
-        description: 'Source commit SHA from miniapp-smart-ui'
-        required: false
-        type: string
-      base_sha:
-        description: 'Base commit SHA (merge base) for Compare API diff'
-        required: false
-        type: string
-      pull_number:
-        description: 'Pull request number from miniapp-smart-ui'
-        required: false
-        type: string
-      pr_url:
-        description: 'Pull Request URL from miniapp-smart-ui'
-        required: false
-        type: string
   workflow_call:
     inputs:
       version:
@@ -46,29 +22,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 调试：打印触发事件和 inputs，便于排查为何后续步骤被跳过
-      - name: Debug - Print event and inputs
-        if: github.event_name == 'workflow_dispatch'
-        run: |
-          echo "========== workflow_dispatch 调试 =========="
-          echo "event_name: ${{ github.event_name }}"
-          echo "inputs.version: ${{ github.event.inputs.version }}"
-          echo "inputs.branch: [${{ github.event.inputs.branch }}]"
-          echo "inputs.base_sha: [${{ github.event.inputs.base_sha }}]"
-          echo "inputs.source_sha: [${{ github.event.inputs.source_sha }}]"
-          echo "inputs.pull_number: [${{ github.event.inputs.pull_number }}]"
-          echo "inputs.components: ${{ github.event.inputs.components }}"
-          BRANCH="${{ github.event.inputs.branch }}"
-          BASE="${{ github.event.inputs.base_sha }}"
-          SOURCE="${{ github.event.inputs.source_sha }}"
-          echo "--- 条件判断 ---"
-          echo "branch 是否以 fix/ 开头: ${BRANCH#fix/} (若与 branch 相同则否)"
-          echo "base_sha 是否为空: $([ -z \"$BASE\" ] && echo '是' || echo '否')"
-          echo "source_sha 是否为空: $([ -z \"$SOURCE\" ] && echo '是' || echo '否')"
-          RUN_API=$([ -z "$BRANCH" ] || [ "$BRANCH" = "fix/"* ] || [ -z "$BASE" ] || [ -z "$SOURCE" ] && echo "否" || echo "是")
-          echo "Get Miniapp Diff via API 是否会执行: $RUN_API"
-          echo "=========================================="
-
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
@@ -96,67 +49,15 @@ jobs:
           fi
           echo "✅ MINIAPP_TOKEN is available"
 
-      # 由 miniapp-smart-ui 触发时：用 Compare API 直接拉取 PR diff（仅考虑 workflow_dispatch，不考虑手动无参数触发）
-      - name: Get Miniapp Diff via API
-        if: github.event_name == 'workflow_dispatch'
-        id: api_diff
-        run: |
-          BASE_SHA="${{ github.event.inputs.base_sha }}"
-          SOURCE_SHA="${{ github.event.inputs.source_sha }}"
-          BRANCH="${{ github.event.inputs.branch }}"
-          echo "========== Get Miniapp Diff via API =========="
-          echo "branch=[$BRANCH] base_sha=[$BASE_SHA] source_sha=[$SOURCE_SHA]"
-          if [ -z "$BASE_SHA" ] || [ -z "$SOURCE_SHA" ]; then
-            echo "⚠️ 缺少 base_sha 或 source_sha，跳过拉取 diff（后续 Cursor 步骤将不执行）"
-            echo "diff_exists=false" >> $GITHUB_OUTPUT
-            echo "SKIP_REASON: missing_base_or_source_sha" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-          if [ "$BASE_SHA" = "$SOURCE_SHA" ]; then
-            echo "⚠️ base_sha 与 source_sha 相同，Compare API 会返回空 diff（miniapp 侧需在 Push 前保存 merge/base SHA）"
-            echo "diff_exists=false" >> $GITHUB_OUTPUT
-            echo "SKIP_REASON: base_equals_source" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-          if [ -n "$BRANCH" ] && [ "$BRANCH" = "fix/"* ]; then
-            echo "⚠️ 分支为 fix/*，不拉取 diff（按设计跳过 Cursor 同步）"
-            echo "diff_exists=false" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-          echo "Fetching PR diff: $BASE_SHA...$SOURCE_SHA"
-          HTTP_CODE=$(curl -sS -w "%{http_code}" -o full.diff \
-            -H "Authorization: token ${{ secrets.MINIAPP_TOKEN }}" \
-            -H "Accept: application/vnd.github.diff" \
-            "https://api.github.com/repos/Tuya-Community/miniapp-smart-ui/compare/${BASE_SHA}...${SOURCE_SHA}")
-          echo "Compare API HTTP 状态码: $HTTP_CODE"
-          if [ "$HTTP_CODE" != "200" ]; then
-            echo "⚠️ API 未返回 200，响应前 20 行:"
-            head -20 full.diff || true
-            echo "diff_exists=false" >> $GITHUB_OUTPUT
-            rm -f full.diff
-            echo "==============================================="
-            exit 0
-          fi
-          echo "full.diff 行数: $(wc -l < full.diff 2>/dev/null || echo 0)"
-          awk '/^diff --git/ { keep=($2 ~ /^a\/packages\//); } keep { print }' full.diff > changes.diff
-          rm -f full.diff
-          if [ -s changes.diff ]; then
-            echo "diff_exists=true" >> $GITHUB_OUTPUT
-            echo "✅ packages/ diff 行数: $(wc -l < changes.diff)"
-          else
-            echo "diff_exists=false" >> $GITHUB_OUTPUT
-            echo "⚠️ 无 packages/ 变更或 diff 为空"
-          fi
-          echo "==============================================="
-
       - name: Clone miniapp
         run: |
           echo "Attempting to clone miniapp-smart-ui repository..."
-          # 优先使用 release/2.x 分支
-          if git clone -b release/2.x https://github.com/Tuya-Community/miniapp-smart-ui.git; then
+          if git clone -b ${{ github.ref_name }} https://github.com/Tuya-Community/miniapp-smart-ui.git; then
             echo "✅ Successfully cloned miniapp-smart-ui repository"
           else
             echo "❌ Failed to clone miniapp-smart-ui repository"
+            echo "This may be due to insufficient permissions or network issues."
+            echo "Please check if the MINIAPP_TOKEN has the necessary permissions to access the repository."
             exit 1
           fi
         env:
@@ -164,9 +65,7 @@ jobs:
 
       - name: Sync Code
         run: |
-          echo "========== Sync Code =========="
           yarn syncMiniappData
-          echo "================================="
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PROTECT_WRITE_TOKEN: ${{ secrets.PROTECT_WRITE_TOKEN }}
@@ -174,71 +73,10 @@ jobs:
           ref: ${{ github.ref }}
           workflow_dispatch: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call' }}
 
-      # 调试：Sync 后打印 api_diff 结果，便于确认为何 Cursor 步骤被跳过
-      - name: Debug - After Sync (why Cursor steps run or skip)
-        if: github.event_name == 'workflow_dispatch'
-        run: |
-          echo "========== 后续步骤条件检查 =========="
-          echo "steps.api_diff.outcome: ${{ steps.api_diff.outcome }}"
-          echo "steps.api_diff.outputs.diff_exists: [${{ steps.api_diff.outputs.diff_exists }}]"
-          echo "若 diff_exists 不是 true，则 Install Cursor CLI / Run Cursor AI 会被跳过"
-          echo "=============================================="
-
-      - name: Install Cursor CLI
-        if: github.event_name == 'workflow_dispatch' && steps.api_diff.outputs.diff_exists == 'true'
-        run: |
-          curl https://cursor.com/install -fsS | bash
-          echo "$HOME/.cursor/bin" >> $GITHUB_PATH
-
-      - name: Run Cursor AI Incremental Sync
-        if: github.event_name == 'workflow_dispatch' && steps.api_diff.outputs.diff_exists == 'true'
-        env:
-          CURSOR_API_KEY: ${{ secrets.cursor_token }}
-          COMPONENTS: ${{ github.event.inputs.components }}
-        run: |
-          # 使用 cursor-agent 并明确要求使用 sync-miniapp-to-ray 技能
-          cursor-agent --force --print "请使用技能 'sync-miniapp-to-ray' 来处理以下同步任务。
-
-          上下文：
-          1. 变更组件内容：${{ github.event.inputs.components }}
-          2. 代码变更详情 (Diff)：
-          $(cat changes.diff)
-
-          请严格按照技能中的转换规则，仅针对 Diff 中的变更，更新 ray-smart-ui 的类型定义、Demo 和 README。"
-
-      - name: Check for AI Changes
-        if: "github.event_name == 'workflow_dispatch' && !startsWith(github.event.inputs.branch || '', 'fix/') && steps.api_diff.outputs.diff_exists == 'true'"
-        id: check_changes
-        run: |
-          if [ -n "$(git status --porcelain)" ]; then
-            echo "has_changes=true" >> $GITHUB_OUTPUT
-            echo "✅ AI has made changes to the codebase."
-          else
-            echo "has_changes=false" >> $GITHUB_OUTPUT
-            echo "⚠️ No changes detected after AI sync."
-          fi
-
-      - name: Create Pull Request for non-fix branch
-        if: "steps.check_changes.outputs.has_changes == 'true'"
-        uses: peter-evans/create-pull-request@v5
-        with:
-          token: ${{ secrets.PROTECT_WRITE_TOKEN }}
-          branch: ${{ github.event.inputs.branch }}
-          base: release/2.x
-          title: 'feat: sync updates from miniapp-smart-ui [${{ github.event.inputs.branch }}]'
-          body: |
-            Auto-generated sync from miniapp-smart-ui.
-            Source Branch: ${{ github.event.inputs.branch }}
-            Source SHA: ${{ github.event.inputs.source_sha }}
-            Components: ${{ github.event.inputs.components }}
-            Miniapp PR: ${{ github.event.inputs.pr_url }}
-
       - name: Install Dependencies
-        if: startsWith(github.event.inputs.branch, 'fix/')
         run: yarn install --frozen-lockfile
 
       - name: Get Version
-        if: startsWith(github.event.inputs.branch, 'fix/')
         id: get_version
         run: |
           if [ -n "${{ inputs.version }}" ]; then
@@ -250,22 +88,18 @@ jobs:
           echo "📦 Version to publish: ${VERSION}"
 
       - name: Update Package.json with Version
-        if: startsWith(github.event.inputs.branch, 'fix/')
         run: |
           npm version "${{ steps.get_version.outputs.VERSION }}" --no-git-tag-version
 
       - name: Build
-        if: startsWith(github.event.inputs.branch, 'fix/')
         run: yarn build
 
       - name: Publish Package
-        if: startsWith(github.event.inputs.branch, 'fix/')
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Commit Changes
-        if: startsWith(github.event.inputs.branch, 'fix/')
         run: |
           git add .
           if git diff --staged --quiet; then
@@ -278,7 +112,6 @@ jobs:
           git pull
 
       - name: Push
-        if: startsWith(github.event.inputs.branch, 'fix/')
         # 使用个人访问令牌来推送更改以避免保护分支限制
         run: |
           git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
