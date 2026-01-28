@@ -22,6 +22,14 @@ on:
         description: 'Source commit SHA from miniapp-smart-ui'
         required: false
         type: string
+      base_sha:
+        description: 'Base commit SHA (merge base) for Compare API diff'
+        required: false
+        type: string
+      pull_number:
+        description: 'Pull request number from miniapp-smart-ui'
+        required: false
+        type: string
       pr_url:
         description: 'Pull Request URL from miniapp-smart-ui'
         required: false
@@ -65,6 +73,27 @@ jobs:
           fi
           echo "✅ MINIAPP_TOKEN is available"
 
+      # 由 miniapp-smart-ui 触发时：用 Compare API 直接拉取 PR diff，无需 clone 后再 git diff
+      - name: Get Miniapp Diff via API
+        if: "!startsWith(github.event.inputs.branch || '', 'fix/') && github.event.inputs.base_sha != '' && github.event.inputs.source_sha != ''"
+        id: api_diff
+        run: |
+          echo "Fetching PR diff from miniapp-smart-ui (base_sha...source_sha)..."
+          curl -sS -H "Authorization: token ${{ secrets.MINIAPP_TOKEN }}" \
+            -H "Accept: application/vnd.github.diff" \
+            "https://api.github.com/repos/Tuya-Community/miniapp-smart-ui/compare/${{ github.event.inputs.base_sha }}...${{ github.event.inputs.source_sha }}" \
+            -o full.diff
+          # 只保留 packages/ 下的文件变更
+          awk '/^diff --git/ { keep=($2 ~ /^a\/packages\//); } keep { print }' full.diff > changes.diff
+          rm -f full.diff
+          if [ -s changes.diff ]; then
+            echo "diff_exists=true" >> $GITHUB_OUTPUT
+            echo "✅ Got diff for packages/ ($(wc -l < changes.diff) lines)"
+          else
+            echo "diff_exists=false" >> $GITHUB_OUTPUT
+            echo "⚠️ No packages/ changes in diff"
+          fi
+
       - name: Clone miniapp
         run: |
           echo "Attempting to clone miniapp-smart-ui repository..."
@@ -88,23 +117,25 @@ jobs:
           ref: ${{ github.ref }}
           workflow_dispatch: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call' }}
 
-      - name: Get Miniapp Diff
-        if: "!startsWith(github.event.inputs.branch, 'fix/')"
+      # 仅在手动触发且未传 base_sha/source_sha 时：在 clone 内用 git diff 获取变更
+      - name: Get Miniapp Diff (fallback in clone)
+        if: "!startsWith(github.event.inputs.branch || '', 'fix/') && (github.event.inputs.base_sha == '' || github.event.inputs.source_sha == '')"
         id: get_diff
         run: |
           cd miniapp-smart-ui
-          # 获取本次 SHA 对应的变更内容（针对 packages 目录）
+          git fetch origin ${{ github.event.inputs.source_sha || 'release/2.x' }} 2>/dev/null || true
+          git checkout ${{ github.event.inputs.source_sha || 'HEAD' }}
           git diff HEAD^ HEAD -- packages/ > ../changes.diff
           echo "diff_exists=$(if [ -s ../changes.diff ]; then echo "true"; else echo "false"; fi)" >> $GITHUB_OUTPUT
 
       - name: Install Cursor CLI
-        if: steps.get_diff.outputs.diff_exists == 'true'
+        if: steps.api_diff.outputs.diff_exists == 'true' || steps.get_diff.outputs.diff_exists == 'true'
         run: |
           curl https://cursor.com/install -fsS | bash
           echo "$HOME/.cursor/bin" >> $GITHUB_PATH
 
       - name: Run Cursor AI Incremental Sync
-        if: steps.get_diff.outputs.diff_exists == 'true'
+        if: steps.api_diff.outputs.diff_exists == 'true' || steps.get_diff.outputs.diff_exists == 'true'
         env:
           CURSOR_API_KEY: ${{ secrets.cursor_token }}
           COMPONENTS: ${{ github.event.inputs.components }}
@@ -115,12 +146,12 @@ jobs:
           上下文：
           1. 变更组件内容：${{ github.event.inputs.components }}
           2. 代码变更详情 (Diff)：
-          $(cat ../changes.diff)
+          $(cat changes.diff)
 
           请严格按照技能中的转换规则，仅针对 Diff 中的变更，更新 ray-smart-ui 的类型定义、Demo 和 README。"
 
       - name: Check for AI Changes
-        if: "!startsWith(github.event.inputs.branch, 'fix/') && steps.get_diff.outputs.diff_exists == 'true'"
+        if: "!startsWith(github.event.inputs.branch || '', 'fix/') && (steps.api_diff.outputs.diff_exists == 'true' || steps.get_diff.outputs.diff_exists == 'true')"
         id: check_changes
         run: |
           if [ -n "$(git status --porcelain)" ]; then
