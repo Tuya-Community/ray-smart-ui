@@ -160,6 +160,12 @@ jobs:
           echo "========== Sync Code =========="
           yarn syncMiniappData
           echo "================================="
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROTECT_WRITE_TOKEN: ${{ secrets.PROTECT_WRITE_TOKEN }}
+          repository: ${{ github.repository }}
+          ref: ${{ github.ref }}
+          workflow_dispatch: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call' }}
 
       # 调试：Sync 后打印 api_diff 结果，便于确认为何 Cursor 步骤被跳过
       - name: Debug - After Sync (why Cursor steps run or skip)
