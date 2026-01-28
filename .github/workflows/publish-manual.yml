@@ -46,6 +46,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 调试：打印触发事件和 inputs，便于排查为何后续步骤被跳过
+      - name: Debug - Print event and inputs
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          echo "========== workflow_dispatch 调试 =========="
+          echo "event_name: ${{ github.event_name }}"
+          echo "inputs.version: ${{ github.event.inputs.version }}"
+          echo "inputs.branch: [${{ github.event.inputs.branch }}]"
+          echo "inputs.base_sha: [${{ github.event.inputs.base_sha }}]"
+          echo "inputs.source_sha: [${{ github.event.inputs.source_sha }}]"
+          echo "inputs.pull_number: [${{ github.event.inputs.pull_number }}]"
+          echo "inputs.components: ${{ github.event.inputs.components }}"
+          BRANCH="${{ github.event.inputs.branch }}"
+          BASE="${{ github.event.inputs.base_sha }}"
+          SOURCE="${{ github.event.inputs.source_sha }}"
+          echo "--- 条件判断 ---"
+          echo "branch 是否以 fix/ 开头: ${BRANCH#fix/} (若与 branch 相同则否)"
+          echo "base_sha 是否为空: $([ -z \"$BASE\" ] && echo '是' || echo '否')"
+          echo "source_sha 是否为空: $([ -z \"$SOURCE\" ] && echo '是' || echo '否')"
+          RUN_API=$([ -z "$BRANCH" ] || [ "$BRANCH" = "fix/"* ] || [ -z "$BASE" ] || [ -z "$SOURCE" ] && echo "否" || echo "是")
+          echo "Get Miniapp Diff via API 是否会执行: $RUN_API"
+          echo "=========================================="
+
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
@@ -73,26 +96,51 @@ jobs:
           fi
           echo "✅ MINIAPP_TOKEN is available"
 
-      # 由 miniapp-smart-ui 触发时：用 Compare API 直接拉取 PR diff，无需 clone 后再 git diff
+      # 由 miniapp-smart-ui 触发时：用 Compare API 直接拉取 PR diff（仅考虑 workflow_dispatch，不考虑手动无参数触发）
       - name: Get Miniapp Diff via API
-        if: "!startsWith(github.event.inputs.branch || '', 'fix/') && github.event.inputs.base_sha != '' && github.event.inputs.source_sha != ''"
+        if: github.event_name == 'workflow_dispatch'
         id: api_diff
         run: |
-          echo "Fetching PR diff from miniapp-smart-ui (base_sha...source_sha)..."
-          curl -sS -H "Authorization: token ${{ secrets.MINIAPP_TOKEN }}" \
+          BASE_SHA="${{ github.event.inputs.base_sha }}"
+          SOURCE_SHA="${{ github.event.inputs.source_sha }}"
+          BRANCH="${{ github.event.inputs.branch }}"
+          echo "========== Get Miniapp Diff via API =========="
+          echo "branch=[$BRANCH] base_sha=[$BASE_SHA] source_sha=[$SOURCE_SHA]"
+          if [ -z "$BASE_SHA" ] || [ -z "$SOURCE_SHA" ]; then
+            echo "⚠️ 缺少 base_sha 或 source_sha，跳过拉取 diff（后续 Cursor 步骤将不执行）"
+            echo "diff_exists=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          if [ -n "$BRANCH" ] && [ "$BRANCH" = "fix/"* ]; then
+            echo "⚠️ 分支为 fix/*，不拉取 diff（按设计跳过 Cursor 同步）"
+            echo "diff_exists=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          echo "Fetching PR diff: $BASE_SHA...$SOURCE_SHA"
+          HTTP_CODE=$(curl -sS -w "%{http_code}" -o full.diff \
+            -H "Authorization: token ${{ secrets.MINIAPP_TOKEN }}" \
             -H "Accept: application/vnd.github.diff" \
-            "https://api.github.com/repos/Tuya-Community/miniapp-smart-ui/compare/${{ github.event.inputs.base_sha }}...${{ github.event.inputs.source_sha }}" \
-            -o full.diff
-          # 只保留 packages/ 下的文件变更
+            "https://api.github.com/repos/Tuya-Community/miniapp-smart-ui/compare/${BASE_SHA}...${SOURCE_SHA}")
+          echo "Compare API HTTP 状态码: $HTTP_CODE"
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "⚠️ API 未返回 200，响应前 20 行:"
+            head -20 full.diff || true
+            echo "diff_exists=false" >> $GITHUB_OUTPUT
+            rm -f full.diff
+            echo "==============================================="
+            exit 0
+          fi
+          echo "full.diff 行数: $(wc -l < full.diff 2>/dev/null || echo 0)"
           awk '/^diff --git/ { keep=($2 ~ /^a\/packages\//); } keep { print }' full.diff > changes.diff
           rm -f full.diff
           if [ -s changes.diff ]; then
             echo "diff_exists=true" >> $GITHUB_OUTPUT
-            echo "✅ Got diff for packages/ ($(wc -l < changes.diff) lines)"
+            echo "✅ packages/ diff 行数: $(wc -l < changes.diff)"
           else
             echo "diff_exists=false" >> $GITHUB_OUTPUT
-            echo "⚠️ No packages/ changes in diff"
+            echo "⚠️ 无 packages/ 变更或 diff 为空"
           fi
+          echo "==============================================="
 
       - name: Clone miniapp
         run: |
@@ -109,33 +157,28 @@ jobs:
 
       - name: Sync Code
         run: |
+          echo "========== Sync Code =========="
           yarn syncMiniappData
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PROTECT_WRITE_TOKEN: ${{ secrets.PROTECT_WRITE_TOKEN }}
-          repository: ${{ github.repository }}
-          ref: ${{ github.ref }}
-          workflow_dispatch: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call' }}
+          echo "================================="
 
-      # 仅在手动触发且未传 base_sha/source_sha 时：在 clone 内用 git diff 获取变更
-      - name: Get Miniapp Diff (fallback in clone)
-        if: "!startsWith(github.event.inputs.branch || '', 'fix/') && (github.event.inputs.base_sha == '' || github.event.inputs.source_sha == '')"
-        id: get_diff
+      # 调试：Sync 后打印 api_diff 结果，便于确认为何 Cursor 步骤被跳过
+      - name: Debug - After Sync (why Cursor steps run or skip)
+        if: github.event_name == 'workflow_dispatch'
         run: |
-          cd miniapp-smart-ui
-          git fetch origin ${{ github.event.inputs.source_sha || 'release/2.x' }} 2>/dev/null || true
-          git checkout ${{ github.event.inputs.source_sha || 'HEAD' }}
-          git diff HEAD^ HEAD -- packages/ > ../changes.diff
-          echo "diff_exists=$(if [ -s ../changes.diff ]; then echo "true"; else echo "false"; fi)" >> $GITHUB_OUTPUT
+          echo "========== 后续步骤条件检查 =========="
+          echo "steps.api_diff.outcome: ${{ steps.api_diff.outcome }}"
+          echo "steps.api_diff.outputs.diff_exists: [${{ steps.api_diff.outputs.diff_exists }}]"
+          echo "若 diff_exists 不是 true，则 Install Cursor CLI / Run Cursor AI 会被跳过"
+          echo "=============================================="
 
       - name: Install Cursor CLI
-        if: steps.api_diff.outputs.diff_exists == 'true' || steps.get_diff.outputs.diff_exists == 'true'
+        if: github.event_name == 'workflow_dispatch' && steps.api_diff.outputs.diff_exists == 'true'
         run: |
           curl https://cursor.com/install -fsS | bash
           echo "$HOME/.cursor/bin" >> $GITHUB_PATH
 
       - name: Run Cursor AI Incremental Sync
-        if: steps.api_diff.outputs.diff_exists == 'true' || steps.get_diff.outputs.diff_exists == 'true'
+        if: github.event_name == 'workflow_dispatch' && steps.api_diff.outputs.diff_exists == 'true'
         env:
           CURSOR_API_KEY: ${{ secrets.cursor_token }}
           COMPONENTS: ${{ github.event.inputs.components }}
@@ -151,7 +194,7 @@ jobs:
           请严格按照技能中的转换规则，仅针对 Diff 中的变更，更新 ray-smart-ui 的类型定义、Demo 和 README。"
 
       - name: Check for AI Changes
-        if: "!startsWith(github.event.inputs.branch || '', 'fix/') && (steps.api_diff.outputs.diff_exists == 'true' || steps.get_diff.outputs.diff_exists == 'true')"
+        if: "github.event_name == 'workflow_dispatch' && !startsWith(github.event.inputs.branch || '', 'fix/') && steps.api_diff.outputs.diff_exists == 'true'"
         id: check_changes
         run: |
           if [ -n "$(git status --porcelain)" ]; then
