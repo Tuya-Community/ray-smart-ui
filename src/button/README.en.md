@@ -266,6 +266,7 @@ export default function Demo() {
 | loading | Whether to display loading state | _boolean_ | `false` |
 | loadingSize | Loading icon size | _string_ | `20px` |
 | loadingText | Loading state text | _string_ | - |
+| myTextColor `v2.10.1` | Button text color | _string_ | - |
 | textStyle | Button Text Style | _React.CSSProperties_ | - |
 | loadingType | Loading icon type, options: `spinner` | _string_ | `circular` |
 | plain | Whether it's a plain button | _boolean_ | `false` |
