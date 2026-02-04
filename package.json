@@ -5,7 +5,7 @@
   "scripts": {
     "syncMiniappData": "node ./build/syncMiniappData.js",
     "dev": "tsc -w -p tsconfig.build.es.json",
-    "build": "rimraf es && rimraf lib && tsc -p tsconfig.build.es.json && tsc -p tsconfig.build.lib.json && node build/postBuild.js",
+    "build": "rimraf es lib && tsc -p tsconfig.build.es.json && tsc -p tsconfig.build.lib.json && node ./build/postBuild.js",
     "build:tuya": "yarn build && cd ./example && ray build --target=tuya"
   },
   "main": "lib/index.js",
