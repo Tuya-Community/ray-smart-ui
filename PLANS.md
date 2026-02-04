@@ -37,9 +37,9 @@
 - [x] 修复 dialog emptyDisabled 默认值为 false，并且修改提交按钮禁用逻辑 测试版本 2.9.3-beta-2
 - [x] 电池组件对齐全新 UED 设计 测试版本 2.10.0-beta-0
 
-# v2.10.1
+# v2.11.0
 
-发布计划（发布正式时间：2025.2.10 周二）
+发布计划（发布正式时间：2025.2.5 周四）
 
 - [x] 修复 index-bar 手指触摸滚动右侧索引栏时闪烁问题 测试版本：`2.10.1-beta-0`
 - [x] 新增 index-bar 右侧索引栏样式自定义能力新增 sidebarFontSize、sidebarLineHeight 属性 测试版本：`2.10.1-beta-1`
@@ -48,7 +48,4 @@
 - [x] 修复 tab 组件使用 important CSS 属性问题;修复 dot、info 功能显示问题 测试版本：`2.10.1-beta-5`
 - [x] 修复 tab 初始化默认 active 不是第一个时，多余的定位动画问题 测试版本：`2.10.1-beta-6`
 
-- [ ] 新增 index-bar 右侧索引栏手指拖动后放大提示功能（待定）
 - [ ] popover: 修复 show 为 false 时，trigger 设置为 longpress 时还是会点击触发问题；新增受控模式（待定）
-- [ ] toast 对齐 UI 标准 修改背景色，增加受控动画关闭能力（待定）
-- [ ] tab 组新增等间距排布功能适配全新 UI 设计（待定）
