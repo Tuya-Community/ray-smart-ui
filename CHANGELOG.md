@@ -1,5 +1,20 @@
 # 更新日志
 
+## v2.11.0 (2026-2-5)
+
+### Features ✨
+
+- index-bar: 新增右侧索引栏样式自定义能力，新增 sidebarFontSize、sidebarLineHeight 属性([pull/150](https://github.com/Tuya-Community/miniapp-smart-ui/pull/150))
+
+### Bug Fixes 🐛
+
+- index-bar: 修复手指触摸滚动右侧索引栏时闪烁问题([90e290b](https://github.com/Tuya-Community/miniapp-smart-ui/pull/149/commits/90e290b1c807579b83bfdc2e1b460dc39c72bb1d))
+- popup: 减少组件本身的默认渲染节点数量([fb6ab2f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/151/commits/fb6ab2fddbe30694deb350bfdde60d7c5f35f48c));Ray层接入懒加载，在弹框没有show过一次之前不渲染子节点，提升性能([96fc5fc](https://github.com/Tuya-Community/ray-smart-ui/pull/72/commits/96fc5fc1d644fb381983e535f87473e20e82500d))
+- action-sheet: 减少组件本身的默认渲染节点数量([fb6ab2f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/151/commits/fb6ab2fddbe30694deb350bfdde60d7c5f35f48c));Ray层接入懒加载，在弹框没有show过一次之前不渲染子节点，提升性能([fb6ab2f](https://github.com/Tuya-Community/ray-smart-ui/pull/73/commits/ac0e65c472429c80b66f15ca8326ddfc2cce5049))
+- bottom-sheet: 减少组件本身的默认渲染节点数量([fb6ab2f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/151/commits/fb6ab2fddbe30694deb350bfdde60d7c5f35f48c));Ray层接入懒加载，在弹框没有show过一次之前不渲染子节点，提升性能([fb6ab2f](https://github.com/Tuya-Community/ray-smart-ui/pull/73/commits/ac0e65c472429c80b66f15ca8326ddfc2cce5049))
+- tab: 修复组件使用 important CSS 属性问题;修复 dot、info 功能显示问题([5de790d](https://github.com/Tuya-Community/miniapp-smart-ui/pull/158/commits/5de790da25e9a3867a0ddc10ce273b4b9fc4e5ef));修复初始化默认 active 不是第一个时，多余的定位动画问题([6649819](https://github.com/Tuya-Community/miniapp-smart-ui/pull/159/commits/66498199ecd0873de387fe8e826b9ffacf02ffb8))
+
+
 ## v2.10.0 (2026-1-13)
 
 ### Features ✨
