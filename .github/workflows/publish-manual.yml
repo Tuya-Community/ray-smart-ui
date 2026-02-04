@@ -14,6 +14,10 @@ on:
         description: 'Merge request (PR) ID from miniapp-smart-ui to fetch diff info'
         required: false
         type: string
+      branch:
+        description: 'Source branch name from miniapp-smart-ui'
+        required: false
+        type: string
   workflow_call:
     inputs:
       version:
@@ -22,6 +26,10 @@ on:
         type: string
       mr_id:
         description: 'Merge request (PR) ID from miniapp-smart-ui to fetch diff info'
+        required: false
+        type: string
+      branch:
+        description: 'Source branch name from miniapp-smart-ui'
         required: false
         type: string
 
