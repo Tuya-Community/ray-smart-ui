@@ -46,7 +46,7 @@
 - [x] 补充文档中 switchTab 相关属性说明
 - [x] 修复 Popup、ActionSheet、BottomSheet 组件内部挂载较多 children 节点导致进入页面白屏时间增加问题；从 Ray 层接入懒加载功能，减少 Popup 组件本身的默认渲染节点数量 测试版本：`2.10.1-beta-3`
 - [x] 修复 tab 组件使用 important CSS 属性问题;修复 dot、info 功能显示问题 测试版本：`2.10.1-beta-5`
-- [ ] 修复 Tab 初始化默认 active 不是第一个时，导致的定位动画问题
+- [x] 修复 tab 初始化默认 active 不是第一个时，多余的定位动画问题 测试版本：`2.10.1-beta-6`
 
 - [ ] 新增 index-bar 右侧索引栏手指拖动后放大提示功能（待定）
 - [ ] popover: 修复 show 为 false 时，trigger 设置为 longpress 时还是会点击触发问题；新增受控模式（待定）
