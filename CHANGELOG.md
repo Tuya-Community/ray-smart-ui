@@ -336,7 +336,7 @@
 
 ### Bug Fixes 🐛
 - datetime-picker: 修复12小时模式受控使用问题
-- slider: 用法说明文档补充 & 修复双向滑块RangeSlider inActiveColor 无效问题
+- slider: 用法说明文档补充 & 修复双向滑块Rangeslider inActiveColor 无效问题
 - transition: 修复组件频繁调用动画问题
 - dialog、toast: 修复组件无法打开问题，增加全局 Id 唯一校验
 
@@ -350,23 +350,23 @@
 ### v2.2.0 (2025-2-13)
 
 ### Bug Fixes 🐛
-- Icon: 修复异常repeat现象
-- Picker: 修复滚动丝滑问题
-- NavBar: 修复初始化顶部安全距离位移问题
-- Slider: 修复垂直方向值计算
-- Stepper: 修复内部图标显示问题
-- Dialog: 修复重复调用时，无法打开弹窗问题
+- icon: 修复异常repeat现象
+- picker: 修复滚动丝滑问题
+- nav-bar: 修复初始化顶部安全距离位移问题
+- slider: 修复垂直方向值计算
+- stepper: 修复内部图标显示问题
+- dialog: 修复重复调用时，无法打开弹窗问题
 - 修复单元测试ESM问题
  
 ### Features ✨
-- DateTimePicker: 新增 is12HourClock, amText, pmText 属性，支持12小时选择
-- DateTimePicker: 新增 columnsOrder 属性支持自定义时间列顺序；新增 formatterMap 属性支持自定义时间文案；新增 changeAnimation 属性支持关闭改动动画
-- Stepper: 新增滚动震动反馈
-- Picker: 增加滚动震动反馈；新增 changeAnimation 属性支持关闭改动动画；新增 order 属性支持修改flex order样式
-- ActionSheet: 新增 --action-sheet-active-icon-color css 变量
-- Slider: 新增 useParcelPadding 属性
-- Tabbar: 新增 left 和 right 插槽
-- Stepper: 新增 css 变量 --stepper-button-border, --stepper-button-icon-font-size 
+- datetime-picker: 新增 is12HourClock, amText, pmText 属性，支持12小时选择
+- datetime-picker: 新增 columnsOrder 属性支持自定义时间列顺序；新增 formatterMap 属性支持自定义时间文案；新增 changeAnimation 属性支持关闭改动动画
+- stepper: 新增滚动震动反馈
+- picker: 增加滚动震动反馈；新增 changeAnimation 属性支持关闭改动动画；新增 order 属性支持修改flex order样式
+- action-sheet: 新增 --action-sheet-active-icon-color css 变量
+- slider: 新增 useParcelPadding 属性
+- tabbar: 新增 left 和 right 插槽
+- stepper: 新增 css 变量 --stepper-button-border, --stepper-button-icon-font-size 
 
 ## v2.1.10 (2025-1-13)
 ### Bug Fixes 🐛
@@ -381,33 +381,28 @@
 
 ## v2.1.7 (2024-12-27)
 ### Bug Fixes 🐛
- - Dialog: 
-   1. 修复快速调用 DialogInstance 导致渲染异常无效销毁
-   2. 修复方法调用缺失 confirmButtonColor & cancelButtonColor 类型
-   3. 删除dialog组件方式使用的beforeClose类型;
- - Circle：
-   1. 修复size无法传string类型问题
-   2. style属性警告修复
- - ConfigProvider: 修复内部对 Dialog 缺失的主题变量
- - Progress： 暂无相关业务场景，隐藏此组件
- - NoticeBar: 修复CSS变量无法覆盖问题
- - CustomKeyboard: 修复CSS变量无法覆盖问题
- - TreeSelect: 修复CSS变量无法覆盖问题
+ - dialog: 1. 修复快速调用 DialogInstance 导致渲染异常无效销毁;2. 修复方法调用缺失 confirmButtonColor & cancelButtonColor 类型;3. 删除dialog组件方式使用的beforeClose类型;
+ - circle：1. 修复size无法传string类型问题; 2. style属性警告修复
+ - config-provider: 修复内部对 Dialog 缺失的主题变量
+ - progress： 暂无相关业务场景，隐藏此组件
+ - notice-bar: 修复CSS变量无法覆盖问题
+ - custom-keyboard: 修复CSS变量无法覆盖问题
+ - tree-select: 修复CSS变量无法覆盖问题
 
 ### Features ✨
  - 组件实现ESM方式打包，支持tree-shaking
  - @tuya-miniapp/icons 实现ESM方式打包，支持tree-shaking
- - IndexBar: 新增 scrollable 属性默认禁止 Sidebar 滚动触发索引变更
- - Dialog: 新增 --dialog-cancel-color & --dialog-confirm-color CSS 变量支持
- - NoticeBar：新增 --notice-bar-right-icon-color CSS变量
- - Stepper：新增 --stepper-container-background-color CSS变量
- - Circle：新增 customStyle 属性，提示废弃style属性
+ - index-bar: 新增 scrollable 属性默认禁止 Sidebar 滚动触发索引变更
+ - dialog: 新增 --dialog-cancel-color & --dialog-confirm-color CSS 变量支持
+ - notice-bar：新增 --notice-bar-right-icon-color CSS变量
+ - stepper：新增 --stepper-container-background-color CSS变量
+ - circle：新增 customStyle 属性，提示废弃style属性
 
 ## v2.1.6 (2024-12-19)
 ### Bug Fixes 🐛
- - 修复 toast 宽度默认值以及屏幕居中问题
- - 修复 slider 滑动时屏幕滚动问题；
- - 修复 circle 组件 TS类型；
+ - toast: 修复宽度默认值以及屏幕居中问题
+ - slider: 修复滑动时屏幕滚动问题；
+ - circle: 修复组件 TS类型；
 
 ## v2.1.5 (2024-12-10)
 ## 变更内容: 
@@ -423,7 +418,7 @@
 ## 变更内容: 
 
 ### Bug Fixes 🐛
-- 修复 DropDown 组件 向上展开时展开框的位置问题
+- dropdown-menu: 修复组件 向上展开时展开框的位置问题
 - tab: 修复组件card模式时滑块样式问题，多层嵌套切换控制台错误提示问题
 
 ### Features ✨
@@ -454,7 +449,7 @@
 - field: UI对齐设计稿&重构
 - tab: UI对齐设计稿&重构
 - search: UI对齐设计稿&重构
-- top-nar: UI对齐设计稿&重构
+- nav-bar: UI对齐设计稿&重构
 - switch: UI对齐设计稿&重构
 - toast: UI对齐设计稿&重构
 - dropdown-menu: UI对齐设计稿&重构
@@ -475,4 +470,4 @@
 
 ## v1.2.6（2024-9-12）
 ### Bug Fixes 🐛
-- picker: 修复 PickerColumn 了滚动到极端时未触发`change`事件的问题。
+- picker: 修复 pickerColumn 了滚动到极端时未触发`change`事件的问题。
