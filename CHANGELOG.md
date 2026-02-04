@@ -33,7 +33,7 @@
 ## v2.9.1 (2025-12-30)
 
 ### Features ✨
-- calendar: 新增 first-day-of-select-week 属性，支持设置每周起始日期([pull/136](https://github.com/Tuya-Community/miniapp-smart-ui/pull/136))
+- calendar: 新增 firstDayOfSelectWeek 属性，支持设置每周起始日期([pull/136](https://github.com/Tuya-Community/miniapp-smart-ui/pull/136))
 
 ### Bug Fixes  🐛
 - calendar: 修复海外部分地区选择日期跳变问题([pull/63](https://github.com/Tuya-Community/ray-smart-ui/pull/63))
@@ -68,8 +68,8 @@
 
 ### Features ✨
 
-- config-provider：新增theme属性 一键切换主题([pull/100](https://github.com/Tuya-Community/miniapp-smart-ui/pull/100))
-- toast: 新增 textColor、iconColor属性([pull/105](https://github.com/Tuya-Community/miniapp-smart-ui/pull/105))
+- config-provider：新增 theme 属性 一键切换主题([pull/100](https://github.com/Tuya-Community/miniapp-smart-ui/pull/100))
+- toast: 新增 textColor、iconColor 属性([pull/105](https://github.com/Tuya-Community/miniapp-smart-ui/pull/105))
 - loading: 新增iconColor属性([pull/104](https://github.com/Tuya-Community/miniapp-smart-ui/pull/104))
 - circle: 新增 angleOffset 属性，用于设置半圆类型（`angle`、`angle2`）的起始角度偏移；修改 maskColor 默认值从 `#ffffff` 为 `transparent`([pull/106](https://github.com/Tuya-Community/miniapp-smart-ui/pull/106))
 - cascader: 新增 --cascader-active-background-color CSS 变量([43922ab](https://github.com/Tuya-Community/miniapp-smart-ui/commit/43922abceaedf1af448147e189517598151dd0a9))
@@ -135,7 +135,7 @@
 
 ### Features ✨
 
-- picker: 重构picker实现原理，增加3D视觉效果，新增 loop 循环滚动 和 fullHeight 属性，优化性能([pull/48](https://github.com/Tuya-Community/miniapp-smart-ui/pull/48))
+- picker: 重构实现原理，增加3D视觉效果，新增 loop 循环滚动 和 fullHeight 属性，优化性能([pull/48](https://github.com/Tuya-Community/miniapp-smart-ui/pull/48))
 - datetime-picker: 新增循环滚动能力([pull/48](https://github.com/Tuya-Community/miniapp-smart-ui/pull/48))
 - nav-bar: 样式优化，新增 rightTextColor、rightIconColor、rightIconSize、leftIconColor、background、rightIconClass、leftTextClass属性；新增 onClickRightIcon、onClickRightText事件；新增和修改 --nav-bar-side-width、--nav-bar-text-padding、--nav-bar-icon-padding、--nav-bar-title-margin、--nav-bar-home-max-width、--nav-bar-left-title-padding、--nav-bar-title-max-width CSS 变量；删除--nav-bar-icon-size、--nav-bar-icon-margin CSS 变量；修改border属性默认为 false([pull/38](https://github.com/Tuya-Community/miniapp-smart-ui/pull/38))
 - swipe-cell: 新增 onTabClose 事件 ([03483f1](https://github.com/Tuya-Community/miniapp-smart-ui/pull/50/commits/03483f198d6503f4f4b760891bc4e598773e337f))
