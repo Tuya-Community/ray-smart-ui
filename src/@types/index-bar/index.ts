@@ -47,7 +47,7 @@ export interface SmartIndexBarProps {
   /**
    * SideBar 字体大小
    *
-   * @version 2.10.1
+   * @version 2.11.0
    * @default -
    */
   sidebarFontSize?: string;
@@ -55,7 +55,7 @@ export interface SmartIndexBarProps {
   /**
    * SideBar 字体行高
    *
-   * @version 2.10.1
+   * @version 2.11.0
    * @default -
    */
   sidebarLineHeight?: string;

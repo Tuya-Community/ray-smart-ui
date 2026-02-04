@@ -85,7 +85,7 @@ export default function Demo() {
 }
 ```
 
-### 自定义侧边栏样式 `v2.10.1`
+### 自定义侧边栏样式 `v2.11.0`
 
 `sidebarFontSize` 和 `sidebarLineHeight` 属性可以设置侧边栏的字体样式
 
@@ -126,8 +126,8 @@ export default function Demo() {
 | stickyOffsetTop | 锚点自动吸顶时与顶部的距离 | _number_ | `0` |
 | zIndex | z-index 层级 | _number_ | `1` |
 | scrollable `v2.1.7` | SideBar 是否可滚动定位 | _boolean_ | `false` |
-| sidebarFontSize `v2.10.1` | SideBar 字体大小 | _string_ | - |
-| sidebarLineHeight `v2.10.1` | SideBar 字体行高 | _string_ | - |
+| sidebarFontSize `v2.11.0` | SideBar 字体大小 | _string_ | - |
+| sidebarLineHeight `v2.11.0` | SideBar 字体行高 | _string_ | - |
 
 ### IndexAnchor Props
 

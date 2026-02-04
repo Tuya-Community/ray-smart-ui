@@ -85,7 +85,7 @@ export default function Demo() {
 }
 ```
 
-### Custom sidebar style `v2.10.1`
+### Custom sidebar style `v2.11.0`
 
 The `sidebarFontSize` and `sidebarLineHeight` properties can set the font style of the sidebar
 
@@ -126,8 +126,8 @@ export default function Demo() {
 | stickyOffsetTop | Distance from top when anchor auto-sticky | _number_ | `0` |
 | zIndex | z-index level | _number_ | `1` |
 | scrollable `v2.1.7` | Whether the SideBar can scroll | _boolean_ | `false` |
-| sidebarFontSize `v2.10.1` | SideBar font size | _string_ | - |
-| sidebarLineHeight `v2.10.1` | SideBar line height | _string_ | - |
+| sidebarFontSize `v2.11.0` | SideBar font size | _string_ | - |
+| sidebarLineHeight `v2.11.0` | SideBar line height | _string_ | - |
 
 ### IndexAnchor Props
 
