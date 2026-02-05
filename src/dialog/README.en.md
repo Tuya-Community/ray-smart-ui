@@ -337,6 +337,7 @@ When calling Dialog via a function, the following options are supported:
 | nativeDisabled `v2.3.8` | Whether to disable local gestures during the pop-up period | _boolean_ | `false` |
 | autoClose `v2.6.3` | Whether to automatically close after callback click | _boolean_ | `true` |
 | emptyDisabled `v2.7.0` | Input box mode, cannot submit when value is empty | _boolean_ | `false` |
+| fullCoverView `v2.11.1` | Whether to use cover-view to wrap the popup for covering native components (such as map, video) | _boolean_ | `false` |
 
 
 ### Props
@@ -378,6 +379,7 @@ The following Props are supported when calling Dialog via component invocation:
 | transition | Animation name, options are `fade` | _string_ | `scale` |
 | autoClose `v2.6.3` | Whether to automatically close after callback click | _boolean_ | `false` |
 | emptyDisabled `v2.7.0` | Input box mode, cannot submit when value is empty | _boolean_ | `false` |
+| fullCoverView `v2.11.1` | Whether to use cover-view to wrap the popup for covering native components (such as map, video) | _boolean_ | `false` |
 
 ### Events
 

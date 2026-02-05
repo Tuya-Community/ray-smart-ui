@@ -410,6 +410,7 @@ export default function Demo() {
 | showClose `v2.6.1` | Whether to display the close icon. This value is ignored when draggable is set. | _boolean_ | `true` |
 | title | Title | _string_ | - |
 | zIndex | z-index level | _number_ | `100` |
+| fullCoverView `v2.11.1` | Whether to use cover-view to wrap the popup for covering native components (such as map, video) | _boolean_ | `false` |
 
 
 ### Events
