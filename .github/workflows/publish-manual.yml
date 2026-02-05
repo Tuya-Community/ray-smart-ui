@@ -148,11 +148,6 @@ jobs:
           curl https://cursor.com/install -fsS | bash
           echo "$HOME/.cursor/bin" >> $GITHUB_PATH
 
-      - name: Create branch for AI sync (same as input branch)
-        if: (github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call') && inputs.mr_id != '' && inputs.branch != '' && steps.mr_diff.outputs.diff_exists == 'true' && inputs.branch != '' && !startsWith(inputs.branch, 'fix/')
-        run: |
-          git checkout -B ${{ inputs.branch }}
-
       - name: Run Cursor AI Incremental Sync
         if: (github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call') && inputs.mr_id != '' && steps.mr_diff.outputs.diff_exists == 'true' && inputs.branch != '' && !startsWith(inputs.branch, 'fix/')
         env:
@@ -171,6 +166,7 @@ jobs:
         if: (github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call') && inputs.mr_id != '' && inputs.branch != '' && !startsWith(inputs.branch, 'fix/') && steps.mr_diff.outputs.diff_exists == 'true'
         id: check_ai_changes
         run: |
+          rm -rf mr-diff
           if [ -n "$(git status --porcelain)" ]; then
             echo "has_changes=true" >> $GITHUB_OUTPUT
             echo "✅ AI has made changes to the codebase."
@@ -222,7 +218,9 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Commit Changes
+        if: inputs.branch != '' && startsWith(inputs.branch, 'fix/')
         run: |
+          rm -rf mr-diff
           git add .
           if git diff --staged --quiet; then
             echo "No changes to commit"
@@ -234,6 +232,7 @@ jobs:
           git pull
 
       - name: Push
+        if: inputs.branch != '' && startsWith(inputs.branch, 'fix/')
         # 使用个人访问令牌来推送更改以避免保护分支限制
         run: |
           git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
