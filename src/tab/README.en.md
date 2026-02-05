@@ -375,8 +375,8 @@ export default function Demo() {
 
 ### Tabs Props
 
-| Parameter                   | Description                                                                                      | Type               | Default  |
-| --------------------------- | ------------------------------------------------------------------------------------------------ | ------------------ | -------- |
+| Parameter                    | Description                                                                                       | Type               | Default   |
+| ---------------------------- | ------------------------------------------------------------------------------------------------- | ------------------ | --------- |
 | active | Identifier of the currently selected tab | _string_ | `0` |
 | animated | Whether to enable the transition animation when switching tab content | _boolean_ | `false` |
 | border | Whether to show border, only effective in `line` style | _boolean_ | `false` |
@@ -399,8 +399,8 @@ export default function Demo() {
 
 ### Tab Props
 
-| Parameter     | Description                 | Type               | Default     |
-| ------------- | --------------------------- | ------------------ | ----------- |
+| Parameter               | Description                        | Type               | Default         |
+| ----------------------- | ---------------------------------- | ------------------ | --------------- |
 | disabled | Whether to disable the tab | _boolean_ | `false` |
 | dot | Whether to show a small dot | _boolean_ | - |
 | info | Message prompt at icon corner | _string \| number_ | - |
@@ -412,8 +412,8 @@ export default function Demo() {
 
 ### Tabs Slot
 
-| Name      | Description     |
-| --------- | --------------- |
+| Name      | Description                            |
+| --------- | -------------------------------------- |
 | navLeft | Content on the left side of the title |
 | navRight | Content on the right side of the title |
 
@@ -425,8 +425,8 @@ export default function Demo() {
 
 ### Tabs Event
 
-| Event Name                  | Description                                                                                                | Parameters                                                                                                                                                                                               |
-| --------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Event Name                    | Description                                                                                                                                             | Parameters                                                                                                                                                                                                                                                                                   |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | onBeforeChange `v1.10.10` | Triggered before tab switching, returning `false` in the callback can stop tab switching, and the `use-before-change` attribute should be set to `true` | `event.detail.name`: The identifier of the currently switching tab, `event.detail.title`: The title of the currently switching tab, `event.detail.index`: The index of the currently switching tab, `event.detail.callback`: Callback function, call `callback(false)` to stop tab switching |
 | onChange | Triggered when the active tab changes | name: Tab identifier, title: Title |
 | onClick | Triggered when a tab is clicked | name: Tab identifier, title: Title |
@@ -435,46 +435,45 @@ export default function Demo() {
 
 ### External Style Classes
 
-| Class Name        | Description         |
-| ----------------- | ------------------- |
+| Class Name       | Description                   |
+| ---------------- | ----------------------------- |
 | customClass | Root node style class |
 | navClass | Tab bar style class |
 | tabActiveClass | Active tab style class |
 | tabClass | Tab style class |
 | wrapClass | Tab bar root node style class |
 
-
 ### Style Variables
 
 The component provides the following CSS variables for custom styles. For usage, refer to the [ConfigProvider Component](/material/smartui?comId=config-provider).
 
-| Name | Default Value | Description |
-| --- | --- | ----------- |
-| --tabs-background-color | _var(--app-B3, #fff)_ | Background color    |
-| --tabs-default-color | _var(--app-M4)_ | Default text color    |
-| --tabs-line-height | _32px_ | Default text line height    |
-| --tabs-sub-line-height `v2.3.5` | _64px_ | Default sub text line height    |
-| --tabs-bottom-bar-height  | _3px_ | Bottom slider height    |
-| --tabs-bottom-bar-color | _var(--tabs-default-color)_ | Bottom slider background color    |
-| --tabs-card-text-color | _var(--app-B6-N3)_ | Card mode text color    |
-| --tabs-card-text-active-color | _var(--app-B6-N1)_ | Card mode active text color    |
-| --tabs-card-height | _32px_ | Card mode slider height    |
-| --tabs-card-border-radius | _8px_ | Card mode radius    |
-| --tabs-card-active-border-radius `v2.0.0` | _6px_ | Card mode slider radius    |
-| --tabs-card-active-background-color | _var(--app-B3, #fff)_ | Card mode slider background color  |
-| --tabs-card-active-top `v2.0.0`  | _0_    | Card mode slider top positioning    |
-| --tabs-card-active-left `v2.0.0`  | _0_    | Card mode slider left positioning    |
-| --tabs-card-padding `v2.0.0`  | _2px_    | Card mode padding   |
-| --tab-panel-background-color `v2.0.0`  | _var(--app-B3)_    | Panel background color   |
-| --tab-panel-text-color `v2.0.0`  | _var(--app-B3-N1)_    | Panel text color   |
-| --tabs-card-background-color `v2.1.0`  | _var(--app-B6-N9, rgba(0, 0, 0, 0.05))_    | Card mode background color   |
+| Name                                      | Default Value                           | Description                       |
+| ----------------------------------------- | --------------------------------------- | --------------------------------- |
+| --tabs-background-color                   | _var(--app-B3, #fff)_                   | Background color                  |
+| --tabs-default-color                      | _var(--app-M4)_                         | Default text color                |
+| --tabs-line-height                        | _32px_                                  | Default text line height          |
+| --tabs-sub-line-height `v2.3.5`           | _64px_                                  | Default sub text line height      |
+| --tabs-bottom-bar-height                  | _3px_                                   | Bottom slider height              |
+| --tabs-bottom-bar-color                   | _var(--tabs-default-color)_             | Bottom slider background color    |
+| --tabs-card-text-color                    | _var(--app-B6-N3)_                      | Card mode text color              |
+| --tabs-card-text-active-color             | _var(--app-B6-N1)_                      | Card mode active text color       |
+| --tabs-card-height                        | _32px_                                  | Card mode slider height           |
+| --tabs-card-border-radius                 | _8px_                                   | Card mode radius                  |
+| --tabs-card-active-border-radius `v2.0.0` | _6px_                                   | Card mode slider radius           |
+| --tabs-card-active-background-color       | _var(--app-B3, #fff)_                   | Card mode slider background color |
+| --tabs-card-active-top `v2.0.0`           | _0_                                     | Card mode slider top positioning  |
+| --tabs-card-active-left `v2.0.0`          | _0_                                     | Card mode slider left positioning |
+| --tabs-card-padding `v2.0.0`              | _2px_                                   | Card mode padding                 |
+| --tab-panel-background-color `v2.0.0`     | _var(--app-B3)_                         | Panel background color            |
+| --tab-panel-text-color `v2.0.0`           | _var(--app-B3-N1)_                      | Panel text color                  |
+| --tabs-card-background-color `v2.1.0`     | _var(--app-B6-N9, rgba(0, 0, 0, 0.05))_ | Card mode background color        |
 
 ### Methods
 
 You can get the Tabs instance through [selectComponent](/material/smartui?comId=faq) and call instance methods.
 
-| Method Name | Parameter | Return Value | Description                                                        |
-| ----------- | --------- | ------------ | ------------------------------------------------------------------ |
+| Method Name | Parameter | Return Value | Description                                                                                               |
+| ----------- | --------- | ------------ | --------------------------------------------------------------------------------------------------------- |
 | resize | - | - | When the size or display state of the outer element changes, you can call this method to trigger a redraw |
 
 ## FAQ

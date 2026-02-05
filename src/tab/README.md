@@ -384,7 +384,7 @@ export default function Demo() {
 | duration | 动画时间，单位秒 | _number_ | `0.3` |
 | ellipsis | 是否省略过长的标题文字 | _boolean_ | `true` |
 | lazyRender | 是否开启标签页内容延迟渲染(不销毁组件) | _boolean_ | `true` |
-| inactiveDestroy `v2.1.0` | 标签未被选择时是否销毁tab插槽内容 | _boolean_ | `false` |
+| inactiveDestroy `v2.1.0` | 标签未被选择时是否销毁 tab 插槽内容 | _boolean_ | `false` |
 | lineHeight | 底部条高度，默认单位`px` | _string \| number_ | `3px` |
 | lineWidth | 底部条宽度，默认单位`px` | _string \| number_ | `40px` |
 | offsetTop | 粘性定位布局下与顶部的最小距离，单位`px` | _number_ | - |
@@ -399,8 +399,8 @@ export default function Demo() {
 
 ### Tab Props
 
-| 参数        | 说明                       | 类型               | 默认值       |
-| ----------- | -------------------------- | ------------------ | ------------ |
+| 参数                    | 说明                       | 类型               | 默认值  |
+| ----------------------- | -------------------------- | ------------------ | ------- |
 | disabled | 是否禁用标签 | _boolean_ | `false` |
 | dot | 是否显示小红点 | _boolean_ | - |
 | info | 图标右上角提示信息 | _string \| number_ | - |
@@ -425,8 +425,8 @@ export default function Demo() {
 
 ### Tabs Event
 
-| 事件名    | 说明    | 参数         |
-| ----- | -------------- | --------- |
+| 事件名                        | 说明                                                                                                                | 参数                                                                                                                                                                                                      |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | onBeforeChange `v1.10.10` | tab 切换前会触发，在回调函数中返回 `false` 可终止 tab 切换，绑定事件的同时需要将`use-before-change`属性设置为`true` | `event.detail.name`: 当前切换的 tab 标识符， `event.detail.title`: 当前切换的 tab 标题， `event.detail.index`: 当前切换的 tab 下标，`event.detail.callback`: 回调函数，调用`callback(false)`终止 tab 切换 |
 | onChange | 当前激活的标签改变时触发 | name：标签标识符，title：标题 |
 | onClick | 点击标签时触发 | name：标签标识符，title：标题 |
@@ -443,31 +443,30 @@ export default function Demo() {
 | tabClass | 标签样式类 |
 | wrapClass | 标签栏根节点样式类 |
 
-
 ### 样式变量
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](/material/smartui?comId=config-provider)。
 
-| 名称 | 默认值 | 描述 |
-| --- | --- | --- |
-| --tabs-background-color | _var(--app-B3, #fff)_ | 背景色    |
-| --tabs-default-color | _var(--app-M4)_ | 默认文字颜色    |
-| --tabs-line-height | _32px_ | 默认文字字高    |
-| --tabs-sub-line-height `v2.3.5` | _64px_ | 默认二级文字字高    |
-| --tabs-bottom-bar-height  | _3px_ | 底部滑块高度    |
-| --tabs-bottom-bar-color | _var(--tabs-default-color)_ | 底部滑块背景色    |
-| --tabs-card-text-color | _var(--app-B6-N3)_ | card模式文字颜色    |
-| --tabs-card-text-active-color | _var(--app-B6-N1)_ | card模式选中的文字颜色    |
-| --tabs-card-height | _32px_ | card模式滑块高度    |
-| --tabs-card-border-radius | _8px_ | card模式radius    |
-| --tabs-card-active-border-radius `v2.0.0` | _6px_ | card模式滑块radius    |
-| --tabs-card-active-background-color | _var(--app-B3, #fff)_ | card模式滑块背景色  |
-| --tabs-card-active-top `v2.0.0`  | _0_    | card模式滑块top定位    |
-| --tabs-card-active-left `v2.0.0`  | _0_    | card模式滑块left定位    |
-| --tabs-card-padding `v2.0.0`  | _2px_    | card模式padding   |
-| --tab-panel-background-color `v2.0.0`  | _var(--app-B3)_    | panel背景色   |
-| --tab-panel-text-color `v2.0.0`  | _var(--app-B3-N1)_    | panel文字颜色   |
-| --tabs-card-background-color `v2.1.0`  | _var(--app-B6-N9, rgba(0, 0, 0, 0.05))_    | 卡片模式背景颜色   |
+| 名称                                      | 默认值                                  | 描述                    |
+| ----------------------------------------- | --------------------------------------- | ----------------------- |
+| --tabs-background-color                   | _var(--app-B3, #fff)_                   | 背景色                  |
+| --tabs-default-color                      | _var(--app-M4)_                         | 默认文字颜色            |
+| --tabs-line-height                        | _32px_                                  | 默认文字字高            |
+| --tabs-sub-line-height `v2.3.5`           | _64px_                                  | 默认二级文字字高        |
+| --tabs-bottom-bar-height                  | _3px_                                   | 底部滑块高度            |
+| --tabs-bottom-bar-color                   | _var(--tabs-default-color)_             | 底部滑块背景色          |
+| --tabs-card-text-color                    | _var(--app-B6-N3)_                      | card 模式文字颜色       |
+| --tabs-card-text-active-color             | _var(--app-B6-N1)_                      | card 模式选中的文字颜色 |
+| --tabs-card-height                        | _32px_                                  | card 模式滑块高度       |
+| --tabs-card-border-radius                 | _8px_                                   | card 模式 radius        |
+| --tabs-card-active-border-radius `v2.0.0` | _6px_                                   | card 模式滑块 radius    |
+| --tabs-card-active-background-color       | _var(--app-B3, #fff)_                   | card 模式滑块背景色     |
+| --tabs-card-active-top `v2.0.0`           | _0_                                     | card 模式滑块 top 定位  |
+| --tabs-card-active-left `v2.0.0`          | _0_                                     | card 模式滑块 left 定位 |
+| --tabs-card-padding `v2.0.0`              | _2px_                                   | card 模式 padding       |
+| --tab-panel-background-color `v2.0.0`     | _var(--app-B3)_                         | panel 背景色            |
+| --tab-panel-text-color `v2.0.0`           | _var(--app-B3-N1)_                      | panel 文字颜色          |
+| --tabs-card-background-color `v2.1.0`     | _var(--app-B6-N9, rgba(0, 0, 0, 0.05))_ | 卡片模式背景颜色        |
 
 ### 方法
 

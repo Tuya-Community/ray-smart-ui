@@ -1,11 +1,11 @@
 // @ts-ignore
-import Tabs from '@tuya-miniapp/smart-ui/dist/tabs/index';
+import TabsMini from '@tuya-miniapp/smart-ui/dist/tabs/index';
 import { cloneElement, Children } from 'react';
 import { withReactProps } from '../common/withReactProps';
 
-const TabsComp = withReactProps(Tabs as React.ElementType);
+const TabsComp = withReactProps(TabsMini as React.ElementType);
 
-export default ({ children, inactiveDestroy = false, active, ...rest }) => {
+export default function Tabs({ children, inactiveDestroy = false, active, ...rest }) {
   return (
     <TabsComp {...rest} inactiveDestroy={inactiveDestroy} active={active}>
       {children &&
@@ -16,4 +16,4 @@ export default ({ children, inactiveDestroy = false, active, ...rest }) => {
         })}
     </TabsComp>
   );
-};
+}

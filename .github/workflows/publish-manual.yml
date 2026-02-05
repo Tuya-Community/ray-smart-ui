@@ -10,11 +10,27 @@ on:
         description: 'NPM version to publish (e.g., 2.8.2)'
         required: true
         type: string
+      mr_id:
+        description: 'Merge request (PR) ID from miniapp-smart-ui to fetch diff info'
+        required: false
+        type: string
+      branch:
+        description: 'Source branch name from miniapp-smart-ui'
+        required: false
+        type: string
   workflow_call:
     inputs:
       version:
         description: 'NPM version to publish (e.g., 2.8.2)'
         required: true
+        type: string
+      mr_id:
+        description: 'Merge request (PR) ID from miniapp-smart-ui to fetch diff info'
+        required: false
+        type: string
+      branch:
+        description: 'Source branch name from miniapp-smart-ui'
+        required: false
         type: string
 
 jobs:
@@ -22,99 +38,151 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.PROTECT_WRITE_TOKEN }}
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PROTECT_WRITE_TOKEN }}
 
-    - name: Setup Node
-      uses: actions/setup-node@v3
-      with:
-        node-version: '22'
-        cache: 'yarn'
-        registry-url: 'https://registry.npmjs.org'
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+          cache: 'yarn'
+          registry-url: 'https://registry.npmjs.org'
 
-    - name: Configure Git Identity
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+      - name: Configure Git Identity
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
 
-    - name: Check MINIAPP_TOKEN Permission
-      run: |
-        if [ -z "${{ secrets.MINIAPP_TOKEN }}" ]; then
-          echo "❌ MINIAPP_TOKEN is not available. This workflow requires access to clone miniapp-smart-ui repository."
-          echo "Please ensure the repository has the MINIAPP_TOKEN secret configured with appropriate permissions."
-          exit 1
-        fi
-        echo "✅ MINIAPP_TOKEN is available"
+      - name: Check MINIAPP_TOKEN Permission
+        run: |
+          if [ -z "${{ secrets.MINIAPP_TOKEN }}" ]; then
+            echo "❌ MINIAPP_TOKEN is not available. This workflow requires access to clone miniapp-smart-ui repository."
+            echo "Please ensure the repository has the MINIAPP_TOKEN secret configured with appropriate permissions."
+            exit 1
+          fi
+          echo "✅ MINIAPP_TOKEN is available"
 
-    - name: Clone miniapp
-      run: |
-        echo "Attempting to clone miniapp-smart-ui repository..."
-        if git clone -b ${{ github.ref_name }} https://github.com/Tuya-Community/miniapp-smart-ui.git; then
-          echo "✅ Successfully cloned miniapp-smart-ui repository"
-        else
-          echo "❌ Failed to clone miniapp-smart-ui repository"
-          echo "This may be due to insufficient permissions or network issues."
-          echo "Please check if the MINIAPP_TOKEN has the necessary permissions to access the repository."
-          exit 1
-        fi
-      env:
-        GITHUB_TOKEN: ${{ secrets.MINIAPP_TOKEN }}
+      - name: Get MR diff from miniapp-smart-ui
+        if: inputs.mr_id != ''
+        id: mr_diff
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.MINIAPP_TOKEN }}
+          script: |
+            const mrId = '${{ inputs.mr_id }}';
+            const owner = 'Tuya-Community';
+            const repo = 'miniapp-smart-ui';
+            try {
+              // 获取 PR 基本信息
+              const { data: pr } = await github.rest.pulls.get({
+                owner,
+                repo,
+                pull_number: parseInt(mrId, 10),
+              });
+              core.summary
+                .addHeading('MR 信息 (miniapp-smart-ui)')
+                .addRaw(`PR #${mrId}: ${pr.title}`)
+                .addRaw(`状态: ${pr.state}, 分支: ${pr.head.ref} -> ${pr.base.ref}`)
+                .write();
+              // 获取 PR 变更文件列表（含 patch）
+              const { data: files } = await github.rest.pulls.listFiles({
+                owner,
+                repo,
+                pull_number: parseInt(mrId, 10),
+              });
+              const fileList = files.map(f => `${f.status}: ${f.filename}`).join('\n');
+              core.setOutput('files_changed', fileList);
+              core.setOutput('files_count', String(files.length));
+              // 获取完整 diff（raw）
+              const { data: diff } = await github.request({
+                method: 'GET',
+                url: `https://api.github.com/repos/${owner}/${repo}/pulls/${mrId}`,
+                headers: { 'Accept': 'application/vnd.github.v3.diff' },
+              });
+              const diffStr = typeof diff === 'string' ? diff : String(diff);
+              const fs = require('fs');
+              const workspace = process.env.GITHUB_WORKSPACE;
+              const diffDir = `${workspace}/mr-diff`;
+              fs.mkdirSync(diffDir, { recursive: true });
+              fs.writeFileSync(`${diffDir}/pr.diff`, diffStr, 'utf8');
+              core.setOutput('diff_path', `${diffDir}/pr.diff`);
+              console.log(`✅ 已获取 PR #${mrId} 的 diff，共 ${files.length} 个文件变更`);
+              console.log('\n--- 变更文件列表 ---\n' + fileList);
+              console.log('\n--- PR Diff (miniapp-smart-ui) ---\n' + diffStr);
+            } catch (err) {
+              core.setFailed(`获取 miniapp-smart-ui PR #${mrId} 失败: ${err.message}`);
+            }
+        env:
+          MINIAPP_TOKEN: ${{ secrets.MINIAPP_TOKEN }}
 
-    - name: Sync Code
-      run: |
-        yarn syncMiniappData
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PROTECT_WRITE_TOKEN: ${{ secrets.PROTECT_WRITE_TOKEN }}
-        repository: ${{ github.repository }}
-        ref: ${{ github.ref }}
-        workflow_dispatch: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call' }}
+      - name: Clone miniapp
+        run: |
+          echo "Attempting to clone miniapp-smart-ui repository..."
+          if git clone -b ${{ github.ref_name }} https://github.com/Tuya-Community/miniapp-smart-ui.git; then
+            echo "✅ Successfully cloned miniapp-smart-ui repository"
+          else
+            echo "❌ Failed to clone miniapp-smart-ui repository"
+            echo "This may be due to insufficient permissions or network issues."
+            echo "Please check if the MINIAPP_TOKEN has the necessary permissions to access the repository."
+            exit 1
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.MINIAPP_TOKEN }}
 
-    - name: Install Dependencies
-      run: yarn install --frozen-lockfile
+      - name: Sync Code
+        run: |
+          yarn syncMiniappData
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROTECT_WRITE_TOKEN: ${{ secrets.PROTECT_WRITE_TOKEN }}
+          repository: ${{ github.repository }}
+          ref: ${{ github.ref }}
+          workflow_dispatch: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call' }}
 
-    - name: Get Version
-      id: get_version
-      run: |
-        if [ -n "${{ inputs.version }}" ]; then
-          VERSION="${{ inputs.version }}"
-        else
-          VERSION=$(node -p "require('./package.json').version")
-        fi
-        echo "VERSION=${VERSION}" >> $GITHUB_OUTPUT
-        echo "📦 Version to publish: ${VERSION}"
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
 
-    - name: Update Package.json with Version
-      run: |
-        npm version "${{ steps.get_version.outputs.VERSION }}" --no-git-tag-version
+      - name: Get Version
+        id: get_version
+        run: |
+          if [ -n "${{ inputs.version }}" ]; then
+            VERSION="${{ inputs.version }}"
+          else
+            VERSION=$(node -p "require('./package.json').version")
+          fi
+          echo "VERSION=${VERSION}" >> $GITHUB_OUTPUT
+          echo "📦 Version to publish: ${VERSION}"
 
-    - name: Build
-      run: yarn build
+      - name: Update Package.json with Version
+        run: |
+          npm version "${{ steps.get_version.outputs.VERSION }}" --no-git-tag-version
 
-    - name: Publish Package
-      run: npm publish --access public
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Build
+        run: yarn build
 
-    - name: Commit Changes
-      run: |
-        git add .
-        if git diff --staged --quiet; then
-          echo "No changes to commit"
-        else
-          git commit -m "chore(release): npm ${{ steps.get_version.outputs.VERSION }} release by Github Actions"
-          git log -1  # 检查最后的commit结果
-        fi
-        git config pull.rebase false
-        git pull
+      - name: Publish Package
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-    - name: Push
-      # 使用个人访问令牌来推送更改以避免保护分支限制
-      run: |
-        git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit Changes
+        run: |
+          git add .
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore(release): npm ${{ steps.get_version.outputs.VERSION }} release by Github Actions"
+            git log -1  # 检查最后的commit结果
+          fi
+          git config pull.rebase false
+          git pull
 
+      - name: Push
+        # 使用个人访问令牌来推送更改以避免保护分支限制
+        run: |
+          git push https://x-access-token:${{ secrets.PROTECT_WRITE_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

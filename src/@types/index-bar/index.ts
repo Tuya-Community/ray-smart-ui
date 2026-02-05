@@ -43,6 +43,22 @@ export interface SmartIndexBarProps {
    * @default false
    */
   scrollable?: boolean;
+
+  /**
+   * SideBar 字体大小
+   *
+   * @version 2.11.0
+   * @default -
+   */
+  sidebarFontSize?: string;
+
+  /**
+   * SideBar 字体行高
+   *
+   * @version 2.11.0
+   * @default -
+   */
+  sidebarLineHeight?: string;
 }
 
 /**

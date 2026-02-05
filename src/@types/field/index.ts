@@ -189,7 +189,7 @@ export interface SmartFieldProps {
    *
    * @default false
    */
-  autosize?: boolean | { maxHeight?: number; minHeight?: number };
+  autosize?: boolean | { maxHeight?: number | string; minHeight?: number | string };
 
   /**
    * 左侧图标名称或图片链接，可选值见`Icon`组件
