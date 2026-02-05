@@ -121,6 +121,14 @@ export interface SmartPopupProps {
    * @version 2.3.8
    */
   nativeDisabled?: boolean;
+
+  /**
+   * 是否使用 cover-view 包裹弹层，用于覆盖原生组件（如 map、video）时使用
+   *
+   * @default false
+   * @version 2.11.1
+   */
+  fullCoverView?: boolean;
 }
 
 export interface SmartPopupEvents extends SmartTransitionEvents {
