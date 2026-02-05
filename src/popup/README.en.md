@@ -148,8 +148,8 @@ export default function Demo() {
 
 ### Props
 
-| Parameter                          | Description                                                                                                                                             | Type               | Default     |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ----------- |
+| Parameter | Description | Type | Default |
+| --- | --- | --- | --- |
 | closeIcon | Name or URL of the close icon | _string_ | `cross` |
 | closeIconPosition | Close icon position, options: `top-left`, `bottom-left`, `bottom-right` | _string_ | `top-right` |
 | closeOnClickOverlay | Whether to close when clicking the overlay | _boolean_ | `true` |
@@ -172,8 +172,8 @@ export default function Demo() {
 
 ### Events
 
-| Event Name         | Description                 | Parameters |
-| ------------------ | --------------------------- | ---------- |
+| Event Name | Description | Parameters |
+| --- | --- | --- |
 | onAfterEnter | Triggered after entering | - |
 | onAfterLeave | Triggered after leaving | - |
 | onBeforeEnter | Triggered before entering | - |
@@ -185,22 +185,22 @@ export default function Demo() {
 
 ### External Style Classes
 
-| Class Name    | Description   |
-| ------------- | ------------- |
+| Class Name | Description |
+| --- | --- |
 | customClass | Root node style class |
 
 ### Style Variables
 
 The component provides the following CSS variables that can be used for custom styles. For usage, refer to the [ConfigProvider Component](/material/smartui?comId=config-provider).
 
-| Name                          | Default Value                           | Description              |
-| ----------------------------- | ---------------------------------------- | ------------------------ |
-| --popup-background-color      | _var(--app-B4, #ffffff)_                 | Popup background color   |
-| --popup-round-border-radius   | _16px_                                   | Round border radius      |
-| --popup-close-icon-size       | _24px_                                   | Close icon size          |
-| --popup-close-icon-color      | _#969799_                                | Close icon color         |
-| --popup-close-icon-margin     | _12px_                                   | Close icon margin        |
-| --popup-close-icon-z-index    | _1_                                      | Close icon z-index       |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --popup-background-color | _var(--app-B4, #ffffff)_ | Popup background color |
+| --popup-round-border-radius | _16px_ | Round border radius |
+| --popup-close-icon-size | _24px_ | Close icon size |
+| --popup-close-icon-color | _#969799_ | Close icon color |
+| --popup-close-icon-margin | _12px_ | Close icon margin |
+| --popup-close-icon-z-index | _1_ | Close icon z-index |
 
 ## FAQ
 

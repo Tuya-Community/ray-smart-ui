@@ -148,9 +148,9 @@ export default function Demo() {
 
 ### Props
 
-| 参数                               | 说明                                                                                                                 | 类型               | 默认值      |
-| ---------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------------ | ----------- |
-| closeIcon | 关闭图标名称或图片链接 | _string_ | `cross` | safeAreaInsetBottomMin |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| closeIcon | 关闭图标名称或图片链接 | _string_ | `cross` |
 | closeIconPosition | 关闭图标位置，可选值为 `top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
 | closeOnClickOverlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
 | closeable | 是否显示关闭图标 | _boolean_ | `false` |
@@ -172,8 +172,8 @@ export default function Demo() {
 
 ### Events
 
-| 事件名             | 说明             | 参数 |
-| ------------------ | ---------------- | ---- |
+| 事件名 | 说明 | 参数 |
+| --- | --- | --- |
 | onAfterEnter | 进入后触发 | - |
 | onAfterLeave | 离开后触发 | - |
 | onBeforeEnter | 进入前触发 | - |
@@ -185,16 +185,16 @@ export default function Demo() {
 
 ### 外部样式类
 
-| 类名         | 说明         |
-| ------------ | ------------ |
+| 类名 | 说明 |
+| --- | --- |
 | customClass | 根节点样式类 |
 
 ### 样式变量
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](/material/smartui?comId=config-provider)。
 
-| 名称                          | 默认值                                 | 描述 |
-| ----------------------------- | -------------------------------------- | ---- |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
 | --popup-background-color | _var(--app-B4, #ffffff)_ | 弹窗背景颜色 |
 | --popup-round-border-radius | _16px_ | 圆形边框半径 |
 | --popup-close-icon-size | _24px_ | 关闭图标大小 |
