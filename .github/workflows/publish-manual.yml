@@ -108,7 +108,7 @@ jobs:
               const diffDir = `${workspace}/mr-diff`;
               fs.mkdirSync(diffDir, { recursive: true });
               fs.writeFileSync(`${diffDir}/pr.diff`, diffStr, 'utf8');
-              core.setOutput('diff_path', `${diffDir}/pr.diff`);
+              core.setOutput('diff_exists', 'true');
               console.log(`✅ 已获取 PR #${mrId} 的 diff，共 ${files.length} 个文件变更`);
               console.log('\n--- 变更文件列表 ---\n' + fileList);
               console.log('\n--- PR Diff (miniapp-smart-ui) ---\n' + diffStr);
@@ -142,11 +142,62 @@ jobs:
           ref: ${{ github.ref }}
           workflow_dispatch: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call' }}
 
+      - name: Install Cursor CLI
+        if: (github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call') && inputs.mr_id != '' && steps.mr_diff.outputs.diff_exists == 'true' && inputs.branch != '' && !startsWith(inputs.branch, 'fix/')
+        run: |
+          curl https://cursor.com/install -fsS | bash
+          echo "$HOME/.cursor/bin" >> $GITHUB_PATH
+
+      - name: Create branch for AI sync (same as input branch)
+        if: (github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call') && inputs.mr_id != '' && inputs.branch != '' && steps.mr_diff.outputs.diff_exists == 'true' && inputs.branch != '' && !startsWith(inputs.branch, 'fix/')
+        run: |
+          git checkout -B ${{ inputs.branch }}
+
+      - name: Run Cursor AI Incremental Sync
+        if: (github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call') && inputs.mr_id != '' && steps.mr_diff.outputs.diff_exists == 'true' && inputs.branch != '' && !startsWith(inputs.branch, 'fix/')
+        env:
+          CURSOR_API_KEY: ${{ secrets.cursor_token }}
+        run: |
+          cursor-agent --force --print "请使用技能 'sync-miniapp-to-ray' 来处理以下同步任务。
+
+          上下文：
+          1. miniapp-smart-ui PR #${{ inputs.mr_id }} 的代码变更
+          2. 代码变更详情 (Diff)：
+          $(cat $GITHUB_WORKSPACE/mr-diff/pr.diff)
+
+          请严格按照技能中的转换规则，仅针对 Diff 中的变更，更新 ray-smart-ui 的类型定义、Demo 和 README。"
+
+      - name: Check for AI Changes
+        if: (github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call') && inputs.mr_id != '' && inputs.branch != '' && !startsWith(inputs.branch, 'fix/') && steps.mr_diff.outputs.diff_exists == 'true'
+        id: check_ai_changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "✅ AI has made changes to the codebase."
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "⚠️ No changes detected after AI sync."
+          fi
+
+      - name: Create Pull Request (AI sync to release/2.x)
+        if: steps.check_ai_changes.outputs.has_changes == 'true' && inputs.branch != '' && !startsWith(inputs.branch, 'fix/')
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.PROTECT_WRITE_TOKEN }}
+          branch: ${{ inputs.branch }}
+          base: release/2.x
+          title: 'feat: sync updates from miniapp-smart-ui [${{ inputs.branch }}]'
+          body: |
+            Auto-generated sync from miniapp-smart-ui (AI sync using sync-miniapp-to-ray skill).
+            Source Branch: ${{ inputs.branch }}
+            Miniapp PR: #${{ inputs.mr_id }}
+
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
       - name: Get Version
         id: get_version
+        if: inputs.branch != '' && startsWith(inputs.branch, 'fix/')
         run: |
           if [ -n "${{ inputs.version }}" ]; then
             VERSION="${{ inputs.version }}"
@@ -157,6 +208,7 @@ jobs:
           echo "📦 Version to publish: ${VERSION}"
 
       - name: Update Package.json with Version
+        if: inputs.branch != '' && startsWith(inputs.branch, 'fix/')
         run: |
           npm version "${{ steps.get_version.outputs.VERSION }}" --no-git-tag-version
 
@@ -164,6 +216,7 @@ jobs:
         run: yarn build
 
       - name: Publish Package
+        if: inputs.branch != '' && startsWith(inputs.branch, 'fix/')
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
