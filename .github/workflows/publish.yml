@@ -134,8 +134,9 @@ jobs:
         
     - name: send to WeChat
       env:
-        RELEASE_BODY: ${{ github.event.release.body }}
-        RELEASE_TAG: ${{ github.event.release.tag_name }}
+        # 本 workflow 由 pull_request 触发，非 release 事件，故用 PR 阶段写入的 env
+        RELEASE_BODY: ${{ env.PR_BODY }}
+        RELEASE_TAG: v${{ env.TAG_VERSION }}
       run: |
         # 如果包含 "## English"，则删除该行及其后面的所有内容
         RELEASE_BODY=$(echo "$RELEASE_BODY" | sed '/^## English/,$d' | sed -z 's/[[:space:]]*$//')
@@ -150,7 +151,7 @@ jobs:
                 "content": $content
             }
         }')
-        curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${{ secrets.WECHAT_TOKEN }}' \
+        curl "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${{ secrets.WECHAT_TOKEN }}" \
         -H 'Content-Type: application/json' \
         -d "$PAYLOAD"
 
