@@ -411,6 +411,7 @@ export default function Demo() {
 | showClose `v2.6.1` | 是否展示关闭图标。当设置 draggable 时此值无效。 | _boolean_ | `true` |
 | title | 标题 | _string_ | - |
 | zIndex | z-index 层级 | _number_ | `100` |
+| fullCoverView `v2.11.1` | 是否使用 cover-view 包裹弹层，用于覆盖原生组件（如 map、video）时使用 | _boolean_ | `false` |
 
 ### Events
 
