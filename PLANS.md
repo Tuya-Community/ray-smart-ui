@@ -49,3 +49,11 @@
 - [x] 修复 tab 初始化默认 active 不是第一个时，多余的定位动画问题 测试版本：`2.10.1-beta-6`
 
 - [ ] popover: 修复 show 为 false 时，trigger 设置为 longpress 时还是会点击触发问题；新增受控模式（待定）
+
+# v2.11.1
+
+发布计划（发布正式时间：2025.2.26 周四）
+
+- [x] popup、action-sheet、bottom-sheet、dialog 组件新增 fullCoverView 属性，弹框打开时默认包裹全屏的 CoverView 测试版本：`2.11.1-beta-0`
+
+- [ ] popover: 修复 show 为 false 时，trigger 设置为 longpress 时还是会点击触发问题；新增受控模式（待定）
