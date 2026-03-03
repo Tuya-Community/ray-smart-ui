@@ -121,7 +121,9 @@ jobs:
       - name: Clone miniapp
         run: |
           echo "Attempting to clone miniapp-smart-ui repository..."
-          if git clone -b ${{ github.ref_name }} https://github.com/Tuya-Community/miniapp-smart-ui.git; then
+          BRANCH="${{ inputs.branch || github.ref_name }}"
+          echo "Using branch: $BRANCH"
+          if git clone -b "$BRANCH" https://github.com/Tuya-Community/miniapp-smart-ui.git; then
             echo "✅ Successfully cloned miniapp-smart-ui repository"
           else
             echo "❌ Failed to clone miniapp-smart-ui repository"
