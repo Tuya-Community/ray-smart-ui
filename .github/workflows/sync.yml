@@ -3,59 +3,58 @@ name: Sync README & ConfigType
 on:
   push:
     branches:
-      - main
       - release/*
-  
+
 jobs:
   sync_code:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.PROTECT_WRITE_TOKEN }}
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PROTECT_WRITE_TOKEN }}
 
-    - name: Setup Node
-      uses: actions/setup-node@v3
-      with:
-        node-version: '22'
-        cache: 'yarn'
-        registry-url: 'https://registry.npmjs.org'
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+          cache: 'yarn'
+          registry-url: 'https://registry.npmjs.org'
 
-    - name: Configure Git Identity
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+      - name: Configure Git Identity
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
 
-    - name: Check MINIAPP_TOKEN Permission
-      run: |
-        if [ -z "${{ secrets.MINIAPP_TOKEN }}" ]; then
-          echo "❌ MINIAPP_TOKEN is not available. This workflow requires access to clone miniapp-smart-ui repository."
-          echo "Please ensure the repository has the MINIAPP_TOKEN secret configured with appropriate permissions."
-          exit 1
-        fi
-        echo "✅ MINIAPP_TOKEN is available"
+      - name: Check MINIAPP_TOKEN Permission
+        run: |
+          if [ -z "${{ secrets.MINIAPP_TOKEN }}" ]; then
+            echo "❌ MINIAPP_TOKEN is not available. This workflow requires access to clone miniapp-smart-ui repository."
+            echo "Please ensure the repository has the MINIAPP_TOKEN secret configured with appropriate permissions."
+            exit 1
+          fi
+          echo "✅ MINIAPP_TOKEN is available"
 
-    - name: Clone miniapp
-      run: |
-        echo "Attempting to clone miniapp-smart-ui repository..."
-        if git clone -b ${{ github.ref_name }} https://github.com/Tuya-Community/miniapp-smart-ui.git; then
-          echo "✅ Successfully cloned miniapp-smart-ui repository"
-        else
-          echo "❌ Failed to clone miniapp-smart-ui repository"
-          echo "This may be due to insufficient permissions or network issues."
-          echo "Please check if the MINIAPP_TOKEN has the necessary permissions to access the repository."
-          exit 1
-        fi
-      env:
-        GITHUB_TOKEN: ${{ secrets.MINIAPP_TOKEN }}
-    - name: Sync Code
-      run: |
-        yarn syncMiniappData
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PROTECT_WRITE_TOKEN: ${{ secrets.PROTECT_WRITE_TOKEN }}
-        repository: ${{ github.repository }}
-        ref: ${{ github.ref }}
+      - name: Clone miniapp
+        run: |
+          echo "Attempting to clone miniapp-smart-ui repository..."
+          if git clone -b ${{ github.ref_name }} https://github.com/Tuya-Community/miniapp-smart-ui.git; then
+            echo "✅ Successfully cloned miniapp-smart-ui repository"
+          else
+            echo "❌ Failed to clone miniapp-smart-ui repository"
+            echo "This may be due to insufficient permissions or network issues."
+            echo "Please check if the MINIAPP_TOKEN has the necessary permissions to access the repository."
+            exit 1
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.MINIAPP_TOKEN }}
+      - name: Sync Code
+        run: |
+          yarn syncMiniappData
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROTECT_WRITE_TOKEN: ${{ secrets.PROTECT_WRITE_TOKEN }}
+          repository: ${{ github.repository }}
+          ref: ${{ github.ref }}
