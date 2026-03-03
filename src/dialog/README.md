@@ -343,6 +343,7 @@ icon: AlarmIcon,
 | nativeDisabled `v2.3.8` | 开启弹框期间是否禁用本地手势 | _boolean_ | `false` |
 | autoClose `v2.6.3` | 是否自动点击回调后关闭 | _boolean_ | `true` |
 | emptyDisabled `v2.7.0` | 输入框模式，value 为空时 无法提交 | _boolean_ | `false` |
+| fullCoverView `v2.11.1` | 是否使用 cover-view 包裹弹层，用于覆盖原生组件（如 map、video）时使用 | _boolean_ | `false` |
 
 ### Props
 
@@ -383,6 +384,7 @@ icon: AlarmIcon,
 | transition | 动画名称，可选值为`fade` | _string_ | `scale` |
 | autoClose `v2.6.3` | 是否自动点击回调后关闭 | _boolean_ | `false` |
 | emptyDisabled `v2.7.0` | 输入框模式，value 为空时 无法提交 | _boolean_ | `false` |
+| fullCoverView `v2.11.1` | 是否使用 cover-view 包裹弹层，用于覆盖原生组件（如 map、video）时使用 | _boolean_ | `false` |
 
 
 ### Events

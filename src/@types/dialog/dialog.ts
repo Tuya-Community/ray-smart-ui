@@ -11,11 +11,12 @@ type SmartDialogCommonProps = Pick<
   | 'icon'
   | 'iconColor'
   | 'iconSize'
+  | 'nativeDisabled'
+  | 'fullCoverView'
 >;
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 type AnyObject = {};
-
 export type SmartDialogOptions = {
   /**
    * 内容对齐方式
@@ -121,13 +122,6 @@ export type SmartDialogOptions = {
    * @version v2.2.1
    */
   ignoreQueue?: boolean;
-  /**
-   * 开启弹框期间是否禁用本地手势
-   *
-   * @default false
-   * @version v2.3.8
-   */
-  nativeDisabled?: boolean;
 } & SmartDialogCommonProps;
 
 export interface SmartDialogInputOptions extends SmartDialogOptions {

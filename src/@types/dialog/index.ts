@@ -231,6 +231,14 @@ export interface SmartDialogProps extends SmartOpenTypeProps {
    */
   autoClose?: boolean;
 
+  /**
+   * 是否使用 cover-view 包裹弹层，用于覆盖原生组件（如 map、video）时使用
+   *
+   * @default false
+   * @version 2.11.1
+   */
+  fullCoverView?: boolean;
+
   // /**
   //  * 确认按钮的微信开放能力，具体支持可参考 微信官方文档
   //  */

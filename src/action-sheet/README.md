@@ -461,6 +461,7 @@ index.module.less
 | useTitleSlot `v2.6.0` | 是否启用标题 Slot | _boolean_ | `false` |
 | zIndex | z-index 层级 | _number_ | `100` |
 | nativeDisabled `v2.5.0` | 开启弹框期间是否禁用本地手势; 会在弹框开始进入动画时调用 `ty.nativeDisabled(true)`, 在弹框关闭动画结束时调用 `ty.nativeDisabled(false)` 恢复异层组件的点击能力；由于`ty.nativeDisabled` 是全局生效的，所以多个弹框组件同时打开时注意是否传 `native-disabled`属性和关闭的时机，防止 `native-disabled` 属性失效 | _boolean_ | `false` |
+| fullCoverView `v2.11.1` | 是否使用 cover-view 包裹弹层，用于覆盖原生组件（如 map、video）时使用 | _boolean_ | `false` |
 
 ### Events
 

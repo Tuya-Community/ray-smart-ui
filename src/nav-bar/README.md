@@ -18,7 +18,7 @@ import { NavBar } from '@ray-js/smart-ui';
 
 ### 首页
 
-首页的文本样式默认左对齐并加粗，点击左侧文本时触发事件；background `v2.7.0` 属性可以设置nav-bar的背景色。
+首页的文本样式默认左对齐并加粗，点击左侧文本时触发事件；background `v2.7.0` 属性可以设置 nav-bar 的背景色。
 
 ```jsx
 import { showToast } from '@ray-js/ray';
@@ -27,16 +27,12 @@ import React from 'react';
 
 export default function Demo() {
   const onClickLeftText = React.useCallback(event => {
-    showToast({ title: "点击左侧文本", icon: 'none' });
+    showToast({ title: '点击左侧文本', icon: 'none' });
   }, []);
 
   return (
     <>
-      <NavBar 
-        leftText="Home" 
-        leftTextType="home"
-        onClickLeftText={onClickLeftText} 
-      />
+      <NavBar leftText="Home" leftTextType="home" onClickLeftText={onClickLeftText} />
       <NavBar
         background="#E4EDFF"
         customClass="demo-nav-bar"
@@ -61,15 +57,15 @@ import iconMore from '@tuya-miniapp/icons/dist/svg/More';
 
 export default function Demo() {
   const onClickLeft = React.useCallback(event => {
-    showToast({ title: "点击返回", icon: 'none' });
+    showToast({ title: '点击返回', icon: 'none' });
   }, []);
 
   const onClickTitle = React.useCallback(event => {
-    showToast({ title: "点击中央文本", icon: 'none' });
+    showToast({ title: '点击中央文本', icon: 'none' });
   }, []);
 
   const onClickRight = React.useCallback(event => {
-    showToast({ title: "点击右侧", icon: 'none' });
+    showToast({ title: '点击右侧', icon: 'none' });
   }, []);
 
   return (
@@ -100,23 +96,23 @@ import iconHouse from '@tuya-miniapp/icons/dist/svg/House';
 
 export default function Demo() {
   const onClickLeft = React.useCallback(event => {
-    showToast({ title: "点击返回", icon: 'none' });
+    showToast({ title: '点击返回', icon: 'none' });
   }, []);
 
   const onClickTitle = React.useCallback(event => {
-    showToast({ title: "点击中央文本", icon: 'none' });
+    showToast({ title: '点击中央文本', icon: 'none' });
   }, []);
 
   const onClickRight = React.useCallback(event => {
-    showToast({ title: "点击右侧", icon: 'none' });
+    showToast({ title: '点击右侧', icon: 'none' });
   }, []);
 
   const onClickRightText = React.useCallback(event => {
-    showToast({ title: "点击右侧文本", icon: 'none' });
+    showToast({ title: '点击右侧文本', icon: 'none' });
   }, []);
 
   const onClickLeftText = React.useCallback(event => {
-    showToast({ title: "点击左侧文本", icon: 'none' });
+    showToast({ title: '点击左侧文本', icon: 'none' });
   }, []);
 
   return (
@@ -163,7 +159,7 @@ export default function Demo() {
 
 ### 二级页面-短标题
 
-当两侧操作内容较多时可以设置 `v2.7.3` `sideWidth` 为 `max`，减小中间标题区域的大小。
+当两侧操作内容较多时可以设置 `sideWidth` `v2.7.3` 为 `max`，减小中间标题区域的大小。
 
 ```jsx
 import { showToast } from '@ray-js/ray';
@@ -172,19 +168,19 @@ import React from 'react';
 
 export default function Demo() {
   const onClickLeft = React.useCallback(event => {
-    showToast({ title: "点击返回", icon: 'none' });
+    showToast({ title: '点击返回', icon: 'none' });
   }, []);
 
   const onClickTitle = React.useCallback(event => {
-    showToast({ title: "点击中央文本", icon: 'none' });
+    showToast({ title: '点击中央文本', icon: 'none' });
   }, []);
 
   const onClickRightText = React.useCallback(event => {
-    showToast({ title: "点击右侧文本", icon: 'none' });
+    showToast({ title: '点击右侧文本', icon: 'none' });
   }, []);
 
   const onClickLeftText = React.useCallback(event => {
-    showToast({ title: "点击左侧文本", icon: 'none' });
+    showToast({ title: '点击左侧文本', icon: 'none' });
   }, []);
 
   return (
@@ -235,15 +231,15 @@ import iconMore from '@tuya-miniapp/icons/dist/svg/More';
 
 export default function Demo() {
   const onClickLeft = React.useCallback(event => {
-    showToast({ title: "点击返回", icon: 'none' });
+    showToast({ title: '点击返回', icon: 'none' });
   }, []);
 
   const onClickTitle = React.useCallback(event => {
-    showToast({ title: "点击中央文本", icon: 'none' });
+    showToast({ title: '点击中央文本', icon: 'none' });
   }, []);
 
   const onClickRight = React.useCallback(event => {
-    showToast({ title: "点击右侧", icon: 'none' });
+    showToast({ title: '点击右侧', icon: 'none' });
   }, []);
 
   return (
@@ -261,7 +257,6 @@ export default function Demo() {
 }
 ```
 
-
 ### 左标题
 
 部分二级页面标题位于左侧，或同时附带 icon。
@@ -273,19 +268,19 @@ import React from 'react';
 
 export default function Demo() {
   const onClickLeft = React.useCallback(event => {
-    showToast({ title: "点击返回", icon: 'none' });
+    showToast({ title: '点击返回', icon: 'none' });
   }, []);
 
   const onClickLeftIcon = React.useCallback(event => {
-    showToast({ title: "点击左侧图标", icon: 'none' });
+    showToast({ title: '点击左侧图标', icon: 'none' });
   }, []);
 
   const onClickLeftText = React.useCallback(event => {
-    showToast({ title: "点击左侧文本", icon: 'none' });
+    showToast({ title: '点击左侧文本', icon: 'none' });
   }, []);
 
   const onClickRight = React.useCallback(event => {
-    showToast({ title: "点击右侧", icon: 'none' });
+    showToast({ title: '点击右侧', icon: 'none' });
   }, []);
 
   return (

@@ -112,6 +112,14 @@ export interface SmartBottomSheetProps {
    * @default false
    */
   lockMaxDrag?: boolean;
+
+  /**
+   * 是否使用 cover-view 包裹弹层，用于覆盖原生组件（如 map、video）时使用
+   *
+   * @default false
+   * @version 2.11.1
+   */
+  fullCoverView?: boolean;
 }
 
 export interface SmartBottomSheetEvents extends SmartTransitionEvents {

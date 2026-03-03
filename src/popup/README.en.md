@@ -148,8 +148,8 @@ export default function Demo() {
 
 ### Props
 
-| Parameter                          | Description                                                                                                                                             | Type               | Default     |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ----------- |
+| Parameter | Description | Type | Default |
+| --- | --- | --- | --- |
 | closeIcon | Name or URL of the close icon | _string_ | `cross` |
 | closeIconPosition | Close icon position, options: `top-left`, `bottom-left`, `bottom-right` | _string_ | `top-right` |
 | closeOnClickOverlay | Whether to close when clicking the overlay | _boolean_ | `true` |
@@ -168,11 +168,12 @@ export default function Demo() {
 | show | Whether to display the popup | _boolean_ | `false` |
 | zIndex | z-index level | _number_ | `100` |
 | nativeDisabled `v2.3.8` | Whether to disable local gestures during the opening of the dialog; it will call `ty.nativeDisabled(true)` when the dialog starts the entrance animation, and call `ty.nativeDisabled(false)` at the end of the closing animation to restore the click ability of components on different layers. Since `ty.nativeDisabled` works globally, pay attention to whether to pass the `native-disabled` attribute and the timing of closing when multiple dialog components are opened simultaneously, to prevent the `native-disabled` attribute from being ineffective. | _boolean_ | `false` |
+| fullCoverView `v2.11.1` | Whether to use cover-view to wrap the popup, used to cover native components (such as map, video) | _boolean_ | `false` |
 
 ### Events
 
-| Event Name         | Description                 | Parameters |
-| ------------------ | --------------------------- | ---------- |
+| Event Name | Description | Parameters |
+| --- | --- | --- |
 | onAfterEnter | Triggered after entering | - |
 | onAfterLeave | Triggered after leaving | - |
 | onBeforeEnter | Triggered before entering | - |
@@ -184,22 +185,22 @@ export default function Demo() {
 
 ### External Style Classes
 
-| Class Name    | Description   |
-| ------------- | ------------- |
+| Class Name | Description |
+| --- | --- |
 | customClass | Root node style class |
 
 ### Style Variables
 
 The component provides the following CSS variables that can be used for custom styles. For usage, refer to the [ConfigProvider Component](/material/smartui?comId=config-provider).
 
-| Name                          | Default Value                           | Description              |
-| ----------------------------- | ---------------------------------------- | ------------------------ |
-| --popup-background-color      | _var(--app-B4, #ffffff)_                 | Popup background color   |
-| --popup-round-border-radius   | _16px_                                   | Round border radius      |
-| --popup-close-icon-size       | _24px_                                   | Close icon size          |
-| --popup-close-icon-color      | _#969799_                                | Close icon color         |
-| --popup-close-icon-margin     | _12px_                                   | Close icon margin        |
-| --popup-close-icon-z-index    | _1_                                      | Close icon z-index       |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --popup-background-color | _var(--app-B4, #ffffff)_ | Popup background color |
+| --popup-round-border-radius | _16px_ | Round border radius |
+| --popup-close-icon-size | _24px_ | Close icon size |
+| --popup-close-icon-color | _#969799_ | Close icon color |
+| --popup-close-icon-margin | _12px_ | Close icon margin |
+| --popup-close-icon-z-index | _1_ | Close icon z-index |
 
 ## FAQ
 

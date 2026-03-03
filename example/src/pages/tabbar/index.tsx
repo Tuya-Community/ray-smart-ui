@@ -10,7 +10,7 @@ import styles from './index.module.less';
 import Strings from '../../i18n';
 
 const icon = {
-  normal: 'https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png',
+  normal: 'https://images.tuyacn.com/content-platform/hestia/1729664215ebd89f13e54.png',
   active: 'https://static1.tuyacn.com/static/tuya-miniapp-doc/_next/static/images/logo-small.png',
 };
 
