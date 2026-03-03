@@ -30,7 +30,7 @@
 
 # v2.10.0
 
-发布计划（发布正式时间：2025.1.13 周二）
+发布计划（发布正式时间：2026.1.13 周二）
 
 - [x] dialog input 支持 onInput 回调；增加 then 返回实例内取 input 值 Demo;修复调用 input 方式，value 为 undefined 无法显示输入框问题；测试版本 2.9.3-beta-0
 - [x] picker 新增单位和选择列之间的间隔的设置参数 unitGap；测试版本 2.9.3-beta-1
@@ -39,7 +39,7 @@
 
 # v2.11.0
 
-发布计划（发布正式时间：2025.2.5 周四）
+发布计划（发布正式时间：2026.2.5 周四）
 
 - [x] 修复 index-bar 手指触摸滚动右侧索引栏时闪烁问题 测试版本：`2.10.1-beta-0`
 - [x] 新增 index-bar 右侧索引栏样式自定义能力新增 sidebarFontSize、sidebarLineHeight 属性 测试版本：`2.10.1-beta-1`
@@ -52,8 +52,8 @@
 
 # v2.11.1
 
-发布计划（发布正式时间：2025.2.26 周四）
+发布计划（发布正式时间：2026.3.3 周二）
 
 - [x] popup、action-sheet、bottom-sheet、dialog 组件新增 fullCoverView 属性，弹框打开时默认包裹全屏的 CoverView, [pull/161](https://github.com/Tuya-Community/miniapp-smart-ui/pull/161) 测试版本：`2.11.1-beta-0`
-- [x] 修复组件插槽 slot 插入非JSX 类型时报错问题, [1904e59](https://github.com/Tuya-Community/ray-smart-ui/commit/1904e59705c9161112d33af2ddf03fdbd4ec71cb) 测试版本：`2.11.1-beta-0`
+- [x] 修复组件插槽 slot 插入非 JSX 类型时报错问题, [1904e59](https://github.com/Tuya-Community/ray-smart-ui/commit/1904e59705c9161112d33af2ddf03fdbd4ec71cb) 测试版本：`2.11.1-beta-0`
 - [ ] popover: 修复 show 为 false 时，trigger 设置为 longpress 时还是会点击触发问题；新增受控模式（待定）
