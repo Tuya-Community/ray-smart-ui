@@ -56,4 +56,15 @@
 
 - [x] popup、action-sheet、bottom-sheet、dialog 组件新增 fullCoverView 属性，弹框打开时默认包裹全屏的 CoverView, [pull/161](https://github.com/Tuya-Community/miniapp-smart-ui/pull/161) 测试版本：`2.11.1-beta-0`
 - [x] 修复组件插槽 slot 插入非 JSX 类型时报错问题, [1904e59](https://github.com/Tuya-Community/ray-smart-ui/commit/1904e59705c9161112d33af2ddf03fdbd4ec71cb) 测试版本：`2.11.1-beta-0`
+
+# v2.12.0
+
+发布计划（发布正式时间：2026.3.26 周四）
+
+- [ ] nav-bar: 新增 home 模式右侧插入图标能力
+- [ ] index-bar: 修复右侧栏拖动定位不准问题；新增拖动气泡提示功能
+- [ ] field: 新增 数字格式化能力
+- [ ] toast: 修改背景色，对齐UED
+- [ ] overlay: 支持IOS 毛玻璃效果
+- [ ] tab: 修复切换图片时闪烁问题；
 - [ ] popover: 修复 show 为 false 时，trigger 设置为 longpress 时还是会点击触发问题；新增受控模式（待定）
