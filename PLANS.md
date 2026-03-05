@@ -61,6 +61,7 @@
 
 发布计划（发布正式时间：2026.3.26 周四）
 
+- [x] tab: 修复切换时文字跳动问题([e24aff0](https://github.com/Tuya-Community/miniapp-smart-ui/pull/167/commits/e24aff0610a9432c4831235d21593e451678c50a)), 测试版本：`2.11.2-beta-0`
 - [ ] nav-bar: 新增 home 模式右侧插入图标能力
 - [ ] index-bar: 修复右侧栏拖动定位不准问题；新增拖动气泡提示功能
 - [ ] field: 新增 数字格式化能力
