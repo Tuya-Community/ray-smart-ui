@@ -393,3 +393,15 @@ The component provides the following CSS variables for custom styling. For usage
 | --picker-option-selected-text-color | _var(--app-B6-N1, rgba(0, 0, 0, 1))_       | Selected option text color        |
 | --picker-option-unit-mid-size `v2.4.0` | _0_  `v2.4.0` _4px_ `v2.6.0` | Spacing between units and content text |
 | --picker-option-selected-font-weight-bold `v2.6.0` | _700_ | Font weight of selected text |
+
+## FAQ
+
+### Some option text does not display correctly
+
+When option text contains special characters such as double quotes `"`, the text may not display completely. You need to escape these characters in your data using the `\` escape character. For example, escape double quotes as `\"` for correct display.
+
+```javascript
+// The double quote in "--"- needs to be escaped
+columns: ['Hangzhou', 'Ningbo', '--"-']   // May not display correctly
+columns: ['Hangzhou', 'Ningbo', '--\\"-'] // Use \ to escape for correct display
+```
