@@ -47,6 +47,22 @@ export default function Demo() {
           leftTextType="home"
           onClickLeftText={onClickLeftText}
         />
+        <NavBar
+          background="#E4EDFF"
+          customClass="demo-nav-bar"
+          leftText="HomeHomeHomeHomeHome"
+          leftTextType="home"
+          onClickLeftText={onClickLeftText}
+          slot={{
+            left: (
+              <Icon
+                style={{ marginLeft: 'auto', paddingLeft: '16px' }}
+                name="https://images.tuyacn.com/content-platform/hestia/1729664215ebd89f13e54.png"
+                size="24px"
+              />
+            ),
+          }}
+        />
       </DemoBlock>
 
       <DemoBlock title={Strings.getLang('secondPageSingleIcon')}>
