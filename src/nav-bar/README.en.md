@@ -19,10 +19,11 @@ import { NavBar } from '@ray-js/smart-ui';
 ### Home Page
 
 The text style of the home page is default left-aligned and bold, triggering an event when the left text is clicked; the `background` property from `v2.7.0` can be used to set the nav-bar's background color.
+Use `slot="left"` to insert custom content (e.g. an icon) in the left area; with `margin-left: auto` on the inserted content, it can be aligned to the right within the left container without leaving the document flow `v2.11.1`.
 
 ```jsx
 import { showToast } from '@ray-js/ray';
-import { NavBar } from '@ray-js/smart-ui';
+import { Icon, NavBar } from '@ray-js/smart-ui';
 import React from 'react';
 
 export default function Demo() {
@@ -43,6 +44,22 @@ export default function Demo() {
         leftText="HomeHomeHomeHomeHome"
         leftTextType="home"
         onClickLeftText={onClickLeftText}
+      />
+      <NavBar
+        background="#E4EDFF"
+        customClass="demo-nav-bar"
+        leftText="HomeHomeHomeHomeHome"
+        leftTextType="home"
+        onClickLeftText={onClickLeftText}
+        slot={{
+          left: (
+            <Icon
+              customStyle={{ marginLeft: 'auto', paddingLeft: '16px' }}
+              name="https://images.tuyacn.com/content-platform/hestia/1729664215ebd89f13e54.png"
+              size="24px"
+            />
+          ),
+        }}
       />
     </>
   );
