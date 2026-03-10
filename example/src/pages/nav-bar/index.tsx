@@ -56,7 +56,7 @@ export default function Demo() {
           slot={{
             left: (
               <Icon
-                customStyle={{ marginLeft: 'auto', paddingLeft: '16px' }}
+                style={{ marginLeft: 'auto', paddingLeft: '16px' }}
                 name="https://images.tuyacn.com/content-platform/hestia/1729664215ebd89f13e54.png"
                 size="24px"
               />
