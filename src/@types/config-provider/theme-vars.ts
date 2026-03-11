@@ -757,9 +757,16 @@ type IndexAnchorThemeVars =
   | 'indexAnchorLineHeight'
   | 'indexAnchorBackgroundColor'
   | 'indexAnchorActiveBackgroundColor'
-  | 'indexAnchorActiveTextColor';
+  | 'indexAnchorActiveTextColor'
+  | 'indexAnchorIndexPadding';
 
-type IndexBarThemeVars = 'indexBarIndexFontSize' | 'indexBarIndexLineHeight';
+type IndexBarThemeVars =
+  | 'indexBarIndexFontSize'
+  | 'indexBarIndexLineHeight'
+  | 'indexBarMoveTipTextPadding'
+  | 'indexBarMoveTipTextFontSize'
+  | 'indexBarMoveTipTextLineHeight'
+  | 'indexBarMoveTipTextColor';
 
 type SkeletonThemeVars =
   | 'skeletonPadding'
