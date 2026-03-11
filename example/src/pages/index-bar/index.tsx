@@ -23,7 +23,7 @@ export default function Demo() {
       <Tabs active={activeTab} onChange={onChange}>
         <Tab title={Strings.getLang('basicUsage')}>
           {activeTab === 0 && (
-            <IndexBar scrollable>
+            <IndexBar scrollable showMoveTip>
               {indexList.map((item, index) => (
                 <View key={`${index + 1}`}>
                   <IndexAnchor index={item} />

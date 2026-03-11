@@ -45,6 +45,14 @@ export interface SmartIndexBarProps {
   scrollable?: boolean;
 
   /**
+   * 是否在拖动侧边栏时显示跟随手指的提示气泡
+   *
+   * @version 2.12.0
+   * @default false
+   */
+  showMoveTip?: boolean;
+
+  /**
    * SideBar 字体大小
    *
    * @version 2.11.0
