@@ -64,9 +64,9 @@
 - [x] tab: 修复切换时文字跳动问题([e24aff0](https://github.com/Tuya-Community/miniapp-smart-ui/pull/167/commits/e24aff0610a9432c4831235d21593e451678c50a)), 测试版本：`2.11.2-beta-0`
 - [x] tabbar: 修复使用插槽插入图片，偶现切换时图片闪烁问题([93116bc](https://github.com/Tuya-Community/miniapp-smart-ui/pull/169/commits/93116bc6cd0b9d56747718e32b2ffae38acbbf5e)), 测试版本：`2.11.2-beta-2`
 - [x] popup、action-sheet、bottom-sheet、dialog 组件开启 fullCoverView 时，根节点cover-view 继承组件 zIndex 属性([faff9eb](https://github.com/Tuya-Community/miniapp-smart-ui/pull/165/commits/faff9ebab1f504eed6381241c82c63c2c8dd0ff8)), 测试版本：`2.11.2-beta-3`
-- [ ] nav-bar: 新增 home 模式右侧插入图标能力
-- [ ] index-bar: 修复右侧栏拖动定位不准问题；新增拖动气泡提示功能
-- [ ] field: 新增 数字格式化能力
-- [ ] toast: 修改背景色，对齐UED
-- [ ] overlay: 支持IOS 毛玻璃效果
+- [x] nav-bar: 新增 home 模式右侧插入图标能力([4175796](https://github.com/Tuya-Community/miniapp-smart-ui/pull/163/commits/417579676d3088e066abba7ccca9e7010f68ee3d)), 测试版本 `2.11.2-beta-4`
+- [x] index-bar: 新增拖动气泡提示功能；修复右侧栏拖动时定位不准，页面闪现分割线问题，fixed导航闪现位移问题；([pull/166](https://github.com/Tuya-Community/miniapp-smart-ui/pull/166)), 测试版本 `2.11.2-beta-5`
+- [ ] field: 新增地区 数字格式化能力
+- [ ] toast: 修改背景色，对齐 UED
+- [ ] overlay: 支持 iOS 毛玻璃效果
 - [ ] popover: 修复 show 为 false 时，trigger 设置为 longpress 时还是会点击触发问题；新增受控模式（待定）
