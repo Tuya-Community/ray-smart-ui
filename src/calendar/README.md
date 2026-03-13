@@ -486,7 +486,7 @@ const [maxDate, setMaxDate] = useState(
 | --calendar-header-box-shadow                       | _0 2px 10px rgba(125, 126, 128, 0.16)_  | 日历头部盒子阴影       |
 | --calendar-header-icon-bg-color `v2.6.0`           | _var(--app-B2-N9, rgba(0, 0, 0, 0.05))_ | 日历头部图标背景色     |
 | --calendar-header-icon-color `v2.6.0`              | _var(--app-B1-N2, rgba(0, 0, 0, 0.7))_  | 日历头部图标背景色     |
-| --calendar-header-save-color                       | _#1989fa_                               | 日历头部保存按钮颜色   |
+| --calendar-header-title-save-color                       | _#1989fa_                               | 日历头部保存按钮颜色   |
 | --calendar-header-subtitle-font-size               | _16px_                                  | 日历头部副标题字体大小 |
 | --calendar-header-title-font-color                 | _var(--app-B4-N1, rgba(0, 0, 0, 1))_    | 日历头部标题字体颜色   |
 | --calendar-header-title-font-size                  | _16px_                                  | 日历头部标题字体大小   |
