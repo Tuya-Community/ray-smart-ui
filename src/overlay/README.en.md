@@ -110,10 +110,13 @@ const styles = {
 
 ### Style Variables
 
-The component provides the following CSS variables that can be used for custom styles. For usage, refer to the [ConfigProvider Component](/material/smartui?comId=config-provider).
+The overlay automatically uses a **blur backdrop** when the device supports `backdrop-filter`, and falls back to a **semi-transparent** backdrop otherwise (e.g. some Android devices), to reduce layout jump when the keyboard opens on iOS.
 
-| Name                          | Default Value                             | Description |
-| ----------------------------- | ----------------------------------------- | ----------- |
+| Name                           | Default (light / dark)                   | Description |
+| ------------------------------ | ---------------------------------------- | ----------- |
+| --overlay-background-color     | _rgba(0,0,0,0.4)_ / _rgba(0,0,0,0.7)_    | Override overlay background; when set, blur/fallback variables are not used |
+| --overlay-blur-background `v2.12.0`      | _rgba(40,44,53,0.22)_ / _rgba(0,0,0,0.6)_ | Background when blur is supported |
+| --overlay-blur-radius  `v2.12.0`         | _16px_                                   | Blur radius for backdrop |
 
 ## API
 
@@ -148,8 +151,10 @@ The component provides the following CSS variables that can be used for custom s
 
 ### Style Variables
 
-The component provides the following CSS variables that can be used for custom styles. For usage, refer to the [ConfigProvider Component](/material/smartui?comId=config-provider).
+The overlay automatically uses a **blur backdrop** when the device supports `backdrop-filter`, and falls back to a **semi-transparent** backdrop otherwise (e.g. some Android devices), to reduce layout jump when the keyboard opens on iOS.
 
-| Name                          | Default Value                             | Description |
-| ----------------------------- | ----------------------------------------- | ----------- |
-| --overlay-background-color | _rgba(0, 0, 0, 0.7)_ | Background color |
+| Name                           | Default (light / dark)                   | Description |
+| ------------------------------ | ---------------------------------------- | ----------- |
+| --overlay-background-color     | _rgba(0,0,0,0.4)_ / _rgba(0,0,0,0.7)_    | Override overlay background; when set, blur/fallback variables are not used |
+| --overlay-blur-background `v2.12.0`      | _rgba(40,44,53,0.22)_ / _rgba(0,0,0,0.6)_ | Background when blur is supported |
+| --overlay-blur-radius  `v2.12.0`         | _16px_                                   | Blur radius for backdrop |
