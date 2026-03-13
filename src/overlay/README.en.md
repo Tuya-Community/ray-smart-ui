@@ -89,34 +89,39 @@ const styles = {
 
 ### Props
 
-| Parameters  | Description                                                                                        | Type               | Default value |
-| ----------- | -------------------------------------------------------------------------------------------------- | ------------------ | ------------- |
-| children    | The default slot is used to embed the content above the mask layer                                 | _React.ReactNode_  | null          |
-| className   | Customized class name                                                                              | _string_           | -             |
-| customStyle | Custom style                                                                                       | _object_           | -             |
-| duration    | Animation time, unit seconds                                                                       | _string \| number_ | `0.3`         |
-| lockScroll  | Whether to lock the background rolling, the content in the mask when locking will not be scheduled | _boolean_          | `true`        |
-| show        | Whether to show the mask layer                                                                     | _boolean_          | `false`       |
-| zIndex      | z-index Level                                                                                      | _string \| number_ | `1`           |
+| Parameter      | Description                                         | Type               | Default |
+| -------------- | --------------------------------------------------- | ------------------ | ------- |
+| classmartName | Custom class name | _string_ | - |
+| customStyle | Custom style | _React.CSSProperties_ | - |
+| duration | Animation duration in seconds | _string \| number_ | `0.3` |
+| lockScroll | Whether to lock background scroll | _boolean_ | `true` |
+| show | Whether to show the overlay | _boolean_ | `false` |
+| zIndex | z-index level | _string \| number_ | `1` |
 
 ### Events
 
-| Event Name | Description            | Return parameters |
-| ---------- | ---------------------- | ----------------- |
-| onClick    | Triggeon when clicking | -                 |
+| Event Name  | Description      | Callback Parameters |
+| ----------- | ---------------- | ------------------- |
+| onClick | Triggered on click | - |
 
-### outer style class
+### Slots
 
-| Class Name  | Description     |
-| ----------- | --------------- |
-| customClass | Root node nodes |
+| Name | Description                           |
+| ---- | ------------------------------------- |
+| -    | Default slot for embedding content in the overlay |
+
+### External Class Styles
+
+| Class Name     | Description               |
+| -------------- | --------------------------|
+| customClass | Class of the root element |
 
 ### Style Variables
 
 The overlay automatically uses a **blur backdrop** when the device supports `backdrop-filter`, and falls back to a **semi-transparent** backdrop otherwise (e.g. some Android devices), to reduce layout jump when the keyboard opens on iOS.
 
-| Name                                | Default (light / dark)                    | Description                                                                 |
-| ----------------------------------- | ----------------------------------------- | --------------------------------------------------------------------------- |
-| --overlay-background-color          | _rgba(0,0,0,0.4)_ / _rgba(0,0,0,0.7)_     | Override overlay background; when set, blur/fallback variables are not used |
-| --overlay-blur-background `v2.12.0` | _rgba(40,44,53,0.22)_ / _rgba(0,0,0,0.6)_ | Background when blur is supported                                           |
-| --overlay-blur-radius `v2.12.0`     | _16px_                                    | Blur radius for backdrop                                                    |
+| Name                           | Default (light / dark)                   | Description |
+| ------------------------------ | ---------------------------------------- | ----------- |
+| --overlay-background-color     | _rgba(0,0,0,0.4)_ / _rgba(0,0,0,0.7)_    | Override overlay background; when set, blur/fallback variables are not used |
+| --overlay-blur-background `v2.12.0`      | _rgba(40,44,53,0.22)_ / _rgba(0,0,0,0.6)_ | Background when blur is supported |
+| --overlay-blur-radius  `v2.12.0`         | _16px_                                   | Blur radius for backdrop |
