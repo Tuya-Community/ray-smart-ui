@@ -665,7 +665,7 @@ export default {
     clickToCopy: '点击可复制',
     copyFailed: '复制失败',
     successfulCopy: '复制成功',
-    toastTip1: '这是一条非常长的长文字提示，可以时 Text 模式的 Toast 超过一定字数就会换行',
+    toastTip1: '这是一条非常长的长文字提示，可以使 Text 模式的 Toast 超过一定字数就会换行',
     promptContent: '提示内容',
     closableTab: '可关闭标签',
     labelSize: '标签大小',
