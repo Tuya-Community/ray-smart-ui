@@ -111,7 +111,7 @@ export default function Demo() {
       forbidClick: true,
       message: '倒计时 3 秒',
       selector: '#custom-selector',
-      width: 88,
+      width: 120,
     });
 
     let second = 3;
@@ -274,16 +274,20 @@ export default function Demo() {
 
 | 名称                          | 默认值                                 | 描述 |
 | ----------------------------- | -------------------------------------- | ---- |
-| --toast-min-width `v2.6.0` | _88px_ | 提示最小宽度 |
-| --toast-max-width | _70%_ | 提示最大宽度 |
+| --toast-text-min-width `v2.12.0` | _96px_ | 文字提示最小宽度 |
+| --toast-text-max-width `v2.12.0` | _280px_ | 文字提示最大宽度 |
+| --toast-min-width `v2.6.0` | _56px_ `v2.6.0` _82px_ `v2.12.0` | 图标提示最小宽度 |
+| --toast-max-width | _calc(100vw - 48px)_ `v2.0.0` _280px_ `v2.12.0` | 图标提示最大宽度 |
 | --toast-font-size | _14px_ | 提示字体大小 |
 | --toast-text-color | _#fff_ | 提示文本颜色 |
-| --toast-line-height | _20px_ | 提示行高 |
-| --toast-border-radius | _10px_ | 提示圆角半径 |
-| --toast-background-color | _fade(@black, 70%)_ | 提示背景颜色 |
-| --toast-icon-size | _36px_ | 提示图标大小 |
-| --toast-text-min-width `@deprecated v2.6.0` | _96px_ | 提示文本最小宽度 |
-| --toast-text-padding | _@padding-xs @padding-sm_ | 提示文本内边距 |
-| --toast-default-padding | _16px_ | 提示默认内边距 |
-| --toast-default-width | _88px_ | 提示默认宽度 |
-| --toast-default-min-height | _88px_ | 提示默认最小高度 |
+| --toast-line-height | _20px_ `v2.0.0` _16px_ `v2.12.0` | 提示行高 |
+| --toast-background-color | _rgba(0,0,0,.7)_  `v2.0.0` _#5C5C5C_ `v2.12.0` | 提示背景颜色 |
+| --toast-border-radius | _12px_ | 提示圆角半径 |
+| --toast-border `v2.12.0` | _1px solid rgba(255, 255, 255, 0.05)_ | 提示边框 |
+| --toast-box-shadow `v2.12.0` | _0 4px 12px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.12)_ | 提示阴影 |
+| --toast-icon-size | _36px_ | 图标提示图标大小 |
+| --toast-text-padding | _14px 16px_ | 文字提示内边距 |
+| --toast-default-padding | _22px 14px 14px_ `v2.0.0` _19px 15px_ `v2.12.0` | 图标提示内边距 |
+| --toast-default-width `@deprecated v2.12.0` | _56px_ | 提示默认宽度（已废弃，请使用 --toast-min-width） |
+| --toast-default-min-height | _56px_ | 图标提示默认最小高度 |
+| --toast-icon-text-padding-top `v2.12.0` | _8px_ | 图标提示文字上间距 |

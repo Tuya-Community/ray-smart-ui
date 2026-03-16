@@ -79,7 +79,7 @@ export default function Demo() {
 
 ### Input Box
 
-Used to input copy information, the default maximum input limit `maxLength` is `20`; the `emptyDisabled` `v2.7.0` attribute can restrict the submission when the input field is empty.
+Used to input copy information, the default maximum input limit `maxlength` is `20`; the `emptyDisabled` `v2.7.0` attribute can restrict the submission when the input field is empty.
 
 ```jsx
 import React from 'react';
@@ -106,7 +106,8 @@ export default function Demo() {
       cancelButtonText: 'Sub Action',
     })
       .then(() => {
-        // on confirm
+        console.log('=== onConfirm', res);
+        const inputValue = res?.data?.inputValue;
       })
       .catch(() => {
         // on cancel
@@ -318,6 +319,7 @@ When calling Dialog via a function, the following options are supported:
 | theme | Style theme, options are `round-button` | _string_ | `default` |
 | title | Title | _string_ | - |
 | value | Initial value of the input box | _string_ | - |
+| onInput `v2.10.0` | Input Box Callback | _(value: string) => void_ | - |
 | width | Dialog box width, default unit is `px` | _string \| number_ | `320px` |
 | zIndex | z-index level | _number_ | `100` |
 | customStyle | Custom style | _string_ | '' |
@@ -335,6 +337,7 @@ When calling Dialog via a function, the following options are supported:
 | nativeDisabled `v2.3.8` | Whether to disable local gestures during the pop-up period | _boolean_ | `false` |
 | autoClose `v2.6.3` | Whether to automatically close after callback click | _boolean_ | `true` |
 | emptyDisabled `v2.7.0` | Input box mode, cannot submit when value is empty | _boolean_ | `false` |
+| fullCoverView `v2.11.1` | Whether to use cover-view to wrap the popup for covering native components (such as map, video). | _boolean_ | `false` |
 
 
 ### Props
@@ -376,6 +379,7 @@ The following Props are supported when calling Dialog via component invocation:
 | transition | Animation name, options are `fade` | _string_ | `scale` |
 | autoClose `v2.6.3` | Whether to automatically close after callback click | _boolean_ | `false` |
 | emptyDisabled `v2.7.0` | Input box mode, cannot submit when value is empty | _boolean_ | `false` |
+| fullCoverView `v2.11.1` | Whether to use cover-view to wrap the popup for covering native components (such as map, video). | _boolean_ | `false` |
 
 ### Events
 

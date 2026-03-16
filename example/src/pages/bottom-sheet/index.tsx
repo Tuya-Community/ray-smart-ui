@@ -15,6 +15,7 @@ export default function Demo() {
   const [show7, setShow7] = React.useState(false);
   const [show8, setShow8] = React.useState(false);
   const [show9, setShow9] = React.useState(false);
+  const [show10, setShow10] = React.useState(false);
   const [dragPosition, setDragPosition] = React.useState<'max' | 'mid' | 'min' | ''>('');
   const [closeDragHeight, setCloseDragHeight] = React.useState(0);
 
@@ -32,6 +33,7 @@ export default function Demo() {
   const toggleBottomSheet7 = React.useCallback(() => setShow7(!show7), [show7]);
   const toggleBottomSheet8 = React.useCallback(() => setShow8(!show8), [show8]);
   const toggleBottomSheet9 = React.useCallback(() => setShow9(!show9), [show9]);
+  const toggleBottomSheet10 = React.useCallback(() => setShow10(!show10), [show10]);
 
   const onDragPosition = React.useCallback((e: any) => {
     const position = e.detail; // 'max' | 'mid' | 'min'
@@ -184,6 +186,23 @@ export default function Demo() {
               </Text>
             </View>
           )}
+        </BottomSheet>
+      </DemoBlock>
+      <DemoBlock title={Strings.getLang('lockMaxDrag')} padding>
+        <Button type="primary" onClick={toggleBottomSheet10}>
+          {Strings.getLang('modalMenu')}
+        </Button>
+        <BottomSheet
+          show={show10}
+          draggable
+          lockMaxDrag
+          midDragHeight={300}
+          minDragHeight={100}
+          maxDragHeight={500}
+          closeDragHeight={200}
+          onClose={toggleBottomSheet10}
+        >
+          <View style={{ backgroundColor: 'red', height: '300px' }} />
         </BottomSheet>
       </DemoBlock>
     </>

@@ -162,18 +162,8 @@ import React from 'react';
 export default function Demo() {
   return (
     <Grid direction="horizontal" columnNum={3}>
-      <GridItem
-        icon={IconBubble}
-        text="Navigate"
-        linkType="navigateTo"
-        url="/pages/home/index"
-      />
-      <GridItem
-        icon={IconHandPoint}
-        linkType="reLaunch"
-        url="/pages/home/index"
-        text="ReLaunch"
-      />
+      <GridItem icon={IconBubble} text="Navigate" linkType="navigateTo" url="/pages/home/index" />
+      <GridItem icon={IconHandPoint} linkType="reLaunch" url="/pages/home/index" text="ReLaunch" />
     </Grid>
   );
 }
@@ -203,8 +193,8 @@ export default function Demo() {
 
 ### Grid Props
 
-| Parameter          | Description                                    | Type               | Default    |
-| ------------------ | ---------------------------------------------- | ------------------ | ---------- |
+| Parameter          | Description                                 | Type               | Default    |
+| ------------------ | ------------------------------------------- | ------------------ | ---------- |
 | border | Whether to display a border | _boolean_ | `true` |
 | center | Whether to center the grid content | _boolean_ | `true` |
 | clickable | Whether to enable grid click feedback | _boolean_ | `false` |
@@ -218,41 +208,41 @@ export default function Demo() {
 
 ### External Grid Style Class
 
-| Class Name    | Description    |
-| ------------- | -------------- |
+| Class Name   | Description           |
+| ------------ | --------------------- |
 | customClass | Root node style class |
 
 ### GridItem Props
 
-| Parameter            | Description                                                   | Type               | Default       |
-| -------------------- | ------------------------------------------------------------- | ------------------ | ------------- |
+| Parameter            | Description                                                                                                                                     | Type               | Default      |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ------------ |
 | badge | Content of the top-right badge of the icon | _string \| number_ | - |
 | dot | Show a small red dot on the top-right of the icon | _boolean_ | `false` |
 | icon | Icon Svg Value or image link, see [Icon Component](/material/smartui?comId=icon) | _string_ | - |
 | iconColor | Icon color | _string_ | - |
 | iconPrefix `v1.7.0` | Third-party icon prefix | _string_ | `smart-icon` |
-| linkType | Link jump type, options are `redirectTo` `switchTab` `reLaunch` | _string_ | `navigateTo` |
+| linkType | Link jump type, options are `redirectTo` [`switchTab`](https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.switchTab.html) `reLaunch` | _string_ | `navigateTo` |
 | text | Text | _string_ | - |
 | url | Link address to jump to when clicked | _string_ | - |
 
 ### GridItem Events
 
-| Event Name  | Description     | Callback Parameter |
-| ----------- | --------------- | ------------------ |
+| Event Name | Description                        | Callback Parameter |
+| ---------- | ---------------------------------- | ------------------ |
 | onClick | Triggered when the grid is clicked | - |
 
 ### GridItem Slots
 
-| Name    | Description                                                |
-| ------- | ---------------------------------------------------------- |
-| -       | Customize all grid content, need to set `use-slot` attribute |
+| Name | Description                                                       |
+| ---- | ----------------------------------------------------------------- |
+| -    | Customize all grid content, need to set `use-slot` attribute      |
 | icon | Custom icon, ineffective if `use-slot` or `icon` attribute is set |
 | text | Custom text, ineffective if `use-slot` or `text` attribute is set |
 
 ### External GridItem Style Class
 
-| Class Name     | Description     |
-| -------------- | --------------- |
+| Class Name    | Description           |
+| ------------- | --------------------- |
 | contentClass | Content style class |
 | customClass | Root node style class |
 | iconClass | Icon style class |
@@ -262,11 +252,11 @@ export default function Demo() {
 
 The component provides the following CSS variables that can be used for custom styles. For usage, refer to the [ConfigProvider Component](/material/smartui?comId=config-provider).
 
-| Name                          | Default Value                           | Description           |
-| ----------------------------- | ---------------------------------------- | --------------------- |
-| --grid-item-content-padding   | _@padding-md @padding-xs_                | Content padding       |
-| --grid-item-content-background-color | _var(--app-B3, #ffffff)_         | Background color      |
-| --grid-item-content-active-color | _#f2f3f5_                           | Active color          |
-| --grid-item-icon-size         | _26px_                                   | Icon size             |
-| --grid-item-text-color        | _var(--app-B6-N2, rgba(0, 0, 0, 0.7))_   | Text color            |
-| --grid-item-text-font-size    | _12px_                                   | Text font size        |
+| Name                                 | Default Value                          | Description      |
+| ------------------------------------ | -------------------------------------- | ---------------- |
+| --grid-item-content-padding          | _@padding-md @padding-xs_              | Content padding  |
+| --grid-item-content-background-color | _var(--app-B3, #ffffff)_               | Background color |
+| --grid-item-content-active-color     | _#f2f3f5_                              | Active color     |
+| --grid-item-icon-size                | _26px_                                 | Icon size        |
+| --grid-item-text-color               | _var(--app-B6-N2, rgba(0, 0, 0, 0.7))_ | Text color       |
+| --grid-item-text-font-size           | _12px_                                 | Text font size   |

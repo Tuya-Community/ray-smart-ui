@@ -267,6 +267,18 @@ export interface SmartCalendarProps extends SmartCalendarRangeProps, SmartCalend
   firstDayOfWeek?: number;
 
   /**
+   * 设置周选择时的起始日，用于控制点击日期时选择的周范围
+   *
+   * `firstDayOfWeek` 用于控制日历显示的周起始日，而 `firstDayOfSelectWeek` 专门用于控制周选择的范围计算
+   *
+   * 范围为`[0, 6]`
+   *
+   * @version v2.9.1
+   * @default 1
+   */
+  firstDayOfSelectWeek?: number;
+
+  /**
    * 是否为只读状态，只读状态下不能选择日期
    *
    * @default false

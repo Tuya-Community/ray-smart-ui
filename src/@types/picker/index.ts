@@ -39,6 +39,12 @@ export interface SmartPickerMultipleColumn {
   unit?: string;
 
   /**
+   * 列数据的单位和列表的距离
+   * @version 2.10.0
+   */
+  unitGap?: string;
+
+  /**
    * @description 组件选择值改变时是否需要动画过度效果
    * @version 2.2.0
    * @default true

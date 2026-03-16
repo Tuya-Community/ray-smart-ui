@@ -19,8 +19,9 @@ export const withReactProps = <P extends Record<string, any>>(
     // 自身是否是一个 Slot 组件
     const isSelfSlot = typeof props?.slot === 'string';
     const slotProps = isSelfSlot ? {} : props?.slot ?? {};
-    const slotPropsNames = Object.keys(slotProps);
-
+    const slotPropsNames = Object.keys(slotProps).filter(key =>
+      React.isValidElement(slotProps[key])
+    );
     const omitPropKeys = ['className', 'slot', 'children'];
     const stylePropsKeys = [];
     let vantProps = omit(props, omitPropKeys) as any;

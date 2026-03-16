@@ -1,0 +1,95 @@
+name: Cursor 代码审查
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  code-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: 安装 Cursor CLI
+        run: |
+          curl https://cursor.com/install -fsS | bash
+          echo "$HOME/.cursor/bin" >> $GITHUB_PATH
+
+      - name: 执行代码审查
+        id: review
+        env:
+          CURSOR_API_KEY: ${{ secrets.cursor_token }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # 不因 cursor-agent 的退出码导致本 step 失败（CI 下/request-changes 时可能返回 1）
+          set +e
+          # 使用你账号可用的模型（你当前支持: claude-4.5-opus-high-thinking, gpt-5.2-codex-high, gpt-5.2, gpt-5.2-high, gemini-3-pro）
+          # 执行代码审查并捕获输出
+          REVIEW_OUTPUT=$(cursor-agent --force --output-format=text --model claude-4.5-opus-high-thinking --print "您正在 GitHub Actions 运行器中执行自动化代码审查。gh 命令行界面已可用并通过 GH_TOKEN 进行身份验证。您可以对拉取请求进行评论。
+
+          上下文：
+          - 仓库：${{ github.repository }}
+          - PR 编号：${{ github.event.pull_request.number }}
+          - PR Head SHA：${{ github.event.pull_request.head.sha }}
+          - PR Base SHA：${{ github.event.pull_request.base.sha }}
+
+          目标：
+          1) 重新检查现有审查评论，并在问题得到解决时回复已解决
+          2) 审查当前 PR 差异，仅标记明确的高严重性问题(忽略yml文件的改动问题)
+          3) 仅在更改的行上留下非常简短的内联评论（1-2 句话）并在最后提供简要摘要
+          4) 检测严重问题并决定是否阻止 PR 合并
+
+          流程：
+          - 获取现有评论：gh pr view --json comments
+          - 获取差异：gh pr diff
+          - 如果先前报告的问题似乎已通过附近的更改修复，请回复：✅ 此问题似乎已通过最近的更改得到解决
+          - 避免重复：如果在相同或相近的行上已存在类似反馈，则跳过
+          - 分类问题严重性：
+            * 🚨 关键问题（阻塞）：安全漏洞、严重 bug、破坏性变更、可能导致生产环境故障的问题
+            * ⚠️ 重要问题（阻塞）：逻辑错误、性能问题、代码质量问题、可能导致功能异常的问题
+            * ✨ 改进建议（非阻塞）：代码风格、最佳实践、优化建议、不影响功能的改进
+
+          评论规则：
+          - 最多 10 条内联评论；优先处理最关键的问题
+          - 每条评论一个问题；放置在确切的更改行上
+          - 自然语调，具体且可操作；不要提及自动化或高置信度
+          - 使用表情符号：🚨 关键 🔒 安全 ⚡ 性能 ⚠️ 逻辑 ✅ 已解决 ✨ 改进
+
+          审查决策（重要）：
+          - 如果发现 🚨 关键问题或 ⚠️ 重要问题，必须使用：gh pr review --request-changes --body \"审查摘要（包含问题列表）\"
+          - 如果只有 ✨ 改进建议且无阻塞问题，使用：gh pr review --comment --body \"审查摘要\"
+          - 如果代码质量良好且无问题，使用：gh pr review --approve --body \"审查通过\"
+          - 在审查完成后，必须在最后输出一行：REVIEW_STATUS: BLOCKING 或 REVIEW_STATUS: PASS
+          - 如果使用了 --request-changes，必须输出 REVIEW_STATUS: BLOCKING
+          - 如果使用了 --comment 或 --approve，输出 REVIEW_STATUS: PASS" 2>&1)
+
+          echo "$REVIEW_OUTPUT"
+
+          # 解析审查结果
+          if echo "$REVIEW_OUTPUT" | grep -q "REVIEW_STATUS: BLOCKING"; then
+            echo "review_result=BLOCKING" >> $GITHUB_OUTPUT
+            echo "⚠️ 检测到阻塞性问题"
+          else
+            echo "review_result=PASS" >> $GITHUB_OUTPUT
+            echo "✅ 审查通过或无阻塞性问题"
+          fi
+
+      - name: 检查审查结果
+        if: steps.review.outputs.review_result == 'BLOCKING'
+        run: |
+          echo "::error::代码审查发现阻塞性问题，PR 无法合并"
+          echo "请根据审查意见修复问题后重新提交"
+          echo ""
+          echo "阻塞性问题包括："
+          echo "- 🚨 关键问题：安全漏洞、严重 bug、破坏性变更"
+          echo "- ⚠️ 重要问题：逻辑错误、性能问题、代码质量问题"
+          echo ""
+          echo "提示：修复问题后重新提交，审查将自动重新运行"
+          exit 1

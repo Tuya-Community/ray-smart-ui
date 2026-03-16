@@ -445,6 +445,7 @@ index.module.less
 | useTitleSlot `v2.6.0` | Whether to enable title slot | _boolean_ | `false` |
 | zIndex | z-index level | _number_ | `100` |
 | nativeDisabled `v2.5.0` | Whether to disable local gestures during the opening of the dialog; it will call `ty.nativeDisabled(true)` when the dialog starts the entrance animation, and call `ty.nativeDisabled(false)` at the end of the closing animation to restore the click ability of components on different layers. Since `ty.nativeDisabled` works globally, pay attention to whether to pass the `native-disabled` attribute and the timing of closing when multiple dialog components are opened simultaneously, to prevent the `native-disabled` attribute from being ineffective. | _boolean_ | `false` |
+| fullCoverView `v2.11.1` | Whether to use cover-view to wrap the popup for covering native components (such as map, video). | _boolean_ | `false` |
 
 ### Events
 
@@ -476,11 +477,6 @@ index.module.less
 | loading | Whether it's in loading state | _boolean_ | - |
 | name | Title | _string_ | - |
 | subname | Subtitle | _string_ | - |
-| sendMessageImg | Message card image in session, effective when openType="contact" | _string_ | Screenshot |
-| sendMessagePath | Path to navigate to the mini-program when clicking on the message card in session, effective when openType="contact" | _string_ | Current sharing path |
-| sendMessageTitle | Title of the message card in session, effective when openType="contact" | _string_ | Current title |
-| showMessageCard | Whether to display the message card in session. When this parameter is set to true, the user will see "Possible mini-program to send" in the lower right corner when entering the customer service session, which allows for quick mini-program message sending upon clicking. Effective when openType="contact" | _string_ | `false` |
-
 
 ### External Style Classes
 

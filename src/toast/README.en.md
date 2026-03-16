@@ -110,7 +110,7 @@ export default function Demo() {
       forbidClick: true,
       message: 'Countdown 3 seconds',
       selector: '#custom-selector',
-      width: 88,
+      width: 120,
     });
 
     let second = 3;
@@ -274,16 +274,20 @@ The component provides the following CSS variables for custom styling. For usage
 
 | Name                          | Default Value                                 | Description |
 | ----------------------------- | -------------------------------------- | ---- |
-| --toast-min-width `v2.6.0` | _88px_ | Minimum width prompt |
-| --toast-max-width | _70%_ | Maximum width of the notification |
+| --toast-text-min-width | _96px_ | Minimum width of text-only notification |
+| --toast-text-max-width `v2.12.0` | _280px_ | Maximum width of text-only notification |
+| --toast-min-width `v2.6.0` | _56px_ `v2.6.0` _82px_ `v2.12.0` | Minimum width of icon notification |
+| --toast-max-width | _calc(100vw - 48px)_ `v2.0.0` _280px_ `v2.12.0` | Maximum width of icon notification |
 | --toast-font-size | _14px_ | Notification font size |
 | --toast-text-color | _#fff_ | Notification text color |
-| --toast-line-height | _20px_ | Notification line height |
-| --toast-border-radius | _10px_ | Notification border radius |
-| --toast-background-color | _fade(@black, 70%)_ | Notification background color |
-| --toast-icon-size | _36px_ | Notification icon size |
-| --toast-text-min-width `@deprecated v2.6.0` | _96px_ | Minimum width of the notification text |
-| --toast-text-padding | _@padding-xs @padding-sm_ | Notification text padding |
-| --toast-default-padding | _16px_ | Default notification padding |
-| --toast-default-width | _88px_ | Default notification width |
-| --toast-default-min-height | _88px_ | Default minimum height of the notification |
+| --toast-line-height | _20px_ `v2.0.0` _16px_ `v2.12.0` | Notification line height |
+| --toast-background-color | _rgba(0,0,0,.7)_  `v2.0.0` _#5C5C5C_ `v2.12.0` | Notification background color |
+| --toast-border-radius | _12px_ | Notification border radius |
+| --toast-border `v2.12.0` | _1px solid rgba(255, 255, 255, 0.05)_ | Notification border |
+| --toast-box-shadow `v2.12.0` | _0 4px 12px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.12)_ | Notification box shadow |
+| --toast-icon-size | _36px_ | Icon size for icon notification |
+| --toast-text-padding | _14px 16px_ | Text-only notification padding |
+| --toast-default-padding | _19px 15px_ | Icon notification padding |
+| --toast-default-width `@deprecated v2.12.0` | _56px_ | Default notification width (deprecated, use --toast-min-width) |
+| --toast-default-min-height | _56px_ | Default minimum height of icon notification |
+| --toast-icon-text-padding-top `v2.12.0` | _8px_ | Spacing between icon and text in icon notification |

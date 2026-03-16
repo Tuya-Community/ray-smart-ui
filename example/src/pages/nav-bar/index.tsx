@@ -47,6 +47,22 @@ export default function Demo() {
           leftTextType="home"
           onClickLeftText={onClickLeftText}
         />
+        <NavBar
+          background="#E4EDFF"
+          customClass="demo-nav-bar"
+          leftText="HomeHomeHomeHomeHome"
+          leftTextType="home"
+          onClickLeftText={onClickLeftText}
+          slot={{
+            left: (
+              <Icon
+                style={{ marginLeft: 'auto', paddingLeft: '16px' }}
+                name="https://images.tuyacn.com/content-platform/hestia/1729664215ebd89f13e54.png"
+                size="24px"
+              />
+            ),
+          }}
+        />
       </DemoBlock>
 
       <DemoBlock title={Strings.getLang('secondPageSingleIcon')}>
@@ -67,6 +83,7 @@ export default function Demo() {
           title="ScheduleScheduleScheduleSchedule"
           leftArrow
           rightIcon={iconMore}
+          sideWidth="mid"
           rightIconSize="24px"
           onClickRight={onClickRight}
           onClickLeft={onClickLeft}
@@ -79,6 +96,7 @@ export default function Demo() {
           title="ScheduleScheduleScheduleSchedule"
           rightText="Confirm"
           leftText="Cancel"
+          sideWidth="mid"
           customClass="demo-nav-bar"
           rightTextColor="#F04C4C"
           onClickRightText={onClickRightText}
@@ -89,6 +107,7 @@ export default function Demo() {
           title="ScheduleScheduleScheduleSchedule"
           leftArrow
           rightText="Confirm"
+          sideWidth="mid"
           customClass="demo-nav-bar"
           rightTextColor="#F04C4C"
           onClickRightText={onClickRightText}

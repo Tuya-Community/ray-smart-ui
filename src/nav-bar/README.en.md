@@ -19,23 +19,27 @@ import { NavBar } from '@ray-js/smart-ui';
 ### Home Page
 
 The text style of the home page is default left-aligned and bold, triggering an event when the left text is clicked; the `background` property from `v2.7.0` can be used to set the nav-bar's background color.
+Use `slot="left"` to insert custom content (e.g. an icon) in the left area; with `margin-left: auto` on the inserted content, it can be aligned to the right within the left container without leaving the document flow `v2.11.1`.
 
 ```jsx
 import { showToast } from '@ray-js/ray';
-import { NavBar } from '@ray-js/smart-ui';
+import { Icon, NavBar } from '@ray-js/smart-ui';
 import React from 'react';
 
 export default function Demo() {
   const onClickLeftText = React.useCallback(event => {
-    showToast({ title: "Clicked left text", icon: 'none' });
+    showToast({ title: 'Clicked left text', icon: 'none' });
   }, []);
 
   return (
     <>
-      <NavBar 
-        leftText="Home" 
+      <NavBar leftText="Home" leftTextType="home" onClickLeftText={onClickLeftText} />
+      <NavBar
+        background="#E4EDFF"
+        customClass="demo-nav-bar"
+        leftText="HomeHomeHomeHomeHome"
         leftTextType="home"
-        onClickLeftText={onClickLeftText} 
+        onClickLeftText={onClickLeftText}
       />
       <NavBar
         background="#E4EDFF"
@@ -43,6 +47,15 @@ export default function Demo() {
         leftText="HomeHomeHomeHomeHome"
         leftTextType="home"
         onClickLeftText={onClickLeftText}
+        slot={{
+          left: (
+            <Icon
+              style={{ marginLeft: 'auto', paddingLeft: '16px' }}
+              name="https://images.tuyacn.com/content-platform/hestia/1729664215ebd89f13e54.png"
+              size="24px"
+            />
+          ),
+        }}
       />
     </>
   );
@@ -61,15 +74,15 @@ import iconMore from '@tuya-miniapp/icons/dist/svg/More';
 
 export default function Demo() {
   const onClickLeft = React.useCallback(event => {
-    showToast({ title: "Clicked back", icon: 'none' });
+    showToast({ title: 'Clicked back', icon: 'none' });
   }, []);
 
   const onClickTitle = React.useCallback(event => {
-    showToast({ title: "Clicked central text", icon: 'none' });
+    showToast({ title: 'Clicked central text', icon: 'none' });
   }, []);
 
   const onClickRight = React.useCallback(event => {
-    showToast({ title: "Clicked right side", icon: 'none' });
+    showToast({ title: 'Clicked right side', icon: 'none' });
   }, []);
 
   return (
@@ -100,23 +113,23 @@ import iconHouse from '@tuya-miniapp/icons/dist/svg/House';
 
 export default function Demo() {
   const onClickLeft = React.useCallback(event => {
-    showToast({ title: "Clicked back", icon: 'none' });
+    showToast({ title: 'Clicked back', icon: 'none' });
   }, []);
 
   const onClickTitle = React.useCallback(event => {
-    showToast({ title: "Clicked central text", icon: 'none' });
+    showToast({ title: 'Clicked central text', icon: 'none' });
   }, []);
 
   const onClickRight = React.useCallback(event => {
-    showToast({ title: "Clicked right side", icon: 'none' });
+    showToast({ title: 'Clicked right side', icon: 'none' });
   }, []);
 
   const onClickRightText = React.useCallback(event => {
-    showToast({ title: "Clicked right text", icon: 'none' });
+    showToast({ title: 'Clicked right text', icon: 'none' });
   }, []);
 
   const onClickLeftText = React.useCallback(event => {
-    showToast({ title: "Clicked left text", icon: 'none' });
+    showToast({ title: 'Clicked left text', icon: 'none' });
   }, []);
 
   return (
@@ -126,6 +139,7 @@ export default function Demo() {
         leftArrow
         rightIcon={iconMore}
         rightIconSize="24px"
+        sideWidth="mid"
         onClickRight={onClickRight}
         onClickLeft={onClickLeft}
         onClickTitle={onClickTitle}
@@ -138,6 +152,7 @@ export default function Demo() {
         rightText="Confirm"
         leftText="Cancel"
         customClass="demo-nav-bar"
+        sideWidth="mid"
         rightTextColor="#F04C4C"
         onClickRightText={onClickRightText}
         onClickLeftText={onClickLeftText}
@@ -148,6 +163,7 @@ export default function Demo() {
         leftArrow
         rightText="Confirm"
         customClass="demo-nav-bar"
+        sideWidth="mid"
         rightTextColor="#F04C4C"
         onClickRightText={onClickRightText}
         onClickLeft={onClickLeft}
@@ -169,19 +185,19 @@ import React from 'react';
 
 export default function Demo() {
   const onClickLeft = React.useCallback(event => {
-    showToast({ title: "Clicked back", icon: 'none' });
+    showToast({ title: 'Clicked back', icon: 'none' });
   }, []);
 
   const onClickTitle = React.useCallback(event => {
-    showToast({ title: "Clicked central text", icon: 'none' });
+    showToast({ title: 'Clicked central text', icon: 'none' });
   }, []);
 
   const onClickRightText = React.useCallback(event => {
-    showToast({ title: "Clicked right text", icon: 'none' });
+    showToast({ title: 'Clicked right text', icon: 'none' });
   }, []);
 
   const onClickLeftText = React.useCallback(event => {
-    showToast({ title: "Clicked left text", icon: 'none' });
+    showToast({ title: 'Clicked left text', icon: 'none' });
   }, []);
 
   return (
@@ -232,15 +248,15 @@ import iconMore from '@tuya-miniapp/icons/dist/svg/More';
 
 export default function Demo() {
   const onClickLeft = React.useCallback(event => {
-    showToast({ title: "Clicked back", icon: 'none' });
+    showToast({ title: 'Clicked back', icon: 'none' });
   }, []);
 
   const onClickTitle = React.useCallback(event => {
-    showToast({ title: "Clicked central text", icon: 'none' });
+    showToast({ title: 'Clicked central text', icon: 'none' });
   }, []);
 
   const onClickRight = React.useCallback(event => {
-    showToast({ title: "Clicked right side", icon: 'none' });
+    showToast({ title: 'Clicked right side', icon: 'none' });
   }, []);
 
   return (
@@ -269,19 +285,19 @@ import React from 'react';
 
 export default function Demo() {
   const onClickLeft = React.useCallback(event => {
-    showToast({ title: "Clicked back", icon: 'none' });
+    showToast({ title: 'Clicked back', icon: 'none' });
   }, []);
 
   const onClickLeftIcon = React.useCallback(event => {
-    showToast({ title: "Clicked left icon", icon: 'none' });
+    showToast({ title: 'Clicked left icon', icon: 'none' });
   }, []);
 
   const onClickLeftText = React.useCallback(event => {
-    showToast({ title: "Clicked left text", icon: 'none' });
+    showToast({ title: 'Clicked left text', icon: 'none' });
   }, []);
 
   const onClickRight = React.useCallback(event => {
-    showToast({ title: "Clicked right side", icon: 'none' });
+    showToast({ title: 'Clicked right side', icon: 'none' });
   }, []);
 
   return (
@@ -324,7 +340,7 @@ export default function Demo() {
 | rightIconSize `v2.7.0` | Size of the right icon | _number_ | `32px` |
 | leftIconColor `v2.7.0` | Color of the left icon | _string_ | - |
 | background `v2.7.0` | Overall background color | _string_ | - |
-| sideWidth `v2.7.3` | Width of the side control bar, provides three built-in values: `min`, `mid`, `max`; also can pass specific width values | _string\/number\/`min`\/`mid`\/`max`_ | `mid` |
+| sideWidth `v2.7.3` | Width of the side control bar, provides three built-in values: `min`, `mid`, `max`; also can pass specific width values | _string\/number\/`min`\/`mid`\/`max`_ | `mid` `v2.7.3` `max` `v2.9.0` |
 
 ### Slot
 

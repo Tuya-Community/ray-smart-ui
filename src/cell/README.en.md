@@ -175,7 +175,6 @@ export default function Demo() {
         title="Title"
         label="Bedroom"
         isLink
-       
         slot={{
           icon: (
             <Icon
@@ -217,11 +216,7 @@ export default function Demo() {
           ),
         }}
       />
-      <Cell
-        title="Cell"
-       
-        slot={{ rightIcon: <Icon name={ASunmaxfill} /> }}
-      />
+      <Cell title="Cell" slot={{ rightIcon: <Icon name={ASunmaxfill} /> }} />
     </CellGroup>
   );
 }
@@ -231,8 +226,8 @@ export default function Demo() {
 
 ### CellGroup Props
 
-| Parameter | Description                 | Type      | Default |
-| --------- | --------------------------- | --------- | ------- |
+| Parameter                    | Description                                    | Type               | Default |
+| ---------------------------- | ---------------------------------------------- | ------------------ | ------- |
 | border | Whether to show the border | _boolean_ | `true` |
 | inset | Show as rounded card style | _boolean_ | `false` |
 | title | Group title | _string_ | `-` |
@@ -240,21 +235,21 @@ export default function Demo() {
 
 ### CellGroup External Classes
 
-| Class Name    | Description       |
-| ------------- | ----------------- |
+| Class Name   | Description     |
+| ------------ | --------------- |
 | customClass | Root node style |
 
 ### Cell Props
 
-| Parameter        | Description                                                 | Type               | Default       |
-| ---------------- | ----------------------------------------------------------- | ------------------ | ------------- |
+| Parameter       | Description                                                                                                                                            | Type               | Default      |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------ | ------------ |
 | arrowDirection | Arrow direction, options are `left` `up` `down` | _string_ | - |
 | border | Whether to show the bottom border | _boolean_ | `true` |
 | clickable | Whether to enable click feedback | _boolean_ | `false` |
 | icon | Left icon svg value or image URL, see available options in [Icon Component](/material/smartui?comId=icon) | _string_ | - |
 | isLink | Whether to show the right arrow and enable click feedback | _boolean_ | `false` |
 | label | Description information below the title | _string_ | - |
-| linkType | Link type to navigate, options are `redirectTo` `switchTab` `reLaunch` | _string_ | `navigateTo` |
+| linkType | Link type to navigate, options are `redirectTo` [`switchTab`](https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.switchTab.html) `reLaunch` | _string_ | `navigateTo` |
 | required | Whether to show the required asterisk | _boolean_ | `false` |
 | title | Left title | _string \| number_ | - |
 | titleStyle | Title style | _React.CSSProperties_ | - |
@@ -265,15 +260,15 @@ export default function Demo() {
 
 ### Cell Event
 
-| Event Name | Description               | Parameters |
-| ---------- | ------------------------- | ---------  |
+| Event Name | Description                        | Parameters |
+| ---------- | ---------------------------------- | ---------- |
 | onClick | Triggered when the cell is clicked | - |
 
 ### Cell Slot
 
-| Name       | Description                                                 |
-| ---------- | ----------------------------------------------------------- |
-| -          | Custom `value` content; ineffective if `value` attribute is set |
+| Name       | Description                                                                         |
+| ---------- | ----------------------------------------------------------------------------------- |
+| -          | Custom `value` content; ineffective if `value` attribute is set                     |
 | icon | Custom `icon` content; ineffective if `icon` attribute is set |
 | label | Custom `label` content; requires setting the `use-label-slot` attribute |
 | rightIcon | Custom right button, defaults to `arrow`; ineffective if `is-link` attribute is set |
@@ -281,8 +276,8 @@ export default function Demo() {
 
 ### Cell External Classes
 
-| Class Name   | Description     |
-| -------------| ----------------|
+| Class Name   | Description         |
+| ------------ | ------------------- |
 | customClass | Root node style |
 | labelClass | Description style |
 | titleClass | Title style |
@@ -292,31 +287,31 @@ export default function Demo() {
 
 The component provides the following CSS variables that can be used for custom styles. For usage, refer to the [ConfigProvider Component](/material/smartui?comId=config-provider).
 
-| Name                                      | Default Value                                 | Description                               |
-| ----------------------------------------- | ---------------------------------------------- | ----------------------------------------- |
-| --cell-font-size                          | _16px_                                        | Cell font size                            |
-| --cell-line-height                        | _24px_                                        | Cell line height                          |
-| --cell-vertical-padding                   | _16px_                                        | Cell vertical padding                     |
-| --cell-horizontal-padding                 | _16px_                                        | Cell horizontal padding                   |
-| --cell-text-color                         | _var(--app-B6-N1, rgba(0, 0, 0, 1))_          | Cell text color                           |
-| --cell-background-color                   | _var(--app-B6, #fff)_                         | Cell background color                     |
-| --cell-active-color                       | _var(--app-B1, #f6f7fb)_                      | Cell active color                         |
-| --cell-required-color                     | _var(--app-M2, #f04c4c)_                      | Cell required field color                 |
-| --cell-label-color                        | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_        | Cell label text color                     |
-| --cell-label-font-size                    | _14px_                                        | Cell label font size                      |
-| --cell-label-line-height                  | _18px_                                        | Cell label line height                    |
-| --cell-label-margin-top                   | _3px_                                         | Cell label top margin                     |
-| --cell-value-color                        | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_        | Cell value text color                     |
-| --cell-icon-size                          | _24px_                                        | Cell icon size                            |
-| --cell-right-icon-color                   | _var(--app-B6-N6, rgba(0, 0, 0, 0.2))_        | Cell right icon color                     |
-| --cell-border-color `v2.1.4`              | _var(--app-B6-N7, rgba(0, 0, 0, 0.1))_        | Cell border color                         |
-| --cell-border-left-position `v2.1.4`      | _16px_                                        | Cell left border position                 |
-| --cell-border-right-position `v2.1.4`     | _16px_                                        | Cell right border position                |
-| --cell-group-background-color             | _var(--app-B6, #fff)_                         | Cell group background color               |
-| --cell-group-title-color                  | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_        | Cell group title color                    |
-| --cell-group-title-padding                | _@padding-md @padding-md @padding-xs_         | Cell group title padding                  |
-| --cell-group-title-font-size              | _16px_                                        | Cell group title font size                |
-| --cell-group-title-line-height            | _16px_                                        | Cell group title line height              |
-| --cell-group-inset-padding                | _0 @padding-md_                               | Cell group inset padding                  |
-| --cell-group-inset-border-radius          | _16px_                                        | Cell group inset border radius            |
-| --cell-group-inset-title-padding          | _@padding-md @padding-md @padding-xs @padding-xl_ | Cell group inset title padding            |
+| Name                                  | Default Value                                     | Description                    |
+| ------------------------------------- | ------------------------------------------------- | ------------------------------ |
+| --cell-font-size                      | _16px_                                            | Cell font size                 |
+| --cell-line-height                    | _24px_                                            | Cell line height               |
+| --cell-vertical-padding               | _16px_                                            | Cell vertical padding          |
+| --cell-horizontal-padding             | _16px_                                            | Cell horizontal padding        |
+| --cell-text-color                     | _var(--app-B6-N1, rgba(0, 0, 0, 1))_              | Cell text color                |
+| --cell-background-color               | _var(--app-B6, #fff)_                             | Cell background color          |
+| --cell-active-color                   | _var(--app-B1, #f6f7fb)_                          | Cell active color              |
+| --cell-required-color                 | _var(--app-M2, #f04c4c)_                          | Cell required field color      |
+| --cell-label-color                    | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_            | Cell label text color          |
+| --cell-label-font-size                | _14px_                                            | Cell label font size           |
+| --cell-label-line-height              | _18px_                                            | Cell label line height         |
+| --cell-label-margin-top               | _3px_                                             | Cell label top margin          |
+| --cell-value-color                    | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_            | Cell value text color          |
+| --cell-icon-size                      | _24px_                                            | Cell icon size                 |
+| --cell-right-icon-color               | _var(--app-B6-N6, rgba(0, 0, 0, 0.2))_            | Cell right icon color          |
+| --cell-border-color `v2.1.4`          | _var(--app-B6-N7, rgba(0, 0, 0, 0.1))_            | Cell border color              |
+| --cell-border-left-position `v2.1.4`  | _16px_                                            | Cell left border position      |
+| --cell-border-right-position `v2.1.4` | _16px_                                            | Cell right border position     |
+| --cell-group-background-color         | _var(--app-B6, #fff)_                             | Cell group background color    |
+| --cell-group-title-color              | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_            | Cell group title color         |
+| --cell-group-title-padding            | _@padding-md @padding-md @padding-xs_             | Cell group title padding       |
+| --cell-group-title-font-size          | _16px_                                            | Cell group title font size     |
+| --cell-group-title-line-height        | _16px_                                            | Cell group title line height   |
+| --cell-group-inset-padding            | _0 @padding-md_                                   | Cell group inset padding       |
+| --cell-group-inset-border-radius      | _16px_                                            | Cell group inset border radius |
+| --cell-group-inset-title-padding      | _@padding-md @padding-md @padding-xs @padding-xl_ | Cell group inset title padding |

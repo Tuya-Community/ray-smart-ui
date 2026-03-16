@@ -43,7 +43,7 @@ export default function Demo() {
 
 ### Multi-Column Usage
 
-`disabled` `v2.3.5` attribute can disable this column; `style` attribute can set the style of this column; `fontStyle` `v2.3.5` attribute can set the font style of this column; `activeIndex` can set the selected item of the column.
+`disabled` `v2.3.5` attribute can disable this column; `style` attribute can set the style of this column; `fontStyle` `v2.3.5` attribute can set the font style of this column; `activeIndex` can set the selected item of the column;`unitGap` `v2.10.0` property can set the distance between the unit and the list.
 
 ```javascript
 import { Picker } from '@ray-js/smart-ui';
@@ -66,6 +66,7 @@ const columns = [
     values: new Array(20).fill(1).map((x, i) => i),
     style: { flex: 'none', width: 'auto', minWidth: '61px' },
     unit: 'Kg',
+    unitGap: '10rpx',
     activeIndex: 1,
   },
 ],
@@ -337,6 +338,7 @@ When passing in multi-column data, `columns` is an array of objects. Each object
 | style `v2.0.0` | Column style |
 | fontStyle `v2.3.5` | Column text style |
 | unit | Unit corresponding to the column, default is empty |
+| unitGap `v2.10.0` | Gap between unit and value, default is undefined (uses CSS default style), supports number (auto adds px unit) or string (e.g., "8rpx") | _string \| number_ | `undefined` |
 | values | Array of options corresponding to the column |
 | order `v2.2.0` | Set the order of columns, similar to `flex order` property, only changing the order from a style perspective; logic remains unchanged | _number_ | - |
 | disabled `v2.3.5` | Disable this column | _boolean_ | `false` |
@@ -391,3 +393,15 @@ The component provides the following CSS variables for custom styling. For usage
 | --picker-option-selected-text-color | _var(--app-B6-N1, rgba(0, 0, 0, 1))_       | Selected option text color        |
 | --picker-option-unit-mid-size `v2.4.0` | _0_  `v2.4.0` _4px_ `v2.6.0` | Spacing between units and content text |
 | --picker-option-selected-font-weight-bold `v2.6.0` | _700_ | Font weight of selected text |
+
+## FAQ
+
+### Some option text does not display correctly
+
+When option text contains special characters such as double quotes `"`, the text may not display completely. You need to escape these characters in your data using the `\` escape character. For example, escape double quotes as `\"` for correct display.
+
+```javascript
+// The double quote in "--"- needs to be escaped
+columns: ['Hangzhou', 'Ningbo', '--"-']   // May not display correctly
+columns: ['Hangzhou', 'Ningbo', '--\\"-'] // Use \ to escape for correct display
+```

@@ -11,7 +11,7 @@ export interface SmartBatteryProps {
   /**
    * 大小
    *
-   * @default 10
+   * @default 24
    */
   size?: number;
 
@@ -56,6 +56,30 @@ export interface SmartBatteryProps {
    * @default 'rgba(0, 0, 0, .5)'
    */
   backgroundColor?: string;
+
+  /**
+   * 是否处于充电状态
+   *
+   * @default false
+   * @version 2.10.0
+   */
+  inCharging?: boolean;
+
+  /**
+   * 是否显示电量文本
+   *
+   * @default false
+   * @version 2.10.0
+   */
+  showText?: boolean;
+
+  /**
+   * 充电颜色
+   *
+   * @default '#2fc755'
+   * @version 2.10.0
+   */
+  chargingColor?: string;
 
   /**
    * 电量颜色计算规则回调函数，返回计算后的颜色值即可

@@ -54,7 +54,7 @@ export default {
     successfulCopy: 'Successful Copy',
     copyFailed: 'Copy Failed',
     toastTip1:
-      'This is a long text prompt which will wrap to a new line after exceeding a certain number of characters.',
+      'This is a very long text prompt that can make the Text mode Toast wrap to a new line after exceeding a certain number of characters.',
     promptContent: 'Prompt content',
     closableTab: 'Closable Tab',
     labelSize: 'Label Size',
@@ -607,6 +607,9 @@ export default {
     dragPositionMid: 'Middle',
     dragPositionMin: 'Minimum',
     currentPanelPosition: 'Current Panel Position',
+    lockMaxDrag: 'Lock Maximum Drag Height',
+    withPercent: 'Show Percentage',
+    level: 'level',
   },
   zh: {
     doNotUseRoundedCorners: '不使用圆角',
@@ -662,7 +665,7 @@ export default {
     clickToCopy: '点击可复制',
     copyFailed: '复制失败',
     successfulCopy: '复制成功',
-    toastTip1: '这是一条长文字提示，超过一定字数就会换行',
+    toastTip1: '这是一条非常长的长文字提示，可以使 Text 模式的 Toast 超过一定字数就会换行',
     promptContent: '提示内容',
     closableTab: '可关闭标签',
     labelSize: '标签大小',
@@ -1210,5 +1213,8 @@ export default {
     dragPositionMid: '中间',
     dragPositionMin: '最小',
     currentPanelPosition: '当前面板位置',
+    lockMaxDrag: '锁定最大拖拽高度',
+    withPercent: '显示百分比',
+    level: '水平',
   },
 };

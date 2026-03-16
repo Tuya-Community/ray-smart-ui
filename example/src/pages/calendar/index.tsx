@@ -149,6 +149,7 @@ export default function Demo() {
           minDate={minWeekDayDate}
           maxDate={maxWeekDayDate}
           defaultDate={curWeekDayDate}
+          firstDayOfSelectWeek={1}
           onSelect={e => {
             setCurWeekDayDate(e.detail as any);
           }}

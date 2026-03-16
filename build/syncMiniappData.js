@@ -20,6 +20,13 @@ async function main() {
     copyPLANS(),
   ]);
   console.log('更新代码完成！');
+
+  // 如果 workflow_dispatch 环境变量为 true，则在此处返回
+  if (ENV.workflow_dispatch === 'true') {
+    console.log('workflow_dispatch 模式：跳过代码提交步骤');
+    return;
+  }
+
   const status = execSync('git status -s').toString();
   if (!status) {
     console.log('无文件改动');

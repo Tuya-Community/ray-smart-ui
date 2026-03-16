@@ -79,7 +79,7 @@ export default function Demo() {
 
 ### 输入框
 
-用于输入文案信息，此时默认最大输入限制`maxLength`是`20`;`emptyDisabled` `v2.7.0` 属性可以限制输入框内为空时无法提交。
+用于输入文案信息，此时默认最大输入限制`maxlength`是`20`;`emptyDisabled` `v2.7.0` 属性可以限制输入框内为空时无法提交。
 
 ```jsx
 import React from 'react';
@@ -106,7 +106,8 @@ export default function Demo() {
       cancelButtonText: 'Sub Action',
     })
       .then(() => {
-        // on confirm
+        console.log('=== onConfirm', res);
+        const inputValue = res?.data?.inputValue;
       })
       .catch(() => {
         // on cancel
@@ -324,6 +325,7 @@ icon: AlarmIcon,
 | theme | 样式风格，可选值为`round-button` | _string_ | `default` |
 | title | 标题 | _string_ | - |
 | value | 输入框的初始值 | _string_ | - |
+| onInput `v2.10.0` | 输入回调 | _(value: string) => void_ | - |
 | width | 弹窗宽度，默认单位为`px` | _string \| number_ | `320px` |
 | zIndex | z-index 层级 | _number_ | `100` |
 | customStyle | 自定义样式 | _string_ | '' |
@@ -341,6 +343,7 @@ icon: AlarmIcon,
 | nativeDisabled `v2.3.8` | 开启弹框期间是否禁用本地手势 | _boolean_ | `false` |
 | autoClose `v2.6.3` | 是否自动点击回调后关闭 | _boolean_ | `true` |
 | emptyDisabled `v2.7.0` | 输入框模式，value 为空时 无法提交 | _boolean_ | `false` |
+| fullCoverView `v2.11.1` | 是否使用 cover-view 包裹弹层，用于覆盖原生组件（如 map、video）时使用 | _boolean_ | `false` |
 
 ### Props
 
@@ -381,6 +384,7 @@ icon: AlarmIcon,
 | transition | 动画名称，可选值为`fade` | _string_ | `scale` |
 | autoClose `v2.6.3` | 是否自动点击回调后关闭 | _boolean_ | `false` |
 | emptyDisabled `v2.7.0` | 输入框模式，value 为空时 无法提交 | _boolean_ | `false` |
+| fullCoverView `v2.11.1` | 是否使用 cover-view 包裹弹层，用于覆盖原生组件（如 map、video）时使用 | _boolean_ | `false` |
 
 
 ### Events
