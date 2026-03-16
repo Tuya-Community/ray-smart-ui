@@ -66,8 +66,9 @@
 - [x] popup、action-sheet、bottom-sheet、dialog 组件开启 fullCoverView 时，根节点cover-view 继承组件 zIndex 属性([faff9eb](https://github.com/Tuya-Community/miniapp-smart-ui/pull/165/commits/faff9ebab1f504eed6381241c82c63c2c8dd0ff8)), 测试版本：`2.11.2-beta-3`
 - [x] nav-bar: 新增 home 模式右侧插入图标能力([4175796](https://github.com/Tuya-Community/miniapp-smart-ui/pull/163/commits/417579676d3088e066abba7ccca9e7010f68ee3d)), 测试版本 `2.11.2-beta-4`
 - [x] index-bar: 新增拖动气泡提示功能；修复右侧栏拖动时定位不准，页面闪现分割线问题，fixed导航闪现位移问题；([pull/166](https://github.com/Tuya-Community/miniapp-smart-ui/pull/166)), 测试版本 `2.11.2-beta-5`
-- [x] toast: 修改背景色，对齐 UED([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))，测试版本 `2.12.0-beta-2`
-- [x] overlay: 支持 iOS 毛玻璃效果([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))，测试版本 `2.12.0-beta-2`
+- [x] toast: 修改背景色，对齐 UED，新增边框和阴影，修改默认最大最小宽度 ([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))，测试版本 `2.12.0-beta-2`
+- [x] overlay: 支持 iOS 毛玻璃效果 ([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))，测试版本 `2.12.0-beta-2`
+- [x] calendar: 修改文档 CSS --calendar-header-title-save-color 变量书写错误问题
 - [ ] dialog: 修复 cancelButtonClass 内部值拼写错误问题
 - [ ] field: 新增地区 数字格式化能力
 - [ ] popover: 修复 show 为 false 时，trigger 设置为 longpress 时还是会点击触发问题；新增受控模式（待定）
