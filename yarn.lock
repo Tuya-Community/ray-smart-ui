@@ -2184,6 +2184,11 @@
     webpackbar "^5.0.2"
     yargs "^16.0.3"
 
+"@ray-core/event-propagation@^0.4.13":
+  version "0.4.13"
+  resolved "https://registry.yarnpkg.com/@ray-core/event-propagation/-/event-propagation-0.4.13.tgz#cc0eb210f172d5bfa1a964d63650bfa3a189b4c6"
+  integrity sha512-azE2x20BHpNSeGwa9xz6aOa/Y4sQNbbOxQ8A+904lZkGzbRS0w1o2NobplqyzNbs9yma9dz7NEY8pwHMULRZYw==
+
 "@ray-core/framework-shared@0.3.9":
   version "0.3.9"
   resolved "https://registry.yarnpkg.com/@ray-core/framework-shared/-/framework-shared-0.3.9.tgz#515aec6d5bb79668e1097f0d01d7d8986558f9c2"
@@ -2999,11 +3004,12 @@
   resolved "https://registry.yarnpkg.com/@tuya-miniapp/icons/-/icons-2.3.0.tgz#e2f5a7df056b3de406451c1939ac8da7afc53392"
   integrity sha512-mplKNn6++goSlk5g2QHrtF/jXPf2cZIHbTVO8WWblfUBaUaYV7VRpLI24J9qMxJMufE6Wey/DnCAoDQABiA4YQ==
 
-"@tuya-miniapp/smart-ui@2.12.0-beta-2":
-  version "2.12.0-beta-2"
-  resolved "https://registry.yarnpkg.com/@tuya-miniapp/smart-ui/-/smart-ui-2.12.0-beta-2.tgz#4ca5c9dfbd568728d512fdce05e7062473b97057"
-  integrity sha512-gR3LL72mkx9hIHLOqX7LJNxLRJZuiUXydvh2l8RhM1xPYef9ux4B7Dz+85/uEnOHewhdBE4PrF8odCx0+NdmKw==
+"@tuya-miniapp/smart-ui@2.12.0-beta-5":
+  version "2.12.0-beta-5"
+  resolved "https://registry.yarnpkg.com/@tuya-miniapp/smart-ui/-/smart-ui-2.12.0-beta-5.tgz#80b54970f2718eab340322f538ce1ad47f32e3a7"
+  integrity sha512-sOjF28TFzZZIZw8+DySl9QY/peH4Yw50QuOxDkp2fgnpdEtCrqlwzaIAckJyXeV5aOd+PZQfhL5v1ZteYBf1kw==
   dependencies:
+    "@ray-core/event-propagation" "^0.4.13"
     "@ray-js/components-ty-slider" "^0.3.8"
     "@tuya-miniapp/icons" "^2.3.0"
 
