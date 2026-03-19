@@ -329,6 +329,8 @@ export default function Demo() {
 | leftIcon | Left icon svg value or image link, optional values see [Icon component](/material/smartui?comId=icon) | _string_ | - |
 | maxlength | Maximum input length, setting it to -1 will not limit the maximum length | _number_ | `-1` |
 | name | Identifier when submitting in the form. Can expand the clickable area by configuring `name` | _string_ | - |
+| numberFormat `v2.12.0` | Whether to enable number formatting (thousands/decimal separators by locale) | _boolean_ | `false` |
+| locale `v2.12.0` | Locale for number formatting, e.g. `de`, `fr`; empty to follow system | _string_ | `''` |
 | password | Whether it is a password type | _boolean_ | `false` |
 | placeholder | Placeholder text when the input box is empty | _string_ | - |
 | placeholderStyle | Specify the style of the placeholder | _React.CSSProperties_ | - |
