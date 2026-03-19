@@ -134,6 +134,14 @@ export interface SmartNavBarProps {
   safeAreaInsetTop?: boolean;
 
   /**
+   * 左侧 Icon 颜色
+   *
+   * @version v2.7.0
+   * @default ''
+   */
+  leftIconColor?: string;
+
+  /**
    * @description 背景色
    * @version v2.7.0
    */
@@ -211,6 +219,20 @@ export interface SmartNavBarExternalClassName extends SmartBaseExternalClassName
    * @version 2.1.0
    */
   rightTextClass?: string;
+
+  /**
+   * 右侧图标样式类
+   *
+   * @version v2.7.0
+   */
+  rightIconClass?: string;
+
+  /**
+   * 左侧文字样式类
+   *
+   * @version v2.7.0
+   */
+  leftTextClass?: string;
 }
 
 export interface SmartNavBarSlot {
