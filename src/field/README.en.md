@@ -266,6 +266,39 @@ export default function Demo() {
 }
 ```
 
+### Number Format `v2.12.0`
+
+After enabling `numberFormat`, the component will format the display of numerical inputs with thousand separators and decimal points according to the current language environment; the `locale` prop can specify regional formats (e.g., `de` for German 1.234,56, defaulting to English as 1,234.56).
+
+```jsx
+import { Field, CellGroup } from '@ray-js/smart-ui';
+import React from 'react';
+
+export default function Demo() {
+  const [numberFormatValue, setNumberFormatValue] = React.useState(12345.67);
+  const [numberFormatValueDe, setNumberFormatValueDe] = React.useState(12345.67);
+  return (
+    <CellGroup>
+      <Field
+        value={numberFormatValue}
+        numberFormat
+        label="Amount"
+        placeholder="Please enter"
+        onInput={(e) => setNumberFormatValue(e.detail)}
+      />
+      <Field
+        value={numberFormatValueDe}
+        numberFormat
+        locale="de"
+        label="Amount (German format)"
+        placeholder="Please enter"
+        onInput={(e) => setNumberFormatValueDe(e.detail)}
+      />
+    </CellGroup>
+  );
+}
+```
+
 ### Message
 
 When setting the type to `textarea` mode, the number of characters entered and the limit number can be displayed at the end.

@@ -12,6 +12,8 @@ export default function Demo() {
   const [num] = React.useState(2000);
   const [password] = React.useState('');
   const [message] = React.useState('');
+  const [numberFormatValue, setNumberFormatValue] = React.useState<number | string>(12345.67);
+  const [numberFormatValueDe, setNumberFormatValueDe] = React.useState<number | string>(12345.67);
 
   const onChange = (event: any) => {
     console.log(event, '--event');
@@ -157,6 +159,32 @@ export default function Demo() {
                   {Strings.getLang('sendVerificationCode')}
                 </Button>
               ),
+            }}
+          />
+        </CellGroup>
+      </DemoBlock>
+
+      <DemoBlock title={Strings.getLang('fieldNumberFormat')}>
+        <CellGroup>
+          <Field
+            value={numberFormatValue}
+            numberFormat
+            label={Strings.getLang('fieldAmount')}
+            placeholder={Strings.getLang('pleaseEnter')}
+            onInput={(e: any) => {
+              console.log(e.detail, '--e.detail');
+              setNumberFormatValue(e.detail);
+            }}
+          />
+          <Field
+            value={numberFormatValueDe}
+            numberFormat
+            locale="de"
+            label={Strings.getLang('fieldAmountLocaleDe')}
+            placeholder={Strings.getLang('pleaseEnter')}
+            onInput={(e: any) => {
+              console.log(e.detail, '--e.detail');
+              setNumberFormatValueDe(e.detail);
             }}
           />
         </CellGroup>

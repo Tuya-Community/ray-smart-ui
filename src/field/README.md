@@ -265,6 +265,39 @@ export default function Demo() {
 }
 ```
 
+### 数字格式化 `v2.12.0`
+
+开启 `numberFormat` 后，组件会根据当前语言环境进行数字输入的千分位、小数位格式化展示；通过 `locale` 可指定地区格式（如 `de` 为德语 1.234,56，默认与英文为 1,234.56）。
+
+```jsx
+import { Field, CellGroup } from '@ray-js/smart-ui';
+import React from 'react';
+
+export default function Demo() {
+  const [numberFormatValue, setNumberFormatValue] = React.useState(12345.67);
+  const [numberFormatValueDe, setNumberFormatValueDe] = React.useState(12345.67);
+  return (
+    <CellGroup>
+      <Field
+        value={numberFormatValue}
+        numberFormat
+        label="金额"
+        placeholder="请输入"
+        onInput={(e) => setNumberFormatValue(e.detail)}
+      />
+      <Field
+        value={numberFormatValueDe}
+        numberFormat
+        locale="de"
+        label="金额（德语格式）"
+        placeholder="请输入"
+        onInput={(e) => setNumberFormatValueDe(e.detail)}
+      />
+    </CellGroup>
+  );
+}
+```
+
 ### 留言
 
 设置 type 为 `textarea` 模式时，可以在末尾显示输入的字数数量和限制数量。

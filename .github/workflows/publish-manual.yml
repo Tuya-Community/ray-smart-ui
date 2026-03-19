@@ -131,6 +131,13 @@ jobs:
             echo "Please check if the MINIAPP_TOKEN has the necessary permissions to access the repository."
             exit 1
           fi
+          if [ "$BRANCH" != "release/2.x" ]; then
+            echo "Pulling latest release/2.x to keep up to date..."
+            cd miniapp-smart-ui
+            git pull origin release/2.x --no-rebase
+            cd ..
+            echo "✅ Merged release/2.x into $BRANCH"
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.MINIAPP_TOKEN }}
 
