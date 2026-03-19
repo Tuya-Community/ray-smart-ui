@@ -320,6 +320,18 @@ export interface SmartFieldProps {
    * @default false
    */
   extraEventParams?: boolean;
+  /**
+   * 是否开启数字格式化（千分位、小数位按 locale 展示）
+   * @since `v2.12.0`
+   * @default false
+   */
+  numberFormat?: boolean;
+  /**
+   * 数字格式化使用的地区，如 `de`、`fr`，空则跟随系统
+   * @since `v2.12.0`
+   * @default ''
+   */
+  locale?: string;
 }
 
 /**

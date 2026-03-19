@@ -64,11 +64,12 @@
 - [x] tab: 修复切换时文字跳动问题([e24aff0](https://github.com/Tuya-Community/miniapp-smart-ui/pull/167/commits/e24aff0610a9432c4831235d21593e451678c50a)), 测试版本：`2.11.2-beta-0`
 - [x] tabbar: 修复使用插槽插入图片，偶现切换时图片闪烁问题([93116bc](https://github.com/Tuya-Community/miniapp-smart-ui/pull/169/commits/93116bc6cd0b9d56747718e32b2ffae38acbbf5e)), 测试版本：`2.11.2-beta-2`
 - [x] popup、action-sheet、bottom-sheet、dialog 组件开启 fullCoverView 时，根节点cover-view 继承组件 zIndex 属性([faff9eb](https://github.com/Tuya-Community/miniapp-smart-ui/pull/165/commits/faff9ebab1f504eed6381241c82c63c2c8dd0ff8)), 测试版本：`2.11.2-beta-3`
-- [x] nav-bar: 新增 home 模式右侧插入图标能力([4175796](https://github.com/Tuya-Community/miniapp-smart-ui/pull/163/commits/417579676d3088e066abba7ccca9e7010f68ee3d)), 测试版本 `2.11.2-beta-4`
-- [x] index-bar: 新增拖动气泡提示功能；修复右侧栏拖动时定位不准，页面闪现分割线问题，fixed导航闪现位移问题；([pull/166](https://github.com/Tuya-Community/miniapp-smart-ui/pull/166)), 测试版本 `2.11.2-beta-5`
-- [x] toast: 修改背景色，对齐 UED，新增边框和阴影，修改默认最大最小宽度 ([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))，测试版本 `2.12.0-beta-2`
-- [x] overlay: 支持 iOS 毛玻璃效果 ([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))，测试版本 `2.12.0-beta-2`
+- [x] nav-bar: 新增 home 模式右侧插入图标能力([4175796](https://github.com/Tuya-Community/miniapp-smart-ui/pull/163/commits/417579676d3088e066abba7ccca9e7010f68ee3d)), 测试版本：`2.11.2-beta-4`
+- [x] index-bar: 新增拖动气泡提示功能；修复右侧栏拖动时定位不准，页面闪现分割线问题，fixed导航闪现位移问题；([pull/166](https://github.com/Tuya-Community/miniapp-smart-ui/pull/166)), 测试版本：`2.11.2-beta-5`
+- [x] toast: 修改背景色，对齐 UED，新增边框和阴影，修改默认最大最小宽度 ([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))，测试版本: `2.12.0-beta-2`
+- [x] overlay: 支持 iOS 毛玻璃效果 ([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))，测试版本：`2.12.0-beta-2`
 - [x] calendar: 修改文档 CSS --calendar-header-title-save-color 变量书写错误问题
-- [ ] dialog: 修复 cancelButtonClass 内部值拼写错误问题
+- [x] SmartUI 原生小程序接入 ray e.origin.stopPropagation 阻止冒泡能力 ([9c6a4ae](https://github.com/Tuya-Community/miniapp-smart-ui/pull/174/commits/9c6a4ae1cd9acd6c0179f625eb9eccd8aec7f2cf))，测试版本: `2.12.0-beta-3`
+- [x] dialog: 修复 cancelButtonClass 内部值拼写错误问题 ([0779e1b](https://github.com/Tuya-Community/miniapp-smart-ui/commit/0779e1b6d210f5bc57811ccff74820eecc0915e6))，测试版本：`2.12.0-beta-4`
 - [ ] field: 新增地区 数字格式化能力
 - [ ] popover: 修复 show 为 false 时，trigger 设置为 longpress 时还是会点击触发问题；新增受控模式（待定）
