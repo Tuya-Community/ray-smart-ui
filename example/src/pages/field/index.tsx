@@ -172,6 +172,7 @@ export default function Demo() {
             label={Strings.getLang('fieldAmount')}
             placeholder={Strings.getLang('pleaseEnter')}
             onInput={(e: any) => {
+              console.log(e.detail, '--e.detail');
               setNumberFormatValue(e.detail);
             }}
           />
@@ -182,6 +183,7 @@ export default function Demo() {
             label={Strings.getLang('fieldAmountLocaleDe')}
             placeholder={Strings.getLang('pleaseEnter')}
             onInput={(e: any) => {
+              console.log(e.detail, '--e.detail');
               setNumberFormatValueDe(e.detail);
             }}
           />
