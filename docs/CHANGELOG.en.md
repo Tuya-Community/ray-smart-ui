@@ -4,31 +4,28 @@
 
 ### Features ✨
 
-- nav-bar: In home mode (`leftTextType="home"`), support custom content (e.g. icons) via `left`; no new component properties ([4175796](https://github.com/Tuya-Community/miniapp-smart-ui/pull/163/commits/417579676d3088e066abba7ccca9e7010f68ee3d))
-- index-bar: Add `showMoveTip` property for a bubble hint while dragging the index sidebar ([pull/166](https://github.com/Tuya-Community/miniapp-smart-ui/pull/166), [pull/178](https://github.com/Tuya-Community/miniapp-smart-ui/pull/178))
-- toast: UED-aligned background, border, and shadow; default min/max width tweaks; overridable via CSS variables such as `--toast-background-color`, `--toast-border`, `--toast-box-shadow`, `--toast-text-min-width`, `--toast-text-max-width`, `--toast-min-width`, and `--toast-max-width` ([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))
-- overlay: `backdrop-filter` frosted-glass mask where supported; new CSS variables `--overlay-blur-background` and `--overlay-blur-radius` ([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))
-- field: Add `numberFormat` and `locale` properties; export helpers `getNumberFormatConfig`, `parseFormattedNumber`, and `formatNumber` ([pull/162](https://github.com/Tuya-Community/miniapp-smart-ui/pull/162))
-- config-provider: Theme mapping adds `--smart-ui-toast-background`, `--smart-ui-toast-border`, `--smart-ui-toast-box-shadow`, and `--smart-ui-overlay-blur-background` ([572effd](https://github.com/Tuya-Community/miniapp-smart-ui/pull/176/commits/572effdee81ed77ea0699e0bb44fab40255e81ad))
-- SmartUI native mini programs: Ray event objects support `e.origin.stopPropagation()` to stop bubbling (framework event API, not component properties) ([9c6a4ae](https://github.com/Tuya-Community/miniapp-smart-ui/pull/174/commits/9c6a4ae1cd9acd6c0179f625eb9eccd8aec7f2cf))
+- nav-bar: In home mode (leftTextType="home"), support custom content (e.g. icons) via the left slot; no new component properties ([4175796](https://github.com/Tuya-Community/miniapp-smart-ui/pull/163/commits/417579676d3088e066abba7ccca9e7010f68ee3d))
+- index-bar: Add showMoveTip property for a bubble hint while dragging the index sidebar ([pull/166](https://github.com/Tuya-Community/miniapp-smart-ui/pull/166), [pull/178](https://github.com/Tuya-Community/miniapp-smart-ui/pull/178))
+- toast: UED-aligned background, border, and shadow; default min/max width tweaks; overridable via CSS variables such as --toast-background-color, --toast-border, --toast-box-shadow, --toast-text-min-width, --toast-text-max-width, --toast-min-width, and --toast-max-width ([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))
+- overlay: backdrop-filter frosted-glass mask where supported; new CSS variables --overlay-blur-background and --overlay-blur-radius ([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))
+- field: Add numberFormat and locale properties; export helpers getNumberFormatConfig, parseFormattedNumber, and formatNumber ([pull/162](https://github.com/Tuya-Community/miniapp-smart-ui/pull/162))
+- config-provider: Theme mapping adds --smart-ui-toast-background, --smart-ui-toast-border, --smart-ui-toast-box-shadow, and --smart-ui-overlay-blur-background ([572effd](https://github.com/Tuya-Community/miniapp-smart-ui/pull/176/commits/572effdee81ed77ea0699e0bb44fab40255e81ad))
+- SmartUI native mini programs: Ray event objects support e.origin.stopPropagation() to stop bubbling (framework event API, not component properties) ([9c6a4ae](https://github.com/Tuya-Community/miniapp-smart-ui/pull/174/commits/9c6a4ae1cd9acd6c0179f625eb9eccd8aec7f2cf))
 
 ### Bug Fixes 🐛
 
 - tab: Fix text jumping when switching tabs ([e24aff0](https://github.com/Tuya-Community/miniapp-smart-ui/pull/167/commits/e24aff0610a9432c4831235d21593e451678c50a))
 - tabbar: Fix occasional image flicker when switching tabs with slotted images ([93116bc](https://github.com/Tuya-Community/miniapp-smart-ui/pull/169/commits/93116bc6cd0b9d56747718e32b2ffae38acbbf5e))
-- popup, action-sheet, bottom-sheet, dialog: When `fullCoverView` is enabled, the root `cover-view` inherits the component `zIndex` ([faff9eb](https://github.com/Tuya-Community/miniapp-smart-ui/pull/165/commits/faff9ebab1f504eed6381241c82c63c2c8dd0ff8))
+- popup, action-sheet, bottom-sheet, dialog: When fullCoverView is enabled, the root cover-view inherits the component zIndex ([faff9eb](https://github.com/Tuya-Community/miniapp-smart-ui/pull/165/commits/faff9ebab1f504eed6381241c82c63c2c8dd0ff8))
 - index-bar: Fix inaccurate drag positioning on the right sidebar, flickering divider lines, fixed-nav position jumps, and incorrect positioning when the sidebar list does not match the content ([pull/166](https://github.com/Tuya-Community/miniapp-smart-ui/pull/166), [pull/178](https://github.com/Tuya-Community/miniapp-smart-ui/pull/178))
-- dialog: Fix typo in the internal value of `cancelButtonClass` ([0779e1b](https://github.com/Tuya-Community/miniapp-smart-ui/commit/0779e1b6d210f5bc57811ccff74820eecc0915e6))
-- nav-bar: Add TypeScript types for `leftIconColor`, `rightIconClass`, and `leftTextClass` ([33c58e5](https://github.com/Tuya-Community/ray-smart-ui/commit/33c58e572ce9ea0c1295d8705aa23f9e357e6bde))
+- dialog: Fix typo in the internal value of cancelButtonClass ([0779e1b](https://github.com/Tuya-Community/miniapp-smart-ui/commit/0779e1b6d210f5bc57811ccff74820eecc0915e6))
+- nav-bar: Add TypeScript types for leftIconColor, rightIconClass, and leftTextClass ([33c58e5](https://github.com/Tuya-Community/ray-smart-ui/commit/33c58e572ce9ea0c1295d8705aa23f9e357e6bde))
 
 ## v2.11.1 (2026-3-3)
 
 ### Features ✨
 
-- popup: Added fullCoverView property, which wraps the full-screen CoverView by default when the popup is opened ([pull/161](https://github.com/Tuya-Community/miniapp-smart-ui/pull/161))
-- action-sheet: Added fullCoverView property, which wraps the full-screen CoverView by default when the action sheet is opened ([pull/161](https://github.com/Tuya-Community/miniapp-smart-ui/pull/161))
-- bottom-sheet: Added fullCoverView property, which wraps the full-screen CoverView by default when the bottom sheet is opened ([pull/161](https://github.com/Tuya-Community/miniapp-smart-ui/pull/161))
-- dialog: Added fullCoverView property, which wraps the full-screen CoverView by default when the dialog is opened ([pull/161](https://github.com/Tuya-Community/miniapp-smart-ui/pull/161))
+- popup, action-sheet, bottom-sheet, dialog: Added fullCoverView property so the overlay wraps the full-screen CoverView by default when opened ([pull/161](https://github.com/Tuya-Community/miniapp-smart-ui/pull/161))
 
 ### Bug Fixes 🐛
 
@@ -43,9 +40,7 @@
 ### Bug Fixes 🐛
 
 - index-bar: Fixed the flickering issue when touching and scrolling the right-side index bar ([90e290b](https://github.com/Tuya-Community/miniapp-smart-ui/pull/149/commits/90e290b1c807579b83bfdc2e1b460dc39c72bb1d))
-- popup: Reduced the default number of render nodes for the component itself ([fb6ab2f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/151/commits/fb6ab2fddbe30694deb350bfdde60d7c5f35f48c)); integrated lazy loading in the Ray layer to prevent rendering child nodes until the popup has been shown at least once, improving performance ([96fc5fc](https://github.com/Tuya-Community/ray-smart-ui/pull/72/commits/96fc5fc1d644fb381983e535f87473e20e82500d))
-- action-sheet: Reduced the default number of render nodes for the component itself ([fb6ab2f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/151/commits/fb6ab2fddbe30694deb350bfdde60d7c5f35f48c)); integrated lazy loading in the Ray layer to prevent rendering child nodes until the popup has been shown at least once, improving performance ([fb6ab2f](https://github.com/Tuya-Community/ray-smart-ui/pull/73/commits/ac0e65c472429c80b66f15ca8326ddfc2cce5049))
-- bottom-sheet: Reduced the default number of render nodes for the component itself ([fb6ab2f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/151/commits/fb6ab2fddbe30694deb350bfdde60d7c5f35f48c)); integrated lazy loading in the Ray layer to prevent rendering child nodes until the popup has been shown at least once, improving performance ([fb6ab2f](https://github.com/Tuya-Community/ray-smart-ui/pull/73/commits/ac0e65c472429c80b66f15ca8326ddfc2cce5049))
+- popup, action-sheet, bottom-sheet: Reduced the default number of render nodes for the component itself ([fb6ab2f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/151/commits/fb6ab2fddbe30694deb350bfdde60d7c5f35f48c)); integrated lazy loading in the Ray layer so child nodes are not rendered until the overlay has been shown at least once, improving performance ([96fc5fc](https://github.com/Tuya-Community/ray-smart-ui/pull/72/commits/96fc5fc1d644fb381983e535f87473e20e82500d), [ac0e65c](https://github.com/Tuya-Community/ray-smart-ui/pull/73/commits/ac0e65c472429c80b66f15ca8326ddfc2cce5049))
 - tab: Fixed the issue with using the important CSS property in the component; fixed display issues for dot and info features ([5de790d](https://github.com/Tuya-Community/miniapp-smart-ui/pull/158/commits/5de790da25e9a3867a0ddc10ce273b4b9fc4e5ef)); fixed the unnecessary positioning animation issue when the initialized default active is not the first one ([6649819](https://github.com/Tuya-Community/miniapp-smart-ui/pull/159/commits/66498199ecd0873de387fe8e826b9ffacf02ffb8))
 
 ## v2.10.0 (2026-1-13)
@@ -81,13 +76,7 @@
 ### Features ✨
 
 - bottom-sheet: Added lockScroll property to prevent background scrolling ([7eeec64](https://github.com/Tuya-Community/miniapp-smart-ui/pull/131/commits/7eeec64c305d0edfd413a3c34db4e3583a03b19c)); added lockMaxDrag property to prevent maximum distance dragging ([pull/128](https://github.com/Tuya-Community/miniapp-smart-ui/pull/128), [pull/129](https://github.com/Tuya-Community/miniapp-smart-ui/pull/129))
-- search: Integrated vibration feedback for iOS ([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
-- field: Integrated vibration feedback for iOS ([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
-- tab: Integrated vibration feedback for iOS ([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
-- tabbar: Integrated vibration feedback for iOS ([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
-- stepper: Integrated vibration feedback for iOS ([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
-- switch: Integrated vibration feedback for iOS ([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
-- toast: Integrated vibration feedback for iOS ([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
+- search, field, tab, tabbar, stepper, switch, toast: Integrated vibration feedback for iOS ([pull/112](https://github.com/Tuya-Community/miniapp-smart-ui/pull/112))
 - slider: Integrated vibration feedback for iOS ([7fb416f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/124/commits/7fb416fd10fc267920509b45e27ad9c10841f003))
 - index-bar: Integrated vibration feedback for iOS ([pull/110](https://github.com/Tuya-Community/miniapp-smart-ui/pull/110))
 - calendar: Integrated vibration feedback for iOS ([pull/109](https://github.com/Tuya-Community/miniapp-smart-ui/pull/109))
@@ -110,7 +99,7 @@
 - config-provider: Added theme property to switch themes with one click ([pull/100](https://github.com/Tuya-Community/miniapp-smart-ui/pull/100))
 - toast: Added textColor and iconColor properties ([pull/105](https://github.com/Tuya-Community/miniapp-smart-ui/pull/105))
 - loading: Added iconColor property ([pull/104](https://github.com/Tuya-Community/miniapp-smart-ui/pull/104))
-- circle: Added angleOffset property to set the starting angle offset for half-circle types (`angle` and `angle2`); changed maskColor default value from `#ffffff` to `transparent` ([pull/106](https://github.com/Tuya-Community/miniapp-smart-ui/pull/106))
+- circle: Added angleOffset property to set the starting angle offset for half-circle types (angle and angle2); changed maskColor default value from #ffffff to transparent ([pull/106](https://github.com/Tuya-Community/miniapp-smart-ui/pull/106))
 - cascader: Added --cascader-active-background-color CSS variable ([43922ab](https://github.com/Tuya-Community/miniapp-smart-ui/commit/43922abceaedf1af448147e189517598151dd0a9))
 - popover: Added --popover-overlay-color CSS variable ([43922ab](https://github.com/Tuya-Community/miniapp-smart-ui/commit/43922abceaedf1af448147e189517598151dd0a9))
 
@@ -137,12 +126,9 @@
 
 ### Features ✨
 
-- stepper: Integrated `manrope` numeric font, supported from App version 7.0.5 ([a9ac2ab](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/a9ac2ab42943c837cda5dba3ddff02d56b00f025))
-- count-down: Integrated `manrope` numeric font, supported from App version 7.0.5 ([a9ac2ab](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/a9ac2ab42943c837cda5dba3ddff02d56b00f025))
-- picker: Integrated `manrope` numeric font, supported from App version 7.0.5 ([a9ac2ab](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/a9ac2ab42943c837cda5dba3ddff02d56b00f025))
-- datetime-picker: Integrated `manrope` numeric font, supported from App version 7.0.5 ([a9ac2ab](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/a9ac2ab42943c837cda5dba3ddff02d56b00f025))
-- calendar: Integrated `manrope` numeric font, supported from App version 7.0.5 ([pull/79](https://github.com/Tuya-Community/miniapp-smart-ui/pull/79))
-- custom-keyboard: Integrated `manrope` numeric font, supported from App version 7.0.5 ([e8f763d](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/e8f763d526f635d702a87586535f8b4a854100b1))
+- stepper, count-down, picker, datetime-picker: Integrated manrope numeric font, supported from App version 7.0.5 ([a9ac2ab](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/a9ac2ab42943c837cda5dba3ddff02d56b00f025))
+- calendar: Integrated manrope numeric font, supported from App version 7.0.5 ([pull/79](https://github.com/Tuya-Community/miniapp-smart-ui/pull/79))
+- custom-keyboard: Integrated manrope numeric font, supported from App version 7.0.5 ([e8f763d](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/e8f763d526f635d702a87586535f8b4a854100b1))
 - bottom-sheet: Supported drag capability, added draggable, minDragHeight, maxDragHeight, midDragHeight, closeDragHeight properties, and new onDragPosition event ([pull/78](https://github.com/Tuya-Community/miniapp-smart-ui/pull/78))
 - nav-bar: Changed --nav-bar-text-padding default value to 16px ([352954e](https://github.com/Tuya-Community/miniapp-smart-ui/commit/352954e16f05b0660369bfc860b7f895dc5f1774))
 - icon: Added mute icon, updated more icons ([1ba2ebf](https://github.com/Tuya-Community/miniapp-smart-ui/pull/77/commits/1ba2ebfc12e6af675940c01f2e229eed05cec4ff))
@@ -189,8 +175,7 @@
 - switch: Fixed the issue of vertical centering inside ([a622a42](https://github.com/Tuya-Community/miniapp-smart-ui/pull/50/commits/a622a42504ae33022b91463ecbb93b1f218999df))
 - tab: Fixed the issue of color property in card mode ([pull/42](https://github.com/Tuya-Community/miniapp-smart-ui/pull/42))
 - notice-bar: Fixed the issue of click in the onBtnClick event ([4250d39](https://github.com/Tuya-Community/miniapp-smart-ui/pull/50/commits/4250d39ec89198f115803acaaf82266553bc9f9c))
-- popup: Closed the bottom safe area by default ([3da77ee](https://github.com/Tuya-Community/miniapp-smart-ui/pull/54/commits/3da77eecbc51b014fd06b4871d054ddda9d2a1c7))
-- calendar: Closed the bottom safe area by default ([4c91851](https://github.com/Tuya-Community/miniapp-smart-ui/pull/54/commits/4c91851fe674bcb64a19c830a3f1539da8700dd1))
+- popup, calendar: Closed the bottom safe area by default ([3da77ee](https://github.com/Tuya-Community/miniapp-smart-ui/pull/54/commits/3da77eecbc51b014fd06b4871d054ddda9d2a1c7), [4c91851](https://github.com/Tuya-Community/miniapp-smart-ui/pull/54/commits/4c91851fe674bcb64a19c830a3f1539da8700dd1))
 - picker: Fixed the issue of default width not being set in flex layout ([f3f4772](https://github.com/Tuya-Community/miniapp-smart-ui/pull/55/commits/f3f47729fd4c1af0eb617cf56d957c2b389f2d4e)); fixed the issue where unit distance was not controlled by fontStyle property ([4eb02fc](https://github.com/Tuya-Community/miniapp-smart-ui/pull/55/commits/4eb02fca12cb6feab62e8fdfd7d82d27bc52159c))
 - datetime-picker: Fixed the issue of default width not being set in flex layout ([f3f4772](https://github.com/Tuya-Community/miniapp-smart-ui/pull/55/commits/f3f47729fd4c1af0eb617cf56d957c2b389f2d4e))
 - icon: Updated right, left, down, up icons to align with UI standards ([e1bd07e](https://github.com/Tuya-Community/miniapp-smart-ui/commit/e1bd07ebb2bd411fe82e714b11e603ed68271c9a))
@@ -240,7 +225,7 @@
 
 ### Features ✨
 
-- nav-bar: Added --nav-bar-title-max-width CSS variable, changed the default value from `60%` to `calc(100% - 360rpx)` ([af0d83a](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/af0d83ac571e70d9d7b5f934287866c9e37e7f6c))
+- nav-bar: Added --nav-bar-title-max-width CSS variable, changed the default value from 60% to calc(100% - 360rpx) ([af0d83a](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/af0d83ac571e70d9d7b5f934287866c9e37e7f6c))
 - bottom-sheet: Added max-height property ([0ed0ea9](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/0ed0ea9d1f32342f8e87a29c6b5927da4026d3fc))
 - datetime-picker: Refactored the component to display logic for the 12-hour system, fixed the issue of incorrect time display ([019d181](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/019d1813a18c89af733c43526dbe690e69568f75), [822df05](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/822df0555738199533bbaa44073fda93aefbe01b)); modified the component's dividing line and added --hairline-border-image-color CSS variable ([6381e6f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/6381e6ffdf61ae21a1ff3943c69a543ecbc1e03c))
 - picker: Added --picker-option-selected-font-weight-bold CSS variable ([7b38c33](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/7b38c33437f96f57757cc6c9e014938cd4ba6671)); added hairline-class dividing line style class ([55ed888](https://github.com/Tuya-Community/miniapp-smart-ui/pull/3/commits/55ed8885045f34c95b8076c985b64350f0b43c13))
@@ -285,7 +270,7 @@
 - dropdown-menu: Added scrollStyle property to enable scrolling when the dropdown list exceeds the screen
 - popover: Added trigger property
 - skeleton: Optimized animation effects
-- switch: Changed component layout; `active-color` and `inactive-color` now support passing gradient colors, the `--switch-border` CSS variable property has been removed and replaced with the new `--switch-padding` CSS variable
+- switch: Changed component layout; active-color and inactive-color now support passing gradient colors, the --switch-border CSS variable property has been removed and replaced with the new --switch-padding CSS variable
 
 ### Bug Fixes 🐛
 
@@ -328,8 +313,7 @@
 
 ### Features ✨
 
-- popup: Added nativeDisabled property to disable local gestures during popup display
-- dialog: Added nativeDisabled property to disable local gestures during dialog display
+- popup, dialog: Added nativeDisabled property to disable local gestures while the overlay is open
 - radio: Added preventDefault property to prevent the component's internal UI from updating by default
 - datetime-picker: Added the capability to modify the timezone text style when in 12-hour mode; added value data inside onChange callback
 
@@ -379,8 +363,7 @@
 
 ### Bug Fixes 🐛
 
-- image: Fixed the issue of excessive space at the bottom
-- switch: Fixed the issue of excessive space at the bottom
+- image, switch: Fixed the issue of excessive space at the bottom
 - circle: Fixed the rendering size issue
 - tab: Fixed the issue where the mask could not cover the sliding block when there were popups in card mode
 
@@ -417,8 +400,7 @@
 
 ### Bug Fixes 🐛
 
-- dialog: Fixed the issue of not being able to get component instances
-- toast: Fixed the issue of not being able to get component instances
+- dialog, toast: Fixed the issue of not being able to get component instances
 - calendar: Fixed the display issue when the type property dynamically switches; optimized the range control for year selection
 
 ### v2.2.0 (2025-2-13)
