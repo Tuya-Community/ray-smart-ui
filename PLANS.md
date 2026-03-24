@@ -72,5 +72,6 @@
 - [x] SmartUI 原生小程序接入 ray e.origin.stopPropagation 阻止冒泡能力 ([9c6a4ae](https://github.com/Tuya-Community/miniapp-smart-ui/pull/174/commits/9c6a4ae1cd9acd6c0179f625eb9eccd8aec7f2cf))，测试版本: `2.12.0-beta-3`
 - [x] dialog: 修复 cancelButtonClass 内部值拼写错误问题 ([0779e1b](https://github.com/Tuya-Community/miniapp-smart-ui/commit/0779e1b6d210f5bc57811ccff74820eecc0915e6))，测试版本：`2.12.0-beta-4`
 - [x] nav-bar: 补充 leftIconColor, rightIconClass, leftTextClass TS 类型 ([33c58e5](https://github.com/Tuya-Community/ray-smart-ui/commit/33c58e572ce9ea0c1295d8705aa23f9e357e6bde))，测试版本：`2.12.0-beta-5`
-- [x] field: 新增地区数字格式化能力 ([pull/162](https://github.com/Tuya-Community/miniapp-smart-ui/pull/162))，测试版本：`2.12.0-beta-5`
+- [x] field: 新增地区数字格式化能力，导出 getNumberFormatConfig, parseFormattedNumber, formatNumber 方法 ([pull/162](https://github.com/Tuya-Community/miniapp-smart-ui/pull/162))，测试版本：`2.12.0-beta-6`
+- [x] config-provider: 新增 toast、overlay 相关新增全局CSS 变量适配 ([572effd](https://github.com/Tuya-Community/miniapp-smart-ui/pull/176/commits/572effdee81ed77ea0699e0bb44fab40255e81ad))，测试版本：`2.12.0-beta-6`
 - [ ] popover: 修复 show 为 false 时，trigger 设置为 longpress 时还是会点击触发问题；新增受控模式（待定）

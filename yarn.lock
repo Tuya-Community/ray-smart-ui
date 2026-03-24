@@ -3004,10 +3004,10 @@
   resolved "https://registry.yarnpkg.com/@tuya-miniapp/icons/-/icons-2.3.0.tgz#e2f5a7df056b3de406451c1939ac8da7afc53392"
   integrity sha512-mplKNn6++goSlk5g2QHrtF/jXPf2cZIHbTVO8WWblfUBaUaYV7VRpLI24J9qMxJMufE6Wey/DnCAoDQABiA4YQ==
 
-"@tuya-miniapp/smart-ui@2.12.0-beta-6":
-  version "2.12.0-beta-6"
-  resolved "https://registry.yarnpkg.com/@tuya-miniapp/smart-ui/-/smart-ui-2.12.0-beta-6.tgz#703c623413519e312530f370696ebe793a24ae09"
-  integrity sha512-4Ueq9yOCnhEoAlVAMgobYHhIQONVptuxLCtlEuV6d+bVEwD/PlRaKSEgVn71wZJISfDsu7ayZbK4L90k7NwC8w==
+"@tuya-miniapp/smart-ui@2.12.0-beta-7":
+  version "2.12.0-beta-7"
+  resolved "https://registry.yarnpkg.com/@tuya-miniapp/smart-ui/-/smart-ui-2.12.0-beta-7.tgz#40a5999f20a536abb0e976750249f343d35a8e3c"
+  integrity sha512-UM1jUeaS2pF+wVVVmuUzhk5Z8m6jSzFJZ/5EEhFfEkgEUa2RAlRfzgnVWBfii7QgHjuM2XPNdLEdoNvboaziKw==
   dependencies:
     "@ray-core/event-propagation" "^0.4.13"
     "@ray-js/components-ty-slider" "^0.3.8"
