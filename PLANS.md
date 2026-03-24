@@ -59,7 +59,7 @@
 
 # v2.12.0
 
-发布计划（发布正式时间：2026.3.26 周四）
+发布计划（发布正式时间：2026.3.24 周二）
 
 - [x] tab: 修复切换时文字跳动问题([e24aff0](https://github.com/Tuya-Community/miniapp-smart-ui/pull/167/commits/e24aff0610a9432c4831235d21593e451678c50a)), 测试版本：`2.11.2-beta-0`
 - [x] tabbar: 修复使用插槽插入图片，偶现切换时图片闪烁问题([93116bc](https://github.com/Tuya-Community/miniapp-smart-ui/pull/169/commits/93116bc6cd0b9d56747718e32b2ffae38acbbf5e)), 测试版本：`2.11.2-beta-2`
