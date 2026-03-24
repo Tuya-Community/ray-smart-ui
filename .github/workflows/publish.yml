@@ -38,10 +38,14 @@ jobs:
     - name: Install Dependencies
       run: yarn install --frozen-lockfile
 
+    # PR 标题/正文必须通过 env 注入，禁止在 run 脚本里写 ${{ github.event.pull_request.* }}，
+    # 否则正文里的反引号、`$(...)`、`$var` 会被 bash 当作命令替换执行（表现为 command not found）。
     - name: Extract Version from PR Title
       id: extract_version
+      env:
+        PR_TITLE: ${{ github.event.pull_request.title }}
+        PR_BODY: ${{ github.event.pull_request.body }}
       run: |
-        PR_TITLE="${{ github.event.pull_request.title }}"
         # 从 PR 标题中提取版本号，支持格式：v2.9.2 或 2.9.2
         VERSION=$(echo "$PR_TITLE" | grep -oE '[vV]?[0-9]+\.[0-9]+\.[0-9]+' | head -1 | sed 's/^[vV]//')
         if [ -z "$VERSION" ]; then
@@ -53,13 +57,16 @@ jobs:
         echo "TAG_VERSION=${VERSION}" >> $GITHUB_ENV
         echo "PR_TITLE=${PR_TITLE}" >> $GITHUB_ENV
         # 获取 PR 描述，如果没有则使用默认值
-        PR_BODY="${{ github.event.pull_request.body }}"
-        if [ -z "$PR_BODY" ] || [ "$PR_BODY" = "null" ]; then
-          PR_BODY="Release ${VERSION}"
+        BODY="$PR_BODY"
+        if [ -z "$BODY" ] || [ "$BODY" = "null" ]; then
+          BODY="Release ${VERSION}"
         fi
-        echo "PR_BODY<<EOF" >> $GITHUB_ENV
-        echo "$PR_BODY" >> $GITHUB_ENV
-        echo "EOF" >> $GITHUB_ENV
+        DELIM=PR_BODY_GITHUB_ENV_EOF
+        {
+          echo "PR_BODY<<${DELIM}"
+          echo "$BODY"
+          echo "${DELIM}"
+        } >> $GITHUB_ENV
     
     - name: Update Package.json with Release Version
       run: |
