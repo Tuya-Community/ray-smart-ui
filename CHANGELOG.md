@@ -1,5 +1,29 @@
 # 更新日志
 
+# 更新日志
+
+## v2.12.0 (2026-3-24)
+
+### Features ✨
+
+- nav-bar: home 模式支持右侧插入图标([4175796](https://github.com/Tuya-Community/miniapp-smart-ui/pull/163/commits/417579676d3088e066abba7ccca9e7010f68ee3d))
+- index-bar: 新增拖动气泡提示功能([pull/166](https://github.com/Tuya-Community/miniapp-smart-ui/pull/166), [pull/178](https://github.com/Tuya-Community/miniapp-smart-ui/pull/178))
+- toast: 调整背景色以对齐 UED，新增边框与阴影，调整默认最大/最小宽度([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))
+- overlay: 支持 iOS 毛玻璃效果([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))
+- field: 新增地区数字格式化能力，导出 `getNumberFormatConfig`、`parseFormattedNumber`、`formatNumber`([pull/162](https://github.com/Tuya-Community/miniapp-smart-ui/pull/162))
+- config-provider: 新增 toast、overlay 相关全局 CSS 变量适配([572effd](https://github.com/Tuya-Community/miniapp-smart-ui/pull/176/commits/572effdee81ed77ea0699e0bb44fab40255e81ad))
+- SmartUI 原生小程序接入 Ray 事件 `e.origin.stopPropagation` 阻止冒泡能力([9c6a4ae](https://github.com/Tuya-Community/miniapp-smart-ui/pull/174/commits/9c6a4ae1cd9acd6c0179f625eb9eccd8aec7f2cf))
+
+### Bug Fixes 🐛
+
+- tab: 修复切换时文字跳动问题([e24aff0](https://github.com/Tuya-Community/miniapp-smart-ui/pull/167/commits/e24aff0610a9432c4831235d21593e451678c50a))
+- tabbar: 修复使用插槽插入图片时，偶现切换图片闪烁问题([93116bc](https://github.com/Tuya-Community/miniapp-smart-ui/pull/169/commits/93116bc6cd0b9d56747718e32b2ffae38acbbf5e))
+- popup、action-sheet、bottom-sheet、dialog: 开启 `fullCoverView` 时，根节点 cover-view 继承组件 `zIndex` 属性([faff9eb](https://github.com/Tuya-Community/miniapp-smart-ui/pull/165/commits/faff9ebab1f504eed6381241c82c63c2c8dd0ff8))
+- index-bar: 修复右侧栏拖动时定位不准、页面闪现分割线、fixed 导航闪现位移、右侧列表与内容不一致时定位错误等问题([pull/166](https://github.com/Tuya-Community/miniapp-smart-ui/pull/166), [pull/178](https://github.com/Tuya-Community/miniapp-smart-ui/pull/178))
+- calendar: 修复文档中 `--calendar-header-title-save-color` CSS 变量书写错误
+- dialog: 修复 `cancelButtonClass` 内部值拼写错误([0779e1b](https://github.com/Tuya-Community/miniapp-smart-ui/commit/0779e1b6d210f5bc57811ccff74820eecc0915e6))
+- nav-bar: 补充 `leftIconColor`、`rightIconClass`、`leftTextClass` TypeScript 类型([33c58e5](https://github.com/Tuya-Community/ray-smart-ui/commit/33c58e572ce9ea0c1295d8705aa23f9e357e6bde))
+
 ## v2.11.1 (2026-3-3)
 
 ### Features ✨
