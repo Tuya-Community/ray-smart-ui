@@ -137,6 +137,9 @@ export {
   SmartFieldFocusEventDetail,
   SmartFieldKeyboardHeightChangeEventDetail,
   SmartFieldLineChangeEventDetail,
+  parseFormattedNumber,
+  formatNumber,
+  getNumberFormatConfig,
   Field,
 } from './field';
 export { SmartGrid, SmartGridExternalClassName, SmartGridProps, Grid } from './grid';

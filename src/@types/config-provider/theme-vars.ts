@@ -144,7 +144,12 @@ type CommonThemeVars =
   | 'hairlineColor'
   | 'hairlineBorderImageColor';
 
-type OverlayThemeVars = 'overlay' | 'overlayBackgroundColor';
+type OverlayThemeVars =
+  | 'overlay'
+  | 'overlayBaseBlurBackground'
+  | 'overlayBackgroundColor'
+  | 'overlayBlurBackground'
+  | 'overlayBlurRadius';
 
 type DialogThemeVars =
   | 'dialogBg'
@@ -179,6 +184,28 @@ type DialogThemeVars =
   | 'dialogInputBorderRadius'
   | 'dialogInputFontSize'
   | 'dialogRoundButtonBorderRadius';
+
+type ToastThemeVars =
+  | 'toastBg'
+  | 'toastBaseBorder'
+  | 'toastBaseBoxShadow'
+  | 'toastTextMinWidth'
+  | 'toastTextMaxWidth'
+  | 'toastMinWidth'
+  | 'toastMaxWidth'
+  | 'toastFontSize'
+  | 'toastTextColor'
+  | 'toastLineHeight'
+  | 'toastBorderRadius'
+  | 'toastBackgroundColor'
+  | 'toastBorder'
+  | 'toastBoxShadow'
+  | 'toastIconSize'
+  | 'toastTextPadding'
+  | 'toastDefaultPadding'
+  | 'toastDefaultWidth'
+  | 'toastDefaultMinHeight'
+  | 'toastIconTextPaddingTop';
 
 type IconThemeVars = 'iconColor';
 
@@ -670,21 +697,6 @@ type TagThemeVars =
   | 'tagDefaultColor'
   | 'tagPlainBackgroundColor';
 
-type ToastThemeVars =
-  | 'toastMinWidth'
-  | 'toastMaxWidth'
-  | 'toastFontSize'
-  | 'toastTextColor'
-  | 'toastLineHeight'
-  | 'toastBorderRadius'
-  | 'toastBackgroundColor'
-  | 'toastIconSize'
-  | 'toastTextMinWidth'
-  | 'toastTextPadding'
-  | 'toastDefaultPadding'
-  | 'toastDefaultWidth'
-  | 'toastDefaultMinHeight';
-
 type GridThemeVars =
   | 'gridItemContentPadding'
   | 'gridItemContentBackgroundColor'
@@ -757,9 +769,16 @@ type IndexAnchorThemeVars =
   | 'indexAnchorLineHeight'
   | 'indexAnchorBackgroundColor'
   | 'indexAnchorActiveBackgroundColor'
-  | 'indexAnchorActiveTextColor';
+  | 'indexAnchorActiveTextColor'
+  | 'indexAnchorIndexPadding';
 
-type IndexBarThemeVars = 'indexBarIndexFontSize' | 'indexBarIndexLineHeight';
+type IndexBarThemeVars =
+  | 'indexBarIndexFontSize'
+  | 'indexBarIndexLineHeight'
+  | 'indexBarMoveTipTextPadding'
+  | 'indexBarMoveTipTextFontSize'
+  | 'indexBarMoveTipTextLineHeight'
+  | 'indexBarMoveTipTextColor';
 
 type SkeletonThemeVars =
   | 'skeletonPadding'
@@ -825,6 +844,7 @@ export type ThemeVars = Record<
   | CommonThemeVars
   | OverlayThemeVars
   | DialogThemeVars
+  | ToastThemeVars
   | IconThemeVars
   | ActionSheetThemeVars
   | BottomSheetThemeVars
@@ -854,7 +874,6 @@ export type ThemeVars = Record<
   | TabbarThemeVars
   | TabThemeVars
   | TagThemeVars
-  | ToastThemeVars
   | GridThemeVars
   | DividerThemeVars
   | EmptyThemeVars

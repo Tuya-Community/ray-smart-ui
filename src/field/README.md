@@ -25,30 +25,19 @@ import { Field, CellGroup } from '@ray-js/smart-ui';
 import React from 'react';
 
 export default function Demo() {
-  const [value, setValue] = React.useState('')
-  const [value2, setValue2] = React.useState('')
-  const onChange = (event) => {
+  const [value, setValue] = React.useState('');
+  const [value2, setValue2] = React.useState('');
+  const onChange = event => {
     // event.detail 为当前输入的值
     console.log(event.detail);
-  }
-  const onChange2 = (event) => {
-    setValue2(event.detail)
-  }
+  };
+  const onChange2 = event => {
+    setValue2(event.detail);
+  };
   return (
     <CellGroup>
-      <Field 
-        value={value}
-        label="标题"
-        placeholder="请输入"
-        onChange={onChange}
-      />
-      <Field 
-        value={value} 
-        label="标题"
-        placeholder="请输入"
-        hiddenLabel
-        onChange={onChange2}
-      />
+      <Field value={value} label="标题" placeholder="请输入" onChange={onChange} />
+      <Field value={value} label="标题" placeholder="请输入" hiddenLabel onChange={onChange2} />
     </CellGroup>
   );
 }
@@ -63,27 +52,21 @@ import { Field, CellGroup } from '@ray-js/smart-ui';
 import React from 'react';
 
 export default function Demo() {
-  const [value, setValue] = React.useState('')
-  const onChange = (event) => {
+  const [value, setValue] = React.useState('');
+  const onChange = event => {
     console.log(event, '--event');
     const { value } = event.detail;
     const showValue = `test${value.slice(-1)[0]}`;
     event.detail.callback({ value: showValue });
     setValue(showValue);
-  }
+  };
   return (
     <CellGroup>
-      <Field 
-        value={value}
-        label="标题"
-        placeholder="请输入"
-        onChange={onChange}
-      />
+      <Field value={value} label="标题" placeholder="请输入" onChange={onChange} />
     </CellGroup>
   );
 }
 ```
-
 
 ### 自定义类型
 
@@ -94,18 +77,13 @@ import { Field, CellGroup } from '@ray-js/smart-ui';
 import React from 'react';
 
 export default function Demo() {
-  const [password, setPassword] = React.useState('')
-  const [num, setNum] = React.useState('')
+  const [password, setPassword] = React.useState('');
+  const [num, setNum] = React.useState('');
   return (
     <CellGroup>
-      <Field 
-        value={password}
-        type="password"
-        label="密码"
-        placeholder="请输入"
-      />
-      <Field 
-        value={num} 
+      <Field value={password} type="password" label="密码" placeholder="请输入" />
+      <Field
+        value={num}
         cardMode
         type="number"
         subLabel="副标题"
@@ -126,24 +104,12 @@ import { Field, CellGroup } from '@ray-js/smart-ui';
 import React from 'react';
 
 export default function Demo() {
-  const [value, setValue] = React.useState('')
-  const [num, setNum] = React.useState('')
+  const [value, setValue] = React.useState('');
+  const [num, setNum] = React.useState('');
   return (
     <CellGroup>
-      <Field 
-        value={value}
-        disabled
-        placeholder="输入框已禁用"
-        label="标题"
-      />
-      <Field 
-        value={num} 
-        cardMode
-        disabled
-        subLabel="副标题"
-        label="标题"
-        placeholder="请输入"
-      />
+      <Field value={value} disabled placeholder="输入框已禁用" label="标题" />
+      <Field value={num} cardMode disabled subLabel="副标题" label="标题" placeholder="请输入" />
     </CellGroup>
   );
 }
@@ -156,32 +122,32 @@ export default function Demo() {
 ```jsx
 import { Field, Icon, CellGroup } from '@ray-js/smart-ui';
 import { Sun } from '@tuya-miniapp/icons/dist/svg/Sun';
-import { Image } from '@ray-js/ray'
+import { Image } from '@ray-js/ray';
 import React from 'react';
 
 export default function Demo() {
-  const [num, setNum] = React.useState('')
+  const [num, setNum] = React.useState('');
   return (
     <CellGroup>
-      <Field 
+      <Field
         label="标题"
         placeholder="请输入"
         slot={{
-          leftIcon: <Icon name={Sun} color="#3678E3" size="22" />
+          leftIcon: <Icon name={Sun} color="#3678E3" size="22" />,
         }}
       />
-      <Field 
+      <Field
         value={num}
         cardMode
         label="标题"
         placeholder="请输入"
         slot={{
           leftIcon: (
-            <Image 
+            <Image
               style={{ height: '50px', width: '50px' }}
-              src="https://images.tuyacn.com/rms-static/974a30f0-a624-11ef-be03-d1a4feb99779-1731986155903.png?tyName=light-img" 
+              src="https://images.tuyacn.com/rms-static/974a30f0-a624-11ef-be03-d1a4feb99779-1731986155903.png?tyName=light-img"
             />
-          )
+          ),
         }}
       />
     </CellGroup>
@@ -195,28 +161,17 @@ export default function Demo() {
 
 ```jsx
 import { Field, Icon, CellGroup } from '@ray-js/smart-ui';
-import { Image } from '@ray-js/ray'
+import { Image } from '@ray-js/ray';
 import React from 'react';
 
 export default function Demo() {
-  const [value, setValue] = React.useState('')
-  const [num, setNum] = React.useState('')
+  const [value, setValue] = React.useState('');
+  const [num, setNum] = React.useState('');
   return (
     <CellGroup>
-      <Field 
-        label="标题"
-        errorMessage="请输入用户名"
-        interError
-        required
-      />
-      <Field 
-        value={value}
-        label="标题"
-        placeholder="请输入"
-        errorMessage="格式错误"
-        required
-      />
-      <Field 
+      <Field label="标题" errorMessage="请输入用户名" interError required />
+      <Field value={value} label="标题" placeholder="请输入" errorMessage="格式错误" required />
+      <Field
         value={num}
         cardMode
         label="标题"
@@ -226,11 +181,11 @@ export default function Demo() {
         required
         slot={{
           leftIcon: (
-            <Image 
+            <Image
               style={{ height: '50px', width: '50px' }}
-              src="https://images.tuyacn.com/rms-static/974a30f0-a624-11ef-be03-d1a4feb99779-1731986155903.png?tyName=light-img" 
+              src="https://images.tuyacn.com/rms-static/974a30f0-a624-11ef-be03-d1a4feb99779-1731986155903.png?tyName=light-img"
             />
-          )
+          ),
         }}
       />
     </CellGroup>
@@ -247,22 +202,77 @@ import { Field, Button, CellGroup } from '@ray-js/smart-ui';
 import React from 'react';
 
 export default function Demo() {
-  const [num, setNum] = React.useState('')
+  const [num, setNum] = React.useState('');
   return (
     <CellGroup>
-      <Field 
+      <Field
         value={num}
         label="标题"
         placeholder="请输入短信验证码"
         type="number"
         inputAlign="left"
         slot={{
-          button: <Button type="info" custom-class="button">发送验证码</Button>
+          button: (
+            <Button type="info" custom-class="button">
+              发送验证码
+            </Button>
+          ),
         }}
       />
     </CellGroup>
   );
 }
+```
+
+### 数字格式化 `v2.12.0`
+
+开启 `numberFormat` 后，组件会根据当前语言环境进行数字输入的千分位、小数位格式化展示；通过 `locale` 可指定地区格式（如 `de` 为德语 1.234,56，默认与英文为 1,234.56）。
+
+```jsx
+import { Field, CellGroup } from '@ray-js/smart-ui';
+import React from 'react';
+
+export default function Demo() {
+  const [numberFormatValue, setNumberFormatValue] = React.useState(12345.67);
+  const [numberFormatValueDe, setNumberFormatValueDe] = React.useState(12345.67);
+  return (
+    <CellGroup>
+      <Field
+        value={numberFormatValue}
+        numberFormat
+        label="金额"
+        placeholder="请输入"
+        onInput={e => setNumberFormatValue(e.detail)}
+      />
+      <Field
+        value={numberFormatValueDe}
+        numberFormat
+        locale="de"
+        label="金额（德语格式）"
+        placeholder="请输入"
+        onInput={e => setNumberFormatValueDe(e.detail)}
+      />
+    </CellGroup>
+  );
+}
+```
+
+组件同时导出了以下数字格式化工具函数，可在组件外部独立使用：
+
+```jsx
+import { getNumberFormatConfig, parseFormattedNumber, formatNumber } from '@ray-js/smart-ui';
+
+// 获取指定地区的千分位和小数点分隔符配置
+const config = getNumberFormatConfig('de');
+// => { thousandsSeparator: '.', decimalSeparator: ',' }
+
+// 将纯数字字符串格式化为带千分位的展示值
+const display = formatNumber('12345.67', 'de');
+// => '12.345,67'
+
+// 将格式化后的字符串解析回纯数字字符串
+const raw = parseFormattedNumber('12.345,67', 'de');
+// => '12345.67'
 ```
 
 ### 留言
@@ -274,12 +284,12 @@ import { Field, CellGroup } from '@ray-js/smart-ui';
 import React from 'react';
 
 export default function Demo() {
-  const [message, setMessage] = React.useState('')
-  const onChange = (event) => {
-    setMessage(event.detail)
-  }
+  const [message, setMessage] = React.useState('');
+  const onChange = event => {
+    setMessage(event.detail);
+  };
   return (
-    <Field 
+    <Field
       value={message}
       label="事项"
       type="textarea"
@@ -328,6 +338,8 @@ export default function Demo() {
 | leftIcon | 左侧图标svg值或图片链接，可选值见 [Icon 组件](/material/smartui?comId=icon) | _string_ | - |
 | maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | _number_ | `-1` |
 | name | 在表单内提交时的标识符。可以通过配置 `name` 来扩大点击区域 | _string_ | - |
+| numberFormat `v2.12.0` | 是否开启数字格式化（千分位、小数位按 locale 展示） | _boolean_ | `false` |
+| locale `v2.12.0` | 数字格式化使用的地区，如 `de`、`fr`，空则跟随系统 | _string_ | `''` |
 | password | 是否是密码类型 | _boolean_ | `false` |
 | placeholder | 输入框为空时占位符 | _string_ | - |
 | placeholderStyle | 指定 placeholder 的样式 | _React.CSSProperties_ | - |

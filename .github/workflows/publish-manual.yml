@@ -12,11 +12,11 @@ on:
         type: string
       mr_id:
         description: 'Merge request (PR) ID from miniapp-smart-ui to fetch diff info'
-        required: false
+        required: true
         type: string
       branch:
         description: 'Source branch name from miniapp-smart-ui'
-        required: false
+        required: true
         type: string
   workflow_call:
     inputs:
@@ -26,11 +26,11 @@ on:
         type: string
       mr_id:
         description: 'Merge request (PR) ID from miniapp-smart-ui to fetch diff info'
-        required: false
+        required: true
         type: string
       branch:
         description: 'Source branch name from miniapp-smart-ui'
-        required: false
+        required: true
         type: string
 
 jobs:
@@ -121,7 +121,7 @@ jobs:
       - name: Clone miniapp
         run: |
           echo "Attempting to clone miniapp-smart-ui repository..."
-          BRANCH="${{ inputs.branch || github.ref_name }}"
+          BRANCH="${{ startsWith(inputs.branch, 'fix/') && 'release/2.x' || inputs.branch || github.ref_name }}"
           echo "Using branch: $BRANCH"
           if git clone -b "$BRANCH" https://github.com/Tuya-Community/miniapp-smart-ui.git; then
             echo "✅ Successfully cloned miniapp-smart-ui repository"
@@ -130,6 +130,13 @@ jobs:
             echo "This may be due to insufficient permissions or network issues."
             echo "Please check if the MINIAPP_TOKEN has the necessary permissions to access the repository."
             exit 1
+          fi
+          if [ "$BRANCH" != "release/2.x" ]; then
+            echo "Pulling latest release/2.x to keep up to date..."
+            cd miniapp-smart-ui
+            git pull origin release/2.x --no-rebase
+            cd ..
+            echo "✅ Merged release/2.x into $BRANCH"
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.MINIAPP_TOKEN }}

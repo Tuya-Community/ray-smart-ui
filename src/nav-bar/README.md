@@ -19,10 +19,11 @@ import { NavBar } from '@ray-js/smart-ui';
 ### 首页
 
 首页的文本样式默认左对齐并加粗，点击左侧文本时触发事件；background `v2.7.0` 属性可以设置 nav-bar 的背景色。
+通过 `slot="left"` 可在左侧区域插入自定义内容（如图标），插入的内容使用 `margin-left: auto` 可在不脱离文档流的情况下在左侧容器内居右排列 `v2.12.0`。
 
 ```jsx
 import { showToast } from '@ray-js/ray';
-import { NavBar } from '@ray-js/smart-ui';
+import { Icon, NavBar } from '@ray-js/smart-ui';
 import React from 'react';
 
 export default function Demo() {
@@ -39,6 +40,22 @@ export default function Demo() {
         leftText="HomeHomeHomeHomeHome"
         leftTextType="home"
         onClickLeftText={onClickLeftText}
+      />
+      <NavBar
+        background="#E4EDFF"
+        customClass="demo-nav-bar"
+        leftText="HomeHomeHomeHomeHome"
+        leftTextType="home"
+        onClickLeftText={onClickLeftText}
+        slot={{
+          left: (
+            <Icon
+              style={{ marginLeft: 'auto', paddingLeft: '16px' }}
+              name="https://images.tuyacn.com/content-platform/hestia/1729664215ebd89f13e54.png"
+              size="24px"
+            />
+          ),
+        }}
       />
     </>
   );

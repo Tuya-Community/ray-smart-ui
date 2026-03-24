@@ -8,6 +8,10 @@ export interface ComponentBase {
    * css 类名
    */
   className?: string;
+  /**
+   * 样式
+   */
+  style?: React.CSSProperties;
 }
 
 export type SmartComponent<Props = {}, Events = {}, EC = {}, Slot = {}> = ComponentBase &

@@ -1,5 +1,26 @@
 # Changelog
 
+## v2.12.0 (2026-3-24)
+
+### Features ✨
+
+- nav-bar: In home mode (`leftTextType="home"`), support custom content (e.g. icons) via `left`; no new component properties ([4175796](https://github.com/Tuya-Community/miniapp-smart-ui/pull/163/commits/417579676d3088e066abba7ccca9e7010f68ee3d))
+- index-bar: Add `showMoveTip` property for a bubble hint while dragging the index sidebar ([pull/166](https://github.com/Tuya-Community/miniapp-smart-ui/pull/166), [pull/178](https://github.com/Tuya-Community/miniapp-smart-ui/pull/178))
+- toast: UED-aligned background, border, and shadow; default min/max width tweaks; overridable via CSS variables such as `--toast-background-color`, `--toast-border`, `--toast-box-shadow`, `--toast-text-min-width`, `--toast-text-max-width`, `--toast-min-width`, and `--toast-max-width` ([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))
+- overlay: `backdrop-filter` frosted-glass mask where supported; new CSS variables `--overlay-blur-background` and `--overlay-blur-radius` ([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))
+- field: Add `numberFormat` and `locale` properties; export helpers `getNumberFormatConfig`, `parseFormattedNumber`, and `formatNumber` ([pull/162](https://github.com/Tuya-Community/miniapp-smart-ui/pull/162))
+- config-provider: Theme mapping adds `--smart-ui-toast-background`, `--smart-ui-toast-border`, `--smart-ui-toast-box-shadow`, and `--smart-ui-overlay-blur-background` ([572effd](https://github.com/Tuya-Community/miniapp-smart-ui/pull/176/commits/572effdee81ed77ea0699e0bb44fab40255e81ad))
+- SmartUI native mini programs: Ray event objects support `e.origin.stopPropagation()` to stop bubbling (framework event API, not component properties) ([9c6a4ae](https://github.com/Tuya-Community/miniapp-smart-ui/pull/174/commits/9c6a4ae1cd9acd6c0179f625eb9eccd8aec7f2cf))
+
+### Bug Fixes 🐛
+
+- tab: Fix text jumping when switching tabs ([e24aff0](https://github.com/Tuya-Community/miniapp-smart-ui/pull/167/commits/e24aff0610a9432c4831235d21593e451678c50a))
+- tabbar: Fix occasional image flicker when switching tabs with slotted images ([93116bc](https://github.com/Tuya-Community/miniapp-smart-ui/pull/169/commits/93116bc6cd0b9d56747718e32b2ffae38acbbf5e))
+- popup, action-sheet, bottom-sheet, dialog: When `fullCoverView` is enabled, the root `cover-view` inherits the component `zIndex` ([faff9eb](https://github.com/Tuya-Community/miniapp-smart-ui/pull/165/commits/faff9ebab1f504eed6381241c82c63c2c8dd0ff8))
+- index-bar: Fix inaccurate drag positioning on the right sidebar, flickering divider lines, fixed-nav position jumps, and incorrect positioning when the sidebar list does not match the content ([pull/166](https://github.com/Tuya-Community/miniapp-smart-ui/pull/166), [pull/178](https://github.com/Tuya-Community/miniapp-smart-ui/pull/178))
+- dialog: Fix typo in the internal value of `cancelButtonClass` ([0779e1b](https://github.com/Tuya-Community/miniapp-smart-ui/commit/0779e1b6d210f5bc57811ccff74820eecc0915e6))
+- nav-bar: Add TypeScript types for `leftIconColor`, `rightIconClass`, and `leftTextClass` ([33c58e5](https://github.com/Tuya-Community/ray-smart-ui/commit/33c58e572ce9ea0c1295d8705aa23f9e357e6bde))
+
 ## v2.11.1 (2026-3-3)
 
 ### Features ✨

@@ -25,25 +25,20 @@ import { Field, CellGroup } from '@ray-js/smart-ui';
 import React from 'react';
 
 export default function Demo() {
-  const [value, setValue] = React.useState('')
-  const [value2, setValue2] = React.useState('')
-  const onChange = (event) => {
+  const [value, setValue] = React.useState('');
+  const [value2, setValue2] = React.useState('');
+  const onChange = event => {
     // event.detail is the current input value
     console.log(event.detail);
-  }
-  const onChange2 = (event) => {
-    setValue2(event.detail)
-  }
+  };
+  const onChange2 = event => {
+    setValue2(event.detail);
+  };
   return (
     <CellGroup>
-      <Field 
+      <Field value={value} label="Title" placeholder="Please enter" onChange={onChange} />
+      <Field
         value={value}
-        label="Title"
-        placeholder="Please enter"
-        onChange={onChange}
-      />
-      <Field 
-        value={value} 
         label="Title"
         placeholder="Please enter"
         hiddenLabel
@@ -54,7 +49,6 @@ export default function Demo() {
 }
 ```
 
-
 ### Modify Input Content `v2.7.1`
 
 `extraEventParams` enables event enhancement mode, which provides an additional `callback` method in the `onInput` and `onChange` events. You can forcibly modify the content of the input box by passing the value to be changed into the `callback` method.
@@ -64,27 +58,21 @@ import { Field, CellGroup } from '@ray-js/smart-ui';
 import React from 'react';
 
 export default function Demo() {
-  const [value, setValue] = React.useState('')
-  const onChange = (event) => {
+  const [value, setValue] = React.useState('');
+  const onChange = event => {
     console.log(event, '--event');
     const { value } = event.detail;
     const showValue = `test${value.slice(-1)[0]}`;
     event.detail.callback({ value: showValue });
     setValue(showValue);
-  }
+  };
   return (
     <CellGroup>
-      <Field 
-        value={value}
-        label="title"
-        placeholder="Please enter"
-        onChange={onChange}
-      />
+      <Field value={value} label="title" placeholder="Please enter" onChange={onChange} />
     </CellGroup>
   );
 }
 ```
-
 
 ### Custom Type
 
@@ -95,18 +83,13 @@ import { Field, CellGroup } from '@ray-js/smart-ui';
 import React from 'react';
 
 export default function Demo() {
-  const [password, setPassword] = React.useState('')
-  const [num, setNum] = React.useState('')
+  const [password, setPassword] = React.useState('');
+  const [num, setNum] = React.useState('');
   return (
     <CellGroup>
-      <Field 
-        value={password}
-        type="password"
-        label="Password"
-        placeholder="Please enter"
-      />
-      <Field 
-        value={num} 
+      <Field value={password} type="password" label="Password" placeholder="Please enter" />
+      <Field
+        value={num}
         cardMode
         type="number"
         subLabel="Subtitle"
@@ -127,18 +110,13 @@ import { Field, CellGroup } from '@ray-js/smart-ui';
 import React from 'react';
 
 export default function Demo() {
-  const [value, setValue] = React.useState('')
-  const [num, setNum] = React.useState('')
+  const [value, setValue] = React.useState('');
+  const [num, setNum] = React.useState('');
   return (
     <CellGroup>
-      <Field 
-        value={value}
-        disabled
-        placeholder="Input box is disabled"
-        label="Title"
-      />
-      <Field 
-        value={num} 
+      <Field value={value} disabled placeholder="Input box is disabled" label="Title" />
+      <Field
+        value={num}
         cardMode
         disabled
         subLabel="Subtitle"
@@ -156,33 +134,33 @@ Use the slot `leftIcon` to insert the icon on the left side.
 
 ```jsx
 import { Field, Icon, CellGroup } from '@ray-js/smart-ui';
-import Sun from '@tuya-miniapp/icons/dist/svg/Sun'
-import { Image } from '@ray-js/ray'
+import Sun from '@tuya-miniapp/icons/dist/svg/Sun';
+import { Image } from '@ray-js/ray';
 import React from 'react';
 
 export default function Demo() {
-  const [num, setNum] = React.useState('')
+  const [num, setNum] = React.useState('');
   return (
     <CellGroup>
-      <Field 
+      <Field
         label="Title"
         placeholder="Please enter"
         slot={{
-          leftIcon: <Icon name={Sun} color="#3678E3" size="22" />
+          leftIcon: <Icon name={Sun} color="#3678E3" size="22" />,
         }}
       />
-      <Field 
+      <Field
         value={num}
         cardMode
         label="Title"
         placeholder="Please enter"
         slot={{
           leftIcon: (
-            <Image 
+            <Image
               style={{ height: '50px', width: '50px' }}
-              src="https://images.tuyacn.com/rms-static/974a30f0-a624-11ef-be03-d1a4feb99779-1731986155903.png?tyName=light-img" 
+              src="https://images.tuyacn.com/rms-static/974a30f0-a624-11ef-be03-d1a4feb99779-1731986155903.png?tyName=light-img"
             />
-          )
+          ),
         }}
       />
     </CellGroup>
@@ -196,28 +174,23 @@ Add corresponding error prompt through the `errorMessage` property; set `interEr
 
 ```jsx
 import { Field, Icon, CellGroup } from '@ray-js/smart-ui';
-import { Image } from '@ray-js/ray'
+import { Image } from '@ray-js/ray';
 import React from 'react';
 
 export default function Demo() {
-  const [value, setValue] = React.useState('')
-  const [num, setNum] = React.useState('')
+  const [value, setValue] = React.useState('');
+  const [num, setNum] = React.useState('');
   return (
     <CellGroup>
-      <Field 
-        label="Title"
-        errorMessage="Please enter username"
-        interError
-        required
-      />
-      <Field 
+      <Field label="Title" errorMessage="Please enter username" interError required />
+      <Field
         value={value}
         label="Title"
         placeholder="Please enter"
         errorMessage="Format error"
         required
       />
-      <Field 
+      <Field
         value={num}
         cardMode
         label="Title"
@@ -227,11 +200,11 @@ export default function Demo() {
         required
         slot={{
           leftIcon: (
-            <Image 
+            <Image
               style={{ height: '50px', width: '50px' }}
-              src="https://images.tuyacn.com/rms-static/974a30f0-a624-11ef-be03-d1a4feb99779-1731986155903.png?tyName=light-img" 
+              src="https://images.tuyacn.com/rms-static/974a30f0-a624-11ef-be03-d1a4feb99779-1731986155903.png?tyName=light-img"
             />
-          )
+          ),
         }}
       />
     </CellGroup>
@@ -248,22 +221,77 @@ import { Field, Button, CellGroup } from '@ray-js/smart-ui';
 import React from 'react';
 
 export default function Demo() {
-  const [num, setNum] = React.useState('')
+  const [num, setNum] = React.useState('');
   return (
     <CellGroup>
-      <Field 
+      <Field
         value={num}
         label="Title"
         placeholder="Please enter verification code"
         type="number"
         inputAlign="left"
         slot={{
-          button: <Button type="info" custom-class="button">Send Code</Button>
+          button: (
+            <Button type="info" custom-class="button">
+              Send Code
+            </Button>
+          ),
         }}
       />
     </CellGroup>
   );
 }
+```
+
+### Number Format `v2.12.0`
+
+After enabling `numberFormat`, the component will format the display of numerical inputs with thousand separators and decimal points according to the current language environment; the `locale` prop can specify regional formats (e.g., `de` for German 1.234,56, defaulting to English as 1,234.56).
+
+```jsx
+import { Field, CellGroup } from '@ray-js/smart-ui';
+import React from 'react';
+
+export default function Demo() {
+  const [numberFormatValue, setNumberFormatValue] = React.useState(12345.67);
+  const [numberFormatValueDe, setNumberFormatValueDe] = React.useState(12345.67);
+  return (
+    <CellGroup>
+      <Field
+        value={numberFormatValue}
+        numberFormat
+        label="Amount"
+        placeholder="Please enter"
+        onInput={e => setNumberFormatValue(e.detail)}
+      />
+      <Field
+        value={numberFormatValueDe}
+        numberFormat
+        locale="de"
+        label="Amount (German format)"
+        placeholder="Please enter"
+        onInput={e => setNumberFormatValueDe(e.detail)}
+      />
+    </CellGroup>
+  );
+}
+```
+
+The component also exports the following number formatting utility functions for standalone use outside the component:
+
+```jsx
+import { getNumberFormatConfig, parseFormattedNumber, formatNumber } from '@ray-js/smart-ui';
+
+// Get thousand/decimal separator config for a locale
+const config = getNumberFormatConfig('de');
+// => { thousandsSeparator: '.', decimalSeparator: ',' }
+
+// Format a plain number string into a locale-formatted display value
+const display = formatNumber('12345.67', 'de');
+// => '12.345,67'
+
+// Parse a formatted string back to a plain number string
+const raw = parseFormattedNumber('12.345,67', 'de');
+// => '12345.67'
 ```
 
 ### Message
@@ -275,12 +303,12 @@ import { Field, CellGroup } from '@ray-js/smart-ui';
 import React from 'react';
 
 export default function Demo() {
-  const [message, setMessage] = React.useState('')
-  const onChange = (event) => {
-    setMessage(event.detail)
-  }
+  const [message, setMessage] = React.useState('');
+  const onChange = event => {
+    setMessage(event.detail);
+  };
   return (
-    <Field 
+    <Field
       value={message}
       label="Matter"
       type="textarea"
@@ -329,6 +357,8 @@ export default function Demo() {
 | leftIcon | Left icon svg value or image link, optional values see [Icon component](/material/smartui?comId=icon) | _string_ | - |
 | maxlength | Maximum input length, setting it to -1 will not limit the maximum length | _number_ | `-1` |
 | name | Identifier when submitting in the form. Can expand the clickable area by configuring `name` | _string_ | - |
+| numberFormat `v2.12.0` | Whether to enable number formatting (thousands/decimal separators by locale) | _boolean_ | `false` |
+| locale `v2.12.0` | Locale for number formatting, e.g. `de`, `fr`; empty to follow system | _string_ | `''` |
 | password | Whether it is a password type | _boolean_ | `false` |
 | placeholder | Placeholder text when the input box is empty | _string_ | - |
 | placeholderStyle | Specify the style of the placeholder | _React.CSSProperties_ | - |
