@@ -54,7 +54,7 @@ const columns = [
   {
     values: new Array(100).fill(1).map((x, i) => i),
     style: { flex: 'none', width: 'auto', minWidth: '61px' },
-    fontStyle: { fontSize: '16px' },
+    fontStyle: { color: 'rgb(135, 180, 244)' },
     activeIndex: 0,
   },
   {
@@ -381,7 +381,7 @@ The component provides the following CSS variables for custom styling. For usage
 | --picker-title-font-size          | _16px_                                       | Title font size                   |
 | --picker-action-padding           | _0 @padding-md_                              | Action button padding             |
 | --picker-action-font-size         | _14px_                                       | Action button font size           |
-| --picker-confirm-action-color     | _#576b95_                                    | Confirm button color              |
+| --picker-confirm-action-color     | _#007AFF_                                   | Confirm button color              |
 | --picker-cancel-action-color      | _#969799_                                    | Cancel button color               |
 | --picker-option-font-size         | _16px_                                       | Option font size                  |
 | --picker-option-unit-font-size    | _12px_                                       | Unit font size                    |

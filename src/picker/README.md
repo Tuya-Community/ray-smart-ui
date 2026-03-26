@@ -55,7 +55,7 @@ const columns = [
   {
     values: new Array(100).fill(1).map((x, i) => i),
     style: { flex: 'none', width: 'auto', minWidth: '61px' },
-    fontStyle: { fontSize: '16px' },
+    fontStyle: { color: 'rgb(135, 180, 244)' },
     activeIndex: 0,
   },
   {
@@ -386,7 +386,7 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数�
 | --picker-title-font-size | _16px_ | 标题字体大小 |
 | --picker-action-padding | _0 @padding-md_ | 操作按钮内边距 |
 | --picker-action-font-size | _14px_ | 操作按钮字体大小 |
-| --picker-confirm-action-color | _#576b95_ | 确认按钮颜色 |
+| --picker-confirm-action-color | _#007AFF_ | 确认按钮颜色 |
 | --picker-cancel-action-color | _#969799_ | 取消按钮颜色 |
 | --picker-option-font-size | _16px_ | 选项字体大小 |
 | --picker-option-unit-font-size | _12px_ | 单位字体大小 |
