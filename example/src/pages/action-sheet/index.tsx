@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, ty } from '@ray-js/ray';
+import { View, Text } from '@ray-js/ray';
 import { useDebounce } from 'ahooks';
 import {
   ActionSheet,
@@ -88,6 +88,7 @@ export default function Demo() {
   const [tempColumnIdx, setTempColumnIdx] = useState(3);
 
   useEffect(() => {
+    // @ts-ignore
     ty.getAccessibilityMode?.({
       success: (res: { isAccessibilityMode: boolean }) => {
         setIsA11y(!!res.isAccessibilityMode);

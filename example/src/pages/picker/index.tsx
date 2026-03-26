@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Picker } from '@ray-js/smart-ui';
-import { showToast, ty } from '@ray-js/ray';
+import { showToast } from '@ray-js/ray';
 import { DemoBlock } from '@/components';
 import styles from './index.module.less';
 import Strings from '../../i18n';
@@ -120,6 +120,7 @@ export default function Demo() {
   const [activeIndex, setActiveIndex] = useState(3);
 
   useEffect(() => {
+    // @ts-ignore
     ty.getAccessibilityMode?.({
       success: (res: { isAccessibilityMode: boolean }) => {
         setIsA11y(!!res.isAccessibilityMode);
@@ -211,7 +212,12 @@ export default function Demo() {
         <Picker loop itemHeight={isA11y ? 52 : 44} columns={data.column7} onChange={onChange} />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('defaultSelection')}>
-        <Picker columns={data.column1} itemHeight={isA11y ? 52 : 44} defaultIndex={2} onChange={onChange} />
+        <Picker
+          columns={data.column1}
+          itemHeight={isA11y ? 52 : 44}
+          defaultIndex={2}
+          onChange={onChange}
+        />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('showTopBar')}>
         <Picker
@@ -236,7 +242,13 @@ export default function Demo() {
         <Picker itemHeight={isA11y ? 52 : 44} columns={data.column6} />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('more3d')}>
-        <Picker loop fullHeight itemHeight={isA11y ? 52 : 44} columns={data.column7} onChange={onChange} />
+        <Picker
+          loop
+          fullHeight
+          itemHeight={isA11y ? 52 : 44}
+          columns={data.column7}
+          onChange={onChange}
+        />
       </DemoBlock>
     </>
   );
