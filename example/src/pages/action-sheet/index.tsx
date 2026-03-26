@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text } from '@ray-js/ray';
+import React, { useEffect, useState } from 'react';
+import { View, Text, ty } from '@ray-js/ray';
 import { useDebounce } from 'ahooks';
 import {
   ActionSheet,
@@ -30,6 +30,7 @@ const tempColumns = ['39', '40', '41', '42', '43', '44', '45'];
 const minDate = new Date(2018, 0, 1).getTime();
 
 export default function Demo() {
+  const [isA11y, setIsA11y] = useState(false);
   const [currentDate, setCurrentDate] = React.useState(new Date(2018, 0, 1));
   const [currentDateStr, setCurrentDateStr] = React.useState(
     new Date(2018, 0, 1).toLocaleDateString()
@@ -85,6 +86,14 @@ export default function Demo() {
 
   const [current12Date, setCurrent12Date] = useState('12:00');
   const [tempColumnIdx, setTempColumnIdx] = useState(3);
+
+  useEffect(() => {
+    ty.getAccessibilityMode?.({
+      success: (res: { isAccessibilityMode: boolean }) => {
+        setIsA11y(!!res.isAccessibilityMode);
+      },
+    });
+  }, []);
 
   const onChange = React.useCallback(value => {
     setCurrentNumber(value);
@@ -282,6 +291,7 @@ export default function Demo() {
               className={styles.flex1}
               type="time"
               is12HourClock
+              itemHeight={isA11y ? 52 : 44}
               showToolbar={false}
               value={current12Date}
               onInput={onCurrent12DateInput}
@@ -289,6 +299,7 @@ export default function Demo() {
             <Picker
               className={styles.flex1}
               unit="℃"
+              itemHeight={isA11y ? 52 : 44}
               activeIndex={tempColumnIdx}
               columns={tempColumns}
               onChange={onTempColumnChange}

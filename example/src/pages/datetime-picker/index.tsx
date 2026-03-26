@@ -189,7 +189,7 @@ export default function Demo() {
           columnsOrder={[2, 1, 1]}
           fontStyles={{
             '12HourClock': {
-              fontSize: '14px',
+              color: 'var(--app-B6-N1,#000)',
             },
           }}
           onInput={onTimeInputSet}
