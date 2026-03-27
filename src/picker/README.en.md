@@ -385,7 +385,7 @@ The component provides the following CSS variables for custom styling. For usage
 | --picker-cancel-action-color      | _#969799_                                    | Cancel button color               |
 | --picker-option-font-size         | _16px_                                       | Option font size                  |
 | --picker-option-unit-font-size    | _12px_                                       | Unit font size                    |
-| --picker-option-text-color        | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_       | Option text color                 |
+| --picker-option-text-color        | _var(--app-B6-N1, rgba(0, 0, 0, 1))_       | Option text color                 |
 | --picker-option-unit-text-color   | _var(--app-B6-N4, rgba(0, 0, 0, 0.4))_       | Unit text color                   |
 | --picker-loading-icon-color       | _#1989fa_                                    | Loading icon color                |
 | --picker-loading-mask-color       | _var(--app-B4, #ffffff)_                     | Loading mask color                |

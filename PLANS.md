@@ -81,6 +81,6 @@
 发布计划（发布正式时间：2026.4.14 周二）
 
 - [x] nav-bar: 修改顶部安全距离获取方式全部采用基础库CSS 变量；并适配 fixed 和 placeholder 参数 ([95ac811](https://github.com/Tuya-Community/miniapp-smart-ui/pull/180/commits/95ac8112501cc842c887544845d41ab279e7281a)), 测试版本：`2.12.1-beta-0`
-- [ ] checkbox、radio、switch、slider：新增无障碍点读功能
-- [ ] picker、action-sheet、dialog、toast：新增无障碍模式样式
+- [x] checkbox、radio、switch、slider：新增无障碍点读功能 ([pull/168](https://github.com/Tuya-Community/miniapp-smart-ui/pull/168)), 测试版本：`2.12.1-beta-1`
+- [x] picker、action-sheet、dialog、toast：新增无障碍模式样式 ([pull/168](https://github.com/Tuya-Community/miniapp-smart-ui/pull/168)), 测试版本：`2.12.1-beta-1`
 - [ ] popover: 修复 show 为 false 时，trigger 设置为 longpress 时还是会点击触发问题；新增受控模式（待定）
