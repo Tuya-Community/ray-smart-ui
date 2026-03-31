@@ -338,7 +338,7 @@ export default function Demo() {
 | rightIcon `v2.7.0` | Right icon | _string_ | - |
 | rightIconColor `v2.7.0` | Color of the right icon | _string_ | - |
 | rightIconSize `v2.7.0` | Size of the right icon | _number_ | `32px` |
-| leftIconColor `v2.7.0` | Color of the left icon | _string_ | - |
+| leftIconColor `v2.7.0` | Left icon color(non-return icon) | _string_ | - |
 | background `v2.7.0` | Overall background color | _string_ | - |
 | sideWidth `v2.7.3` | Width of the side control bar, provides three built-in values: `min`, `mid`, `max`; also can pass specific width values | _string\/number\/`min`\/`mid`\/`max`_ | `mid` `v2.7.3` `max` `v2.9.0` |
 
@@ -357,7 +357,7 @@ export default function Demo() {
 | onClickLeft | Triggered when clicking the left return icon | - |
 | onClickRight | Triggered when clicking the right button | - |
 | onClickTitle `v2.0.0` | Triggered when clicking the central title | - |
-| onClickLeftIcon `v2.0.0` | Triggered when clicking the left icon | - |
+| onClickLeftIcon `v2.0.0` | Triggered when clicking the left icon (non-return icon) | - |
 | onClickLeftText `v2.0.0` | Triggered when clicking the left text | - |
 | onClickRightIcon `v2.7.0` | Triggered when clicking the right icon | - |
 | onClickRightText `v2.7.0` | Triggered when clicking the right text | - |

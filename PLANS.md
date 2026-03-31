@@ -84,4 +84,5 @@
 - [x] checkbox、radio、switch、slider：新增无障碍点读功能 ([pull/168](https://github.com/Tuya-Community/miniapp-smart-ui/pull/168)), 测试版本：`2.12.1-beta-1`
 - [x] picker、action-sheet、dialog、toast：新增无障碍模式样式 ([pull/168](https://github.com/Tuya-Community/miniapp-smart-ui/pull/168)), 测试版本：`2.12.1-beta-1`
 - [x] picker: 更新列表文案颜色取 --picker-option-text-color CSS 变量；修复 unit 占位符颜色继承 fontStyle 参数问题 ([a6207c7](https://github.com/Tuya-Community/miniapp-smart-ui/pull/181/commits/a6207c774860ca554685138e3abd9a50b190cb39)), 测试版本：`2.12.1-beta-2`
+- [x] nav-bar: 修复导航栏返回肩头颜色无法受 leftIconColor 改变问题 ([5ca0922](https://github.com/Tuya-Community/miniapp-smart-ui/pull/182/commits/5ca0922a0f35d760d25a0e9337ef5b1132bb31b9)), 测试版本：`2.12.1-beta-3`
 - [ ] popover: 修复 show 为 false 时，trigger 设置为 longpress 时还是会点击触发问题；新增受控模式（待定）

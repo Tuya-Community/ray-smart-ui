@@ -338,7 +338,7 @@ export default function Demo() {
 | rightIcon `v2.7.0` | 右侧图标 | _string_ | - |
 | rightIconColor `v2.7.0` | 右侧图标颜色 | _string_ | - |
 | rightIconSize `v2.7.0` | 右侧图标大小 | _number_ | `32px` |
-| leftIconColor `v2.7.0` | 左侧图标颜色 | _string_ | - |
+| leftIconColor `v2.7.0` | 左侧图标颜色 （非返回 icon） | _string_ | - |
 | background `v2.7.0` | 整体背景色 | _string_ | - |
 | sideWidth `v2.7.3` | 两边控制栏的宽度, 提供 `min`、`mid`、`max`三档内置值；也可以传具体宽度值 | _string\/number\/`min`\/`mid`\/`max`_ | `mid` `v2.7.3` `max` `v2.9.0` |
 
@@ -357,7 +357,7 @@ export default function Demo() {
 | onClickLeft | 点击左侧返回 icon 时触发 | - |
 | onClickRight | 点击右侧按钮时触发 | - |
 | onClickTitle `v2.0.0` | 点击中央标题时触发 | - |
-| onClickLeftIcon `v2.0.0` | 点击左侧 icon 时触发 | - |
+| onClickLeftIcon `v2.0.0` | 点击左侧 icon 时触发（非返回 icon） | - |
 | onClickLeftText `v2.0.0` | 点击左侧文本时触发 | - |
 | onClickRightIcon `v2.7.0` | 点击右侧图标时触发 | - |
 | onClickRightText `v2.7.0` | 点击右侧文本时触发 | - |
