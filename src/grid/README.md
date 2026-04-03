@@ -229,7 +229,6 @@ export default function Demo() {
 | ariaLabel `v2.12.1` | 无障碍读屏文案，设置在根节点的 `aria-label` 上 | _string_ | - |
 | badge | 图标右上角徽标的内容 | _string \| number_ | - |
 | dot | 是否显示图标右上角小红点 | _boolean_ | `false` |
-| ariaLabel `v2.12.1` | 无障碍读屏文案 | _string_ | - |
 | icon | 图标 svg 值或图片链接，可选值见 [Icon 组件](/material/smartui?comId=icon) | _string_ | - |
 | iconColor | 图标颜色 | _string_ | - |
 | iconPrefix `v1.7.0` | 第三方图标前缀 | _string_ | `smart-icon` |

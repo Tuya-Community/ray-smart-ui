@@ -216,7 +216,6 @@ export default function Demo() {
 | rightIconColor | 右侧[图标](/material/smartui?comId=icon)颜色 | _string_ | - |
 | leftIconStyle | 左侧[图标](/material/smartui?comId=icon)样式 | _React.CSSProperties_ | - |
 | rightIconStyle | 左侧[图标](/material/smartui?comId=icon)样式 | _React.CSSProperties_ | - |
-| closeIconAriaLabel `v2.12.1` | 关闭图标的无障碍读屏文案，透传至关闭图标的 `aria-label` | _string_ | - |
 | mode | 通知栏模式，可选值为 `closeable` `link` | _string_ | `''` |
 | openType | `link`模式时,路由跳转方法名称 | _string_ | `navigateTo` |
 | url | `link`模式时,路由跳转地址 | _string_ | `''` |

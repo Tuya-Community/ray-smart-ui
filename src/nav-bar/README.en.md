@@ -328,7 +328,7 @@ export default function Demo() {
 | leftText | Left text | _string_ | `''` |
 | leftTextType `v2.0.0` | The style type of the left text, can be `home`, `title`, `back` | _string_ | `back` |
 | leftIcon `v2.0.0` | Left icon | _string_ | `''` |
-| leftIconAriaLabel `v2.12.1` | Accessible label for the left icon | _string_ | - |
+| leftIconAriaLabel `v2.12.1` | Accessible label for the left icon button | _string_ | - |
 | leftIconSize `v2.0.0` | Left icon size, default is 32 | _string \| number_ | `32` |
 | round `v2.1.0` | Whether to show rounded corners | _boolean_ | `false` |
 | placeholder | Whether to enable placeholder when fixed at the top | _boolean_ | `false` |
@@ -338,7 +338,7 @@ export default function Demo() {
 | zIndex | Element z-index | _number_ | `1` |
 | rightTextColor `v2.7.0` | Color of the right text | _string_ | - |
 | rightIcon `v2.7.0` | Right icon | _string_ | - |
-| rightIconAriaLabel `v2.12.1` | Accessible label for the right icon | _string_ | - |
+| rightIconAriaLabel `v2.12.1` | Accessible label for the right icon button | _string_ | - |
 | rightIconColor `v2.7.0` | Color of the right icon | _string_ | - |
 | rightIconSize `v2.7.0` | Size of the right icon | _number_ | `32px` |
 | leftIconColor `v2.7.0` | Left icon color(non-return icon) | _string_ | - |

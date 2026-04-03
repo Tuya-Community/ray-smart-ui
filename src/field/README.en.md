@@ -334,7 +334,7 @@ export default function Demo() {
 | autosize | Whether to adapt the content height, only effective for textarea, <br>can pass an object, such as { maxHeight: 100, minHeight: 50 }, <br>unit is `px` | _boolean \| object_ | `false` |
 | border | Whether to show the inner border | _boolean_ | `false` |
 | center | Whether to vertically center the content | _boolean_ | `false` |
-| clearIconAriaLabel `v2.12.1` | Accessible label for the clear button, set on the clear icon's `aria-label` | _string_ | - |
+| clearIconAriaLabel `v2.12.1` | Accessible label for the clear button, passed to the clear icon's `aria-label` | _string_ | - |
 | clearTrigger `v1.8.4` | When to show the clear icon, `always` means to display when the input box is not empty, <br>`focus` means to display when the input box is focused and not empty | _string_ | `focus` |
 | clearable | Whether to enable the clear control | _boolean_ | `false` |
 | clickable | Whether to enable click feedback | _boolean_ | `false` |
