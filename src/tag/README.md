@@ -162,6 +162,7 @@ export default function Demo() {
 
 | 参数       | 说明                                                  | 类型      | 默认值  |
 | ---------- | ----------------------------------------------------- | --------- | ------- |
+| closeIconAriaLabel `v2.12.1` | 关闭按钮的无障碍读屏文案，透传至关闭图标的 `ariaLabel` | _string_ | - |
 | closeable | 是否为可关闭标签 | _boolean_ | `false` |
 | color | 标签颜色 | _string_ | - |
 | mark | 是否为标记样式 | _boolean_ | `false` |

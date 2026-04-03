@@ -262,6 +262,7 @@ export default function Demo() {
 | --------------- | -------------------------------------------------------------- | ------------------ | --------- |
 | activeColor | 选中状态的高亮颜色 | _string_ | `#1989fa` |
 | closeIcon | 关闭图标svg值或图片链接，等同于 Icon 组件的 [name 属性](/material/smartui?comId=icon) | _string_ | `cross` |
+| closeIconAriaLabel `v2.12.1` | 关闭按钮的无障碍读屏文案，透传至内部 `smart-icon` 的 `aria-label` | _string_ | - |
 | closeable | 是否显示关闭图标 | _boolean_ | `true` |
 | ellipsis | 是否省略过长的标题文字, 关闭后文字过长会出现横向滚动 | _boolean_ | `true` |
 | options | 可选项数据源 | _CascaderOption[]_ | `[]` |

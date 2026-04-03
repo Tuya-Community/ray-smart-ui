@@ -145,6 +145,8 @@ If you need to use more icons based on the existing Icon, you can import the cor
 
 | Parameter     | Description                              | Type               | Default    |
 | ------------- | ---------------------------------------- | ------------------ | ---------- |
+| ariaLabel `v2.12.1` | Accessible label; when non-empty, root `aria-role` is `button` | _string_ | - |
+| ariaRole `v2.12.1` | `aria-role` on root | _string_ | - |
 | classPrefix | Class name prefix | _string_ | `smart-icon` |
 | color | Icon color | _string_ | `inherit` |
 | customStyle | Custom styles | _React.CSSProperties_ | - |

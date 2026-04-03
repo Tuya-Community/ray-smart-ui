@@ -167,7 +167,9 @@ export default function Demo() {
 | longPress | Whether to enable long-press gesture | _boolean_ | `true` |
 | max | Maximum value | _string \| number_ | - |
 | min | Minimum value | _string \| number_ | `1` |
+| minusAriaLabel `v2.12.1` | Accessible label for the minus button | _string_ | - |
 | name | Identifier when submitting in a form | _string_ | - |
+| plusAriaLabel `v2.12.1` | Accessible label for the plus button | _string_ | - |
 | showMinus | Whether to show the decrement button | _boolean_ | `true` |
 | showPlus | Whether to show the increment button | _boolean_ | `true` |
 | step | Step size | _string \| number_ | `1` |

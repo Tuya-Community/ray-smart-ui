@@ -151,6 +151,7 @@ export default function Demo() {
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
 | closeIcon | Name or URL of the close icon | _string_ | `cross` |
+| closeIconAriaLabel `v2.12.1` | Accessible label for the close icon, passed to inner `smart-icon` as `aria-label` | _string_ | - |
 | closeIconPosition | Close icon position, options: `top-left`, `bottom-left`, `bottom-right` | _string_ | `top-right` |
 | closeOnClickOverlay | Whether to close when clicking the overlay | _boolean_ | `true` |
 | closeable | Whether to show the close icon | _boolean_ | `false` |
