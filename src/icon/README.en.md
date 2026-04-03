@@ -154,6 +154,8 @@ If you need to use more icons based on the existing Icon, you can import the cor
 | info | Text notification at the top-right corner of the icon | _string \| number_ | - |
 | name | Icon name, Svg URL, or image link | _string_ | - |
 | size | Icon size, such as `20px`, `2em`, default unit is `px` | _string \| number_ | `inherit` |
+| ariaLabel `v2.12.1` | Accessible label for screen readers | _string_ | - |
+| ariaRole `v2.12.1` | Accessible role | _string_ | - |
 
 ### Events
 

@@ -216,6 +216,7 @@ export default function Demo() {
 | leftIconColor | Left [icon](/material/smartui?comId=icon) color | _string_ | - |
 | leftIconStyle | Left [icon](/material/smartui?comId=icon) style | _React.CSSProperties_ | - |
 | rightIconStyle | Right [icon](/material/smartui?comId=icon) style | _React.CSSProperties_ | - |
+| closeIconAriaLabel `v2.12.1` | Accessible label for the close icon, set on the close icon's `aria-label` | _string_ | - |
 | mode | Notice bar mode, options are `closeable`, `link` | _string_ | `''` |
 | openType | Method name for route navigation in `link` mode | _string_ | `navigateTo` |
 | url | Route navigation address in `link` mode | _string_ | `''` |

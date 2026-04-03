@@ -121,6 +121,20 @@ export interface SmartStepperProps {
    * @default false
    */
   alwaysEmbed?: boolean;
+
+  /**
+   * 减号按钮的无障碍读屏文案
+   *
+   * @version 2.12.1
+   */
+  minusAriaLabel?: string;
+
+  /**
+   * 加号按钮的无障碍读屏文案
+   *
+   * @version 2.12.1
+   */
+  plusAriaLabel?: string;
 }
 
 /**

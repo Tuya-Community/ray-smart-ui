@@ -50,6 +50,13 @@ export interface SmartTagProps {
    * @default false
    */
   closeable?: boolean;
+
+  /**
+   * 关闭图标的无障碍读屏文案
+   *
+   * @version 2.12.1
+   */
+  closeIconAriaLabel?: string;
 }
 
 export interface SmartTagEvents {
