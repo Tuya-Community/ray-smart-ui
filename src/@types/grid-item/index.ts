@@ -46,6 +46,13 @@ export interface SmartGridItemProps {
    * @default 'navigateTo'
    */
   linkyType?: 'redirectTo' | 'switchTab' | 'reLaunch';
+
+  /**
+   * 无障碍读屏文案
+   *
+   * @version 2.12.1
+   */
+  ariaLabel?: string;
 }
 
 export interface SmartGridItemEvents {

@@ -120,6 +120,13 @@ export interface SmartBottomSheetProps {
    * @version 2.11.1
    */
   fullCoverView?: boolean;
+
+  /**
+   * 关闭图标读屏文案；不传则仅有 button 角色，由业务自行多语言传入
+   *
+   * @version 2.12.1
+   */
+  closeIconAriaLabel?: string;
 }
 
 export interface SmartBottomSheetEvents extends SmartTransitionEvents {

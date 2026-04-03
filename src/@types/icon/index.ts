@@ -42,6 +42,20 @@ export interface SmartIconProps {
    * @default 'smart-icon'
    */
   classPrefix?: string;
+
+  /**
+   * 无障碍读屏文案
+   *
+   * @version 2.12.1
+   */
+  ariaLabel?: string;
+
+  /**
+   * 无障碍角色
+   *
+   * @version 2.12.1
+   */
+  ariaRole?: string;
 }
 
 export interface SmartIconEvents {
