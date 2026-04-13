@@ -86,4 +86,5 @@
 - [x] picker: 更新列表文案颜色取 --picker-option-text-color CSS 变量；修复 unit 占位符颜色继承 fontStyle 参数问题 ([a6207c7](https://github.com/Tuya-Community/miniapp-smart-ui/pull/181/commits/a6207c774860ca554685138e3abd9a50b190cb39)), 测试版本：`2.12.1-beta-2`
 - [x] dialog: 修复dialog 标题 padding 样式问题,新增 --dialog-header-padding-side CSS 变量 ([5e4086b](https://github.com/Tuya-Community/miniapp-smart-ui/pull/184/commits/5e4086b5d04b278056bb0f1ba2fcf659498e7471))，测试版本：`2.12.1-beta-5`
 - [x] 全组件增加无障碍角色，解决部分功能无法选中问题 ([bc7088b](https://github.com/Tuya-Community/miniapp-smart-ui/pull/186/commits/bc7088bdd55bb3fb73c7275bf3a326ed86608846), [e64f00d](https://github.com/Tuya-Community/miniapp-smart-ui/pull/185/commits/e64f00d8e7ec67c0dbd019dea1eb7c04a82970bb))，测试版本：`2.12.1-beta-7`
+- [x] index-bar: 新增 stickyPush 属性，可关闭滚动时上一个吸顶锚点的上推动画效果；修复第一个标题无法向下滚动取消吸顶问题 ([d9c8145](https://github.com/Tuya-Community/miniapp-smart-ui/pull/187/commits/d9c8145da97604a94b666d4a9619afd22c6abe83))，测试版本：`2.12.1-beta-8`
 - [ ] popover: 修复 show 为 false 时，trigger 设置为 longpress 时还是会点击触发问题；新增受控模式（待定）
