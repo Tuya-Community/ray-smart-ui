@@ -23,6 +23,14 @@ export interface SmartIndexBarProps {
   sticky?: boolean;
 
   /**
+   * 滚动时是否开启上一个吸顶锚点的上推动画效果
+   *
+   * @version 2.12.1
+   * @default true
+   */
+  stickyPush?: boolean;
+
+  /**
    * 锚点自动吸顶时与顶部的距离
    *
    * @default 0
