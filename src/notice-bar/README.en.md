@@ -216,7 +216,7 @@ export default function Demo() {
 | leftIconColor | Left [icon](/material/smartui?comId=icon) color | _string_ | - |
 | leftIconStyle | Left [icon](/material/smartui?comId=icon) style | _React.CSSProperties_ | - |
 | rightIconStyle | Right [icon](/material/smartui?comId=icon) style | _React.CSSProperties_ | - |
-| mode | Notice bar mod2.13.0ions are `closeable`, `link` | _string_ | `''` |
+| mode | Notice bar mode, options are `closeable`, `link` | _string_ | `''` |
 | openType | Method name for route navigation in `link` mode | _string_ | `navigateTo` |
 | url | Route navigation address in `link` mode | _string_ | `''` |
 | scrollable | Whether to enable scrolling playback, enabled by default when content length overflows | _boolean_ | - |

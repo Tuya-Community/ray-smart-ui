@@ -172,7 +172,7 @@ export default function Demo() {
 | plusAriaLabel `v2.13.0` | 增加按钮的无障碍读屏文案 | _string_ | - |
 | showMinus | 是否显示减少按钮 | _boolean_ | `true` |
 | showPlus | 是否显示增加按钮 | _boolean_ | `true` |
-| step | 步长 | _str2.13.0 number_ | `1` |
+| step | 步长 | _string \| number_ | `1` |
 | theme | 样式风格，可选值为 `round` | _string_ | - |
 | value | 输入值 | _string \| number_ | 最小值 |
 

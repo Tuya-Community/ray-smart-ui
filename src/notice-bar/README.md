@@ -216,7 +216,7 @@ export default function Demo() {
 | rightIconColor | 右侧[图标](/material/smartui?comId=icon)颜色 | _string_ | - |
 | leftIconStyle | 左侧[图标](/material/smartui?comId=icon)样式 | _React.CSSProperties_ | - |
 | rightIconStyle | 左侧[图标](/material/smartui?comId=icon)样式 | _React.CSSProperties_ | - |
-| mode | 通知栏模式，可选值为 `cl2.13.0e` `link` | _string_ | `''` |
+| mode | 通知栏模式，可选值为 `closeable` `link` | _string_ | `''` |
 | openType | `link`模式时,路由跳转方法名称 | _string_ | `navigateTo` |
 | url | `link`模式时,路由跳转地址 | _string_ | `''` |
 | scrollable | 是否开启滚动播放，内容长度溢出时默认开启 | _boolean_ | - |

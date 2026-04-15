@@ -154,8 +154,8 @@ export default function Demo() {
 | info | 图标右上角文字提示 | _string \| number_ | - |
 | name | 图标名称或 Svg URL 或图片链接 | _string_ | - |
 | size | 图标大小，如 `20px`，`2em`，默认单位为`px` | _string \| number_ | `inherit` |
-2.13.0
-### Events2.13.0
+
+### Events
 
 | 事件名     | 说明           | 参数 |
 | ---------- | -------------- | ---- |

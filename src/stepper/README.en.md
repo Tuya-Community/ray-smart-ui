@@ -172,7 +172,7 @@ export default function Demo() {
 | plusAriaLabel `v2.13.0` | Accessible label for the plus button | _string_ | - |
 | showMinus | Whether to show the decrement button | _boolean_ | `true` |
 | showPlus | Whether to show the increment button | _boolean_ | `true` |
-| step | Step size2.13.0ring \| number_ | `1` |
+| step | Step size | _string \| number_ | `1` |
 | theme | Style theme, optional value `round` | _string_ | - |
 | value | Input value | _string \| number_ | Minimum |
 

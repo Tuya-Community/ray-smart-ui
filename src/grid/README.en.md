@@ -219,7 +219,7 @@ export default function Demo() {
 | ariaLabel `v2.13.0` | Accessible label set on the root node's `aria-label` | _string_ | - |
 | badge | Content of the top-right badge of the icon | _string \| number_ | - |
 | dot | Show a small red dot on the top-right of the icon | _boolean_ | `false` |
-| icon | Icon 2.13.0lue or image link, see [Icon Component](/material/smartui?comId=icon) | _string_ | - |
+| icon | Icon Svg Value or image link, see [Icon Component](/material/smartui?comId=icon) | _string_ | - |
 | iconColor | Icon color | _string_ | - |
 | iconPrefix `v1.7.0` | Third-party icon prefix | _string_ | `smart-icon` |
 | linkType | Link jump type, options are `redirectTo` [`switchTab`](https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.switchTab.html) `reLaunch` | _string_ | `navigateTo` |
