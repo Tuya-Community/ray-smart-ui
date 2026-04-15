@@ -145,8 +145,8 @@ If you need to use more icons based on the existing Icon, you can import the cor
 
 | Parameter     | Description                              | Type               | Default    |
 | ------------- | ---------------------------------------- | ------------------ | ---------- |
-| ariaLabel `v2.12.1` | Accessible label; when non-empty, root `aria-role` is `button` | _string_ | - |
-| ariaRole `v2.12.1` | `aria-role` on root | _string_ | - |
+| ariaLabel `v2.13.0` | Accessible label; when non-empty, root `aria-role` is `button` | _string_ | - |
+| ariaRole `v2.13.0` | `aria-role` on root | _string_ | - |
 | classPrefix | Class name prefix | _string_ | `smart-icon` |
 | color | Icon color | _string_ | `inherit` |
 | customStyle | Custom styles | _React.CSSProperties_ | - |
@@ -154,8 +154,8 @@ If you need to use more icons based on the existing Icon, you can import the cor
 | info | Text notification at the top-right corner of the icon | _string \| number_ | - |
 | name | Icon name, Svg URL, or image link | _string_ | - |
 | size | Icon size, such as `20px`, `2em`, default unit is `px` | _string \| number_ | `inherit` |
-
-### Events
+2.13.0
+### Events2.13.0
 
 | Event Name  | Description      | Parameters |
 | ----------- | ---------------- | ---------- |

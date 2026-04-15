@@ -208,7 +208,7 @@ export default function Demo() {
 | btnTextColor | Button text color | _string_ | `''` |
 | type | Notification type, options are `info`, `warning`, `error` | _string_ | `'info'` |
 | background | Background color of the scrolling bar | _string_ | `rgba(25, 137, 250, 0.1)` |
-| closeIconAriaLabel `v2.12.1` | Accessible label for the close icon, passed to the close icon's `ariaLabel` | _string_ | - |
+| closeIconAriaLabel `v2.13.0` | Accessible label for the close icon, passed to the close icon's `ariaLabel` | _string_ | - |
 | color | Notification text color | _string_ | `#1989fa` |
 | delay | Animation delay time (ms) | _number_ | `1` |
 | leftIcon | Left [icon](/material/smartui?comId=icon) or image link | _string_ | - |
@@ -216,7 +216,7 @@ export default function Demo() {
 | leftIconColor | Left [icon](/material/smartui?comId=icon) color | _string_ | - |
 | leftIconStyle | Left [icon](/material/smartui?comId=icon) style | _React.CSSProperties_ | - |
 | rightIconStyle | Right [icon](/material/smartui?comId=icon) style | _React.CSSProperties_ | - |
-| mode | Notice bar mode, options are `closeable`, `link` | _string_ | `''` |
+| mode | Notice bar mod2.13.0ions are `closeable`, `link` | _string_ | `''` |
 | openType | Method name for route navigation in `link` mode | _string_ | `navigateTo` |
 | url | Route navigation address in `link` mode | _string_ | `''` |
 | scrollable | Whether to enable scrolling playback, enabled by default when content length overflows | _boolean_ | - |

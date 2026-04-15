@@ -160,7 +160,7 @@ export interface SmartNoticeBarProps {
   /**
    * 关闭图标的无障碍读屏文案，透传至关闭图标的 aria-label
    *
-   * @version 2.12.1
+   * @version 2.13.0
    */
   closeIconAriaLabel?: string;
 }

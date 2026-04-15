@@ -145,8 +145,8 @@ export default function Demo() {
 
 | 参数         | 说明                                       | 类型               | 默认值       |
 | ------------ | ------------------------------------------ | ------------------ | ------------ |
-| ariaLabel `v2.12.1` | 无障碍读屏文案；非空时根节点 `aria-role` 为 `button` | _string_ | - |
-| ariaRole `v2.12.1` | 无障碍 `aria-role` | _string_ | - |
+| ariaLabel `v2.13.0` | 无障碍读屏文案；非空时根节点 `aria-role` 为 `button` | _string_ | - |
+| ariaRole `v2.13.0` | 无障碍 `aria-role` | _string_ | - |
 | classPrefix | 类名前缀 | _string_ | `smart-icon` |
 | color | 图标颜色 | _string_ | `inherit` |
 | customStyle | 自定义样式 | _React.CSSProperties_ | - |
@@ -154,8 +154,8 @@ export default function Demo() {
 | info | 图标右上角文字提示 | _string \| number_ | - |
 | name | 图标名称或 Svg URL 或图片链接 | _string_ | - |
 | size | 图标大小，如 `20px`，`2em`，默认单位为`px` | _string \| number_ | `inherit` |
-
-### Events
+2.13.0
+### Events2.13.0
 
 | 事件名     | 说明           | 参数 |
 | ---------- | -------------- | ---- |

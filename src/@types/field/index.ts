@@ -336,14 +336,14 @@ export interface SmartFieldProps {
   /**
    * 清除按钮的无障碍读屏文案，透传至清除图标的 aria-label
    *
-   * @version 2.12.1
+   * @version 2.13.0
    */
   clearIconAriaLabel?: string;
 
   /**
    * 右侧图标按钮的无障碍读屏文案，设置在图标容器的 aria-label 上
    *
-   * @version 2.12.1
+   * @version 2.13.0
    */
   rightIconButtonAriaLabel?: string;
 }

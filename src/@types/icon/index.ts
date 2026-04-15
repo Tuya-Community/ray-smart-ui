@@ -46,14 +46,14 @@ export interface SmartIconProps {
   /**
    * 无障碍读屏文案
    *
-   * @version 2.12.1
+   * @version 2.13.0
    */
   ariaLabel?: string;
 
   /**
    * 无障碍角色
    *
-   * @version 2.12.1
+   * @version 2.13.0
    */
   ariaRole?: string;
 }

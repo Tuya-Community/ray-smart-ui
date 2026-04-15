@@ -262,7 +262,7 @@ export default function Demo() {
 | ---------------- | ------------------------------------------------------------------------ | ------------------ | ---------- |
 | activeColor | Highlight color of the selected state | _string_ | `#1989fa` |
 | closeIcon | svg value or URL of the close icon, equivalent to the Icon component's [name attribute](/material/smartui?comId=icon) | _string_ | `cross` |
-| closeIconAriaLabel `v2.12.1` | Accessible label for the close icon, passed to inner `smart-icon` as `aria-label` | _string_ | - |
+| closeIconAriaLabel `v2.13.0` | Accessible label for the close icon, passed to inner `smart-icon` as `aria-label` | _string_ | - |
 | closeable | Whether to display the close icon | _boolean_ | `true` |
 | ellipsis | Whether to truncate long title text, closing it will cause horizontal scrolling for long text | _boolean_ | `true` |
 | options | Data source for options | _CascaderOption[]_ | `[]` |

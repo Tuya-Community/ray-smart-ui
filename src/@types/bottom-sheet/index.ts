@@ -124,7 +124,7 @@ export interface SmartBottomSheetProps {
   /**
    * 关闭图标读屏文案；不传则仅有 button 角色，由业务自行多语言传入
    *
-   * @version 2.12.1
+   * @version 2.13.0
    */
   closeIconAriaLabel?: string;
 }

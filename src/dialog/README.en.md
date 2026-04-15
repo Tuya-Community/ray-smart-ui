@@ -425,7 +425,7 @@ The component provides the following CSS variables for custom styles. Please ref
 | --dialog-header-line-height | _24px_ | Header line height |
 | --dialog-header-padding `v2.3.5` | _0_ | Header Title Padding |
 | --dialog-header-padding-top | _24px_ | Header Title Top padding |
-| --dialog-header-padding-side `v2.12.1` | _16px_ | Header left and right padding |
+| --dialog-header-padding-side `v2.13.0` | _16px_ | Header left and right padding |
 | --dialog-header-isolated-padding | _@padding-lg 0_ | Header padding |
 | --dialog-message-padding | _24px_ | Message padding |
 | --dialog-message-font-size | _16px_ | Message font size |

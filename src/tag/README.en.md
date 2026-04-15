@@ -160,9 +160,9 @@ export default function Demo() {
 
 | Parameter  | Description                                               | Type      | Default |
 | ---------- | --------------------------------------------------------- | --------- | ------- |
-| closeIconAriaLabel `v2.12.1` | Accessible label for the close icon, passed to the close icon's `ariaLabel` | _string_ | - |
+| closeIconAriaLabel `v2.13.0` | Accessible label for the close icon, passed to the close icon's `ariaLabel` | _string_ | - |
 | closeable | Whether it's a closeable tag | _boolean_ | `false` |
-| color | Tag color | _string_ | - |
+| color | Tag color | _2.13.0_ | - |
 | mark | Whether it's a mark style | _boolean_ | `false` |
 | plain | Whether it's a hollow style | _boolean_ | `false` |
 | round | Whether it's a round style | _boolean_ | `false` |

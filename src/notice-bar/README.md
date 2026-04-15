@@ -208,7 +208,7 @@ export default function Demo() {
 | btnTextColor | 按钮文本颜色 | _string_ | `''` |
 | type | 通知类型，可选值为 `info` `warning` `error` | _string_ | `'info'` |
 | background | 滚动条背景 | _string_ | `rgba(25, 137, 250, 0.1)` |
-| closeIconAriaLabel `v2.12.1` | 关闭按钮的无障碍读屏文案，透传至关闭图标的 `ariaLabel` | _string_ | - |
+| closeIconAriaLabel `v2.13.0` | 关闭按钮的无障碍读屏文案，透传至关闭图标的 `ariaLabel` | _string_ | - |
 | color | 通知文本颜色 | _string_ | `#1989fa` |
 | delay | 动画延迟时间 (ms) | _number_ | `1` |
 | leftIcon | 左侧[图标](/material/smartui?comId=icon)或图片链接 | _string_ | - |
@@ -216,7 +216,7 @@ export default function Demo() {
 | rightIconColor | 右侧[图标](/material/smartui?comId=icon)颜色 | _string_ | - |
 | leftIconStyle | 左侧[图标](/material/smartui?comId=icon)样式 | _React.CSSProperties_ | - |
 | rightIconStyle | 左侧[图标](/material/smartui?comId=icon)样式 | _React.CSSProperties_ | - |
-| mode | 通知栏模式，可选值为 `closeable` `link` | _string_ | `''` |
+| mode | 通知栏模式，可选值为 `cl2.13.0e` `link` | _string_ | `''` |
 | openType | `link`模式时,路由跳转方法名称 | _string_ | `navigateTo` |
 | url | `link`模式时,路由跳转地址 | _string_ | `''` |
 | scrollable | 是否开启滚动播放，内容长度溢出时默认开启 | _boolean_ | - |
