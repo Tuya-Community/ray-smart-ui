@@ -1,5 +1,23 @@
 # 更新日志
 
+## v2.13.0 (2026-4-16)
+
+### Features ✨
+
+- checkbox、radio、switch、slider：新增无障碍点读功能([pull/168](https://github.com/Tuya-Community/miniapp-smart-ui/pull/168))
+- picker、action-sheet、dialog、toast：新增无障碍模式样式([pull/168](https://github.com/Tuya-Community/miniapp-smart-ui/pull/168))
+- picker: 列表文案颜色支持取 `--picker-option-text-color` CSS 变量([a6207c7](https://github.com/Tuya-Community/miniapp-smart-ui/pull/181/commits/a6207c774860ca554685138e3abd9a50b190cb39))
+- dialog: 新增 `--dialog-header-padding-side` CSS 变量([5e4086b](https://github.com/Tuya-Community/miniapp-smart-ui/pull/184/commits/5e4086b5d04b278056bb0f1ba2fcf659498e7471))
+- 全组件增加无障碍角色，解决部分功能无法选中问题([bc7088b](https://github.com/Tuya-Community/miniapp-smart-ui/pull/186/commits/bc7088bdd55bb3fb73c7275bf3a326ed86608846), [e64f00d](https://github.com/Tuya-Community/miniapp-smart-ui/pull/185/commits/e64f00d8e7ec67c0dbd019dea1eb7c04a82970bb))
+- index-bar: 新增 stickyPush 属性，可关闭滚动时上一个吸顶锚点的上推动画效果([d9c8145](https://github.com/Tuya-Community/miniapp-smart-ui/pull/187/commits/d9c8145da97604a94b666d4a9619afd22c6abe83))
+
+### Bug Fixes 🐛
+
+- nav-bar: 修改顶部安全距离获取方式全部采用基础库 CSS 变量，并适配 fixed 和 placeholder 参数([95ac811](https://github.com/Tuya-Community/miniapp-smart-ui/pull/180/commits/95ac8112501cc842c887544845d41ab279e7281a))
+- picker: 修复 unit 占位符颜色继承 fontStyle 参数问题([a6207c7](https://github.com/Tuya-Community/miniapp-smart-ui/pull/181/commits/a6207c774860ca554685138e3abd9a50b190cb39))
+- dialog: 修复标题 padding 样式问题([5e4086b](https://github.com/Tuya-Community/miniapp-smart-ui/pull/184/commits/5e4086b5d04b278056bb0f1ba2fcf659498e7471))
+- index-bar: 修复第一个标题无法向下滚动取消吸顶问题([d9c8145](https://github.com/Tuya-Community/miniapp-smart-ui/pull/187/commits/d9c8145da97604a94b666d4a9619afd22c6abe83))
+
 ## v2.12.0 (2026-3-24)
 
 ### Features ✨

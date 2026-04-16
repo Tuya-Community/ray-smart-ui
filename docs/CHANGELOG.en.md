@@ -1,5 +1,23 @@
 # Changelog
 
+## v2.13.0 (2026-4-16)
+
+### Features ✨
+
+- checkbox, radio, switch, slider: Add accessibility readout support ([pull/168](https://github.com/Tuya-Community/miniapp-smart-ui/pull/168))
+- picker, action-sheet, dialog, toast: Add accessibility-mode styles ([pull/168](https://github.com/Tuya-Community/miniapp-smart-ui/pull/168))
+- picker: Support `--picker-option-text-color` CSS variable for option text color ([a6207c7](https://github.com/Tuya-Community/miniapp-smart-ui/pull/181/commits/a6207c774860ca554685138e3abd9a50b190cb39))
+- dialog: Add `--dialog-header-padding-side` CSS variable ([5e4086b](https://github.com/Tuya-Community/miniapp-smart-ui/pull/184/commits/5e4086b5d04b278056bb0f1ba2fcf659498e7471))
+- all components: Add accessibility roles and fix cases where some interactions could not be selected ([bc7088b](https://github.com/Tuya-Community/miniapp-smart-ui/pull/186/commits/bc7088bdd55bb3fb73c7275bf3a326ed86608846), [e64f00d](https://github.com/Tuya-Community/miniapp-smart-ui/pull/185/commits/e64f00d8e7ec67c0dbd019dea1eb7c04a82970bb))
+- index-bar: Add stickyPush to disable the upward-push animation from the previous sticky anchor while scrolling ([d9c8145](https://github.com/Tuya-Community/miniapp-smart-ui/pull/187/commits/d9c8145da97604a94b666d4a9619afd22c6abe83))
+
+### Bug Fixes 🐛
+
+- nav-bar: Use base-library CSS variables for top safe-area spacing and adapt fixed and placeholder behavior ([95ac811](https://github.com/Tuya-Community/miniapp-smart-ui/pull/180/commits/95ac8112501cc842c887544845d41ab279e7281a))
+- picker: Fix unit placeholder color incorrectly inheriting from fontStyle ([a6207c7](https://github.com/Tuya-Community/miniapp-smart-ui/pull/181/commits/a6207c774860ca554685138e3abd9a50b190cb39))
+- dialog: Fix title padding style ([5e4086b](https://github.com/Tuya-Community/miniapp-smart-ui/pull/184/commits/5e4086b5d04b278056bb0f1ba2fcf659498e7471))
+- index-bar: Fix the first title staying sticky when scrolling back down ([d9c8145](https://github.com/Tuya-Community/miniapp-smart-ui/pull/187/commits/d9c8145da97604a94b666d4a9619afd22c6abe83))
+
 ## v2.12.0 (2026-3-24)
 
 ### Features ✨
