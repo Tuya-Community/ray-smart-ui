@@ -167,7 +167,9 @@ export default function Demo() {
 | longPress | 是否开启长按手势 | _boolean_ | `true` |
 | max | 最大值 | _string \| number_ | - |
 | min | 最小值 | _string \| number_ | `1` |
+| minusAriaLabel `v2.13.0` | 减少按钮的无障碍读屏文案 | _string_ | - |
 | name | 在表单内提交时的标识符 | _string_ | - |
+| plusAriaLabel `v2.13.0` | 增加按钮的无障碍读屏文案 | _string_ | - |
 | showMinus | 是否显示减少按钮 | _boolean_ | `true` |
 | showPlus | 是否显示增加按钮 | _boolean_ | `true` |
 | step | 步长 | _string \| number_ | `1` |

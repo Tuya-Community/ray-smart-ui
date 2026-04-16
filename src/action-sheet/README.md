@@ -479,6 +479,13 @@ index.module.less
 | onLeave | 遮罩离开中触发 | - |
 | onSelect | 选中选项时触发，禁用或加载状态下不会触发 | event.detail: 选项对应的对象 |
 
+### Slot
+
+| 名称    | 说明 |
+| ------- | ---- |
+| default | 自定义面板内容，通常用于插入自定义菜单内容 |
+| title | 自定义标题内容，需要 `use-title-slot` 为 `true`，且未设置 `title` 属性时生效 |
+
 ### actions
 
 `API`中的`actions`为一个对象数组，数组中的每一个对象配置每一列，每一列有以下`key`：

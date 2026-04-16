@@ -430,6 +430,7 @@ icon: AlarmIcon,
 | --dialog-header-line-height | _24px_ | 标题行高 |
 | --dialog-header-padding `v2.3.5` | _0_ | 头部标题内边距 |
 | --dialog-header-padding-top | _24px_ | 头部标题顶部内边距 |
+| --dialog-header-padding-side `v2.13.0` | _16px_ | 头部标题左右内边距 |
 | --dialog-header-isolated-padding | _@padding-lg 0_ | 标题内边距 |
 | --dialog-message-padding | _24px_ | 消息内边距 |
 | --dialog-message-font-size | _16px_ | 消息字体大小 |

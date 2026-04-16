@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Picker } from '@ray-js/smart-ui';
 import { showToast } from '@ray-js/ray';
 import { DemoBlock } from '@/components';
@@ -57,7 +57,7 @@ const data = {
     {
       values: new Array(100).fill(1).map((x, i) => i),
       style: { flex: 'none', width: 'auto', minWidth: '61px' },
-      fontStyle: { fontSize: '16px' },
+      fontStyle: { color: 'rgb(135, 180, 244)' },
       activeIndex: 0,
     },
     {
@@ -114,9 +114,20 @@ const cities = [
 ];
 
 export default function Demo() {
+  const [isA11y, setIsA11y] = useState(false);
   const [column4, setColumn4] = useState(data.column4);
   const [column5, setColumn5] = useState<any[]>(data.column5);
   const [activeIndex, setActiveIndex] = useState(3);
+
+  useEffect(() => {
+    // @ts-ignore
+    ty.getAccessibilityMode?.({
+      success: (res: { isAccessibilityMode: boolean }) => {
+        setIsA11y(!!res.isAccessibilityMode);
+      },
+    });
+  }, []);
+
   const onChange = useCallback(event => {
     const { value, index } = event.detail;
     setActiveIndex(index);
@@ -177,6 +188,7 @@ export default function Demo() {
     <>
       <DemoBlock title={Strings.getLang('basicUsage')}>
         <Picker
+          itemHeight={isA11y ? 52 : 44}
           changeAnimation
           columns={data.column1}
           activeIndex={activeIndex}
@@ -185,6 +197,7 @@ export default function Demo() {
       </DemoBlock>
       <DemoBlock title={Strings.getLang('multiColumnUsage')}>
         <Picker
+          itemHeight={isA11y ? 52 : 44}
           columns={column5}
           activeStyle={{
             color: 'rgb(135, 180, 244)',
@@ -196,14 +209,20 @@ export default function Demo() {
         />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('loop')}>
-        <Picker loop columns={data.column7} onChange={onChange} />
+        <Picker loop itemHeight={isA11y ? 52 : 44} columns={data.column7} onChange={onChange} />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('defaultSelection')}>
-        <Picker defaultIndex={2} columns={data.column1} onChange={onChange} />
+        <Picker
+          columns={data.column1}
+          itemHeight={isA11y ? 52 : 44}
+          defaultIndex={2}
+          onChange={onChange}
+        />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('showTopBar')}>
         <Picker
           showToolbar
+          itemHeight={isA11y ? 52 : 44}
           title={Strings.getLang('title')}
           defaultIndex={2}
           columns={data.column1}
@@ -211,19 +230,25 @@ export default function Demo() {
         />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('multiColumnLinkage')}>
-        <Picker columns={column4} onChange={onChangeLink} />
+        <Picker itemHeight={isA11y ? 52 : 44} columns={column4} onChange={onChangeLink} />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('disableOptions')}>
-        <Picker columns={data.column2} onChange={onChange2} />
+        <Picker columns={data.column2} itemHeight={isA11y ? 52 : 44} onChange={onChange2} />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('loadingState')}>
-        <Picker loading columns={data.column4} />
+        <Picker loading columns={data.column4} itemHeight={isA11y ? 52 : 44} />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('setTheOrderOfColumnStyles')}>
-        <Picker columns={data.column6} />
+        <Picker itemHeight={isA11y ? 52 : 44} columns={data.column6} />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('more3d')}>
-        <Picker loop fullHeight columns={data.column7} onChange={onChange} />
+        <Picker
+          loop
+          fullHeight
+          itemHeight={isA11y ? 52 : 44}
+          columns={data.column7}
+          onChange={onChange}
+        />
       </DemoBlock>
     </>
   );

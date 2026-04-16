@@ -151,6 +151,27 @@ export interface SmartNavBarProps {
    * @version v2.7.3
    */
   sideWidth?: string | number | 'min' | 'max' | 'mid';
+
+  /**
+   * 左侧返回箭头的无障碍读屏文案
+   *
+   * @version 2.13.0
+   */
+  leftArrowAriaLabel?: string;
+
+  /**
+   * 左侧图标的无障碍读屏文案
+   *
+   * @version 2.13.0
+   */
+  leftIconAriaLabel?: string;
+
+  /**
+   * 右侧图标的无障碍读屏文案
+   *
+   * @version 2.13.0
+   */
+  rightIconAriaLabel?: string;
 }
 
 export interface SmartNavBarEvents {

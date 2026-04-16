@@ -324,9 +324,11 @@ export default function Demo() {
 | customStyle | Custom style for the root node | _React.CSSProperties_ | - |
 | fixed | Whether to fix at the top | _boolean_ | `false` |
 | leftArrow | Whether to show the left arrow | _boolean_ | `false` |
+| leftArrowAriaLabel `v2.13.0` | Accessible label for the left back arrow | _string_ | - |
 | leftText | Left text | _string_ | `''` |
 | leftTextType `v2.0.0` | The style type of the left text, can be `home`, `title`, `back` | _string_ | `back` |
 | leftIcon `v2.0.0` | Left icon | _string_ | `''` |
+| leftIconAriaLabel `v2.13.0` | Accessible label for the left icon button | _string_ | - |
 | leftIconSize `v2.0.0` | Left icon size, default is 32 | _string \| number_ | `32` |
 | round `v2.1.0` | Whether to show rounded corners | _boolean_ | `false` |
 | placeholder | Whether to enable placeholder when fixed at the top | _boolean_ | `false` |
@@ -336,9 +338,10 @@ export default function Demo() {
 | zIndex | Element z-index | _number_ | `1` |
 | rightTextColor `v2.7.0` | Color of the right text | _string_ | - |
 | rightIcon `v2.7.0` | Right icon | _string_ | - |
+| rightIconAriaLabel `v2.13.0` | Accessible label for the right icon button | _string_ | - |
 | rightIconColor `v2.7.0` | Color of the right icon | _string_ | - |
 | rightIconSize `v2.7.0` | Size of the right icon | _number_ | `32px` |
-| leftIconColor `v2.7.0` | Color of the left icon | _string_ | - |
+| leftIconColor `v2.7.0` | Left icon color(non-return icon) | _string_ | - |
 | background `v2.7.0` | Overall background color | _string_ | - |
 | sideWidth `v2.7.3` | Width of the side control bar, provides three built-in values: `min`, `mid`, `max`; also can pass specific width values | _string\/number\/`min`\/`mid`\/`max`_ | `mid` `v2.7.3` `max` `v2.9.0` |
 
@@ -357,7 +360,7 @@ export default function Demo() {
 | onClickLeft | Triggered when clicking the left return icon | - |
 | onClickRight | Triggered when clicking the right button | - |
 | onClickTitle `v2.0.0` | Triggered when clicking the central title | - |
-| onClickLeftIcon `v2.0.0` | Triggered when clicking the left icon | - |
+| onClickLeftIcon `v2.0.0` | Triggered when clicking the left icon (non-return icon) | - |
 | onClickLeftText `v2.0.0` | Triggered when clicking the left text | - |
 | onClickRightIcon `v2.7.0` | Triggered when clicking the right icon | - |
 | onClickRightText `v2.7.0` | Triggered when clicking the right text | - |

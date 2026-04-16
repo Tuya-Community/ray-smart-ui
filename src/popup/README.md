@@ -151,6 +151,7 @@ export default function Demo() {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | closeIcon | 关闭图标名称或图片链接 | _string_ | `cross` |
+| closeIconAriaLabel `v2.13.0` | 关闭按钮的无障碍读屏文案，透传至内部 `smart-icon` 的 `aria-label` | _string_ | - |
 | closeIconPosition | 关闭图标位置，可选值为 `top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
 | closeOnClickOverlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
 | closeable | 是否显示关闭图标 | _boolean_ | `false` |

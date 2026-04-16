@@ -123,6 +123,7 @@ export default function Demo() {
 | highlightColor | Index character highlight color | _string_ | `#07c160` |
 | indexList | List of index characters | _string[] \| number[]_ | `A-Z` |
 | sticky | Whether to enable anchor auto-sticky | _boolean_ | `true` |
+| stickyPush `v2.13.0` | Whether to enable the push transition effect for the previous sticky anchor while scrolling | _boolean_ | `true` |
 | stickyOffsetTop | Distance from top when anchor auto-sticky | _number_ | `0` |
 | zIndex | z-index level | _number_ | `1` |
 | scrollable `v2.1.7` | Whether the SideBar can scroll | _boolean_ | `false` |

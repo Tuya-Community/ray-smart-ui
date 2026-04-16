@@ -166,8 +166,7 @@ jobs:
 
           上下文：
           1. miniapp-smart-ui PR #${{ inputs.mr_id }} 的代码变更
-          2. 代码变更详情 (Diff)：
-          $(cat $GITHUB_WORKSPACE/mr-diff/pr.diff)
+          2. 代码变更详情 (Diff) 保存在文件 $GITHUB_WORKSPACE/mr-diff/pr.diff 中，请读取该文件获取完整 diff 内容。
 
           请严格按照技能中的转换规则，仅针对 Diff 中的变更，更新 ray-smart-ui 的类型定义、Demo 和 README。"
 

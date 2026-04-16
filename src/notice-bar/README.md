@@ -208,6 +208,7 @@ export default function Demo() {
 | btnTextColor | 按钮文本颜色 | _string_ | `''` |
 | type | 通知类型，可选值为 `info` `warning` `error` | _string_ | `'info'` |
 | background | 滚动条背景 | _string_ | `rgba(25, 137, 250, 0.1)` |
+| closeIconAriaLabel `v2.13.0` | 关闭按钮的无障碍读屏文案，透传至关闭图标的 `ariaLabel` | _string_ | - |
 | color | 通知文本颜色 | _string_ | `#1989fa` |
 | delay | 动画延迟时间 (ms) | _number_ | `1` |
 | leftIcon | 左侧[图标](/material/smartui?comId=icon)或图片链接 | _string_ | - |

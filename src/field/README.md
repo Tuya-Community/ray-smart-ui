@@ -315,6 +315,7 @@ export default function Demo() {
 | autosize | 是否自适应内容高度，只对 textarea 有效，<br>可传入对象,如 { maxHeight: 100, minHeight: 50 }，<br>单位为`px` | _boolean \| object_ | `false` |
 | border | 是否显示内边框 | _boolean_ | `false` |
 | center | 是否使内容垂直居中 | _boolean_ | `false` |
+| clearIconAriaLabel `v2.13.0` | 清除按钮的无障碍读屏文案，透传至清除图标的 `aria-label` | _string_ | - |
 | clearTrigger `v1.8.4` | 显示清除图标的时机，`always` 表示输入框不为空时展示，<br>`focus` 表示输入框聚焦且不为空时展示 | _string_ | `focus` |
 | clearable | 是否启用清除控件 | _boolean_ | `false` |
 | clickable | 是否开启点击反馈 | _boolean_ | `false` |
@@ -346,6 +347,7 @@ export default function Demo() {
 | readonly | 是否只读 | _boolean_ | `false` |
 | required | 是否显示表单必填星号 | _boolean_ | `false` |
 | rightIcon | 右侧图标svg值或图片链接，可选值见 [Icon 组件](/material/smartui?comId=icon) | _string_ | - |
+| rightIconButtonAriaLabel `v2.13.0` | 右侧图标按钮的无障碍读屏文案，设置在图标容器的 `aria-label` 上 | _string_ | - |
 | selectionEnd | 光标结束位置，自动聚集时有效，需与 selection-start 搭配使用 | _number_ | `-1` |
 | selectionStart | 光标起始位置，自动聚集时有效，需与 selection-end 搭配使用 | _number_ | `-1` |
 | showConfirmBar | 是否显示键盘上方带有”完成“按钮那一栏，只对 textarea 有效 | _boolean_ | `true` |

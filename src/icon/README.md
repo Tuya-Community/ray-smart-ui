@@ -145,6 +145,8 @@ export default function Demo() {
 
 | 参数         | 说明                                       | 类型               | 默认值       |
 | ------------ | ------------------------------------------ | ------------------ | ------------ |
+| ariaLabel `v2.13.0` | 无障碍读屏文案；非空时根节点 `aria-role` 为 `button` | _string_ | - |
+| ariaRole `v2.13.0` | 无障碍 `aria-role` | _string_ | - |
 | classPrefix | 类名前缀 | _string_ | `smart-icon` |
 | color | 图标颜色 | _string_ | `inherit` |
 | customStyle | 自定义样式 | _React.CSSProperties_ | - |

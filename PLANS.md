@@ -74,4 +74,17 @@
 - [x] field: 新增地区数字格式化能力，导出 getNumberFormatConfig, parseFormattedNumber, formatNumber 方法 ([pull/162](https://github.com/Tuya-Community/miniapp-smart-ui/pull/162))，测试版本：`2.12.0-beta-6`
 - [x] config-provider: 新增 toast、overlay 相关新增全局CSS 变量适配 ([572effd](https://github.com/Tuya-Community/miniapp-smart-ui/pull/176/commits/572effdee81ed77ea0699e0bb44fab40255e81ad))，测试版本：`2.12.0-beta-6`
 - [x] index-bar: 新增拖动气泡提示功能；修复右侧栏拖动时定位不准，页面闪现分割线问题，fixed导航闪现位移问题，修复右侧列表和内容不一致时定位错误问题；([pull/166](https://github.com/Tuya-Community/miniapp-smart-ui/pull/166), [pull/178](https://github.com/Tuya-Community/miniapp-smart-ui/pull/178)), 测试版本：`2.11.2-beta-7`
+
+
+# v2.13.0
+
+发布计划（发布正式时间：2026.4.16 周四）
+
+- [x] nav-bar: 修改顶部安全距离获取方式全部采用基础库CSS 变量；并适配 fixed 和 placeholder 参数 ([95ac811](https://github.com/Tuya-Community/miniapp-smart-ui/pull/180/commits/95ac8112501cc842c887544845d41ab279e7281a)), 测试版本：`2.12.1-beta-0`
+- [x] checkbox、radio、switch、slider：新增无障碍点读功能 ([pull/168](https://github.com/Tuya-Community/miniapp-smart-ui/pull/168)), 测试版本：`2.12.1-beta-1`
+- [x] picker、action-sheet、dialog、toast：新增无障碍模式样式 ([pull/168](https://github.com/Tuya-Community/miniapp-smart-ui/pull/168)), 测试版本：`2.12.1-beta-1`
+- [x] picker: 更新列表文案颜色取 --picker-option-text-color CSS 变量；修复 unit 占位符颜色继承 fontStyle 参数问题 ([a6207c7](https://github.com/Tuya-Community/miniapp-smart-ui/pull/181/commits/a6207c774860ca554685138e3abd9a50b190cb39)), 测试版本：`2.12.1-beta-2`
+- [x] dialog: 修复dialog 标题 padding 样式问题,新增 --dialog-header-padding-side CSS 变量 ([5e4086b](https://github.com/Tuya-Community/miniapp-smart-ui/pull/184/commits/5e4086b5d04b278056bb0f1ba2fcf659498e7471))，测试版本：`2.12.1-beta-5`
+- [x] 全组件增加无障碍角色，解决部分功能无法选中问题 ([bc7088b](https://github.com/Tuya-Community/miniapp-smart-ui/pull/186/commits/bc7088bdd55bb3fb73c7275bf3a326ed86608846), [e64f00d](https://github.com/Tuya-Community/miniapp-smart-ui/pull/185/commits/e64f00d8e7ec67c0dbd019dea1eb7c04a82970bb))，测试版本：`2.12.1-beta-7`
+- [x] index-bar: 新增 stickyPush 属性，可关闭滚动时上一个吸顶锚点的上推动画效果；修复第一个标题无法向下滚动取消吸顶问题 ([d9c8145](https://github.com/Tuya-Community/miniapp-smart-ui/pull/187/commits/d9c8145da97604a94b666d4a9619afd22c6abe83))，测试版本：`2.12.1-beta-8`
 - [ ] popover: 修复 show 为 false 时，trigger 设置为 longpress 时还是会点击触发问题；新增受控模式（待定）

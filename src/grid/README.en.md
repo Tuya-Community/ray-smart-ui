@@ -216,6 +216,7 @@ export default function Demo() {
 
 | Parameter            | Description                                                                                                                                     | Type               | Default      |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ------------ |
+| ariaLabel `v2.13.0` | Accessible label set on the root node's `aria-label` | _string_ | - |
 | badge | Content of the top-right badge of the icon | _string \| number_ | - |
 | dot | Show a small red dot on the top-right of the icon | _boolean_ | `false` |
 | icon | Icon Svg Value or image link, see [Icon Component](/material/smartui?comId=icon) | _string_ | - |

@@ -156,6 +156,13 @@ export interface SmartNoticeBarProps {
    * @default false
    */
   wrapable?: boolean;
+
+  /**
+   * 关闭图标的无障碍读屏文案，透传至关闭图标的 aria-label
+   *
+   * @version 2.13.0
+   */
+  closeIconAriaLabel?: string;
 }
 
 export interface SmartNoticeBarEvents {

@@ -208,6 +208,7 @@ export default function Demo() {
 | btnTextColor | Button text color | _string_ | `''` |
 | type | Notification type, options are `info`, `warning`, `error` | _string_ | `'info'` |
 | background | Background color of the scrolling bar | _string_ | `rgba(25, 137, 250, 0.1)` |
+| closeIconAriaLabel `v2.13.0` | Accessible label for the close icon, passed to the close icon's `ariaLabel` | _string_ | - |
 | color | Notification text color | _string_ | `#1989fa` |
 | delay | Animation delay time (ms) | _number_ | `1` |
 | leftIcon | Left [icon](/material/smartui?comId=icon) or image link | _string_ | - |

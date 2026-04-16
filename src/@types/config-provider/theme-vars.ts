@@ -163,6 +163,7 @@ type DialogThemeVars =
   | 'dialogHeaderLineHeight'
   | 'dialogHeaderPaddingTop'
   | 'dialogHeaderPadding'
+  | 'dialogHeaderPaddingSide'
   | 'dialogHeaderIsolatedPadding'
   | 'dialogMessagePadding'
   | 'dialogMessageFontSize'

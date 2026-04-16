@@ -324,9 +324,11 @@ export default function Demo() {
 | customStyle | 根节点自定义样式 | _React.CSSProperties_ | - |
 | fixed | 是否固定在顶部 | _boolean_ | `false` |
 | leftArrow | 是否显示左侧箭头 | _boolean_ | `false` |
+| leftArrowAriaLabel `v2.13.0` | 左侧返回箭头的无障碍读屏文案 | _string_ | - |
 | leftText | 左侧文案 | _string_ | `''` |
 | leftTextType `v2.0.0` | 左侧文本的样式类型，范围为 `home`、`title`、`back` | _string_ | `back` |
 | leftIcon `v2.0.0` | 左侧 Icon | _string_ | `''` |
+| leftIconAriaLabel `v2.13.0` | 左侧图标按钮的无障碍读屏文案 | _string_ | - |
 | leftIconSize `v2.0.0` | 左侧 Icon 大小，默认为 32 | _string \| number_ | `32` |
 | round `v2.1.0` | 是否显示圆角 | _boolean_ | `false` |
 | placeholder | 固定在顶部时是否开启占位 | _boolean_ | `false` |
@@ -336,9 +338,10 @@ export default function Demo() {
 | zIndex | 元素 z-index | _number_ | `1` |
 | rightTextColor `v2.7.0` | 右侧文案的颜色 | _string_ | - |
 | rightIcon `v2.7.0` | 右侧图标 | _string_ | - |
+| rightIconAriaLabel `v2.13.0` | 右侧图标按钮的无障碍读屏文案 | _string_ | - |
 | rightIconColor `v2.7.0` | 右侧图标颜色 | _string_ | - |
 | rightIconSize `v2.7.0` | 右侧图标大小 | _number_ | `32px` |
-| leftIconColor `v2.7.0` | 左侧图标颜色 | _string_ | - |
+| leftIconColor `v2.7.0` | 左侧图标颜色 （非返回 icon） | _string_ | - |
 | background `v2.7.0` | 整体背景色 | _string_ | - |
 | sideWidth `v2.7.3` | 两边控制栏的宽度, 提供 `min`、`mid`、`max`三档内置值；也可以传具体宽度值 | _string\/number\/`min`\/`mid`\/`max`_ | `mid` `v2.7.3` `max` `v2.9.0` |
 
@@ -357,7 +360,7 @@ export default function Demo() {
 | onClickLeft | 点击左侧返回 icon 时触发 | - |
 | onClickRight | 点击右侧按钮时触发 | - |
 | onClickTitle `v2.0.0` | 点击中央标题时触发 | - |
-| onClickLeftIcon `v2.0.0` | 点击左侧 icon 时触发 | - |
+| onClickLeftIcon `v2.0.0` | 点击左侧 icon 时触发（非返回 icon） | - |
 | onClickLeftText `v2.0.0` | 点击左侧文本时触发 | - |
 | onClickRightIcon `v2.7.0` | 点击右侧图标时触发 | - |
 | onClickRightText `v2.7.0` | 点击右侧文本时触发 | - |
