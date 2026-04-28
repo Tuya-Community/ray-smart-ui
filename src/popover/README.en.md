@@ -300,7 +300,7 @@ export default function Demo() {
 | Parameter        | Description                                                                                                                                                                       | Type      | Default |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------- |
 | customStyle | Custom popup style | _React.CSSProperties_ | - |
-| overlayStyle `v2.13.1` | Custom overlay style, passed to inner `smart-overlay` as `custom-style` | _React.CSSProperties_ | - |
+| overlayStyle `v2.13.1` | Custom overlay style, passed to inner `smart-overlay` as `custom-style` | _string_ | `''` |
 | duration | Delay time for closing (ms) | number | `3000` |
 | placement | Position of the popup, supported values: `top`, `topLeft`, `topRight`, `bottom`, `bottomLeft`, `bottomRight`, `left`, `leftTop`, `leftBottom`, `right`, `rightTop`, `rightBottom` | _string_ | `right` |
 | show | Controls whether the popup is displayed and listens for state changes, updating `currentShow` when the value changes | _boolean_ | `false` |
