@@ -264,7 +264,7 @@ export default function Demo() {
 | 参数             | 说明                                                                                                                                                           | 类型      | 默认值  |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------- |
 | customStyle | 自定义弹出层样式 | _React.CSSProperties_ | - |
-| overlayStyle `v2.13.0` | 自定义遮罩层样式，透传至内部 `smart-overlay` | _React.CSSProperties_ | - |
+| overlayStyle `v2.13.1` | 自定义遮罩层样式，透传至内部 `smart-overlay` | _React.CSSProperties_ | - |
 | duration | 延迟关闭的时间(ms) | number | `3000` |
 | placement | 弹出层的位置，支持值：`top`、`topLeft`、`topRight`、`bottom`、`bottomLeft`、`bottomRight`、`left`、`leftTop`、`leftBottom`、`right`、`rightTop`、`rightBottom` | _string_ | `right` |
 | show | 控制弹出层是否显示，并监听状态变化，值变更时更新 `currentShow` | _boolean_ | `false` |
