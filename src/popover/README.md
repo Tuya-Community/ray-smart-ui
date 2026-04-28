@@ -216,40 +216,6 @@ less 样式如下
 }
 ```
 
-### 自定义遮罩样式 `v2.13.1`
-
-通过 `overlayStyle` 可自定义遮罩层样式，透传至内部 `smart-overlay` 的 `custom-style`。
-
-```jsx
-import { View, Text } from '@ray-js/ray';
-import { Popover, Button } from '@ray-js/smart-ui';
-import React from 'react';
-
-export default function Demo() {
-  return (
-    <View style={{ paddingLeft: 8, paddingTop: '10vh' }}>
-      <Popover
-        placement="bottom"
-        overlayStyle="background-color: rgba(64, 128, 255, 0.25);"
-        customStyle={{
-          padding: '0px',
-          width: '200px',
-        }}
-        slot={{
-          overlay: (
-            <View>
-              <Text>tip</Text>
-            </View>
-          ),
-        }}
-      >
-        <Button>自定义遮罩样式</Button>
-      </Popover>
-    </View>
-  );
-}
-```
-
 ### 受控用法
 
 通过`show`属性控制弹出层是否展示。
@@ -288,6 +254,42 @@ export default function Demo() {
     }}>
       <Button>右侧弹出</Button>
     </Popover>
+  );
+}
+```
+
+### 自定义遮罩样式 `v2.13.1`
+
+通过 `overlayStyle` 可自定义遮罩层样式，透传至内部 `smart-overlay` 的 `custom-style`。
+
+```jsx
+import { View, Text } from '@ray-js/ray';
+import { Popover, Button } from '@ray-js/smart-ui';
+import React from 'react';
+
+export default function Demo() {
+  return (
+    <View style={{ paddingLeft: 8, paddingTop: '10vh' }}>
+      <Popover
+        placement="bottom"
+        overlayStyle={{
+          backgroundColor: 'rgba(64, 128, 255, 0.25)',
+        }}
+        customStyle={{
+          padding: '0px',
+          width: '200px',
+        }}
+        slot={{
+          overlay: (
+            <View>
+              <Text>tip</Text>
+            </View>
+          ),
+        }}
+      >
+        <Button>自定义遮罩样式</Button>
+      </Popover>
+    </View>
   );
 }
 ```
