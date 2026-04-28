@@ -88,3 +88,11 @@
 - [x] 全组件增加无障碍角色，解决部分功能无法选中问题 ([bc7088b](https://github.com/Tuya-Community/miniapp-smart-ui/pull/186/commits/bc7088bdd55bb3fb73c7275bf3a326ed86608846), [e64f00d](https://github.com/Tuya-Community/miniapp-smart-ui/pull/185/commits/e64f00d8e7ec67c0dbd019dea1eb7c04a82970bb))，测试版本：`2.12.1-beta-7`
 - [x] index-bar: 新增 stickyPush 属性，可关闭滚动时上一个吸顶锚点的上推动画效果；修复第一个标题无法向下滚动取消吸顶问题 ([d9c8145](https://github.com/Tuya-Community/miniapp-smart-ui/pull/187/commits/d9c8145da97604a94b666d4a9619afd22c6abe83))，测试版本：`2.12.1-beta-8`
 - [ ] popover: 修复 show 为 false 时，trigger 设置为 longpress 时还是会点击触发问题；新增受控模式（待定）
+
+# v2.13.1
+
+发布计划（发布正式时间：2026.5.19 周二）
+
+- [x] stepper: 修复增减按钮 plus/minus 事件回调正确传递当前 value 参数 ([d60b64a](https://github.com/Tuya-Community/miniapp-smart-ui/pull/192/commits/d60b64a176aa1bcb79f1abb4a1fee8620313f3fe))，测试版本：`2.13.1-beta-0`
+- [ ] popover: 新增 overlayStyle 属性，支持自定义遮罩层样式 ([433eddd](https://github.com/Tuya-Community/miniapp-smart-ui/pull/190/commits/433eddd0699ff6756db09969c4c97f724bb52233))
+- [ ] calendar: 更新样式单位从 rpx 到 px，保持组件样式、变量定义及中英文文档一致 ([pull/191](https://github.com/Tuya-Community/miniapp-smart-ui/pull/191))

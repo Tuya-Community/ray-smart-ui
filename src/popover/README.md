@@ -216,6 +216,40 @@ less 样式如下
 }
 ```
 
+### 自定义遮罩样式 `v2.13.1`
+
+通过 `overlayStyle` 可自定义遮罩层样式，透传至内部 `smart-overlay` 的 `custom-style`。
+
+```jsx
+import { View, Text } from '@ray-js/ray';
+import { Popover, Button } from '@ray-js/smart-ui';
+import React from 'react';
+
+export default function Demo() {
+  return (
+    <View style={{ paddingLeft: 8, paddingTop: '10vh' }}>
+      <Popover
+        placement="bottom"
+        overlayStyle="background-color: rgba(64, 128, 255, 0.25);"
+        customStyle={{
+          padding: '0px',
+          width: '200px',
+        }}
+        slot={{
+          overlay: (
+            <View>
+              <Text>tip</Text>
+            </View>
+          ),
+        }}
+      >
+        <Button>自定义遮罩样式</Button>
+      </Popover>
+    </View>
+  );
+}
+```
+
 ### 受控用法
 
 通过`show`属性控制弹出层是否展示。
@@ -264,6 +298,7 @@ export default function Demo() {
 | 参数             | 说明                                                                                                                                                           | 类型      | 默认值  |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------- |
 | customStyle | 自定义弹出层样式 | _React.CSSProperties_ | - |
+| overlayStyle `v2.13.1` | 自定义遮罩层样式，透传至内部 `smart-overlay` 的 `custom-style` | _string_ | `''` |
 | duration | 延迟关闭的时间(ms) | number | `3000` |
 | placement | 弹出层的位置，支持值：`top`、`topLeft`、`topRight`、`bottom`、`bottomLeft`、`bottomRight`、`left`、`leftTop`、`leftBottom`、`right`、`rightTop`、`rightBottom` | _string_ | `right` |
 | show | 控制弹出层是否显示，并监听状态变化，值变更时更新 `currentShow` | _boolean_ | `false` |

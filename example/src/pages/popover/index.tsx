@@ -163,6 +163,33 @@ export default function Demo() {
           </Popover>
         </View>
       </DemoBlock>
+
+      <DemoBlock title={Strings.getLang('popoverOverlayStyle')}>
+        <View
+          style={{
+            paddingLeft: 8,
+            paddingTop: '10vh',
+          }}
+        >
+          <Popover
+            placement="bottom"
+            overlayStyle="background-color: rgba(64, 128, 255, 0.25);"
+            customStyle={{
+              padding: '0px',
+              width: '200px',
+            }}
+            slot={{
+              overlay: (
+                <View>
+                  <Text className={styles.listText}>tip</Text>
+                </View>
+              ),
+            }}
+          >
+            <Button>{Strings.getLang('popoverOverlayStyle')}</Button>
+          </Popover>
+        </View>
+      </DemoBlock>
     </>
   );
 }

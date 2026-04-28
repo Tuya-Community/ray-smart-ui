@@ -27,9 +27,16 @@ export interface SmartPopoverProps {
    */
   customStyle?: React.CSSProperties;
   /**
-   * 自定义遮罩层样式，透传至内部遮罩的 `custom-style`
+   * 自定义遮罩层样式，透传至内部 smart-overlay 的 custom-style
+   *
+   * @since `v2.13.1`
    */
-  overlayStyle?: React.CSSProperties;
+  overlayStyle?: string;
+  /**
+   * `z-index`层级
+   *
+   * @default 100
+   */
   zIndex?: number;
   /**
    * 延迟关闭的时间

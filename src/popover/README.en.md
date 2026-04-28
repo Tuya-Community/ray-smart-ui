@@ -216,6 +216,40 @@ less style:
 }
 ```
 
+### Custom Overlay Style `v2.13.1`
+
+Use `overlayStyle` to customize the overlay; it is passed through to the inner `smart-overlay` as `custom-style`.
+
+```jsx
+import { View, Text } from '@ray-js/ray';
+import { Popover, Button } from '@ray-js/smart-ui';
+import React from 'react';
+
+export default function Demo() {
+  return (
+    <View style={{ paddingLeft: 8, paddingTop: '10vh' }}>
+      <Popover
+        placement="bottom"
+        overlayStyle="background-color: rgba(64, 128, 255, 0.25);"
+        customStyle={{
+          padding: '0px',
+          width: '200px',
+        }}
+        slot={{
+          overlay: (
+            <View>
+              <Text>tip</Text>
+            </View>
+          ),
+        }}
+      >
+        <Button>Custom overlay style</Button>
+      </Popover>
+    </View>
+  );
+}
+```
+
 ### Controlled Usage
 
 Control whether the popover is displayed through the `show` attribute.
@@ -264,6 +298,7 @@ export default function Demo() {
 | Parameter        | Description                                                                                                                                                                       | Type      | Default |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------- |
 | customStyle | Custom popup style | _React.CSSProperties_ | - |
+| overlayStyle `v2.13.1` | Custom overlay style, passed to inner `smart-overlay` as `custom-style` | _string_ | `''` |
 | duration | Delay time for closing (ms) | number | `3000` |
 | placement | Position of the popup, supported values: `top`, `topLeft`, `topRight`, `bottom`, `bottomLeft`, `bottomRight`, `left`, `leftTop`, `leftBottom`, `right`, `rightTop`, `rightBottom` | _string_ | `right` |
 | show | Controls whether the popup is displayed and listens for state changes, updating `currentShow` when the value changes | _boolean_ | `false` |
