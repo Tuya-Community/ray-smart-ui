@@ -310,11 +310,11 @@ export default function Demo() {
 | unit | 单列选择器的默认的单位，<br>多列选择器请参考下方的 Columns 配置 | _number_ | '' |
 | valueKey | 选项对象中，文字对应的 key | _string_ | `text` |
 | visibleItemCount | 可见的选项个数 | _3 \| 5 \| 7 \| 9_ | `5` |
-| activeStyle `v2.0.0` | 选中状态下的样式 | _string_ | `''` |
+| activeStyle `v2.0.0` | 选中状态下的样式 | _React.CSSProperties_ | - |
 | changeAnimation `v2.2.0` | 组件受数据驱动选择值改变时是否需要动画过度效果（不包含手指交互滚动的动画） | _boolean_ | `false` |
 | animationTime `v2.3.7` | 过渡动画以及选择回调延迟的时间(单位ms) | _number_ | `800` `v2.3.7` `300` `v2.6.0` |
 | loop `v2.7.0` | 循环列表 | _boolean_ | `false` |
-| fontStyle `v2.7.0` | 字体样式，优先级低于 columns 内的 | _string_ | - |
+| fontStyle `v2.7.0` | 字体样式，优先级低于 columns 内的 | _React.CSSProperties_ | - |
 | fullHeight `v2.7.0` | 是否高度直接等于 `visibleItemCount * itemHeight`, 组件默认会再 `* 0.9` 缩小最外层可视的高度 | _boolean_ | `false` |
 
 

@@ -256,7 +256,7 @@ export default function Demo() {
 | titleClass | 标题额外类名，建议使用自定义样式 item-title-class 代替 | _string_ | - |
 | useBeforeToggle | 是否开启下拉菜单打开或者关闭前校验 | _boolean_ | `false` |
 | value | 当前选中项对应的 value | _number \| string_ | - |
-| scrollStyle `v2.5.0` | 当需要下拉菜单滚动时，此属性设置滚动区域的样式，比如高度 | _string_ | - |
+| scrollStyle `v2.5.0` | 当需要下拉菜单滚动时，此属性设置滚动区域的样式，比如高度 | _React.CSSProperties_ | - |
 
 ### DropdownItem Events
 

@@ -408,7 +408,7 @@ export default function Demo() {
 | title | 标题 | _string_ | - |
 | titleStyle | 自定义标题样式 | _React.CSSProperties_ | - |
 | subtitle `v2.3.5` | 二级标题 | _string_ | - |
-| subtitleStyle `v2.3.5` | 自定义二级标题样式 | _string_ | - |
+| subtitleStyle `v2.3.5` | 自定义二级标题样式 | _React.CSSProperties_ | - |
 
 ### Tabs Slot
 

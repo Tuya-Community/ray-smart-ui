@@ -135,7 +135,7 @@ export default function Demo() {
 | lowColor | Color when battery level is low | _string_ | `#ee652e` |
 | inCharging `v2.10.0` | Whether the battery is charging | _boolean_ | `false` |
 | chargingColor `v2.10.0` | Charging Color | _string_ | `#2fc755` |
-| showText  `v2.10.0` | Whether to display battery level text | _boolean_ | `false` |
+| showText `v2.10.0` | Whether to display battery level text | _boolean_ | `false` |
 | size | Size | _number_ | 10 `v2.0.0` 24 `2.10.0` |
 | type | Battery orientation | `vertical` \| `horizontal` | `vertical` |
 | value | Battery level | _number_ | 70 |
