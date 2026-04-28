@@ -31,7 +31,7 @@ export interface SmartPopoverProps {
    *
    * @since `v2.13.1`
    */
-  overlayStyle?: string;
+  overlayStyle?: React.CSSProperties;
   /**
    * `z-index`层级
    *

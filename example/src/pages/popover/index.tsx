@@ -173,7 +173,9 @@ export default function Demo() {
         >
           <Popover
             placement="bottom"
-            overlayStyle="background-color: rgba(64, 128, 255, 0.25);"
+            overlayStyle={{
+              backgroundColor: 'rgba(64, 128, 255, 0.25)',
+            }}
             customStyle={{
               padding: '0px',
               width: '200px',
