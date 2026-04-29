@@ -97,20 +97,23 @@ const tranToRayStr = str => {
       return;
     }
 
-    // event 处理
-    if (name.startsWith('bind:')) {
-      const eventName = name.slice(5);
-      name = `on${eventName.slice(0, 1).toUpperCase()}${camelCase(eventName.slice(1))}`;
-    }
+    const versionTagMatch = name.match(/\s+`[^`]+`\s*$/);
+    const versionTag = versionTagMatch ? versionTagMatch[0].trim() : '';
+    let pureName = versionTagMatch ? name.slice(0, versionTagMatch.index).trim() : name;
 
+    // event 处理
+    if (pureName.startsWith('bind:')) {
+      const eventName = pureName.slice(5);
+      pureName = `on${eventName.slice(0, 1).toUpperCase()}${camelCase(eventName.slice(1))}`;
+    }
     // 样式入参处理
-    if (name.endsWith('-style') && partList[3] === '_string_') {
+    if (pureName.endsWith('-style') && partList[3] === '_string_') {
       partList[3] = '_React.CSSProperties_';
       if (partList[4] === "''") partList[4] = '-';
       if (partList[4] === "`''`") partList[4] = '-';
     }
 
-    partList[1] = camelCase(name);
+    partList[1] = `${camelCase(pureName)}${versionTag ? ` ${versionTag}` : ''}`;
 
     const lineNew = partList.join(' | ').trim().replaceAll('$*$', '\\|');
     rayList.push(lineNew);

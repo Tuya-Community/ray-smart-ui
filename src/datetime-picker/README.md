@@ -381,7 +381,7 @@ export default function Demo() {
 | animationTime `v2.3.7` | 过渡动画以及选择回调延迟的时间(单位ms) | _number_ | `800` `v2.3.7` `300` `v2.6.0` |
 | columnStyles `v2.3.7` | 任意列的样式 | _Record\<string, string>_ | - |
 | fontStyles `v2.3.7` | 任意列的字体样式 | _Record\<string, string>_ | - |
-| activeStyle `v2.3.7` | 选中项的样式 | _string_ | - |
+| activeStyle `v2.3.7` | 选中项的样式 | _React.CSSProperties_ | - |
 
 ### Events
 

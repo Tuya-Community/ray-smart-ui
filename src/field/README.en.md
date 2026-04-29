@@ -330,7 +330,7 @@ export default function Demo() {
 | adjustPosition | Whether the page is automatically pushed up when the keyboard pops up | _boolean_ | `true` |
 | alwaysEmbed `v1.9.2` | Force the input to stay in the same layer state. The default is that the input will switch to a different layer when focused (only effective on iOS) | _boolean_ | `false` |
 | arrowDirection | Arrow direction, optional values are `left` `up` `down` | _string_ | - |
-| autoFocus  `@deprecated Mini program not supported` | Auto focus, raise the keyboard | _boolean_ | `false` |
+| autoFocus `@deprecated Mini program not supported` | Auto focus, raise the keyboard | _boolean_ | `false` |
 | autosize | Whether to adapt the content height, only effective for textarea, <br>can pass an object, such as { maxHeight: 100, minHeight: 50 }, <br>unit is `px` | _boolean \| object_ | `false` |
 | border | Whether to show the inner border | _boolean_ | `false` |
 | center | Whether to vertically center the content | _boolean_ | `false` |
@@ -350,7 +350,7 @@ export default function Demo() {
 | errorMessageAlign | Bottom error message text alignment, optional values are `center` `right` | _string_ | `''` |
 | extraEventParams `v1.10.12` | Enable event enhanced mode, will provide additional `cursor` and `keyCode` parameters in input and change events, planned to be the default behavior in the next major version | _boolean_ | `false` |
 | fixed | If the type is `textarea` and in a `position: fixed` area, you need to explicitly specify the attribute fixed as true | _boolean_ | `false` |
-| focus   `@deprecated Mini program not supported` | Get focus | _boolean_ | `false` |
+| focus `@deprecated Mini program not supported` | Get focus | _boolean_ | `false` |
 | holdKeyboard | Do not hide the keyboard when clicking the page while focused | _boolean_ | `false` |
 | inputAlign | Input text alignment, optional values are `center` `right` | _string_ | - |
 | isLink | Whether to display the right arrow and enable click feedback | _boolean_ | `false` |

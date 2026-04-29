@@ -256,7 +256,7 @@ export default function Demo() {
 | titleClass | Extra class name for the title, it is recommended to use custom style item-title-class instead | _string_ | - |
 | useBeforeToggle | Whether to enable pre-verification before opening or closing the dropdown menu | _boolean_ | `false` |
 | value | The value corresponding to the selected item | _number \| string_ | - |
-| scrollStyle `v2.5.0` | When the dropdown menu needs to be scrolled, this attribute sets the style of the scrolling area, such as its height. | _string_ | - |
+| scrollStyle `v2.5.0` | When the dropdown menu needs to be scrolled, this attribute sets the style of the scrolling area, such as its height. | _React.CSSProperties_ | - |
 
 ### DropdownItem Events
 
