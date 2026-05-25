@@ -180,6 +180,7 @@ type DialogThemeVars =
   | 'dialogHeaderIconSize'
   | 'dialogInputHeight'
   | 'dialogInputBackgroundColor'
+  | 'dialogInputColor'
   | 'dialogInputMargin'
   | 'dialogInputPadding'
   | 'dialogInputBorderRadius'
