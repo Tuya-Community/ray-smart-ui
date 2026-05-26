@@ -1,0 +1,21 @@
+src/calendar/README.md
+  s_74df423284de6f::t_d28424b6d2ae82 501-502,513
+src/calendar/README.en.md
+  s_74df423284de6f::t_d28424b6d2ae82 452-453,464
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.1",
+  "base_commit_sha": "be3334d0f042014ba4f9cb052b234e9857dcbf19",
+  "prompts": {},
+  "sessions": {
+    "s_74df423284de6f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e6325-0cce-7311-b42f-20a841768bc7",
+        "model": "gpt-5.4"
+      },
+      "human_author": "muhai <muhai.li@tuya.com>"
+    }
+  }
+}
