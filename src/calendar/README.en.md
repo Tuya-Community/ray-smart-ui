@@ -422,18 +422,18 @@ The component provides the following CSS variables for custom styles. For usage,
 | Name                                               | Default Value                           | Description                           |
 | -------------------------------------------------- | --------------------------------------- | ------------------------------------- |
 | --calendar-background-color                        | _var(--app-B6, #fff)_                   | Calendar background color             |
-| --calendar-cell-item-border-radius                 | _104rpx_                                | Calendar cell item border radius      |
+| --calendar-cell-item-border-radius                 | _52px_                                  | Calendar cell item border radius      |
 | --calendar-cell-item-font-color                    | _var(--app-B4-N1, rgba(0, 0, 0, 1))_    | Calendar cell item font color         |
 | --calendar-cell-item-font-size                     | _15px_                                  | Day font size                         |
-| --calendar-cell-item-height                        | _104rpx_                                | Calendar cell item height             |
-| --calendar-cell-item-width                         | _104rpx_                                | Calendar cell item width              |
+| --calendar-cell-item-height                        | _52px_                                  | Calendar cell item height             |
+| --calendar-cell-item-width                         | _52px_                                  | Calendar cell item width              |
 | --calendar-confirm-button-height                   | _36px_                                  | Confirm button height                 |
 | --calendar-confirm-button-line-height              | _34px_                                  | Confirm button line height            |
 | --calendar-confirm-button-margin                   | _7px 0_                                 | Confirm button margin                 |
 | --calendar-day-disabled-color `@deprecated v2.9.0` | _#c8c9cc_                               | Disabled day color                    |
 | --calendar-day-font-weight                         | _500_                                   | Day font weight                       |
-| --calendar-day-height                              | _100rpx_                                | Day cell height                       |
-| --calendar-day-select-border-radius                | _34rpx_                                 | Selected day border radius            |
+| --calendar-day-height                              | _50px_                                  | Day cell height                       |
+| --calendar-day-select-border-radius                | _17px_                                  | Selected day border radius            |
 | --calendar-header-box-shadow                       | _0 2px 10px rgba(125, 126, 128, 0.16)_  | Calendar header box shadow            |
 | --calendar-header-icon-bg-color `v2.6.0`           | _var(--app-B2-N9, rgba(0, 0, 0, 0.05))_ | Calendar header icon background color |
 | --calendar-header-icon-color `v2.6.0`              | _var(--app-B1-N2, rgba(0, 0, 0, 0.7))_  | Calendar header icon background color |
@@ -448,7 +448,7 @@ The component provides the following CSS variables for custom styles. For usage,
 | --calendar-month-mark-color                        | _fade(@gray-4, 60%)_                    | Month mark color                      |
 | --calendar-month-mark-font-size                    | _160px_                                 | Month mark font size                  |
 | --calendar-month-title-font-size                   | _14px_                                  | Month title font size                 |
-| --calendar-popup-height `v2.5.0`                   | _848rpx_                                | Calendar popup height                 |
+| --calendar-popup-height `v2.5.0`                   | _490px_                                 | Calendar popup height                 |
 | --calendar-range-edge-background-color             | _#3678e3_                               | Date range edge background color      |
 | --calendar-range-edge-color                        | _#fff_                                  | Date range edge color                 |
 | --calendar-range-middle-background-opacity         | _0.1_                                   | Date range middle background opacity  |
