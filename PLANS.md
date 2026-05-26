@@ -97,3 +97,4 @@
 - [x] popover: 新增 overlayStyle 属性，支持自定义遮罩层样式 ([433eddd](https://github.com/Tuya-Community/miniapp-smart-ui/pull/190/commits/433eddd0699ff6756db09969c4c97f724bb52233))，测试版本：`2.13.1-beta-1`
 - [x] dialog: 修复背景色依赖 APP 系统变量，新增 --dialog-input-color CSS 变量（[a61d606](https://github.com/Tuya-Community/miniapp-smart-ui/pull/194/commits/a61d606f35951c307a2fa6739c33b457e724f9f2),[08b1eee](https://github.com/Tuya-Community/miniapp-smart-ui/pull/196/commits/08b1eee36bc6f9c0311510ccbd49c912e92760cb)），测试版本：`2.13.1-beta-4`
 - [x] calendar: 更新样式单位从 rpx 到 px，保持组件样式、变量定义及中英文文档一致 ([pull/191](https://github.com/Tuya-Community/miniapp-smart-ui/pull/191))，测试版本：`2.13.1-beta-5`
+- [x] calendar: 新增 `--calendar-popup-height-month` 和 `--calendar-popup-height-year` CSS 变量，支持根据日历类型应用不同弹窗高度 ([fe95930](https://github.com/Tuya-Community/miniapp-smart-ui/commit/fe959302ff0b4d93549ee10bcae7d105b429bfa6))，测试版本：`2.13.1-beta-6`
