@@ -180,6 +180,7 @@ type DialogThemeVars =
   | 'dialogHeaderIconSize'
   | 'dialogInputHeight'
   | 'dialogInputBackgroundColor'
+  | 'dialogInputColor'
   | 'dialogInputMargin'
   | 'dialogInputPadding'
   | 'dialogInputBorderRadius'
@@ -334,6 +335,8 @@ type CalendarThemeVars =
   | 'calendarConfirmButtonLineHeight'
   | 'calendarTextColor'
   | 'calendarPopupHeight'
+  | 'calendarPopupHeightMonth'
+  | 'calendarPopupHeightYear'
   | 'calendarHeaderSaveColor'
   | 'calendarHeaderIconBgColor'
   | 'calendarHeaderIconColor';

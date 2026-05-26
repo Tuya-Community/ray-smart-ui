@@ -380,7 +380,7 @@ export default function Demo() {
 | animationTime `v2.3.7` | Transition animation and the delay time for selection callback (Unit: ms) | _number_ | `800` `v2.3.7` `300` `v2.6.0` |
 | columnStyles `v2.3.7` | Style of any column | _Record\<string, string>_ | - |
 | fontStyles `v2.3.7` | Font style of any column | _Record\<string, string>_ | - |
-| activeStyle `v2.3.7` | Selected Item Style | _string_ | - |
+| activeStyle `v2.3.7` | Selected Item Style | _React.CSSProperties_ | - |
 
 ### Events
 

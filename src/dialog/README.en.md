@@ -438,6 +438,7 @@ The component provides the following CSS variables for custom styles. Please ref
 | --dialog-header-icon-size | _39px_ | Icon size |
 | --dialog-input-height | _40px_ | Input height |
 | --dialog-input-background-color | _var(--app-B4-N9, rgba(0, 0, 0, 0.05))_ | Input background color |
+| --dialog-input-color `v2.13.1` | _var(--app-B4-N1, rgba(0, 0, 0, 1))_ | Input text color |
 | --dialog-input-margin | _0 16px 24px_ | Input margin |
 | --dialog-input-padding | _0 10px_ | Input padding |
 | --dialog-input-border-radius | _10px_ | Input border radius |

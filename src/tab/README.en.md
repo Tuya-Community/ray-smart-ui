@@ -408,7 +408,7 @@ export default function Demo() {
 | title | Title | _string_ | - |
 | titleStyle | Custom title style | _React.CSSProperties_ | - |
 | subtitle `v2.3.5` | Secondary Title | _string_ | - |
-| subtitleStyle `v2.3.5` | Custom secondary heading style | _string_ | - |
+| subtitleStyle `v2.3.5` | Custom secondary heading style | _React.CSSProperties_ | - |
 
 ### Tabs Slot
 

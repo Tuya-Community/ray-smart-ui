@@ -443,6 +443,7 @@ icon: AlarmIcon,
 | --dialog-header-icon-size | _39px_ | 图标大小 |
 | --dialog-input-height | _40px_ | 输入框高度 |
 | --dialog-input-background-color | _var(--app-B4-N9, rgba(0, 0, 0, 0.05))_ | 输入框背景色 |
+| --dialog-input-color `v2.13.1` | _var(--app-B4-N1, rgba(0, 0, 0, 1))_ | 输入框文字颜色 |
 | --dialog-input-margin | _0 16px 24px_ | 输入框外边距 |
 | --dialog-input-padding | _0 10px_ | 输入框内边距 |
 | --dialog-input-border-radius | _10px_ | 输入框圆角半径 |
