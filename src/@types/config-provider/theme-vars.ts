@@ -335,6 +335,8 @@ type CalendarThemeVars =
   | 'calendarConfirmButtonLineHeight'
   | 'calendarTextColor'
   | 'calendarPopupHeight'
+  | 'calendarPopupHeightMonth'
+  | 'calendarPopupHeightYear'
   | 'calendarHeaderSaveColor'
   | 'calendarHeaderIconBgColor'
   | 'calendarHeaderIconColor';
