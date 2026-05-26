@@ -449,6 +449,8 @@ The component provides the following CSS variables for custom styles. For usage,
 | --calendar-month-mark-font-size                    | _160px_                                 | Month mark font size                  |
 | --calendar-month-title-font-size                   | _14px_                                  | Month title font size                 |
 | --calendar-popup-height `v2.5.0`                   | _490px_                                 | Calendar popup height                 |
+| --calendar-popup-height-month `v2.13.1`            | _350px_                                 | Month mode calendar popup height      |
+| --calendar-popup-height-year `v2.13.1`             | _350px_                                 | Year mode calendar popup height       |
 | --calendar-range-edge-background-color             | _#3678e3_                               | Date range edge background color      |
 | --calendar-range-edge-color                        | _#fff_                                  | Date range edge color                 |
 | --calendar-range-middle-background-opacity         | _0.1_                                   | Date range middle background opacity  |
