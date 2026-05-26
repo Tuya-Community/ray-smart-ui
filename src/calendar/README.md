@@ -498,6 +498,8 @@ const [maxDate, setMaxDate] = useState(
 | --calendar-month-mark-font-size                    | _160px_                                 | 月份标记字体大小       |
 | --calendar-month-title-font-size                   | _14px_                                  | 月份标题字体大小       |
 | --calendar-popup-height `v2.5.0`                   | _490px_                                 | 日历弹窗高度           |
+| --calendar-popup-height-month `v2.13.0`            | _350px_                                 | 月模式日历弹窗高度     |
+| --calendar-popup-height-year `v2.13.0`             | _350px_                                 | 年模式日历弹窗高度     |
 | --calendar-range-edge-background-color             | _#3678e3_                               | 日期范围边缘背景色     |
 | --calendar-range-edge-color                        | _#fff_                                  | 日期范围边缘颜色       |
 | --calendar-range-middle-background-opacity         | _0.1_                                   | 日期范围中间背景透明度 |
