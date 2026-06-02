@@ -1,0 +1,85 @@
+# SmartUI
+
+- Tuya mobile UI for IoT panels & smart home; Ray & mini programs.
+
+## 指南
+
+- [快速开始](https://developer.tuya.com/material/cn/smartui/help-getting-started.md)
+- [常见问题](https://developer.tuya.com/material/cn/smartui/faq.md)
+- [主题](https://developer.tuya.com/material/cn/smartui/theme.md)
+- [更新日志](https://developer.tuya.com/material/cn/smartui/help-changelog.md)
+
+## Github Wiki
+
+- [ConfigProvider 组件最佳实践](https://github.com/Tuya-Community/miniapp-smart-ui/wiki/ConfigProvider-%E7%BB%84%E4%BB%B6%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5)
+- [如何去自定义修改SmartUI组件的样式](https://github.com/Tuya-Community/miniapp-smart-ui/wiki/%E5%A6%82%E4%BD%95%E5%8E%BB%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BF%AE%E6%94%B9SmartUI%E7%BB%84%E4%BB%B6%E7%9A%84%E6%A0%B7%E5%BC%8F)
+
+## 通用
+
+- [Battery 电池](https://developer.tuya.com/material/cn/smartui/battery.md)
+- [Button 按钮](https://developer.tuya.com/material/cn/smartui/button.md)
+- [ConfigProvider 全局配置](https://developer.tuya.com/material/cn/smartui/config-provider.md)
+
+## 布局
+
+- [Layout 布局](https://developer.tuya.com/material/cn/smartui/col.md)
+- [DropdownMenu 下拉菜单](https://developer.tuya.com/material/cn/smartui/dropdown-menu.md)
+- [Grid 宫格](https://developer.tuya.com/material/cn/smartui/grid.md)
+- [Sticky 粘性布局](https://developer.tuya.com/material/cn/smartui/sticky.md)
+- [Tab 标签页](https://developer.tuya.com/material/cn/smartui/tab.md)
+
+## 导航
+
+- [IndexBar 索引栏](https://developer.tuya.com/material/cn/smartui/index-bar.md)
+- [NavBar 导航栏](https://developer.tuya.com/material/cn/smartui/nav-bar.md)
+- [Sidebar 侧边导航](https://developer.tuya.com/material/cn/smartui/sidebar.md)
+- [Tabbar 标签栏](https://developer.tuya.com/material/cn/smartui/tabbar.md)
+
+## 展示
+
+- [Cell 单元格](https://developer.tuya.com/material/cn/smartui/cell.md)
+- [Circle 环形进度条](https://developer.tuya.com/material/cn/smartui/circle.md)
+- [Collapse 折叠面板](https://developer.tuya.com/material/cn/smartui/collapse.md)
+- [Divider 分割线](https://developer.tuya.com/material/cn/smartui/divider.md)
+- [Empty 空状态](https://developer.tuya.com/material/cn/smartui/empty.md)
+- [Icon 图标](https://developer.tuya.com/material/cn/smartui/icon.md)
+- [Image 图片](https://developer.tuya.com/material/cn/smartui/image.md)
+- [Loading 加载](https://developer.tuya.com/material/cn/smartui/loading.md)
+- [NoticeBar 通知栏](https://developer.tuya.com/material/cn/smartui/notice-bar.md)
+- [Overlay 遮罩层](https://developer.tuya.com/material/cn/smartui/overlay.md)
+- [Skeleton 骨架屏](https://developer.tuya.com/material/cn/smartui/skeleton.md)
+- [Tag 标签](https://developer.tuya.com/material/cn/smartui/tag.md)
+- [Transition 动画](https://developer.tuya.com/material/cn/smartui/transition.md)
+
+## 数据录入
+
+- [Calendar 日历](https://developer.tuya.com/material/cn/smartui/calendar.md)
+- [Cascader 级联选择](https://developer.tuya.com/material/cn/smartui/cascader.md)
+- [Checkbox 复选框](https://developer.tuya.com/material/cn/smartui/checkbox.md)
+- [CustomKeyboard 数字键盘](https://developer.tuya.com/material/cn/smartui/custom-keyboard.md)
+- [DateTimePicker 时间选择](https://developer.tuya.com/material/cn/smartui/datetime-picker.md)
+- [Field 输入框](https://developer.tuya.com/material/cn/smartui/field.md)
+- [Radio 单选框](https://developer.tuya.com/material/cn/smartui/radio.md)
+- [Rate 评分](https://developer.tuya.com/material/cn/smartui/rate.md)
+- [Search 搜索](https://developer.tuya.com/material/cn/smartui/search.md)
+- [Slider 滑动条](https://developer.tuya.com/material/cn/smartui/slider.md)
+- [Stepper 步进器](https://developer.tuya.com/material/cn/smartui/stepper.md)
+- [TreeSelect 分类选择](https://developer.tuya.com/material/cn/smartui/tree-select.md)
+
+## 反馈
+
+- [ActionSheet 动作面板](https://developer.tuya.com/material/cn/smartui/action-sheet.md)
+- [BottomSheet 底部弹窗](https://developer.tuya.com/material/cn/smartui/bottom-sheet.md)
+- [CountDown 倒计时](https://developer.tuya.com/material/cn/smartui/count-down.md)
+- [Dialog 弹出框](https://developer.tuya.com/material/cn/smartui/dialog.md)
+- [Picker 选择器](https://developer.tuya.com/material/cn/smartui/picker.md)
+- [Popover 弹出提示](https://developer.tuya.com/material/cn/smartui/popover.md)
+- [Popup 弹出层](https://developer.tuya.com/material/cn/smartui/popup.md)
+- [SwipeCell 滑动单元格](https://developer.tuya.com/material/cn/smartui/swipe-cell.md)
+- [Switch 开关](https://developer.tuya.com/material/cn/smartui/switch.md)
+- [Toast 轻提示](https://developer.tuya.com/material/cn/smartui/toast.md)
+
+## 其他
+
+- [Notify 消息提示](https://developer.tuya.com/material/cn/smartui/notify.md)
+- [Progress 进度条](https://developer.tuya.com/material/cn/smartui/progress.md)
