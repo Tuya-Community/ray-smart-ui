@@ -18,14 +18,50 @@ const copyCHANGELOG = () => {
   console.log('CHANGELOG.md 已拷贝到 docs/');
 };
 
+/** 将组件 README.md 拷贝到 es/lib 对应目录 */
+const copyComponentReadmes = () => {
+  const srcDir = path.join(__dirname, '../src');
+  const outputDirs = ['es', 'lib'];
+
+  if (!fs.existsSync(srcDir)) {
+    console.warn('postBuild: src 目录不存在，跳过 README 拷贝');
+    return;
+  }
+
+  const componentNames = fs
+    .readdirSync(srcDir, { withFileTypes: true })
+    .filter(item => item.isDirectory())
+    .map(item => item.name);
+
+  componentNames.forEach(componentName => {
+    const sourceReadmePath = path.join(srcDir, componentName, 'README.md');
+    if (!fs.existsSync(sourceReadmePath)) {
+      return;
+    }
+
+    outputDirs.forEach(outputDir => {
+      const targetDir = path.join(__dirname, `../${outputDir}/${componentName}`);
+      const targetReadmePath = path.join(targetDir, 'README.md');
+
+      if (!fs.existsSync(targetDir)) {
+        console.warn(`postBuild: ${targetDir} 不存在，跳过 README 拷贝`);
+        return;
+      }
+
+      fs.copyFileSync(sourceReadmePath, targetReadmePath);
+      console.log(`README.md 已拷贝到 ${outputDir}/${componentName}/`);
+    });
+  });
+};
+
 /** 打包后的通用逻辑，可在此追加其他任务 */
 const run = () => {
   copyCHANGELOG();
-  // 其他打包后逻辑可在此添加
+  copyComponentReadmes();
 };
 
 if (require.main === module) {
   run();
 }
 
-module.exports = { run, copyCHANGELOG };
+module.exports = { run, copyCHANGELOG, copyComponentReadmes };
