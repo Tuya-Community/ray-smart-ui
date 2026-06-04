@@ -99,10 +99,10 @@
 - [x] calendar: 更新样式单位从 rpx 到 px，保持组件样式、变量定义及中英文文档一致 ([pull/191](https://github.com/Tuya-Community/miniapp-smart-ui/pull/191))，测试版本：`2.13.1-beta-5`
 - [x] calendar: 新增 `--calendar-popup-height-month` 和 `--calendar-popup-height-year` CSS 变量，支持根据日历类型应用不同弹窗高度 ([fe95930](https://github.com/Tuya-Community/miniapp-smart-ui/commit/fe959302ff0b4d93549ee10bcae7d105b429bfa6))，测试版本：`2.13.1-beta-6`
 
-# v2.14.0
+# v2.13.2
 
 发布计划（发布正式时间：2026.6.23 周二）
 
-- [ ] stepper: 支持输入负数
+- [x] stepper: 支持输入负数，测试版本：`2.13.2-beta-0`
 - [ ] button: 修复深色模式反转问题，issue: [#23](https://registry.code.tuya-inc.top/tuyarn-kit/ray-smart-ui/-/issues/23)
 - [ ] picker: `date` 模式支持12小时制，issue: [#31](https://registry.code.tuya-inc.top/tuyarn-kit/base/ray-smart-ui/-/issues/31)
