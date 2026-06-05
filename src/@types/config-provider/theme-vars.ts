@@ -296,7 +296,8 @@ type ButtonThemeVars =
   | 'buttonPlainBackgroundColor'
   | 'buttonDisabledOpacity'
   | 'buttonFontWeight'
-  | 'buttonPrimaryFontWeight';
+  | 'buttonPrimaryFontWeight'
+  | 'buttonPlainColor';
 
 type CalendarThemeVars =
   | 'calendarBackgroundColor'

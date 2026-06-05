@@ -41,7 +41,7 @@ export default function Demo() {
 
 ### Plain Button
 
-Set the button to a plain button with the `plain` attribute. The text of a plain button is the button color, and the background is white.
+Set the button to a plain style using the `plain` attribute, where the text color of the plain button matches the button color; the default background is white, and the font color is black.
 
 ```jsx
 import React from 'react';
@@ -51,11 +51,12 @@ import { View } from '@ray-js/ray';
 export default function Demo() {
   return (
     <View>
+      <Button plain>Plain Button</Button>
       <Button plain type="primary">
         Plain Button
       </Button>
       <Button plain type="info">
-        Simple Button
+        Plain Button
       </Button>
     </View>
   );
@@ -328,6 +329,7 @@ The component provides the following CSS variables that can be used for custom s
 | --button-border-width                         | _1px_                                          | Button border width                   |
 | --button-border-radius                        | _10px_                                         | Button border radius                  |
 | --button-round-border-radius                  | _999px_                                        | Round button border radius            |
+| --button-plain-color `v2.13.2`        | _rgba(0, 0, 0, 0.9)_                           | Plain button text color               |
 | --button-plain-background-color               | _#fff_                                         | Plain button background color         |
 | --button-disabled-opacity                     | _0.3_                                          | Disabled button opacity               |
 | --button-font-weight                          | _normal_                                       | Button font weight                    |
