@@ -103,6 +103,6 @@
 
 发布计划（发布正式时间：2026.6.23 周二）
 
-- [x] stepper: 支持输入负数，测试版本：`2.13.2-beta-0`
-- [ ] button: 修复深色模式反转问题，issue: [#23](https://registry.code.tuya-inc.top/tuyarn-kit/ray-smart-ui/-/issues/23)
+- [x] stepper: 支持输入负数([5105dea](https://github.com/Tuya-Community/miniapp-smart-ui/pull/200/commits/5105deaa4ffaa2f720b692c8b4d378a49bb169d4))，测试版本：`2.13.2-beta-0`
+- [x] button: 修复深色模式反转问题([7f92bd8](https://github.com/Tuya-Community/miniapp-smart-ui/pull/202/commits/7f92bd8d2177622f3e0db28a5f75f6acd93cdd4b))，测试版本：`2.13.2-beta-1`
 - [ ] picker: `date` 模式支持12小时制，issue: [#31](https://registry.code.tuya-inc.top/tuyarn-kit/base/ray-smart-ui/-/issues/31)
