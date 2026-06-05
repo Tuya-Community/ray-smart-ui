@@ -14,7 +14,7 @@ export interface SmartConfigProviderProps extends ComponentBase {
   /**
    * 内部根节点样式类
    */
-  customClass?: React.CSSProperties;
+  customClass?: string;
 }
 
 export type SmartConfigProvider = SmartComponent<SmartConfigProviderProps>;
