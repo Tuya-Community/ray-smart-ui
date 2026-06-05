@@ -1,0 +1,14 @@
+example/src/pages/playground/index.tsx
+  h_eabc34dcaf7833 2,24-59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.3",
+  "base_commit_sha": "995497cdbf856919efb9ae4b2a95aa78fdfe5461",
+  "prompts": {},
+  "humans": {
+    "h_eabc34dcaf7833": {
+      "author": "muhai <muhai.li@tuya.com>"
+    }
+  }
+}
