@@ -1,0 +1,57 @@
+# Ferry CLI 忽略文件配置
+# 以下文件/目录在打包时会被排除，不会上传到平台
+# 此文件存在时将完全替代内置默认规则，请勿随意删减
+
+# VCS & 环境变量
+.git
+.env
+.env.*
+
+# Ferry CLI 内部目录（安装元数据）
+**/.ferry/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node.js
+node_modules/
+.next/
+.nuxt/
+.cache/
+.parcel-cache/
+.turbo/
+coverage/
+.nyc_output/
+
+# Rust / Java / Go / PHP
+target/
+.gradle/
+*.class
+vendor/
+dist/
+build/
+out/
+
+# 系统 & 编辑器
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# 日志 & 临时
+*.log
+*.tmp

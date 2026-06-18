@@ -28,6 +28,9 @@ export default function Demo() {
       </DemoBlock>
 
       <DemoBlock title={Strings.getLang('primaryButton')} padding>
+        <Button plain className="demo-margin-right">
+          {Strings.getLang('primaryButton')}
+        </Button>
         <Button type="info" plain className="demo-margin-right">
           {Strings.getLang('primaryButton')}
         </Button>

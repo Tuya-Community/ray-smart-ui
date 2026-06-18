@@ -1,11 +1,11 @@
 {
   "name": "@ray-js/smart-ui",
-  "version": "2.13.1",
+  "version": "2.13.2-beta-2",
   "description": "轻量、可靠的智能小程序 UI 组件库",
   "scripts": {
     "syncMiniappData": "node ./build/syncMiniappData.js",
     "dev": "tsc -w -p tsconfig.build.es.json",
-    "build": "rimraf es lib && tsc -p tsconfig.build.es.json && tsc -p tsconfig.build.lib.json",
+    "build": "rimraf es lib && tsc -p tsconfig.build.es.json && tsc -p tsconfig.build.lib.json && node ./build/postBuild.js",
     "build:tuya": "yarn build && cd ./example && ray build --target=tuya"
   },
   "main": "lib/index.js",
@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@ray-js/components-ty-slider": "^0.3.9",
-    "@tuya-miniapp/smart-ui": "^2.13.1",
+    "@tuya-miniapp/smart-ui": "^2.13.2",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
