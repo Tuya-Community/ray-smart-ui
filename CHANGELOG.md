@@ -1,11 +1,23 @@
 # 更新日志
 
+## v2.13.2 (2026-6-18)
+
+### Features ✨
+
+- stepper: 支持输入负数([5105dea](https://github.com/Tuya-Community/miniapp-smart-ui/pull/200/commits/5105deaa4ffaa2f720b692c8b4d378a49bb169d4))
+- button: 新增 `--button-plain-color` CSS 变量([7f92bd8](https://github.com/Tuya-Community/miniapp-smart-ui/pull/202/commits/7f92bd8d2177622f3e0db28a5f75f6acd93cdd4b))
+- config-provider: 补齐 customClass 类型([pull/95](https://github.com/Tuya-Community/ray-smart-ui/pull/95))
+
+### Bug Fixes 🐛
+
+- button: 修复深色模式反转问题([7f92bd8](https://github.com/Tuya-Community/miniapp-smart-ui/pull/202/commits/7f92bd8d2177622f3e0db28a5f75f6acd93cdd4b))
+
 ## v2.13.1 (2026-5-26)
 
 ### Features ✨
 
 - popover: 新增 `overlayStyle` 属性，支持自定义遮罩层样式([433eddd](https://github.com/Tuya-Community/miniapp-smart-ui/pull/190/commits/433eddd0699ff6756db09969c4c97f724bb52233))
-- dialog: 修改背景色依赖 APP 系统变量，修改背景CSS属性从 background-color 变成 background([a61d606](https://github.com/Tuya-Community/miniapp-smart-ui/pull/194/commits/a61d606f35951c307a2fa6739c33b457e724f9f2))；新增 `--dialog-input-color` CSS 变量([08b1eee](https://github.com/Tuya-Community/miniapp-smart-ui/pull/196/commits/08b1eee36bc6f9c0311510ccbd49c912e92760cb))
+- dialog: 修改背景色依赖 APP 系统变量，修改背景 CSS 属性从 background-color 变成 background([a61d606](https://github.com/Tuya-Community/miniapp-smart-ui/pull/194/commits/a61d606f35951c307a2fa6739c33b457e724f9f2))；新增 `--dialog-input-color` CSS 变量([08b1eee](https://github.com/Tuya-Community/miniapp-smart-ui/pull/196/commits/08b1eee36bc6f9c0311510ccbd49c912e92760cb))
 - calendar: 新增 `--calendar-popup-height-month` 和 `--calendar-popup-height-year` CSS 变量，支持根据日历类型应用不同弹窗高度([fe95930](https://github.com/Tuya-Community/miniapp-smart-ui/commit/fe959302ff0b4d93549ee10bcae7d105b429bfa6))；更新样式单位从 rpx 到 px([pull/191](https://github.com/Tuya-Community/miniapp-smart-ui/pull/191))
 - picker: 修改单位间隔默认不再使用 `rpx`，改为使用 `px`([16b49ab](https://github.com/Tuya-Community/miniapp-smart-ui/commit/16b49ab22ac02d1f99d202f8dc2c127c57cbe208))
 
