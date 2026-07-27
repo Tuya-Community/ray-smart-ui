@@ -300,7 +300,7 @@ The component provides the following CSS variables for custom styling. See [Conf
 | --switch-width                | _1.5338em_            | Switch width |
 | --switch-height               | _0.867em_             | Switch height |
 | --switch-node-size            | _0.867em_      | Switch node size |
-| --switch-node-z-index         | _1_      | Switch node z-index |
+| --switch-node-z-index         | _1_ `v2.0.0` _0_ `v2.13.3`      | Switch node z-index |
 | --switch-node-background-color| _#fff_       | -             |
 | --switch-node-box-shadow      | _0 3px 1px 0 rgba(0, 0, 0, 0.05),_    | Switch node shadow |
 | --switch-background-color     | _var(--app-B4-N6, rgba(0, 0, 0, 0.2))_   | Switch background color |
