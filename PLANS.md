@@ -2,9 +2,9 @@
 
 发布计划（发布正式时间：2026.7.30 周四）
 
-- [ ] switch: 修改 --switch-node-z-index CSS 变量默认值为 1，修复 switch-node 悬浮在其他元素之上的情况 ([5d718cb](https://github.com/Tuya-Community/miniapp-smart-ui/pull/207/commits/5d718cbfde2944464975c4d992d076630a5c9c5a))
+- [x] switch: 修改 --switch-node-z-index CSS 变量默认值为 0，修复 switch-node 悬浮在其他元素之上的情况 ([5d718cb](https://github.com/Tuya-Community/miniapp-smart-ui/pull/207/commits/5d718cbfde2944464975c4d992d076630a5c9c5a))
 - [x] picker: 修复 picker-column 中 wrapperItemStyle 的参数，移除重复的 index
- ([6e1beed](https://github.com/Tuya-Community/miniapp-smart-ui/pull/204/commits/6e1beeda02a94c70f95a10bd08c9f4914c53d9ef))，测试版本：`2.13.3-beta-0`
+      ([6e1beed](https://github.com/Tuya-Community/miniapp-smart-ui/pull/204/commits/6e1beeda02a94c70f95a10bd08c9f4914c53d9ef))，测试版本：`2.13.3-beta-0`
 - [x] popup: 更新组件底部安全距离实现，使用 safe-area-inset-bottom，兼容底部 Hey Tuya([4d4d57b](https://github.com/Tuya-Community/miniapp-smart-ui/pull/206/commits/4d4d57b4057663b6dbd71f91bd67a20880e920bc))，测试版本：`2.13.2-beta-3`
 
 # v2.13.2
@@ -14,7 +14,6 @@
 - [x] stepper: 支持输入负数([5105dea](https://github.com/Tuya-Community/miniapp-smart-ui/pull/200/commits/5105deaa4ffaa2f720b692c8b4d378a49bb169d4))，测试版本：`2.13.2-beta-0`
 - [x] button: 修复深色模式反转问题，新增 --button-plain-color CSS 属性 ([7f92bd8](https://github.com/Tuya-Community/miniapp-smart-ui/pull/202/commits/7f92bd8d2177622f3e0db28a5f75f6acd93cdd4b))，测试版本：`2.13.2-beta-1`
 - [x] config-provider: 补齐 customClass 类型([pull/95](https://github.com/Tuya-Community/ray-smart-ui/pull/95))，测试版本：`2.13.2-beta-2`
-
 
 # v2.13.1
 
@@ -30,11 +29,11 @@
 
 发布计划（发布正式时间：2026.4.16 周四）
 
-- [x] nav-bar: 修改顶部安全距离获取方式全部采用基础库CSS 变量；并适配 fixed 和 placeholder 参数 ([95ac811](https://github.com/Tuya-Community/miniapp-smart-ui/pull/180/commits/95ac8112501cc842c887544845d41ab279e7281a)), 测试版本：`2.12.1-beta-0`
+- [x] nav-bar: 修改顶部安全距离获取方式全部采用基础库 CSS 变量；并适配 fixed 和 placeholder 参数 ([95ac811](https://github.com/Tuya-Community/miniapp-smart-ui/pull/180/commits/95ac8112501cc842c887544845d41ab279e7281a)), 测试版本：`2.12.1-beta-0`
 - [x] checkbox、radio、switch、slider：新增无障碍点读功能 ([pull/168](https://github.com/Tuya-Community/miniapp-smart-ui/pull/168)), 测试版本：`2.12.1-beta-1`
 - [x] picker、action-sheet、dialog、toast：新增无障碍模式样式 ([pull/168](https://github.com/Tuya-Community/miniapp-smart-ui/pull/168)), 测试版本：`2.12.1-beta-1`
 - [x] picker: 更新列表文案颜色取 --picker-option-text-color CSS 变量；修复 unit 占位符颜色继承 fontStyle 参数问题 ([a6207c7](https://github.com/Tuya-Community/miniapp-smart-ui/pull/181/commits/a6207c774860ca554685138e3abd9a50b190cb39)), 测试版本：`2.12.1-beta-2`
-- [x] dialog: 修复dialog 标题 padding 样式问题,新增 --dialog-header-padding-side CSS 变量 ([5e4086b](https://github.com/Tuya-Community/miniapp-smart-ui/pull/184/commits/5e4086b5d04b278056bb0f1ba2fcf659498e7471))，测试版本：`2.12.1-beta-5`
+- [x] dialog: 修复 dialog 标题 padding 样式问题,新增 --dialog-header-padding-side CSS 变量 ([5e4086b](https://github.com/Tuya-Community/miniapp-smart-ui/pull/184/commits/5e4086b5d04b278056bb0f1ba2fcf659498e7471))，测试版本：`2.12.1-beta-5`
 - [x] 全组件增加无障碍角色，解决部分功能无法选中问题 ([bc7088b](https://github.com/Tuya-Community/miniapp-smart-ui/pull/186/commits/bc7088bdd55bb3fb73c7275bf3a326ed86608846), [e64f00d](https://github.com/Tuya-Community/miniapp-smart-ui/pull/185/commits/e64f00d8e7ec67c0dbd019dea1eb7c04a82970bb))，测试版本：`2.12.1-beta-7`
 - [x] index-bar: 新增 stickyPush 属性，可关闭滚动时上一个吸顶锚点的上推动画效果；修复第一个标题无法向下滚动取消吸顶问题 ([d9c8145](https://github.com/Tuya-Community/miniapp-smart-ui/pull/187/commits/d9c8145da97604a94b666d4a9619afd22c6abe83))，测试版本：`2.12.1-beta-8`
 - [ ] popover: 修复 show 为 false 时，trigger 设置为 longpress 时还是会点击触发问题；新增受控模式（待定）
@@ -45,7 +44,7 @@
 
 - [x] tab: 修复切换时文字跳动问题([e24aff0](https://github.com/Tuya-Community/miniapp-smart-ui/pull/167/commits/e24aff0610a9432c4831235d21593e451678c50a)), 测试版本：`2.11.2-beta-0`
 - [x] tabbar: 修复使用插槽插入图片，偶现切换时图片闪烁问题([93116bc](https://github.com/Tuya-Community/miniapp-smart-ui/pull/169/commits/93116bc6cd0b9d56747718e32b2ffae38acbbf5e)), 测试版本：`2.11.2-beta-2`
-- [x] popup、action-sheet、bottom-sheet、dialog 组件开启 fullCoverView 时，根节点cover-view 继承组件 zIndex 属性([faff9eb](https://github.com/Tuya-Community/miniapp-smart-ui/pull/165/commits/faff9ebab1f504eed6381241c82c63c2c8dd0ff8)), 测试版本：`2.11.2-beta-3`
+- [x] popup、action-sheet、bottom-sheet、dialog 组件开启 fullCoverView 时，根节点 cover-view 继承组件 zIndex 属性([faff9eb](https://github.com/Tuya-Community/miniapp-smart-ui/pull/165/commits/faff9ebab1f504eed6381241c82c63c2c8dd0ff8)), 测试版本：`2.11.2-beta-3`
 - [x] nav-bar: 新增 home 模式右侧插入图标能力([4175796](https://github.com/Tuya-Community/miniapp-smart-ui/pull/163/commits/417579676d3088e066abba7ccca9e7010f68ee3d)), 测试版本：`2.11.2-beta-4`
 - [x] toast: 修改背景色，对齐 UED，新增边框和阴影，修改默认最大最小宽度 ([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))，测试版本: `2.12.0-beta-2`
 - [x] overlay: 支持 iOS 毛玻璃效果 ([pull/171](https://github.com/Tuya-Community/miniapp-smart-ui/pull/171))，测试版本：`2.12.0-beta-2`
@@ -54,8 +53,8 @@
 - [x] dialog: 修复 cancelButtonClass 内部值拼写错误问题 ([0779e1b](https://github.com/Tuya-Community/miniapp-smart-ui/commit/0779e1b6d210f5bc57811ccff74820eecc0915e6))，测试版本：`2.12.0-beta-4`
 - [x] nav-bar: 补充 leftIconColor, rightIconClass, leftTextClass TS 类型 ([33c58e5](https://github.com/Tuya-Community/ray-smart-ui/commit/33c58e572ce9ea0c1295d8705aa23f9e357e6bde))，测试版本：`2.12.0-beta-5`
 - [x] field: 新增地区数字格式化能力，导出 getNumberFormatConfig, parseFormattedNumber, formatNumber 方法 ([pull/162](https://github.com/Tuya-Community/miniapp-smart-ui/pull/162))，测试版本：`2.12.0-beta-6`
-- [x] config-provider: 新增 toast、overlay 相关新增全局CSS 变量适配 ([572effd](https://github.com/Tuya-Community/miniapp-smart-ui/pull/176/commits/572effdee81ed77ea0699e0bb44fab40255e81ad))，测试版本：`2.12.0-beta-6`
-- [x] index-bar: 新增拖动气泡提示功能；修复右侧栏拖动时定位不准，页面闪现分割线问题，fixed导航闪现位移问题，修复右侧列表和内容不一致时定位错误问题；([pull/166](https://github.com/Tuya-Community/miniapp-smart-ui/pull/166), [pull/178](https://github.com/Tuya-Community/miniapp-smart-ui/pull/178)), 测试版本：`2.11.2-beta-7`
+- [x] config-provider: 新增 toast、overlay 相关新增全局 CSS 变量适配 ([572effd](https://github.com/Tuya-Community/miniapp-smart-ui/pull/176/commits/572effdee81ed77ea0699e0bb44fab40255e81ad))，测试版本：`2.12.0-beta-6`
+- [x] index-bar: 新增拖动气泡提示功能；修复右侧栏拖动时定位不准，页面闪现分割线问题，fixed 导航闪现位移问题，修复右侧列表和内容不一致时定位错误问题；([pull/166](https://github.com/Tuya-Community/miniapp-smart-ui/pull/166), [pull/178](https://github.com/Tuya-Community/miniapp-smart-ui/pull/178)), 测试版本：`2.11.2-beta-7`
 
 # v2.11.1
 
