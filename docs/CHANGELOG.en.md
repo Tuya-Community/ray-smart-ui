@@ -1,5 +1,17 @@
 # Changelog
 
+## v2.13.2 (2026-6-18)
+
+### Features ✨
+
+- stepper: Support entering negative numbers ([5105dea](https://github.com/Tuya-Community/miniapp-smart-ui/pull/200/commits/5105deaa4ffaa2f720b692c8b4d378a49bb169d4))
+- button: Add `--button-plain-color` CSS variable ([7f92bd8](https://github.com/Tuya-Community/miniapp-smart-ui/pull/202/commits/7f92bd8d2177622f3e0db28a5f75f6acd93cdd4b))
+- config-provider: Complete `customClass` type definitions ([pull/95](https://github.com/Tuya-Community/ray-smart-ui/pull/95))
+
+### Bug Fixes 🐛
+
+- button: Fix color inversion in dark mode ([7f92bd8](https://github.com/Tuya-Community/miniapp-smart-ui/pull/202/commits/7f92bd8d2177622f3e0db28a5f75f6acd93cdd4b))
+
 ## v2.13.1 (2026-5-26)
 
 ### Features ✨

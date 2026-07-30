@@ -300,7 +300,7 @@ export default function Demo() {
 | --switch-width | _1.5338em_ | 开关宽度 |
 | --switch-height | _0.867em_ | 开关高度 |
 | --switch-node-size | _0.867em_ | 开关节点大小 |
-| --switch-node-z-index | _1_ | 开关节点层级 |
+| --switch-node-z-index | _1_ `v2.0.0` _0_ `v2.13.3` | 开关节点层级 |
 | --switch-node-background-color | _#fff_ | - |
 | --switch-node-box-shadow | _0 3px 1px 0 rgba(0, 0, 0, 0.05),_ | 开关节点阴影 |
 | --switch-background-color | _var(--app-B4-N6, rgba(0, 0, 0, 0.2))_ | 开关背景颜色 |
