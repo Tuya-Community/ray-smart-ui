@@ -30,9 +30,9 @@ jobs:
         run: |
           # 不因 cursor-agent 的退出码导致本 step 失败（CI 下/request-changes 时可能返回 1）
           set +e
-          # 使用你账号可用的模型（你当前支持: claude-4.5-opus-high-thinking, gpt-5.2-codex-high, gpt-5.2, gpt-5.2-high, gemini-3-pro）
+          # 使用 auto 模型（由 Cursor 自动选择可用模型，避免单一模型额度耗尽导致审查无法执行）
           # 执行代码审查并捕获输出
-          REVIEW_OUTPUT=$(cursor-agent --force --output-format=text --model claude-4.5-opus-high-thinking --print "您正在 GitHub Actions 运行器中执行自动化代码审查。gh 命令行界面已可用并通过 GH_TOKEN 进行身份验证。您可以对拉取请求进行评论。
+          REVIEW_OUTPUT=$(cursor-agent --force --output-format=text --model auto --print "您正在 GitHub Actions 运行器中执行自动化代码审查。gh 命令行界面已可用并通过 GH_TOKEN 进行身份验证。您可以对拉取请求进行评论。
 
           上下文：
           - 仓库：${{ github.repository }}
