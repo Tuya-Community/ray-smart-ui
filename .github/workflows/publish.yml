@@ -162,6 +162,43 @@ jobs:
         -H 'Content-Type: application/json' \
         -d "$PAYLOAD"
 
+    - name: send to Feishu
+      env:
+        # 与「send to WeChat」同源，复用 PR 阶段写入的 env
+        RELEASE_BODY: ${{ env.PR_BODY }}
+        RELEASE_TAG: v${{ env.TAG_VERSION }}
+        FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+      run: |
+        # 未配置飞书 Webhook 时跳过，不影响发布
+        if [ -z "$FEISHU_WEBHOOK" ]; then
+          echo "⚠️  FEISHU_WEBHOOK 未配置，跳过飞书通知"
+          exit 0
+        fi
+        # 删除 "## English" 及之后内容（只发中文），去尾部空白
+        RELEASE_BODY=$(echo "$RELEASE_BODY" | sed '/^## English/,$d' | sed -z 's/[[:space:]]*$//')
+        # 将 markdown 标题行(#/##/###)转为飞书卡片 lark_md 的加粗，链接原样保留可点击
+        BODY_MD=$(echo "$RELEASE_BODY" | sed -E 's/^#{1,6}[[:space:]]+(.*)$/**\1**/')
+        RELEASE_DATE=$(date +%Y-%m-%d)
+        NEWLINE=$'\n'
+        CONTENT="**$RELEASE_TAG（$RELEASE_DATE）**${NEWLINE}${NEWLINE}$BODY_MD"
+        PAYLOAD=$(jq -n --arg content "$CONTENT" --arg tag "$RELEASE_TAG" '{
+            msg_type: "interactive",
+            card: {
+              config: { wide_screen_mode: true },
+              header: {
+                template: "blue",
+                title: { tag: "plain_text", content: ("🎉 Smart UI 组件库发布 " + $tag) }
+              },
+              elements: [
+                { tag: "div", text: { tag: "lark_md", content: $content } }
+              ]
+            }
+          }')
+        curl "$FEISHU_WEBHOOK" \
+        -H 'Content-Type: application/json' \
+        -d "$PAYLOAD"
+        echo "✅ Feishu notification sent successfully"
+
     - name: Commit Changes
       run: |
         # 确保在 main 分支上
