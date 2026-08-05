@@ -187,6 +187,11 @@ export interface SmartDateTimePickerProps {
    * @version 2.3.7
    */
   fontStyles?: Partial<Record<TimeUnitType | '12HourClock', React.CSSProperties>>;
+  /**
+   * @description 控制每一列是否循环滚动，未配置的列保持默认行为：`year` 与 `12HourClock` 不循环，其余列循环
+   * @version 2.13.4
+   */
+  loopMap?: Partial<Record<TimeUnitType | '12HourClock', boolean>>;
 }
 
 /**
