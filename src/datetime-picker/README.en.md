@@ -381,6 +381,7 @@ export default function Demo() {
 | columnStyles `v2.3.7` | Style of any column | _Record\<string, string>_ | - |
 | fontStyles `v2.3.7` | Font style of any column | _Record\<string, string>_ | - |
 | activeStyle `v2.3.7` | Selected Item Style | _React.CSSProperties_ | - |
+| loopMap `v2.13.4` | Whether each column scrolls in a loop (`type` possible values are `year`, `month`, `day`, `hour`, `minute`, `12HourClock`). Columns not listed keep the default: `year` and `12HourClock` do not loop, other columns do | _Record\<type, boolean>_ | - |
 
 ### Events
 
