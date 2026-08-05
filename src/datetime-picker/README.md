@@ -409,7 +409,7 @@ export default function Demo() {
 | columnStyles `v2.3.7` | 任意列的样式 | _Record\<string, string>_ | - |
 | fontStyles `v2.3.7` | 任意列的字体样式 | _Record\<string, string>_ | - |
 | activeStyle `v2.3.7` | 选中项的样式 | _React.CSSProperties_ | - |
-| loopMap `v2.13.4` | 控制每一列是否循环滚动(`type` 可选值为 `year`, `month`, `day`, `hour`, `minute`, `12HourClock`)，未配置的列保持默认行为：`year` 与 `12HourClock` 不循环，其余列循环 | _Record<type, boolean>_ | - |
+| loopMap `v2.13.4` | 控制每一列是否循环滚动(`type` 可选值为 `year`, `month`, `day`, `hour`, `minute`, `12HourClock`)，未配置的列保持默认行为：`year` 与 `12HourClock` 不循环，其余列循环 | _Record\<type, boolean>_ | - |
 
 ### Events
 
