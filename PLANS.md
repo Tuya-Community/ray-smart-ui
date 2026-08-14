@@ -2,8 +2,10 @@
 
 发布计划（发布正式时间：2026.8.13 周四）
 
-- [x] datetime-picker: 新增 `loop-map` 属性，支持按列控制是否循环滚动（如关闭“日”列的循环）,测试版本： `2.13.4-beta-0`
-- [ ] toast: 修复无法打开问题
+- [x] datetime-picker: 新增 `loop-map` 属性，支持按列控制是否循环滚动（如关闭“日”列的循环）([1127c20](https://github.com/Tuya-Community/miniapp-smart-ui/pull/210/commits/1127c203e61df0c10c0eb66608c4fab9bc5858e2)),测试版本： `2.13.4-beta-0`
+- [x] toast: 修复无法打开问题([c214934](https://github.com/Tuya-Community/miniapp-smart-ui/pull/208/commits/c2149342c2abcc214e65a8a66780659d166f815a))，测试版本: `2.13.4-beta-2`
+- [x] cell: 修复内部间隔最大样式问题([pull/211](https://github.com/Tuya-Community/miniapp-smart-ui/pull/211))，新增 `--cell-value-max-width`、`--cell-value-max-width` CSS 变量，测试版本: `2.13.4-beta-2`
+- [ ] picker: 修复 10w 条数据时性能问题
 
 
 # v2.13.3
