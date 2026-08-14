@@ -356,6 +356,8 @@ type CellThemeVars =
   | 'cellLabelLineHeight'
   | 'cellLabelMarginTop'
   | 'cellValueColor'
+  | 'cellValueMaxWidth'
+  | 'cellValueMarginLeft'
   | 'cellIconSize'
   | 'cellRightIconColor'
   | 'cellBorderColor'
