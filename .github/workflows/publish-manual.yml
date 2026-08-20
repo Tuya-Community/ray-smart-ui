@@ -202,19 +202,71 @@ jobs:
       - name: Get Version
         id: get_version
         if: inputs.branch != '' && startsWith(inputs.branch, 'fix/')
+        env:
+          INPUT_VERSION: ${{ inputs.version }}
         run: |
-          if [ -n "${{ inputs.version }}" ]; then
-            VERSION="${{ inputs.version }}"
+          set -euo pipefail
+
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+
+          if [ -n "${INPUT_VERSION}" ]; then
+            VERSION="${INPUT_VERSION}"
           else
             VERSION=$(node -p "require('./package.json').version")
           fi
+          echo "📦 Requested version: ${VERSION}"
+
+          # 先拉 registry 上已存在的版本列表，用于判断是否冲突。
+          # 本仓库的 beta 号既可能由自身的 publish-beta 自增产生，也可能由
+          # miniapp-smart-ui dispatch 传入，两个来源会撞号，所以不能直接用入参。
+          EXISTING=$(npm show "${PACKAGE_NAME}" versions --json 2>/dev/null \
+            | jq -r 'if type == "array" then .[] else . end' || true)
+
+          is_taken() {
+            printf '%s\n' "${EXISTING}" | grep -Fxq "$1"
+          }
+
+          if is_taken "${VERSION}"; then
+            # 形如 2.13.4-beta-3 / 2.13.4-beta.3 的预发布版本：末尾序号 +1 直到不冲突
+            if [[ "${VERSION}" == *-* && "${VERSION}" =~ ^(.*[-.])([0-9]+)$ ]]; then
+              PREFIX="${BASH_REMATCH[1]}"
+              NUMBER="${BASH_REMATCH[2]}"
+              RESOLVED=""
+              for _ in $(seq 1 200); do
+                NUMBER=$((NUMBER + 1))
+                if ! is_taken "${PREFIX}${NUMBER}"; then
+                  RESOLVED="${PREFIX}${NUMBER}"
+                  break
+                fi
+              done
+              if [ -z "${RESOLVED}" ]; then
+                echo "❌ ${PREFIX}* 连续 200 个序号都已被占用，放弃自动递增"
+                exit 1
+              fi
+              echo "⚠️  ${PACKAGE_NAME}@${VERSION} 已存在，自动改用 ${RESOLVED}"
+              VERSION="${RESOLVED}"
+            else
+              # 正式版本撞号意味着有人已经发过这个版本，自动 +1 会静默发出
+              # 与请求不符的版本，这里只报错，交给人工决定
+              echo "❌ ${PACKAGE_NAME}@${VERSION} 已存在，且不是带序号的预发布版本，不做自动递增"
+              exit 1
+            fi
+          fi
+
           echo "VERSION=${VERSION}" >> $GITHUB_OUTPUT
           echo "📦 Version to publish: ${VERSION}"
 
       - name: Update Package.json with Version
         if: inputs.branch != '' && startsWith(inputs.branch, 'fix/')
+        env:
+          TARGET_VERSION: ${{ steps.get_version.outputs.VERSION }}
         run: |
-          npm version "${{ steps.get_version.outputs.VERSION }}" --no-git-tag-version
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          if [ "${CURRENT_VERSION}" != "${TARGET_VERSION}" ]; then
+            npm version "${TARGET_VERSION}" --no-git-tag-version
+          else
+            echo "Package version is already ${TARGET_VERSION}, skipping version update"
+          fi
 
       - name: Build
         run: yarn build

@@ -308,6 +308,33 @@ export default function Demo() {
 ```
 
 
+### Control whether a column scrolls in a loop `v2.13.4`
+
+By default the `year` and `12HourClock` columns do not loop, while the other columns (month, day, hour, minute) do. `loopMap` overrides that default per column; columns that are not listed keep the default behavior.
+
+```jsx
+import React, { useState, useCallback } from 'react';
+import { DateTimePicker } from '@ray-js/smart-ui';
+
+export default function Demo() {
+  const [currentDate, setCurrentDate] = useState(new Date().getTime());
+  const onInput = useCallback(event => {
+    setCurrentDate(event.detail);
+  }, []);
+  return (
+    <DateTimePicker
+      type="date"
+      value={currentDate}
+      loopMap={{
+        day: false, // the day column does not loop
+        year: true, // the year column loops
+      }}
+      onInput={onInput}
+    />
+  );
+}
+```
+
 ### Style `v2.3.7`
 
 `activeStyle` can modify the style of the selected item; `columnStyles` can set the style of each column; `fontStyles` can set the text style for each column.
@@ -381,6 +408,7 @@ export default function Demo() {
 | columnStyles `v2.3.7` | Style of any column | _Record\<string, string>_ | - |
 | fontStyles `v2.3.7` | Font style of any column | _Record\<string, string>_ | - |
 | activeStyle `v2.3.7` | Selected Item Style | _React.CSSProperties_ | - |
+| loopMap `v2.13.4` | Whether each column scrolls in a loop (`type` possible values are `year`, `month`, `day`, `hour`, `minute`, `12HourClock`). Columns not listed keep the default: `year` and `12HourClock` do not loop, other columns do | _Record\<type, boolean>_ | - |
 
 ### Events
 

@@ -45,6 +45,7 @@ jobs:
         env:
           RELEASE_TAG: ${{ inputs.release_tag || 'v2.10.0' }}
           RELEASE_BODY_INPUT: ${{ inputs.release_body }}
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
         run: |
           # 设置默认发布内容（当 push 触发或未提供输入时使用）
           if [ -z "$RELEASE_BODY_INPUT" ] || [ "$RELEASE_BODY_INPUT" = "null" ]; then
@@ -89,3 +90,29 @@ jobs:
           -H 'Content-Type: application/json' \
           -d "$PAYLOAD"
           echo "✅ WeChat notification sent successfully"
+
+          # ---- 同步发送到飞书群（自定义机器人 Webhook）----
+          if [ -z "$FEISHU_WEBHOOK" ]; then
+            echo "⚠️  FEISHU_WEBHOOK 未配置，跳过飞书通知"
+          else
+            # markdown 标题行(#/##/###)转飞书卡片 lark_md 加粗，链接原样保留可点击
+            BODY_MD=$(echo "$RELEASE_BODY" | sed -E 's/^#{1,6}[[:space:]]+(.*)$/**\1**/')
+            FS_CONTENT="**$RELEASE_TAG（$RELEASE_DATE）**${NEWLINE}${NEWLINE}$BODY_MD"
+            FS_PAYLOAD=$(jq -n --arg content "$FS_CONTENT" --arg tag "$RELEASE_TAG" '{
+                msg_type: "interactive",
+                card: {
+                  config: { wide_screen_mode: true },
+                  header: {
+                    template: "blue",
+                    title: { tag: "plain_text", content: ("🎉 Smart UI 组件库发布 " + $tag) }
+                  },
+                  elements: [
+                    { tag: "div", text: { tag: "lark_md", content: $content } }
+                  ]
+                }
+              }')
+            curl "$FEISHU_WEBHOOK" \
+            -H 'Content-Type: application/json' \
+            -d "$FS_PAYLOAD"
+            echo "✅ Feishu notification sent successfully"
+          fi

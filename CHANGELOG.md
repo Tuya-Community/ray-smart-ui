@@ -1,5 +1,29 @@
 # 更新日志
 
+## v2.13.4 (2026-8-20)
+
+### Features ✨
+
+- datetime-picker: 新增 `loopMap` 属性，支持按列控制是否循环滚动（如关闭“日”列的循环）([1127c20](https://github.com/Tuya-Community/miniapp-smart-ui/pull/210/commits/1127c203e61df0c10c0eb66608c4fab9bc5858e2))
+- cell: 新增 `--cell-value-max-width`、`--cell-value-margin-left` CSS 变量，支持限制值区域最大宽度、调整值区域与标题的间距([pull/211](https://github.com/Tuya-Community/miniapp-smart-ui/pull/211))
+
+### Bug Fixes 🐛
+
+- toast: 修复同一 `selector` 在多个页面实例化时无法打开的问题([c214934](https://github.com/Tuya-Community/miniapp-smart-ui/pull/208/commits/c2149342c2abcc214e65a8a66780659d166f815a))
+- cell: 修复内部间隔最大样式问题([pull/211](https://github.com/Tuya-Community/miniapp-smart-ui/pull/211))
+- tabs: 修复横向滚动（tab 数超过 `swipeThreshold`）时，Android 上布局查询过早返回 null 导致的 `Cannot read property '0' of null` 报错，同时加固 `getRect`/`getAllRect` 的空值处理([pull/214](https://github.com/Tuya-Community/miniapp-smart-ui/pull/214))
+
+## v2.13.3 (2026-7-30)
+
+### Features ✨
+
+- popup: 更新组件底部安全距离实现，使用 `safe-area-inset-bottom`，兼容底部 Hey Tuya([4d4d57b](https://github.com/Tuya-Community/miniapp-smart-ui/pull/206/commits/4d4d57b4057663b6dbd71f91bd67a20880e920bc))
+
+### Bug Fixes 🐛
+
+- switch: 修改 `--switch-node-z-index` CSS 变量默认值为 0，修复 switch-node 悬浮在其他元素之上的情况([5d718cb](https://github.com/Tuya-Community/miniapp-smart-ui/pull/207/commits/5d718cbfde2944464975c4d992d076630a5c9c5a))
+- picker: 修复 picker-column 中 `wrapperItemStyle` 的参数，移除重复的 index([6e1beed](https://github.com/Tuya-Community/miniapp-smart-ui/pull/204/commits/6e1beeda02a94c70f95a10bd08c9f4914c53d9ef))
+
 ## v2.13.2 (2026-6-18)
 
 ### Features ✨

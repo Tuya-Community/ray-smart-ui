@@ -309,6 +309,33 @@ export default function Demo() {
 }
 ```
 
+### 控制某一列是否循环滚动 `v2.13.4`
+
+默认情况下，`year`（年）与 `12HourClock`（上午/下午）列不循环滚动，其余列（月、日、时、分）循环滚动。通过 `loopMap` 可以按列覆盖该默认行为，未配置的列保持默认。
+
+```jsx
+import React, { useState, useCallback } from 'react';
+import { DateTimePicker } from '@ray-js/smart-ui';
+
+export default function Demo() {
+  const [currentDate, setCurrentDate] = useState(new Date().getTime());
+  const onInput = useCallback(event => {
+    setCurrentDate(event.detail);
+  }, []);
+  return (
+    <DateTimePicker
+      type="date"
+      value={currentDate}
+      loopMap={{
+        day: false, // 日不循环
+        year: true, // 年循环
+      }}
+      onInput={onInput}
+    />
+  );
+}
+```
+
 ### 样式风格 `v2.3.7`
 
 `activeStyle` 可以修改选中项的样式；`columnStyles` 可以设置每一列的样式；`fontStyles` 可以设置每一列文字的样式。
@@ -382,6 +409,7 @@ export default function Demo() {
 | columnStyles `v2.3.7` | 任意列的样式 | _Record\<string, string>_ | - |
 | fontStyles `v2.3.7` | 任意列的字体样式 | _Record\<string, string>_ | - |
 | activeStyle `v2.3.7` | 选中项的样式 | _React.CSSProperties_ | - |
+| loopMap `v2.13.4` | 控制每一列是否循环滚动(`type` 可选值为 `year`, `month`, `day`, `hour`, `minute`, `12HourClock`)，未配置的列保持默认行为：`year` 与 `12HourClock` 不循环，其余列循环 | _Record\<type, boolean>_ | - |
 
 ### Events
 

@@ -204,6 +204,19 @@ export default function Demo() {
           onInput={onTimeInput}
         />
       </DemoBlock>
+
+      <DemoBlock title={Strings.getLang('controlColumnLoop')}>
+        <DateTimePicker
+          type="date"
+          value={data.currentDate1}
+          loopMap={{
+            day: false,
+            year: true,
+          }}
+          onInput={onDateInput}
+        />
+      </DemoBlock>
+
       <DemoBlock title={Strings.getLang('innerPopup')}>
         <>
           <Cell
