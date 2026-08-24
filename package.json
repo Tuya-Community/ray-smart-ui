@@ -1,16 +1,59 @@
 {
   "name": "@ray-js/smart-ui",
-  "version": "2.13.4-beta-5",
-  "description": "轻量、可靠的智能小程序 UI 组件库",
-  "scripts": {
-    "syncMiniappData": "node ./build/syncMiniappData.js",
-    "dev": "tsc -w -p tsconfig.build.es.json",
-    "build": "rimraf es lib && tsc -p tsconfig.build.es.json && tsc -p tsconfig.build.lib.json && node ./build/postBuild.js",
-    "build:tuya": "yarn build && cd ./example && ray build --target=tuya"
+  "version": "2.13.4",
+  "description": "轻量、可靠的 Ray 面板小程序 UI 组件库",
+  "keywords": [
+    "@ray-js/smart-ui",
+    "ray",
+    "smart-ui",
+    "weapp"
+  ],
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.js",
+      "require": "./lib/index.js",
+      "default": "./es/index.js"
+    },
+    "./package.json": "./package.json",
+    "./es/index": {
+      "types": "./es/index.d.ts",
+      "default": "./es/index.js"
+    },
+    "./lib/index": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./es/*.js": "./es/*.js",
+    "./lib/*.js": "./lib/*.js",
+    "./es/*/index": {
+      "types": "./es/*/index.d.ts",
+      "default": "./es/*/index.js"
+    },
+    "./lib/*/index": {
+      "types": "./lib/*/index.d.ts",
+      "default": "./lib/*/index.js"
+    },
+    "./es/*": {
+      "types": "./es/*/index.d.ts",
+      "default": "./es/*/index.js"
+    },
+    "./lib/*": {
+      "types": "./lib/*/index.d.ts",
+      "default": "./lib/*/index.js"
+    },
+    "./*": {
+      "types": "./es/*/index.d.ts",
+      "import": "./es/*/index.js",
+      "require": "./lib/*/index.js",
+      "default": "./es/*/index.js"
+    }
   },
   "main": "lib/index.js",
   "module": "es/index.js",
   "typings": "es/index.d.ts",
+  "sideEffects": false,
   "files": [
     "es",
     "lib",
@@ -22,23 +65,11 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "keywords": [
-    "@ray-js/smart-ui",
-    "ray",
-    "smart-ui",
-    "weapp"
-  ],
-  "license": "MIT",
-  "lint-staged": {
-    "*.{js,ts,md,json}": [
-      "prettier --write"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS --config commitlint.config.js",
-      "pre-commit": "lint-staged"
-    }
+  "scripts": {
+    "syncMiniappData": "node ./build/syncMiniappData.js",
+    "dev": "tsc -w -p tsconfig.build.es.json",
+    "build": "rimraf es lib && tsc -p tsconfig.build.es.json && tsc -p tsconfig.build.lib.json && node ./build/postBuild.js",
+    "build:tuya": "yarn build && cd ./example && ray build --target=tuya"
   },
   "dependencies": {
     "@ray-js/components-ty-slider": "^0.3.9",
@@ -74,6 +105,17 @@
     "ts-node": "^10.9.2",
     "typescript": "^4.4.3",
     "yorkie": "^2.0.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,md,json}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS --config commitlint.config.js",
+      "pre-commit": "lint-staged"
+    }
   },
   "maintainers": [
     {
