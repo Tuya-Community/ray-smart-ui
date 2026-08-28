@@ -1,3 +1,10 @@
+# v2.13.5
+
+发布计划（发布正式时间：2026.8.17 周四）
+
+- [x] picker: 修复 10w 条数据时性能问题([pull/213](https://github.com/Tuya-Community/miniapp-smart-ui/pull/213))，测试版本： `2.13.5-beta-1`
+- [x] package.json 支持 tree-shaking([d78ea06](https://github.com/Tuya-Community/ray-smart-ui/pull/103/commits/d78ea0609266731abbbdf575fe2af6e1c70c1bc6))，测试版本： `2.13.5-beta-1`
+
 # v2.13.4
 
 发布计划（发布正式时间：2026.8.20 周四）
@@ -6,7 +13,6 @@
 - [x] toast: 修复无法打开问题([c214934](https://github.com/Tuya-Community/miniapp-smart-ui/pull/208/commits/c2149342c2abcc214e65a8a66780659d166f815a))，测试版本: `2.13.4-beta-2`
 - [x] cell: 修复内部间隔最大样式问题([pull/211](https://github.com/Tuya-Community/miniapp-smart-ui/pull/211))，新增 `--cell-value-max-width`、`--cell-value-margin-left` CSS 变量，测试版本: `2.13.4-beta-2`
 - [x] tabs: 修复横向滚动（tab 数超过 `swipe-threshold`）时，Android 上布局查询过早返回 null 导致的 `Cannot read property '0' of null` 报错([pull/214](https://github.com/Tuya-Community/miniapp-smart-ui/pull/214))，同时加固 `getRect`/`getAllRect` 的空值处理，测试版本: `2.13.4-beta-4`
-- [ ] picker: 修复 10w 条数据时性能问题
 
 
 # v2.13.3

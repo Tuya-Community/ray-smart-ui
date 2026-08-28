@@ -358,6 +358,7 @@ type CellThemeVars =
   | 'cellValueColor'
   | 'cellValueMaxWidth'
   | 'cellValueMarginLeft'
+  | 'cellValueFlex'
   | 'cellIconSize'
   | 'cellRightIconColor'
   | 'cellBorderColor'
