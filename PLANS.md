@@ -4,6 +4,7 @@
 
 - [x] picker: 修复 10w 条数据时性能问题([pull/213](https://github.com/Tuya-Community/miniapp-smart-ui/pull/213))，测试版本： `2.13.5-beta-1`
 - [x] package.json 支持 tree-shaking([d78ea06](https://github.com/Tuya-Community/ray-smart-ui/pull/103/commits/d78ea0609266731abbbdf575fe2af6e1c70c1bc6))，测试版本： `2.13.5-beta-1`
+- [x] field: 修复 cell 组件布局改动引入组件 value 居左问题([71c0c8f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/218/commits/71c0c8fc793c156c38362204008a7c0a7192fb07))，测试版本: `2.13.5-beta-2`
 
 # v2.13.4
 

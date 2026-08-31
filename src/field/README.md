@@ -433,6 +433,7 @@ export default function Demo() {
 | --field-subtitle-text-color `v2.1.0`  | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_   | 副标题颜色    |
 | --field-left-icon-margin-right `v2.1.0`  | _10px_   | icon的右侧外边距    |
 | --field-left-body-padding-right `v2.1.0`  | _16px_   | 左侧部分的右内边距    |
+| --field-value-margin-left `v2.13.5`  | _0_   | 值区域（label + 输入框整体）的左外边距，默认 0 以与普通 cell 的 title 左对齐，非必要不建议修改    |
 
 #### card模式CSS变量
 | 名称                          | 默认值                                 | 描述 |

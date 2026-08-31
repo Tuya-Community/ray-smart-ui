@@ -419,6 +419,7 @@ type FieldThemeVars =
   | 'fieldSubtitleTextColor'
   | 'fieldLeftIconMarginRight'
   | 'fieldLeftBodyPaddingRight'
+  | 'fieldValueMarginLeft'
   | 'fieldCardBorderRadius'
   | 'fieldCardBackground'
   | 'fieldCardWidth'
