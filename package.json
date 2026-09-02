@@ -1,6 +1,6 @@
 {
   "name": "@ray-js/smart-ui",
-  "version": "2.13.5-beta-3",
+  "version": "2.13.5-beta-4",
   "description": "轻量、可靠的 Ray 面板小程序 UI 组件库",
   "keywords": [
     "@ray-js/smart-ui",
@@ -73,7 +73,7 @@
   },
   "dependencies": {
     "@ray-js/components-ty-slider": "^0.3.9",
-    "@tuya-miniapp/smart-ui": "2.13.5-beta-3",
+    "@tuya-miniapp/smart-ui": "2.13.5-beta-4",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
