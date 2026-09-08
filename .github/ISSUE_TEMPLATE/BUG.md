@@ -16,7 +16,7 @@ about: 创建一个错误报告
 
 1. 组件名：
 2. @ray-js/smart-ui 版本：
-3. @tuya-miniapp/smart-ui 版本：
+3. @tuya/miniapp-smart-ui 版本：
 4. 小程序基础库版本：
 5. IDE 或 App 版本（若仅 IDE 或对应 App 版本有问题）：
 6. 手机设备型号（若仅当前手机有问题）：

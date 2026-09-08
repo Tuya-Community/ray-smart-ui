@@ -6,7 +6,7 @@ English | [简体中文](./README-zh_CN.md)
 
 ## Introduction
 
-`@ray-js/smart-ui` is a React component library based on the `Ray` framework and `@tuya-miniapp/smart-ui`, designed to provide lightweight and reliable UI components that meet the mobile design specifications of Tuya MiniApp. By combining `Ray's` specification adaptation middleware and built-in complete TS types, we offer a full set of React components suitable for Tuya MiniApp, enabling developers to quickly build mobile applications that comply with design specifications.
+`@ray-js/smart-ui` is a React component library based on the `Ray` framework and `@tuya/miniapp-smart-ui`, designed to provide lightweight and reliable UI components that meet the mobile design specifications of Tuya MiniApp. By combining `Ray's` specification adaptation middleware and built-in complete TS types, we offer a full set of React components suitable for Tuya MiniApp, enabling developers to quickly build mobile applications that comply with design specifications.
 
 ## Preview
 

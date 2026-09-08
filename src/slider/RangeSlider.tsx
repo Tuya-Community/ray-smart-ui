@@ -1,5 +1,5 @@
 // @ts-ignore
-import _Slider from '@tuya-miniapp/smart-ui/dist/slider/index';
+import _Slider from '@tuya/miniapp-smart-ui/dist/slider/index';
 import { SmartSlider } from './PropTypes';
 
 const Slider = _Slider as React.FC<SmartSlider>;

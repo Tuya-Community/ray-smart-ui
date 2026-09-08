@@ -1,5 +1,5 @@
 // @ts-ignore
-import Tag from '@tuya-miniapp/smart-ui/dist/tag/index';
+import Tag from '@tuya/miniapp-smart-ui/dist/tag/index';
 
 import { withReactProps } from '../common/withReactProps';
 

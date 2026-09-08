@@ -1,5 +1,5 @@
 // @ts-ignore
-import IndexAnchor from '@tuya-miniapp/smart-ui/dist/index-anchor/index';
+import IndexAnchor from '@tuya/miniapp-smart-ui/dist/index-anchor/index';
 
 import { withReactProps } from '../common/withReactProps';
 

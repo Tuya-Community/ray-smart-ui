@@ -1,5 +1,5 @@
 // @ts-ignore
-import BottomSheetMini from '@tuya-miniapp/smart-ui/dist/bottom-sheet/index';
+import BottomSheetMini from '@tuya/miniapp-smart-ui/dist/bottom-sheet/index';
 import { useEffect, useState } from 'react';
 import { withReactProps } from '../common/withReactProps';
 
