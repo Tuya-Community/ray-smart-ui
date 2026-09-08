@@ -1,5 +1,5 @@
 // @ts-ignore
-import Grid from '@tuya-miniapp/smart-ui/dist/grid/index';
+import Grid from '@tuya/miniapp-smart-ui/dist/grid/index';
 
 import { withReactProps } from '../common/withReactProps';
 

@@ -12,8 +12,8 @@ const updatePackage = async () => {
     const { version } = miniappJsonData;
     const rayPackageStr = fs.readFileSync(ray_package_path, 'utf8');
     const rayPackageData = rayPackageStr ? JSON.parse(rayPackageStr) : {};
-    lastVersion = rayPackageData.dependencies['@tuya-miniapp/smart-ui'];
-    rayPackageData.dependencies['@tuya-miniapp/smart-ui'] = version.includes('beta')
+    lastVersion = rayPackageData.dependencies['@tuya/miniapp-smart-ui'];
+    rayPackageData.dependencies['@tuya/miniapp-smart-ui'] = version.includes('beta')
       ? version
       : `^${version}`;
     fs.writeFileSync(ray_package_path, `${JSON.stringify(rayPackageData, null, 2)}\n`, 'utf-8');
@@ -24,7 +24,7 @@ const updatePackage = async () => {
     if (!lastVersion) return;
     const rayPackageStr = fs.readFileSync(ray_package_path, 'utf8');
     const rayPackageData = rayPackageStr ? JSON.parse(rayPackageStr) : {};
-    rayPackageData.dependencies['@tuya-miniapp/smart-ui'] = lastVersion;
+    rayPackageData.dependencies['@tuya/miniapp-smart-ui'] = lastVersion;
     fs.writeFileSync(ray_package_path, `${JSON.stringify(rayPackageData, null, 2)}\n`, 'utf-8');
     console.error('Version rest successful');
   }

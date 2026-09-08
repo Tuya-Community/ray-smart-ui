@@ -1,5 +1,5 @@
 // @ts-ignore
-import Empty from '@tuya-miniapp/smart-ui/dist/empty/index';
+import Empty from '@tuya/miniapp-smart-ui/dist/empty/index';
 // @ts-ignore
 import { withReactProps } from '../common/withReactProps';
 

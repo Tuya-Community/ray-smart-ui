@@ -9,7 +9,7 @@
 
 ## 项目结构
 
-- 此项目为用 Ray 开发， 语法类似React，语言选用 Typescript、less；项目其实就是 @tuya-miniapp/smart-ui 仓库的类型仓库，将原来用小程序语法写的 @tuya-miniapp/smart-ui 组件库加上ts类型，包装成React组件
+- 此项目为用 Ray 开发， 语法类似React，语言选用 Typescript、less；项目其实就是 @tuya/miniapp-smart-ui 仓库的类型仓库，将原来用小程序语法写的 @tuya/miniapp-smart-ui 组件库加上ts类型，包装成React组件
 
 总体项目目录:
 - build 相关打包和同步代码文件位置
@@ -19,7 +19,7 @@
 src下单个组件目录结构：
 - index.ts 组件的入口文件
 - PropTypes.ts 导出类型的文件
-- [组件名称].tsx 引入 @tuya-miniapp/smart-ui 下的对应组件 包上类型
+- [组件名称].tsx 引入 @tuya/miniapp-smart-ui 下的对应组件 包上类型
 
 ## 多语言
 

@@ -1,5 +1,5 @@
 // @ts-ignore
-import PopupMini from '@tuya-miniapp/smart-ui/dist/popup/index';
+import PopupMini from '@tuya/miniapp-smart-ui/dist/popup/index';
 import { useEffect, useState } from 'react';
 import { withReactProps } from '../common/withReactProps';
 

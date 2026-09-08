@@ -1,5 +1,5 @@
 // @ts-ignore
-import TabsMini from '@tuya-miniapp/smart-ui/dist/tabs/index';
+import TabsMini from '@tuya/miniapp-smart-ui/dist/tabs/index';
 import { cloneElement, Children } from 'react';
 import { withReactProps } from '../common/withReactProps';
 
