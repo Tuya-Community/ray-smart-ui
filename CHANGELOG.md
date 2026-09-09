@@ -1,5 +1,19 @@
 # 更新日志
 
+## v2.13.5 (2026-9-10)
+
+### Features ✨
+
+- 包名从 `@tuya-miniapp/smart-ui` 修改为 `@tuya/miniapp-smart-ui`
+- package.json: 支持 tree-shaking([d78ea06](https://github.com/Tuya-Community/ray-smart-ui/pull/103/commits/d78ea0609266731abbbdf575fe2af6e1c70c1bc6))
+- field: 新增 `--field-value-margin-left` CSS 变量，支持调整值区域与标题的间距([pull/219](https://github.com/Tuya-Community/miniapp-smart-ui/pull/219))
+
+### Bug Fixes 🐛
+
+- picker: 修复 10w 条数据时的性能问题([pull/213](https://github.com/Tuya-Community/miniapp-smart-ui/pull/213))
+- field: 修复 cell 组件布局改动引入的组件 value 居左问题([71c0c8f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/218/commits/71c0c8fc793c156c38362204008a7c0a7192fb07))
+- cell、field: 修复 field label 相对 cell title 右移 8px、cell 长 value 溢出容器问题([pull/219](https://github.com/Tuya-Community/miniapp-smart-ui/pull/219))
+
 ## v2.13.4 (2026-8-20)
 
 ### Features ✨

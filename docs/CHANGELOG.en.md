@@ -1,5 +1,19 @@
 # Changelog
 
+## v2.13.5 (2026-9-10)
+
+### Features ✨
+
+- Rename the package from `@tuya-miniapp/smart-ui` to `@tuya/miniapp-smart-ui`
+- package.json: Support tree-shaking ([d78ea06](https://github.com/Tuya-Community/ray-smart-ui/pull/103/commits/d78ea0609266731abbbdf575fe2af6e1c70c1bc6))
+- field: Add the `--field-value-margin-left` CSS variable to adjust the spacing between the value area and the title ([pull/219](https://github.com/Tuya-Community/miniapp-smart-ui/pull/219))
+
+### Bug Fixes 🐛
+
+- picker: Fix the performance issue when rendering 100k rows of data ([pull/213](https://github.com/Tuya-Community/miniapp-smart-ui/pull/213))
+- field: Fix the value being left-aligned caused by the cell layout change ([71c0c8f](https://github.com/Tuya-Community/miniapp-smart-ui/pull/218/commits/71c0c8fc793c156c38362204008a7c0a7192fb07))
+- cell, field: Fix the field label being shifted 8px to the right of the cell title and long cell values overflowing the container ([pull/219](https://github.com/Tuya-Community/miniapp-smart-ui/pull/219))
+
 ## v2.13.4 (2026-8-20)
 
 ### Features ✨
