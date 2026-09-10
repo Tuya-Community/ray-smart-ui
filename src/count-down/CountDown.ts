@@ -1,5 +1,5 @@
 // @ts-ignore
-import CountDown from '@tuya-miniapp/smart-ui/dist/count-down/index';
+import CountDown from '@tuya/miniapp-smart-ui/dist/count-down/index';
 import { withReactProps } from '../common/withReactProps';
 import React from 'react';
 

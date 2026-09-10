@@ -452,6 +452,7 @@ The component provides the following CSS variables for custom styles. For usage,
 | --field-subtitle-text-color `v2.1.0`  | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_   | Subtitle Color    |
 | --field-left-icon-margin-right `v2.1.0`  | _10px_   | Right margin of icon    |
 | --field-left-body-padding-right `v2.1.0`  | _16px_   | Right padding of the left section    |
+| --field-value-margin-left `v2.13.5`  | _0_   | Left margin of the value area (label + input as a whole). Defaults to 0 so the label aligns with a regular cell title; changing it is not recommended    |
 
 #### card mode CSS variable
 | Name                          | Default                                 | Description |

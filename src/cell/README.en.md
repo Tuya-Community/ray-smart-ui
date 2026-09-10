@@ -304,6 +304,7 @@ The component provides the following CSS variables that can be used for custom s
 | --cell-value-color                    | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_            | Cell value text color          |
 | --cell-value-max-width `v2.13.4`      | _none_                                            | Max width of the cell value area; overflow is hidden. No limit by default |
 | --cell-value-margin-left `v2.13.4`    | _8px_                                             | Spacing between the cell value area and the title |
+| --cell-value-flex `v2.13.5`           | _0 1 auto_                                        | Flex behavior of the cell value area. By default it is sized to its content and does not take up remaining space; set it to `1` when the content needs to fill the whole row |
 | --cell-icon-size                      | _24px_                                            | Cell icon size                 |
 | --cell-right-icon-color               | _var(--app-B6-N6, rgba(0, 0, 0, 0.2))_            | Cell right icon color          |
 | --cell-border-color `v2.1.4`          | _var(--app-B6-N7, rgba(0, 0, 0, 0.1))_            | Cell border color              |

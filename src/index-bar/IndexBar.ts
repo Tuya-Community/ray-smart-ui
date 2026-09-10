@@ -1,5 +1,5 @@
 // @ts-ignore
-import IndexBar from '@tuya-miniapp/smart-ui/dist/index-bar/index';
+import IndexBar from '@tuya/miniapp-smart-ui/dist/index-bar/index';
 
 import { withReactProps } from '../common/withReactProps';
 

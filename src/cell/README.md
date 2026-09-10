@@ -304,6 +304,7 @@ export default function Demo() {
 | --cell-value-color                    | _var(--app-B6-N3, rgba(0, 0, 0, 0.5))_            | 单元格值文字颜色         |
 | --cell-value-max-width `v2.13.4`      | _none_                                            | 单元格值区域最大宽度，超出部分隐藏；默认不限制 |
 | --cell-value-margin-left `v2.13.4`    | _8px_                                             | 单元格值区域与标题的间距 |
+| --cell-value-flex `v2.13.5`           | _0 1 auto_                                        | 单元格值区域的 flex 行为；默认按内容宽度、不占据剩余空间，内容需撑满整行时设为 `1` |
 | --cell-icon-size                      | _24px_                                            | 单元格图标大小           |
 | --cell-right-icon-color               | _var(--app-B6-N6, rgba(0, 0, 0, 0.2))_            | 单元格右侧图标颜色       |
 | --cell-border-color `v2.1.4`          | _var(--app-B6-N7, rgba(0, 0, 0, 0.1))_            | 单元格边框颜色           |
