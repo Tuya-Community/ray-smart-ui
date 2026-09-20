@@ -300,6 +300,7 @@ export default function Demo() {
 | activeIndex | 单列选择器的当前选中项索引，<br>多列选择器请参考下方的 Columns 配置 | _number_ | `-1` |
 | cancelButtonText | 取消按钮文字 | _string_ | `取消` |
 | columns | 对象数组，配置每一列显示的数据 | _Array_ | `[]` |
+| autoReset `v2.13.6` | columns 变化时是否把发生变化的列重置回第 0 项。安卓容器上库内重置会异步覆盖 activeIndex 定位（跨数据源复用滚轮时初始档位丢失），此场景建议传 `false` | _boolean_ | `true` |
 | confirmButtonText | 确认按钮文字 | _string_ | `确认` |
 | defaultIndex | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 Columns 配置 | _number_ | `0` |
 | itemHeight | 选项高度 | _number_ | `44` |
@@ -341,7 +342,7 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数�
 | style `v2.0.0` | 列的样式 |
 | fontStyle `v2.3.5` | 列的文字样式 |
 | unit | 列对应的单位，默认为空 |
-| unitGap `v2.10.0` | 单位和值的间隔，默认为 undefined（使用 CSS 默认样式），支持传入数字（自动添加 px 单位）或字符串（如 "8rpx"） | _string \| number_ | `undefined` |
+| unitGap `v2.10.0` | 单位和值的间隔，默认为 ''（使用 CSS 默认样式），支持传入数字（自动添加 px 单位）或字符串（如 "8rpx"） | _string \| number_ | `''` |
 | values | 列中对应的备选值 |
 | order `v2.2.0` | 设置列的顺序，同`flex order`属性，只是从样式角度修改列的顺序，逻辑还是不变 | _number_ | - |
 | disabled `v2.3.5` | 禁用此列 | _boolean_ | `false` |
