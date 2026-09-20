@@ -39,10 +39,11 @@ export interface SmartPickerMultipleColumn {
   unit?: string;
 
   /**
-   * 列数据的单位和列表的距离
+   * 列数据的单位和列表的距离，默认为 `''`（使用 CSS 默认样式）
    * @version 2.10.0
+   * @default ''
    */
-  unitGap?: string;
+  unitGap?: string | number;
 
   /**
    * @description 组件选择值改变时是否需要动画过度效果
@@ -80,6 +81,15 @@ export interface SmartPickerProps {
    * @default []
    */
   columns?: SmartPickerSingleColumn[] | SmartPickerMultipleColumn[];
+
+  /**
+   * @description columns 变化时是否把发生变化的列重置回第 0 项。
+   * 安卓容器上库内重置（setIndex(0)）会异步覆盖 activeIndex 定位，
+   * 跨数据源复用同一滚轮时初始档位丢失，此场景建议传 `false`
+   * @version 2.13.6
+   * @default true
+   */
+  autoReset?: boolean;
 
   /**
    * 是否显示顶部栏

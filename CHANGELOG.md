@@ -1,5 +1,15 @@
 # 更新日志
 
+## v2.13.6
+
+### Features ✨
+
+- picker: 新增 `autoReset` 属性，columns 变化时是否把发生变化的列重置回第 0 项，默认 `true`([#224](https://github.com/Tuya-Community/miniapp-smart-ui/pull/224))
+
+### Bug Fixes 🐛
+
+- picker: 修复安卓容器上滚轮初始定位丢失与 `unitGap` undefined 告警([#224](https://github.com/Tuya-Community/miniapp-smart-ui/pull/224))
+
 ## v2.13.5 (2026-9-10)
 
 ### Features ✨
