@@ -1,3 +1,12 @@
+# v2.13.6
+
+发布计划（发布正式时间：待定）
+
+> 本轮 beta 版本号在 `@tuya/miniapp-smart-ui` 新包名下重新计数，与 v2.13.5 里同名的 `2.13.5-beta-*`（旧包名 `@tuya-miniapp/smart-ui`）不是同一批产物。
+
+- [x] switch: 修复 iPhone 8 上滑块节点垂直未对齐问题，`__node` 定位由 `left: 0` 改为 `left: var(--switch-node-size)` + `translate3d(-100%, 0, 0)`，并把 transition 收窄到 `left` / `background-color`([pull/223](https://github.com/Tuya-Community/miniapp-smart-ui/pull/223))，测试版本：`2.13.5-beta-1`
+- [x] picker: 修复安卓容器上滚轮初始定位丢失与 `unitGap` undefined 告警，新增 `auto-reset` 属性控制 columns 变化时是否把发生变化的列重置回第 0 项（默认 `true` 保持历史行为），补齐回归用例与「跨数据源复用滚轮」demo([pull/224](https://github.com/Tuya-Community/miniapp-smart-ui/pull/224), [pull/225](https://github.com/Tuya-Community/miniapp-smart-ui/pull/225))，测试版本：`2.13.5-beta-7`
+
 # v2.13.5
 
 发布计划（发布正式时间：2026.9.10 周四）
