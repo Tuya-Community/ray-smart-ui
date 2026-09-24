@@ -1,14 +1,16 @@
 # 更新日志
 
-## v2.13.6
+## v2.13.6 (2026-9-24)
 
 ### Features ✨
 
-- picker: 新增 `autoReset` 属性，columns 变化时是否把发生变化的列重置回第 0 项，默认 `true`([#224](https://github.com/Tuya-Community/miniapp-smart-ui/pull/224))
+- picker: 新增 `autoReset` 属性，columns 变化时是否把发生变化的列重置回第 0 项，默认 `true`([pull/224](https://github.com/Tuya-Community/miniapp-smart-ui/pull/224))
 
 ### Bug Fixes 🐛
 
-- picker: 修复安卓容器上滚轮初始定位丢失与 `unitGap` undefined 告警([#224](https://github.com/Tuya-Community/miniapp-smart-ui/pull/224))
+- switch: 修复 iPhone 8 上滑块节点垂直未对齐问题([pull/223](https://github.com/Tuya-Community/miniapp-smart-ui/pull/223))
+- picker: 修复安卓容器上滚轮初始定位丢失与 `unitGap` undefined 告警([pull/224](https://github.com/Tuya-Community/miniapp-smart-ui/pull/224))
+- action-sheet: 修复 title slot 渲染顺序错乱问题([pull/227](https://github.com/Tuya-Community/miniapp-smart-ui/pull/227))
 
 ## v2.13.5 (2026-9-10)
 
