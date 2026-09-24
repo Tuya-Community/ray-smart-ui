@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Picker } from '@ray-js/smart-ui';
-import { showToast } from '@ray-js/ray';
+import { View, showToast } from '@ray-js/ray';
 import { DemoBlock } from '@/components';
 import styles from './index.module.less';
 import Strings from '../../i18n';
@@ -96,6 +96,19 @@ const data = {
   ],
 };
 
+// 跨数据源复用同一滚轮的两套数据源：列的量程与步长都不同，切换后档位完全由各列 activeIndex 决定
+const pad = (n: number) => (n < 10 ? `0${n}` : `${n}`);
+const range = (len: number, step = 1) => new Array(len).fill(0).map((x, i) => pad(i * step));
+
+const startTimeColumns = () => [
+  { values: range(24), unit: Strings.getLang('reuseUnitHour'), activeIndex: 3 },
+  { values: range(60), unit: Strings.getLang('reuseUnitMinute'), activeIndex: 30 },
+];
+const durationColumns = () => [
+  { values: range(12), unit: Strings.getLang('reuseUnitHour'), activeIndex: 2 },
+  { values: range(12, 5), unit: Strings.getLang('reuseUnitMinute'), activeIndex: 4 },
+];
+
 const cities = [
   [
     Strings.getLang('hangzhou'),
@@ -118,6 +131,8 @@ export default function Demo() {
   const [column4, setColumn4] = useState(data.column4);
   const [column5, setColumn5] = useState<any[]>(data.column5);
   const [activeIndex, setActiveIndex] = useState(3);
+  const [reuseIsStartTime, setReuseIsStartTime] = useState(true);
+  const [reuseColumns, setReuseColumns] = useState<any[]>(startTimeColumns());
 
   useEffect(() => {
     // @ts-ignore
@@ -175,6 +190,12 @@ export default function Demo() {
     picker.setColumnValues(1, data.column3[value[0]]);
     getApp().picker = picker;
   }, []);
+
+  const switchReuseSource = useCallback(() => {
+    const toStartTime = !reuseIsStartTime;
+    setReuseIsStartTime(toStartTime);
+    setReuseColumns(toStartTime ? startTimeColumns() : durationColumns());
+  }, [reuseIsStartTime]);
 
   const onAnimationStart = () => {
     console.log('onAnimationStart');
@@ -240,6 +261,25 @@ export default function Demo() {
       </DemoBlock>
       <DemoBlock title={Strings.getLang('setTheOrderOfColumnStyles')}>
         <Picker itemHeight={isA11y ? 52 : 44} columns={data.column6} />
+      </DemoBlock>
+      <DemoBlock title={Strings.getLang('reuseAcrossDataSources')}>
+        <View className={styles.reuseTip}>
+          {`${
+            reuseIsStartTime ? Strings.getLang('reuseStartTime') : Strings.getLang('reuseDuration')
+          } · ${reuseIsStartTime ? '03:30' : '02:20'}`}
+        </View>
+        <View className={styles.reuseBtn} onClick={switchReuseSource}>
+          {Strings.getLang('switchDataSource')}
+        </View>
+        <View className={styles.reuseTip}>{Strings.getLang('autoResetOn')}</View>
+        <Picker itemHeight={isA11y ? 52 : 44} columns={reuseColumns} onChange={onChange} />
+        <View className={styles.reuseTip}>{Strings.getLang('autoResetOff')}</View>
+        <Picker
+          autoReset={false}
+          itemHeight={isA11y ? 52 : 44}
+          columns={reuseColumns}
+          onChange={onChange}
+        />
       </DemoBlock>
       <DemoBlock title={Strings.getLang('more3d')}>
         <Picker

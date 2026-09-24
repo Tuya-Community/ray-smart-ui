@@ -1,5 +1,17 @@
 # Changelog
 
+## v2.13.6 (2026-9-24)
+
+### Features ✨
+
+- picker: Add the `autoReset` property to control whether changed columns are reset to the first item when `columns` changes, defaults to `true` ([pull/224](https://github.com/Tuya-Community/miniapp-smart-ui/pull/224))
+
+### Bug Fixes 🐛
+
+- switch: Fix the switch node not being vertically aligned on iPhone 8 ([pull/223](https://github.com/Tuya-Community/miniapp-smart-ui/pull/223))
+- picker: Fix the lost initial scroll position on Android containers and the `unitGap` undefined warning ([pull/224](https://github.com/Tuya-Community/miniapp-smart-ui/pull/224))
+- action-sheet: Fix the incorrect rendering order of the title slot ([pull/227](https://github.com/Tuya-Community/miniapp-smart-ui/pull/227))
+
 ## v2.13.5 (2026-9-10)
 
 ### Features ✨
