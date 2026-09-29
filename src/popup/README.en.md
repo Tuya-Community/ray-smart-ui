@@ -202,11 +202,27 @@ The component provides the following CSS variables that can be used for custom s
 | --popup-close-icon-color | _#969799_ | Close icon color |
 | --popup-close-icon-margin | _12px_ | Close icon margin |
 | --popup-close-icon-z-index | _1_ | Close icon z-index |
-| --overlay-background-color     | _rgba(0,0,0,0.4)_ / _rgba(0,0,0,0.7)_    | Override overlay background; when set, blur/fallback variables are not used |
+| --overlay-background-color     | _rgba(0,0,0,0.4)_ / _rgba(0,0,0,0.7)_    | Overlay background when `backdrop-filter` is unsupported |
 | --overlay-blur-background `v2.12.0`      | _rgba(40,44,53,0.22)_ / _rgba(0,0,0,0.6)_ | Background when blur is supported |
 | --overlay-blur-radius  `v2.12.0`         | _16px_                                   | Blur radius for backdrop |
 
 ## FAQ
+
+### How can I remove the frosted glass effect from a Popup?
+
+The effect comes from the Popup overlay. Set `--overlay-blur-radius` to `0px` through `overlayStyle` to keep the overlay without blurring the background:
+
+```jsx
+<Popup
+  show={show}
+  overlayStyle={{ '--overlay-blur-radius': '0px' } as React.CSSProperties}
+  onClose={onClose}
+>
+  Content
+</Popup>
+```
+
+To change the overlay color, also set `--overlay-blur-background`. Setting `--overlay-background-color` alone does not disable blur on devices that support `backdrop-filter`.
 
 ### Popup What should I do if the nested components involving the positioning of the layout positioning are rendered?
 
