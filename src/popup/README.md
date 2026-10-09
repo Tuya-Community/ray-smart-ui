@@ -202,11 +202,27 @@ export default function Demo() {
 | --popup-close-icon-color | _#969799_ | 关闭图标颜色 |
 | --popup-close-icon-margin | _12px_ | 关闭图标边距 |
 | --popup-close-icon-z-index | _1_ | 关闭图标层级 |
-| --overlay-background-color  | _rgba(0,0,0,0.4)_ / _rgba(0,0,0,0.7)_        | 直接指定遮罩背景色时使用，设置后不再使用毛玻璃/半透明变量 |
+| --overlay-background-color  | _rgba(0,0,0,0.4)_ / _rgba(0,0,0,0.7)_        | 不支持 `backdrop-filter` 时的遮罩背景色 |
 | --overlay-blur-background  `v2.12.0`  | _rgba(40,44,53,0.22)_ / _rgba(0,0,0,0.6)_ | 支持模糊时的毛玻璃遮罩背景色 |
 | --overlay-blur-radius  `v2.12.0`     | _16px_      | 毛玻璃模糊半径 |
 
 ## 常见问题
+
+### 如何去除 Popup 弹框的毛玻璃效果？
+
+毛玻璃效果来自 Popup 的遮罩层。通过 `overlayStyle` 将 `--overlay-blur-radius` 设为 `0px`，可以保留遮罩而去除背景模糊：
+
+```jsx
+<Popup
+  show={show}
+  overlayStyle={{ '--overlay-blur-radius': '0px' } as React.CSSProperties}
+  onClose={onClose}
+>
+  内容
+</Popup>
+```
+
+如需调整遮罩颜色，可再设置 `--overlay-blur-background`；只设置 `--overlay-background-color` 不会关闭支持 `backdrop-filter` 的设备上的模糊效果。
 
 ### Popup 嵌套涉及布局定位的组件时渲染异常，该如何处理？
 

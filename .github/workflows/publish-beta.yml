@@ -1,15 +1,25 @@
 name: Publish Beta Package
 
+# 使用 pull_request_target 而非 pull_request：fork 仓库的 PR 在 pull_request 下拿不到 secrets，
+# 合并后无法发 beta。pull_request_target 在主仓库上下文运行，且只在合并后执行、检出的是
+# release/2.x（已审核合入的代码）。注意：禁止在本流程中检出 PR head（head.sha / head.ref），
+# 也禁止把 fork 可控的 head.ref / title / body 拼进脚本，否则会把 secrets 暴露给未审核代码。
 on:
-  pull_request:
+  pull_request_target:
     branches:
       - 'release/2.x'
     types:
       - closed
+  # 兜底：合并后 beta 未发出时，可在 Actions 页面选择 release/2.x 手动补发
+  workflow_dispatch:
 
 jobs:
   publish_beta:
     runs-on: ubuntu-latest
+    # 只在 PR 被合并时执行，避免关闭未合并的 PR 也触发发布；手动补发只允许在 release/2.x 上运行
+    if: |
+      (github.event_name == 'pull_request_target' && github.event.pull_request.merged == true) ||
+      (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/release/2.x')
 
     steps:
     - name: Checkout Code
@@ -99,10 +109,11 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Comment on PR
+      if: github.event_name == 'pull_request_target'
       uses: peter-evans/create-or-update-comment@v2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         issue-number: ${{ github.event.pull_request.number }}
-        repository: ${{ github.event.pull_request.head.repo.full_name }}
+        repository: ${{ github.repository }}
         body: |
           The merge has been completed successfully. The current npm version is `${{ env.NEXT_VERSION }}`.
