@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.13.7 (2026-10-9)
+
+### Bug Fixes 🐛
+
+- field: Avoid writing back the textarea's `innerValue` on every ordinary input event, reducing component-side triggers for the cursor jumping to the end during repeated deletion in the middle of text on iOS ([pull/231](https://github.com/Tuya-Community/miniapp-smart-ui/pull/231))
+
 ## v2.13.6 (2026-9-24)
 
 ### Features ✨

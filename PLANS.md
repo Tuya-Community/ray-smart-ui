@@ -1,3 +1,9 @@
+# v2.13.7
+
+发布计划（正式发布时间待定）
+
+- [x] field: 普通输入不再每次回写 `textarea` 的 `innerValue`，减少 iOS 中间连续删除时光标跳到末尾的组件侧触发条件（[pull/231](https://github.com/Tuya-Community/miniapp-smart-ui/pull/231)），测试版本：`2.13.7-beta-1`。
+
 # v2.13.6
 
 发布计划（发布正式时间：2026.9.24 周四）
