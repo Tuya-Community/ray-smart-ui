@@ -11,12 +11,12 @@ on:
         required: true
         type: string
       mr_id:
-        description: 'Merge request (PR) ID from miniapp-smart-ui to fetch diff info'
-        required: true
+        description: 'Merge request (PR) ID from miniapp-smart-ui; unused for codex/lynx'
+        required: false
         type: string
       branch:
-        description: 'Source branch name from miniapp-smart-ui'
-        required: true
+        description: 'Source branch name from miniapp-smart-ui; unused for codex/lynx'
+        required: false
         type: string
   workflow_call:
     inputs:
@@ -25,16 +25,26 @@ on:
         required: true
         type: string
       mr_id:
-        description: 'Merge request (PR) ID from miniapp-smart-ui to fetch diff info'
-        required: true
+        description: 'Merge request (PR) ID from miniapp-smart-ui; unused for codex/lynx'
+        required: false
         type: string
       branch:
-        description: 'Source branch name from miniapp-smart-ui'
-        required: true
+        description: 'Source branch name from miniapp-smart-ui; unused for codex/lynx'
+        required: false
         type: string
 
 jobs:
+  # Keep the registered manual entry available without changing main.
+  publish_lynx:
+    if: github.ref == 'refs/heads/codex/lynx' && github.event_name != 'push'
+    uses: ./.github/workflows/publish-lynx-beta.yml
+    with:
+      version: ${{ inputs.version }}
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
   publish_manual:
+    if: github.ref != 'refs/heads/codex/lynx'
     runs-on: ubuntu-latest
 
     steps:

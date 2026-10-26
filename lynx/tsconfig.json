@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "target": "ES2017",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "lib": ["ES2017", "DOM"],
+    "rootDir": "src",
+    "outDir": "es",
+    "module": "esnext",
+    "baseUrl": ".",
+    "paths": {},
+    "types": [
+      "node",
+      "miniprogram-api-typings"
+    ]
+  },
+  "include": [
+    "src/index.tsx",
+    "src/native.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

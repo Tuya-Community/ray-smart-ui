@@ -1,0 +1,126 @@
+name: Publish Lynx Beta
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Lynx beta version, e.g. 0.1.0-beta.0'
+        required: true
+        type: string
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
+    secrets:
+      NPM_TOKEN:
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-lynx-beta
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      LYNX_VERSION: ${{ inputs.version }}
+      PACKAGE_NAME: '@ray-js/smart-ui-lynx'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Validate branch, package and beta version
+        run: |
+          test "$GITHUB_REF" = 'refs/heads/codex/lynx'
+          node <<'NODE'
+          const assert = require('node:assert/strict');
+          const pkg = require('./lynx/package.json');
+          assert.equal(pkg.name, process.env.PACKAGE_NAME);
+          assert.notEqual(pkg.private, true);
+          assert.match(process.env.LYNX_VERSION, /^\d+\.\d+\.\d+-beta\.\d+$/);
+          assert.equal(pkg.publishConfig.tag, 'beta');
+          NODE
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: lynx/package-lock.json
+          registry-url: 'https://registry.npmjs.org/'
+
+      - name: Install locked build dependencies
+        run: npm ci --prefix lynx
+
+      - name: Set Lynx package version only
+        run: npm --prefix lynx version "$LYNX_VERSION" --no-git-tag-version --allow-same-version --ignore-scripts
+
+      - name: Build ES, CommonJS and declarations
+        run: npm run build --prefix lynx
+
+      - name: Run wrapper regression tests and typecheck
+        run: |
+          npm test --prefix lynx
+          npm run typecheck --prefix lynx
+          npm run verify:package --prefix lynx
+
+      - name: Pack the verified Lynx package
+        run: |
+          mkdir -p lynx/release-output
+          npm pack ./lynx --ignore-scripts --json --pack-destination lynx/release-output > lynx/release-output/pack.json
+          node <<'NODE'
+          const fs = require('node:fs');
+          const [pack] = require('./lynx/release-output/pack.json');
+          if (pack.name !== process.env.PACKAGE_NAME || pack.version !== process.env.LYNX_VERSION) throw new Error('Wrong release package');
+          fs.appendFileSync(process.env.GITHUB_ENV, `PACKAGE_TARBALL=lynx/release-output/${pack.filename}\nPACKAGE_INTEGRITY=${pack.integrity}\n`);
+          NODE
+
+      - name: Preserve the release tarball and manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: ray-smart-ui-lynx-${{ inputs.version }}
+          path: lynx/release-output/
+          retention-days: 30
+
+      - name: Publish the verified tarball to the independent beta package
+        run: |
+          existing_integrity=$(npm view "${PACKAGE_NAME}@${LYNX_VERSION}" dist.integrity --registry=https://registry.npmjs.org/ --prefer-online 2>/dev/null || true)
+          if [ -n "$existing_integrity" ]; then
+            test "$existing_integrity" = "$PACKAGE_INTEGRITY"
+            echo 'Identical version is already published; continuing registry verification'
+          else
+            npm publish "$PACKAGE_TARBALL" --ignore-scripts --access public --tag beta
+          fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Verify npm registry version and integrity
+        run: |
+          for attempt in {1..60}; do
+            registry_integrity=$(npm view "${PACKAGE_NAME}@${LYNX_VERSION}" dist.integrity --registry=https://registry.npmjs.org/ --prefer-online 2>/dev/null || true)
+            if [ "$registry_integrity" = "$PACKAGE_INTEGRITY" ]; then
+              test "$(npm view "$PACKAGE_NAME" dist-tags.beta --registry=https://registry.npmjs.org/ --prefer-online)" = "$LYNX_VERSION"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo 'Published version/integrity could not be confirmed in npm registry'
+          exit 1
+
+      - name: Release summary
+        run: |
+          {
+            echo '## SmartUI Lynx beta'
+            echo "Package: ${PACKAGE_NAME}@${LYNX_VERSION}"
+            echo "Commit: ${GITHUB_SHA}"
+            echo 'Tag: beta (independent Lynx package)'
+            echo '```sh'
+            echo "yarn add ${PACKAGE_NAME}@${LYNX_VERSION}"
+            echo '```'
+            echo 'Use /native on renderer:native pages. Full business, Android and complete API acceptance remains pending; see lynx/README.md.'
+          } >> "$GITHUB_STEP_SUMMARY"
