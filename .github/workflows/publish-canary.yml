@@ -1,0 +1,145 @@
+name: Publish Canary (standalone preview)
+run-name: Canary from ${{ github.ref_name }} with miniapp ${{ inputs.miniapp_version }}
+
+# 发布选中分支的 Ray 主包；依赖已发布的 miniapp 精确 canary 版本。
+# 不运行 syncMiniappData，不创建 PR，不向分支写回版本或依赖。
+on:
+  workflow_dispatch:
+    inputs:
+      miniapp_version:
+        description: 'Exact @tuya/miniapp-smart-ui canary version (not a tag or range)'
+        required: true
+        type: string
+      dist_tag:
+        description: 'npm dist-tag (latest and beta are forbidden)'
+        required: false
+        default: canary
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-canary-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  publish_canary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      MINIAPP_VERSION: ${{ inputs.miniapp_version }}
+      DIST_TAG: ${{ inputs.dist_tag || 'canary' }}
+    steps:
+      - name: Validate inputs
+        run: |
+          node <<'NODE'
+          const assert = require('node:assert/strict');
+          assert.match(process.env.MINIAPP_VERSION, /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)-canary\.[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*$/);
+          assert.match(process.env.DIST_TAG, /^[a-z][a-z0-9-]*$/);
+          assert.ok(!['latest', 'beta'].includes(process.env.DIST_TAG));
+          assert.ok(!/^v\d/.test(process.env.DIST_TAG), 'Tag must not be a semver range');
+          NODE
+
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: yarn
+          registry-url: 'https://registry.npmjs.org/'
+
+      - name: Verify source package and miniapp registry version
+        run: |
+          node -e "require('node:assert/strict').equal(require('./package.json').name, '@ray-js/smart-ui')"
+          test "$(npm view "@tuya/miniapp-smart-ui@${MINIAPP_VERSION}" version --prefer-online)" = "$MINIAPP_VERSION"
+
+      - name: Install locked dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Pin miniapp preview in this runner only
+        run: |
+          yarn add --exact "@tuya/miniapp-smart-ui@${MINIAPP_VERSION}"
+          node <<'NODE'
+          const assert = require('node:assert/strict');
+          assert.equal(require('./package.json').dependencies['@tuya/miniapp-smart-ui'], process.env.MINIAPP_VERSION);
+          assert.equal(require('./node_modules/@tuya/miniapp-smart-ui/package.json').version, process.env.MINIAPP_VERSION);
+          NODE
+
+      - name: Compute Canary Version
+        run: |
+          BASE_VERSION=$(node -p "require('./package.json').version.split('-')[0]")
+          SHORT_SHA=$(git rev-parse --short HEAD)
+          SLUG=$(printf '%s' "$GITHUB_REF_NAME" | sed 's#[/._]#-#g' | tr -cd 'A-Za-z0-9-' | cut -c1-24)
+          SLUG=${SLUG:-branch}
+          CANARY_VERSION="${BASE_VERSION}-canary.b${SLUG}.s${SHORT_SHA}.${GITHUB_RUN_ID}.${GITHUB_RUN_ATTEMPT}"
+          echo "CANARY_VERSION=${CANARY_VERSION}" >> "$GITHUB_ENV"
+          echo "Canary version: ${CANARY_VERSION}"
+
+      - name: Set Version (no commit / no tag)
+        run: npm version "$CANARY_VERSION" --no-git-tag-version --ignore-scripts
+
+      - name: Build
+        run: yarn build
+
+      - name: Pack and verify published dependency
+        run: |
+          mkdir -p release-output
+          npm pack --ignore-scripts --json --pack-destination release-output > release-output/pack.json
+          PACKAGE_TARBALL=$(node -p "'release-output/' + require('./release-output/pack.json')[0].filename")
+          tar -xOf "$PACKAGE_TARBALL" package/package.json > release-output/package.json
+          node <<'NODE'
+          const assert = require('node:assert/strict');
+          const pkg = require('./release-output/package.json');
+          assert.equal(pkg.name, '@ray-js/smart-ui');
+          assert.equal(pkg.version, process.env.CANARY_VERSION);
+          assert.equal(pkg.dependencies['@tuya/miniapp-smart-ui'], process.env.MINIAPP_VERSION);
+          const files = require('./release-output/pack.json')[0].files.map(file => file.path);
+          for (const path of ['es/index.js', 'lib/index.js', 'es/index.d.ts']) assert.ok(files.includes(path), `Missing ${path}`);
+          NODE
+          echo "PACKAGE_TARBALL=${PACKAGE_TARBALL}" >> "$GITHUB_ENV"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ray-smart-ui-canary-${{ github.run_id }}-${{ github.run_attempt }}
+          path: release-output/
+          retention-days: 14
+
+      - name: Publish verified tarball
+        run: npm publish "$PACKAGE_TARBALL" --ignore-scripts --access public --tag "$DIST_TAG"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Verify registry version and dependency
+        run: |
+          for attempt in {1..30}; do
+            if npm view "@ray-js/smart-ui@${CANARY_VERSION}" --json --prefer-online > "$RUNNER_TEMP/ray-canary.json"; then
+              node <<'NODE'
+          const assert = require('node:assert/strict');
+          const fs = require('node:fs');
+          const pkg = JSON.parse(fs.readFileSync(`${process.env.RUNNER_TEMP}/ray-canary.json`, 'utf8'));
+          assert.equal(pkg.version, process.env.CANARY_VERSION);
+          assert.equal(pkg.dependencies['@tuya/miniapp-smart-ui'], process.env.MINIAPP_VERSION);
+          NODE
+              exit 0
+            fi
+            sleep 10
+          done
+          echo '::error::Published Ray version was not visible after 5 minutes'
+          exit 1
+
+      - name: Job Summary
+        run: |
+          {
+            echo '## Ray canary published'
+            echo "Branch: ${GITHUB_REF_NAME}"
+            echo "Commit: ${GITHUB_SHA}"
+            echo "Version: ${CANARY_VERSION}"
+            echo "Miniapp dependency (exact): ${MINIAPP_VERSION}"
+            echo "Dist-tag: ${DIST_TAG}"
+            echo '```bash'
+            echo "yarn add @ray-js/smart-ui@${CANARY_VERSION}"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
