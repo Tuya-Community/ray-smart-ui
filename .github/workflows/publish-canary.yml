@@ -121,7 +121,7 @@ jobs:
           retention-days: 14
 
       - name: Publish verified tarball
-        run: npm publish "$PACKAGE_TARBALL" --ignore-scripts --access public --tag "$DIST_TAG"
+        run: npm publish "./$PACKAGE_TARBALL" --ignore-scripts --access public --tag "$DIST_TAG"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
