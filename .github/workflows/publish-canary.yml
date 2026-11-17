@@ -16,6 +16,19 @@ on:
         default: canary
         type: string
 
+  workflow_call:
+    inputs:
+      miniapp_version:
+        required: true
+        type: string
+      dist_tag:
+        required: false
+        default: canary
+        type: string
+    secrets:
+      NPM_TOKEN:
+        required: true
+
 permissions:
   contents: read
 

@@ -34,7 +34,17 @@ on:
         type: string
 
 jobs:
+  publish_canary:
+    if: github.ref == 'refs/heads/codex/pr-240-ray-canary' && github.event_name != 'push'
+    uses: ./.github/workflows/publish-canary.yml
+    with:
+      miniapp_version: ${{ inputs.version }}
+      dist_tag: canary
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
   publish_manual:
+    if: github.ref != 'refs/heads/codex/pr-240-ray-canary'
     runs-on: ubuntu-latest
 
     steps:
