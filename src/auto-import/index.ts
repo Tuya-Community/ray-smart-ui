@@ -11,7 +11,7 @@ const SmartUIAutoImport = {
   format(localName: string, importedName: string) {
     return `import { ${
       importedName !== localName ? `${importedName} as ${localName}` : localName
-    } } from "@ray-js/smart-ui/es/${kebabCase(importedName)}";`;
+    } } from "@ray-js/smart-ui/es/${({ useSmartUIRenderer: 'renderer', SmartUIPage: 'smart-ui-page' }[importedName] || kebabCase(importedName))}";`;
   },
 };
 

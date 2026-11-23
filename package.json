@@ -1,6 +1,6 @@
 {
   "name": "@ray-js/smart-ui",
-  "version": "2.13.7",
+  "version": "2.13.7-lynx.2",
   "description": "轻量、可靠的 Ray 面板小程序 UI 组件库",
   "keywords": [
     "@ray-js/smart-ui",
@@ -10,6 +10,12 @@
   ],
   "license": "MIT",
   "exports": {
+    "./config": {
+      "types": "./config.d.ts",
+      "require": "./config.cjs",
+      "import": "./config.cjs",
+      "default": "./config.cjs"
+    },
     ".": {
       "types": "./es/index.d.ts",
       "import": "./es/index.js",
@@ -59,7 +65,14 @@
     "lib",
     "package.json",
     "README-zh_CN.md",
-    "README.md"
+    "README.md",
+    "webview",
+    "lynx",
+    "config.cjs",
+    "config.d.ts",
+    "components.json",
+    "README-LYNX.md",
+    "page-hosts.json"
   ],
   "publishConfig": {
     "access": "public",
@@ -68,22 +81,27 @@
   "scripts": {
     "syncMiniappData": "node ./build/syncMiniappData.js",
     "dev": "tsc -w -p tsconfig.build.es.json",
-    "build": "rimraf es lib && tsc -p tsconfig.build.es.json && tsc -p tsconfig.build.lib.json && node ./build/postBuild.js",
-    "build:tuya": "yarn build && cd ./example && ray build --target=tuya"
+    "build": "rimraf es lib webview lynx && tsc -p tsconfig.build.es.json && tsc -p tsconfig.build.lib.json && node ./build/postBuild.js && node ./build/renderers.cjs && node build/verify-package.cjs",
+    "build:tuya": "yarn build && cd ./example && ray build --target=tuya",
+    "test": "node --test test/*.test.cjs",
+    "verify:package": "node build/verify-package.cjs",
+    "prepack": "node build/verify-package.cjs",
+    "prepublishOnly": "node build/verify-package.cjs"
   },
   "dependencies": {
-    "@ray-js/components-ty-slider": "^0.3.9",
-    "@tuya/miniapp-smart-ui": "^2.13.7",
-    "lodash-es": "^4.17.21"
+    "@ray-js/components-ty-slider": "0.3.10-beta.4",
+    "@tuya/miniapp-smart-ui": "2.13.7-canary.codex-pr-240-canary.3e16f7b",
+    "lodash-es": "^4.17.21",
+    "typescript": "^4.9.5"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
     "@commitlint/cli": "^7.2.1",
     "@commitlint/config-conventional": "^9.0.1",
-    "@ray-js/cli": "^1.7.58",
+    "@ray-js/cli": "1.7.83",
     "@ray-js/code-sandbox": "^0.0.5",
     "@ray-js/panel-sdk": "^1.13.0",
-    "@ray-js/ray": "^1.7.58",
+    "@ray-js/ray": "1.7.83",
     "@tuya-miniapp/icons": "^2.3.0",
     "@types/fs-extra": "^9.0.13",
     "@types/lodash-es": "^4.17.12",
@@ -103,8 +121,9 @@
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "ts-node": "^10.9.2",
-    "typescript": "^4.4.3",
-    "yorkie": "^2.0.0"
+    "yorkie": "^2.0.0",
+    "react-dom": "17.0.2",
+    "esbuild": "^0.25.12"
   },
   "lint-staged": {
     "*.{js,ts,md,json}": [
@@ -122,5 +141,9 @@
       "name": "tuyafe",
       "email": "tuyafe@tuya.com"
     }
-  ]
+  ],
+  "peerDependencies": {
+    "@ray-js/ray": ">=1.7.83",
+    "react": "^17.0.2"
+  }
 }
