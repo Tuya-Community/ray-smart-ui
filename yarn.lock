@@ -3013,10 +3013,10 @@
   resolved "https://registry.yarnpkg.com/@tuya-miniapp/icons/-/icons-2.3.0.tgz#e2f5a7df056b3de406451c1939ac8da7afc53392"
   integrity sha512-mplKNn6++goSlk5g2QHrtF/jXPf2cZIHbTVO8WWblfUBaUaYV7VRpLI24J9qMxJMufE6Wey/DnCAoDQABiA4YQ==
 
-"@tuya/miniapp-smart-ui@2.13.7-canary.codex-pr-240-canary.3e16f7b":
-  version "2.13.7-canary.codex-pr-240-canary.3e16f7b"
-  resolved "https://registry.yarnpkg.com/@tuya/miniapp-smart-ui/-/miniapp-smart-ui-2.13.7-canary.codex-pr-240-canary.3e16f7b.tgz#32100ab46d7500fd82af361eb43d5179db219961"
-  integrity sha512-FxlUzEt5SzOl4wnHfNXrGPSj2B/aqwgSI5EbbxHPxHrEdzmwgZOw7EBEsjK3ZuA8YEYtN1ZE3VdV6imhFwNa2Q==
+"@tuya/miniapp-smart-ui@2.13.7-canary.bcodex-pr-244-canary.sc0d92d9.45155382366.1":
+  version "2.13.7-canary.bcodex-pr-244-canary.sc0d92d9.45155382366.1"
+  resolved "https://registry.yarnpkg.com/@tuya/miniapp-smart-ui/-/miniapp-smart-ui-2.13.7-canary.bcodex-pr-244-canary.sc0d92d9.45155382366.1.tgz#47494512cbe0bd63b99857e5cd7c476cdd7cc8f0"
+  integrity sha512-/UoDOmJYP8eBV5ceOjmkngUBeGNHxdTuNC0Cri3fuJd/XtNbQdS4xKG9AKqOB/TuAuv6o+id3Hv374WJAhmFpA==
   dependencies:
     "@ray-core/event-propagation" "^0.4.13"
     "@ray-js/components-ty-slider" "^0.3.9"
