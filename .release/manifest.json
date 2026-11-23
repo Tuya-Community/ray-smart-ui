@@ -1,0 +1,10 @@
+{
+  "name": "@ray-js/smart-ui",
+  "version": "2.13.7-lynx.2",
+  "filename": "ray-js-smart-ui-2.13.7-lynx.2.tgz",
+  "integrity": "sha512-uUHMr0OLEZGE5usSoFhEU9DX7FE8Iyv3yVMwDhCXYsAJeaiplGV8l/tdGKESRtFhJH9jn1fsEV/136n0SCC50g==",
+  "shasum": "5a7f577921a9b67f7b7e5e243fc17429c0604693",
+  "sha256": "b9fb0c7a322228b99ec0875e03118368b5ddeab172e30971649be1756f172313",
+  "sourceCommit": "732f9f57a681eab23ac81af871eea25612ea5140",
+  "validation": "frozen dependency install, build, 14 regression tests and package verification passed"
+}

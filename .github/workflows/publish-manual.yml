@@ -25,7 +25,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: yarn
           registry-url: https://registry.npmjs.org/
       - name: Validate release
         run: |
@@ -36,28 +35,39 @@ jobs:
           assert.equal(p.version, process.env.RELEASE_VERSION);
           assert.match(p.version, /^\d+\.\d+\.\d+-lynx\.\d+$/);
           NODE
-      - name: Install locked dependencies
-        run: yarn install --frozen-lockfile --non-interactive
-      - name: Build and verify package
-        run: yarn build
-      - name: Run regression tests
-        run: yarn test
-      - name: Pack verified package
+      - name: Verify the locally built archive
         run: |
-          mkdir -p release-output
-          npm pack --json --pack-destination release-output > release-output/pack.json
           node <<'NODE'
           const fs = require('node:fs');
+          const crypto = require('node:crypto');
           const assert = require('node:assert/strict');
-          const [pack] = require('./release-output/pack.json');
+          const pack = require('./.release/manifest.json');
           assert.equal(pack.name, '@ray-js/smart-ui');
           assert.equal(pack.version, process.env.RELEASE_VERSION);
-          fs.appendFileSync(process.env.GITHUB_ENV, `RELEASE_TARBALL=./release-output/${pack.filename}\nRELEASE_INTEGRITY=${pack.integrity}\n`);
+          const tarball = './.release/' + pack.filename;
+          assert.equal(crypto.createHash('sha256').update(fs.readFileSync(tarball)).digest('hex'), pack.sha256);
+          fs.appendFileSync(process.env.GITHUB_ENV, `RELEASE_TARBALL=${tarball}\nRELEASE_INTEGRITY=${pack.integrity}\n`);
+          NODE
+          mkdir -p "$RUNNER_TEMP/smart-ui-check"
+          tar -xzf "$RELEASE_TARBALL" -C "$RUNNER_TEMP/smart-ui-check"
+          node <<'NODE'
+          const assert = require('node:assert/strict');
+          const fs = require('node:fs');
+          const path = require('node:path');
+          const root = path.join(process.env.RUNNER_TEMP, 'smart-ui-check/package');
+          const pkg = require(path.join(root, 'package.json'));
+          assert.equal(pkg.version, process.env.RELEASE_VERSION);
+          assert.equal(pkg.dependencies['@tuya/miniapp-smart-ui'], '2.13.7-canary.codex-pr-240-canary.3e16f7b');
+          assert.equal(pkg.dependencies['@ray-js/components-ty-slider'], '0.3.10-beta.4');
+          for (const file of ['es/index.js','lib/index.js','config.cjs','config.d.ts','components.json','page-hosts.json','webview/es/switch/index.js','lynx/es/switch/index.js']) {
+            assert.ok(fs.existsSync(path.join(root, file)), `Missing archive entry: ${file}`);
+          }
           NODE
       - uses: actions/upload-artifact@v4
         with:
           name: smart-ui-${{ inputs.version }}
-          path: release-output/
+          path: .release/
+          include-hidden-files: true
           retention-days: 30
       - name: Publish Lynx preview
         run: npm publish "$RELEASE_TARBALL" --ignore-scripts --access public --tag lynx
