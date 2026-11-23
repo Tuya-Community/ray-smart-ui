@@ -49,6 +49,7 @@ jobs:
           fs.appendFileSync(process.env.GITHUB_ENV, `RELEASE_TARBALL=${tarball}\nRELEASE_INTEGRITY=${pack.integrity}\n`);
           NODE
           mkdir -p "$RUNNER_TEMP/smart-ui-check"
+          RELEASE_TARBALL=$(node -p "'./.release/' + require('./.release/manifest.json').filename")
           tar -xzf "$RELEASE_TARBALL" -C "$RUNNER_TEMP/smart-ui-check"
           node <<'NODE'
           const assert = require('node:assert/strict');
