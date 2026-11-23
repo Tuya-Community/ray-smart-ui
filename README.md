@@ -4,6 +4,11 @@ English | [简体中文](./README-zh_CN.md)
 
 ![CI status](https://github.com/Tuya-Community/miniapp-smart-ui/actions/workflows/test.yml/badge.svg) ![coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Tuya-Community/miniapp-smart-ui/release/2.x/.github/coverage/coverage-summary.json) ![npm](https://img.shields.io/npm/v/@ray-js/smart-ui) ![down](https://img.shields.io/npm/dt/@ray-js/smart-ui) ![ray-js](https://img.shields.io/badge/maintained%20with-Ray-cc00ff.svg) ![lodash](https://img.shields.io/badge/-lodash-f16728?style=flat-square&logo=lodash&labelColor=ffffff&color=f16728) ![TS](https://img.shields.io/badge/TS-TypeScript-1C6FBB)
 
+## WebView and Lynx
+
+For page-scoped WebView/Lynx rendering, build configuration and instance APIs, see the [Lynx integration guide](README-LYNX.md). These APIs require a version containing this implementation; the previously published Ray Canary does not include them.
+
+
 ## Introduction
 
 `@ray-js/smart-ui` is a React component library based on the `Ray` framework and `@tuya/miniapp-smart-ui`, designed to provide lightweight and reliable UI components that meet the mobile design specifications of Tuya MiniApp. By combining `Ray's` specification adaptation middleware and built-in complete TS types, we offer a full set of React components suitable for Tuya MiniApp, enabling developers to quickly build mobile applications that comply with design specifications.

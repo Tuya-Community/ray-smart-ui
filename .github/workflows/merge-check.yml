@@ -4,6 +4,7 @@ on:
     branches:
       - main
       - release/*
+      - codex/lynx-dev
 jobs:
   build:
 
@@ -20,4 +21,9 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: echo '检查源码编译是否正常'
       - run: yarn run build
-      
+      - name: Test renderer isolation and page hosts
+        run: yarn test
+      - name: Verify published entry points
+        run: yarn verify:package
+      - name: Check npm archive contents
+        run: npm pack --ignore-scripts --dry-run

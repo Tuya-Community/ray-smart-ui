@@ -360,3 +360,6 @@ export {
   SmartPopoverExternalClassName,
   SmartPopoverProps,
 } from './popover';
+
+export { SmartUIPage, SmartUIPageProps } from './smart-ui-page';
+export { useSmartUIRenderer, SmartUIRenderer } from './renderer';
