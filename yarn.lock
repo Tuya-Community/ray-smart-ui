@@ -2380,39 +2380,39 @@
     "@ray-core/shared" "0.4.12"
     miniprogram-api-typings "^3.4.3"
 
-"@ray-js/adapter@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/adapter/-/adapter-1.7.63.tgz#bd499f83784899260e395138fb6a639c22901521"
-  integrity sha512-Itxn+3oqSMSdjhY+S9ByFZ2ZXq7DDHVcqJKf9Pr+0pzTPT/RY/y5cb9O1on1YJhE5sQeVwzw1M510KF5R91+GQ==
+"@ray-js/adapter@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/adapter/-/adapter-1.7.83.tgz#d318a03f2a34cf1e4273fd840c051e06e51bcbe6"
+  integrity sha512-75yQ/wmoiIgaZotJtp3p9qoZrXYNHaZucuFRqArlm6Vy31RXiuGP2xBfYHUkOiwXZVYHnEA1UfLMQ+50WPd82w==
   dependencies:
     "@ray-core/runtime" "^0.4.9"
     "@ray-core/shared" "^0.4.9"
     "@ray-core/types" "^0.4.9"
 
-"@ray-js/api@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/api/-/api-1.7.63.tgz#6e684feb68b095fc5188a916c9a4359962dc2a75"
-  integrity sha512-UyQkGOXNwvQi5kIVmY2B9f63XaW2pA8Ls+B7WNTmQaJ1+IV6VnH8Bg6+36MBfrQ8bwBvQjOdPp4whkpAg6NbAA==
+"@ray-js/api@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/api/-/api-1.7.83.tgz#26fbeae2690d0e6eb38acf5bae0cf8b11661c4c7"
+  integrity sha512-JZ3YlyVznwT6X7Uc/3h7lEmIhDcE2tNvZ/cQx0Pn1BMSOak4c6nGg4U6r3vA+V1iMtBbJhMoTcPR28lHGxkzKA==
   dependencies:
-    "@ray-js/framework" "1.7.63"
-    "@ray-js/router" "1.7.63"
+    "@ray-js/framework" "1.7.83"
+    "@ray-js/router" "1.7.83"
     base64-browser "^1.0.1"
     query-string "^7.1.3"
 
-"@ray-js/babel-preset-base@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/babel-preset-base/-/babel-preset-base-1.7.63.tgz#ff17f68319a8cf3b3237f6b27dae06b49cc47b9a"
-  integrity sha512-kwXBr4euTVRlh+PlWx9+yxZqgYH6NxF7Mu1DfDbEgBXh/XXXfRDpHmHff/ncA2eKjzZIwIuohniXJw9Bq8uzPQ==
+"@ray-js/babel-preset-base@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/babel-preset-base/-/babel-preset-base-1.7.83.tgz#31bbe08c1d8f76dd68e77ba2dd2c5bf1234c4da0"
+  integrity sha512-xc3CEfv0qvgrkLJMPfTS43y396H3DLjlZiCP6DTq5FjW9f1IH8uFYivP/rh2Cpl69f8f2EmF19tJG294sZGkpg==
   dependencies:
     "@babel/helper-plugin-utils" "^7.27.1"
     "@babel/plugin-transform-runtime" "^7.27.4"
     "@babel/preset-env" "^7.27.2"
     "@babel/preset-typescript" "^7.27.1"
 
-"@ray-js/babel-preset-standard@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/babel-preset-standard/-/babel-preset-standard-1.7.63.tgz#accf675481189a27cebdfad56d6d7a546d57a278"
-  integrity sha512-Q3omAENvym8c3jwtA3iICL3gUR06xWG+Zv+i9cvT9vfTDTP2oZRlAf7x8H7n4EsMyI2ej7DbI3AEoYEKERJcgA==
+"@ray-js/babel-preset-standard@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/babel-preset-standard/-/babel-preset-standard-1.7.83.tgz#055e0ffbf9d7456a48c7507afeca7596c8b593c7"
+  integrity sha512-CLaZs/MYT64PNkKUosvtBlrbzwoJuOuV0QQlVqbtd4Zbd4ukgjj1gqt1D7Dc13RY8+gwjTvhV//YBXt0G41/eg==
   dependencies:
     "@babel/plugin-proposal-decorators" "^7.27.1"
     "@babel/plugin-syntax-jsx" "^7.27.1"
@@ -2420,27 +2420,27 @@
     "@babel/plugin-transform-object-rest-spread" "^7.27.3"
     "@babel/plugin-transform-optional-chaining" "^7.27.1"
     "@babel/preset-react" "^7.27.1"
-    "@ray-js/babel-preset-base" "1.7.63"
+    "@ray-js/babel-preset-base" "1.7.83"
     babel-plugin-macros "^3.1.0"
     babel-plugin-minify-dead-code-elimination-while-loop-fixed "^0.3.1"
     babel-plugin-transform-prune-unused-imports "^1.0.1"
 
-"@ray-js/build-plugin-ray@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/build-plugin-ray/-/build-plugin-ray-1.7.63.tgz#3987a128bd4d61c73663c17a7025c0702e058ba2"
-  integrity sha512-ary6l+Nww6UnGpTbu5ur0U9LNMOFf5PwWINVRnZ8rM4PPWsIpwulSdWPYkCKI8qQav3n+VXerFF15If85tE4Wg==
+"@ray-js/build-plugin-ray@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/build-plugin-ray/-/build-plugin-ray-1.7.83.tgz#22f4575f46d8a22f65195321d7bd2f5250f8b4bd"
+  integrity sha512-vOJzl1GMsqB7/eaI46GhX+mg+qad0Zse90OMMB6Es1kWPoASm4b8HoCcD3X/XOdjcumWKqEz6VhPKpY/8AIBZQ==
   dependencies:
-    "@ray-js/shared" "1.7.63"
+    "@ray-js/shared" "1.7.83"
     colors "1.4.0"
     fs-extra "^10.1.0"
     slash "^3.0.0"
 
-"@ray-js/build-plugin-router@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/build-plugin-router/-/build-plugin-router-1.7.63.tgz#30eefe5900205224dd09d0d8700941f8119440d8"
-  integrity sha512-kR65ZZuPLnKuJd+fgRDEf8LAK+R0QWFUz9eL3CF6N2mWwj/SuoUgkeovPLYFSYvCgP262e8q89ZsvBHsETAYDg==
+"@ray-js/build-plugin-router@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/build-plugin-router/-/build-plugin-router-1.7.83.tgz#84de1d05506c693b139eaf25391cf04aa5200648"
+  integrity sha512-4eKoy1K5WaCc5513z0oFVQxTgYxl58WF3Io7SjqtLmJIE8oN5lM2pjjLDvDmxCBvF2dggtrE8v3uf5DMZgrMpQ==
   dependencies:
-    "@ray-js/shared" "1.7.63"
+    "@ray-js/shared" "1.7.83"
     chokidar "^3.6.0"
     colors "1.4.0"
     ejs "^3.1.10"
@@ -2448,28 +2448,28 @@
     path-to-regexp "^6.3.0"
     url "^0.11.4"
 
-"@ray-js/builder-component@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/builder-component/-/builder-component-1.7.63.tgz#9b013201074787d2a7a5d6635907b4ffcfe6e343"
-  integrity sha512-xOAhXV4cU2k+pe/m0+EOQ9Qhb45KLLZm0z8HAyonarZxw9zKxcnnH4By0LLa2JTcRHTHZjglb+IGzJ0UIZ/L/g==
+"@ray-js/builder-component@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/builder-component/-/builder-component-1.7.83.tgz#72f64c3850812307237d8613ca035b7f5c069de7"
+  integrity sha512-XKw3dE8+GXxi/97OpQIG0WCgJy3lsaTtmJnt7O+Wq97SJFxl9CHDBJnyV/wSxj1uT5LTx5ReTasikEsrngRJQw==
   dependencies:
     "@babel/core" "^7.27.4"
     "@babel/helper-plugin-utils" "^7.27.1"
     "@babel/traverse" "^7.27.4"
     "@babel/types" "^7.27.6"
-    "@ray-js/babel-preset-standard" "1.7.63"
-    "@ray-js/shared" "1.7.63"
-    "@ray-js/types" "1.7.63"
+    "@ray-js/babel-preset-standard" "1.7.83"
+    "@ray-js/shared" "1.7.83"
+    "@ray-js/types" "1.7.83"
     babel-plugin-import "^1.13.8"
     chokidar "^3.6.0"
     colors "1.4.0"
     fs-extra "^10.1.0"
     globby "^11.1.0"
 
-"@ray-js/builder-mp@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/builder-mp/-/builder-mp-1.7.63.tgz#1e7252170ff3623cfd2150f4d6295d2601abbd23"
-  integrity sha512-53bGLh/NUaIe2FSaROHlbKCvc4uZqoSGXSjaNd/6R5ZYZuRxLvxmFYaBdobfyanNJhxpg2Gv5/ljVcsjaB6L8g==
+"@ray-js/builder-mp@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/builder-mp/-/builder-mp-1.7.83.tgz#5eb2b1bfb9a04688f83d533b95144e9dc8f39fe1"
+  integrity sha512-WohToTSDZRNNRW1ZtzH23T5LpYlLZWt0AUaD1zjkCi6C4SGAhR2TeKc7v34eaptxjnCtckbY0Lk2tXCZnq+Oqg==
   dependencies:
     "@babel/plugin-transform-private-methods" "^7.27.1"
     "@babel/plugin-transform-private-property-in-object" "^7.27.1"
@@ -2480,10 +2480,10 @@
     "@ray-core/build-store" "^0.4.9"
     "@ray-core/cli" "^0.4.9"
     "@ray-core/ray" "^0.4.9"
-    "@ray-js/adapter" "1.7.63"
+    "@ray-js/adapter" "1.7.83"
     "@ray-js/rjs-for-wechat" "^0.0.3"
-    "@ray-js/shared" "1.7.63"
-    "@ray-js/types" "1.7.63"
+    "@ray-js/shared" "1.7.83"
+    "@ray-js/types" "1.7.83"
     babel-loader "^8.4.1"
     babel-plugin-minify-dead-code-elimination "^0.5.2"
     babel-plugin-transform-prune-unused-imports "^1.0.1"
@@ -2500,14 +2500,14 @@
     webpack-chain "^6.5.1"
     webpack-virtual-modules "^0.4.6"
 
-"@ray-js/builder-web@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/builder-web/-/builder-web-1.7.63.tgz#19d73feecc4fc44bf16086c7a4a1d2a00a44d98d"
-  integrity sha512-qCNt2PccG8LZJIp5WibOaIq8w5g/gyQ6rbHVdU/FPA5fFpbA1gXrH6yacYw0rYJrfwvu1LZWZ09yu+2QPrWrUw==
+"@ray-js/builder-web@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/builder-web/-/builder-web-1.7.83.tgz#b1646c4af8ce257860cb57a49e82b64dd2d12853"
+  integrity sha512-afOPEEWZt6pQiXZNqQrHW0Ul1cwUj5WGjLTEFvRpUa76vyZT1N2VSlKH39S0x5ykLsCrIuac2q4tzpyPZP5JRw==
   dependencies:
-    "@ray-js/babel-preset-standard" "1.7.63"
-    "@ray-js/shared" "1.7.63"
-    "@ray-js/types" "1.7.63"
+    "@ray-js/babel-preset-standard" "1.7.83"
+    "@ray-js/shared" "1.7.83"
+    "@ray-js/types" "1.7.83"
     address "^1.2.2"
     autoprefixer "^9.8.8"
     case-sensitive-paths-webpack-plugin "^2.4.0"
@@ -2532,26 +2532,26 @@
     webpack-dev-server "^3.11.3"
     webpackbar "^5.0.2"
 
-"@ray-js/capability@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/capability/-/capability-1.7.63.tgz#e7103ab096c42a988aa440f53f321c65ce452d8d"
-  integrity sha512-TC8JsTx7qqfrY6ikrFfid/btaX4c+tMGKoXtVFAXPHqr0qF5WElDGtaN/jVb8e9w7DzWSE14+hn/CFtpFeuRag==
+"@ray-js/capability@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/capability/-/capability-1.7.83.tgz#8ad002ba386b466ae755344dcec64a12a5bfcfb9"
+  integrity sha512-kfP4MyNr1Es9kkhTKdTwXVLiHGsXVHPKaDGBGcFSmGhLMP10vt4cmrWP/VJwKjz5ccKZ+fLnr92hVw+b5EGUCA==
   dependencies:
-    "@ray-js/api" "1.7.63"
+    "@ray-js/api" "1.7.83"
 
-"@ray-js/cli@^1.7.58":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/cli/-/cli-1.7.63.tgz#c52b7fe094b083dac45d1f2815721b4f473cb973"
-  integrity sha512-Pkm28UGK+D/Qx7I/nHIyLWCZa63nKWYXxpN32wzmoRZl/BFUOe/T4yi1IXPbTOflQmU8xeoHaw+eWN53c4QQ0Q==
+"@ray-js/cli@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/cli/-/cli-1.7.83.tgz#b67c09f9fc628c0d87d4a27c544875cf9efd19fb"
+  integrity sha512-NTnTUsIGtzE6mKDhfox5D0irdjKrFtX0J7leivZ6YwQDZ7sRpe1WV4jIYpsRL+I9GfTuVh7iNv/50iGLXx8pnA==
   dependencies:
-    "@ray-js/build-plugin-ray" "1.7.63"
-    "@ray-js/build-plugin-router" "1.7.63"
-    "@ray-js/builder-component" "1.7.63"
-    "@ray-js/builder-mp" "1.7.63"
-    "@ray-js/builder-web" "1.7.63"
-    "@ray-js/raypack" "1.7.63"
-    "@ray-js/shared" "1.7.63"
-    "@ray-js/types" "1.7.63"
+    "@ray-js/build-plugin-ray" "1.7.83"
+    "@ray-js/build-plugin-router" "1.7.83"
+    "@ray-js/builder-component" "1.7.83"
+    "@ray-js/builder-mp" "1.7.83"
+    "@ray-js/builder-web" "1.7.83"
+    "@ray-js/raypack" "1.7.83"
+    "@ray-js/shared" "1.7.83"
+    "@ray-js/types" "1.7.83"
     colors "1.4.0"
     commander "^8.3.0"
     webpack-chain "^6.5.1"
@@ -2564,6 +2564,15 @@
     clsx "^1.2.1"
     js-base64 "^3.7.7"
 
+"@ray-js/components-ty-slider@0.3.10-beta.4":
+  version "0.3.10-beta.4"
+  resolved "https://registry-npm.tuya-inc.top/@ray-js/components-ty-slider/-/components-ty-slider-0.3.10-beta.4.tgz#d3a76ce14c13edf448984592828787177fcae126"
+  integrity sha512-q/5dUNnuNX4JQ3Z7zoJorelGWLA3u4gueU1n4EEegK6w+LBG+eEGJA1t6dNGQck8pBKRPm4O+Qxf1FUqqrl1og==
+  dependencies:
+    clsx "^1.2.1"
+    lodash "^4.17.21"
+    to-style "^1.3.3"
+
 "@ray-js/components-ty-slider@^0.3.9":
   version "0.3.10"
   resolved "https://registry.yarnpkg.com/@ray-js/components-ty-slider/-/components-ty-slider-0.3.10.tgz#dcfbd622476dee00ff02a55c9ce3fdba4662ddd5"
@@ -2573,15 +2582,15 @@
     lodash "^4.17.21"
     to-style "^1.3.3"
 
-"@ray-js/components@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/components/-/components-1.7.63.tgz#fa34acc36a0109eacb4c2fd25d8bf27c2edb0425"
-  integrity sha512-ZmnphaGPN/251NZsh2su31x/VXgoPl5PiSdvZNH5jyA+CilvMpdIZfmY5jy2X3X5I+KCksiBg/p69GAlbV68zA==
+"@ray-js/components@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/components/-/components-1.7.83.tgz#08e71aa8380c1530ec19afe15236f6156ae8b3a8"
+  integrity sha512-yDW/Xs5Rp+Gc7+lcH2ZYaZ+gnkHdQ3xXsQnH9glyEdCWQ/9LIM638y7NAdaz/P4azcvOk//4YCfNejytB7dICg==
   dependencies:
     "@ray-core/macro" "^0.4.9"
     "@ray-core/wechat" "^0.4.9"
-    "@ray-js/adapter" "1.7.63"
-    "@ray-js/framework-shared" "1.7.63"
+    "@ray-js/adapter" "1.7.83"
+    "@ray-js/framework-shared" "1.7.83"
     ahooks "^3.8.5"
     clsx "^1.2.1"
     core-js "^3.43.0"
@@ -2590,39 +2599,39 @@
     react "^17.0.2"
     style-to-object "^0.3.0"
 
-"@ray-js/env@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/env/-/env-1.7.63.tgz#5b16c4473563f533d3ac5c2f371602c2d552a728"
-  integrity sha512-WmK2lp/Glfmy1e7+KuLVRusly5Yj2Mo1k1HeTrxuySAX2rjHIUU2ymeDxQwTjQ9jtXXGgxVWUkazsZTG8DOLfg==
+"@ray-js/env@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/env/-/env-1.7.83.tgz#3b3cb10a8e83ffedb7754d5e6363081337bf0e9e"
+  integrity sha512-DicrfxJ2aGge7KTStd86HUluhLfC4Ft/zSCMer2WUz91mrjoNNrqZG6twIcIHeSiEk1EOm/8fzmyia/wlX267A==
 
-"@ray-js/framework-mp@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/framework-mp/-/framework-mp-1.7.63.tgz#28110296686ea75dd98c34b6c5f14ea3e9bded58"
-  integrity sha512-klqfVG75CMXOnv/rnjCa9UOPbGYz0Xvx02oG4CuB7SvITTBpnGAHWI12mbXilUMF/78weRVzn4x9takT0EbMkg==
+"@ray-js/framework-mp@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/framework-mp/-/framework-mp-1.7.83.tgz#13cfd663bca5e2c80838d752321fedcac8b1f82c"
+  integrity sha512-cPv6E0W9JUgNp6v8E8vC4DOdpRVVJjliRQ459pXXtVSOM//Xrq0eMAqzsvQXVlc/fhzvVnRfBbPbg5Gl/xaCOw==
   dependencies:
-    "@ray-js/runtime" "1.7.63"
+    "@ray-js/runtime" "1.7.83"
 
-"@ray-js/framework-shared@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/framework-shared/-/framework-shared-1.7.63.tgz#d4fb6b9f129de9f3bfdf03d96f4f83001ff40bbb"
-  integrity sha512-FefF7Uqipf8vS/nEmPLnqCYnIb0bFM+vfc606WT6tPeWLpnOiyWdjrcdhA6rZUOndYIqpN+LEc0dGgup/npAfQ==
+"@ray-js/framework-shared@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/framework-shared/-/framework-shared-1.7.83.tgz#b73c4eed0f947dd1c05e2671adff6bce68c7c265"
+  integrity sha512-OwXPT1O+XMewHylqvKlX6pP0PucGnenQ+IjlNRcV20n0Iy7xgxYVkGm6IfqSqLbki3YDcpYWp6ZPu6aBV/8hIw==
   dependencies:
     "@ray-core/wechat" "^0.4.9"
-    "@ray-js/env" "1.7.63"
-    "@ray-js/types" "1.7.63"
+    "@ray-js/env" "1.7.83"
+    "@ray-js/types" "1.7.83"
     path-to-regexp "^6.3.0"
 
-"@ray-js/framework@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/framework/-/framework-1.7.63.tgz#d7e81bdc808517cf65a84aaebb54709c4c1b84ce"
-  integrity sha512-d5f3s3ZICNVn0Ew1mDhjlWLWsMV7fpfeiAdcMxKPeo6kZkv0Tf3mf8ZNFYuIt+N5wMN9Kb7hl9BgzKUyY9mEZw==
+"@ray-js/framework@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/framework/-/framework-1.7.83.tgz#c65f882f204a116ab39874523433191e21b15a33"
+  integrity sha512-i2Ign1N7H4ZyrzQRRo9IgCUFcWEIcf67xwhezIuk9ShMbmuWFi9iNer/icW01bOfAuHO34tuvt57gw7We+d+Yw==
   dependencies:
-    "@ray-js/framework-mp" "1.7.63"
-    "@ray-js/framework-shared" "1.7.63"
-    "@ray-js/library" "1.7.63"
-    "@ray-js/location" "1.7.63"
-    "@ray-js/router" "1.7.63"
-    "@ray-js/runtime" "1.7.63"
+    "@ray-js/framework-mp" "1.7.83"
+    "@ray-js/framework-shared" "1.7.83"
+    "@ray-js/library" "1.7.83"
+    "@ray-js/location" "1.7.83"
+    "@ray-js/router" "1.7.83"
+    "@ray-js/runtime" "1.7.83"
     clsx "^1.2.1"
     hoist-non-react-statics "^3.3.2"
     lodash.get "^4.4.2"
@@ -2630,21 +2639,21 @@
     slash "^5.1.0"
     tiny-invariant "^1.3.3"
 
-"@ray-js/library@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/library/-/library-1.7.63.tgz#19487322455420b639c446e287ac9fb6063bb69b"
-  integrity sha512-xsc+hbUbq0Sxt/gS5pMwr+Gjq47k4s2kwLuLR3hWYipVXE/CQbMGTx0L9SZnDMWpZ4JU6gY8N/n8sl1UXFTNRQ==
+"@ray-js/library@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/library/-/library-1.7.83.tgz#af401087b8cb1645ec5801c9728494cf7f678c81"
+  integrity sha512-e+pCJTQHFMXGOgpgI3CoqHjrJQ9RgqX1KqjDh+JmDMBHZUSp1Ug1gu2oUXaPa/zcwhMNPVxm1eFfnxroOrdIBw==
   dependencies:
     merge "^2.1.1"
 
-"@ray-js/location@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/location/-/location-1.7.63.tgz#38b67a8eb8727d1538579a1ee8c545f30739e543"
-  integrity sha512-dKplBeoBkUYe+fcIRxjks6nN/DuaqZolnQC3MyoVN9dlpyKiEDPPP/jEAyr512xJmX1doWpbjpm4C5cotnjUZQ==
+"@ray-js/location@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/location/-/location-1.7.83.tgz#db6225043bf105f5cd9644227b7e90883434d641"
+  integrity sha512-gfyHywHtWKQUcSfHgu0Y5PMcqM7mrx1m76vGSgBD8uXqeKk8y8oPlKgKYQbsdofdk4QWaL5DwiNHzgH0oO+38Q==
   dependencies:
-    "@ray-js/library" "1.7.63"
-    "@ray-js/router" "1.7.63"
-    "@ray-js/router-mp" "1.7.63"
+    "@ray-js/library" "1.7.83"
+    "@ray-js/router" "1.7.83"
+    "@ray-js/router-mp" "1.7.83"
 
 "@ray-js/panel-cloud@^1.4.2":
   version "1.4.4"
@@ -2675,26 +2684,26 @@
   dependencies:
     base64-browser "^1.0.1"
 
-"@ray-js/ray@^1.7.58":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/ray/-/ray-1.7.63.tgz#6daa9f7847678e8d7d192f7a104185806ca6d847"
-  integrity sha512-/zRK0XijTUuSuesqs07/xujy2u4QzcJrQALH0TQdWEIML/8viEeRhf/+uVhnLtFW6cBsWqsnDZIm2yNA/ASNoQ==
+"@ray-js/ray@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/ray/-/ray-1.7.83.tgz#8c2b9934dcea111d314faaa4b39c3822126911ae"
+  integrity sha512-Dkmw4W14pH7usPfhxO/Vjed+hUmvho9w4nUAFjUxjdq0TaMFuP8bn4OSnyEqThJFy1PeHfnNgN/QtsYd+p9dCQ==
   dependencies:
     "@ray-core/html2mini-plugin" "^1.0.1"
     "@ray-core/macro" "^0.4.9"
-    "@ray-js/api" "1.7.63"
-    "@ray-js/capability" "1.7.63"
-    "@ray-js/components" "1.7.63"
-    "@ray-js/framework" "1.7.63"
+    "@ray-js/api" "1.7.83"
+    "@ray-js/capability" "1.7.83"
+    "@ray-js/components" "1.7.83"
+    "@ray-js/framework" "1.7.83"
 
-"@ray-js/raypack@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/raypack/-/raypack-1.7.63.tgz#66334cc8f534a351fe6370f4c784f998b0383121"
-  integrity sha512-oyMDhBvptex+ryp2bGFDpceUN5tVHbwHCPIC4lJ1GFJzvxjw2b8ll/r6I7OJzs8s4GNiUJ+92mXlOoEacXO4ZA==
+"@ray-js/raypack@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/raypack/-/raypack-1.7.83.tgz#422755cd826649fd12293475f8e8b23289c00935"
+  integrity sha512-5L7bvfMzdxB1qso2JhggHBhZo1LIh6IxpvqF90Wu89S1lBS2AGZ3PxyovRyLsbBXGJbr99fZgL6mILrKDnDzQA==
   dependencies:
     "@babel/code-frame" "^7.27.1"
     "@noyobo/esbuild-plugin-tailwindcss" "^2.0.1"
-    "@ray-js/shared" "1.7.63"
+    "@ray-js/shared" "1.7.83"
     colors "1.4.0"
     consola "^3.4.2"
     dayjs "^1.11.13"
@@ -2731,43 +2740,43 @@
   resolved "https://registry.yarnpkg.com/@ray-js/rjs-for-wechat/-/rjs-for-wechat-0.0.3.tgz#262539b346ffd6c090239dac455225c1a4339a95"
   integrity sha512-YgOzZB3Gtvp5UncWtUxmn81F8LVfhUO8qec29Aj8f2HolhxMCKnJSMJcUooWqpKWX4Au7CUHLPH/hvordWGaiw==
 
-"@ray-js/router-mp@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/router-mp/-/router-mp-1.7.63.tgz#5d751682685110556e0e8aebae51f0a395a9be20"
-  integrity sha512-SzKuyQANC2+tKdsF+qe1tOlOhPBUM1xaTjH35H971oNHfAg6dYUIFF+kgPGsJ57JnY3EfH2lXM4BaHoysBV1FA==
+"@ray-js/router-mp@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/router-mp/-/router-mp-1.7.83.tgz#36de479b27afed69039891032c9d8c5b96f7ebbe"
+  integrity sha512-ZViLhxVwr2t6cFk1G29DDfv4JGPIZow0shORhHbkyVFt/aYr9EntUMzshLtee+LDGIs+fJJ0jfsLk/scH7Ujfg==
   dependencies:
-    "@ray-js/env" "1.7.63"
-    "@ray-js/library" "1.7.63"
-    "@ray-js/types" "1.7.63"
+    "@ray-js/env" "1.7.83"
+    "@ray-js/library" "1.7.83"
+    "@ray-js/types" "1.7.83"
     "@react-navigation/core" "^6.4.17"
     path-to-regexp "^6.3.0"
     slash "^5.1.0"
 
-"@ray-js/router@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/router/-/router-1.7.63.tgz#efb3702374fc0de05e052b0eb5cd0345777c7434"
-  integrity sha512-bpe6m2Ko7nWpKAhfipxOUNtz48wRBnCCHhgPyyXkqrmr62W5lTRuJnyU1how3pe7hMMFthpj8tuKhREqcht4bQ==
+"@ray-js/router@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/router/-/router-1.7.83.tgz#fb5ee22a46d6090a237fbb1344132aadc6d1892d"
+  integrity sha512-9JoYztWXIStMbpj5mDn3zmUly4cOHGbXGwitxYSlc7dIbioF9EJbfawdVdefOpI9Ui4bPDmkoghFV9xc/vDI4Q==
   dependencies:
-    "@ray-js/library" "1.7.63"
-    "@ray-js/types" "1.7.63"
+    "@ray-js/library" "1.7.83"
+    "@ray-js/types" "1.7.83"
     history "^4.10.1"
 
-"@ray-js/runtime@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/runtime/-/runtime-1.7.63.tgz#97224a79c4a35a6b0cc5c8a443b9fa5debb30201"
-  integrity sha512-EwJfDl1Endw3MezUK23rf52s6pYUA/ay9cdqHHNOi0Xw2R5KXQw5HtRLuU5zsQ+XegHfDTjcUF5ns9umP0SCPg==
+"@ray-js/runtime@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/runtime/-/runtime-1.7.83.tgz#32cf9894a086f1e923d0f0cf4e2569874ef3a9cd"
+  integrity sha512-KwNLukSsP9R4aGHHXgTzVHj01JkEqelDcNS+eAM9bMb24y46ouCFZxU86dT0n3/Lt9asgt95h5uvixXlt2ilUA==
   dependencies:
     "@ray-core/runtime" "^0.4.9"
 
-"@ray-js/shared@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/shared/-/shared-1.7.63.tgz#a2fed9d87e2a350bcb9f519aac52e2e091ffccb9"
-  integrity sha512-ogjK3eFEY3G16qBjXzE3DLBWRIsQnc9t3zxbpx8gmr7Bql85aMHMj0pCZKqpVCTMrNO4Vls+/4JqZhTCs4i+DQ==
+"@ray-js/shared@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/shared/-/shared-1.7.83.tgz#c128769ee74f2759174dbe4bc42bde7a08236405"
+  integrity sha512-CIixWTP3hevrxDczwk2073nl28jdI4wyeozb1WeOAVCwfNeTjmgvjdaC/mpMaxu/Ornh9EyPCL8eyVzOlG6dEw==
   dependencies:
     "@babel/preset-env" "^7.27.2"
     "@babel/preset-typescript" "^7.27.1"
     "@babel/register" "^7.27.1"
-    "@ray-js/types" "1.7.63"
+    "@ray-js/types" "1.7.83"
     change-case "^4.1.2"
     fs-extra "^10.1.0"
     merge "^2.1.1"
@@ -2781,10 +2790,10 @@
   dependencies:
     lodash-es "^4.17.21"
 
-"@ray-js/types@1.7.63":
-  version "1.7.63"
-  resolved "https://registry.yarnpkg.com/@ray-js/types/-/types-1.7.63.tgz#0585f1a9163acbafaaaeffe1ac695cbb3f358c50"
-  integrity sha512-hWwEvgT35pYjXUOgvRp/LtaG9dEqA2hDP5XEzsRer6j4UqcPhrvt7eFXpKMV2ScpdGVl7+NyRp1PV80ARxZurQ==
+"@ray-js/types@1.7.83":
+  version "1.7.83"
+  resolved "https://mirrors.huaweicloud.com/repository/npm/@ray-js/types/-/types-1.7.83.tgz#b866131ef7bc3ec6004040447b7004c63c2cfd39"
+  integrity sha512-y5rtFkkBGz7KCL5l9ms6OacyZMbFBOOkuEOWk9AYi02jBhlDKnO5qXywFktrMo+10MZnMel7dJHWFXa6MqB1jg==
   dependencies:
     path-to-regexp "^6.3.0"
     postcss "^8.5.6"
@@ -3004,10 +3013,10 @@
   resolved "https://registry.yarnpkg.com/@tuya-miniapp/icons/-/icons-2.3.0.tgz#e2f5a7df056b3de406451c1939ac8da7afc53392"
   integrity sha512-mplKNn6++goSlk5g2QHrtF/jXPf2cZIHbTVO8WWblfUBaUaYV7VRpLI24J9qMxJMufE6Wey/DnCAoDQABiA4YQ==
 
-"@tuya/miniapp-smart-ui@^2.13.7":
-  version "2.13.7"
-  resolved "https://registry.yarnpkg.com/@tuya/miniapp-smart-ui/-/miniapp-smart-ui-2.13.7.tgz#b05587546a70fac0495b665b12fbbfc2bf7cac14"
-  integrity sha512-6Nt/668AauhQvvH2og6ONiyPtv57RfV+Z1kWAxvaDE6PnApsiQ0TYsWgcta6+LJp4s2X+QqCrzcrrBtoFrSmzQ==
+"@tuya/miniapp-smart-ui@2.13.7-canary.codex-pr-240-canary.3e16f7b":
+  version "2.13.7-canary.codex-pr-240-canary.3e16f7b"
+  resolved "https://registry.yarnpkg.com/@tuya/miniapp-smart-ui/-/miniapp-smart-ui-2.13.7-canary.codex-pr-240-canary.3e16f7b.tgz#32100ab46d7500fd82af361eb43d5179db219961"
+  integrity sha512-FxlUzEt5SzOl4wnHfNXrGPSj2B/aqwgSI5EbbxHPxHrEdzmwgZOw7EBEsjK3ZuA8YEYtN1ZE3VdV6imhFwNa2Q==
   dependencies:
     "@ray-core/event-propagation" "^0.4.13"
     "@ray-js/components-ty-slider" "^0.3.9"
@@ -11303,6 +11312,15 @@ react-autosize-textarea@^7.0.0:
     line-height "^0.3.1"
     prop-types "^15.5.6"
 
+react-dom@17.0.2:
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
+  integrity sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    scheduler "^0.20.2"
+
 react-dom@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
@@ -13141,7 +13159,12 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@^4.1.2, typescript@^4.4.3:
+typescript@^4.1.2:
+  version "4.9.5"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.5.tgz#095979f9bcc0d09da324d58d03ce8f8374cbe65a"
+  integrity sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==
+
+typescript@^4.9.5:
   version "4.9.5"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.5.tgz#095979f9bcc0d09da324d58d03ce8f8374cbe65a"
   integrity sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==

@@ -4,6 +4,11 @@
 
 ![CI status](https://github.com/Tuya-Community/miniapp-smart-ui/actions/workflows/test.yml/badge.svg) ![coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Tuya-Community/miniapp-smart-ui/release/2.x/.github/coverage/coverage-summary.json) ![npm](https://img.shields.io/npm/v/@ray-js/smart-ui) ![down](https://img.shields.io/npm/dt/@ray-js/smart-ui) ![ray-js](https://img.shields.io/badge/maintained%20with-Ray-cc00ff.svg) ![lodash](https://img.shields.io/badge/-lodash-f16728?style=flat-square&logo=lodash&labelColor=ffffff&color=f16728) ![TS](https://img.shields.io/badge/TS-TypeScript-1C6FBB)
 
+## WebView 与 Lynx
+
+页面级双渲染接入、构建配置和实例 API 见 [Lynx 接入指南](README-LYNX.md)。新接口以该文档列出的候选/发布版本为准。
+
+
 ## 介绍
 
 `@ray-js/smart-ui` 是一个基于 `Ray` 框架和 `@tuya/miniapp-smart-ui` 的 React 组件库，旨在提供符合智能小程序移动端设计规范的轻量、可靠的 UI 组件。通过结合 `Ray` 的规范适配中间层和内置的完善 TS 类型，我们提供了一整套适用于智能小程序的 React 组件，让开发者能够快速构建符合设计规范的移动端应用。
