@@ -34,7 +34,17 @@ on:
         type: string
 
 jobs:
+  publish_canary:
+    if: github.ref == 'refs/heads/codex/iphone-duo-adaptation' && github.event_name == 'workflow_dispatch'
+    uses: ./.github/workflows/publish-canary.yml
+    with:
+      miniapp_version: ${{ inputs.version }}
+      dist_tag: iphone-duo
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
   publish_manual:
+    if: github.ref != 'refs/heads/codex/iphone-duo-adaptation'
     runs-on: ubuntu-latest
 
     steps:
