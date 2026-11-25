@@ -3004,10 +3004,10 @@
   resolved "https://registry.yarnpkg.com/@tuya-miniapp/icons/-/icons-2.3.0.tgz#e2f5a7df056b3de406451c1939ac8da7afc53392"
   integrity sha512-mplKNn6++goSlk5g2QHrtF/jXPf2cZIHbTVO8WWblfUBaUaYV7VRpLI24J9qMxJMufE6Wey/DnCAoDQABiA4YQ==
 
-"@tuya/miniapp-smart-ui@2.13.7-canary.bcodex-iphone-duo-adaptat.s1e60d0f.45541089131.1":
-  version "2.13.7-canary.bcodex-iphone-duo-adaptat.s1e60d0f.45541089131.1"
-  resolved "https://registry.yarnpkg.com/@tuya/miniapp-smart-ui/-/miniapp-smart-ui-2.13.7-canary.bcodex-iphone-duo-adaptat.s1e60d0f.45541089131.1.tgz#a0dc39ac2990242a325be8339c23d24f3445a8a6"
-  integrity sha512-dAMLNANTwzAmfgSBm/W1VLOIshH0oLdiNs0ayxQgBWSVHV6zHwFz03CnUbGVgwIm+i7PiE8xRoQhjy0y41DgZQ==
+"@tuya/miniapp-smart-ui@2.13.7-canary.bcodex-iphone-duo-adaptat.s21d7a90.45559845969.1":
+  version "2.13.7-canary.bcodex-iphone-duo-adaptat.s21d7a90.45559845969.1"
+  resolved "https://registry.yarnpkg.com/@tuya/miniapp-smart-ui/-/miniapp-smart-ui-2.13.7-canary.bcodex-iphone-duo-adaptat.s21d7a90.45559845969.1.tgz#a6008243550bb0fef9e7490866cee51f645bc128"
+  integrity sha512-UwMP5X9QaI9A7dZmCqmQg4Ry5Cx2F+tSRk/cf5mrs6F71FKnJGzGTJMD3iYpgIDBfx/gMkahvjDsBLdgNm489A==
   dependencies:
     "@ray-core/event-propagation" "^0.4.13"
     "@ray-js/components-ty-slider" "^0.3.9"
